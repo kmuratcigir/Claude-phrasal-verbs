@@ -1141,7 +1141,7 @@
       "streak": 1
     },
     "slip up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -1187,9 +1187,9 @@
     }
   },
   "globalStats": {
-    "currentStreak": 4,
+    "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 110,
+    "totalAttempts": 111,
     "totalCorrect": 84
   },
   "activeTypes": {
@@ -1198,5 +1198,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:57:29.532Z"
+  "updatedAt": "2026-09-03T14:58:04.452Z"
 }
