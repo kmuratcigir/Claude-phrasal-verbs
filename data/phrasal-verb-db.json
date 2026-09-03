@@ -1181,16 +1181,16 @@
       "streak": 1
     },
     "give in": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 4,
     "bestStreak": 9,
-    "totalAttempts": 109,
-    "totalCorrect": 83
+    "totalAttempts": 110,
+    "totalCorrect": 84
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1198,5 +1198,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:57:12.988Z"
+  "updatedAt": "2026-09-03T14:57:29.532Z"
 }
