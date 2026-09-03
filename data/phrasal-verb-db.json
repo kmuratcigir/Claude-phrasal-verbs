@@ -811,7 +811,13 @@
       "example": "I'd like to ___ what I said earlier."
     }
   ],
-  "stats": {},
+  "stats": {
+    "put up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    }
+  },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
@@ -824,5 +830,5 @@
     "verb_to_meaning": true,
     "write_sentence": true
   },
-  "updatedAt": "2026-09-03T13:25:32.275Z"
+  "updatedAt": "2026-09-03T13:44:56.478Z"
 }
