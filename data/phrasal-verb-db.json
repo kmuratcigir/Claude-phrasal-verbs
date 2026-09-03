@@ -818,16 +818,16 @@
       "streak": 1
     },
     "put up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 0,
-    "bestStreak": 0,
-    "totalAttempts": 9,
-    "totalCorrect": 0
+    "currentStreak": 1,
+    "bestStreak": 1,
+    "totalAttempts": 10,
+    "totalCorrect": 1
   },
   "activeTypes": {
     "fill_blank": true,
@@ -835,5 +835,5 @@
     "verb_to_meaning": true,
     "write_sentence": true
   },
-  "updatedAt": "2026-09-03T13:47:46.403Z"
+  "updatedAt": "2026-09-03T13:47:51.792Z"
 }
