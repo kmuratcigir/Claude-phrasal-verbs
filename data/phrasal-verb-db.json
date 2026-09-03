@@ -154,7 +154,7 @@
       "key": "b25",
       "verb": "take in",
       "meaning": "absorb information; or let someone stay with you; or deceive",
-      "example": "It's a lot of information to ___ at once."
+      "example": "It's a lot ___formation to at once."
     },
     {
       "key": "b26",
@@ -568,7 +568,7 @@
       "key": "b94",
       "verb": "stand in",
       "meaning": "temporarily take someone else's place or role",
-      "example": "She agreed to ___ for the injured actress."
+      "example": "She agreed to for ___jured actress."
     },
     {
       "key": "b95",
@@ -820,7 +820,13 @@
       "key": "vmtlmqnc3cs45",
       "verb": "get away with",
       "meaning": "do something wrong without being caught or punished",
-      "example": "He got away with being late all semester. ___"
+      "example": "He ___ being late all semester."
+    },
+    {
+      "key": "vmtlmwdyao3sw",
+      "verb": "get into",
+      "meaning": "become interested or involved in something, or enter",
+      "example": "She really ___ painting last year."
     }
   ],
   "stats": {
@@ -1047,5 +1053,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:38:03.604Z"
+  "updatedAt": "2026-09-03T14:42:31.382Z"
 }
