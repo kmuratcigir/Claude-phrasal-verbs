@@ -809,6 +809,12 @@
       "verb": "take back",
       "meaning": "retract a statement, or return something to a store",
       "example": "I'd like to ___ what I said earlier."
+    },
+    {
+      "key": "vmtlmagss4qf4",
+      "verb": "get along with",
+      "meaning": "have a friendly relationship with someone",
+      "example": "She gets along with almost everyone at work."
     }
   ],
   "stats": {
@@ -1030,5 +1036,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:17:36.083Z"
+  "updatedAt": "2026-09-03T14:25:28.642Z"
 }
