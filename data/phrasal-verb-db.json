@@ -1,0 +1,17 @@
+{
+  "customVerbs": [],
+  "stats": {},
+  "globalStats": {
+    "currentStreak": 0,
+    "bestStreak": 0,
+    "totalAttempts": 0,
+    "totalCorrect": 0
+  },
+  "activeTypes": {
+    "fill_blank": true,
+    "meaning_to_verb": true,
+    "verb_to_meaning": true,
+    "write_sentence": true
+  },
+  "updatedAt": "2026-09-03T10:33:30.238Z"
+}
