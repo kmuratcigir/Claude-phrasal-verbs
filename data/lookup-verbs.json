@@ -1,0 +1,2156 @@
+[
+  [
+    "get",
+    "get away",
+    "escape, or leave for a trip",
+    "We finally got away for a few days last month."
+  ],
+  [
+    "get",
+    "get along with",
+    "have a friendly relationship with someone",
+    "She gets along with almost everyone at work."
+  ],
+  [
+    "get",
+    "get around",
+    "travel from place to place, or avoid a rule/problem cleverly",
+    "We got around the city mostly by bike."
+  ],
+  [
+    "get",
+    "get away with",
+    "do something wrong without being caught or punished",
+    "He got away with being late all semester."
+  ],
+  [
+    "get",
+    "get back",
+    "return to a place, or retaliate",
+    "I'll get back to the office by six."
+  ],
+  [
+    "get",
+    "get by",
+    "manage with the minimum necessary",
+    "We can get by on one income for a while."
+  ],
+  [
+    "get",
+    "get down to",
+    "start giving serious attention to something",
+    "Let's get down to business."
+  ],
+  [
+    "get",
+    "get into",
+    "become interested or involved in something, or enter",
+    "She really got into painting last year."
+  ],
+  [
+    "get",
+    "get off",
+    "leave a vehicle, finish work, or avoid punishment",
+    "What time do you get off work tonight?"
+  ],
+  [
+    "get",
+    "get over",
+    "recover from something difficult",
+    "It took him weeks to get over the flu."
+  ],
+  [
+    "get",
+    "get through",
+    "survive something difficult, or finish something",
+    "We got through the exam period somehow."
+  ],
+  [
+    "get",
+    "get up",
+    "rise from bed or a seated position",
+    "I get up at six every day."
+  ],
+  [
+    "take",
+    "take after",
+    "resemble a parent or relative",
+    "She takes after her mother in every way."
+  ],
+  [
+    "take",
+    "take apart",
+    "separate something into pieces",
+    "He took the engine apart to clean it."
+  ],
+  [
+    "take",
+    "take away",
+    "remove something, or take food to eat elsewhere",
+    "The waiter took away our plates."
+  ],
+  [
+    "take",
+    "take back",
+    "retract a statement, or return something to a store",
+    "I take back what I said earlier."
+  ],
+  [
+    "take",
+    "take down",
+    "write something down, or remove/dismantle something",
+    "Can you take down these notes for me?"
+  ],
+  [
+    "take",
+    "take in",
+    "absorb information, host someone, or deceive",
+    "It's a lot to take in all at once."
+  ],
+  [
+    "take",
+    "take off",
+    "leave the ground, remove clothing, or become successful",
+    "The plane took off right on time."
+  ],
+  [
+    "take",
+    "take on",
+    "accept a responsibility or challenge, or hire",
+    "She took on extra clients this quarter."
+  ],
+  [
+    "take",
+    "take out",
+    "remove something, or invite someone somewhere",
+    "He took out the trash before leaving."
+  ],
+  [
+    "take",
+    "take over",
+    "assume control of something",
+    "New management took over the company last year."
+  ],
+  [
+    "take",
+    "take up",
+    "start a hobby, or occupy space/time",
+    "He took up guitar during the lockdown."
+  ],
+  [
+    "put",
+    "put across",
+    "communicate an idea successfully",
+    "She put her point across clearly in the meeting."
+  ],
+  [
+    "put",
+    "put aside",
+    "save for later, or ignore temporarily",
+    "Let's put aside our differences for now."
+  ],
+  [
+    "put",
+    "put away",
+    "store something in its place",
+    "Please put away your toys before dinner."
+  ],
+  [
+    "put",
+    "put back",
+    "return something to its original place",
+    "Put the book back on the shelf when you're done."
+  ],
+  [
+    "put",
+    "put down",
+    "write something, set something down, or criticize someone",
+    "He put down his phone and looked up."
+  ],
+  [
+    "put",
+    "put forward",
+    "suggest an idea or proposal",
+    "She put forward a new plan at the meeting."
+  ],
+  [
+    "put",
+    "put off",
+    "postpone, or discourage someone",
+    "Don't put off your homework until Sunday night."
+  ],
+  [
+    "put",
+    "put on",
+    "wear something, or stage a performance",
+    "Put on your coat, it's cold outside."
+  ],
+  [
+    "put",
+    "put out",
+    "extinguish, or produce/publish something",
+    "Firefighters put out the blaze within an hour."
+  ],
+  [
+    "put",
+    "put through",
+    "connect someone by phone, or make someone endure something",
+    "Please put me through to the manager."
+  ],
+  [
+    "put",
+    "put up",
+    "build something, provide accommodation, or tolerate",
+    "We put up a tent for the weekend."
+  ],
+  [
+    "put",
+    "put up with",
+    "tolerate something unpleasant",
+    "I can't put up with the noise any longer."
+  ],
+  [
+    "go",
+    "go after",
+    "pursue someone or something",
+    "The team decided to go after the bigger client."
+  ],
+  [
+    "go",
+    "go ahead",
+    "proceed with something, often after permission",
+    "Go ahead and start without me."
+  ],
+  [
+    "go",
+    "go along with",
+    "agree to support a plan or decision",
+    "Everyone went along with the new schedule."
+  ],
+  [
+    "go",
+    "go around",
+    "circulate, or be enough for everyone",
+    "There's a rumor going around the office."
+  ],
+  [
+    "go",
+    "go away",
+    "leave a place, or disappear",
+    "The pain finally went away after a week."
+  ],
+  [
+    "go",
+    "go back",
+    "return to a place or an earlier point",
+    "We need to go back and check the numbers."
+  ],
+  [
+    "go",
+    "go down",
+    "decrease, or (of a computer) stop working",
+    "Prices went down after the holidays."
+  ],
+  [
+    "go",
+    "go for",
+    "choose, attempt, or attack",
+    "I think I'll go for the salad today."
+  ],
+  [
+    "go",
+    "go off",
+    "explode/sound suddenly, or (of food) spoil",
+    "The alarm went off at 3 a.m."
+  ],
+  [
+    "go",
+    "go on",
+    "continue, or happen",
+    "Please, go on with your story."
+  ],
+  [
+    "go",
+    "go out",
+    "leave for entertainment, or (of a light) stop burning",
+    "We're going out for dinner tonight."
+  ],
+  [
+    "go",
+    "go over",
+    "review something carefully",
+    "Let's go over the report before the meeting."
+  ],
+  [
+    "go",
+    "go through",
+    "experience something difficult, or examine carefully",
+    "She's going through a rough patch right now."
+  ],
+  [
+    "look",
+    "look after",
+    "take care of someone or something",
+    "Can you look after the kids tonight?"
+  ],
+  [
+    "look",
+    "look back",
+    "reflect on the past",
+    "Looking back, it was the right choice."
+  ],
+  [
+    "look",
+    "look down on",
+    "consider someone inferior",
+    "He tends to look down on people who disagree with him."
+  ],
+  [
+    "look",
+    "look for",
+    "search for something",
+    "I've been looking for my keys all morning."
+  ],
+  [
+    "look",
+    "look forward to",
+    "anticipate something with pleasure",
+    "We're looking forward to the trip."
+  ],
+  [
+    "look",
+    "look into",
+    "investigate something",
+    "The police are looking into the incident."
+  ],
+  [
+    "look",
+    "look out",
+    "be careful, watch for danger",
+    "Look out, the floor is wet."
+  ],
+  [
+    "look",
+    "look over",
+    "examine something briefly",
+    "Could you look over my resume?"
+  ],
+  [
+    "look",
+    "look up",
+    "search for information, or improve",
+    "I looked up the address online."
+  ],
+  [
+    "look",
+    "look up to",
+    "admire and respect someone",
+    "She's always looked up to her older sister."
+  ],
+  [
+    "turn",
+    "turn around",
+    "change direction, or improve a bad situation",
+    "The company turned around its finances last year."
+  ],
+  [
+    "turn",
+    "turn away",
+    "refuse to help or admit someone",
+    "They turned away dozens of applicants."
+  ],
+  [
+    "turn",
+    "turn back",
+    "return the way you came",
+    "Bad weather forced the hikers to turn back."
+  ],
+  [
+    "turn",
+    "turn down",
+    "refuse an offer, or reduce volume/intensity",
+    "She turned down the promotion."
+  ],
+  [
+    "turn",
+    "turn in",
+    "submit something, or go to bed",
+    "Please turn in your assignments by Friday."
+  ],
+  [
+    "turn",
+    "turn into",
+    "become something different",
+    "The old warehouse turned into an art gallery."
+  ],
+  [
+    "turn",
+    "turn off",
+    "switch off, or cause someone to lose interest",
+    "Turn off the lights before you leave."
+  ],
+  [
+    "turn",
+    "turn on",
+    "switch on, or suddenly attack/blame",
+    "The dog turned on its owner unexpectedly."
+  ],
+  [
+    "turn",
+    "turn out",
+    "end up being a certain way, or attend an event",
+    "The party turned out better than expected."
+  ],
+  [
+    "turn",
+    "turn over",
+    "hand something to someone, or flip it",
+    "He turned over the documents to the police."
+  ],
+  [
+    "turn",
+    "turn up",
+    "arrive, or increase in volume/intensity",
+    "She turned up an hour late."
+  ],
+  [
+    "break",
+    "break away",
+    "escape or separate from a group",
+    "The colony broke away and formed its own country."
+  ],
+  [
+    "break",
+    "break down",
+    "stop working, or lose emotional control",
+    "My car broke down on the highway."
+  ],
+  [
+    "break",
+    "break in",
+    "enter illegally, or interrupt",
+    "Someone broke in while we were on vacation."
+  ],
+  [
+    "break",
+    "break into",
+    "enter by force, or start doing something suddenly",
+    "Thieves broke into the shop overnight."
+  ],
+  [
+    "break",
+    "break off",
+    "stop talking suddenly, or end a relationship",
+    "She broke off mid-sentence."
+  ],
+  [
+    "break",
+    "break out",
+    "escape, or (of something bad) start suddenly",
+    "A fire broke out in the warehouse."
+  ],
+  [
+    "break",
+    "break up",
+    "end a relationship, or split into pieces",
+    "They broke up after three years together."
+  ],
+  [
+    "break",
+    "break through",
+    "overcome an obstacle, or achieve a breakthrough",
+    "The team finally broke through after months of research."
+  ],
+  [
+    "run",
+    "run across",
+    "find something by chance",
+    "I ran across an old photo of us."
+  ],
+  [
+    "run",
+    "run away",
+    "leave suddenly to escape",
+    "The cat ran away when the door opened."
+  ],
+  [
+    "run",
+    "run down",
+    "lose energy gradually, or criticize, or hit with a vehicle",
+    "The batteries are running down fast."
+  ],
+  [
+    "run",
+    "run into",
+    "meet someone by chance, or encounter a problem",
+    "We ran into an old friend at the airport."
+  ],
+  [
+    "run",
+    "run off",
+    "leave quickly, or make copies",
+    "He ran off before I could say goodbye."
+  ],
+  [
+    "run",
+    "run out",
+    "have no more of something left",
+    "We ran out of milk this morning."
+  ],
+  [
+    "run",
+    "run over",
+    "hit with a vehicle, or exceed a limit",
+    "The meeting ran over by twenty minutes."
+  ],
+  [
+    "run",
+    "run through",
+    "practice or review quickly, or use up",
+    "Let's run through the plan one more time."
+  ],
+  [
+    "run",
+    "run up",
+    "accumulate a debt or bill quickly",
+    "He ran up a huge phone bill."
+  ],
+  [
+    "set",
+    "set apart",
+    "distinguish something from others",
+    "Her attention to detail sets her apart."
+  ],
+  [
+    "set",
+    "set aside",
+    "save for later use, or put to one side",
+    "We set aside some money for emergencies."
+  ],
+  [
+    "set",
+    "set back",
+    "delay progress, or cost someone money",
+    "The storm set back construction by weeks."
+  ],
+  [
+    "set",
+    "set off",
+    "start a journey, or trigger something",
+    "We set off early to avoid traffic."
+  ],
+  [
+    "set",
+    "set out",
+    "begin a journey or task with a clear goal",
+    "She set out to write a novel."
+  ],
+  [
+    "set",
+    "set up",
+    "arrange or establish something",
+    "They set up a new office downtown."
+  ],
+  [
+    "bring",
+    "bring about",
+    "cause something to happen",
+    "The reforms brought about real change."
+  ],
+  [
+    "bring",
+    "bring around",
+    "persuade someone, or revive someone",
+    "It took a while to bring him around to the idea."
+  ],
+  [
+    "bring",
+    "bring back",
+    "return something, or restore a memory/practice",
+    "This song brings back so many memories."
+  ],
+  [
+    "bring",
+    "bring down",
+    "cause to fall, or reduce",
+    "The scandal brought down the government."
+  ],
+  [
+    "bring",
+    "bring in",
+    "introduce, earn, or recruit",
+    "The new policy brought in more revenue."
+  ],
+  [
+    "bring",
+    "bring out",
+    "release a product, or reveal a quality",
+    "They're bringing out a new version next month."
+  ],
+  [
+    "bring",
+    "bring up",
+    "mention a topic, or raise a child",
+    "I didn't want to bring up the issue again."
+  ],
+  [
+    "call",
+    "call back",
+    "return a phone call",
+    "I'll call you back in ten minutes."
+  ],
+  [
+    "call",
+    "call for",
+    "require, or publicly demand",
+    "This calls for a celebration."
+  ],
+  [
+    "call",
+    "call in",
+    "ask someone to come, or phone in to report",
+    "They called in a specialist to help."
+  ],
+  [
+    "call",
+    "call off",
+    "cancel something",
+    "The match was called off due to rain."
+  ],
+  [
+    "call",
+    "call on",
+    "ask someone to do something, or visit",
+    "The teacher called on her to answer."
+  ],
+  [
+    "call",
+    "call out",
+    "shout, or publicly criticize",
+    "He called out the mistake in the report."
+  ],
+  [
+    "call",
+    "call up",
+    "phone someone, or summon for duty",
+    "She called up her old college roommate."
+  ],
+  [
+    "carry",
+    "carry on",
+    "continue doing something",
+    "Please, carry on with what you were doing."
+  ],
+  [
+    "carry",
+    "carry out",
+    "perform or complete a task",
+    "They carried out the plan without any issues."
+  ],
+  [
+    "carry",
+    "carry through",
+    "complete something despite difficulty",
+    "She carried the project through to the end."
+  ],
+  [
+    "cut",
+    "cut back",
+    "reduce spending or usage",
+    "We had to cut back on eating out."
+  ],
+  [
+    "cut",
+    "cut down",
+    "reduce something, or fell a tree",
+    "He's trying to cut down on sugar."
+  ],
+  [
+    "cut",
+    "cut in",
+    "interrupt, or move into traffic abruptly",
+    "She cut in before I could finish my sentence."
+  ],
+  [
+    "cut",
+    "cut off",
+    "interrupt, disconnect, or isolate",
+    "The call got cut off halfway through."
+  ],
+  [
+    "cut",
+    "cut out",
+    "remove part of something, or stop a habit",
+    "He finally cut out coffee completely."
+  ],
+  [
+    "cut",
+    "cut up",
+    "cut into small pieces",
+    "Can you cut up the vegetables for the soup?"
+  ],
+  [
+    "fall",
+    "fall apart",
+    "break into pieces, or collapse emotionally",
+    "The old chair fell apart when he sat on it."
+  ],
+  [
+    "fall",
+    "fall back on",
+    "rely on something as a backup",
+    "We can always fall back on savings."
+  ],
+  [
+    "fall",
+    "fall behind",
+    "fail to keep up with a schedule",
+    "She fell behind on her rent this month."
+  ],
+  [
+    "fall",
+    "fall for",
+    "be deceived by, or fall in love with",
+    "He fell for the scam immediately."
+  ],
+  [
+    "fall",
+    "fall out",
+    "have an argument that damages a relationship",
+    "The two brothers fell out over money."
+  ],
+  [
+    "fall",
+    "fall through",
+    "fail to happen as planned",
+    "Our vacation plans fell through."
+  ],
+  [
+    "give",
+    "give away",
+    "give for free, or reveal a secret",
+    "His smile gave away the surprise."
+  ],
+  [
+    "give",
+    "give back",
+    "return something",
+    "Please give back the book when you're done."
+  ],
+  [
+    "give",
+    "give in",
+    "reluctantly agree after resisting",
+    "She finally gave in to their demands."
+  ],
+  [
+    "give",
+    "give out",
+    "distribute, or stop working from exhaustion",
+    "Volunteers gave out flyers at the entrance."
+  ],
+  [
+    "give",
+    "give up",
+    "stop trying, or surrender something",
+    "Don't give up on your goals."
+  ],
+  [
+    "hold",
+    "hold back",
+    "restrain something, or hesitate",
+    "He held back his tears during the speech."
+  ],
+  [
+    "hold",
+    "hold off",
+    "delay doing something",
+    "We decided to hold off on the announcement."
+  ],
+  [
+    "hold",
+    "hold on",
+    "wait, or grip something tightly",
+    "Hold on, I'll be right there."
+  ],
+  [
+    "hold",
+    "hold out",
+    "last, or refuse to give in",
+    "Our supplies held out longer than expected."
+  ],
+  [
+    "hold",
+    "hold up",
+    "delay, remain strong, or rob at gunpoint",
+    "Sorry I'm late, traffic held me up."
+  ],
+  [
+    "keep",
+    "keep away",
+    "stay at a distance",
+    "Keep away from the edge, it's dangerous."
+  ],
+  [
+    "keep",
+    "keep back",
+    "withhold, or hold something in reserve",
+    "She kept back some information from the report."
+  ],
+  [
+    "keep",
+    "keep on",
+    "continue doing something",
+    "He kept on talking even after the bell rang."
+  ],
+  [
+    "keep",
+    "keep up",
+    "maintain a pace or standard",
+    "It's hard to keep up with all the new tools."
+  ],
+  [
+    "keep",
+    "keep up with",
+    "stay informed about, or match someone's pace",
+    "I try to keep up with the news every morning."
+  ],
+  [
+    "let",
+    "let down",
+    "disappoint someone",
+    "I don't want to let the team down."
+  ],
+  [
+    "let",
+    "let in",
+    "allow someone or something to enter",
+    "Can you let the cat in, please?"
+  ],
+  [
+    "let",
+    "let off",
+    "excuse from punishment, or release",
+    "The teacher let him off with a warning."
+  ],
+  [
+    "let",
+    "let on",
+    "reveal a secret, often unintentionally",
+    "She didn't let on that she already knew."
+  ],
+  [
+    "let",
+    "let out",
+    "release, or make a sound",
+    "He let out a sigh of relief."
+  ],
+  [
+    "make",
+    "make for",
+    "move toward, or contribute to",
+    "We made for the exit as soon as the alarm rang."
+  ],
+  [
+    "make",
+    "make into",
+    "transform something into something else",
+    "They made the old barn into a cozy home."
+  ],
+  [
+    "make",
+    "make out",
+    "manage to see/hear/understand with difficulty, or kiss",
+    "I could barely make out his handwriting."
+  ],
+  [
+    "make",
+    "make up",
+    "invent a story, reconcile, or apply cosmetics",
+    "He made up an excuse for being late."
+  ],
+  [
+    "make",
+    "make up for",
+    "compensate for a mistake or shortcoming",
+    "She worked overtime to make up for the delay."
+  ],
+  [
+    "pass",
+    "pass away",
+    "die (a gentler way of saying it)",
+    "Her grandmother passed away last winter."
+  ],
+  [
+    "pass",
+    "pass by",
+    "go past, or (of time) elapse",
+    "The years passed by so quickly."
+  ],
+  [
+    "pass",
+    "pass down",
+    "give something to a younger generation",
+    "The recipe was passed down through the family."
+  ],
+  [
+    "pass",
+    "pass off",
+    "present something falsely, or (of an event) happen",
+    "He tried to pass off the copy as the original."
+  ],
+  [
+    "pass",
+    "pass out",
+    "lose consciousness, or distribute",
+    "She passed out from the heat."
+  ],
+  [
+    "pass",
+    "pass up",
+    "decline an opportunity",
+    "I can't pass up a deal like that."
+  ],
+  [
+    "pick",
+    "pick on",
+    "repeatedly tease or criticize someone unfairly",
+    "The older kids used to pick on him."
+  ],
+  [
+    "pick",
+    "pick out",
+    "select from a group",
+    "She picked out a nice gift for her friend."
+  ],
+  [
+    "pick",
+    "pick up",
+    "lift, collect, learn casually, or improve",
+    "Can you pick up some milk on your way home?"
+  ],
+  [
+    "pull",
+    "pull apart",
+    "separate forcefully, or criticize harshly",
+    "The critics pulled the film apart."
+  ],
+  [
+    "pull",
+    "pull away",
+    "move away, or gain distance in a race",
+    "The car pulled away before I could wave."
+  ],
+  [
+    "pull",
+    "pull back",
+    "withdraw, or retreat",
+    "The company pulled back its investment plans."
+  ],
+  [
+    "pull",
+    "pull off",
+    "succeed at something difficult",
+    "They pulled off a surprising win."
+  ],
+  [
+    "pull",
+    "pull out",
+    "withdraw from something, or leave",
+    "He pulled out of the deal at the last minute."
+  ],
+  [
+    "pull",
+    "pull through",
+    "survive a difficult situation, especially illness",
+    "The doctors think she'll pull through."
+  ],
+  [
+    "pull",
+    "pull up",
+    "stop a vehicle, or move closer",
+    "The taxi pulled up right in front of the hotel."
+  ],
+  [
+    "push",
+    "push around",
+    "bully or dominate someone",
+    "He won't let anyone push him around."
+  ],
+  [
+    "push",
+    "push back",
+    "delay something, or resist",
+    "The launch date got pushed back a month."
+  ],
+  [
+    "push",
+    "push for",
+    "campaign or advocate strongly for something",
+    "Employees are pushing for better benefits."
+  ],
+  [
+    "push",
+    "push forward",
+    "continue despite difficulty",
+    "The team pushed forward with the plan."
+  ],
+  [
+    "push",
+    "push through",
+    "force something to succeed despite difficulty",
+    "They managed to push the deal through."
+  ],
+  [
+    "work",
+    "work out",
+    "exercise, or find a solution/result",
+    "Everything worked out in the end."
+  ],
+  [
+    "work",
+    "work through",
+    "deal with and resolve a problem gradually",
+    "We need to work through our differences."
+  ],
+  [
+    "work",
+    "work up",
+    "develop gradually, or provoke a strong feeling",
+    "He worked up the courage to ask for a raise."
+  ],
+  [
+    "come",
+    "come across",
+    "find by chance, or give an impression",
+    "I came across an old letter in the attic."
+  ],
+  [
+    "come",
+    "come along",
+    "make progress, or accompany someone",
+    "The project is coming along nicely."
+  ],
+  [
+    "come",
+    "come apart",
+    "break into pieces",
+    "The old book came apart in my hands."
+  ],
+  [
+    "come",
+    "come around",
+    "change one's opinion, or regain consciousness, or visit",
+    "She eventually came around to the idea."
+  ],
+  [
+    "come",
+    "come back",
+    "return",
+    "He came back from the trip refreshed."
+  ],
+  [
+    "come",
+    "come down",
+    "decrease, or descend",
+    "Prices came down after the sale ended."
+  ],
+  [
+    "come",
+    "come from",
+    "originate from a place or source",
+    "This tradition comes from her grandmother's village."
+  ],
+  [
+    "come",
+    "come in",
+    "enter, or become available/relevant",
+    "Please come in and take a seat."
+  ],
+  [
+    "come",
+    "come out",
+    "become known, be released, or exit",
+    "The results came out yesterday."
+  ],
+  [
+    "come",
+    "come up",
+    "arise or happen, or approach in time",
+    "Something came up at work."
+  ],
+  [
+    "come",
+    "come up with",
+    "think of an idea or plan",
+    "She came up with a clever solution."
+  ],
+  [
+    "check",
+    "check in",
+    "register at a hotel or airport",
+    "We checked in early to get a good room."
+  ],
+  [
+    "check",
+    "check out",
+    "leave a hotel, or examine something",
+    "Let's check out that new restaurant."
+  ],
+  [
+    "check",
+    "check up on",
+    "verify someone's wellbeing",
+    "She checks up on her parents every weekend."
+  ],
+  [
+    "check",
+    "check off",
+    "mark as completed on a list",
+    "He checked off each task on the list."
+  ],
+  [
+    "check",
+    "check into",
+    "investigate something",
+    "The police are checking into the complaint."
+  ],
+  [
+    "clear",
+    "clear out",
+    "empty a space, or leave",
+    "We need to clear out the garage this weekend."
+  ],
+  [
+    "clear",
+    "clear up",
+    "tidy, resolve confusion, or (weather) improve",
+    "The confusion was cleared up quickly."
+  ],
+  [
+    "clear",
+    "clear off",
+    "leave, or remove things from a surface",
+    "Clear off the table before dinner."
+  ],
+  [
+    "clear",
+    "clear away",
+    "remove and tidy something",
+    "She cleared away the dishes."
+  ],
+  [
+    "close",
+    "close down",
+    "shut permanently",
+    "The factory closed down last year."
+  ],
+  [
+    "close",
+    "close in",
+    "surround or approach",
+    "Darkness was closing in fast."
+  ],
+  [
+    "close",
+    "close off",
+    "block access to an area",
+    "They closed off the street for the parade."
+  ],
+  [
+    "close",
+    "close up",
+    "shut for the day, or come closer together",
+    "The shop closes up at nine."
+  ],
+  [
+    "count",
+    "count on",
+    "rely on someone or something",
+    "You can always count on her."
+  ],
+  [
+    "count",
+    "count in",
+    "include someone in a plan",
+    "Count me in for the trip."
+  ],
+  [
+    "count",
+    "count out",
+    "exclude, or count individually",
+    "He counted out the exact change."
+  ],
+  [
+    "count",
+    "count down",
+    "count backward to zero",
+    "The crowd counted down to midnight."
+  ],
+  [
+    "cover",
+    "cover up",
+    "hide or conceal something",
+    "He tried to cover up the mistake."
+  ],
+  [
+    "cover",
+    "cover for",
+    "substitute for someone, or protect them from blame",
+    "I'll cover for you while you're out."
+  ],
+  [
+    "cover",
+    "cover over",
+    "spread across to hide something",
+    "Snow covered over the tracks."
+  ],
+  [
+    "draw",
+    "draw up",
+    "prepare a document, or come to a stop",
+    "The lawyer drew up the contract."
+  ],
+  [
+    "draw",
+    "draw out",
+    "prolong something, or withdraw money",
+    "She drew out some cash from the ATM."
+  ],
+  [
+    "draw",
+    "draw back",
+    "retreat, or hesitate",
+    "He drew back from the edge."
+  ],
+  [
+    "draw",
+    "draw on",
+    "use something as a resource",
+    "She drew on years of experience."
+  ],
+  [
+    "dress",
+    "dress up",
+    "wear formal or costume clothes",
+    "The kids dressed up for Halloween."
+  ],
+  [
+    "dress",
+    "dress down",
+    "dress casually, or scold someone",
+    "The boss dressed him down in front of everyone."
+  ],
+  [
+    "drop",
+    "drop by",
+    "visit casually and briefly",
+    "Feel free to drop by anytime."
+  ],
+  [
+    "drop",
+    "drop off",
+    "fall asleep, decline, or deliver something",
+    "I'll drop off the kids at school."
+  ],
+  [
+    "drop",
+    "drop out",
+    "quit school or a program before finishing",
+    "He dropped out of college."
+  ],
+  [
+    "drop",
+    "drop in",
+    "visit unexpectedly",
+    "She dropped in for coffee."
+  ],
+  [
+    "end",
+    "end up",
+    "eventually arrive at a situation",
+    "We ended up staying the whole night."
+  ],
+  [
+    "end",
+    "end in",
+    "result in something",
+    "The meeting ended in an argument."
+  ],
+  [
+    "face",
+    "face up to",
+    "accept a difficult truth",
+    "He finally faced up to his mistake."
+  ],
+  [
+    "fill",
+    "fill in",
+    "complete a form, or substitute for someone",
+    "Please fill in the form."
+  ],
+  [
+    "fill",
+    "fill out",
+    "complete a document",
+    "Fill out this application."
+  ],
+  [
+    "fill",
+    "fill up",
+    "make something completely full",
+    "Let's fill up the tank before the trip."
+  ],
+  [
+    "find",
+    "find out",
+    "discover information",
+    "I just found out the news."
+  ],
+  [
+    "fit",
+    "fit in",
+    "belong, or make time for something",
+    "She never really fit in at school."
+  ],
+  [
+    "hang",
+    "hang out",
+    "spend time relaxing with someone",
+    "We usually hang out on weekends."
+  ],
+  [
+    "hang",
+    "hang up",
+    "end a phone call, or put on a hook",
+    "She hung up before I could explain."
+  ],
+  [
+    "hang",
+    "hang on",
+    "wait, or hold tightly",
+    "Hang on, I'll be right there."
+  ],
+  [
+    "hang",
+    "hang around",
+    "stay somewhere without a particular purpose",
+    "We hung around the mall after school."
+  ],
+  [
+    "head",
+    "head off",
+    "leave, or prevent something",
+    "We headed off early to avoid traffic."
+  ],
+  [
+    "head",
+    "head up",
+    "lead a project or team",
+    "She heads up the marketing department."
+  ],
+  [
+    "head",
+    "head for",
+    "move toward a place",
+    "They headed for the exit."
+  ],
+  [
+    "hear",
+    "hear from",
+    "receive news or a message from someone",
+    "Have you heard from him lately?"
+  ],
+  [
+    "hear",
+    "hear of",
+    "know about something's existence",
+    "I've never heard of that place."
+  ],
+  [
+    "hit",
+    "hit on",
+    "find something by chance, or flirt with someone",
+    "She hit on a great idea."
+  ],
+  [
+    "hit",
+    "hit back",
+    "retaliate against criticism or attack",
+    "The company hit back at the criticism."
+  ],
+  [
+    "jump",
+    "jump at",
+    "eagerly accept an opportunity",
+    "He jumped at the chance to travel."
+  ],
+  [
+    "jump",
+    "jump in",
+    "start suddenly, or interrupt",
+    "Feel free to jump in with questions."
+  ],
+  [
+    "kick",
+    "kick off",
+    "start an event or process",
+    "The festival kicks off on Friday."
+  ],
+  [
+    "kick",
+    "kick out",
+    "force someone to leave",
+    "He got kicked out of the bar."
+  ],
+  [
+    "knock",
+    "knock out",
+    "render unconscious, or eliminate from competition",
+    "The boxer knocked out his opponent."
+  ],
+  [
+    "knock",
+    "knock down",
+    "demolish something, or reduce a price",
+    "They knocked down the old building."
+  ],
+  [
+    "knock",
+    "knock over",
+    "cause something to fall over",
+    "The cat knocked over the vase."
+  ],
+  [
+    "lay",
+    "lay off",
+    "dismiss someone from a job",
+    "The company laid off dozens of workers."
+  ],
+  [
+    "lay",
+    "lay out",
+    "arrange something, or explain a plan",
+    "She laid out her plan clearly."
+  ],
+  [
+    "lay",
+    "lay down",
+    "put something down, or establish a rule",
+    "He laid down the law."
+  ],
+  [
+    "lead",
+    "lead to",
+    "result in something",
+    "Hard work leads to success."
+  ],
+  [
+    "lead",
+    "lead on",
+    "deceive someone, especially romantically",
+    "She felt he'd been leading her on."
+  ],
+  [
+    "leave",
+    "leave out",
+    "omit something",
+    "You left out an important detail."
+  ],
+  [
+    "leave",
+    "leave behind",
+    "forget something, or fail to keep up",
+    "He left his umbrella behind."
+  ],
+  [
+    "lie",
+    "lie down",
+    "rest in a horizontal position",
+    "I need to lie down for a bit."
+  ],
+  [
+    "lie",
+    "lie around",
+    "be lazy or idle",
+    "The clothes were lying around the room."
+  ],
+  [
+    "light",
+    "light up",
+    "illuminate, or become happy/excited",
+    "Her face lit up with joy."
+  ],
+  [
+    "live",
+    "live on",
+    "continue living, or survive on something",
+    "They lived on rice and beans."
+  ],
+  [
+    "live",
+    "live up to",
+    "meet expectations",
+    "The movie lived up to the hype."
+  ],
+  [
+    "live",
+    "live with",
+    "tolerate, or reside with someone",
+    "I can live with that decision."
+  ],
+  [
+    "lock",
+    "lock up",
+    "secure a place, or imprison someone",
+    "Don't forget to lock up before leaving."
+  ],
+  [
+    "lock",
+    "lock in",
+    "secure a rate or deal",
+    "We locked in a good interest rate."
+  ],
+  [
+    "lock",
+    "lock out",
+    "accidentally leave someone/yourself outside",
+    "I locked myself out of the house."
+  ],
+  [
+    "move",
+    "move in",
+    "start living somewhere",
+    "We just moved in."
+  ],
+  [
+    "move",
+    "move out",
+    "leave a residence",
+    "They're moving out next week."
+  ],
+  [
+    "move",
+    "move on",
+    "continue after a setback or ending",
+    "It's time to move on."
+  ],
+  [
+    "move",
+    "move up",
+    "advance in rank or position",
+    "She moved up to senior manager."
+  ],
+  [
+    "open",
+    "open up",
+    "become more communicative, or start a business",
+    "He finally opened up about his feelings."
+  ],
+  [
+    "open",
+    "open into",
+    "lead into another space",
+    "The hallway opens into the kitchen."
+  ],
+  [
+    "pay",
+    "pay off",
+    "be worthwhile, or repay a debt fully",
+    "Her hard work paid off."
+  ],
+  [
+    "pay",
+    "pay back",
+    "repay someone",
+    "I'll pay you back next week."
+  ],
+  [
+    "pay",
+    "pay for",
+    "be punished for, or cover a cost",
+    "He'll pay for his mistake eventually."
+  ],
+  [
+    "plan",
+    "plan ahead",
+    "prepare in advance",
+    "It's wise to plan ahead for retirement."
+  ],
+  [
+    "plan",
+    "plan out",
+    "organize something in detail",
+    "They planned out the whole trip."
+  ],
+  [
+    "point",
+    "point out",
+    "indicate or mention something",
+    "She pointed out a mistake in the report."
+  ],
+  [
+    "point",
+    "point to",
+    "indicate something as evidence",
+    "The data points to a clear trend."
+  ],
+  [
+    "read",
+    "read up on",
+    "study a topic in depth",
+    "I read up on the local customs before traveling."
+  ],
+  [
+    "read",
+    "read into",
+    "find a hidden or extra meaning",
+    "Don't read too much into it."
+  ],
+  [
+    "ring",
+    "ring up",
+    "phone someone, or total a sale",
+    "I'll ring you up later."
+  ],
+  [
+    "ring",
+    "ring out",
+    "sound loudly and clearly",
+    "A shot rang out in the distance."
+  ],
+  [
+    "rise",
+    "rise up",
+    "rebel, or stand up",
+    "The people rose up against the regime."
+  ],
+  [
+    "roll",
+    "roll out",
+    "launch or introduce something",
+    "The company rolled out a new feature."
+  ],
+  [
+    "roll",
+    "roll over",
+    "turn over, or carry forward unused amounts",
+    "Unused vacation days roll over to next year."
+  ],
+  [
+    "roll",
+    "roll in",
+    "arrive in large numbers",
+    "Orders started rolling in."
+  ],
+  [
+    "save",
+    "save up",
+    "accumulate money over time",
+    "We're saving up for a house."
+  ],
+  [
+    "save",
+    "save on",
+    "reduce spending on something",
+    "This saves on energy costs."
+  ],
+  [
+    "see",
+    "see off",
+    "accompany someone who is departing",
+    "We went to see her off at the airport."
+  ],
+  [
+    "see",
+    "see to",
+    "attend to something personally",
+    "I'll see to it personally."
+  ],
+  [
+    "sell",
+    "sell out",
+    "sell all of something, or compromise principles",
+    "Tickets sold out fast."
+  ],
+  [
+    "sell",
+    "sell off",
+    "sell remaining stock or assets",
+    "They sold off the old inventory."
+  ],
+  [
+    "send",
+    "send off",
+    "dispatch something, or say goodbye ceremonially",
+    "We sent off the package this morning."
+  ],
+  [
+    "send",
+    "send back",
+    "return something",
+    "She sent back the faulty item."
+  ],
+  [
+    "send",
+    "send out",
+    "distribute something widely",
+    "They sent out invitations."
+  ],
+  [
+    "settle",
+    "settle in",
+    "become comfortable in a new place",
+    "It took a while to settle in."
+  ],
+  [
+    "settle",
+    "settle for",
+    "accept something less than ideal",
+    "Don't settle for less than you deserve."
+  ],
+  [
+    "shake",
+    "shake off",
+    "get rid of, or recover from something",
+    "He couldn't shake off the cold."
+  ],
+  [
+    "shoot",
+    "shoot up",
+    "increase rapidly, or grow fast",
+    "Prices shot up overnight."
+  ],
+  [
+    "shoot",
+    "shoot down",
+    "reject an idea, or shoot at literally",
+    "They shot down his proposal."
+  ],
+  [
+    "show",
+    "show up",
+    "arrive, especially unexpectedly or late",
+    "She showed up an hour late."
+  ],
+  [
+    "show",
+    "show around",
+    "give someone a tour of a place",
+    "Let me show you around the office."
+  ],
+  [
+    "shut",
+    "shut down",
+    "stop operating",
+    "The plant shut down for repairs."
+  ],
+  [
+    "shut",
+    "shut up",
+    "stop talking (informal, can be rude)",
+    "He told them to shut up."
+  ],
+  [
+    "shut",
+    "shut off",
+    "turn off, or isolate something",
+    "The valve shuts off the water supply."
+  ],
+  [
+    "sign",
+    "sign up",
+    "register for something",
+    "I signed up for the course."
+  ],
+  [
+    "sign",
+    "sign off",
+    "end a message, or formally approve",
+    "The manager signed off on the budget."
+  ],
+  [
+    "sign",
+    "sign in",
+    "log in or register your presence",
+    "Please sign in at the front desk."
+  ],
+  [
+    "sit",
+    "sit back",
+    "relax, or avoid getting involved",
+    "Just sit back and enjoy the show."
+  ],
+  [
+    "sit",
+    "sit down",
+    "take a seat",
+    "Please sit down."
+  ],
+  [
+    "slip",
+    "slip on",
+    "put on a piece of clothing quickly",
+    "She slipped on her shoes."
+  ],
+  [
+    "sort",
+    "sort out",
+    "resolve a problem, or organize something",
+    "We need to sort out this mess."
+  ],
+  [
+    "speak",
+    "speak up",
+    "talk louder, or voice an opinion",
+    "Please speak up, we can't hear you."
+  ],
+  [
+    "speak",
+    "speak out",
+    "publicly express opposition",
+    "She spoke out against the policy."
+  ],
+  [
+    "speak",
+    "speak for",
+    "represent, or express on behalf of",
+    "I can't speak for everyone."
+  ],
+  [
+    "stand",
+    "stand out",
+    "be noticeably different or better",
+    "Her work really stands out."
+  ],
+  [
+    "stand",
+    "stand up for",
+    "defend or support someone/something",
+    "He stood up for his friend."
+  ],
+  [
+    "stand",
+    "stand by",
+    "wait ready, or support someone",
+    "I'll stand by you no matter what."
+  ],
+  [
+    "start",
+    "start off",
+    "begin, especially a journey or process",
+    "We started off early."
+  ],
+  [
+    "start",
+    "start over",
+    "begin again from the beginning",
+    "Let's start over from scratch."
+  ],
+  [
+    "stay",
+    "stay up",
+    "remain awake late",
+    "We stayed up talking all night."
+  ],
+  [
+    "stay",
+    "stay in",
+    "remain at home",
+    "I'd rather stay in tonight."
+  ],
+  [
+    "stay",
+    "stay on",
+    "continue in a position or place",
+    "She stayed on as a consultant."
+  ],
+  [
+    "step",
+    "step in",
+    "intervene in a situation",
+    "The manager stepped in to resolve the dispute."
+  ],
+  [
+    "stick",
+    "stick to",
+    "remain committed to something",
+    "Stick to the plan."
+  ],
+  [
+    "stick",
+    "stick out",
+    "protrude, or be noticeable",
+    "His ears stick out a bit."
+  ],
+  [
+    "stick",
+    "stick around",
+    "stay nearby or wait",
+    "Stick around, the best part is coming."
+  ],
+  [
+    "stop",
+    "stop by",
+    "visit briefly",
+    "I'll stop by after work."
+  ],
+  [
+    "stop",
+    "stop off",
+    "break a journey somewhere",
+    "We stopped off for lunch."
+  ],
+  [
+    "stop",
+    "stop over",
+    "stay briefly during travel",
+    "We stopped over in Paris for a day."
+  ],
+  [
+    "strike",
+    "strike out",
+    "fail completely, or delete something",
+    "His plan struck out completely."
+  ],
+  [
+    "strike",
+    "strike up",
+    "start a conversation or friendship",
+    "They struck up a conversation on the train."
+  ],
+  [
+    "switch",
+    "switch over",
+    "change to something else entirely",
+    "We switched over to solar power."
+  ],
+  [
+    "switch",
+    "switch out",
+    "replace one thing with another",
+    "They switched out the old parts."
+  ],
+  [
+    "talk",
+    "talk into",
+    "persuade someone to do something",
+    "She talked him into going."
+  ],
+  [
+    "talk",
+    "talk out of",
+    "dissuade someone from doing something",
+    "I talked her out of quitting."
+  ],
+  [
+    "talk",
+    "talk over",
+    "discuss something thoroughly",
+    "Let's talk it over at dinner."
+  ],
+  [
+    "talk",
+    "talk back",
+    "respond rudely or defiantly",
+    "He never talks back to his teachers."
+  ],
+  [
+    "tear",
+    "tear up",
+    "rip into pieces, or become emotional",
+    "She teared up during the speech."
+  ],
+  [
+    "tear",
+    "tear down",
+    "demolish something",
+    "They tore down the old bridge."
+  ],
+  [
+    "tear",
+    "tear apart",
+    "destroy, or criticize harshly",
+    "The critics tore the film apart."
+  ],
+  [
+    "tell",
+    "tell apart",
+    "distinguish between similar things",
+    "The twins are hard to tell apart."
+  ],
+  [
+    "think",
+    "think over",
+    "consider something carefully",
+    "I need time to think it over."
+  ],
+  [
+    "think",
+    "think up",
+    "invent an idea",
+    "She thought up a clever solution."
+  ],
+  [
+    "throw",
+    "throw away",
+    "discard something",
+    "Don't throw away that receipt."
+  ],
+  [
+    "throw",
+    "throw out",
+    "discard, or reject something",
+    "They threw out the old proposal."
+  ],
+  [
+    "throw",
+    "throw up",
+    "vomit",
+    "He felt sick and threw up."
+  ],
+  [
+    "tie",
+    "tie up",
+    "secure with rope, finalize, or keep busy",
+    "I'm tied up in a meeting."
+  ],
+  [
+    "tie",
+    "tie in",
+    "connect or relate to something",
+    "This ties in with our earlier discussion."
+  ],
+  [
+    "touch",
+    "touch on",
+    "mention something briefly",
+    "The report touches on several issues."
+  ],
+  [
+    "touch",
+    "touch down",
+    "land, of an aircraft",
+    "The plane touched down safely."
+  ],
+  [
+    "touch",
+    "touch up",
+    "make small improvements to something",
+    "She touched up the paint."
+  ],
+  [
+    "try",
+    "try out",
+    "test something new",
+    "Let's try out the new restaurant."
+  ],
+  [
+    "try",
+    "try on",
+    "test how clothing fits",
+    "She tried on the dress."
+  ],
+  [
+    "use",
+    "use up",
+    "consume something completely",
+    "We used up all the milk."
+  ],
+  [
+    "walk",
+    "walk away",
+    "leave, or survive unscathed",
+    "He walked away from the crash unharmed."
+  ],
+  [
+    "walk",
+    "walk out",
+    "leave abruptly, often in protest",
+    "Workers walked out over pay cuts."
+  ],
+  [
+    "walk",
+    "walk into",
+    "accidentally enter, or unknowingly encounter",
+    "She walked into the wrong meeting."
+  ],
+  [
+    "warn",
+    "warn against",
+    "advise someone not to do something",
+    "Experts warned against the new policy."
+  ],
+  [
+    "wash",
+    "wash up",
+    "clean dishes, or clean oneself",
+    "Can you wash up after dinner?"
+  ],
+  [
+    "wash",
+    "wash away",
+    "be carried off by water",
+    "The bridge was washed away in the flood."
+  ],
+  [
+    "watch",
+    "watch out",
+    "be careful of danger",
+    "Watch out, the steps are slippery."
+  ],
+  [
+    "watch",
+    "watch over",
+    "protect or supervise someone",
+    "She watched over the children."
+  ],
+  [
+    "wear",
+    "wear out",
+    "become worn out, or exhaust someone",
+    "These shoes are wearing out."
+  ],
+  [
+    "wear",
+    "wear off",
+    "gradually diminish",
+    "The medicine's effect wore off."
+  ],
+  [
+    "wipe",
+    "wipe out",
+    "destroy completely",
+    "The storm wiped out the crops."
+  ],
+  [
+    "wipe",
+    "wipe down",
+    "clean a surface thoroughly",
+    "He wiped down the counter."
+  ],
+  [
+    "wrap",
+    "wrap around",
+    "encircle something",
+    "She wrapped a scarf around her neck."
+  ],
+  [
+    "write",
+    "write down",
+    "record something in writing",
+    "Write down your address."
+  ],
+  [
+    "write",
+    "write off",
+    "dismiss something, or cancel a debt",
+    "They wrote off the loss."
+  ],
+  [
+    "write",
+    "write up",
+    "compose a formal written account",
+    "She wrote up the report."
+  ]
+]
