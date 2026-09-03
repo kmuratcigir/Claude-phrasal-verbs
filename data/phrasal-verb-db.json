@@ -1099,13 +1099,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "bulk up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 4,
+    "currentStreak": 5,
     "bestStreak": 9,
-    "totalAttempts": 79,
-    "totalCorrect": 59
+    "totalAttempts": 80,
+    "totalCorrect": 60
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1113,5 +1118,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:48:41.442Z"
+  "updatedAt": "2026-09-03T14:48:53.403Z"
 }
