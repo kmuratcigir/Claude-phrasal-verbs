@@ -976,13 +976,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "sit through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 8,
-    "bestStreak": 8,
-    "totalAttempts": 45,
-    "totalCorrect": 31
+    "currentStreak": 9,
+    "bestStreak": 9,
+    "totalAttempts": 46,
+    "totalCorrect": 32
   },
   "activeTypes": {
     "fill_blank": true,
@@ -990,5 +995,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:12:21.680Z"
+  "updatedAt": "2026-09-03T14:12:35.292Z"
 }
