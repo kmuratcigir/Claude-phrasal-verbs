@@ -881,13 +881,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "wash out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 4,
+    "currentStreak": 5,
     "bestStreak": 5,
-    "totalAttempts": 21,
-    "totalCorrect": 10
+    "totalAttempts": 22,
+    "totalCorrect": 11
   },
   "activeTypes": {
     "fill_blank": true,
@@ -895,5 +900,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:00:54.187Z"
+  "updatedAt": "2026-09-03T14:01:05.244Z"
 }
