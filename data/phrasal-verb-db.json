@@ -868,9 +868,9 @@
       "streak": 1
     },
     "cross over": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "run away": {
       "seen": 1,
@@ -1009,9 +1009,9 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 52,
+    "totalAttempts": 53,
     "totalCorrect": 36
   },
   "activeTypes": {
@@ -1020,5 +1020,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:14:27.585Z"
+  "updatedAt": "2026-09-03T14:14:34.235Z"
 }
