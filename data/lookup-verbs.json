@@ -2152,5 +2152,851 @@
     "write up",
     "compose a formal written account",
     "She wrote up the report."
+  ],
+  [
+    "act",
+    "act up",
+    "behave badly or malfunction",
+    "The car's been acting up all week."
+  ],
+  [
+    "act",
+    "act out",
+    "perform, or express feelings through behavior",
+    "Kids often act out when they're stressed."
+  ],
+  [
+    "add",
+    "add up",
+    "make sense, or calculate a total",
+    "His story just doesn't add up."
+  ],
+  [
+    "add",
+    "add on",
+    "attach an extra piece",
+    "They added on a new bedroom."
+  ],
+  [
+    "back",
+    "back up",
+    "support, reverse, or make a copy",
+    "Always back up your files."
+  ],
+  [
+    "back",
+    "back down",
+    "withdraw a claim or position",
+    "He refused to back down."
+  ],
+  [
+    "back",
+    "back off",
+    "stop pressuring someone",
+    "Back off, I've got this."
+  ],
+  [
+    "back",
+    "back out",
+    "withdraw from an agreement",
+    "She backed out of the deal at the last minute."
+  ],
+  [
+    "bail",
+    "bail out",
+    "rescue from a difficult situation, or leave suddenly",
+    "The government bailed out the bank."
+  ],
+  [
+    "bank",
+    "bank on",
+    "rely on something happening",
+    "Don't bank on getting a refund."
+  ],
+  [
+    "bear",
+    "bear with",
+    "be patient with",
+    "Please bear with me while I fix this."
+  ],
+  [
+    "bear",
+    "bear down",
+    "press or push forcefully",
+    "The pain bore down on her."
+  ],
+  [
+    "beat",
+    "beat up",
+    "hit repeatedly, or criticize harshly",
+    "Don't beat yourself up over it."
+  ],
+  [
+    "blow",
+    "blow up",
+    "explode, enlarge, or become very angry",
+    "He blew up at the smallest mistake."
+  ],
+  [
+    "blow",
+    "blow over",
+    "(of trouble) pass without lasting effect",
+    "The scandal blew over after a week."
+  ],
+  [
+    "board",
+    "board up",
+    "cover with boards for protection",
+    "They boarded up the windows before the storm."
+  ],
+  [
+    "boil",
+    "boil down to",
+    "be essentially about",
+    "It all boils down to trust."
+  ],
+  [
+    "boil",
+    "boil over",
+    "become out of control",
+    "Tensions boiled over during the debate."
+  ],
+  [
+    "bottle",
+    "bottle up",
+    "suppress emotions",
+    "He tends to bottle up his feelings."
+  ],
+  [
+    "box",
+    "box up",
+    "pack into boxes",
+    "We boxed up the old books."
+  ],
+  [
+    "box",
+    "box in",
+    "trap or restrict",
+    "New rules boxed in small businesses."
+  ],
+  [
+    "branch",
+    "branch out",
+    "expand into a new area",
+    "The company branched out into software."
+  ],
+  [
+    "brush",
+    "brush off",
+    "dismiss casually",
+    "She brushed off his comment."
+  ],
+  [
+    "brush",
+    "brush up on",
+    "improve a skill through practice",
+    "I need to brush up on my French."
+  ],
+  [
+    "buckle",
+    "buckle down",
+    "start working seriously",
+    "It's time to buckle down and study."
+  ],
+  [
+    "buckle",
+    "buckle up",
+    "fasten a seatbelt",
+    "Buckle up before we drive off."
+  ],
+  [
+    "build",
+    "build up",
+    "increase gradually",
+    "Tension built up over the weeks."
+  ],
+  [
+    "build",
+    "build on",
+    "use as a foundation for further progress",
+    "We should build on last year's success."
+  ],
+  [
+    "burn",
+    "burn out",
+    "become exhausted from overwork",
+    "She burned out after months of overtime."
+  ],
+  [
+    "burn",
+    "burn up",
+    "be destroyed by fire, or use energy",
+    "The engine burned up fuel quickly."
+  ],
+  [
+    "butt",
+    "butt in",
+    "interrupt rudely",
+    "Sorry to butt in, but I have a question."
+  ],
+  [
+    "buy",
+    "buy into",
+    "accept an idea, or invest in",
+    "I don't buy into that theory."
+  ],
+  [
+    "buy",
+    "buy out",
+    "purchase someone's share of a business",
+    "They bought out their business partner."
+  ],
+  [
+    "camp",
+    "camp out",
+    "sleep outdoors, or wait somewhere for a long time",
+    "Fans camped out overnight for tickets."
+  ],
+  [
+    "carve",
+    "carve out",
+    "create something through effort",
+    "She carved out a career in journalism."
+  ],
+  [
+    "cash",
+    "cash in",
+    "benefit from, or convert to cash",
+    "He cashed in his savings bonds."
+  ],
+  [
+    "cash",
+    "cash out",
+    "withdraw money or leave a game with winnings",
+    "She cashed out her chips and left."
+  ],
+  [
+    "catch",
+    "catch on",
+    "become popular, or understand",
+    "The trend caught on quickly."
+  ],
+  [
+    "chalk",
+    "chalk up",
+    "achieve or score",
+    "The team chalked up another win."
+  ],
+  [
+    "chase",
+    "chase after",
+    "pursue someone or something",
+    "He chased after the bus."
+  ],
+  [
+    "chew",
+    "chew out",
+    "scold someone severely",
+    "The coach chewed him out after the game."
+  ],
+  [
+    "chew",
+    "chew over",
+    "think about something carefully",
+    "Let me chew it over and get back to you."
+  ],
+  [
+    "chip",
+    "chip in",
+    "contribute money or help",
+    "Everyone chipped in for the gift."
+  ],
+  [
+    "chip",
+    "chip away at",
+    "reduce something gradually",
+    "They chipped away at the debt over years."
+  ],
+  [
+    "chop",
+    "chop up",
+    "cut into pieces",
+    "Chop up the onions finely."
+  ],
+  [
+    "clamp",
+    "clamp down on",
+    "take strict action against",
+    "Police clamped down on illegal parking."
+  ],
+  [
+    "clean",
+    "clean up",
+    "tidy, or make a lot of money",
+    "Let's clean up before guests arrive."
+  ],
+  [
+    "clean",
+    "clean out",
+    "empty something completely",
+    "We cleaned out the fridge."
+  ],
+  [
+    "click",
+    "click with",
+    "get along well with someone immediately",
+    "They clicked with each other right away."
+  ],
+  [
+    "climb",
+    "climb down",
+    "descend, or retract a position",
+    "The minister climbed down from his earlier statement."
+  ],
+  [
+    "clog",
+    "clog up",
+    "block something",
+    "Grease clogged up the pipe."
+  ],
+  [
+    "cool",
+    "cool down",
+    "become calmer or less hot",
+    "Let the soup cool down first."
+  ],
+  [
+    "cool",
+    "cool off",
+    "relax, or lower in temperature",
+    "We jumped in the pool to cool off."
+  ],
+  [
+    "cough",
+    "cough up",
+    "reluctantly pay or provide",
+    "He finally coughed up the money he owed."
+  ],
+  [
+    "crack",
+    "crack down on",
+    "enforce rules strictly against",
+    "The city cracked down on littering."
+  ],
+  [
+    "crack",
+    "crack up",
+    "laugh a lot, or break down emotionally",
+    "The joke cracked everyone up."
+  ],
+  [
+    "crank",
+    "crank up",
+    "increase intensity, or start a machine",
+    "She cranked up the volume."
+  ],
+  [
+    "crash",
+    "crash into",
+    "collide with",
+    "The car crashed into a tree."
+  ],
+  [
+    "crop",
+    "crop up",
+    "appear unexpectedly",
+    "New problems keep cropping up."
+  ],
+  [
+    "cross",
+    "cross out",
+    "draw a line through text",
+    "Cross out the wrong answer."
+  ],
+  [
+    "cross",
+    "cross off",
+    "remove from a list",
+    "I crossed off the finished tasks."
+  ],
+  [
+    "crowd",
+    "crowd out",
+    "push out by taking up space",
+    "Weeds crowded out the flowers."
+  ],
+  [
+    "cry",
+    "cry out",
+    "shout suddenly",
+    "She cried out in pain."
+  ],
+  [
+    "curl",
+    "curl up",
+    "sit or lie with the body drawn in",
+    "He curled up on the couch with a book."
+  ],
+  [
+    "deal",
+    "deal with",
+    "handle a situation",
+    "I'll deal with it tomorrow."
+  ],
+  [
+    "deal",
+    "deal out",
+    "distribute something",
+    "The teacher dealt out the worksheets."
+  ],
+  [
+    "dial",
+    "dial up",
+    "increase, or make a phone call",
+    "Let's dial up the excitement a bit."
+  ],
+  [
+    "dial",
+    "dial in",
+    "connect remotely, or focus carefully",
+    "She dialed in her presentation perfectly."
+  ],
+  [
+    "die",
+    "die out",
+    "become extinct",
+    "The tradition slowly died out."
+  ],
+  [
+    "die",
+    "die down",
+    "become less intense",
+    "The noise eventually died down."
+  ],
+  [
+    "dig",
+    "dig up",
+    "find by searching, or unearth",
+    "Reporters dug up old records."
+  ],
+  [
+    "dig",
+    "dig into",
+    "investigate, or eat eagerly",
+    "Let's dig into the details."
+  ],
+  [
+    "dish",
+    "dish out",
+    "distribute, often criticism",
+    "He dishes out advice freely."
+  ],
+  [
+    "dive",
+    "dive into",
+    "start something enthusiastically",
+    "She dove into the new project."
+  ],
+  [
+    "doze",
+    "doze off",
+    "fall asleep unintentionally",
+    "He dozed off during the lecture."
+  ],
+  [
+    "drag",
+    "drag on",
+    "continue for too long",
+    "The meeting dragged on for hours."
+  ],
+  [
+    "drag",
+    "drag out",
+    "make something last longer than necessary",
+    "Don't drag out the goodbye."
+  ],
+  [
+    "drain",
+    "drain away",
+    "gradually disappear",
+    "Her energy drained away by evening."
+  ],
+  [
+    "dream",
+    "dream up",
+    "invent an idea",
+    "Who dreamed up this plan?"
+  ],
+  [
+    "drift",
+    "drift apart",
+    "gradually become less close",
+    "They drifted apart after college."
+  ],
+  [
+    "drill",
+    "drill down",
+    "examine something in more detail",
+    "Let's drill down into the numbers."
+  ],
+  [
+    "drink",
+    "drink up",
+    "finish a drink completely",
+    "Drink up, we need to go."
+  ],
+  [
+    "drive",
+    "drive away",
+    "cause to leave, or repel",
+    "High prices drove away customers."
+  ],
+  [
+    "drive",
+    "drive off",
+    "leave in a vehicle",
+    "He drove off without saying goodbye."
+  ],
+  [
+    "dry",
+    "dry out",
+    "become completely dry",
+    "Let the paint dry out overnight."
+  ],
+  [
+    "dry",
+    "dry up",
+    "lose moisture completely, or (of a source) stop",
+    "Funding dried up quickly."
+  ],
+  [
+    "dust",
+    "dust off",
+    "clean, or bring back into use",
+    "She dusted off her old guitar."
+  ],
+  [
+    "eat",
+    "eat up",
+    "consume entirely, or use resources",
+    "The project ate up all our time."
+  ],
+  [
+    "eat",
+    "eat into",
+    "gradually use up or reduce",
+    "Repairs are eating into our savings."
+  ],
+  [
+    "edge",
+    "edge out",
+    "narrowly defeat someone",
+    "She edged out her rival by one point."
+  ],
+  [
+    "fan",
+    "fan out",
+    "spread out in different directions",
+    "The search team fanned out across the field."
+  ],
+  [
+    "fasten",
+    "fasten on",
+    "focus attention on",
+    "The press fastened on the scandal."
+  ],
+  [
+    "feed",
+    "feed off",
+    "draw energy or support from",
+    "The band feeds off the crowd's energy."
+  ],
+  [
+    "feed",
+    "feed into",
+    "contribute to a larger result",
+    "These small choices feed into the bigger outcome."
+  ],
+  [
+    "feel",
+    "feel up to",
+    "have the energy or desire for",
+    "I don't feel up to going out tonight."
+  ],
+  [
+    "fence",
+    "fence off",
+    "separate with a barrier",
+    "They fenced off the construction site."
+  ],
+  [
+    "fetch",
+    "fetch up",
+    "end up somewhere",
+    "We fetched up at a small cafe."
+  ],
+  [
+    "fight",
+    "fight off",
+    "repel or resist something",
+    "She fought off a cold all week."
+  ],
+  [
+    "fight",
+    "fight back",
+    "resist or retaliate",
+    "The team fought back in the second half."
+  ],
+  [
+    "figure",
+    "figure in",
+    "include in a calculation",
+    "Don't forget to figure in the tax."
+  ],
+  [
+    "fire",
+    "fire up",
+    "start something, or get someone excited",
+    "The speech really fired up the crowd."
+  ],
+  [
+    "fire",
+    "fire off",
+    "send something quickly",
+    "He fired off an angry email."
+  ],
+  [
+    "fish",
+    "fish for",
+    "try to get something indirectly",
+    "She was fishing for compliments."
+  ],
+  [
+    "fish",
+    "fish out",
+    "find and remove something",
+    "He fished out his keys from the bag."
+  ],
+  [
+    "flag",
+    "flag down",
+    "signal a vehicle to stop",
+    "We flagged down a taxi."
+  ],
+  [
+    "flare",
+    "flare up",
+    "suddenly become worse or more intense",
+    "Old tensions flared up again."
+  ],
+  [
+    "flatten",
+    "flatten out",
+    "become level, or stabilize",
+    "Growth is expected to flatten out next year."
+  ],
+  [
+    "flip",
+    "flip out",
+    "become very angry or excited",
+    "He flipped out when he heard the news."
+  ],
+  [
+    "flood",
+    "flood in",
+    "arrive in large numbers",
+    "Applications flooded in after the announcement."
+  ],
+  [
+    "flow",
+    "flow in",
+    "arrive steadily",
+    "Donations flowed in after the appeal."
+  ],
+  [
+    "fold",
+    "fold up",
+    "close by bending, or (of a business) fail",
+    "The small shop folded up last year."
+  ],
+  [
+    "fold",
+    "fold in",
+    "gently mix an ingredient",
+    "Fold in the egg whites carefully."
+  ],
+  [
+    "follow",
+    "follow up",
+    "take further action",
+    "I'll follow up with an email."
+  ],
+  [
+    "follow",
+    "follow around",
+    "accompany someone everywhere",
+    "The puppy follows him around all day."
+  ],
+  [
+    "force",
+    "force back",
+    "push into retreat",
+    "Police forced back the crowd."
+  ],
+  [
+    "fork",
+    "fork out",
+    "reluctantly pay for something",
+    "We had to fork out for repairs."
+  ],
+  [
+    "freeze",
+    "freeze up",
+    "become unable to act, or (of a machine) stop",
+    "My computer froze up again."
+  ],
+  [
+    "freeze",
+    "freeze over",
+    "become covered in ice",
+    "The lake froze over in January."
+  ],
+  [
+    "freshen",
+    "freshen up",
+    "wash and tidy oneself",
+    "I'll just freshen up before dinner."
+  ],
+  [
+    "gear",
+    "gear up",
+    "prepare for something",
+    "The team is gearing up for the launch."
+  ],
+  [
+    "glaze",
+    "glaze over",
+    "(of eyes) become unfocused from boredom",
+    "His eyes glazed over during the lecture."
+  ],
+  [
+    "grow",
+    "grow up",
+    "mature",
+    "She grew up in a small town."
+  ],
+  [
+    "grow",
+    "grow into",
+    "develop the size or ability to fit something",
+    "He'll grow into that jacket eventually."
+  ],
+  [
+    "grow",
+    "grow apart",
+    "become less close over time",
+    "The old friends grew apart over the years."
+  ],
+  [
+    "hammer",
+    "hammer out",
+    "work out details through discussion",
+    "They hammered out an agreement."
+  ],
+  [
+    "haul",
+    "haul off",
+    "take something away by force",
+    "The truck hauled off the debris."
+  ],
+  [
+    "hitch",
+    "hitch up",
+    "attach or pull something upward",
+    "He hitched up the trailer."
+  ],
+  [
+    "hurry",
+    "hurry up",
+    "move or act more quickly",
+    "Hurry up, we're late."
+  ],
+  [
+    "iron",
+    "iron out",
+    "resolve minor problems",
+    "Let's iron out the details before we sign."
+  ],
+  [
+    "jack",
+    "jack up",
+    "raise something, especially a price",
+    "They jacked up the prices for the holidays."
+  ],
+  [
+    "jazz",
+    "jazz up",
+    "make something more interesting",
+    "A little color would jazz up the room."
+  ],
+  [
+    "join",
+    "join up",
+    "enlist, or connect",
+    "He joined up with the army at eighteen."
+  ],
+  [
+    "join",
+    "join in",
+    "participate",
+    "Everyone's welcome to join in."
+  ],
+  [
+    "land",
+    "land up",
+    "end up in a situation, or arrive somewhere",
+    "We landed up at a tiny diner."
+  ],
+  [
+    "land",
+    "land on",
+    "choose something after consideration",
+    "We landed on the blue design."
+  ],
+  [
+    "lash",
+    "lash out",
+    "suddenly attack verbally or physically",
+    "He lashed out at the referee."
+  ],
+  [
+    "latch",
+    "latch onto",
+    "become attached to, or seize on an idea",
+    "She latched onto the idea immediately."
+  ],
+  [
+    "level",
+    "level off",
+    "stop rising or falling, become steady",
+    "Prices leveled off after the spike."
+  ],
+  [
+    "level",
+    "level with",
+    "be honest with someone",
+    "I need you to level with me."
+  ],
+  [
+    "lift",
+    "lift off",
+    "(of a rocket) leave the ground",
+    "The rocket lifted off on schedule."
+  ],
+  [
+    "line",
+    "line up",
+    "form a line, or arrange/schedule something",
+    "We lined up early for tickets."
   ]
 ]
