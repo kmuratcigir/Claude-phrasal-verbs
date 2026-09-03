@@ -813,7 +813,7 @@
   ],
   "stats": {
     "look after": {
-      "seen": 3,
+      "seen": 4,
       "correct": 0,
       "streak": 0
     }
@@ -821,7 +821,7 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
-    "totalAttempts": 2,
+    "totalAttempts": 3,
     "totalCorrect": 0
   },
   "activeTypes": {
@@ -830,5 +830,5 @@
     "verb_to_meaning": true,
     "write_sentence": true
   },
-  "updatedAt": "2026-09-03T13:47:04.549Z"
+  "updatedAt": "2026-09-03T13:47:10.952Z"
 }
