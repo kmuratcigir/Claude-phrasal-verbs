@@ -941,12 +941,17 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "look through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 5,
+    "currentStreak": 0,
     "bestStreak": 7,
-    "totalAttempts": 36,
+    "totalAttempts": 37,
     "totalCorrect": 23
   },
   "activeTypes": {
@@ -955,5 +960,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:09:12.723Z"
+  "updatedAt": "2026-09-03T14:09:29.726Z"
 }
