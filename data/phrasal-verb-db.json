@@ -1056,9 +1056,9 @@
       "streak": 1
     },
     "look back": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "phase out": {
       "seen": 1,
@@ -1067,10 +1067,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 2,
+    "currentStreak": 3,
     "bestStreak": 9,
-    "totalAttempts": 72,
-    "totalCorrect": 53
+    "totalAttempts": 73,
+    "totalCorrect": 54
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1078,5 +1078,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:44:23.115Z"
+  "updatedAt": "2026-09-03T14:44:34.155Z"
 }
