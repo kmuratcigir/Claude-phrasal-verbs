@@ -19,8 +19,12 @@
       "b27": {
         "meaning": "interrupt, disconnect, or isolate",
         "example": "I hope we don't get ___ during the call."
+      },
+      "b0": {
+        "meaning": "become more willing to share your feelings or thoughts with someone ",
+        "example": "It took a while, but she finally decided to ___ to her therapist."
       }
     }
   },
-  "updatedAt": "2026-09-03T10:41:35.496Z"
+  "updatedAt": "2026-09-03T10:45:45.911Z"
 }
