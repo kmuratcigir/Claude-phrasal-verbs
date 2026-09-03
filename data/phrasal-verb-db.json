@@ -1041,16 +1041,16 @@
       "streak": 2
     },
     "get into": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     }
   },
   "globalStats": {
-    "currentStreak": 5,
+    "currentStreak": 6,
     "bestStreak": 9,
-    "totalAttempts": 67,
-    "totalCorrect": 49
+    "totalAttempts": 68,
+    "totalCorrect": 50
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1058,5 +1058,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:42:49.633Z"
+  "updatedAt": "2026-09-03T14:43:00.793Z"
 }
