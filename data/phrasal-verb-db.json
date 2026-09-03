@@ -1184,6 +1184,11 @@
       "seen": 2,
       "correct": 0,
       "streak": 0
+    },
+    "open up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1193,10 +1198,10 @@
     "totalCorrect": 84
   },
   "activeTypes": {
-    "fill_blank": true,
+    "fill_blank": false,
     "meaning_to_verb": false,
-    "verb_to_meaning": false,
+    "verb_to_meaning": true,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:58:04.452Z"
+  "updatedAt": "2026-09-03T15:17:34.976Z"
 }
