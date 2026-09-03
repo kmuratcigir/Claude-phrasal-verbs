@@ -936,13 +936,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "get in touch with": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 4,
+    "currentStreak": 5,
     "bestStreak": 7,
-    "totalAttempts": 35,
-    "totalCorrect": 22
+    "totalAttempts": 36,
+    "totalCorrect": 23
   },
   "activeTypes": {
     "fill_blank": true,
@@ -950,5 +955,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:08:55.939Z"
+  "updatedAt": "2026-09-03T14:09:12.723Z"
 }
