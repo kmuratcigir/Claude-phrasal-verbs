@@ -16708,5 +16708,905 @@
     "stay away",
     "keep a distance from someone or something",
     "Doctors told him to stay away from alcohol."
+  ],
+  [
+    "stay",
+    "stay away from",
+    "avoid something or someone, or avoid getting involved in it",
+    "She stayed away from the topic entirely."
+  ],
+  [
+    "stay",
+    "stay back",
+    "remain in place rather than moving forward",
+    "Stay back while they clear the debris."
+  ],
+  [
+    "stay",
+    "stay behind",
+    "remain somewhere after others have left",
+    "He stayed behind to help clean up."
+  ],
+  [
+    "stay",
+    "stay down",
+    "remain submerged, or (of food) not be vomited",
+    "The medicine finally stayed down."
+  ],
+  [
+    "stay",
+    "stay in",
+    "remain at home rather than going out",
+    "I'd rather stay in tonight."
+  ],
+  [
+    "stay",
+    "stay off",
+    "avoid something, such as a topic or substance",
+    "He's staying off sugar this month."
+  ],
+  [
+    "stay",
+    "stay on",
+    "continue in a job or place longer than planned",
+    "She stayed on as a consultant."
+  ],
+  [
+    "stay",
+    "stay out",
+    "remain away from home, especially late",
+    "He stayed out past midnight."
+  ],
+  [
+    "stay",
+    "stay out of",
+    "avoid getting involved in something",
+    "Stay out of their argument."
+  ],
+  [
+    "stay",
+    "stay over",
+    "spend the night at someone else's place",
+    "Can I stay over at your place tonight?"
+  ],
+  [
+    "stay",
+    "stay up",
+    "remain awake, not going to bed",
+    "We stayed up talking all night."
+  ],
+  [
+    "stay",
+    "stay with",
+    "continue doing something despite difficulty",
+    "She stayed with the project until it was finished."
+  ],
+  [
+    "steal",
+    "steal away",
+    "leave a place quietly and secretly",
+    "He stole away before anyone noticed."
+  ],
+  [
+    "steal",
+    "steal up",
+    "approach someone quietly and secretly",
+    "The cat stole up on the unsuspecting bird."
+  ],
+  [
+    "steam",
+    "steam away",
+    "work hard and steadily at something",
+    "She's been steaming away at her homework all evening."
+  ],
+  [
+    "steam",
+    "steam off",
+    "remove something from a surface using steam",
+    "She steamed off the old wallpaper."
+  ],
+  [
+    "steam",
+    "steam up",
+    "become covered in condensation, or make something so",
+    "The windows steamed up in the cold."
+  ],
+  [
+    "steep",
+    "steep in",
+    "soak thoroughly in liquid, or immerse in a quality or atmosphere",
+    "The city is steeped in history."
+  ],
+  [
+    "steer",
+    "steer away from",
+    "deliberately avoid something",
+    "He steered away from the controversial topic."
+  ],
+  [
+    "stem",
+    "stem from",
+    "originate from or be caused by something",
+    "Her anxiety stems from a difficult childhood."
+  ],
+  [
+    "step",
+    "step aside",
+    "leave a position, often to let someone else take over",
+    "He stepped aside to let a younger leader take charge."
+  ],
+  [
+    "step",
+    "step back",
+    "pause to consider something from a distance",
+    "Let's step back and reconsider our approach."
+  ],
+  [
+    "step",
+    "step down",
+    "resign from a position",
+    "She stepped down as CEO last year."
+  ],
+  [
+    "step",
+    "step forward",
+    "offer help or come forward with information",
+    "A witness stepped forward with new evidence."
+  ],
+  [
+    "step",
+    "step in",
+    "become involved to help or stop something",
+    "The manager stepped in to resolve the dispute."
+  ],
+  [
+    "step",
+    "step into",
+    "take on a role or situation, often suddenly",
+    "He stepped into the role at short notice."
+  ],
+  [
+    "step",
+    "step on it",
+    "go faster, especially while driving",
+    "Step on it, we're going to be late!"
+  ],
+  [
+    "step",
+    "step up",
+    "increase the level or intensity of something",
+    "They stepped up security after the incident."
+  ],
+  [
+    "stick",
+    "stick at",
+    "continue working at something difficult",
+    "She stuck at the violin for years before improving."
+  ],
+  [
+    "stick",
+    "stick back",
+    "reattach something that has come off",
+    "He stuck the handle back onto the mug."
+  ],
+  [
+    "stick",
+    "stick by",
+    "continue to support someone through difficulty",
+    "Her friends stuck by her during the trial."
+  ],
+  [
+    "stick",
+    "stick down",
+    "write something quickly without much care",
+    "Just stick down your name and number."
+  ],
+  [
+    "stick",
+    "stick in",
+    "insert something, or become firmly fixed",
+    "The image stuck in his mind for days."
+  ],
+  [
+    "stick",
+    "stick on",
+    "blame someone for something bad",
+    "They tried to stick the blame on him."
+  ],
+  [
+    "stick",
+    "stick out",
+    "be very noticeable, or protrude",
+    "Her talent really sticks out."
+  ],
+  [
+    "stick",
+    "stick out for",
+    "persist in demanding something you want",
+    "The union stuck out for a better contract."
+  ],
+  [
+    "stick",
+    "stick to",
+    "continue with a plan without changing it",
+    "Stick to the plan."
+  ],
+  [
+    "stick",
+    "stick together",
+    "remain united and support one another",
+    "The family stuck together through hard times."
+  ],
+  [
+    "stick",
+    "stick up",
+    "point or rise upward",
+    "His hair sticks up in the morning."
+  ],
+  [
+    "stick",
+    "stick up for",
+    "defend someone or something publicly",
+    "He stuck up for his friend."
+  ],
+  [
+    "stick",
+    "stick with",
+    "continue using or doing something without changing",
+    "I'll stick with my usual order."
+  ],
+  [
+    "stir",
+    "stir up",
+    "provoke a strong feeling or reaction",
+    "The speech stirred up controversy."
+  ],
+  [
+    "stitch",
+    "stitch up",
+    "arrange a deal or agreement, sometimes dishonestly",
+    "The deal was stitched up behind closed doors."
+  ],
+  [
+    "stock",
+    "stock up",
+    "buy a large supply of something for later use",
+    "We stocked up on canned goods before the storm."
+  ],
+  [
+    "stoke",
+    "stoke up",
+    "increase or intensify something, such as a fire or feeling",
+    "The rumors stoked up public anger."
+  ],
+  [
+    "stop",
+    "stop at",
+    "go no further than a particular point or limit",
+    "He won't stop at anything to win."
+  ],
+  [
+    "stop",
+    "stop behind",
+    "remain somewhere after others have left",
+    "She stopped behind to talk to the teacher."
+  ],
+  [
+    "stop",
+    "stop by",
+    "visit briefly",
+    "I'll stop by after work."
+  ],
+  [
+    "stop",
+    "stop in",
+    "stay at home rather than going out",
+    "We're stopping in tonight."
+  ],
+  [
+    "stop",
+    "stop off",
+    "break a journey to visit somewhere",
+    "We stopped off for lunch."
+  ],
+  [
+    "stop",
+    "stop over",
+    "stay briefly during a longer journey",
+    "We stopped over in Paris for a day."
+  ],
+  [
+    "stop",
+    "stop up",
+    "stay up late, or block something",
+    "He stopped up all night finishing the report."
+  ],
+  [
+    "store",
+    "store away",
+    "put something safely aside for later use",
+    "They stored away the winter clothes."
+  ],
+  [
+    "store",
+    "store up",
+    "accumulate something that may cause problems later",
+    "He's storing up trouble by ignoring the warnings."
+  ],
+  [
+    "storm",
+    "storm in",
+    "enter a place angrily and forcefully",
+    "She stormed in demanding an explanation."
+  ],
+  [
+    "storm",
+    "storm into",
+    "enter a place forcefully and angrily",
+    "He stormed into the office, furious."
+  ],
+  [
+    "storm",
+    "storm off",
+    "leave a place angrily",
+    "She stormed off after the argument."
+  ],
+  [
+    "storm",
+    "storm out",
+    "leave a place angrily",
+    "He stormed out of the meeting."
+  ],
+  [
+    "stow",
+    "stow away",
+    "store something carefully, or hide on a ship or plane to travel secretly",
+    "They stowed away the extra luggage."
+  ],
+  [
+    "straighten",
+    "straighten out",
+    "resolve a problem or confusion",
+    "We need to straighten out this misunderstanding."
+  ],
+  [
+    "straighten",
+    "straighten up",
+    "stand up straight, or tidy something",
+    "He straightened up when the teacher walked in."
+  ],
+  [
+    "strain",
+    "strain at",
+    "pull hard against something restraining you",
+    "The dog strained at its leash."
+  ],
+  [
+    "strain",
+    "strain off",
+    "remove liquid by pouring through a strainer",
+    "Strain off the excess water from the pasta."
+  ],
+  [
+    "strap",
+    "strap in",
+    "secure someone with a strap or seatbelt",
+    "Make sure the kids are strapped in."
+  ],
+  [
+    "strap",
+    "strap into",
+    "fasten someone securely into something using straps",
+    "He strapped himself into the harness."
+  ],
+  [
+    "strap",
+    "strap on",
+    "fasten something onto your body using straps",
+    "She strapped on her skis."
+  ],
+  [
+    "strap",
+    "strap up",
+    "bind or fasten something tightly with straps",
+    "The nurse strapped up his sprained ankle."
+  ],
+  [
+    "stretch",
+    "stretch away",
+    "extend into the distance",
+    "The fields stretched away toward the horizon."
+  ],
+  [
+    "stretch",
+    "stretch out",
+    "extend fully, or make something last longer",
+    "He stretched out on the sofa."
+  ],
+  [
+    "strike",
+    "strike at",
+    "attempt to hit someone or something, or attack a core issue",
+    "The reform strikes at the heart of the problem."
+  ],
+  [
+    "strike",
+    "strike back",
+    "retaliate against an attack or criticism",
+    "The company struck back at its critics."
+  ],
+  [
+    "strike",
+    "strike down",
+    "hit someone hard enough to make them fall, or invalidate a law",
+    "The court struck down the law."
+  ],
+  [
+    "strike",
+    "strike down with",
+    "be suddenly afflicted by an illness",
+    "He was struck down with the flu."
+  ],
+  [
+    "strike",
+    "strike off",
+    "remove someone or something from a list or register",
+    "The doctor was struck off for misconduct."
+  ],
+  [
+    "strike",
+    "strike on",
+    "suddenly think of an idea, or take a liking to something",
+    "She struck on a brilliant solution."
+  ],
+  [
+    "strike",
+    "strike out",
+    "set off energetically, or fail completely",
+    "He struck out on his own after college."
+  ],
+  [
+    "strike",
+    "strike up",
+    "begin playing music, or start a conversation or friendship",
+    "They struck up a conversation on the train."
+  ],
+  [
+    "string",
+    "string along",
+    "deceive someone by pretending to agree with them",
+    "He strung her along for months before admitting the truth."
+  ],
+  [
+    "string",
+    "string out",
+    "spread something over a longer time or distance than necessary",
+    "They strung out the negotiations for weeks."
+  ],
+  [
+    "string",
+    "string together",
+    "combine things into a connected series",
+    "She strung together a few sentences in French."
+  ],
+  [
+    "string",
+    "string up",
+    "hang something up, or execute someone by hanging",
+    "They strung up decorations for the party."
+  ],
+  [
+    "strip",
+    "strip away",
+    "remove a covering or outer layer",
+    "The scandal stripped away his credibility."
+  ],
+  [
+    "strip",
+    "strip down",
+    "remove most or all of your clothes, or simplify something",
+    "He stripped down the engine to its basic parts."
+  ],
+  [
+    "strip",
+    "strip of",
+    "take away a title, award, or position from someone",
+    "He was stripped of his medal after the scandal."
+  ],
+  [
+    "strip",
+    "strip off",
+    "take off all your clothes",
+    "He stripped off and jumped in the pool."
+  ],
+  [
+    "strip",
+    "strip out",
+    "remove something completely",
+    "They stripped out the old wiring."
+  ],
+  [
+    "struggle",
+    "struggle on",
+    "continue despite difficulty",
+    "She struggled on despite the pain."
+  ],
+  [
+    "stub",
+    "stub out",
+    "extinguish a cigarette by pressing it against a surface",
+    "He stubbed out his cigarette in the ashtray."
+  ],
+  [
+    "stumble",
+    "stumble across",
+    "find something or meet someone by chance",
+    "I stumbled across an old diary in the attic."
+  ],
+  [
+    "stumble",
+    "stumble on",
+    "find something by chance",
+    "She stumbled on the solution while researching something else."
+  ],
+  [
+    "subject",
+    "subject to",
+    "cause someone to experience something, usually unpleasant",
+    "They were subjected to hours of questioning."
+  ],
+  [
+    "subscribe",
+    "subscribe to",
+    "agree with an idea, or pay to receive something regularly",
+    "I don't subscribe to that theory."
+  ],
+  [
+    "suck",
+    "suck off",
+    "perform oral sex on someone (vulgar slang)",
+    "The term is vulgar slang and best avoided in polite conversation."
+  ],
+  [
+    "suck",
+    "suck up",
+    "behave in an excessively flattering way toward someone in authority",
+    "He's always sucking up to the boss."
+  ],
+  [
+    "sum",
+    "sum up",
+    "give a brief summary of something",
+    "Let me sum up what we've discussed."
+  ],
+  [
+    "summon",
+    "summon up",
+    "gather enough courage or energy to do something",
+    "She summoned up the courage to speak."
+  ],
+  [
+    "surge",
+    "surge up",
+    "rise or increase suddenly and powerfully",
+    "Anger surged up inside him."
+  ],
+  [
+    "suss",
+    "suss out",
+    "figure out or understand something",
+    "It took a while to suss out how the machine worked."
+  ],
+  [
+    "swab",
+    "swab down",
+    "clean a surface thoroughly, often with a wet cloth",
+    "Sailors swabbed down the deck each morning."
+  ],
+  [
+    "swab",
+    "swab out",
+    "clean the inside of something with a swab",
+    "The nurse swabbed out the wound."
+  ],
+  [
+    "swallow",
+    "swallow down",
+    "force yourself to eat or accept something unpleasant",
+    "He swallowed down his pride and apologized."
+  ],
+  [
+    "swallow",
+    "swallow up",
+    "completely absorb or consume something, such as a smaller company",
+    "The startup was swallowed up by a larger firm."
+  ],
+  [
+    "swap",
+    "swap over",
+    "exchange places or roles with someone",
+    "Let's swap over so you can drive for a while."
+  ],
+  [
+    "swop",
+    "swop over",
+    "exchange places or roles with someone",
+    "They swopped over halfway through the shift."
+  ],
+  [
+    "swear",
+    "swear by",
+    "have great confidence in something's effectiveness",
+    "She swears by this brand of coffee."
+  ],
+  [
+    "swear",
+    "swear in",
+    "formally induct someone into office with an oath",
+    "The new president was sworn in yesterday."
+  ],
+  [
+    "swear",
+    "swear off",
+    "promise to stop doing or using something",
+    "He's sworn off sweets for the new year."
+  ],
+  [
+    "sweat",
+    "sweat off",
+    "lose weight or get rid of something through sweating",
+    "He tried to sweat off the extra pounds at the gym."
+  ],
+  [
+    "sweat",
+    "sweat out",
+    "endure something difficult until it passes",
+    "She sweated out the long wait for the results."
+  ],
+  [
+    "sweat",
+    "sweat over",
+    "work hard and anxiously on something",
+    "He sweated over the report for hours."
+  ],
+  [
+    "sweep",
+    "sweep aside",
+    "ignore or dismiss something without proper consideration",
+    "They swept aside his objections."
+  ],
+  [
+    "sweep",
+    "sweep away",
+    "remove or destroy something completely",
+    "The flood swept away entire villages."
+  ],
+  [
+    "sweep",
+    "sweep out",
+    "clean a place by sweeping",
+    "She swept out the garage."
+  ],
+  [
+    "sweep",
+    "sweep up",
+    "clean up by sweeping, or gather something quickly",
+    "He swept up the broken glass."
+  ],
+  [
+    "sweep",
+    "sweep up in",
+    "get someone caught up in an event or feeling",
+    "Everyone was swept up in the excitement."
+  ],
+  [
+    "sweeten",
+    "sweeten up",
+    "be especially nice to someone to get their agreement",
+    "He tried to sweeten up his boss before asking for a raise."
+  ],
+  [
+    "swell",
+    "swell up",
+    "become larger, especially due to injury",
+    "His ankle swelled up after the fall."
+  ],
+  [
+    "swill",
+    "swill down",
+    "wash something by pouring water over it, or drink quickly",
+    "He swilled down the last of his beer."
+  ],
+  [
+    "swing",
+    "swing around",
+    "turn quickly to face another direction",
+    "She swung around when she heard the noise."
+  ],
+  [
+    "switch",
+    "switch around",
+    "change the order or position of things",
+    "They switched around the furniture in the living room."
+  ],
+  [
+    "switch",
+    "switch off",
+    "stop paying attention, or turn off a device",
+    "I tend to switch off during long meetings."
+  ],
+  [
+    "switch",
+    "switch on",
+    "turn on a device, or suddenly become enthusiastic",
+    "He switched on the lamp."
+  ],
+  [
+    "switch",
+    "switch over",
+    "stop doing one thing and start another",
+    "We switched over to solar power."
+  ],
+  [
+    "swivel",
+    "swivel around",
+    "turn around on a fixed point",
+    "The chair swivels around easily."
+  ],
+  [
+    "swoop",
+    "swoop down",
+    "descend quickly, especially to attack or seize something",
+    "The hawk swooped down on its prey."
+  ],
+  [
+    "swot",
+    "swot up",
+    "study intensively, especially before an exam",
+    "She's swotting up for her finals."
+  ],
+  [
+    "sympathise",
+    "sympathise with",
+    "understand and share someone's feelings, or support a cause",
+    "I sympathise with her frustration."
+  ],
+  [
+    "sympathize",
+    "sympathize with",
+    "understand and share someone's feelings, or support a cause",
+    "He sympathizes with the protesters."
+  ],
+  [
+    "tack",
+    "tack down",
+    "fasten something to a surface with small nails or pins",
+    "He tacked down the loose carpet edge."
+  ],
+  [
+    "tack",
+    "tack up",
+    "fasten something onto a wall or surface",
+    "She tacked up the poster in her room."
+  ],
+  [
+    "tag",
+    "tag along",
+    "accompany someone even though not really needed or invited",
+    "Her little brother tagged along to the party."
+  ],
+  [
+    "tag",
+    "tag on",
+    "add something extra to the end of something else",
+    "He tagged on an extra request at the last minute."
+  ],
+  [
+    "tail",
+    "tail away",
+    "gradually become quieter or weaker",
+    "His voice tailed away as he lost confidence."
+  ],
+  [
+    "tail",
+    "tail back",
+    "form a long, stationary line of traffic",
+    "Cars tailed back for miles after the accident."
+  ],
+  [
+    "tail",
+    "tail off",
+    "gradually decrease in amount or intensity",
+    "Sales tailed off after the holidays."
+  ],
+  [
+    "take",
+    "take aback",
+    "surprise or shock someone",
+    "I was taken aback by his sudden anger."
+  ],
+  [
+    "take",
+    "take after",
+    "resemble an older relative in appearance or behavior",
+    "She takes after her mother in every way."
+  ],
+  [
+    "take",
+    "take against",
+    "begin to dislike someone without a clear reason",
+    "He took against his new colleague immediately."
+  ],
+  [
+    "take",
+    "take along",
+    "bring something or someone with you",
+    "Take along an umbrella just in case."
+  ],
+  [
+    "take",
+    "take apart",
+    "separate something into its pieces",
+    "He took the engine apart to clean it."
+  ],
+  [
+    "take",
+    "take around",
+    "give someone a tour of a place",
+    "She took us around the old town."
+  ],
+  [
+    "take",
+    "take aside",
+    "pull someone away privately to speak with them",
+    "She took him aside to discuss the issue."
+  ],
+  [
+    "take",
+    "take away",
+    "remove something, or reduce its positive effect",
+    "The mistake took away from an otherwise great performance."
+  ],
+  [
+    "take",
+    "take away from",
+    "reduce the positive effect of something",
+    "Nothing can take away from her achievement."
+  ],
+  [
+    "take",
+    "take back",
+    "cause someone to remember an earlier time, or retract a statement",
+    "This song really takes me back."
+  ],
+  [
+    "take",
+    "take down",
+    "write down information, or remove/dismantle something",
+    "Can you take down these notes for me?"
+  ],
+  [
+    "take",
+    "take in",
+    "absorb information, host someone, or deceive someone",
+    "It's a lot to take in all at once."
+  ],
+  [
+    "take",
+    "take into",
+    "consider something as part of a decision",
+    "We need to take into account the extra cost."
+  ],
+  [
+    "take",
+    "take it out on",
+    "treat someone badly because you're upset about something else",
+    "Don't take it out on me just because you're stressed."
+  ],
+  [
+    "take",
+    "take off",
+    "leave suddenly, remove clothing, or (of a plane) leave the ground",
+    "The plane took off right on time."
   ]
 ]
