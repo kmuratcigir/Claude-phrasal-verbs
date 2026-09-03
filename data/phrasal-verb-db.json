@@ -1064,13 +1064,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "hold up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 4,
     "bestStreak": 9,
-    "totalAttempts": 73,
-    "totalCorrect": 54
+    "totalAttempts": 74,
+    "totalCorrect": 55
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1078,5 +1083,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:44:34.155Z"
+  "updatedAt": "2026-09-03T14:44:46.126Z"
 }
