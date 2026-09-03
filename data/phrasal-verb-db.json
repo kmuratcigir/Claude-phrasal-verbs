@@ -2,7 +2,7 @@
   "verbs": [
     {
       "key": "b0",
-      "verb": "open up (to someone)",
+      "verb": "open up (to someone) EDITED",
       "meaning": "become more willing to share your feelings or thoughts with someone",
       "example": "It took a while, but she finally decided to ___ to her therapist."
     },
@@ -830,5 +830,5 @@
     "verb_to_meaning": true,
     "write_sentence": true
   },
-  "updatedAt": "2026-09-03T11:00:45.435Z"
+  "updatedAt": "2026-09-03T11:01:16.396Z"
 }
