@@ -1006,9 +1006,9 @@
       "streak": 1
     },
     "dwell on": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "throw back": {
       "seen": 2,
@@ -1117,10 +1117,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 9,
-    "totalAttempts": 82,
-    "totalCorrect": 61
+    "totalAttempts": 83,
+    "totalCorrect": 62
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1128,5 +1128,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:49:33.865Z"
+  "updatedAt": "2026-09-03T14:49:48.679Z"
 }
