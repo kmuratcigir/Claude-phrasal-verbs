@@ -961,6 +961,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "piece together": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -975,5 +980,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:10:37.812Z"
+  "updatedAt": "2026-09-03T14:11:27.724Z"
 }
