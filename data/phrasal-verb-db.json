@@ -871,6 +871,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "run away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -883,7 +888,7 @@
     "fill_blank": true,
     "meaning_to_verb": false,
     "verb_to_meaning": false,
-    "write_sentence": true
+    "write_sentence": false
   },
-  "updatedAt": "2026-09-03T13:53:28.018Z"
+  "updatedAt": "2026-09-03T14:00:43.637Z"
 }
