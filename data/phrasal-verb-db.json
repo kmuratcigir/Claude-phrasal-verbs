@@ -809,6 +809,12 @@
       "verb": "take back",
       "meaning": "retract a statement, or return something to a store",
       "example": "I'd like to ___ what I said earlier."
+    },
+    {
+      "key": "vmtlk4zu1gg9b",
+      "verb": "crack up",
+      "meaning": "laugh a lot, or break down emotionally",
+      "example": "The joke cracked everyone up."
     }
   ],
   "stats": {},
@@ -824,5 +830,5 @@
     "verb_to_meaning": true,
     "write_sentence": true
   },
-  "updatedAt": "2026-09-03T13:22:20.667Z"
+  "updatedAt": "2026-09-03T13:25:14.138Z"
 }
