@@ -853,9 +853,9 @@
       "streak": 0
     },
     "pile up": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 1
+      "seen": 4,
+      "correct": 3,
+      "streak": 2
     },
     "walk out": {
       "seen": 1,
@@ -1019,9 +1019,9 @@
     }
   },
   "globalStats": {
-    "currentStreak": 8,
+    "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 61,
+    "totalAttempts": 62,
     "totalCorrect": 44
   },
   "activeTypes": {
@@ -1030,5 +1030,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:16:55.666Z"
+  "updatedAt": "2026-09-03T14:17:02.397Z"
 }
