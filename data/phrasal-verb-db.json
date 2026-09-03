@@ -1119,13 +1119,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "hide away": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 4,
+    "currentStreak": 5,
     "bestStreak": 9,
-    "totalAttempts": 86,
-    "totalCorrect": 65
+    "totalAttempts": 87,
+    "totalCorrect": 66
   },
   "activeTypes": {
     "fill_blank": true,
@@ -1133,5 +1138,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:50:26.666Z"
+  "updatedAt": "2026-09-03T14:51:18.964Z"
 }
