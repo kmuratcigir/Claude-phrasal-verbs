@@ -1079,6 +1079,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "hold back": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1093,5 +1098,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:45:13.043Z"
+  "updatedAt": "2026-09-03T14:48:01.241Z"
 }
