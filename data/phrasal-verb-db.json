@@ -814,7 +814,13 @@
       "key": "vmtlmagss4qf4",
       "verb": "get along with",
       "meaning": "have a friendly relationship with someone",
-      "example": "She gets along with almost everyone at work."
+      "example": "She ___ almost everyone at work."
+    },
+    {
+      "key": "vmtlmqnc3cs45",
+      "verb": "get away with",
+      "meaning": "do something wrong without being caught or punished",
+      "example": "He got away with being late all semester. ___"
     }
   ],
   "stats": {
@@ -1041,5 +1047,5 @@
     "verb_to_meaning": false,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T14:28:15.822Z"
+  "updatedAt": "2026-09-03T14:38:03.604Z"
 }
