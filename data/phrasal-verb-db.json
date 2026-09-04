@@ -996,9 +996,9 @@
       "streak": 1
     },
     "sit through": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 2
+      "seen": 4,
+      "correct": 3,
+      "streak": 3
     },
     "slip away": {
       "seen": 1,
@@ -1198,10 +1198,10 @@
     "totalCorrect": 84
   },
   "activeTypes": {
-    "fill_blank": false,
-    "meaning_to_verb": false,
+    "fill_blank": true,
+    "meaning_to_verb": true,
     "verb_to_meaning": true,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-03T15:17:34.976Z"
+  "updatedAt": "2026-09-04T10:49:49.108Z"
 }
