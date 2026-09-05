@@ -1727,13 +1727,38 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "get across": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    },
+    "talk through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "be through with": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    },
+    "step back": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "tear off": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 8,
-    "totalCorrect": 4
+    "totalAttempts": 13,
+    "totalCorrect": 6
   },
-  "updatedAt": "2026-09-05T20:06:17.922Z"
+  "updatedAt": "2026-09-05T20:06:19.446Z"
 }
