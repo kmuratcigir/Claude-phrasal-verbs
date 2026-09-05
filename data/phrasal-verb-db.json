@@ -1717,6 +1717,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "wash out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1725,5 +1730,5 @@
     "totalAttempts": 17,
     "totalCorrect": 10
   },
-  "updatedAt": "2026-09-05T21:23:30.451Z"
+  "updatedAt": "2026-09-05T21:23:34.824Z"
 }
