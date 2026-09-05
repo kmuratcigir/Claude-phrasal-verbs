@@ -1682,6 +1682,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "phase in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1690,5 +1695,5 @@
     "totalAttempts": 10,
     "totalCorrect": 6
   },
-  "updatedAt": "2026-09-05T21:19:42.818Z"
+  "updatedAt": "2026-09-05T21:19:48.055Z"
 }
