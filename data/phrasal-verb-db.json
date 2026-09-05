@@ -1779,9 +1779,9 @@
       "streak": 0
     },
     "shuffle around": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "hold back": {
       "seen": 1,
@@ -1890,5 +1890,5 @@
     "totalAttempts": 34,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:39:10.851Z"
+  "updatedAt": "2026-09-05T20:40:33.568Z"
 }
