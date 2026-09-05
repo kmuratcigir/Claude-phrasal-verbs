@@ -1792,13 +1792,18 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "look through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 11,
-    "totalAttempts": 37,
+    "totalAttempts": 38,
     "totalCorrect": 27
   },
-  "updatedAt": "2026-09-05T21:35:43.495Z"
+  "updatedAt": "2026-09-05T21:35:45.111Z"
 }
