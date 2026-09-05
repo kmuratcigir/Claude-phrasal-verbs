@@ -1229,6 +1229,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "crack on": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1241,8 +1246,7 @@
     "fill_blank": false,
     "meaning_to_verb": false,
     "verb_to_meaning": true,
-    "write_sentence": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T09:15:37.373Z"
+  "updatedAt": "2026-09-05T09:27:58.611Z"
 }
