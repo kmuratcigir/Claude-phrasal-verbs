@@ -1769,7 +1769,7 @@
       "streak": 0
     },
     "run down": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     }
@@ -1780,5 +1780,5 @@
     "totalAttempts": 15,
     "totalCorrect": 9
   },
-  "updatedAt": "2026-09-05T20:54:35.887Z"
+  "updatedAt": "2026-09-05T20:54:38.140Z"
 }
