@@ -1847,6 +1847,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "crack on": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1855,5 +1860,5 @@
     "totalAttempts": 31,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:13:36.728Z"
+  "updatedAt": "2026-09-05T20:15:10.987Z"
 }
