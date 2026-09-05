@@ -1742,6 +1742,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "sell out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1750,5 +1755,5 @@
     "totalAttempts": 9,
     "totalCorrect": 8
   },
-  "updatedAt": "2026-09-05T20:53:20.361Z"
+  "updatedAt": "2026-09-05T20:53:23.305Z"
 }
