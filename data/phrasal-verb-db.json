@@ -1692,13 +1692,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "cut through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 2,
-    "bestStreak": 2,
-    "totalAttempts": 2,
-    "totalCorrect": 2
+    "currentStreak": 3,
+    "bestStreak": 3,
+    "totalAttempts": 3,
+    "totalCorrect": 3
   },
-  "updatedAt": "2026-09-05T20:49:10.557Z"
+  "updatedAt": "2026-09-05T20:49:20.376Z"
 }
