@@ -2132,12 +2132,17 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "stick with": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 140,
+    "totalAttempts": 141,
     "totalCorrect": 107
   },
   "activeTypes": {
@@ -2146,5 +2151,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:07:19.691Z"
+  "updatedAt": "2026-09-05T15:07:22.391Z"
 }
