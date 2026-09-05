@@ -836,9 +836,9 @@
       "streak": 1
     },
     "put up": {
-      "seen": 3,
-      "correct": 0,
-      "streak": 0
+      "seen": 4,
+      "correct": 1,
+      "streak": 1
     },
     "move on": {
       "seen": 3,
@@ -1233,10 +1233,11 @@
     "totalCorrect": 91
   },
   "activeTypes": {
-    "fill_blank": true,
-    "meaning_to_verb": true,
-    "verb_to_meaning": true,
-    "write_sentence": false
+    "fill_blank": false,
+    "meaning_to_verb": false,
+    "verb_to_meaning": false,
+    "write_sentence": false,
+    "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T08:57:51.499Z"
+  "updatedAt": "2026-09-05T09:08:21.368Z"
 }
