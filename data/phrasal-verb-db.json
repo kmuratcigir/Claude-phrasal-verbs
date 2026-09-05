@@ -1659,7 +1659,7 @@
   ],
   "stats": {
     "run down": {
-      "seen": 2,
+      "seen": 3,
       "correct": 0,
       "streak": 0
     }
@@ -1667,8 +1667,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
-    "totalAttempts": 2,
+    "totalAttempts": 3,
     "totalCorrect": 0
   },
-  "updatedAt": "2026-09-05T20:55:57.188Z"
+  "updatedAt": "2026-09-05T20:55:59.297Z"
 }
