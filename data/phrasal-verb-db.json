@@ -1839,9 +1839,9 @@
       "streak": 2
     },
     "throw back": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "hang out": {
       "seen": 2,
@@ -2186,5 +2186,5 @@
     "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:41:40.649Z"
+  "updatedAt": "2026-09-05T15:48:40.823Z"
 }
