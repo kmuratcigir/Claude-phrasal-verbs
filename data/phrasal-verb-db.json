@@ -1714,9 +1714,9 @@
       "streak": 1
     },
     "blow out": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "dwell on": {
       "seen": 1,
@@ -1752,13 +1752,23 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "run through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    },
+    "hold off": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 3,
     "bestStreak": 3,
-    "totalAttempts": 13,
-    "totalCorrect": 6
+    "totalAttempts": 16,
+    "totalCorrect": 9
   },
-  "updatedAt": "2026-09-05T20:06:19.446Z"
+  "updatedAt": "2026-09-05T20:06:20.508Z"
 }
