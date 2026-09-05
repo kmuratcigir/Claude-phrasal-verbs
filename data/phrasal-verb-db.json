@@ -1702,6 +1702,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "hang out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1710,5 +1715,5 @@
     "totalAttempts": 14,
     "totalCorrect": 8
   },
-  "updatedAt": "2026-09-05T21:22:46.231Z"
+  "updatedAt": "2026-09-05T21:22:49.406Z"
 }
