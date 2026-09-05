@@ -4,829 +4,1657 @@
       "key": "b0",
       "verb": "open up",
       "meaning": "become more willing to share your feelings or thoughts with someone",
-      "example": "It took a while, but she finally decided to ___ to her therapist."
+      "example": "It took a while, but she finally decided to ___ to her therapist.",
+      "meanings": [
+        "become more willing to share your feelings or thoughts with someone"
+      ],
+      "examples": [
+        "It took a while, but she finally decided to ___ to her therapist."
+      ]
     },
     {
       "key": "b1",
       "verb": "wander off",
       "meaning": "walk away from a place without meaning to, often getting lost",
-      "example": "Keep an eye on the toddler so he doesn't ___."
+      "example": "Keep an eye on the toddler so he doesn't ___.",
+      "meanings": [
+        "walk away from a place without meaning to, often getting lost"
+      ],
+      "examples": [
+        "Keep an eye on the toddler so he doesn't ___."
+      ]
     },
     {
       "key": "b2",
       "verb": "get away",
       "meaning": "escape, or leave for a trip/vacation.",
-      "example": "We're hoping to ___ for the weekend."
+      "example": "We're hoping to ___ for the weekend.",
+      "meanings": [
+        "escape, or leave for a trip/vacation."
+      ],
+      "examples": [
+        "We're hoping to ___ for the weekend."
+      ]
     },
     {
       "key": "b3",
       "verb": "gather around",
       "meaning": "come together in a group around something or someone",
-      "example": "Ask the kids to ___ so they can see the magician."
+      "example": "Ask the kids to ___ so they can see the magician.",
+      "meanings": [
+        "come together in a group around something or someone"
+      ],
+      "examples": [
+        "Ask the kids to ___ so they can see the magician."
+      ]
     },
     {
       "key": "b4",
       "verb": "make up",
       "meaning": "invent a story or excuse, or reconcile after an argument",
-      "example": "He tried to ___ an excuse for being late."
+      "example": "He tried to ___ an excuse for being late.",
+      "meanings": [
+        "invent a story or excuse, or reconcile after an argument"
+      ],
+      "examples": [
+        "He tried to ___ an excuse for being late."
+      ]
     },
     {
       "key": "b5",
       "verb": "piece together",
       "meaning": "assemble fragments of information to understand something",
-      "example": "Detectives had to ___ what happened from witness accounts."
+      "example": "Detectives had to ___ what happened from witness accounts.",
+      "meanings": [
+        "assemble fragments of information to understand something"
+      ],
+      "examples": [
+        "Detectives had to ___ what happened from witness accounts."
+      ]
     },
     {
       "key": "b6",
       "verb": "dwell on",
       "meaning": "think or talk about something, especially something unpleasant, for too long",
-      "example": "Try not to ___ the mistake."
+      "example": "Try not to ___ the mistake.",
+      "meanings": [
+        "think or talk about something, especially something unpleasant, for too long"
+      ],
+      "examples": [
+        "Try not to ___ the mistake."
+      ]
     },
     {
       "key": "b7",
       "verb": "step aside",
       "meaning": "move to one side, or leave a position to let someone else take over",
-      "example": "The CEO agreed to ___ after the scandal."
+      "example": "The CEO agreed to ___ after the scandal.",
+      "meanings": [
+        "move to one side, or leave a position to let someone else take over"
+      ],
+      "examples": [
+        "The CEO agreed to ___ after the scandal."
+      ]
     },
     {
       "key": "b8",
       "verb": "drift off",
       "meaning": "gradually fall asleep",
-      "example": "I tend to ___ during long movies."
+      "example": "I tend to ___ during long movies.",
+      "meanings": [
+        "gradually fall asleep"
+      ],
+      "examples": [
+        "I tend to ___ during long movies."
+      ]
     },
     {
       "key": "b9",
       "verb": "drift away",
       "meaning": "gradually become less close to someone, or less involved in something",
-      "example": "Old friends can ___ after a move."
+      "example": "Old friends can ___ after a move.",
+      "meanings": [
+        "gradually become less close to someone, or less involved in something"
+      ],
+      "examples": [
+        "Old friends can ___ after a move."
+      ]
     },
     {
       "key": "b10",
       "verb": "drift through",
       "meaning": "pass through a place casually, without staying or settling",
-      "example": "He seemed to ___ several cities before settling in Berlin."
+      "example": "He seemed to ___ several cities before settling in Berlin.",
+      "meanings": [
+        "pass through a place casually, without staying or settling"
+      ],
+      "examples": [
+        "He seemed to ___ several cities before settling in Berlin."
+      ]
     },
     {
       "key": "b11",
       "verb": "snap out of",
       "meaning": "quickly stop a bad mood or state of mind",
-      "example": "You need to ___ it and focus on work."
+      "example": "You need to ___ it and focus on work.",
+      "meanings": [
+        "quickly stop a bad mood or state of mind"
+      ],
+      "examples": [
+        "You need to ___ it and focus on work."
+      ]
     },
     {
       "key": "b12",
       "verb": "throw yourself into",
       "meaning": "put a lot of energy and enthusiasm into something",
-      "example": "You should ___ the new project."
+      "example": "You should ___ the new project.",
+      "meanings": [
+        "put a lot of energy and enthusiasm into something"
+      ],
+      "examples": [
+        "You should ___ the new project."
+      ]
     },
     {
       "key": "b13",
       "verb": "grieve over",
       "meaning": "feel deep sorrow about a loss",
-      "example": "It's normal to ___ such a loss."
+      "example": "It's normal to ___ such a loss.",
+      "meanings": [
+        "feel deep sorrow about a loss"
+      ],
+      "examples": [
+        "It's normal to ___ such a loss."
+      ]
     },
     {
       "key": "b14",
       "verb": "block off",
       "meaning": "close off an area to stop access",
-      "example": "Police had to ___ the street after the accident."
+      "example": "Police had to ___ the street after the accident.",
+      "meanings": [
+        "close off an area to stop access"
+      ],
+      "examples": [
+        "Police had to ___ the street after the accident."
+      ]
     },
     {
       "key": "b15",
       "verb": "show off",
       "meaning": "display something proudly, often to impress others",
-      "example": "He loves to ___ his new car."
+      "example": "He loves to ___ his new car.",
+      "meanings": [
+        "display something proudly, often to impress others"
+      ],
+      "examples": [
+        "He loves to ___ his new car."
+      ]
     },
     {
       "key": "b16",
       "verb": "slip away",
       "meaning": "leave quietly or unnoticed, or (of time) pass by",
-      "example": "She managed to ___ from the party early."
+      "example": "She managed to ___ from the party early.",
+      "meanings": [
+        "leave quietly or unnoticed, or (of time) pass by"
+      ],
+      "examples": [
+        "She managed to ___ from the party early."
+      ]
     },
     {
       "key": "b17",
       "verb": "tear off",
       "meaning": "remove something quickly and forcefully by pulling",
-      "example": "He couldn't wait to ___ the wrapping paper."
+      "example": "He couldn't wait to ___ the wrapping paper.",
+      "meanings": [
+        "remove something quickly and forcefully by pulling"
+      ],
+      "examples": [
+        "He couldn't wait to ___ the wrapping paper."
+      ]
     },
     {
       "key": "b18",
       "verb": "shake up",
       "meaning": "disturb the established order, or startle someone",
-      "example": "The scandal was enough to ___ the whole company."
+      "example": "The scandal was enough to ___ the whole company.",
+      "meanings": [
+        "disturb the established order, or startle someone"
+      ],
+      "examples": [
+        "The scandal was enough to ___ the whole company."
+      ]
     },
     {
       "key": "b19",
       "verb": "pass away",
       "meaning": "die (a gentler way of saying it)",
-      "example": "It's hard when someone close to you has to ___."
+      "example": "It's hard when someone close to you has to ___.",
+      "meanings": [
+        "die (a gentler way of saying it)"
+      ],
+      "examples": [
+        "It's hard when someone close to you has to ___."
+      ]
     },
     {
       "key": "b20",
       "verb": "narrow down",
       "meaning": "reduce a list of options to a smaller number",
-      "example": "We need to ___ the candidates to three."
+      "example": "We need to ___ the candidates to three.",
+      "meanings": [
+        "reduce a list of options to a smaller number"
+      ],
+      "examples": [
+        "We need to ___ the candidates to three."
+      ]
     },
     {
       "key": "b21",
       "verb": "make out",
       "meaning": "manage to see, hear or understand something with difficulty; or kiss/be intimate",
-      "example": "It was too dark to ___ his handwriting."
+      "example": "It was too dark to ___ his handwriting.",
+      "meanings": [
+        "manage to see, hear or understand something with difficulty; or kiss/be intimate"
+      ],
+      "examples": [
+        "It was too dark to ___ his handwriting."
+      ]
     },
     {
       "key": "b22",
       "verb": "fumble around",
       "meaning": "move clumsily or search for something awkwardly",
-      "example": "He had to ___ in the dark for the light switch."
+      "example": "He had to ___ in the dark for the light switch.",
+      "meanings": [
+        "move clumsily or search for something awkwardly"
+      ],
+      "examples": [
+        "He had to ___ in the dark for the light switch."
+      ]
     },
     {
       "key": "b23",
       "verb": "warn off",
       "meaning": "tell someone to stay away or discourage them from doing something",
-      "example": "The signs are there to ___ trespassers."
+      "example": "The signs are there to ___ trespassers.",
+      "meanings": [
+        "tell someone to stay away or discourage them from doing something"
+      ],
+      "examples": [
+        "The signs are there to ___ trespassers."
+      ]
     },
     {
       "key": "b24",
       "verb": "wear down",
       "meaning": "gradually weaken or exhaust someone or something",
-      "example": "Constant criticism can ___ anyone's confidence."
+      "example": "Constant criticism can ___ anyone's confidence.",
+      "meanings": [
+        "gradually weaken or exhaust someone or something"
+      ],
+      "examples": [
+        "Constant criticism can ___ anyone's confidence."
+      ]
     },
     {
       "key": "b25",
       "verb": "take in",
       "meaning": "absorb information; or let someone stay with you; or deceive",
-      "example": "It's a lot ___formation to at once."
+      "example": "It's a lot ___formation to at once.",
+      "meanings": [
+        "absorb information; or let someone stay with you; or deceive"
+      ],
+      "examples": [
+        "It's a lot ___formation to at once."
+      ]
     },
     {
       "key": "b26",
       "verb": "drown out",
       "meaning": "be so loud that another sound cannot be heard",
-      "example": "The traffic was loud enough to ___ her voice."
+      "example": "The traffic was loud enough to ___ her voice.",
+      "meanings": [
+        "be so loud that another sound cannot be heard"
+      ],
+      "examples": [
+        "The traffic was loud enough to ___ her voice."
+      ]
     },
     {
       "key": "b27",
       "verb": "cut off",
       "meaning": "interrupt, disconnect, or isolate",
-      "example": "I hope we don't get ___ during the call."
+      "example": "I hope we don't get ___ during the call.",
+      "meanings": [
+        "interrupt, disconnect, or isolate"
+      ],
+      "examples": [
+        "I hope we don't get ___ during the call."
+      ]
     },
     {
       "key": "b28",
       "verb": "flip through",
       "meaning": "look through pages quickly without reading closely",
-      "example": "She likes to ___ the magazine while waiting."
+      "example": "She likes to ___ the magazine while waiting.",
+      "meanings": [
+        "look through pages quickly without reading closely"
+      ],
+      "examples": [
+        "She likes to ___ the magazine while waiting."
+      ]
     },
     {
       "key": "b29",
       "verb": "jolt out of",
       "meaning": "suddenly force someone out of a state, like sleep or daydreaming",
-      "example": "It's easy to ___ a routine when something unexpected happens."
+      "example": "It's easy to ___ a routine when something unexpected happens.",
+      "meanings": [
+        "suddenly force someone out of a state, like sleep or daydreaming"
+      ],
+      "examples": [
+        "It's easy to ___ a routine when something unexpected happens."
+      ]
     },
     {
       "key": "b30",
       "verb": "have over",
       "meaning": "invite someone to your home",
-      "example": "We're planning to ___ some old friends this weekend."
+      "example": "We're planning to ___ some old friends this weekend.",
+      "meanings": [
+        "invite someone to your home"
+      ],
+      "examples": [
+        "We're planning to ___ some old friends this weekend."
+      ]
     },
     {
       "key": "b31",
       "verb": "draw in",
       "meaning": "attract people; or (of days) become shorter",
-      "example": "This festival tends to ___ thousands of visitors every year."
+      "example": "This festival tends to ___ thousands of visitors every year.",
+      "meanings": [
+        "attract people; or (of days) become shorter"
+      ],
+      "examples": [
+        "This festival tends to ___ thousands of visitors every year."
+      ]
     },
     {
       "key": "b32",
       "verb": "hold back",
       "meaning": "restrain something, or hesitate to express yourself fully",
-      "example": "He tried to ___ his tears."
+      "example": "He tried to ___ his tears.",
+      "meanings": [
+        "restrain something, or hesitate to express yourself fully"
+      ],
+      "examples": [
+        "He tried to ___ his tears."
+      ]
     },
     {
       "key": "b33",
       "verb": "give in",
       "meaning": "reluctantly agree to something after resisting",
-      "example": "She finally decided to ___ to their demands."
+      "example": "She finally decided to ___ to their demands.",
+      "meanings": [
+        "reluctantly agree to something after resisting"
+      ],
+      "examples": [
+        "She finally decided to ___ to their demands."
+      ]
     },
     {
       "key": "b34",
       "verb": "give away",
       "meaning": "give something for free, or unintentionally reveal a secret",
-      "example": "His nervous smile was about to ___ the surprise."
+      "example": "His nervous smile was about to ___ the surprise.",
+      "meanings": [
+        "give something for free, or unintentionally reveal a secret"
+      ],
+      "examples": [
+        "His nervous smile was about to ___ the surprise."
+      ]
     },
     {
       "key": "b35",
       "verb": "phase in",
       "meaning": "introduce something gradually",
-      "example": "The new policy will ___ gradually over two years."
+      "example": "The new policy will ___ gradually over two years.",
+      "meanings": [
+        "introduce something gradually"
+      ],
+      "examples": [
+        "The new policy will ___ gradually over two years."
+      ]
     },
     {
       "key": "b36",
       "verb": "phase out",
       "meaning": "remove something gradually",
-      "example": "They plan to ___ plastic bags next year."
+      "example": "They plan to ___ plastic bags next year.",
+      "meanings": [
+        "remove something gradually"
+      ],
+      "examples": [
+        "They plan to ___ plastic bags next year."
+      ]
     },
     {
       "key": "b37",
       "verb": "sing along",
       "meaning": "sing together with music or someone already singing",
-      "example": "The whole crowd loves to ___ to every song."
+      "example": "The whole crowd loves to ___ to every song.",
+      "meanings": [
+        "sing together with music or someone already singing"
+      ],
+      "examples": [
+        "The whole crowd loves to ___ to every song."
+      ]
     },
     {
       "key": "b38",
       "verb": "opt into",
       "meaning": "choose to participate in something, often optional",
-      "example": "You'll need to ___ the newsletter to receive updates."
+      "example": "You'll need to ___ the newsletter to receive updates.",
+      "meanings": [
+        "choose to participate in something, often optional"
+      ],
+      "examples": [
+        "You'll need to ___ the newsletter to receive updates."
+      ]
     },
     {
       "key": "b39",
       "verb": "bring up",
       "meaning": "mention a topic, or raise a child",
-      "example": "I didn't want to ___ the divorce."
+      "example": "I didn't want to ___ the divorce.",
+      "meanings": [
+        "mention a topic, or raise a child"
+      ],
+      "examples": [
+        "I didn't want to ___ the divorce."
+      ]
     },
     {
       "key": "b40",
       "verb": "move out",
       "meaning": "leave a place you were living in",
-      "example": "They plan to ___ at the end of the month."
+      "example": "They plan to ___ at the end of the month.",
+      "meanings": [
+        "leave a place you were living in"
+      ],
+      "examples": [
+        "They plan to ___ at the end of the month."
+      ]
     },
     {
       "key": "b41",
       "verb": "move in",
       "meaning": "start living in a new place",
-      "example": "We can finally ___ this weekend."
+      "example": "We can finally ___ this weekend.",
+      "meanings": [
+        "start living in a new place"
+      ],
+      "examples": [
+        "We can finally ___ this weekend."
+      ]
     },
     {
       "key": "b42",
       "verb": "settle down",
       "meaning": "become calm, or start living a quieter, more stable life",
-      "example": "He wants to ___ after years of traveling."
+      "example": "He wants to ___ after years of traveling.",
+      "meanings": [
+        "become calm, or start living a quieter, more stable life"
+      ],
+      "examples": [
+        "He wants to ___ after years of traveling."
+      ]
     },
     {
       "key": "b43",
       "verb": "think back",
       "meaning": "recall a past event or time",
-      "example": "It helps to ___ on happier times."
+      "example": "It helps to ___ on happier times.",
+      "meanings": [
+        "recall a past event or time"
+      ],
+      "examples": [
+        "It helps to ___ on happier times."
+      ]
     },
     {
       "key": "b44",
       "verb": "look back",
       "meaning": "reflect on the past",
-      "example": "Years from now, you'll ___ on this and laugh."
+      "example": "Years from now, you'll ___ on this and laugh.",
+      "meanings": [
+        "reflect on the past"
+      ],
+      "examples": [
+        "Years from now, you'll ___ on this and laugh."
+      ]
     },
     {
       "key": "b45",
       "verb": "get up to",
       "meaning": "be doing something, often questionable, or reach a certain point",
-      "example": "I wonder what the kids are going to ___ this summer."
+      "example": "I wonder what the kids are going to ___ this summer.",
+      "meanings": [
+        "be doing something, often questionable, or reach a certain point"
+      ],
+      "examples": [
+        "I wonder what the kids are going to ___ this summer."
+      ]
     },
     {
       "key": "b46",
       "verb": "pick on",
       "meaning": "repeatedly tease or criticize someone unfairly",
-      "example": "The older kids used to ___ him."
+      "example": "The older kids used to ___ him.",
+      "meanings": [
+        "repeatedly tease or criticize someone unfairly"
+      ],
+      "examples": [
+        "The older kids used to ___ him."
+      ]
     },
     {
       "key": "b47",
       "verb": "tell off",
       "meaning": "scold someone for doing something wrong",
-      "example": "The teacher decided to ___ the whole class."
+      "example": "The teacher decided to ___ the whole class.",
+      "meanings": [
+        "scold someone for doing something wrong"
+      ],
+      "examples": [
+        "The teacher decided to ___ the whole class."
+      ]
     },
     {
       "key": "b48",
       "verb": "fit in",
       "meaning": "belong or feel comfortable in a group",
-      "example": "She never really managed to ___ at her old school."
+      "example": "She never really managed to ___ at her old school.",
+      "meanings": [
+        "belong or feel comfortable in a group"
+      ],
+      "examples": [
+        "She never really managed to ___ at her old school."
+      ]
     },
     {
       "key": "b49",
       "verb": "hang around",
       "meaning": "stay in a place with no particular purpose",
-      "example": "We used to ___ the mall after school."
+      "example": "We used to ___ the mall after school.",
+      "meanings": [
+        "stay in a place with no particular purpose"
+      ],
+      "examples": [
+        "We used to ___ the mall after school."
+      ]
     },
     {
       "key": "b50",
       "verb": "get in touch with",
       "meaning": "contact someone",
-      "example": "I'll try to ___ you next week."
+      "example": "I'll try to ___ you next week.",
+      "meanings": [
+        "contact someone"
+      ],
+      "examples": [
+        "I'll try to ___ you next week."
+      ]
     },
     {
       "key": "b51",
       "verb": "catch up with",
       "meaning": "reach the same level as someone, or meet after time apart to exchange news",
-      "example": "Let's ___ each other over coffee."
+      "example": "Let's ___ each other over coffee.",
+      "meanings": [
+        "reach the same level as someone, or meet after time apart to exchange news"
+      ],
+      "examples": [
+        "Let's ___ each other over coffee."
+      ]
     },
     {
       "key": "b52",
       "verb": "hang out",
       "meaning": "spend time relaxing with someone",
-      "example": "We usually ___ on weekends."
+      "example": "We usually ___ on weekends.",
+      "meanings": [
+        "spend time relaxing with someone"
+      ],
+      "examples": [
+        "We usually ___ on weekends."
+      ]
     },
     {
       "key": "b53",
       "verb": "bump into",
       "meaning": "meet someone by chance",
-      "example": "I happened to ___ an old friend at the store."
+      "example": "I happened to ___ an old friend at the store.",
+      "meanings": [
+        "meet someone by chance"
+      ],
+      "examples": [
+        "I happened to ___ an old friend at the store."
+      ]
     },
     {
       "key": "b54",
       "verb": "put up",
       "meaning": "build or erect something; or provide accommodation; or tolerate",
-      "example": "They decided to ___ a fence around the yard."
+      "example": "They decided to ___ a fence around the yard.",
+      "meanings": [
+        "build or erect something; or provide accommodation; or tolerate"
+      ],
+      "examples": [
+        "They decided to ___ a fence around the yard."
+      ]
     },
     {
       "key": "b55",
       "verb": "tense up",
       "meaning": "become tense or nervous, physically or mentally",
-      "example": "He tends to ___ before interviews."
+      "example": "He tends to ___ before interviews.",
+      "meanings": [
+        "become tense or nervous, physically or mentally"
+      ],
+      "examples": [
+        "He tends to ___ before interviews."
+      ]
     },
     {
       "key": "b56",
       "verb": "get across",
       "meaning": "successfully communicate an idea",
-      "example": "It's hard to ___ such a complex idea in one email."
+      "example": "It's hard to ___ such a complex idea in one email.",
+      "meanings": [
+        "successfully communicate an idea"
+      ],
+      "examples": [
+        "It's hard to ___ such a complex idea in one email."
+      ]
     },
     {
       "key": "b57",
       "verb": "figure out",
       "meaning": "understand or solve something after thought",
-      "example": "I finally managed to ___ the problem."
+      "example": "I finally managed to ___ the problem.",
+      "meanings": [
+        "understand or solve something after thought"
+      ],
+      "examples": [
+        "I finally managed to ___ the problem."
+      ]
     },
     {
       "key": "b58",
       "verb": "get through",
       "meaning": "survive a difficult experience, or successfully reach someone",
-      "example": "We'll ___ this together."
+      "example": "We'll ___ this together.",
+      "meanings": [
+        "survive a difficult experience, or successfully reach someone"
+      ],
+      "examples": [
+        "We'll ___ this together."
+      ]
     },
     {
       "key": "b59",
       "verb": "go through",
       "meaning": "experience something difficult, or examine carefully",
-      "example": "She's having to ___ a tough time right now."
+      "example": "She's having to ___ a tough time right now.",
+      "meanings": [
+        "experience something difficult, or examine carefully"
+      ],
+      "examples": [
+        "She's having to ___ a tough time right now."
+      ]
     },
     {
       "key": "b60",
       "verb": "think through",
       "meaning": "consider something carefully before deciding",
-      "example": "Make sure you ___ every option before you commit."
+      "example": "Make sure you ___ every option before you commit.",
+      "meanings": [
+        "consider something carefully before deciding"
+      ],
+      "examples": [
+        "Make sure you ___ every option before you commit."
+      ]
     },
     {
       "key": "b61",
       "verb": "push through",
       "meaning": "force something to succeed despite difficulty",
-      "example": "They managed to ___ the deal despite objections."
+      "example": "They managed to ___ the deal despite objections.",
+      "meanings": [
+        "force something to succeed despite difficulty"
+      ],
+      "examples": [
+        "They managed to ___ the deal despite objections."
+      ]
     },
     {
       "key": "b62",
       "verb": "read through",
       "meaning": "read something from start to end, often checking it",
-      "example": "Please ___ the contract before signing."
+      "example": "Please ___ the contract before signing.",
+      "meanings": [
+        "read something from start to end, often checking it"
+      ],
+      "examples": [
+        "Please ___ the contract before signing."
+      ]
     },
     {
       "key": "b63",
       "verb": "look through",
       "meaning": "examine or search through something",
-      "example": "He liked to ___ the old photos."
+      "example": "He liked to ___ the old photos.",
+      "meanings": [
+        "examine or search through something"
+      ],
+      "examples": [
+        "He liked to ___ the old photos."
+      ]
     },
     {
       "key": "b64",
       "verb": "sit through",
       "meaning": "endure something boring or long until it ends",
-      "example": "I had to ___ a three-hour meeting."
+      "example": "I had to ___ a three-hour meeting.",
+      "meanings": [
+        "endure something boring or long until it ends"
+      ],
+      "examples": [
+        "I had to ___ a three-hour meeting."
+      ]
     },
     {
       "key": "b65",
       "verb": "follow through",
       "meaning": "complete an action you started or committed to",
-      "example": "He never manages to ___ on his promises."
+      "example": "He never manages to ___ on his promises.",
+      "meanings": [
+        "complete an action you started or committed to"
+      ],
+      "examples": [
+        "He never manages to ___ on his promises."
+      ]
     },
     {
       "key": "b66",
       "verb": "talk through",
       "meaning": "discuss something in detail to understand or resolve it",
-      "example": "Let's ___ the plan together."
+      "example": "Let's ___ the plan together.",
+      "meanings": [
+        "discuss something in detail to understand or resolve it"
+      ],
+      "examples": [
+        "Let's ___ the plan together."
+      ]
     },
     {
       "key": "b67",
       "verb": "sort through",
       "meaning": "go through things to organize or find something",
-      "example": "She needs to ___ old boxes in the attic."
+      "example": "She needs to ___ old boxes in the attic.",
+      "meanings": [
+        "go through things to organize or find something"
+      ],
+      "examples": [
+        "She needs to ___ old boxes in the attic."
+      ]
     },
     {
       "key": "b68",
       "verb": "run through",
       "meaning": "practice or review something quickly, or use up",
-      "example": "Let's ___ the presentation once more."
+      "example": "Let's ___ the presentation once more.",
+      "meanings": [
+        "practice or review something quickly, or use up"
+      ],
+      "examples": [
+        "Let's ___ the presentation once more."
+      ]
     },
     {
       "key": "b69",
       "verb": "put through",
       "meaning": "connect someone by phone, or make someone experience something difficult",
-      "example": "I'll ___ your request right away."
+      "example": "I'll ___ your request right away.",
+      "meanings": [
+        "connect someone by phone, or make someone experience something difficult"
+      ],
+      "examples": [
+        "I'll ___ your request right away."
+      ]
     },
     {
       "key": "b70",
       "verb": "see through",
       "meaning": "not be deceived by something, or complete a task to the end",
-      "example": "She managed to ___ his excuses immediately."
+      "example": "She managed to ___ his excuses immediately.",
+      "meanings": [
+        "not be deceived by something, or complete a task to the end"
+      ],
+      "examples": [
+        "She managed to ___ his excuses immediately."
+      ]
     },
     {
       "key": "b71",
       "verb": "pull through",
       "meaning": "survive a difficult situation, especially illness",
-      "example": "The doctors think he'll ___."
+      "example": "The doctors think he'll ___.",
+      "meanings": [
+        "survive a difficult situation, especially illness"
+      ],
+      "examples": [
+        "The doctors think he'll ___."
+      ]
     },
     {
       "key": "b72",
       "verb": "work through",
       "meaning": "deal with and resolve a problem gradually",
-      "example": "We need to ___ our differences."
+      "example": "We need to ___ our differences.",
+      "meanings": [
+        "deal with and resolve a problem gradually"
+      ],
+      "examples": [
+        "We need to ___ our differences."
+      ]
     },
     {
       "key": "b73",
       "verb": "live through",
       "meaning": "experience and survive something significant",
-      "example": "My grandmother had to ___ the war."
+      "example": "My grandmother had to ___ the war.",
+      "meanings": [
+        "experience and survive something significant"
+      ],
+      "examples": [
+        "My grandmother had to ___ the war."
+      ]
     },
     {
       "key": "b74",
       "verb": "cut through",
       "meaning": "take a shorter route, or deal directly with something complicated",
-      "example": "This path will ___ the park."
+      "example": "This path will ___ the park.",
+      "meanings": [
+        "take a shorter route, or deal directly with something complicated"
+      ],
+      "examples": [
+        "This path will ___ the park."
+      ]
     },
     {
       "key": "b75",
       "verb": "rush through",
       "meaning": "do something too quickly, often carelessly",
-      "example": "Don't ___ your homework."
+      "example": "Don't ___ your homework.",
+      "meanings": [
+        "do something too quickly, often carelessly"
+      ],
+      "examples": [
+        "Don't ___ your homework."
+      ]
     },
     {
       "key": "b76",
       "verb": "rifle through",
       "meaning": "search quickly and carelessly through something",
-      "example": "He started to ___ the drawer looking for his keys."
+      "example": "He started to ___ the drawer looking for his keys.",
+      "meanings": [
+        "search quickly and carelessly through something"
+      ],
+      "examples": [
+        "He started to ___ the drawer looking for his keys."
+      ]
     },
     {
       "key": "b77",
       "verb": "pass through",
       "meaning": "travel through a place without stopping long",
-      "example": "We're just planning to ___ on our way to the coast."
+      "example": "We're just planning to ___ on our way to the coast.",
+      "meanings": [
+        "travel through a place without stopping long"
+      ],
+      "examples": [
+        "We're just planning to ___ on our way to the coast."
+      ]
     },
     {
       "key": "b78",
       "verb": "force through",
       "meaning": "make something happen despite resistance",
-      "example": "The government managed to ___ the bill."
+      "example": "The government managed to ___ the bill.",
+      "meanings": [
+        "make something happen despite resistance"
+      ],
+      "examples": [
+        "The government managed to ___ the bill."
+      ]
     },
     {
       "key": "b79",
       "verb": "fall through",
       "meaning": "fail to happen as planned",
-      "example": "Our vacation plans might ___."
+      "example": "Our vacation plans might ___.",
+      "meanings": [
+        "fail to happen as planned"
+      ],
+      "examples": [
+        "Our vacation plans might ___."
+      ]
     },
     {
       "key": "b80",
       "verb": "sleep through",
       "meaning": "remain asleep despite noise, or miss something by sleeping",
-      "example": "He's known to ___ his alarm every morning."
+      "example": "He's known to ___ his alarm every morning.",
+      "meanings": [
+        "remain asleep despite noise, or miss something by sleeping"
+      ],
+      "examples": [
+        "He's known to ___ his alarm every morning."
+      ]
     },
     {
       "key": "b81",
       "verb": "be through with",
       "meaning": "have finished dealing with someone or something, often permanently",
-      "example": "I think it's time to ___ this argument."
+      "example": "I think it's time to ___ this argument.",
+      "meanings": [
+        "have finished dealing with someone or something, often permanently"
+      ],
+      "examples": [
+        "I think it's time to ___ this argument."
+      ]
     },
     {
       "key": "b82",
       "verb": "step down",
       "meaning": "resign from a position",
-      "example": "She decided to ___ as CEO last year."
+      "example": "She decided to ___ as CEO last year.",
+      "meanings": [
+        "resign from a position"
+      ],
+      "examples": [
+        "She decided to ___ as CEO last year."
+      ]
     },
     {
       "key": "b83",
       "verb": "step up",
       "meaning": "increase effort, or take on more responsibility",
-      "example": "It's time to ___ and take charge."
+      "example": "It's time to ___ and take charge.",
+      "meanings": [
+        "increase effort, or take on more responsibility"
+      ],
+      "examples": [
+        "It's time to ___ and take charge."
+      ]
     },
     {
       "key": "b84",
       "verb": "run away",
       "meaning": "leave a place suddenly to escape",
-      "example": "The dog tried to ___ from home."
+      "example": "The dog tried to ___ from home.",
+      "meanings": [
+        "leave a place suddenly to escape"
+      ],
+      "examples": [
+        "The dog tried to ___ from home."
+      ]
     },
     {
       "key": "b85",
       "verb": "look out",
       "meaning": "be careful, watch for danger",
-      "example": "___! There's a car coming."
+      "example": "___! There's a car coming.",
+      "meanings": [
+        "be careful, watch for danger"
+      ],
+      "examples": [
+        "___! There's a car coming."
+      ]
     },
     {
       "key": "b86",
       "verb": "hide away",
       "meaning": "go somewhere secret or private to avoid others",
-      "example": "He wanted to ___ in his room for days."
+      "example": "He wanted to ___ in his room for days.",
+      "meanings": [
+        "go somewhere secret or private to avoid others"
+      ],
+      "examples": [
+        "He wanted to ___ in his room for days."
+      ]
     },
     {
       "key": "b87",
       "verb": "break in",
       "meaning": "enter a place illegally by force, or interrupt",
-      "example": "Someone tried to ___ while we were away."
+      "example": "Someone tried to ___ while we were away.",
+      "meanings": [
+        "enter a place illegally by force, or interrupt"
+      ],
+      "examples": [
+        "Someone tried to ___ while we were away."
+      ]
     },
     {
       "key": "b88",
       "verb": "sell out",
       "meaning": "sell all of something, or compromise your principles for money or success",
-      "example": "The concert tickets are going to ___ in minutes."
+      "example": "The concert tickets are going to ___ in minutes.",
+      "meanings": [
+        "sell all of something, or compromise your principles for money or success"
+      ],
+      "examples": [
+        "The concert tickets are going to ___ in minutes."
+      ]
     },
     {
       "key": "b89",
       "verb": "take off",
       "meaning": "leave the ground, remove clothing, or suddenly become successful",
-      "example": "The plane is about to ___ on time."
+      "example": "The plane is about to ___ on time.",
+      "meanings": [
+        "leave the ground, remove clothing, or suddenly become successful"
+      ],
+      "examples": [
+        "The plane is about to ___ on time."
+      ]
     },
     {
       "key": "b90",
       "verb": "round up",
       "meaning": "gather people or things together, or arrest a group of people",
-      "example": "Police decided to ___ the suspects."
+      "example": "Police decided to ___ the suspects.",
+      "meanings": [
+        "gather people or things together, or arrest a group of people"
+      ],
+      "examples": [
+        "Police decided to ___ the suspects."
+      ]
     },
     {
       "key": "b91",
       "verb": "mix up",
       "meaning": "confuse two things, or combine ingredients",
-      "example": "I always seem to ___ their names."
+      "example": "I always seem to ___ their names.",
+      "meanings": [
+        "confuse two things, or combine ingredients"
+      ],
+      "examples": [
+        "I always seem to ___ their names."
+      ]
     },
     {
       "key": "b92",
       "verb": "wash out",
       "meaning": "be ruined or cancelled due to rain, or remove by washing",
-      "example": "We're afraid the match will ___ because of rain."
+      "example": "We're afraid the match will ___ because of rain.",
+      "meanings": [
+        "be ruined or cancelled due to rain, or remove by washing"
+      ],
+      "examples": [
+        "We're afraid the match will ___ because of rain."
+      ]
     },
     {
       "key": "b93",
       "verb": "drop out",
       "meaning": "stop attending school or a program before finishing",
-      "example": "He decided to ___ of college in his second year."
+      "example": "He decided to ___ of college in his second year.",
+      "meanings": [
+        "stop attending school or a program before finishing"
+      ],
+      "examples": [
+        "He decided to ___ of college in his second year."
+      ]
     },
     {
       "key": "b94",
       "verb": "stand in",
       "meaning": "temporarily take someone else's place or role",
-      "example": "She agreed to for ___jured actress."
+      "example": "She agreed to for ___jured actress.",
+      "meanings": [
+        "temporarily take someone else's place or role"
+      ],
+      "examples": [
+        "She agreed to for ___jured actress."
+      ]
     },
     {
       "key": "b95",
       "verb": "blow out",
       "meaning": "extinguish with a puff of air, or (of a tire) burst suddenly",
-      "example": "He leaned over to ___ the candles on his cake."
+      "example": "He leaned over to ___ the candles on his cake.",
+      "meanings": [
+        "extinguish with a puff of air, or (of a tire) burst suddenly"
+      ],
+      "examples": [
+        "He leaned over to ___ the candles on his cake."
+      ]
     },
     {
       "key": "b96",
       "verb": "hold up",
       "meaning": "delay something, or remain strong, or rob at gunpoint",
-      "example": "The traffic is going to ___ everyone this morning."
+      "example": "The traffic is going to ___ everyone this morning.",
+      "meanings": [
+        "delay something, or remain strong, or rob at gunpoint"
+      ],
+      "examples": [
+        "The traffic is going to ___ everyone this morning."
+      ]
     },
     {
       "key": "b97",
       "verb": "turn around",
       "meaning": "change direction, or improve after a bad situation",
-      "example": "The company managed to ___ its finances last year."
+      "example": "The company managed to ___ its finances last year.",
+      "meanings": [
+        "change direction, or improve after a bad situation"
+      ],
+      "examples": [
+        "The company managed to ___ its finances last year."
+      ]
     },
     {
       "key": "b98",
       "verb": "knock out",
       "meaning": "render unconscious, or eliminate from a competition",
-      "example": "The boxer is hoping to ___ his opponent in round two."
+      "example": "The boxer is hoping to ___ his opponent in round two.",
+      "meanings": [
+        "render unconscious, or eliminate from a competition"
+      ],
+      "examples": [
+        "The boxer is hoping to ___ his opponent in round two."
+      ]
     },
     {
       "key": "b99",
       "verb": "walk out",
       "meaning": "leave abruptly, often in protest, or go on strike",
-      "example": "Workers decided to ___ over the pay cuts."
+      "example": "Workers decided to ___ over the pay cuts.",
+      "meanings": [
+        "leave abruptly, often in protest, or go on strike"
+      ],
+      "examples": [
+        "Workers decided to ___ over the pay cuts."
+      ]
     },
     {
       "key": "b100",
       "verb": "fall out",
       "meaning": "have an argument that damages a relationship",
-      "example": "The two brothers tend to ___ over money."
+      "example": "The two brothers tend to ___ over money.",
+      "meanings": [
+        "have an argument that damages a relationship"
+      ],
+      "examples": [
+        "The two brothers tend to ___ over money."
+      ]
     },
     {
       "key": "b101",
       "verb": "face off",
       "meaning": "confront or compete against each other directly",
-      "example": "The two teams will ___ in the final."
+      "example": "The two teams will ___ in the final.",
+      "meanings": [
+        "confront or compete against each other directly"
+      ],
+      "examples": [
+        "The two teams will ___ in the final."
+      ]
     },
     {
       "key": "b102",
       "verb": "shake down",
       "meaning": "extort money from someone, or thoroughly search",
-      "example": "The gang tried to ___ local shop owners."
+      "example": "The gang tried to ___ local shop owners.",
+      "meanings": [
+        "extort money from someone, or thoroughly search"
+      ],
+      "examples": [
+        "The gang tried to ___ local shop owners."
+      ]
     },
     {
       "key": "b103",
       "verb": "take over",
       "meaning": "assume control of something",
-      "example": "She's ready to ___ the family business."
+      "example": "She's ready to ___ the family business.",
+      "meanings": [
+        "assume control of something"
+      ],
+      "examples": [
+        "She's ready to ___ the family business."
+      ]
     },
     {
       "key": "b104",
       "verb": "slip up",
       "meaning": "make a small mistake",
-      "example": "He tends to ___ during big presentations."
+      "example": "He tends to ___ during big presentations.",
+      "meanings": [
+        "make a small mistake"
+      ],
+      "examples": [
+        "He tends to ___ during big presentations."
+      ]
     },
     {
       "key": "b105",
       "verb": "run down",
       "meaning": "criticize someone, or gradually lose power, or hit with a vehicle",
-      "example": "I hate watching the battery ___ so fast."
+      "example": "I hate watching the battery ___ so fast.",
+      "meanings": [
+        "criticize someone, or gradually lose power, or hit with a vehicle"
+      ],
+      "examples": [
+        "I hate watching the battery ___ so fast."
+      ]
     },
     {
       "key": "b106",
       "verb": "shoot out",
       "meaning": "move or spray out suddenly and fast, or exchange gunfire",
-      "example": "Flames are about to ___ of the chimney."
+      "example": "Flames are about to ___ of the chimney.",
+      "meanings": [
+        "move or spray out suddenly and fast, or exchange gunfire"
+      ],
+      "examples": [
+        "Flames are about to ___ of the chimney."
+      ]
     },
     {
       "key": "b107",
       "verb": "stand off",
       "meaning": "keep a distance from someone or something",
-      "example": "The two sides continue to ___, neither willing to speak first."
+      "example": "The two sides continue to ___, neither willing to speak first.",
+      "meanings": [
+        "keep a distance from someone or something"
+      ],
+      "examples": [
+        "The two sides continue to ___, neither willing to speak first."
+      ]
     },
     {
       "key": "b108",
       "verb": "hang up",
       "meaning": "end a phone call, or put clothes on a hook",
-      "example": "She's going to ___ before I can explain."
+      "example": "She's going to ___ before I can explain.",
+      "meanings": [
+        "end a phone call, or put clothes on a hook"
+      ],
+      "examples": [
+        "She's going to ___ before I can explain."
+      ]
     },
     {
       "key": "b109",
       "verb": "throw back",
       "meaning": "return something, or (informal) drink quickly",
-      "example": "He decided to ___ the extra fish."
+      "example": "He decided to ___ the extra fish.",
+      "meanings": [
+        "return something, or (informal) drink quickly"
+      ],
+      "examples": [
+        "He decided to ___ the extra fish."
+      ]
     },
     {
       "key": "b110",
       "verb": "pile up",
       "meaning": "accumulate in a large amount",
-      "example": "The bills are going to ___ if we're not careful."
+      "example": "The bills are going to ___ if we're not careful.",
+      "meanings": [
+        "accumulate in a large amount"
+      ],
+      "examples": [
+        "The bills are going to ___ if we're not careful."
+      ]
     },
     {
       "key": "b111",
       "verb": "spin off",
       "meaning": "create a new, separate entity from an existing one",
-      "example": "The show is likely to ___ into its own series."
+      "example": "The show is likely to ___ into its own series.",
+      "meanings": [
+        "create a new, separate entity from an existing one"
+      ],
+      "examples": [
+        "The show is likely to ___ into its own series."
+      ]
     },
     {
       "key": "b112",
       "verb": "step back",
       "meaning": "pause to reconsider, or physically move backward",
-      "example": "Let's ___ and look at the bigger picture."
+      "example": "Let's ___ and look at the bigger picture.",
+      "meanings": [
+        "pause to reconsider, or physically move backward"
+      ],
+      "examples": [
+        "Let's ___ and look at the bigger picture."
+      ]
     },
     {
       "key": "b113",
       "verb": "play up",
       "meaning": "misbehave, exaggerate an issue, or (of a device) malfunction",
-      "example": "My laptop tends to ___ right before deadlines."
+      "example": "My laptop tends to ___ right before deadlines.",
+      "meanings": [
+        "misbehave, exaggerate an issue, or (of a device) malfunction"
+      ],
+      "examples": [
+        "My laptop tends to ___ right before deadlines."
+      ]
     },
     {
       "key": "b114",
       "verb": "hold off",
       "meaning": "delay doing something",
-      "example": "We decided to ___ on the announcement."
+      "example": "We decided to ___ on the announcement.",
+      "meanings": [
+        "delay doing something"
+      ],
+      "examples": [
+        "We decided to ___ on the announcement."
+      ]
     },
     {
       "key": "b115",
       "verb": "shuffle around",
       "meaning": "move things or people around in a disorganized way",
-      "example": "They keep wanting to ___ the furniture."
+      "example": "They keep wanting to ___ the furniture.",
+      "meanings": [
+        "move things or people around in a disorganized way"
+      ],
+      "examples": [
+        "They keep wanting to ___ the furniture."
+      ]
     },
     {
       "key": "b116",
       "verb": "cut out",
       "meaning": "remove part of something, stop a habit, or suddenly stop working",
-      "example": "The engine is likely to ___ on the highway."
+      "example": "The engine is likely to ___ on the highway.",
+      "meanings": [
+        "remove part of something, stop a habit, or suddenly stop working"
+      ],
+      "examples": [
+        "The engine is likely to ___ on the highway."
+      ]
     },
     {
       "key": "b117",
       "verb": "roam around",
       "meaning": "wander without a fixed destination",
-      "example": "We love to ___ the old town on weekends."
+      "example": "We love to ___ the old town on weekends.",
+      "meanings": [
+        "wander without a fixed destination"
+      ],
+      "examples": [
+        "We love to ___ the old town on weekends."
+      ]
     },
     {
       "key": "b118",
       "verb": "wrap up",
       "meaning": "finish something, or dress warmly",
-      "example": "Let's ___ the meeting."
+      "example": "Let's ___ the meeting.",
+      "meanings": [
+        "finish something, or dress warmly"
+      ],
+      "examples": [
+        "Let's ___ the meeting."
+      ]
     },
     {
       "key": "b119",
       "verb": "blow off (steam)",
       "meaning": "release built-up stress or anger",
-      "example": "He goes for a run to ___ steam."
+      "example": "He goes for a run to ___ steam.",
+      "meanings": [
+        "release built-up stress or anger"
+      ],
+      "examples": [
+        "He goes for a run to ___ steam."
+      ]
     },
     {
       "key": "b120",
       "verb": "potter around",
       "meaning": "spend time doing small, unhurried, pleasant tasks",
-      "example": "She likes to ___ the garden on weekends."
+      "example": "She likes to ___ the garden on weekends.",
+      "meanings": [
+        "spend time doing small, unhurried, pleasant tasks"
+      ],
+      "examples": [
+        "She likes to ___ the garden on weekends."
+      ]
     },
     {
       "key": "b121",
       "verb": "cram in",
       "meaning": "fit a lot into a small space or time",
-      "example": "We had to ___ five meetings before lunch."
+      "example": "We had to ___ five meetings before lunch.",
+      "meanings": [
+        "fit a lot into a small space or time"
+      ],
+      "examples": [
+        "We had to ___ five meetings before lunch."
+      ]
     },
     {
       "key": "b122",
       "verb": "slope up/down",
       "meaning": "(of a surface) rise or descend gradually",
-      "example": "The path seems to ___ toward the river."
+      "example": "The path seems to ___ toward the river.",
+      "meanings": [
+        "(of a surface) rise or descend gradually"
+      ],
+      "examples": [
+        "The path seems to ___ toward the river."
+      ]
     },
     {
       "key": "b123",
       "verb": "build up",
       "meaning": "increase gradually, or accumulate",
-      "example": "Tension continues to ___ between the two countries."
+      "example": "Tension continues to ___ between the two countries.",
+      "meanings": [
+        "increase gradually, or accumulate"
+      ],
+      "examples": [
+        "Tension continues to ___ between the two countries."
+      ]
     },
     {
       "key": "b124",
       "verb": "bulk up",
       "meaning": "increase in size or muscle, or add more material",
-      "example": "He's been trying to ___ for the season."
+      "example": "He's been trying to ___ for the season.",
+      "meanings": [
+        "increase in size or muscle, or add more material"
+      ],
+      "examples": [
+        "He's been trying to ___ for the season."
+      ]
     },
     {
       "key": "b125",
       "verb": "cross over",
       "meaning": "move from one side or state to another, or blend into another genre",
-      "example": "The band decided to ___ into pop."
+      "example": "The band decided to ___ into pop.",
+      "meanings": [
+        "move from one side or state to another, or blend into another genre"
+      ],
+      "examples": [
+        "The band decided to ___ into pop."
+      ]
     },
     {
       "key": "b126",
       "verb": "move on",
       "meaning": "stop dwelling on the past and continue with life",
-      "example": "It's time to ___ from the breakup."
+      "example": "It's time to ___ from the breakup.",
+      "meanings": [
+        "stop dwelling on the past and continue with life"
+      ],
+      "examples": [
+        "It's time to ___ from the breakup."
+      ]
     },
     {
       "key": "b127",
       "verb": "come up",
       "meaning": "arise or happen, or approach in time",
-      "example": "Something is bound to ___ at work."
+      "example": "Something is bound to ___ at work.",
+      "meanings": [
+        "arise or happen, or approach in time"
+      ],
+      "examples": [
+        "Something is bound to ___ at work."
+      ]
     },
     {
       "key": "b128",
       "verb": "crack on",
       "meaning": "continue doing something with energy, get on with it",
-      "example": "Let's ___, we're behind schedule."
+      "example": "Let's ___, we're behind schedule.",
+      "meanings": [
+        "continue doing something with energy, get on with it"
+      ],
+      "examples": [
+        "Let's ___, we're behind schedule."
+      ]
     },
     {
       "key": "b129",
       "verb": "go ahead",
       "meaning": "proceed with something, often after permission",
-      "example": "You can ___ and start without me."
+      "example": "You can ___ and start without me.",
+      "meanings": [
+        "proceed with something, often after permission"
+      ],
+      "examples": [
+        "You can ___ and start without me."
+      ]
     },
     {
       "key": "b130",
       "verb": "get back",
       "meaning": "return, contact someone later, or retaliate",
-      "example": "I'll ___ to you tomorrow."
+      "example": "I'll ___ to you tomorrow.",
+      "meanings": [
+        "return, contact someone later, or retaliate"
+      ],
+      "examples": [
+        "I'll ___ to you tomorrow."
+      ]
     },
     {
       "key": "b131",
       "verb": "catch up on",
       "meaning": "do something you've been delaying, to become current",
-      "example": "I need to ___ sleep this weekend."
+      "example": "I need to ___ sleep this weekend.",
+      "meanings": [
+        "do something you've been delaying, to become current"
+      ],
+      "examples": [
+        "I need to ___ sleep this weekend."
+      ]
     },
     {
       "key": "b132",
       "verb": "stick with",
       "meaning": "continue with something rather than changing",
-      "example": "She decided to ___ her original plan."
+      "example": "She decided to ___ her original plan.",
+      "meanings": [
+        "continue with something rather than changing"
+      ],
+      "examples": [
+        "She decided to ___ her original plan."
+      ]
     },
     {
       "key": "b133",
       "verb": "look after",
       "meaning": "take care of someone or something",
-      "example": "Can you ___ the dog this weekend?"
+      "example": "Can you ___ the dog this weekend?",
+      "meanings": [
+        "take care of someone or something"
+      ],
+      "examples": [
+        "Can you ___ the dog this weekend?"
+      ]
     },
     {
       "key": "b134",
       "verb": "take back",
       "meaning": "retract a statement, or return something to a store",
-      "example": "I'd like to ___ what I said earlier."
+      "example": "I'd like to ___ what I said earlier.",
+      "meanings": [
+        "retract a statement, or return something to a store"
+      ],
+      "examples": [
+        "I'd like to ___ what I said earlier."
+      ]
     },
     {
       "key": "vmtlmagss4qf4",
       "verb": "get along with",
       "meaning": "have a friendly relationship with someone",
-      "example": "She ___ almost everyone at work."
+      "example": "She ___ almost everyone at work.",
+      "meanings": [
+        "have a friendly relationship with someone"
+      ],
+      "examples": [
+        "She ___ almost everyone at work."
+      ]
     },
     {
       "key": "vmtlmqnc3cs45",
       "verb": "get away with",
       "meaning": "do something wrong without being caught or punished",
-      "example": "He ___ being late all semester."
+      "example": "He ___ being late all semester.",
+      "meanings": [
+        "do something wrong without being caught or punished"
+      ],
+      "examples": [
+        "He ___ being late all semester."
+      ]
     },
     {
       "key": "vmtlmwdyao3sw",
       "verb": "get into",
       "meaning": "become interested or involved in something, or enter",
-      "example": "She really ___ painting last year."
+      "example": "She really ___ painting last year.",
+      "meanings": [
+        "become interested or involved in something, or enter"
+      ],
+      "examples": [
+        "She really ___ painting last year."
+      ]
     }
   ],
   "stats": {
@@ -1249,6 +2077,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "shake down": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1259,9 +2092,9 @@
   },
   "activeTypes": {
     "fill_blank": true,
-    "meaning_to_verb": false,
-    "verb_to_meaning": false,
-    "multiple_choice": false
+    "meaning_to_verb": true,
+    "verb_to_meaning": true,
+    "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T09:35:59.309Z"
+  "updatedAt": "2026-09-05T11:12:04.139Z"
 }
