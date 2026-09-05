@@ -2112,13 +2112,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "be through with": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 2,
     "bestStreak": 9,
-    "totalAttempts": 138,
-    "totalCorrect": 106
+    "totalAttempts": 139,
+    "totalCorrect": 107
   },
   "activeTypes": {
     "fill_blank": true,
@@ -2126,5 +2131,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T14:59:41.375Z"
+  "updatedAt": "2026-09-05T15:02:19.278Z"
 }
