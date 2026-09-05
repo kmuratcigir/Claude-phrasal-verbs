@@ -827,12 +827,6 @@
       "verb": "get into",
       "meaning": "become interested or involved in something, or enter",
       "example": "She really ___ painting last year."
-    },
-    {
-      "key": "vmto5g3bpn9k2",
-      "verb": "show up",
-      "meaning": "arrive, especially unexpectedly or late",
-      "example": "She ___ an hour late."
     }
   ],
   "stats": {
@@ -1244,5 +1238,5 @@
     "verb_to_meaning": true,
     "write_sentence": false
   },
-  "updatedAt": "2026-09-05T08:57:16.167Z"
+  "updatedAt": "2026-09-05T08:57:51.499Z"
 }
