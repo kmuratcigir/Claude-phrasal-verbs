@@ -2174,16 +2174,16 @@
       "streak": 1
     },
     "stand off": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 7,
+    "currentStreak": 8,
     "bestStreak": 9,
-    "totalAttempts": 158,
-    "totalCorrect": 118
+    "totalAttempts": 159,
+    "totalCorrect": 119
   },
   "activeTypes": {
     "fill_blank": true,
@@ -2191,5 +2191,5 @@
     "verb_to_meaning": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T15:57:11.474Z"
+  "updatedAt": "2026-09-05T15:57:53.456Z"
 }
