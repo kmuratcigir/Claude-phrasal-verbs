@@ -2127,6 +2127,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "gather around": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2141,5 +2146,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:05:45.935Z"
+  "updatedAt": "2026-09-05T15:06:53.608Z"
 }
