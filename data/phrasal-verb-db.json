@@ -936,9 +936,9 @@
       "streak": 0
     },
     "figure out": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "tell off": {
       "seen": 2,
@@ -1244,5 +1244,5 @@
     "write_sentence": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T09:15:16.722Z"
+  "updatedAt": "2026-09-05T09:15:37.373Z"
 }
