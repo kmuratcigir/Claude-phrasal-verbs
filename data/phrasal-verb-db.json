@@ -1832,13 +1832,18 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "come up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 30,
+    "totalAttempts": 31,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:07:14.014Z"
+  "updatedAt": "2026-09-05T20:07:27.249Z"
 }
