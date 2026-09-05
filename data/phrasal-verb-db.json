@@ -2109,9 +2109,9 @@
       "streak": 0
     },
     "wander off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "be through with": {
       "seen": 1,
@@ -2150,10 +2150,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 9,
-    "totalAttempts": 142,
-    "totalCorrect": 107
+    "totalAttempts": 143,
+    "totalCorrect": 108
   },
   "activeTypes": {
     "fill_blank": true,
@@ -2161,5 +2161,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:10:28.776Z"
+  "updatedAt": "2026-09-05T15:10:42.093Z"
 }
