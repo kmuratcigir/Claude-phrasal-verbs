@@ -1929,9 +1929,9 @@
       "streak": 1
     },
     "bulk up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "move in": {
       "seen": 2,
@@ -2200,9 +2200,9 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 161,
+    "totalAttempts": 162,
     "totalCorrect": 120
   },
   "activeTypes": {
@@ -2211,5 +2211,5 @@
     "verb_to_meaning": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T19:38:42.998Z"
+  "updatedAt": "2026-09-05T19:38:47.894Z"
 }
