@@ -1757,6 +1757,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "fit in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1765,5 +1770,5 @@
     "totalAttempts": 12,
     "totalCorrect": 8
   },
-  "updatedAt": "2026-09-05T20:53:30.352Z"
+  "updatedAt": "2026-09-05T20:53:32.592Z"
 }
