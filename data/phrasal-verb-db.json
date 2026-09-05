@@ -1672,6 +1672,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "figure out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1686,5 +1691,5 @@
     "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T19:46:03.844Z"
+  "updatedAt": "2026-09-05T19:51:51.389Z"
 }
