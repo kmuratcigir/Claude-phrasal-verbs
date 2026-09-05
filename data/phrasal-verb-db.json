@@ -1692,6 +1692,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "mix up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1700,5 +1705,5 @@
     "totalAttempts": 12,
     "totalCorrect": 8
   },
-  "updatedAt": "2026-09-05T21:21:06.383Z"
+  "updatedAt": "2026-09-05T21:21:09.722Z"
 }
