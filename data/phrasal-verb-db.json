@@ -1759,9 +1759,9 @@
       "streak": 1
     },
     "sort through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "figure out": {
       "seen": 2,
@@ -2165,10 +2165,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 2,
     "bestStreak": 9,
-    "totalAttempts": 152,
-    "totalCorrect": 112
+    "totalAttempts": 153,
+    "totalCorrect": 113
   },
   "activeTypes": {
     "fill_blank": false,
@@ -2176,5 +2176,5 @@
     "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:40:56.563Z"
+  "updatedAt": "2026-09-05T15:41:14.313Z"
 }
