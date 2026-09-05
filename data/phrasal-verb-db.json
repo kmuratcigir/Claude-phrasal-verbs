@@ -1882,6 +1882,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "take in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1890,5 +1895,5 @@
     "totalAttempts": 34,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:40:33.568Z"
+  "updatedAt": "2026-09-05T20:41:18.951Z"
 }
