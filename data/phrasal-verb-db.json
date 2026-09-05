@@ -1837,6 +1837,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "opt into": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1845,5 +1850,5 @@
     "totalAttempts": 31,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:07:27.249Z"
+  "updatedAt": "2026-09-05T20:11:32.500Z"
 }
