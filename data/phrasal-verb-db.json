@@ -1752,13 +1752,18 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "run through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 7,
-    "totalAttempts": 11,
+    "totalAttempts": 12,
     "totalCorrect": 8
   },
-  "updatedAt": "2026-09-05T20:53:28.302Z"
+  "updatedAt": "2026-09-05T20:53:30.352Z"
 }
