@@ -1687,6 +1687,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "shake up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1696,10 +1701,10 @@
     "totalCorrect": 3
   },
   "activeTypes": {
-    "fill_blank": true,
+    "fill_blank": false,
     "meaning_to_verb": false,
     "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T19:56:55.643Z"
+  "updatedAt": "2026-09-05T19:58:42.101Z"
 }
