@@ -2147,13 +2147,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "get away with": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 9,
-    "totalAttempts": 144,
-    "totalCorrect": 108
+    "totalAttempts": 145,
+    "totalCorrect": 109
   },
   "activeTypes": {
     "fill_blank": true,
@@ -2161,5 +2166,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:12:31.379Z"
+  "updatedAt": "2026-09-05T15:12:46.560Z"
 }
