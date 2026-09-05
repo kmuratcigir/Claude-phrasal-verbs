@@ -1712,6 +1712,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "give away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1720,5 +1725,5 @@
     "totalAttempts": 16,
     "totalCorrect": 9
   },
-  "updatedAt": "2026-09-05T21:23:02.804Z"
+  "updatedAt": "2026-09-05T21:23:29.123Z"
 }
