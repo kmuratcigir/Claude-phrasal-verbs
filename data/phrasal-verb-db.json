@@ -1722,6 +1722,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "cut off": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1730,5 +1735,5 @@
     "totalAttempts": 5,
     "totalCorrect": 5
   },
-  "updatedAt": "2026-09-05T20:52:26.306Z"
+  "updatedAt": "2026-09-05T20:52:59.757Z"
 }
