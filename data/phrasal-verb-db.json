@@ -1667,13 +1667,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "roam around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 0,
-    "bestStreak": 0,
-    "totalAttempts": 0,
-    "totalCorrect": 0
+    "currentStreak": 1,
+    "bestStreak": 1,
+    "totalAttempts": 1,
+    "totalCorrect": 1
   },
-  "updatedAt": "2026-09-05T20:44:59.770Z"
+  "updatedAt": "2026-09-05T20:45:23.282Z"
 }
