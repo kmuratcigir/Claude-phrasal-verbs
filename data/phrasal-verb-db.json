@@ -1792,13 +1792,33 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "have over": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "play up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "cut through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "drop out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 22,
+    "totalAttempts": 26,
     "totalCorrect": 12
   },
-  "updatedAt": "2026-09-05T20:07:02.313Z"
+  "updatedAt": "2026-09-05T20:07:03.676Z"
 }
