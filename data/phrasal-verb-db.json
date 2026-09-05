@@ -1657,7 +1657,13 @@
       ]
     }
   ],
-  "stats": {},
+  "stats": {
+    "get away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    }
+  },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
@@ -1668,7 +1674,7 @@
     "fill_blank": true,
     "meaning_to_verb": false,
     "verb_to_meaning": false,
-    "multiple_choice": false
+    "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T19:45:21.498Z"
+  "updatedAt": "2026-09-05T19:45:46.096Z"
 }
