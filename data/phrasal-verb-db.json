@@ -1689,7 +1689,7 @@
       "streak": 1
     },
     "shake up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -1857,8 +1857,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 31,
+    "totalAttempts": 32,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:15:10.987Z"
+  "updatedAt": "2026-09-05T20:15:27.796Z"
 }
