@@ -14900,8 +14900,14 @@
   [
     "shake",
     "shake down",
-    "search a person or place thoroughly, or extort money",
-    "Guards shook down every visitor at the gate."
+    [
+      "search a person or place thoroughly",
+      "extort money from someone, often through threats"
+    ],
+    [
+      "Guards shook down every visitor at the gate.",
+      "The gang shook down local shop owners for protection money."
+    ]
   ],
   [
     "shake",
