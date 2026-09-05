@@ -1669,9 +1669,9 @@
       "streak": 1
     },
     "open up": {
-      "seen": 10,
-      "correct": 8,
-      "streak": 2
+      "seen": 7,
+      "correct": 6,
+      "streak": 6
     },
     "slope up/down": {
       "seen": 1,
@@ -1782,13 +1782,28 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "knock out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "catch up with": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "look through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 2,
-    "bestStreak": 12,
+    "currentStreak": 1,
+    "bestStreak": 11,
     "totalAttempts": 39,
-    "totalCorrect": 30
+    "totalCorrect": 28
   },
-  "updatedAt": "2026-09-05T21:36:07.712Z"
+  "updatedAt": "2026-09-05T21:36:11.074Z"
 }
