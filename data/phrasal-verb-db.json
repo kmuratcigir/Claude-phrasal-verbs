@@ -1887,12 +1887,17 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "settle down": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 34,
+    "totalAttempts": 35,
     "totalCorrect": 13
   },
   "activeTypes": {
@@ -1901,5 +1906,5 @@
     "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T20:42:33.572Z"
+  "updatedAt": "2026-09-05T20:42:42.004Z"
 }
