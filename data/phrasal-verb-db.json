@@ -1749,9 +1749,9 @@
       "streak": 0
     },
     "tear off": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "run through": {
       "seen": 1,
@@ -1895,5 +1895,11 @@
     "totalAttempts": 34,
     "totalCorrect": 13
   },
-  "updatedAt": "2026-09-05T20:41:18.951Z"
+  "activeTypes": {
+    "fill_blank": false,
+    "meaning_to_verb": false,
+    "verb_to_meaning": false,
+    "multiple_choice": true
+  },
+  "updatedAt": "2026-09-05T20:42:33.572Z"
 }
