@@ -2129,7 +2129,7 @@
       "streak": 1
     },
     "gather around": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -2167,14 +2167,14 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 9,
-    "totalAttempts": 149,
+    "totalAttempts": 150,
     "totalCorrect": 111
   },
   "activeTypes": {
-    "fill_blank": true,
-    "meaning_to_verb": true,
-    "verb_to_meaning": true,
+    "fill_blank": false,
+    "meaning_to_verb": false,
+    "verb_to_meaning": false,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:38:06.406Z"
+  "updatedAt": "2026-09-05T15:38:26.882Z"
 }
