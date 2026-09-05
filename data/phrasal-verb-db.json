@@ -1717,13 +1717,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "round up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 4,
-    "bestStreak": 4,
-    "totalAttempts": 4,
-    "totalCorrect": 4
+    "currentStreak": 5,
+    "bestStreak": 5,
+    "totalAttempts": 5,
+    "totalCorrect": 5
   },
-  "updatedAt": "2026-09-05T20:51:44.290Z"
+  "updatedAt": "2026-09-05T20:52:26.306Z"
 }
