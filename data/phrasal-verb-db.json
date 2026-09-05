@@ -1702,13 +1702,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "move out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 3,
-    "bestStreak": 3,
-    "totalAttempts": 3,
-    "totalCorrect": 3
+    "currentStreak": 4,
+    "bestStreak": 4,
+    "totalAttempts": 4,
+    "totalCorrect": 4
   },
-  "updatedAt": "2026-09-05T20:49:35.757Z"
+  "updatedAt": "2026-09-05T20:50:39.341Z"
 }
