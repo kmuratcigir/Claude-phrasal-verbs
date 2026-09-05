@@ -1697,13 +1697,38 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "hang around": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "think back": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "look back": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    },
+    "blow out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
+    },
+    "dwell on": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 0,
     "bestStreak": 3,
-    "totalAttempts": 3,
-    "totalCorrect": 3
+    "totalAttempts": 8,
+    "totalCorrect": 4
   },
-  "updatedAt": "2026-09-05T20:03:22.563Z"
+  "updatedAt": "2026-09-05T20:03:24.093Z"
 }
