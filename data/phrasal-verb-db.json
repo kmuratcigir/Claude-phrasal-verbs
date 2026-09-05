@@ -1682,13 +1682,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "get in touch with": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 1,
-    "bestStreak": 1,
-    "totalAttempts": 1,
-    "totalCorrect": 1
+    "currentStreak": 2,
+    "bestStreak": 2,
+    "totalAttempts": 2,
+    "totalCorrect": 2
   },
-  "updatedAt": "2026-09-05T20:48:39.324Z"
+  "updatedAt": "2026-09-05T20:48:46.258Z"
 }
