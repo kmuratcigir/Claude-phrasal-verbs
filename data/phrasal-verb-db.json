@@ -1737,6 +1737,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "get into": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1745,5 +1750,5 @@
     "totalAttempts": 8,
     "totalCorrect": 7
   },
-  "updatedAt": "2026-09-05T20:53:13.594Z"
+  "updatedAt": "2026-09-05T20:53:19.394Z"
 }
