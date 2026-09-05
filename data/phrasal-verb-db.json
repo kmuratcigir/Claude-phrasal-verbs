@@ -1234,13 +1234,18 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "snap out of": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 9,
-    "totalAttempts": 120,
-    "totalCorrect": 91
+    "totalAttempts": 121,
+    "totalCorrect": 92
   },
   "activeTypes": {
     "fill_blank": false,
@@ -1248,5 +1253,5 @@
     "verb_to_meaning": true,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T09:27:58.611Z"
+  "updatedAt": "2026-09-05T09:28:12.945Z"
 }
