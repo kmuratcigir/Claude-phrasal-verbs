@@ -2142,6 +2142,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "run down": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2156,5 +2161,5 @@
     "verb_to_meaning": true,
     "multiple_choice": true
   },
-  "updatedAt": "2026-09-05T15:07:29.360Z"
+  "updatedAt": "2026-09-05T15:10:28.776Z"
 }
