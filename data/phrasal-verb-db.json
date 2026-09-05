@@ -1659,9 +1659,9 @@
   ],
   "stats": {
     "run down": {
-      "seen": 4,
-      "correct": 1,
-      "streak": 1
+      "seen": 5,
+      "correct": 2,
+      "streak": 2
     }
   },
   "globalStats": {
@@ -1670,5 +1670,5 @@
     "totalAttempts": 4,
     "totalCorrect": 1
   },
-  "updatedAt": "2026-09-05T20:56:07.001Z"
+  "updatedAt": "2026-09-05T20:56:11.473Z"
 }
