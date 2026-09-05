@@ -2079,9 +2079,9 @@
       "streak": 0
     },
     "shake down": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "cut out": {
       "seen": 2,
@@ -2191,5 +2191,5 @@
     "verb_to_meaning": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T15:52:57.544Z"
+  "updatedAt": "2026-09-05T15:57:11.474Z"
 }
