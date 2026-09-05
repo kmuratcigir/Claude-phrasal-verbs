@@ -1679,9 +1679,9 @@
       "streak": 1
     },
     "work through": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "take back": {
       "seen": 1,
@@ -2211,5 +2211,5 @@
     "verb_to_meaning": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T19:38:47.894Z"
+  "updatedAt": "2026-09-05T19:44:08.377Z"
 }
