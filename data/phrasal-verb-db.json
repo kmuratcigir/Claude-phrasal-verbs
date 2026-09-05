@@ -2177,6 +2177,11 @@
       "seen": 2,
       "correct": 1,
       "streak": 0
+    },
+    "potter around": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2191,5 +2196,5 @@
     "verb_to_meaning": false,
     "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T15:57:53.456Z"
+  "updatedAt": "2026-09-05T19:35:45.096Z"
 }
