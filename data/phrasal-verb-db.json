@@ -1849,9 +1849,9 @@
       "streak": 0
     },
     "talk through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "drift away": {
       "seen": 1,
@@ -2091,10 +2091,10 @@
     "totalCorrect": 94
   },
   "activeTypes": {
-    "fill_blank": true,
-    "meaning_to_verb": true,
+    "fill_blank": false,
+    "meaning_to_verb": false,
     "verb_to_meaning": true,
-    "multiple_choice": true
+    "multiple_choice": false
   },
-  "updatedAt": "2026-09-05T11:12:04.139Z"
+  "updatedAt": "2026-09-05T12:12:56.206Z"
 }
