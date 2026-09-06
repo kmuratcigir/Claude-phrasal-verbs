@@ -1907,6 +1907,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "break in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1915,5 +1920,5 @@
     "totalAttempts": 74,
     "totalCorrect": 64
   },
-  "updatedAt": "2026-09-06T11:41:09.026Z"
+  "updatedAt": "2026-09-06T11:41:18.015Z"
 }
