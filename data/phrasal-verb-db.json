@@ -1975,10 +1975,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 5,
+    "currentStreak": 6,
     "bestStreak": 33,
-    "totalAttempts": 92,
-    "totalCorrect": 80
+    "totalAttempts": 93,
+    "totalCorrect": 81
   },
-  "updatedAt": "2026-09-06T11:52:37.634Z"
+  "updatedAt": "2026-09-06T11:52:38.690Z"
 }
