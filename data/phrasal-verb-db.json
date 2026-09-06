@@ -1932,6 +1932,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "play up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1940,5 +1945,5 @@
     "totalAttempts": 81,
     "totalCorrect": 71
   },
-  "updatedAt": "2026-09-06T11:42:42.410Z"
+  "updatedAt": "2026-09-06T11:42:51.166Z"
 }
