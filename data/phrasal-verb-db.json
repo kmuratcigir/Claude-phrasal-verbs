@@ -1909,7 +1909,7 @@
       "streak": 1
     },
     "break in": {
-      "seen": 5,
+      "seen": 6,
       "correct": 2,
       "streak": 0
     },
@@ -1995,5 +1995,5 @@
     "totalAttempts": 100,
     "totalCorrect": 85
   },
-  "updatedAt": "2026-09-06T12:01:53.736Z"
+  "updatedAt": "2026-09-06T12:02:06.890Z"
 }
