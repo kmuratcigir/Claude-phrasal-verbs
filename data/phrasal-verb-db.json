@@ -1937,6 +1937,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "jolt out of": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1945,5 +1950,5 @@
     "totalAttempts": 82,
     "totalCorrect": 72
   },
-  "updatedAt": "2026-09-06T11:42:52.344Z"
+  "updatedAt": "2026-09-06T11:43:11.014Z"
 }
