@@ -1982,6 +1982,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "opt into": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1990,5 +1995,5 @@
     "totalAttempts": 95,
     "totalCorrect": 83
   },
-  "updatedAt": "2026-09-06T11:53:10.183Z"
+  "updatedAt": "2026-09-06T11:53:23.369Z"
 }
