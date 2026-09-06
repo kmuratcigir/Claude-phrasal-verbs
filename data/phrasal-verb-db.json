@@ -1977,6 +1977,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "force through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1985,5 +1990,5 @@
     "totalAttempts": 94,
     "totalCorrect": 82
   },
-  "updatedAt": "2026-09-06T11:53:00.876Z"
+  "updatedAt": "2026-09-06T11:53:09.001Z"
 }
