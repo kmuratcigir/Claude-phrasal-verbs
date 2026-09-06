@@ -1942,6 +1942,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "get along with": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1950,5 +1955,5 @@
     "totalAttempts": 83,
     "totalCorrect": 72
   },
-  "updatedAt": "2026-09-06T11:43:12.033Z"
+  "updatedAt": "2026-09-06T11:43:48.285Z"
 }
