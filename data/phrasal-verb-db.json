@@ -1929,9 +1929,9 @@
       "streak": 1
     },
     "wear down": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "play up": {
       "seen": 2,
@@ -2080,5 +2080,5 @@
     "totalAttempts": 131,
     "totalCorrect": 108
   },
-  "updatedAt": "2026-09-06T12:15:31.642Z"
+  "updatedAt": "2026-09-06T12:15:42.127Z"
 }
