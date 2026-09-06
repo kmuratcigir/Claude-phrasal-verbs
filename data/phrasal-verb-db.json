@@ -2019,9 +2019,9 @@
       "streak": 1
     },
     "live through": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "face off": {
       "seen": 1,
@@ -2080,5 +2080,5 @@
     "totalAttempts": 135,
     "totalCorrect": 111
   },
-  "updatedAt": "2026-09-06T12:16:18.133Z"
+  "updatedAt": "2026-09-06T12:16:42.260Z"
 }
