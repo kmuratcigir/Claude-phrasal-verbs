@@ -2057,6 +2057,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "sleep through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2065,5 +2070,5 @@
     "totalAttempts": 123,
     "totalCorrect": 101
   },
-  "updatedAt": "2026-09-06T12:14:05.726Z"
+  "updatedAt": "2026-09-06T12:14:16.574Z"
 }
