@@ -2022,6 +2022,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "face off": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2030,5 +2035,5 @@
     "totalAttempts": 111,
     "totalCorrect": 92
   },
-  "updatedAt": "2026-09-06T12:10:54.845Z"
+  "updatedAt": "2026-09-06T12:11:08.154Z"
 }
