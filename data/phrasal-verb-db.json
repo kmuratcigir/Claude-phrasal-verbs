@@ -1877,6 +1877,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "walk out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1885,5 +1890,5 @@
     "totalAttempts": 64,
     "totalCorrect": 54
   },
-  "updatedAt": "2026-09-06T11:38:25.035Z"
+  "updatedAt": "2026-09-06T11:38:43.577Z"
 }
