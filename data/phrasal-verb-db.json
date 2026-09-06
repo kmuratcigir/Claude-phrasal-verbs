@@ -1947,6 +1947,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "build up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1955,5 +1960,5 @@
     "totalAttempts": 85,
     "totalCorrect": 74
   },
-  "updatedAt": "2026-09-06T11:43:53.232Z"
+  "updatedAt": "2026-09-06T11:43:56.151Z"
 }
