@@ -2162,6 +2162,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "get in touch with": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2170,5 +2175,5 @@
     "totalAttempts": 157,
     "totalCorrect": 130
   },
-  "updatedAt": "2026-09-06T12:23:53.544Z"
+  "updatedAt": "2026-09-06T12:24:06.061Z"
 }
