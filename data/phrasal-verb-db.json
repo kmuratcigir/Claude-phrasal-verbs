@@ -2012,6 +2012,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "shuffle around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2020,5 +2025,5 @@
     "totalAttempts": 108,
     "totalCorrect": 90
   },
-  "updatedAt": "2026-09-06T12:09:48.612Z"
+  "updatedAt": "2026-09-06T12:10:27.535Z"
 }
