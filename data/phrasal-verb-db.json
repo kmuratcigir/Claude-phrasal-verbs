@@ -1822,6 +1822,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "rush through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1830,5 +1835,5 @@
     "totalAttempts": 51,
     "totalCorrect": 41
   },
-  "updatedAt": "2026-09-06T07:19:52.415Z"
+  "updatedAt": "2026-09-06T07:19:56.261Z"
 }
