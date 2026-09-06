@@ -1967,6 +1967,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "throw back": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1975,5 +1980,5 @@
     "totalAttempts": 89,
     "totalCorrect": 77
   },
-  "updatedAt": "2026-09-06T11:51:47.957Z"
+  "updatedAt": "2026-09-06T11:51:53.917Z"
 }
