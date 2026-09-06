@@ -1797,6 +1797,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "make out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1805,5 +1810,5 @@
     "totalAttempts": 44,
     "totalCorrect": 35
   },
-  "updatedAt": "2026-09-06T07:17:57.350Z"
+  "updatedAt": "2026-09-06T07:18:04.057Z"
 }
