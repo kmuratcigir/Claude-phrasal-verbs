@@ -1979,9 +1979,9 @@
       "streak": 1
     },
     "force through": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "opt into": {
       "seen": 1,
@@ -2025,5 +2025,5 @@
     "totalAttempts": 109,
     "totalCorrect": 91
   },
-  "updatedAt": "2026-09-06T12:10:29.055Z"
+  "updatedAt": "2026-09-06T12:10:36.253Z"
 }
