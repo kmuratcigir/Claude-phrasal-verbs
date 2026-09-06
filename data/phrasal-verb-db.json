@@ -2092,6 +2092,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "snap out of": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2100,5 +2105,5 @@
     "totalAttempts": 143,
     "totalCorrect": 119
   },
-  "updatedAt": "2026-09-06T12:19:34.455Z"
+  "updatedAt": "2026-09-06T12:20:07.485Z"
 }
