@@ -1997,6 +1997,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "crack on": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2005,5 +2010,5 @@
     "totalAttempts": 105,
     "totalCorrect": 88
   },
-  "updatedAt": "2026-09-06T12:09:00.883Z"
+  "updatedAt": "2026-09-06T12:09:06.619Z"
 }
