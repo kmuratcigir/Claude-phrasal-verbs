@@ -1847,6 +1847,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "fumble around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1855,5 +1860,5 @@
     "totalAttempts": 57,
     "totalCorrect": 47
   },
-  "updatedAt": "2026-09-06T07:21:44.953Z"
+  "updatedAt": "2026-09-06T11:36:58.496Z"
 }
