@@ -1779,9 +1779,9 @@
       "streak": 1
     },
     "block off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "sell out": {
       "seen": 1,
@@ -1815,5 +1815,5 @@
     "totalAttempts": 47,
     "totalCorrect": 38
   },
-  "updatedAt": "2026-09-06T07:18:27.810Z"
+  "updatedAt": "2026-09-06T07:18:36.494Z"
 }
