@@ -1854,9 +1854,9 @@
       "streak": 1
     },
     "tell off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "catch up with": {
       "seen": 1,
@@ -2065,5 +2065,5 @@
     "totalAttempts": 121,
     "totalCorrect": 99
   },
-  "updatedAt": "2026-09-06T12:13:11.456Z"
+  "updatedAt": "2026-09-06T12:13:44.690Z"
 }
