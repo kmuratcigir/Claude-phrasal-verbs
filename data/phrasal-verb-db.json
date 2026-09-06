@@ -2082,6 +2082,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "spin off": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2090,5 +2095,5 @@
     "totalAttempts": 141,
     "totalCorrect": 117
   },
-  "updatedAt": "2026-09-06T12:18:31.582Z"
+  "updatedAt": "2026-09-06T12:19:10.413Z"
 }
