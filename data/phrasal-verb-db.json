@@ -1972,6 +1972,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "gather around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1980,5 +1985,5 @@
     "totalAttempts": 93,
     "totalCorrect": 81
   },
-  "updatedAt": "2026-09-06T11:52:38.690Z"
+  "updatedAt": "2026-09-06T11:52:59.670Z"
 }
