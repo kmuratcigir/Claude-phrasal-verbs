@@ -1957,6 +1957,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "piece together": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1965,5 +1970,5 @@
     "totalAttempts": 87,
     "totalCorrect": 75
   },
-  "updatedAt": "2026-09-06T11:51:16.153Z"
+  "updatedAt": "2026-09-06T11:51:38.818Z"
 }
