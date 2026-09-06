@@ -1799,9 +1799,9 @@
       "streak": 1
     },
     "make out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "slip away": {
       "seen": 1,
@@ -1980,5 +1980,5 @@
     "totalAttempts": 92,
     "totalCorrect": 80
   },
-  "updatedAt": "2026-09-06T11:52:33.834Z"
+  "updatedAt": "2026-09-06T11:52:37.634Z"
 }
