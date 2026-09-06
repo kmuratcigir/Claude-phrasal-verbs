@@ -1987,6 +1987,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "stand off": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1995,5 +2000,5 @@
     "totalAttempts": 103,
     "totalCorrect": 87
   },
-  "updatedAt": "2026-09-06T12:08:04.104Z"
+  "updatedAt": "2026-09-06T12:08:42.581Z"
 }
