@@ -2049,9 +2049,9 @@
       "streak": 1
     },
     "cram in": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "shake up": {
       "seen": 1,
@@ -2080,5 +2080,5 @@
     "totalAttempts": 137,
     "totalCorrect": 113
   },
-  "updatedAt": "2026-09-06T12:16:54.192Z"
+  "updatedAt": "2026-09-06T12:17:02.327Z"
 }
