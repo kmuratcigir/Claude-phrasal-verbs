@@ -1754,9 +1754,9 @@
       "streak": 0
     },
     "bump into": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "take off": {
       "seen": 2,
@@ -2065,5 +2065,5 @@
     "totalAttempts": 119,
     "totalCorrect": 98
   },
-  "updatedAt": "2026-09-06T12:12:51.998Z"
+  "updatedAt": "2026-09-06T12:13:02.623Z"
 }
