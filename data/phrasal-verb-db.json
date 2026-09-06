@@ -1804,9 +1804,9 @@
       "streak": 2
     },
     "slip away": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "draw in": {
       "seen": 1,
@@ -1995,5 +1995,5 @@
     "totalAttempts": 102,
     "totalCorrect": 86
   },
-  "updatedAt": "2026-09-06T12:07:35.830Z"
+  "updatedAt": "2026-09-06T12:08:03.017Z"
 }
