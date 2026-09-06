@@ -1902,6 +1902,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "dwell on": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -1910,5 +1915,5 @@
     "totalAttempts": 73,
     "totalCorrect": 63
   },
-  "updatedAt": "2026-09-06T11:40:34.588Z"
+  "updatedAt": "2026-09-06T11:41:07.497Z"
 }
