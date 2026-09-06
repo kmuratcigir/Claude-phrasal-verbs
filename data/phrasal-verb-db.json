@@ -1952,6 +1952,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "fall through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -1960,5 +1965,5 @@
     "totalAttempts": 86,
     "totalCorrect": 75
   },
-  "updatedAt": "2026-09-06T11:43:57.473Z"
+  "updatedAt": "2026-09-06T11:51:14.454Z"
 }
