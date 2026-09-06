@@ -2017,6 +2017,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "live through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2025,5 +2030,5 @@
     "totalAttempts": 110,
     "totalCorrect": 92
   },
-  "updatedAt": "2026-09-06T12:10:37.378Z"
+  "updatedAt": "2026-09-06T12:10:53.836Z"
 }
