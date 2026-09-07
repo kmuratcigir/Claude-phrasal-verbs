@@ -2063,9 +2063,9 @@
       "streak": 0
     },
     "stand in": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 0
+      "seen": 4,
+      "correct": 3,
+      "streak": 1
     },
     "cram in": {
       "seen": 4,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 367,
     "totalCorrect": 279
   },
-  "updatedAt": "2026-09-07T14:12:25.533Z"
+  "updatedAt": "2026-09-07T14:12:33.954Z"
 }
