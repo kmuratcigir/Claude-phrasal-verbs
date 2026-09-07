@@ -1919,9 +1919,9 @@
       "streak": 1
     },
     "move in": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "make up": {
       "seen": 2,
@@ -2302,8 +2302,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 289,
+    "totalAttempts": 290,
     "totalCorrect": 219
   },
-  "updatedAt": "2026-09-07T12:11:36.705Z"
+  "updatedAt": "2026-09-07T12:11:38.606Z"
 }
