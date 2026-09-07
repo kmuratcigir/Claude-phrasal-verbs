@@ -2179,9 +2179,9 @@
       "streak": 1
     },
     "hang up": {
-      "seen": 3,
+      "seen": 4,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "drift through": {
       "seen": 1,
@@ -2295,5 +2295,5 @@
     "totalAttempts": 263,
     "totalCorrect": 208
   },
-  "updatedAt": "2026-09-07T11:29:08.644Z"
+  "updatedAt": "2026-09-07T11:31:35.358Z"
 }
