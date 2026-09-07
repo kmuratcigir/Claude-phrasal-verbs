@@ -1948,9 +1948,9 @@
       "streak": 2
     },
     "wear down": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "play up": {
       "seen": 4,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 524,
     "totalCorrect": 403
   },
-  "updatedAt": "2026-09-07T15:50:14.715Z"
+  "updatedAt": "2026-09-07T15:50:25.407Z"
 }
