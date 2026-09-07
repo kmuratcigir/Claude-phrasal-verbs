@@ -1679,9 +1679,9 @@
       "streak": 3
     },
     "tense up": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "phase in": {
       "seen": 1,
@@ -2255,5 +2255,5 @@
     "totalAttempts": 217,
     "totalCorrect": 178
   },
-  "updatedAt": "2026-09-07T08:48:34.697Z"
+  "updatedAt": "2026-09-07T08:48:41.082Z"
 }
