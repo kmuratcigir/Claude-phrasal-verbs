@@ -1679,6 +1679,18 @@
       "examples": [
         "The quiz question ___ most of the class."
       ]
+    },
+    {
+      "key": "vmtr98wcdxkz6",
+      "verb": "phase into",
+      "meaning": "gradually transition into something",
+      "example": "The old system will be ___ the new one.",
+      "meanings": [
+        "gradually transition into something"
+      ],
+      "examples": [
+        "The old system will be ___ the new one."
+      ]
     }
   ],
   "stats": {
@@ -2183,9 +2195,9 @@
       "streak": 1
     },
     "get into": {
-      "seen": 5,
+      "seen": 4,
       "correct": 3,
-      "streak": 0
+      "streak": 3
     },
     "get in touch with": {
       "seen": 1,
@@ -2228,9 +2240,9 @@
       "streak": 1
     },
     "drift away": {
-      "seen": 3,
+      "seen": 2,
       "correct": 2,
-      "streak": 0
+      "streak": 2
     },
     "hold up": {
       "seen": 2,
@@ -2333,16 +2345,16 @@
       "streak": 1
     },
     "catch out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 8,
     "bestStreak": 33,
-    "totalAttempts": 307,
-    "totalCorrect": 231
+    "totalAttempts": 306,
+    "totalCorrect": 232
   },
-  "updatedAt": "2026-09-07T13:06:39.960Z"
+  "updatedAt": "2026-09-07T13:06:58.729Z"
 }
