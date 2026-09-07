@@ -1739,7 +1739,7 @@
       "streak": 2
     },
     "run away": {
-      "seen": 4,
+      "seen": 3,
       "correct": 2,
       "streak": 0
     },
@@ -1874,9 +1874,9 @@
       "streak": 2
     },
     "get away": {
-      "seen": 3,
+      "seen": 2,
       "correct": 2,
-      "streak": 0
+      "streak": 2
     },
     "walk out": {
       "seen": 2,
@@ -1970,8 +1970,8 @@
     },
     "throw back": {
       "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "correct": 2,
+      "streak": 2
     },
     "gather around": {
       "seen": 2,
@@ -2044,9 +2044,9 @@
       "streak": 0
     },
     "stand in": {
-      "seen": 3,
+      "seen": 2,
       "correct": 2,
-      "streak": 0
+      "streak": 2
     },
     "cram in": {
       "seen": 4,
@@ -2054,9 +2054,9 @@
       "streak": 1
     },
     "shake up": {
-      "seen": 2,
+      "seen": 1,
       "correct": 1,
-      "streak": 0
+      "streak": 1
     },
     "sleep through": {
       "seen": 2,
@@ -2159,9 +2159,9 @@
       "streak": 1
     },
     "get into": {
-      "seen": 4,
+      "seen": 3,
       "correct": 2,
-      "streak": 0
+      "streak": 2
     },
     "get in touch with": {
       "seen": 1,
@@ -2179,9 +2179,9 @@
       "streak": 1
     },
     "hang up": {
-      "seen": 4,
+      "seen": 3,
       "correct": 1,
-      "streak": 0
+      "streak": 1
     },
     "drift through": {
       "seen": 1,
@@ -2259,9 +2259,9 @@
       "streak": 1
     },
     "get back": {
-      "seen": 2,
+      "seen": 1,
       "correct": 1,
-      "streak": 0
+      "streak": 1
     },
     "come up": {
       "seen": 1,
@@ -2290,10 +2290,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 33,
-    "totalAttempts": 262,
-    "totalCorrect": 207
+    "totalAttempts": 255,
+    "totalCorrect": 208
   },
-  "updatedAt": "2026-09-07T10:29:36.420Z"
+  "updatedAt": "2026-09-07T10:29:50.553Z"
 }
