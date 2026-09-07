@@ -2183,9 +2183,9 @@
       "streak": 1
     },
     "get into": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "get in touch with": {
       "seen": 1,
@@ -2333,16 +2333,16 @@
       "streak": 1
     },
     "catch out": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
-    "currentStreak": 8,
+    "currentStreak": 0,
     "bestStreak": 33,
     "totalAttempts": 306,
-    "totalCorrect": 232
+    "totalCorrect": 231
   },
-  "updatedAt": "2026-09-07T13:06:06.178Z"
+  "updatedAt": "2026-09-07T13:06:19.723Z"
 }
