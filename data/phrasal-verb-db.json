@@ -2661,9 +2661,9 @@
       "streak": 1
     },
     "phase out": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 0
+      "seen": 4,
+      "correct": 3,
+      "streak": 1
     },
     "read through": {
       "seen": 2,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 578,
     "totalCorrect": 438
   },
-  "updatedAt": "2026-09-07T19:29:13.698Z"
+  "updatedAt": "2026-09-07T19:29:35.335Z"
 }
