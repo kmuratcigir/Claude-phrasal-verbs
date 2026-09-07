@@ -2169,7 +2169,7 @@
       "streak": 1
     },
     "look after": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
       "streak": 0
     },
@@ -2302,8 +2302,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 287,
+    "totalAttempts": 288,
     "totalCorrect": 219
   },
-  "updatedAt": "2026-09-07T12:11:33.200Z"
+  "updatedAt": "2026-09-07T12:11:35.342Z"
 }
