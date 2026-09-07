@@ -2070,9 +2070,9 @@
       "streak": 1
     },
     "pile up": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "stand in": {
       "seen": 5,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 549,
     "totalCorrect": 420
   },
-  "updatedAt": "2026-09-07T15:56:04.424Z"
+  "updatedAt": "2026-09-07T15:56:14.757Z"
 }
