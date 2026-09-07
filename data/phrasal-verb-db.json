@@ -2414,9 +2414,9 @@
       "streak": 0
     },
     "call off": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2425,5 +2425,5 @@
     "totalAttempts": 564,
     "totalCorrect": 429
   },
-  "updatedAt": "2026-09-07T17:57:29.496Z"
+  "updatedAt": "2026-09-07T17:57:35.024Z"
 }
