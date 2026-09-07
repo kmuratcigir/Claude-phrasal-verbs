@@ -2023,9 +2023,9 @@
       "streak": 1
     },
     "fall out": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "figure out": {
       "seen": 2,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 378,
     "totalCorrect": 288
   },
-  "updatedAt": "2026-09-07T14:15:13.307Z"
+  "updatedAt": "2026-09-07T14:15:30.961Z"
 }
