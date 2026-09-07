@@ -1708,9 +1708,9 @@
       "streak": 4
     },
     "phase in": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "grieve over": {
       "seen": 1,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 337,
     "totalCorrect": 254
   },
-  "updatedAt": "2026-09-07T13:58:01.036Z"
+  "updatedAt": "2026-09-07T13:58:42.945Z"
 }
