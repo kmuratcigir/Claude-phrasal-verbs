@@ -1903,9 +1903,9 @@
       "streak": 2
     },
     "step aside": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 0
+      "seen": 4,
+      "correct": 3,
+      "streak": 1
     },
     "wrap up": {
       "seen": 1,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 340,
     "totalCorrect": 257
   },
-  "updatedAt": "2026-09-07T14:02:44.552Z"
+  "updatedAt": "2026-09-07T14:05:25.316Z"
 }
