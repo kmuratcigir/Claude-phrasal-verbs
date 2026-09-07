@@ -1800,9 +1800,9 @@
       "streak": 6
     },
     "cross over": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "bring up": {
       "seen": 3,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 556,
     "totalCorrect": 425
   },
-  "updatedAt": "2026-09-07T15:57:16.610Z"
+  "updatedAt": "2026-09-07T15:57:43.216Z"
 }
