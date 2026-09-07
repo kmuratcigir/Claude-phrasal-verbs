@@ -2138,9 +2138,9 @@
       "streak": 1
     },
     "take over": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "shoot out": {
       "seen": 1,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 334,
     "totalCorrect": 251
   },
-  "updatedAt": "2026-09-07T13:57:23.642Z"
+  "updatedAt": "2026-09-07T13:57:32.511Z"
 }
