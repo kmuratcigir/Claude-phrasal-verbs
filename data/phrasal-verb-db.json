@@ -1970,9 +1970,9 @@
       "streak": 4
     },
     "jolt out of": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "get along with": {
       "seen": 6,
@@ -2396,5 +2396,5 @@
     "totalAttempts": 546,
     "totalCorrect": 419
   },
-  "updatedAt": "2026-09-07T15:55:17.758Z"
+  "updatedAt": "2026-09-07T15:55:32.353Z"
 }
