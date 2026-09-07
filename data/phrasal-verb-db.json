@@ -1820,9 +1820,9 @@
       "streak": 0
     },
     "sell out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "roam around": {
       "seen": 3,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 561,
     "totalCorrect": 428
   },
-  "updatedAt": "2026-09-07T15:58:42.295Z"
+  "updatedAt": "2026-09-07T15:58:56.314Z"
 }
