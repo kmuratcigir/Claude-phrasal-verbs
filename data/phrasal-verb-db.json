@@ -1949,9 +1949,9 @@
       "streak": 2
     },
     "build up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "fall through": {
       "seen": 2,
@@ -1959,9 +1959,9 @@
       "streak": 1
     },
     "piece together": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "hang around": {
       "seen": 2,
@@ -2224,7 +2224,7 @@
       "streak": 1
     },
     "pass away": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -2239,9 +2239,9 @@
       "streak": 1
     },
     "shake down": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "flip through": {
       "seen": 1,
@@ -2290,10 +2290,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 255,
+    "totalAttempts": 259,
     "totalCorrect": 208
   },
-  "updatedAt": "2026-09-07T11:29:03.278Z"
+  "updatedAt": "2026-09-07T11:29:04.913Z"
 }
