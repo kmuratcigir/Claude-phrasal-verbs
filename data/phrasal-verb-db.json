@@ -2108,9 +2108,9 @@
       "streak": 2
     },
     "catch up on": {
-      "seen": 4,
+      "seen": 3,
       "correct": 3,
-      "streak": 0
+      "streak": 3
     },
     "snap out of": {
       "seen": 1,
@@ -2238,9 +2238,9 @@
       "streak": 2
     },
     "drift off": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "pass away": {
       "seen": 4,
@@ -2354,10 +2354,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 33,
     "totalAttempts": 415,
-    "totalCorrect": 313
+    "totalCorrect": 314
   },
-  "updatedAt": "2026-09-07T14:38:29.611Z"
+  "updatedAt": "2026-09-07T14:38:46.481Z"
 }
