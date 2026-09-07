@@ -1679,6 +1679,18 @@
       "examples": [
         "They're ___ plastic packaging."
       ]
+    },
+    {
+      "key": "vmtrf3xynfsjw",
+      "verb": "set back",
+      "meaning": "delay progress, or cost someone money",
+      "example": "The storm ___ construction by weeks.",
+      "meanings": [
+        "delay progress, or cost someone money"
+      ],
+      "examples": [
+        "The storm ___ construction by weeks."
+      ]
     }
   ],
   "stats": {
@@ -2374,5 +2386,5 @@
     "totalAttempts": 528,
     "totalCorrect": 407
   },
-  "updatedAt": "2026-09-07T15:50:58.262Z"
+  "updatedAt": "2026-09-07T15:51:04.035Z"
 }
