@@ -1838,9 +1838,9 @@
       "streak": 0
     },
     "put through": {
-      "seen": 5,
-      "correct": 5,
-      "streak": 5
+      "seen": 6,
+      "correct": 6,
+      "streak": 6
     },
     "rush through": {
       "seen": 1,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 436,
     "totalCorrect": 330
   },
-  "updatedAt": "2026-09-07T15:01:50.151Z"
+  "updatedAt": "2026-09-07T15:01:57.151Z"
 }
