@@ -1828,9 +1828,9 @@
       "streak": 1
     },
     "slip away": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 0
+      "seen": 5,
+      "correct": 4,
+      "streak": 1
     },
     "draw in": {
       "seen": 4,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 413,
     "totalCorrect": 313
   },
-  "updatedAt": "2026-09-07T14:32:46.850Z"
+  "updatedAt": "2026-09-07T14:34:09.813Z"
 }
