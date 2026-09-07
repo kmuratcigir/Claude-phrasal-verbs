@@ -1825,9 +1825,9 @@
       "streak": 1
     },
     "roam around": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "look back": {
       "seen": 6,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 558,
     "totalCorrect": 427
   },
-  "updatedAt": "2026-09-07T15:58:00.377Z"
+  "updatedAt": "2026-09-07T15:58:18.654Z"
 }
