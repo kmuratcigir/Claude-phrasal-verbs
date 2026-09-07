@@ -1839,9 +1839,9 @@
       "streak": 4
     },
     "get up to": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "rifle through": {
       "seen": 2,
@@ -2310,5 +2310,5 @@
     "totalAttempts": 297,
     "totalCorrect": 224
   },
-  "updatedAt": "2026-09-07T12:49:27.150Z"
+  "updatedAt": "2026-09-07T12:49:39.741Z"
 }
