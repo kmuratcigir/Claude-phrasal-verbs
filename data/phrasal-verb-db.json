@@ -433,18 +433,6 @@
       ]
     },
     {
-      "key": "b36",
-      "verb": "phase out",
-      "meaning": "remove something gradually",
-      "example": "They plan to ___ plastic bags next year.",
-      "meanings": [
-        "remove something gradually"
-      ],
-      "examples": [
-        "They plan to ___ plastic bags next year."
-      ]
-    },
-    {
       "key": "b37",
       "verb": "sing along",
       "meaning": "sing together with music or someone already singing",
@@ -1854,11 +1842,6 @@
       "correct": 4,
       "streak": 4
     },
-    "phase out": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 1
-    },
     "rush through": {
       "seen": 1,
       "correct": 1,
@@ -2356,5 +2339,5 @@
     "totalAttempts": 306,
     "totalCorrect": 232
   },
-  "updatedAt": "2026-09-07T13:06:58.729Z"
+  "updatedAt": "2026-09-07T13:07:27.350Z"
 }
