@@ -1718,9 +1718,9 @@
       "streak": 2
     },
     "mix up": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "be through with": {
       "seen": 2,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 505,
     "totalCorrect": 389
   },
-  "updatedAt": "2026-09-07T15:43:27.587Z"
+  "updatedAt": "2026-09-07T15:43:35.465Z"
 }
