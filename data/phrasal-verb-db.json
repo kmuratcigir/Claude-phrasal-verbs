@@ -2213,9 +2213,9 @@
       "streak": 0
     },
     "move out": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "blow out": {
       "seen": 3,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 388,
     "totalCorrect": 295
   },
-  "updatedAt": "2026-09-07T14:18:58.122Z"
+  "updatedAt": "2026-09-07T14:19:22.603Z"
 }
