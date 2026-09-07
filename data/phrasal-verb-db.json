@@ -2232,6 +2232,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "wander off": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2240,5 +2245,5 @@
     "totalAttempts": 201,
     "totalCorrect": 163
   },
-  "updatedAt": "2026-09-07T08:44:09.850Z"
+  "updatedAt": "2026-09-07T08:44:28.314Z"
 }
