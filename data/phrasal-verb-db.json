@@ -2242,6 +2242,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "flip through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2250,5 +2255,5 @@
     "totalAttempts": 210,
     "totalCorrect": 172
   },
-  "updatedAt": "2026-09-07T08:47:00.970Z"
+  "updatedAt": "2026-09-07T08:47:08.576Z"
 }
