@@ -2381,7 +2381,7 @@
       "streak": 1
     },
     "stand in": {
-      "seen": 5,
+      "seen": 6,
       "correct": 3,
       "streak": 0
     },
@@ -2717,5 +2717,5 @@
     "totalAttempts": 574,
     "totalCorrect": 435
   },
-  "updatedAt": "2026-09-07T19:23:56.918Z"
+  "updatedAt": "2026-09-07T19:26:25.938Z"
 }
