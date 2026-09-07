@@ -2308,9 +2308,9 @@
       "streak": 0
     },
     "blow off (steam)": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "throw yourself into": {
       "seen": 2,
@@ -2349,5 +2349,5 @@
     "totalAttempts": 319,
     "totalCorrect": 244
   },
-  "updatedAt": "2026-09-07T13:45:02.866Z"
+  "updatedAt": "2026-09-07T13:47:47.424Z"
 }
