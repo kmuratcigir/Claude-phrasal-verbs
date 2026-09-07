@@ -2073,9 +2073,9 @@
       "streak": 1
     },
     "shake up": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "sleep through": {
       "seen": 2,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 448,
     "totalCorrect": 341
   },
-  "updatedAt": "2026-09-07T15:04:08.291Z"
+  "updatedAt": "2026-09-07T15:04:19.259Z"
 }
