@@ -2205,9 +2205,9 @@
       "streak": 3
     },
     "settle down": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "hang up": {
       "seen": 7,
@@ -2391,5 +2391,5 @@
     "totalAttempts": 538,
     "totalCorrect": 414
   },
-  "updatedAt": "2026-09-07T15:53:05.715Z"
+  "updatedAt": "2026-09-07T15:53:10.180Z"
 }
