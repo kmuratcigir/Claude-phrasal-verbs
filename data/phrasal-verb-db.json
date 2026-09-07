@@ -1655,18 +1655,6 @@
       "examples": [
         "She really ___ painting last year."
       ]
-    },
-    {
-      "key": "vmtqx3k1zr6da",
-      "verb": "slope up",
-      "meaning": "",
-      "example": "",
-      "meanings": [
-        ""
-      ],
-      "examples": [
-        ""
-      ]
     }
   ],
   "stats": {
@@ -2202,5 +2190,5 @@
     "totalAttempts": 164,
     "totalCorrect": 134
   },
-  "updatedAt": "2026-09-07T07:26:52.922Z"
+  "updatedAt": "2026-09-07T07:27:27.680Z"
 }
