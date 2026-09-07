@@ -2183,9 +2183,9 @@
       "streak": 4
     },
     "get in touch with": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 1
+      "seen": 4,
+      "correct": 3,
+      "streak": 2
     },
     "look after": {
       "seen": 6,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 437,
     "totalCorrect": 331
   },
-  "updatedAt": "2026-09-07T15:01:58.401Z"
+  "updatedAt": "2026-09-07T15:02:06.824Z"
 }
