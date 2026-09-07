@@ -1834,9 +1834,9 @@
       "streak": 0
     },
     "go ahead": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "get up to": {
       "seen": 2,
@@ -2310,5 +2310,5 @@
     "totalAttempts": 296,
     "totalCorrect": 223
   },
-  "updatedAt": "2026-09-07T12:49:13.853Z"
+  "updatedAt": "2026-09-07T12:49:25.986Z"
 }
