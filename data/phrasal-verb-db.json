@@ -2641,7 +2641,7 @@
       "streak": 1
     },
     "catch on": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
       "streak": 0
     },
@@ -2712,10 +2712,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 592,
+    "totalAttempts": 593,
     "totalCorrect": 449
   },
-  "updatedAt": "2026-09-07T19:32:05.725Z"
+  "updatedAt": "2026-09-07T19:32:09.101Z"
 }
