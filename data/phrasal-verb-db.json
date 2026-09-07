@@ -2203,9 +2203,9 @@
       "streak": 2
     },
     "drift through": {
-      "seen": 3,
-      "correct": 1,
-      "streak": 0
+      "seen": 4,
+      "correct": 2,
+      "streak": 1
     },
     "potter around": {
       "seen": 2,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 424,
     "totalCorrect": 320
   },
-  "updatedAt": "2026-09-07T14:59:02.114Z"
+  "updatedAt": "2026-09-07T14:59:12.207Z"
 }
