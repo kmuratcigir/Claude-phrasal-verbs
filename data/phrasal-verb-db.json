@@ -1954,9 +1954,9 @@
       "streak": 0
     },
     "fall through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "piece together": {
       "seen": 3,
@@ -2295,5 +2295,5 @@
     "totalAttempts": 268,
     "totalCorrect": 208
   },
-  "updatedAt": "2026-09-07T11:41:59.106Z"
+  "updatedAt": "2026-09-07T11:43:01.612Z"
 }
