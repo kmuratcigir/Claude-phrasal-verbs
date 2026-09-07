@@ -1679,6 +1679,18 @@
       "examples": [
         "They're ___ plastic packaging."
       ]
+    },
+    {
+      "key": "vmtr9skkeycgy",
+      "verb": "take up",
+      "meaning": "start a hobby, or occupy space/time",
+      "example": "He ___ guitar during the lockdown.",
+      "meanings": [
+        "start a hobby, or occupy space/time"
+      ],
+      "examples": [
+        "He ___ guitar during the lockdown."
+      ]
     }
   ],
   "stats": {
@@ -2344,5 +2356,5 @@
     "totalAttempts": 309,
     "totalCorrect": 235
   },
-  "updatedAt": "2026-09-07T13:17:56.511Z"
+  "updatedAt": "2026-09-07T13:22:15.379Z"
 }
