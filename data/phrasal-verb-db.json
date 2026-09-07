@@ -2491,9 +2491,9 @@
       "streak": 5
     },
     "slip up": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "get into": {
       "seen": 6,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 579,
     "totalCorrect": 439
   },
-  "updatedAt": "2026-09-07T19:29:36.737Z"
+  "updatedAt": "2026-09-07T19:29:47.436Z"
 }
