@@ -1765,9 +1765,9 @@
       "streak": 5
     },
     "show off": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "sit through": {
       "seen": 3,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 554,
     "totalCorrect": 423
   },
-  "updatedAt": "2026-09-07T15:57:03.342Z"
+  "updatedAt": "2026-09-07T15:57:08.559Z"
 }
