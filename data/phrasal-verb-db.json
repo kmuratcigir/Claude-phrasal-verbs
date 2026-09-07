@@ -2201,9 +2201,9 @@
       "streak": 2
     },
     "run through": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "fit in": {
       "seen": 3,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 583,
     "totalCorrect": 443
   },
-  "updatedAt": "2026-09-07T19:30:24.659Z"
+  "updatedAt": "2026-09-07T19:30:29.652Z"
 }
