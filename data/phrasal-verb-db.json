@@ -2046,9 +2046,9 @@
       "streak": 2
     },
     "hang out": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 4
+      "seen": 6,
+      "correct": 5,
+      "streak": 5
     },
     "stick with": {
       "seen": 3,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 576,
     "totalCorrect": 436
   },
-  "updatedAt": "2026-09-07T19:26:39.828Z"
+  "updatedAt": "2026-09-07T19:28:42.985Z"
 }
