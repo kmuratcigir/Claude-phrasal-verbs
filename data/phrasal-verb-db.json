@@ -2298,9 +2298,9 @@
       "streak": 4
     },
     "knock out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "turn around": {
       "seen": 1,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 509,
     "totalCorrect": 392
   },
-  "updatedAt": "2026-09-07T15:45:20.828Z"
+  "updatedAt": "2026-09-07T15:45:28.094Z"
 }
