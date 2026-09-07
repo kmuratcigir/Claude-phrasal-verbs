@@ -1798,9 +1798,9 @@
       "streak": 2
     },
     "give in": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 0
+      "seen": 6,
+      "correct": 5,
+      "streak": 1
     },
     "block off": {
       "seen": 4,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 342,
     "totalCorrect": 259
   },
-  "updatedAt": "2026-09-07T14:05:52.176Z"
+  "updatedAt": "2026-09-07T14:06:08.403Z"
 }
