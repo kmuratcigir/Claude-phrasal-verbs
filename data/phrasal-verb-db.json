@@ -2009,9 +2009,9 @@
       "streak": 2
     },
     "figure out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "shuffle around": {
       "seen": 1,
@@ -2255,5 +2255,5 @@
     "totalAttempts": 212,
     "totalCorrect": 174
   },
-  "updatedAt": "2026-09-07T08:47:31.565Z"
+  "updatedAt": "2026-09-07T08:47:41.562Z"
 }
