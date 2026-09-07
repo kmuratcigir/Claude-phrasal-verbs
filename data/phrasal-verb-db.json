@@ -1848,9 +1848,9 @@
       "streak": 1
     },
     "get away with": {
-      "seen": 5,
-      "correct": 3,
-      "streak": 0
+      "seen": 6,
+      "correct": 4,
+      "streak": 1
     },
     "go ahead": {
       "seen": 7,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 429,
     "totalCorrect": 323
   },
-  "updatedAt": "2026-09-07T15:00:08.833Z"
+  "updatedAt": "2026-09-07T15:00:21.746Z"
 }
