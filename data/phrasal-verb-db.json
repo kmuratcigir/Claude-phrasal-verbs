@@ -1998,9 +1998,9 @@
       "streak": 2
     },
     "force through": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "opt into": {
       "seen": 3,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 510,
     "totalCorrect": 393
   },
-  "updatedAt": "2026-09-07T15:45:29.221Z"
+  "updatedAt": "2026-09-07T15:45:31.941Z"
 }
