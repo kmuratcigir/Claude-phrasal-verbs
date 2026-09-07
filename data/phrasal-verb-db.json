@@ -1833,9 +1833,9 @@
       "streak": 2
     },
     "draw in": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "put through": {
       "seen": 4,
@@ -2344,5 +2344,5 @@
     "totalAttempts": 309,
     "totalCorrect": 235
   },
-  "updatedAt": "2026-09-07T13:23:18.657Z"
+  "updatedAt": "2026-09-07T13:28:47.365Z"
 }
