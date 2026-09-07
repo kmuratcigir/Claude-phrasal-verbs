@@ -2090,9 +2090,9 @@
       "streak": 4
     },
     "sleep through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "think through": {
       "seen": 6,
@@ -2386,5 +2386,5 @@
     "totalAttempts": 528,
     "totalCorrect": 407
   },
-  "updatedAt": "2026-09-07T15:51:04.035Z"
+  "updatedAt": "2026-09-07T15:51:23.000Z"
 }
