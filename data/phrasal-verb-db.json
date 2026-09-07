@@ -1783,9 +1783,9 @@
       "streak": 2
     },
     "take off": {
-      "seen": 5,
-      "correct": 5,
-      "streak": 5
+      "seen": 6,
+      "correct": 6,
+      "streak": 6
     },
     "cross over": {
       "seen": 3,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 447,
     "totalCorrect": 340
   },
-  "updatedAt": "2026-09-07T15:03:59.787Z"
+  "updatedAt": "2026-09-07T15:04:07.124Z"
 }
