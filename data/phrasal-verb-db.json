@@ -1984,9 +1984,9 @@
       "streak": 2
     },
     "opt into": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "stand off": {
       "seen": 3,
@@ -2260,5 +2260,5 @@
     "totalAttempts": 222,
     "totalCorrect": 182
   },
-  "updatedAt": "2026-09-07T08:49:54.943Z"
+  "updatedAt": "2026-09-07T08:50:15.500Z"
 }
