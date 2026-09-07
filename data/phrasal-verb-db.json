@@ -1755,9 +1755,9 @@
       "streak": 0
     },
     "wash out": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "cut off": {
       "seen": 5,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 552,
     "totalCorrect": 422
   },
-  "updatedAt": "2026-09-07T15:56:41.153Z"
+  "updatedAt": "2026-09-07T15:56:51.389Z"
 }
