@@ -2008,7 +2008,7 @@
       "streak": 0
     },
     "stand off": {
-      "seen": 3,
+      "seen": 4,
       "correct": 1,
       "streak": 0
     },
@@ -2354,5 +2354,5 @@
     "totalAttempts": 357,
     "totalCorrect": 272
   },
-  "updatedAt": "2026-09-07T14:10:16.964Z"
+  "updatedAt": "2026-09-07T14:10:29.830Z"
 }
