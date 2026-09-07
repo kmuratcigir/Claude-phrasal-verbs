@@ -1768,9 +1768,9 @@
       "streak": 0
     },
     "take back": {
-      "seen": 5,
-      "correct": 3,
-      "streak": 1
+      "seen": 6,
+      "correct": 4,
+      "streak": 2
     },
     "tear off": {
       "seen": 2,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 368,
     "totalCorrect": 280
   },
-  "updatedAt": "2026-09-07T14:12:35.739Z"
+  "updatedAt": "2026-09-07T14:12:42.021Z"
 }
