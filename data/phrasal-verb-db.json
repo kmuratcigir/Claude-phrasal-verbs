@@ -1863,9 +1863,9 @@
       "streak": 2
     },
     "rifle through": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "fumble around": {
       "seen": 2,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 526,
     "totalCorrect": 405
   },
-  "updatedAt": "2026-09-07T15:50:41.231Z"
+  "updatedAt": "2026-09-07T15:50:44.440Z"
 }
