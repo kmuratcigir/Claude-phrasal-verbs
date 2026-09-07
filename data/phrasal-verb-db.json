@@ -1679,6 +1679,18 @@
       "examples": [
         "The old system will be ___ the new one."
       ]
+    },
+    {
+      "key": "vmtr9ak1d8p1y",
+      "verb": "phase out",
+      "meaning": "remove something gradually",
+      "example": "They're ___ plastic packaging.",
+      "meanings": [
+        "remove something gradually"
+      ],
+      "examples": [
+        "They're ___ plastic packaging."
+      ]
     }
   ],
   "stats": {
@@ -2339,5 +2351,5 @@
     "totalAttempts": 306,
     "totalCorrect": 232
   },
-  "updatedAt": "2026-09-07T13:07:27.350Z"
+  "updatedAt": "2026-09-07T13:08:14.890Z"
 }
