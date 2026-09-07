@@ -2179,7 +2179,7 @@
       "streak": 0
     },
     "hang up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -2210,5 +2210,5 @@
     "totalAttempts": 172,
     "totalCorrect": 139
   },
-  "updatedAt": "2026-09-07T08:10:26.157Z"
+  "updatedAt": "2026-09-07T08:13:11.269Z"
 }
