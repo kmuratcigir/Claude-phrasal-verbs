@@ -1969,9 +1969,9 @@
       "streak": 0
     },
     "throw back": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "gather around": {
       "seen": 2,
@@ -2044,9 +2044,9 @@
       "streak": 0
     },
     "stand in": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "cram in": {
       "seen": 4,
@@ -2159,9 +2159,9 @@
       "streak": 1
     },
     "get into": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "get in touch with": {
       "seen": 1,
@@ -2292,8 +2292,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 257,
+    "totalAttempts": 261,
     "totalCorrect": 207
   },
-  "updatedAt": "2026-09-07T10:29:33.299Z"
+  "updatedAt": "2026-09-07T10:29:35.794Z"
 }
