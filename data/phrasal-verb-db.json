@@ -1714,9 +1714,9 @@
       "streak": 2
     },
     "give away": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "wash out": {
       "seen": 2,
@@ -2255,5 +2255,5 @@
     "totalAttempts": 220,
     "totalCorrect": 180
   },
-  "updatedAt": "2026-09-07T08:48:56.942Z"
+  "updatedAt": "2026-09-07T08:49:19.205Z"
 }
