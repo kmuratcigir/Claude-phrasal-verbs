@@ -2163,9 +2163,9 @@
       "streak": 0
     },
     "move on": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 1
+      "seen": 5,
+      "correct": 4,
+      "streak": 2
     },
     "cut out": {
       "seen": 4,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 456,
     "totalCorrect": 348
   },
-  "updatedAt": "2026-09-07T15:27:20.639Z"
+  "updatedAt": "2026-09-07T15:27:23.487Z"
 }
