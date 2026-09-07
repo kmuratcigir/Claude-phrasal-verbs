@@ -2301,9 +2301,9 @@
       "streak": 1
     },
     "hang around": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 2
+      "streak": 0
     },
     "throw back": {
       "seen": 5,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 603,
     "totalCorrect": 458
   },
-  "updatedAt": "2026-09-07T19:37:40.875Z"
+  "updatedAt": "2026-09-07T20:18:13.510Z"
 }
