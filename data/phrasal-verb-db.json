@@ -2313,9 +2313,9 @@
       "streak": 2
     },
     "throw yourself into": {
-      "seen": 3,
-      "correct": 1,
-      "streak": 0
+      "seen": 4,
+      "correct": 2,
+      "streak": 1
     },
     "hold off": {
       "seen": 3,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 427,
     "totalCorrect": 321
   },
-  "updatedAt": "2026-09-07T14:59:37.647Z"
+  "updatedAt": "2026-09-07T14:59:49.182Z"
 }
