@@ -2065,9 +2065,9 @@
       "streak": 5
     },
     "warn off": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "pile up": {
       "seen": 3,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 553,
     "totalCorrect": 423
   },
-  "updatedAt": "2026-09-07T15:56:52.711Z"
+  "updatedAt": "2026-09-07T15:57:02.121Z"
 }
