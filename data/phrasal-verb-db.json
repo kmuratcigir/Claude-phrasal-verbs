@@ -1655,6 +1655,18 @@
       "examples": [
         "She really ___ painting last year."
       ]
+    },
+    {
+      "key": "vmtr8ttb6eg5w",
+      "verb": "catch on",
+      "meaning": "become popular, or understand",
+      "example": "The trend ___ quickly.",
+      "meanings": [
+        "become popular, or understand"
+      ],
+      "examples": [
+        "The trend ___ quickly."
+      ]
     }
   ],
   "stats": {
@@ -2310,5 +2322,5 @@
     "totalAttempts": 303,
     "totalCorrect": 229
   },
-  "updatedAt": "2026-09-07T12:53:08.921Z"
+  "updatedAt": "2026-09-07T12:55:13.760Z"
 }
