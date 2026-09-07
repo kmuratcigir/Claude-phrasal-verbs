@@ -2013,9 +2013,9 @@
       "streak": 1
     },
     "pick on": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "crack on": {
       "seen": 3,
@@ -2369,5 +2369,5 @@
     "totalAttempts": 496,
     "totalCorrect": 382
   },
-  "updatedAt": "2026-09-07T15:39:54.745Z"
+  "updatedAt": "2026-09-07T15:40:09.672Z"
 }
