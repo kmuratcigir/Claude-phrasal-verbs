@@ -2093,9 +2093,9 @@
       "streak": 4
     },
     "push through": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "look through": {
       "seen": 4,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 408,
     "totalCorrect": 311
   },
-  "updatedAt": "2026-09-07T14:25:55.055Z"
+  "updatedAt": "2026-09-07T14:26:14.554Z"
 }
