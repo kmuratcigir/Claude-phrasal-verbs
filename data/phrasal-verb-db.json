@@ -2243,9 +2243,9 @@
       "streak": 4
     },
     "pass away": {
-      "seen": 4,
-      "correct": 2,
-      "streak": 2
+      "seen": 5,
+      "correct": 3,
+      "streak": 3
     },
     "drown out": {
       "seen": 1,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 490,
     "totalCorrect": 378
   },
-  "updatedAt": "2026-09-07T15:38:03.882Z"
+  "updatedAt": "2026-09-07T15:38:07.682Z"
 }
