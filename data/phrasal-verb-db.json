@@ -2081,9 +2081,9 @@
       "streak": 0
     },
     "run away": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 2
+      "seen": 6,
+      "correct": 5,
+      "streak": 3
     },
     "take back": {
       "seen": 7,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 575,
     "totalCorrect": 435
   },
-  "updatedAt": "2026-09-07T19:26:27.712Z"
+  "updatedAt": "2026-09-07T19:26:38.453Z"
 }
