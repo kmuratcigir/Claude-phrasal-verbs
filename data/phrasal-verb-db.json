@@ -1744,7 +1744,7 @@
       "streak": 0
     },
     "take back": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
       "streak": 0
     },
@@ -1779,9 +1779,9 @@
       "streak": 3
     },
     "block off": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "sell out": {
       "seen": 1,
@@ -2064,9 +2064,9 @@
       "streak": 1
     },
     "think through": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "hold back": {
       "seen": 2,
@@ -2292,8 +2292,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 259,
+    "totalAttempts": 262,
     "totalCorrect": 208
   },
-  "updatedAt": "2026-09-07T11:29:04.913Z"
+  "updatedAt": "2026-09-07T11:29:06.730Z"
 }
