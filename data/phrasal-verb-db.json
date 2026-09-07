@@ -2030,9 +2030,9 @@
       "streak": 2
     },
     "crack on": {
-      "seen": 3,
+      "seen": 4,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "fall out": {
       "seen": 5,
@@ -2401,5 +2401,5 @@
     "totalAttempts": 550,
     "totalCorrect": 421
   },
-  "updatedAt": "2026-09-07T15:56:16.053Z"
+  "updatedAt": "2026-09-07T15:56:34.093Z"
 }
