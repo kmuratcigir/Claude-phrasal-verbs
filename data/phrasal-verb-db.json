@@ -1914,9 +1914,9 @@
       "streak": 0
     },
     "go through": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "move in": {
       "seen": 1,
@@ -2235,5 +2235,5 @@
     "totalAttempts": 197,
     "totalCorrect": 160
   },
-  "updatedAt": "2026-09-07T08:43:24.094Z"
+  "updatedAt": "2026-09-07T08:43:41.402Z"
 }
