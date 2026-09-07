@@ -1940,9 +1940,9 @@
       "streak": 0
     },
     "break in": {
-      "seen": 6,
-      "correct": 2,
-      "streak": 0
+      "seen": 7,
+      "correct": 3,
+      "streak": 1
     },
     "go through": {
       "seen": 6,
@@ -2396,5 +2396,5 @@
     "totalAttempts": 543,
     "totalCorrect": 418
   },
-  "updatedAt": "2026-09-07T15:54:36.089Z"
+  "updatedAt": "2026-09-07T15:54:42.405Z"
 }
