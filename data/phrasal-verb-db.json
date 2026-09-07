@@ -1738,9 +1738,9 @@
       "streak": 2
     },
     "give away": {
-      "seen": 4,
+      "seen": 5,
       "correct": 4,
-      "streak": 4
+      "streak": 0
     },
     "wash out": {
       "seen": 3,
@@ -1853,9 +1853,9 @@
       "streak": 0
     },
     "go ahead": {
-      "seen": 8,
-      "correct": 7,
-      "streak": 2
+      "seen": 7,
+      "correct": 6,
+      "streak": 1
     },
     "get up to": {
       "seen": 4,
@@ -2354,10 +2354,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 0,
     "bestStreak": 33,
     "totalAttempts": 417,
-    "totalCorrect": 316
+    "totalCorrect": 315
   },
-  "updatedAt": "2026-09-07T14:44:55.213Z"
+  "updatedAt": "2026-09-07T14:45:11.622Z"
 }
