@@ -2253,9 +2253,9 @@
       "streak": 1
     },
     "wander off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "shake down": {
       "seen": 6,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 504,
     "totalCorrect": 388
   },
-  "updatedAt": "2026-09-07T15:43:18.863Z"
+  "updatedAt": "2026-09-07T15:43:26.101Z"
 }
