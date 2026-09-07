@@ -1988,9 +1988,9 @@
       "streak": 0
     },
     "throw back": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "gather around": {
       "seen": 2,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 381,
     "totalCorrect": 290
   },
-  "updatedAt": "2026-09-07T14:15:55.446Z"
+  "updatedAt": "2026-09-07T14:16:09.275Z"
 }
