@@ -2008,9 +2008,9 @@
       "streak": 0
     },
     "stand off": {
-      "seen": 5,
-      "correct": 1,
-      "streak": 0
+      "seen": 6,
+      "correct": 2,
+      "streak": 1
     },
     "pick on": {
       "seen": 1,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 473,
     "totalCorrect": 362
   },
-  "updatedAt": "2026-09-07T15:31:50.976Z"
+  "updatedAt": "2026-09-07T15:31:59.071Z"
 }
