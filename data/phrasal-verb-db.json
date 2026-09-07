@@ -1893,9 +1893,9 @@
       "streak": 2
     },
     "get away": {
-      "seen": 5,
-      "correct": 3,
-      "streak": 0
+      "seen": 6,
+      "correct": 4,
+      "streak": 1
     },
     "walk out": {
       "seen": 2,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 481,
     "totalCorrect": 370
   },
-  "updatedAt": "2026-09-07T15:35:54.089Z"
+  "updatedAt": "2026-09-07T15:36:01.439Z"
 }
