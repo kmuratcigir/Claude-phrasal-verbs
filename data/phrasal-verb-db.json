@@ -1724,9 +1724,9 @@
       "streak": 2
     },
     "cut off": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "show off": {
       "seen": 3,
@@ -2302,8 +2302,8 @@
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 284,
+    "totalAttempts": 285,
     "totalCorrect": 218
   },
-  "updatedAt": "2026-09-07T12:11:27.178Z"
+  "updatedAt": "2026-09-07T12:11:29.017Z"
 }
