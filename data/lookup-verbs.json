@@ -3,649 +3,1081 @@
     "get",
     "get away",
     "escape, or leave for a trip",
-    "We finally got away for a few days last month."
+    [
+      "We finally got away for a few days last month.",
+      "The burglars got away before police arrived.",
+      "We need to get away this weekend, even for one night."
+    ]
   ],
   [
     "get",
     "get along with",
     "have a friendly relationship with someone",
-    "She gets along with almost everyone at work."
+    [
+      "She gets along with almost everyone at work.",
+      "My new roommate gets along with everyone in the building.",
+      "It's important that the two teams get along with each other."
+    ]
   ],
   [
     "get",
     "get around",
     "travel from place to place, or avoid a rule/problem cleverly",
-    "We got around the city mostly by bike."
+    [
+      "We got around the city mostly by bike.",
+      "News of the merger got around the office within hours.",
+      "He gets around the strict dress code by wearing his own blazer."
+    ]
   ],
   [
     "get",
     "get away with",
     "do something wrong without being caught or punished",
-    "He got away with being late all semester."
+    [
+      "He got away with being late all semester.",
+      "I can't believe she got away with copying his answers.",
+      "You won't get away with parking there again."
+    ]
   ],
   [
     "get",
     "get back",
     "return to a place, or retaliate",
-    "I'll get back to the office by six."
+    [
+      "I'll get back to the office by six.",
+      "Let me get back to you once I've checked the schedule.",
+      "He swore he'd get back at his brother for the prank."
+    ]
   ],
   [
     "get",
     "get by",
     "manage with the minimum necessary",
-    "We can get by on one income for a while."
+    [
+      "We can get by on one income for a while.",
+      "They got by on very little money during college.",
+      "I get by with basic Spanish when I travel there."
+    ]
   ],
   [
     "get",
     "get down to",
     "start giving serious attention to something",
-    "Let's get down to business."
+    [
+      "Let's get down to business.",
+      "Once the coffee's ready, let's get down to the details.",
+      "It's time to get down to planning the actual budget."
+    ]
   ],
   [
     "get",
     "get into",
     "become interested or involved in something, or enter",
-    "She really got into painting last year."
+    [
+      "She really got into painting last year.",
+      "He got into an argument with the referee.",
+      "We couldn't get into the museum because it was closed."
+    ]
   ],
   [
     "get",
     "get off",
     "leave a vehicle, finish work, or avoid punishment",
-    "What time do you get off work tonight?"
+    [
+      "What time do you get off work tonight?",
+      "Make sure you get off at the next stop.",
+      "The driver got off with a warning instead of a ticket."
+    ]
   ],
   [
     "get",
     "get over",
     "recover from something difficult",
-    "It took him weeks to get over the flu."
+    [
+      "It took him weeks to get over the flu.",
+      "She still hasn't gotten over losing the final match.",
+      "It took the team a while to get over the delayed launch."
+    ]
   ],
   [
     "get",
     "get through",
     "survive something difficult, or finish something",
-    "We got through the exam period somehow."
+    [
+      "We got through the exam period somehow.",
+      "I don't know how we got through that meeting without laughing.",
+      "Can you get through this chapter before class tomorrow?"
+    ]
   ],
   [
     "get",
     "get up",
     "rise from bed or a seated position",
-    "I get up at six every day."
+    [
+      "I get up at six every day.",
+      "He got up to answer the door.",
+      "What time did you get up on Saturday?"
+    ]
   ],
   [
     "take",
     "take after",
     "resemble a parent or relative",
-    "She takes after her mother in every way."
+    [
+      "She takes after her mother in every way.",
+      "My son takes after his grandfather in temperament.",
+      "Neither of the twins takes after their mother much."
+    ]
   ],
   [
     "take",
     "take apart",
     "separate something into pieces",
-    "He took the engine apart to clean it."
+    [
+      "He took the engine apart to clean it.",
+      "The mechanic took apart the whole transmission.",
+      "Kids love taking apart old radios just to see how they work."
+    ]
   ],
   [
     "take",
     "take away",
     "remove something, or take food to eat elsewhere",
-    "The waiter took away our plates."
+    [
+      "The waiter took away our plates.",
+      "The judges took away two points for the late finish.",
+      "We usually take away leftovers after big dinners."
+    ]
   ],
   [
     "take",
     "take back",
     "retract a statement, or return something to a store",
-    "I take back what I said earlier."
+    [
+      "I take back what I said earlier.",
+      "I'd like to take back that comment, it was unfair.",
+      "She took back the sweater since it didn't fit."
+    ]
   ],
   [
     "take",
     "take down",
     "write something down, or remove/dismantle something",
-    "Can you take down these notes for me?"
+    [
+      "Can you take down these notes for me?",
+      "The secretary took down every detail of the meeting.",
+      "Workers took down the old billboard overnight."
+    ]
   ],
   [
     "take",
     "take in",
     "absorb information, host someone, or deceive",
-    "It's a lot to take in all at once."
+    [
+      "It's a lot to take in all at once.",
+      "It's hard to take in so much news at once.",
+      "The family took in a stray dog last winter."
+    ]
   ],
   [
     "take",
     "take off",
     "leave the ground, remove clothing, or become successful",
-    "The plane took off right on time."
+    [
+      "The plane took off right on time.",
+      "Our flight took off two hours late.",
+      "Sales took off after the ad campaign launched."
+    ]
   ],
   [
     "take",
     "take on",
     "accept a responsibility or challenge, or hire",
-    "She took on extra clients this quarter."
+    [
+      "She took on extra clients this quarter.",
+      "The firm doesn't usually take on new clients in December.",
+      "She took on a second job to pay off her loans."
+    ]
   ],
   [
     "take",
     "take out",
     "remove something, or invite someone somewhere",
-    "He took out the trash before leaving."
+    [
+      "He took out the trash before leaving.",
+      "He took out a loan to cover the repairs.",
+      "We're taking out the neighbors for dinner tonight."
+    ]
   ],
   [
     "take",
     "take over",
     "assume control of something",
-    "New management took over the company last year."
+    [
+      "New management took over the company last year.",
+      "A rival company tried to take over the startup last year.",
+      "She had to take over the project halfway through."
+    ]
   ],
   [
     "take",
     "take up",
     "start a hobby, or occupy space/time",
-    "He took up guitar during the lockdown."
+    [
+      "He took up guitar during the lockdown.",
+      "He took up running after his doctor's advice.",
+      "The new couch takes up most of the living room."
+    ]
   ],
   [
     "put",
     "put across",
     "communicate an idea successfully",
-    "She put her point across clearly in the meeting."
+    [
+      "She put her point across clearly in the meeting.",
+      "The lawyer struggled to put across his argument to the jury.",
+      "Try to put across your idea in one sentence."
+    ]
   ],
   [
     "put",
     "put aside",
     "save for later, or ignore temporarily",
-    "Let's put aside our differences for now."
+    [
+      "Let's put aside our differences for now.",
+      "Let's put aside the budget question for now.",
+      "She puts aside a little money from every paycheck."
+    ]
   ],
   [
     "put",
     "put away",
     "store something in its place",
-    "Please put away your toys before dinner."
+    [
+      "Please put away your toys before dinner.",
+      "He put away the dishes before guests arrived.",
+      "Put away your phone during dinner, please."
+    ]
   ],
   [
     "put",
     "put back",
     "return something to its original place",
-    "Put the book back on the shelf when you're done."
+    [
+      "Put the book back on the shelf when you're done.",
+      "Please put back the chairs after the event.",
+      "The delay put back the launch by two months."
+    ]
   ],
   [
     "put",
     "put down",
     "write something, set something down, or criticize someone",
-    "He put down his phone and looked up."
+    [
+      "He put down his phone and looked up.",
+      "The vet had to put down the old dog.",
+      "She put down her thoughts in a notebook every night."
+    ]
   ],
   [
     "put",
     "put forward",
     "suggest an idea or proposal",
-    "She put forward a new plan at the meeting."
+    [
+      "She put forward a new plan at the meeting.",
+      "The committee put forward three candidates for the role.",
+      "He put forward a compelling case for remote work."
+    ]
   ],
   [
     "put",
     "put off",
     "postpone, or discourage someone",
-    "Don't put off your homework until Sunday night."
+    [
+      "Don't put off your homework until Sunday night.",
+      "Stop putting off the dentist appointment.",
+      "His rude tone put off several customers."
+    ]
   ],
   [
     "put",
     "put on",
     "wear something, or stage a performance",
-    "Put on your coat, it's cold outside."
+    [
+      "Put on your coat, it's cold outside.",
+      "She put on her boots before heading into the storm.",
+      "The school put on a play for the holidays."
+    ]
   ],
   [
     "put",
     "put out",
     "extinguish, or produce/publish something",
-    "Firefighters put out the blaze within an hour."
+    [
+      "Firefighters put out the blaze within an hour.",
+      "Volunteers put out the small brush fire quickly.",
+      "The band put out a new album last month."
+    ]
   ],
   [
     "put",
     "put through",
     "connect someone by phone, or make someone endure something",
-    "Please put me through to the manager."
+    [
+      "Please put me through to the manager.",
+      "The operator put me through to billing.",
+      "The training put the recruits through a tough week."
+    ]
   ],
   [
     "put",
     "put up",
     "build something, provide accommodation, or tolerate",
-    "We put up a tent for the weekend."
+    [
+      "We put up a tent for the weekend.",
+      "They put up scaffolding around the whole building.",
+      "Can you put me up for a night while I'm in town?"
+    ]
   ],
   [
     "put",
     "put up with",
     "tolerate something unpleasant",
-    "I can't put up with the noise any longer."
+    [
+      "I can't put up with the noise any longer.",
+      "I won't put up with being spoken to like that.",
+      "She's put up with a lot from her landlord."
+    ]
   ],
   [
     "go",
     "go after",
     "pursue someone or something",
-    "The team decided to go after the bigger client."
+    [
+      "The team decided to go after the bigger client.",
+      "The company is going after a younger audience this year.",
+      "He decided to go after the promotion aggressively."
+    ]
   ],
   [
     "go",
     "go ahead",
     "proceed with something, often after permission",
-    "Go ahead and start without me."
+    [
+      "Go ahead and start without me.",
+      "Go ahead and take the last slice.",
+      "The city gave approval, so the project can go ahead as planned."
+    ]
   ],
   [
     "go",
     "go along with",
     "agree to support a plan or decision",
-    "Everyone went along with the new schedule."
+    [
+      "Everyone went along with the new schedule.",
+      "He reluctantly went along with the group's decision.",
+      "I won't go along with a plan I don't trust."
+    ]
   ],
   [
     "go",
     "go around",
     "circulate, or be enough for everyone",
-    "There's a rumor going around the office."
+    [
+      "There's a rumor going around the office.",
+      "A nasty flu is going around the office this week.",
+      "There isn't quite enough pizza to go around."
+    ]
   ],
   [
     "go",
     "go away",
     "leave a place, or disappear",
-    "The pain finally went away after a week."
+    [
+      "The pain finally went away after a week.",
+      "The stain wouldn't go away no matter how hard I scrubbed.",
+      "Just go away and let me think for a minute."
+    ]
   ],
   [
     "go",
     "go back",
     "return to a place or an earlier point",
-    "We need to go back and check the numbers."
+    [
+      "We need to go back and check the numbers.",
+      "Let's go back to the point you made earlier.",
+      "She wants to go back to her hometown someday."
+    ]
   ],
   [
     "go",
     "go down",
     "decrease, or (of a computer) stop working",
-    "Prices went down after the holidays."
+    [
+      "Prices went down after the holidays.",
+      "The whole website went down during the sale.",
+      "Temperatures went down sharply overnight."
+    ]
   ],
   [
     "go",
     "go for",
     "choose, attempt, or attack",
-    "I think I'll go for the salad today."
+    [
+      "I think I'll go for the salad today.",
+      "I think I'll go for a swim before breakfast.",
+      "The dog went for the mail carrier again."
+    ]
   ],
   [
     "go",
     "go off",
     "explode/sound suddenly, or (of food) spoil",
-    "The alarm went off at 3 a.m."
+    [
+      "The alarm went off at 3 a.m.",
+      "My alarm went off twice before I got up.",
+      "This milk has gone off, don't drink it."
+    ]
   ],
   [
     "go",
     "go on",
     "continue, or happen",
-    "Please, go on with your story."
+    [
+      "Please, go on with your story.",
+      "The rain went on for three straight days.",
+      "Tell me what's going on with the project."
+    ]
   ],
   [
     "go",
     "go out",
     "leave for entertainment, or (of a light) stop burning",
-    "We're going out for dinner tonight."
+    [
+      "We're going out for dinner tonight.",
+      "We're going out to see a movie tonight.",
+      "The candle went out in the wind."
+    ]
   ],
   [
     "go",
     "go over",
     "review something carefully",
-    "Let's go over the report before the meeting."
+    [
+      "Let's go over the report before the meeting.",
+      "Let's go over your answers before you submit them.",
+      "The coach went over the game plan twice."
+    ]
   ],
   [
     "go",
     "go through",
     "experience something difficult, or examine carefully",
-    "She's going through a rough patch right now."
+    [
+      "She's going through a rough patch right now.",
+      "She went through a difficult divorce last year.",
+      "Customs made us go through every bag."
+    ]
   ],
   [
     "look",
     "look after",
     "take care of someone or something",
-    "Can you look after the kids tonight?"
+    [
+      "Can you look after the kids tonight?",
+      "My aunt looked after us the whole summer.",
+      "Someone needs to look after the store while I'm gone."
+    ]
   ],
   [
     "look",
     "look back",
     "reflect on the past",
-    "Looking back, it was the right choice."
+    [
+      "Looking back, it was the right choice.",
+      "I try not to look back on that decision with regret.",
+      "Looking back, we should have left earlier."
+    ]
   ],
   [
     "look",
     "look down on",
     "consider someone inferior",
-    "He tends to look down on people who disagree with him."
+    [
+      "He tends to look down on people who disagree with him.",
+      "He never looks down on people just because they're new.",
+      "It's easy to look down on mistakes you've never made yourself."
+    ]
   ],
   [
     "look",
     "look for",
     "search for something",
-    "I've been looking for my keys all morning."
+    [
+      "I've been looking for my keys all morning.",
+      "She's been looking for a new apartment all month.",
+      "We're looking for volunteers for Saturday's event."
+    ]
   ],
   [
     "look",
     "look forward to",
     "anticipate something with pleasure",
-    "We're looking forward to the trip."
+    [
+      "We're looking forward to the trip.",
+      "I'm really looking forward to the weekend.",
+      "He wasn't looking forward to the dentist visit."
+    ]
   ],
   [
     "look",
     "look into",
     "investigate something",
-    "The police are looking into the incident."
+    [
+      "The police are looking into the incident.",
+      "HR is looking into the complaint.",
+      "Can you look into flights for next weekend?"
+    ]
   ],
   [
     "look",
     "look out",
     "be careful, watch for danger",
-    "Look out, the floor is wet."
+    [
+      "Look out, the floor is wet.",
+      "Look out for ice on the steps.",
+      "Look out! That branch is about to fall."
+    ]
   ],
   [
     "look",
     "look over",
     "examine something briefly",
-    "Could you look over my resume?"
+    [
+      "Could you look over my resume?",
+      "Could you look over this email before I send it?",
+      "The inspector looked over the whole property."
+    ]
   ],
   [
     "look",
     "look up",
     "search for information, or improve",
-    "I looked up the address online."
+    [
+      "I looked up the address online.",
+      "I'll look up the recipe online.",
+      "Sales have started to look up this quarter."
+    ]
   ],
   [
     "look",
     "look up to",
     "admire and respect someone",
-    "She's always looked up to her older sister."
+    [
+      "She's always looked up to her older sister.",
+      "Young players really look up to him as a coach.",
+      "She's always looked up to her professors."
+    ]
   ],
   [
     "turn",
     "turn around",
     "change direction, or improve a bad situation",
-    "The company turned around its finances last year."
+    [
+      "The company turned around its finances last year.",
+      "He turned around when he heard his name.",
+      "New leadership managed to turn around the failing store."
+    ]
   ],
   [
     "turn",
     "turn away",
     "refuse to help or admit someone",
-    "They turned away dozens of applicants."
+    [
+      "They turned away dozens of applicants.",
+      "The bouncer turned away anyone without ID.",
+      "She couldn't turn away a stray cat in the rain."
+    ]
   ],
   [
     "turn",
     "turn back",
     "return the way you came",
-    "Bad weather forced the hikers to turn back."
+    [
+      "Bad weather forced the hikers to turn back.",
+      "The storm forced us to turn back halfway up the trail.",
+      "There's no turning back once you sign the contract."
+    ]
   ],
   [
     "turn",
     "turn down",
     "refuse an offer, or reduce volume/intensity",
-    "She turned down the promotion."
+    [
+      "She turned down the promotion.",
+      "He turned down a job offer from a bigger firm.",
+      "Could you turn down the music a little?"
+    ]
   ],
   [
     "turn",
     "turn in",
     "submit something, or go to bed",
-    "Please turn in your assignments by Friday."
+    [
+      "Please turn in your assignments by Friday.",
+      "Students must turn in their essays by Friday.",
+      "I usually turn in around eleven on weeknights."
+    ]
   ],
   [
     "turn",
     "turn into",
     "become something different",
-    "The old warehouse turned into an art gallery."
+    [
+      "The old warehouse turned into an art gallery.",
+      "The conversation quickly turned into an argument.",
+      "That old barn turned into a popular wedding venue."
+    ]
   ],
   [
     "turn",
     "turn off",
     "switch off, or cause someone to lose interest",
-    "Turn off the lights before you leave."
+    [
+      "Turn off the lights before you leave.",
+      "Please turn off the stove before you leave.",
+      "His constant complaining really turns people off."
+    ]
   ],
   [
     "turn",
     "turn on",
     "switch on, or suddenly attack/blame",
-    "The dog turned on its owner unexpectedly."
+    [
+      "The dog turned on its owner unexpectedly.",
+      "Can you turn on the porch light?",
+      "The crowd suddenly turned on the referee."
+    ]
   ],
   [
     "turn",
     "turn out",
     "end up being a certain way, or attend an event",
-    "The party turned out better than expected."
+    [
+      "The party turned out better than expected.",
+      "Everything turned out fine in the end.",
+      "Thousands turned out for the parade downtown."
+    ]
   ],
   [
     "turn",
     "turn over",
     "hand something to someone, or flip it",
-    "He turned over the documents to the police."
+    [
+      "He turned over the documents to the police.",
+      "The witness turned over the documents to police.",
+      "The car turned over twice before stopping."
+    ]
   ],
   [
     "turn",
     "turn up",
     "arrive, or increase in volume/intensity",
-    "She turned up an hour late."
+    [
+      "She turned up an hour late.",
+      "He turned up an hour after the meeting started.",
+      "Could you turn up the volume a bit?"
+    ]
   ],
   [
     "break",
     "break away",
     "escape or separate from a group",
-    "The colony broke away and formed its own country."
+    [
+      "The colony broke away and formed its own country.",
+      "A few members broke away to form their own union.",
+      "The runner broke away from the pack early."
+    ]
   ],
   [
     "break",
     "break down",
     "stop working, or lose emotional control",
-    "My car broke down on the highway."
+    [
+      "My car broke down on the highway.",
+      "My laptop broke down right before the deadline.",
+      "She broke down in tears during the interview."
+    ]
   ],
   [
     "break",
     "break in",
     "enter illegally, or interrupt",
-    "Someone broke in while we were on vacation."
+    [
+      "Someone broke in while we were on vacation.",
+      "Someone tried to break in through the back window.",
+      "Sorry to break in, but this can't wait."
+    ]
   ],
   [
     "break",
     "break into",
     "enter by force, or start doing something suddenly",
-    "Thieves broke into the shop overnight."
+    [
+      "Thieves broke into the shop overnight.",
+      "The band broke into their most popular song.",
+      "Thieves broke into three cars on the street."
+    ]
   ],
   [
     "break",
     "break off",
     "stop talking suddenly, or end a relationship",
-    "She broke off mid-sentence."
+    [
+      "She broke off mid-sentence.",
+      "He broke off a piece of bread for the soup.",
+      "The two companies broke off talks last week."
+    ]
   ],
   [
     "break",
     "break out",
     "escape, or (of something bad) start suddenly",
-    "A fire broke out in the warehouse."
+    [
+      "A fire broke out in the warehouse.",
+      "A fight broke out near the entrance.",
+      "Several prisoners broke out during the storm."
+    ]
   ],
   [
     "break",
     "break up",
     "end a relationship, or split into pieces",
-    "They broke up after three years together."
+    [
+      "They broke up after three years together.",
+      "The teacher broke up the fight quickly.",
+      "Ice broke up on the river as spring arrived."
+    ]
   ],
   [
     "break",
     "break through",
     "overcome an obstacle, or achieve a breakthrough",
-    "The team finally broke through after months of research."
+    [
+      "The team finally broke through after months of research.",
+      "Researchers finally broke through on the vaccine.",
+      "Sunlight broke through the clouds by noon."
+    ]
   ],
   [
     "run",
     "run across",
     "find something by chance",
-    "I ran across an old photo of us."
+    [
+      "I ran across an old photo of us.",
+      "I ran across your old letters while cleaning.",
+      "She ran across a great deal on flights."
+    ]
   ],
   [
     "run",
     "run away",
     "leave suddenly to escape",
-    "The cat ran away when the door opened."
+    [
+      "The cat ran away when the door opened.",
+      "The kids ran away when they saw the dog.",
+      "He ran away from home at sixteen."
+    ]
   ],
   [
     "run",
     "run down",
     "lose energy gradually, or criticize, or hit with a vehicle",
-    "The batteries are running down fast."
+    [
+      "The batteries are running down fast.",
+      "Don't run down your coworkers in front of clients.",
+      "The old battery is running down again."
+    ]
   ],
   [
     "run",
     "run into",
     "meet someone by chance, or encounter a problem",
-    "We ran into an old friend at the airport."
+    [
+      "We ran into an old friend at the airport.",
+      "We ran into some resistance from the board.",
+      "I ran into her at the grocery store yesterday."
+    ]
   ],
   [
     "run",
     "run off",
     "leave quickly, or make copies",
-    "He ran off before I could say goodbye."
+    [
+      "He ran off before I could say goodbye.",
+      "The printer can run off fifty copies a minute.",
+      "The groom ran off before the ceremony even started."
+    ]
   ],
   [
     "run",
     "run out",
     "have no more of something left",
-    "We ran out of milk this morning."
+    [
+      "We ran out of milk this morning.",
+      "We're about to run out of gas.",
+      "Time ran out before we finished the game."
+    ]
   ],
   [
     "run",
     "run over",
     "hit with a vehicle, or exceed a limit",
-    "The meeting ran over by twenty minutes."
+    [
+      "The meeting ran over by twenty minutes.",
+      "The lecture ran over by half an hour.",
+      "A cyclist was run over near the intersection."
+    ]
   ],
   [
     "run",
     "run through",
     "practice or review quickly, or use up",
-    "Let's run through the plan one more time."
+    [
+      "Let's run through the plan one more time.",
+      "Let's run through the numbers one more time.",
+      "We ran through our entire budget by June."
+    ]
   ],
   [
     "run",
     "run up",
     "accumulate a debt or bill quickly",
-    "He ran up a huge phone bill."
+    [
+      "He ran up a huge phone bill.",
+      "He ran up quite a bar tab that night.",
+      "The team ran up a huge lead in the first half."
+    ]
   ],
   [
     "set",
     "set apart",
     "distinguish something from others",
-    "Her attention to detail sets her apart."
+    [
+      "Her attention to detail sets her apart.",
+      "Her calm under pressure sets her apart from the rest.",
+      "This neighborhood is set apart by its old architecture."
+    ]
   ],
   [
     "set",
     "set aside",
     "save for later use, or put to one side",
-    "We set aside some money for emergencies."
+    [
+      "We set aside some money for emergencies.",
+      "We set aside an hour each week to review goals.",
+      "Try to set aside your pride and just apologize."
+    ]
   ],
   [
     "set",
     "set back",
     "delay progress, or cost someone money",
-    "The storm set back construction by weeks."
+    [
+      "The storm set back construction by weeks.",
+      "The lawsuit set back the merger by months.",
+      "That renovation set him back quite a bit financially."
+    ]
   ],
   [
     "set",
     "set off",
     "start a journey, or trigger something",
-    "We set off early to avoid traffic."
+    [
+      "We set off early to avoid traffic.",
+      "Fireworks set off across the city at midnight.",
+      "We set off before sunrise to beat the traffic."
+    ]
   ],
   [
     "set",
     "set out",
     "begin a journey or task with a clear goal",
-    "She set out to write a novel."
+    [
+      "She set out to write a novel.",
+      "The report sets out the company's plans for the year.",
+      "They set out to prove the theory wrong."
+    ]
   ],
   [
     "set",
     "set up",
     "arrange or establish something",
-    "They set up a new office downtown."
+    [
+      "They set up a new office downtown.",
+      "It took an hour to set up the tents.",
+      "He was set up by his own business partner."
+    ]
   ],
   [
     "bring",
     "bring about",
     "cause something to happen",
-    "The reforms brought about real change."
+    [
+      "The reforms brought about real change.",
+      "The new law brought about several unintended problems.",
+      "Their protest helped bring about real policy change."
+    ]
   ],
   [
     "bring",
     "bring around",
     "persuade someone, or revive someone",
-    "It took a while to bring him around to the idea."
+    [
+      "It took a while to bring him around to the idea.",
+      "A cup of coffee usually brings him around in the morning.",
+      "It took some convincing to bring her around to the idea."
+    ]
   ],
   [
     "bring",
     "bring back",
     "return something, or restore a memory/practice",
-    "This song brings back so many memories."
+    [
+      "This song brings back so many memories.",
+      "The smell of the ocean brings back childhood summers.",
+      "Can you bring back some snacks from the store?"
+    ]
   ],
   [
     "bring",
     "bring down",
     "cause to fall, or reduce",
-    "The scandal brought down the government."
+    [
+      "The scandal brought down the government.",
+      "The scandal eventually brought down the whole cabinet.",
+      "New taxes brought down consumer spending."
+    ]
   ],
   [
     "bring",
     "bring in",
     "introduce, earn, or recruit",
-    "The new policy brought in more revenue."
+    [
+      "The new policy brought in more revenue.",
+      "The consultants were brought in to fix the mess.",
+      "The bakery brings in extra staff for the holidays."
+    ]
   ],
   [
     "bring",
     "bring out",
     "release a product, or reveal a quality",
-    "They're bringing out a new version next month."
+    [
+      "They're bringing out a new version next month.",
+      "The studio is bringing out a sequel next year.",
+      "Good lighting really brings out the color in the room."
+    ]
   ],
   [
     "bring",
     "bring up",
     "mention a topic, or raise a child",
-    "I didn't want to bring up the issue again."
+    [
+      "I didn't want to bring up the issue again.",
+      "I didn't mean to bring up such a sensitive topic.",
+      "They brought up three kids in a small apartment."
+    ]
   ],
   [
     "call",
     "call back",
     "return a phone call",
-    "I'll call you back in ten minutes."
+    [
+      "I'll call you back in ten minutes.",
+      "The doctor's office said they'd call back within the hour.",
+      "I missed his call, so I need to call back later."
+    ]
   ],
   [
     "call",
     "call for",
     "require, or publicly demand",
-    "This calls for a celebration."
+    [
+      "This calls for a celebration.",
+      "This achievement calls for a proper celebration.",
+      "The recipe calls for two cups of flour."
+    ]
   ],
   [
     "call",
     "call in",
     "ask someone to come, or phone in to report",
-    "They called in a specialist to help."
+    [
+      "They called in a specialist to help.",
+      "We had to call in extra staff for the holiday rush.",
+      "He called in sick again this morning."
+    ]
   ],
   [
     "call",
     "call off",
     "cancel something",
-    "The match was called off due to rain."
+    [
+      "The match was called off due to rain.",
+      "Organizers called off the concert due to weather.",
+      "She called off the wedding just weeks before."
+    ]
   ],
   [
     "call",
     "call on",
     "ask someone to do something, or visit",
-    "The teacher called on her to answer."
+    [
+      "The teacher called on her to answer.",
+      "The professor called on students who rarely spoke up.",
+      "We might call on you for backup tomorrow."
+    ]
   ],
   [
     "call",
     "call out",
     "shout, or publicly criticize",
-    "He called out the mistake in the report."
+    [
+      "He called out the mistake in the report.",
+      "The referee called out the foul immediately.",
+      "Colleagues finally called out his rude behavior."
+    ]
   ],
   [
     "call",
     "call up",
     "phone someone, or summon for duty",
-    "She called up her old college roommate."
+    [
+      "She called up her old college roommate.",
+      "He called up an old friend from college.",
+      "Reservists were called up during the crisis."
+    ]
   ],
   [
     "carry",
     "carry on",
     "continue doing something",
-    "Please, carry on with what you were doing."
+    [
+      "Please, carry on with what you were doing.",
+      "Despite the setback, the team carried on with the plan.",
+      "She carried on speaking as if nothing happened."
+    ]
   ],
   [
     "carry",
     "carry out",
     "perform or complete a task",
-    "They carried out the plan without any issues."
+    [
+      "They carried out the plan without any issues.",
+      "Soldiers carried out the mission without incident.",
+      "The lab carried out several rounds of testing."
+    ]
   ],
   [
     "carry",
