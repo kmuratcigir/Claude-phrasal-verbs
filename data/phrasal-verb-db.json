@@ -1683,7 +1683,7 @@
   ],
   "stats": {
     "run down": {
-      "seen": 7,
+      "seen": 8,
       "correct": 3,
       "streak": 0
     },
@@ -2359,5 +2359,5 @@
     "totalAttempts": 426,
     "totalCorrect": 321
   },
-  "updatedAt": "2026-09-07T14:59:18.295Z"
+  "updatedAt": "2026-09-07T14:59:36.481Z"
 }
