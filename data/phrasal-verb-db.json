@@ -2079,9 +2079,9 @@
       "streak": 1
     },
     "look through": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "spin off": {
       "seen": 1,
@@ -2220,5 +2220,5 @@
     "totalAttempts": 183,
     "totalCorrect": 147
   },
-  "updatedAt": "2026-09-07T08:39:11.454Z"
+  "updatedAt": "2026-09-07T08:39:21.265Z"
 }
