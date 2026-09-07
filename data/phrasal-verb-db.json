@@ -2084,9 +2084,9 @@
       "streak": 2
     },
     "spin off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "catch up on": {
       "seen": 1,
@@ -2265,5 +2265,5 @@
     "totalAttempts": 229,
     "totalCorrect": 186
   },
-  "updatedAt": "2026-09-07T10:07:54.258Z"
+  "updatedAt": "2026-09-07T10:08:19.344Z"
 }
