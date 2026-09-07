@@ -2168,9 +2168,9 @@
       "streak": 0
     },
     "cut out": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "slip up": {
       "seen": 3,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 411,
     "totalCorrect": 312
   },
-  "updatedAt": "2026-09-07T14:31:25.414Z"
+  "updatedAt": "2026-09-07T14:32:23.270Z"
 }
