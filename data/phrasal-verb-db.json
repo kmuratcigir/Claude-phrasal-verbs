@@ -2055,9 +2055,9 @@
       "streak": 1
     },
     "face off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "put up": {
       "seen": 6,
@@ -2386,5 +2386,5 @@
     "totalAttempts": 534,
     "totalCorrect": 411
   },
-  "updatedAt": "2026-09-07T15:52:25.067Z"
+  "updatedAt": "2026-09-07T15:52:31.098Z"
 }
