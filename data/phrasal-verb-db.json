@@ -1769,9 +1769,9 @@
       "streak": 3
     },
     "bring up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "give in": {
       "seen": 3,
@@ -2270,5 +2270,5 @@
     "totalAttempts": 234,
     "totalCorrect": 190
   },
-  "updatedAt": "2026-09-07T10:09:28.996Z"
+  "updatedAt": "2026-09-07T10:09:35.095Z"
 }
