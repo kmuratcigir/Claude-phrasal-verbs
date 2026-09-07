@@ -1963,9 +1963,9 @@
       "streak": 0
     },
     "get along with": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 2
+      "seen": 6,
+      "correct": 5,
+      "streak": 3
     },
     "build up": {
       "seen": 2,
@@ -2359,5 +2359,5 @@
     "totalAttempts": 443,
     "totalCorrect": 336
   },
-  "updatedAt": "2026-09-07T15:03:25.536Z"
+  "updatedAt": "2026-09-07T15:03:30.502Z"
 }
