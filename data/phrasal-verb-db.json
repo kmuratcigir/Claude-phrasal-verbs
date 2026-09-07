@@ -2287,13 +2287,18 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "blow off (steam)": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 33,
-    "totalAttempts": 278,
+    "totalAttempts": 279,
     "totalCorrect": 216
   },
-  "updatedAt": "2026-09-07T12:03:44.427Z"
+  "updatedAt": "2026-09-07T12:03:46.414Z"
 }
