@@ -2211,9 +2211,9 @@
       "streak": 3
     },
     "get away": {
-      "seen": 6,
+      "seen": 7,
       "correct": 4,
-      "streak": 1
+      "streak": 0
     },
     "walk out": {
       "seen": 3,
@@ -2426,9 +2426,9 @@
       "streak": 3
     },
     "catch up on": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 0
+      "seen": 5,
+      "correct": 4,
+      "streak": 1
     },
     "snap out of": {
       "seen": 2,
@@ -2714,8 +2714,8 @@
   "globalStats": {
     "currentStreak": 1,
     "bestStreak": 33,
-    "totalAttempts": 590,
-    "totalCorrect": 448
+    "totalAttempts": 592,
+    "totalCorrect": 449
   },
-  "updatedAt": "2026-09-07T19:32:03.383Z"
+  "updatedAt": "2026-09-07T19:32:05.725Z"
 }
