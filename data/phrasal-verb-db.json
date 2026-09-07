@@ -2338,9 +2338,9 @@
       "streak": 1
     },
     "step down": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "phase out": {
       "seen": 1,
@@ -2354,5 +2354,5 @@
     "totalAttempts": 363,
     "totalCorrect": 276
   },
-  "updatedAt": "2026-09-07T14:11:27.264Z"
+  "updatedAt": "2026-09-07T14:11:34.870Z"
 }
