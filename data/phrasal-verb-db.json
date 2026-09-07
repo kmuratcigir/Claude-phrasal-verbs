@@ -1934,9 +1934,9 @@
       "streak": 2
     },
     "play up": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "jolt out of": {
       "seen": 1,
@@ -2270,5 +2270,5 @@
     "totalAttempts": 236,
     "totalCorrect": 192
   },
-  "updatedAt": "2026-09-07T10:09:38.410Z"
+  "updatedAt": "2026-09-07T10:09:55.861Z"
 }
