@@ -1758,9 +1758,9 @@
       "streak": 3
     },
     "sit through": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "run away": {
       "seen": 5,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 503,
     "totalCorrect": 388
   },
-  "updatedAt": "2026-09-07T15:42:57.350Z"
+  "updatedAt": "2026-09-07T15:43:17.616Z"
 }
