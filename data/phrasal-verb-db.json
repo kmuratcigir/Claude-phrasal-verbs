@@ -1667,6 +1667,18 @@
       "examples": [
         "The trend ___ quickly."
       ]
+    },
+    {
+      "key": "vmtr8vefuuiak",
+      "verb": "catch out",
+      "meaning": "catch someone making a mistake or lying",
+      "example": "The quiz question ___ most of the class.",
+      "meanings": [
+        "catch someone making a mistake or lying"
+      ],
+      "examples": [
+        "The quiz question ___ most of the class."
+      ]
     }
   ],
   "stats": {
@@ -2327,5 +2339,5 @@
     "totalAttempts": 304,
     "totalCorrect": 230
   },
-  "updatedAt": "2026-09-07T12:55:32.177Z"
+  "updatedAt": "2026-09-07T12:56:27.790Z"
 }
