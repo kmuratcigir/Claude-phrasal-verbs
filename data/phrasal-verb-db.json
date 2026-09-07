@@ -1828,9 +1828,9 @@
       "streak": 1
     },
     "slip away": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 1
+      "seen": 4,
+      "correct": 3,
+      "streak": 0
     },
     "draw in": {
       "seen": 4,
@@ -1848,9 +1848,9 @@
       "streak": 1
     },
     "get away with": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 1
+      "streak": 0
     },
     "go ahead": {
       "seen": 7,
@@ -2354,10 +2354,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 0,
     "bestStreak": 33,
     "totalAttempts": 414,
-    "totalCorrect": 314
+    "totalCorrect": 313
   },
-  "updatedAt": "2026-09-07T14:34:11.117Z"
+  "updatedAt": "2026-09-07T14:34:14.226Z"
 }
