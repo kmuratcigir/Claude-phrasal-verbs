@@ -2263,9 +2263,9 @@
       "streak": 3
     },
     "flip through": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "work through": {
       "seen": 1,
@@ -2374,5 +2374,5 @@
     "totalAttempts": 521,
     "totalCorrect": 401
   },
-  "updatedAt": "2026-09-07T15:49:36.296Z"
+  "updatedAt": "2026-09-07T15:49:44.379Z"
 }
