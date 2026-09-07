@@ -2143,7 +2143,7 @@
       "streak": 4
     },
     "shoot out": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -2374,5 +2374,5 @@
     "totalAttempts": 522,
     "totalCorrect": 402
   },
-  "updatedAt": "2026-09-07T15:49:45.618Z"
+  "updatedAt": "2026-09-07T15:49:56.779Z"
 }
