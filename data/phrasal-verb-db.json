@@ -1814,9 +1814,9 @@
       "streak": 2
     },
     "put through": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "phase out": {
       "seen": 2,
@@ -2290,10 +2290,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 33,
-    "totalAttempts": 274,
-    "totalCorrect": 213
+    "totalAttempts": 275,
+    "totalCorrect": 214
   },
-  "updatedAt": "2026-09-07T12:03:36.748Z"
+  "updatedAt": "2026-09-07T12:03:38.481Z"
 }
