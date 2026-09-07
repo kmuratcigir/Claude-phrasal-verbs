@@ -1691,6 +1691,20 @@
       "examples": [
         "The storm ___ construction by weeks."
       ]
+    },
+    {
+      "key": "vmtrjlkexn7nf",
+      "verb": "call off",
+      "meaning": "cancel something",
+      "example": "The match was ___ due to rain.",
+      "meanings": [
+        "cancel something"
+      ],
+      "examples": [
+        "The match was ___ due to rain.",
+        "Organizers ___ the concert due to weather.",
+        "She ___ the wedding just weeks before."
+      ]
     }
   ],
   "stats": {
@@ -2406,5 +2420,5 @@
     "totalAttempts": 563,
     "totalCorrect": 429
   },
-  "updatedAt": "2026-09-07T15:59:55.057Z"
+  "updatedAt": "2026-09-07T17:56:44.747Z"
 }
