@@ -2360,6 +2360,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "think back": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2368,5 +2373,5 @@
     "totalAttempts": 14,
     "totalCorrect": 14
   },
-  "updatedAt": "2026-09-08T13:16:10.824Z"
+  "updatedAt": "2026-09-08T13:16:42.348Z"
 }
