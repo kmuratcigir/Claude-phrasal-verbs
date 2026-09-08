@@ -2011,9 +2011,9 @@
       "streak": 4
     },
     "open up": {
-      "seen": 13,
-      "correct": 11,
-      "streak": 5
+      "seen": 14,
+      "correct": 12,
+      "streak": 6
     },
     "slope up/down": {
       "seen": 5,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 729,
     "totalCorrect": 555
   },
-  "updatedAt": "2026-09-08T08:10:29.102Z"
+  "updatedAt": "2026-09-08T08:10:34.321Z"
 }
