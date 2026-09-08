@@ -2527,9 +2527,9 @@
       "streak": 0
     },
     "get up to": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "drift off": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 155,
     "totalCorrect": 130
   },
-  "updatedAt": "2026-09-08T14:50:30.240Z"
+  "updatedAt": "2026-09-08T14:50:50.786Z"
 }
