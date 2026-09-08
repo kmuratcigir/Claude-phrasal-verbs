@@ -2872,9 +2872,9 @@
       "streak": 1
     },
     "stick with": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "tell off": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 236,
     "totalCorrect": 198
   },
-  "updatedAt": "2026-09-08T16:45:17.151Z"
+  "updatedAt": "2026-09-08T16:45:35.329Z"
 }
