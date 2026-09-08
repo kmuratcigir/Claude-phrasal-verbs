@@ -2742,9 +2742,9 @@
       "streak": 1
     },
     "slope up/down": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "shuffle around": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 189,
     "totalCorrect": 158
   },
-  "updatedAt": "2026-09-08T14:59:03.162Z"
+  "updatedAt": "2026-09-08T14:59:21.677Z"
 }
