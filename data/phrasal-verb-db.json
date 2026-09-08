@@ -2962,9 +2962,9 @@
       "streak": 1
     },
     "dwell on": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "gather around": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 170,
     "totalCorrect": 142
   },
-  "updatedAt": "2026-09-08T14:53:45.476Z"
+  "updatedAt": "2026-09-08T14:53:54.457Z"
 }
