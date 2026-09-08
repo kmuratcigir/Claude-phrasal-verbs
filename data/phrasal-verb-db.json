@@ -2016,9 +2016,9 @@
       "streak": 5
     },
     "slope up/down": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "tense up": {
       "seen": 5,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 699,
     "totalCorrect": 531
   },
-  "updatedAt": "2026-09-08T08:02:37.819Z"
+  "updatedAt": "2026-09-08T08:02:40.303Z"
 }
