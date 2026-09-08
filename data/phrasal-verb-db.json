@@ -2365,6 +2365,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "catch on": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2373,5 +2378,5 @@
     "totalAttempts": 15,
     "totalCorrect": 14
   },
-  "updatedAt": "2026-09-08T13:16:43.937Z"
+  "updatedAt": "2026-09-08T13:17:01.296Z"
 }
