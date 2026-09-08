@@ -2915,6 +2915,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "pick on": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2923,5 +2928,5 @@
     "totalAttempts": 125,
     "totalCorrect": 103
   },
-  "updatedAt": "2026-09-08T14:42:55.319Z"
+  "updatedAt": "2026-09-08T14:43:07.169Z"
 }
