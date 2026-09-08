@@ -2497,9 +2497,9 @@
       "streak": 0
     },
     "run down": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "hold up": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 157,
     "totalCorrect": 132
   },
-  "updatedAt": "2026-09-08T14:51:00.514Z"
+  "updatedAt": "2026-09-08T14:51:06.621Z"
 }
