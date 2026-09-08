@@ -2717,10 +2717,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 33,
-    "totalAttempts": 760,
-    "totalCorrect": 575
+    "totalAttempts": 761,
+    "totalCorrect": 576
   },
-  "updatedAt": "2026-09-08T09:48:38.549Z"
+  "updatedAt": "2026-09-08T09:48:39.896Z"
 }
