@@ -2820,6 +2820,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "turn around": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2828,5 +2833,5 @@
     "totalAttempts": 106,
     "totalCorrect": 89
   },
-  "updatedAt": "2026-09-08T14:38:59.248Z"
+  "updatedAt": "2026-09-08T14:39:11.869Z"
 }
