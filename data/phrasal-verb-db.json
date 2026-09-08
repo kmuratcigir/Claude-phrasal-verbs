@@ -2760,6 +2760,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "shoot out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2768,5 +2773,5 @@
     "totalAttempts": 94,
     "totalCorrect": 79
   },
-  "updatedAt": "2026-09-08T14:35:22.357Z"
+  "updatedAt": "2026-09-08T14:36:06.275Z"
 }
