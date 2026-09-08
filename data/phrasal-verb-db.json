@@ -2461,9 +2461,9 @@
       "streak": 5
     },
     "shoot out": {
-      "seen": 2,
-      "correct": 0,
-      "streak": 0
+      "seen": 3,
+      "correct": 1,
+      "streak": 1
     },
     "talk through": {
       "seen": 2,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 717,
     "totalCorrect": 547
   },
-  "updatedAt": "2026-09-08T08:06:58.221Z"
+  "updatedAt": "2026-09-08T08:07:07.794Z"
 }
