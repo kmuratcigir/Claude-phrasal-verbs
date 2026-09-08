@@ -2465,6 +2465,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "shake down": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2473,5 +2478,5 @@
     "totalAttempts": 35,
     "totalCorrect": 31
   },
-  "updatedAt": "2026-09-08T13:21:15.316Z"
+  "updatedAt": "2026-09-08T13:21:43.993Z"
 }
