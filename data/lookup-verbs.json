@@ -16,7 +16,9 @@
     [
       "She gets along with almost everyone at work.",
       "My new roommate gets along with everyone in the building.",
-      "It's important that the two teams get along with each other."
+      "It's important that the two teams get along with each other.",
+      "The cousins have never really gotten along with each other.",
+      "Surprisingly, the two rivals get along with each other now."
     ]
   ],
   [
@@ -36,7 +38,9 @@
     [
       "He got away with being late all semester.",
       "I can't believe she got away with copying his answers.",
-      "You won't get away with parking there again."
+      "You won't get away with parking there again.",
+      "The kids thought they'd get away with skipping class.",
+      "No one gets away with cheating on this test."
     ]
   ],
   [
@@ -76,7 +80,9 @@
     [
       "She really got into painting last year.",
       "He got into an argument with the referee.",
-      "We couldn't get into the museum because it was closed."
+      "We couldn't get into the museum because it was closed.",
+      "He's really gotten into gardening this spring.",
+      "They got into a heated debate about politics."
     ]
   ],
   [
@@ -886,7 +892,9 @@
     [
       "The storm set back construction by weeks.",
       "The lawsuit set back the merger by months.",
-      "That renovation set him back quite a bit financially."
+      "That renovation set him back quite a bit financially.",
+      "The delayed shipment set back the launch by a month.",
+      "Her injury set back her training schedule significantly."
     ]
   ],
   [
@@ -1026,7 +1034,9 @@
     [
       "The match was called off due to rain.",
       "Organizers called off the concert due to weather.",
-      "She called off the wedding just weeks before."
+      "She called off the wedding just weeks before.",
+      "Coaches called off practice because of the storm.",
+      "They almost called off the trip due to the flight delay."
     ]
   ],
   [
@@ -1977,7 +1987,13 @@
     "open",
     "open up",
     "become more communicative, or start a business",
-    "He finally opened up about his feelings."
+    [
+      "He finally opened up about his feelings.",
+      "She decided to ___ a small bakery downtown.",
+      "It took years before he could ___ about the accident.",
+      "The company hopes to ___ a new office next year.",
+      "After months of therapy, she finally began to ___."
+    ]
   ],
   [
     "open",
@@ -2814,7 +2830,9 @@
     [
       "The trend caught on quickly.",
       "Slang like this can ___ fast among teenagers.",
-      "It took a while for the idea to ___ with investors."
+      "It took a while for the idea to ___ with investors.",
+      "The nickname didn't ___ until after graduation.",
+      "New dance trends ___ within days on social media."
     ]
   ],
   [
@@ -3625,7 +3643,13 @@
     "bang",
     "bang on about",
     "talk repeatedly and tediously about",
-    "She's always banging on about her diet."
+    [
+      "She's always banging on about her diet.",
+      "He won't stop ___ his new car.",
+      "The coach kept ___ discipline all season.",
+      "My uncle loves to ___ politics at dinner.",
+      "She's been ___ that promotion for weeks."
+    ]
   ],
   [
     "bang",
@@ -5434,7 +5458,9 @@
     [
       "The quiz question caught out most of the class.",
       "The tricky wording is designed to ___ careless readers.",
-      "His alibi finally ___ under questioning."
+      "His alibi finally ___ under questioning.",
+      "The examiner's trick question tends to ___ rushed students.",
+      "A single inconsistency can ___ even a good liar."
     ]
   ],
   [
