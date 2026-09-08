@@ -2106,9 +2106,9 @@
       "streak": 7
     },
     "cross over": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "bring up": {
       "seen": 3,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 706,
     "totalCorrect": 538
   },
-  "updatedAt": "2026-09-08T08:04:00.143Z"
+  "updatedAt": "2026-09-08T08:04:21.755Z"
 }
