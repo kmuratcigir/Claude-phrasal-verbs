@@ -2825,6 +2825,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "drown out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2833,5 +2838,5 @@
     "totalAttempts": 107,
     "totalCorrect": 89
   },
-  "updatedAt": "2026-09-08T14:39:13.272Z"
+  "updatedAt": "2026-09-08T14:39:23.977Z"
 }
