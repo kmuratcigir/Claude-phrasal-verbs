@@ -2357,9 +2357,9 @@
       "streak": 1
     },
     "make out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "think back": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 143,
     "totalCorrect": 118
   },
-  "updatedAt": "2026-09-08T14:46:40.170Z"
+  "updatedAt": "2026-09-08T14:48:09.634Z"
 }
