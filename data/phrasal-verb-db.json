@@ -2405,6 +2405,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "blow out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2413,5 +2418,5 @@
     "totalAttempts": 23,
     "totalCorrect": 19
   },
-  "updatedAt": "2026-09-08T13:19:28.186Z"
+  "updatedAt": "2026-09-08T13:19:38.201Z"
 }
