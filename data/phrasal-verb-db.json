@@ -2576,9 +2576,9 @@
       "streak": 2
     },
     "shake down": {
-      "seen": 6,
-      "correct": 4,
-      "streak": 3
+      "seen": 7,
+      "correct": 5,
+      "streak": 4
     },
     "flip through": {
       "seen": 2,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 640,
     "totalCorrect": 483
   },
-  "updatedAt": "2026-09-08T07:48:36.871Z"
+  "updatedAt": "2026-09-08T07:48:48.218Z"
 }
