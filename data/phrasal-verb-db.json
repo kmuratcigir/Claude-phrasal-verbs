@@ -2121,7 +2121,7 @@
       "streak": 0
     },
     "block off": {
-      "seen": 5,
+      "seen": 6,
       "correct": 3,
       "streak": 0
     },
@@ -2722,5 +2722,5 @@
     "totalAttempts": 746,
     "totalCorrect": 566
   },
-  "updatedAt": "2026-09-08T08:13:33.803Z"
+  "updatedAt": "2026-09-08T08:13:49.550Z"
 }
