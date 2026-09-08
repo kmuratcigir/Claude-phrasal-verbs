@@ -2536,9 +2536,9 @@
       "streak": 4
     },
     "blow out": {
-      "seen": 5,
-      "correct": 3,
-      "streak": 1
+      "seen": 6,
+      "correct": 4,
+      "streak": 2
     },
     "drift away": {
       "seen": 5,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 651,
     "totalCorrect": 491
   },
-  "updatedAt": "2026-09-08T07:51:45.645Z"
+  "updatedAt": "2026-09-08T07:51:57.137Z"
 }
