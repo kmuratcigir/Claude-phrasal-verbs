@@ -2735,6 +2735,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "hide away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2743,5 +2748,5 @@
     "totalAttempts": 89,
     "totalCorrect": 74
   },
-  "updatedAt": "2026-09-08T14:34:04.675Z"
+  "updatedAt": "2026-09-08T14:34:08.507Z"
 }
