@@ -2855,6 +2855,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "bump into": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2863,5 +2868,5 @@
     "totalAttempts": 113,
     "totalCorrect": 93
   },
-  "updatedAt": "2026-09-08T14:40:25.336Z"
+  "updatedAt": "2026-09-08T14:40:28.700Z"
 }
