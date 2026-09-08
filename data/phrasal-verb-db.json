@@ -2942,9 +2942,9 @@
       "streak": 0
     },
     "step back": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "step down": {
       "seen": 7,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 781,
     "totalCorrect": 593
   },
-  "updatedAt": "2026-09-08T12:49:42.569Z"
+  "updatedAt": "2026-09-08T12:50:13.048Z"
 }
