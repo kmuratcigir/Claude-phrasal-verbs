@@ -2515,6 +2515,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "move in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2523,5 +2528,5 @@
     "totalAttempts": 45,
     "totalCorrect": 39
   },
-  "updatedAt": "2026-09-08T13:24:02.966Z"
+  "updatedAt": "2026-09-08T13:24:19.282Z"
 }
