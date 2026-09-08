@@ -2607,9 +2607,9 @@
       "streak": 2
     },
     "give in": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "pass through": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 205,
     "totalCorrect": 172
   },
-  "updatedAt": "2026-09-08T15:10:15.640Z"
+  "updatedAt": "2026-09-08T15:10:28.772Z"
 }
