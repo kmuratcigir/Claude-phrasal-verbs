@@ -2922,9 +2922,9 @@
       "streak": 0
     },
     "tear off": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "block off": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 240,
     "totalCorrect": 202
   },
-  "updatedAt": "2026-09-08T16:45:53.781Z"
+  "updatedAt": "2026-09-08T16:45:56.995Z"
 }
