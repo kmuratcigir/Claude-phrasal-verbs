@@ -2830,6 +2830,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "tense up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2838,5 +2843,5 @@
     "totalAttempts": 108,
     "totalCorrect": 90
   },
-  "updatedAt": "2026-09-08T14:39:25.920Z"
+  "updatedAt": "2026-09-08T14:39:31.196Z"
 }
