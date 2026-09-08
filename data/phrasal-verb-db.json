@@ -2797,9 +2797,9 @@
       "streak": 1
     },
     "bring up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "narrow down": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 161,
     "totalCorrect": 135
   },
-  "updatedAt": "2026-09-08T14:51:51.643Z"
+  "updatedAt": "2026-09-08T14:51:56.847Z"
 }
