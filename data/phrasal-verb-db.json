@@ -2322,9 +2322,9 @@
       "streak": 1
     },
     "put through": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "step down": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 144,
     "totalCorrect": 119
   },
-  "updatedAt": "2026-09-08T14:48:11.553Z"
+  "updatedAt": "2026-09-08T14:48:17.224Z"
 }
