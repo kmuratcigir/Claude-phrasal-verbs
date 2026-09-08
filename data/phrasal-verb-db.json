@@ -2890,6 +2890,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "sing along": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2898,5 +2903,5 @@
     "totalAttempts": 120,
     "totalCorrect": 99
   },
-  "updatedAt": "2026-09-08T14:41:56.785Z"
+  "updatedAt": "2026-09-08T14:42:02.287Z"
 }
