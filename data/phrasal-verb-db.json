@@ -2236,9 +2236,9 @@
       "streak": 2
     },
     "see through": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 1
+      "streak": 0
     },
     "dwell on": {
       "seen": 4,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 764,
     "totalCorrect": 578
   },
-  "updatedAt": "2026-09-08T11:44:43.432Z"
+  "updatedAt": "2026-09-08T11:45:16.063Z"
 }
