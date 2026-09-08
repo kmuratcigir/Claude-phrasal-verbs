@@ -2945,6 +2945,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "roam around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2953,5 +2958,5 @@
     "totalAttempts": 131,
     "totalCorrect": 107
   },
-  "updatedAt": "2026-09-08T14:44:28.156Z"
+  "updatedAt": "2026-09-08T14:44:37.717Z"
 }
