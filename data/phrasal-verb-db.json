@@ -2186,9 +2186,9 @@
       "streak": 4
     },
     "fumble around": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "tell off": {
       "seen": 6,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 724,
     "totalCorrect": 553
   },
-  "updatedAt": "2026-09-08T08:09:19.974Z"
+  "updatedAt": "2026-09-08T08:09:32.852Z"
 }
