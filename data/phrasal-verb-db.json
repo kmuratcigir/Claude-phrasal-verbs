@@ -2507,9 +2507,9 @@
       "streak": 2
     },
     "get along with": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "cut off": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 224,
     "totalCorrect": 187
   },
-  "updatedAt": "2026-09-08T16:38:04.973Z"
+  "updatedAt": "2026-09-08T16:38:14.940Z"
 }
