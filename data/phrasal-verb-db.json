@@ -2206,9 +2206,9 @@
       "streak": 0
     },
     "fit in": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "get away": {
       "seen": 8,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 738,
     "totalCorrect": 560
   },
-  "updatedAt": "2026-09-08T08:12:05.942Z"
+  "updatedAt": "2026-09-08T08:12:18.221Z"
 }
