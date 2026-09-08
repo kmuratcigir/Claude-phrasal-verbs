@@ -2216,9 +2216,9 @@
       "streak": 0
     },
     "walk out": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "step aside": {
       "seen": 7,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 683,
     "totalCorrect": 517
   },
-  "updatedAt": "2026-09-08T07:59:37.967Z"
+  "updatedAt": "2026-09-08T07:59:51.951Z"
 }
