@@ -2636,9 +2636,9 @@
       "streak": 3
     },
     "hold off": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 1
+      "streak": 0
     },
     "catch on": {
       "seen": 5,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 642,
     "totalCorrect": 484
   },
-  "updatedAt": "2026-09-08T07:49:12.864Z"
+  "updatedAt": "2026-09-08T07:49:41.753Z"
 }
