@@ -2021,9 +2021,9 @@
       "streak": 5
     },
     "tense up": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "phase in": {
       "seen": 4,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 740,
     "totalCorrect": 562
   },
-  "updatedAt": "2026-09-08T08:12:34.103Z"
+  "updatedAt": "2026-09-08T08:12:40.273Z"
 }
