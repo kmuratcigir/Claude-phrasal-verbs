@@ -2300,6 +2300,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "run away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2308,5 +2313,5 @@
     "totalAttempts": 2,
     "totalCorrect": 2
   },
-  "updatedAt": "2026-09-08T13:12:07.099Z"
+  "updatedAt": "2026-09-08T13:12:34.428Z"
 }
