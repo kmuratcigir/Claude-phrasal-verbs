@@ -2466,9 +2466,9 @@
       "streak": 1
     },
     "talk through": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "get across": {
       "seen": 6,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 734,
     "totalCorrect": 558
   },
-  "updatedAt": "2026-09-08T08:11:22.538Z"
+  "updatedAt": "2026-09-08T08:11:38.303Z"
 }
