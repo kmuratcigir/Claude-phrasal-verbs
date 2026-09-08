@@ -2902,9 +2902,9 @@
       "streak": 0
     },
     "step up": {
-      "seen": 6,
-      "correct": 6,
-      "streak": 6
+      "seen": 7,
+      "correct": 7,
+      "streak": 7
     },
     "knock out": {
       "seen": 3,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 777,
     "totalCorrect": 589
   },
-  "updatedAt": "2026-09-08T12:48:14.813Z"
+  "updatedAt": "2026-09-08T12:48:22.832Z"
 }
