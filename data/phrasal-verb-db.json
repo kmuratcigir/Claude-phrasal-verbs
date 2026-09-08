@@ -2502,9 +2502,9 @@
       "streak": 2
     },
     "hold up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "get along with": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 177,
     "totalCorrect": 148
   },
-  "updatedAt": "2026-09-08T14:55:55.028Z"
+  "updatedAt": "2026-09-08T14:56:02.381Z"
 }
