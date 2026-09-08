@@ -2902,9 +2902,9 @@
       "streak": 2
     },
     "talk through": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "work through": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 243,
     "totalCorrect": 205
   },
-  "updatedAt": "2026-09-08T16:46:16.545Z"
+  "updatedAt": "2026-09-08T16:46:30.225Z"
 }
