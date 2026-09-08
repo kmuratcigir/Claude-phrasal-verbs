@@ -2395,6 +2395,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "hang up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2403,5 +2408,5 @@
     "totalAttempts": 21,
     "totalCorrect": 18
   },
-  "updatedAt": "2026-09-08T13:19:03.097Z"
+  "updatedAt": "2026-09-08T13:19:09.713Z"
 }
