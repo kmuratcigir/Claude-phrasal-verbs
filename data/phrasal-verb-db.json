@@ -2815,6 +2815,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "draw in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2823,5 +2828,5 @@
     "totalAttempts": 105,
     "totalCorrect": 88
   },
-  "updatedAt": "2026-09-08T14:38:23.474Z"
+  "updatedAt": "2026-09-08T14:38:57.554Z"
 }
