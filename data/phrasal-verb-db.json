@@ -2261,9 +2261,9 @@
       "streak": 4
     },
     "make up": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 3
+      "seen": 6,
+      "correct": 5,
+      "streak": 4
     },
     "wear down": {
       "seen": 3,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 679,
     "totalCorrect": 513
   },
-  "updatedAt": "2026-09-08T07:58:35.659Z"
+  "updatedAt": "2026-09-08T07:58:42.083Z"
 }
