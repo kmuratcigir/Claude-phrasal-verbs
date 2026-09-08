@@ -2745,6 +2745,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "shuffle around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2753,5 +2758,5 @@
     "totalAttempts": 91,
     "totalCorrect": 76
   },
-  "updatedAt": "2026-09-08T14:34:26.995Z"
+  "updatedAt": "2026-09-08T14:34:53.747Z"
 }
