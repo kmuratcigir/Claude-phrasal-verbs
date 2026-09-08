@@ -2290,12 +2290,18 @@
       ]
     }
   ],
-  "stats": {},
+  "stats": {
+    "slip away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    }
+  },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
     "totalAttempts": 0,
     "totalCorrect": 0
   },
-  "updatedAt": "2026-09-08T13:11:14.811Z"
+  "updatedAt": "2026-09-08T13:11:56.181Z"
 }
