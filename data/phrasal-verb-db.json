@@ -2580,6 +2580,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "stand in": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2588,5 +2593,5 @@
     "totalAttempts": 58,
     "totalCorrect": 50
   },
-  "updatedAt": "2026-09-08T13:31:56.797Z"
+  "updatedAt": "2026-09-08T13:32:15.264Z"
 }
