@@ -2767,9 +2767,9 @@
       "streak": 0
     },
     "open up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "break in": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 167,
     "totalCorrect": 140
   },
-  "updatedAt": "2026-09-08T14:53:01.700Z"
+  "updatedAt": "2026-09-08T14:53:05.724Z"
 }
