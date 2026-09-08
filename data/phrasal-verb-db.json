@@ -2366,9 +2366,9 @@
       "streak": 2
     },
     "put up": {
-      "seen": 6,
-      "correct": 5,
-      "streak": 5
+      "seen": 7,
+      "correct": 6,
+      "streak": 6
     },
     "warn off": {
       "seen": 2,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 672,
     "totalCorrect": 508
   },
-  "updatedAt": "2026-09-08T07:57:01.451Z"
+  "updatedAt": "2026-09-08T07:57:10.476Z"
 }
