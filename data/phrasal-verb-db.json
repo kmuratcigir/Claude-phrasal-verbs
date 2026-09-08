@@ -2596,9 +2596,9 @@
       "streak": 3
     },
     "get back": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 1
+      "seen": 5,
+      "correct": 4,
+      "streak": 2
     },
     "come up": {
       "seen": 3,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 756,
     "totalCorrect": 572
   },
-  "updatedAt": "2026-09-08T08:23:57.564Z"
+  "updatedAt": "2026-09-08T08:24:09.195Z"
 }
