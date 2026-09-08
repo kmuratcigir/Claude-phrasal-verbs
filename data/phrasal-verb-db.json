@@ -2930,6 +2930,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "settle down": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2938,5 +2943,5 @@
     "totalAttempts": 128,
     "totalCorrect": 104
   },
-  "updatedAt": "2026-09-08T14:43:44.540Z"
+  "updatedAt": "2026-09-08T14:43:54.442Z"
 }
