@@ -2445,6 +2445,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "drift away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2453,5 +2458,5 @@
     "totalAttempts": 31,
     "totalCorrect": 27
   },
-  "updatedAt": "2026-09-08T13:20:40.969Z"
+  "updatedAt": "2026-09-08T13:20:49.276Z"
 }
