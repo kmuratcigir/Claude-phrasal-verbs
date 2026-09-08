@@ -2451,9 +2451,9 @@
       "streak": 0
     },
     "sing along": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "take over": {
       "seen": 5,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 750,
     "totalCorrect": 567
   },
-  "updatedAt": "2026-09-08T08:14:32.738Z"
+  "updatedAt": "2026-09-08T08:14:45.563Z"
 }
