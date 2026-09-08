@@ -2582,9 +2582,9 @@
       "streak": 1
     },
     "stand in": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "think through": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 151,
     "totalCorrect": 126
   },
-  "updatedAt": "2026-09-08T14:49:48.339Z"
+  "updatedAt": "2026-09-08T14:49:56.496Z"
 }
