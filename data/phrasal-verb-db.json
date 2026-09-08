@@ -2505,6 +2505,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "get along with": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2513,5 +2518,5 @@
     "totalAttempts": 43,
     "totalCorrect": 38
   },
-  "updatedAt": "2026-09-08T13:23:26.726Z"
+  "updatedAt": "2026-09-08T13:23:42.506Z"
 }
