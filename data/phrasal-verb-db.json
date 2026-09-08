@@ -2420,6 +2420,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "phase out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2428,5 +2433,5 @@
     "totalAttempts": 26,
     "totalCorrect": 22
   },
-  "updatedAt": "2026-09-08T13:20:00.811Z"
+  "updatedAt": "2026-09-08T13:20:05.513Z"
 }
