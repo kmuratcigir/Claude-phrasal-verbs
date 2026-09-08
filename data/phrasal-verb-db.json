@@ -2196,9 +2196,9 @@
       "streak": 7
     },
     "catch up with": {
-      "seen": 9,
-      "correct": 5,
-      "streak": 1
+      "seen": 8,
+      "correct": 4,
+      "streak": 0
     },
     "run through": {
       "seen": 6,
@@ -2376,9 +2376,9 @@
       "streak": 0
     },
     "pile up": {
-      "seen": 4,
-      "correct": 3,
-      "streak": 2
+      "seen": 5,
+      "correct": 4,
+      "streak": 3
     },
     "stand in": {
       "seen": 7,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 759,
     "totalCorrect": 575
   },
-  "updatedAt": "2026-09-08T09:47:06.100Z"
+  "updatedAt": "2026-09-08T09:48:14.067Z"
 }
