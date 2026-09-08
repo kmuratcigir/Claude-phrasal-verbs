@@ -2435,6 +2435,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "pass away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2443,5 +2448,5 @@
     "totalAttempts": 29,
     "totalCorrect": 25
   },
-  "updatedAt": "2026-09-08T13:20:32.044Z"
+  "updatedAt": "2026-09-08T13:20:35.348Z"
 }
