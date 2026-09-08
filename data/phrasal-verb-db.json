@@ -2131,7 +2131,7 @@
       "streak": 3
     },
     "roam around": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
       "streak": 0
     },
@@ -2722,5 +2722,5 @@
     "totalAttempts": 728,
     "totalCorrect": 555
   },
-  "updatedAt": "2026-09-08T08:10:15.905Z"
+  "updatedAt": "2026-09-08T08:10:27.922Z"
 }
