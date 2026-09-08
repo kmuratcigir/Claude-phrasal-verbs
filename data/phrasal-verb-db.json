@@ -2942,9 +2942,9 @@
       "streak": 2
     },
     "show off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "roam around": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 248,
     "totalCorrect": 209
   },
-  "updatedAt": "2026-09-08T16:47:00.692Z"
+  "updatedAt": "2026-09-08T16:47:09.023Z"
 }
