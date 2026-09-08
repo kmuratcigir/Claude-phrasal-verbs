@@ -2932,9 +2932,9 @@
       "streak": 1
     },
     "settle down": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "wrap up": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 163,
     "totalCorrect": 137
   },
-  "updatedAt": "2026-09-08T14:52:15.918Z"
+  "updatedAt": "2026-09-08T14:52:26.142Z"
 }
