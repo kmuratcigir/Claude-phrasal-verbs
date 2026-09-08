@@ -2750,6 +2750,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "sleep through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2758,5 +2763,5 @@
     "totalAttempts": 92,
     "totalCorrect": 77
   },
-  "updatedAt": "2026-09-08T14:34:55.075Z"
+  "updatedAt": "2026-09-08T14:35:09.213Z"
 }
