@@ -2031,9 +2031,9 @@
       "streak": 4
     },
     "grieve over": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "mix up": {
       "seen": 3,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 716,
     "totalCorrect": 547
   },
-  "updatedAt": "2026-09-08T08:06:41.532Z"
+  "updatedAt": "2026-09-08T08:06:56.829Z"
 }
