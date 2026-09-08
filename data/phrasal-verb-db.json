@@ -2506,9 +2506,9 @@
       "streak": 4
     },
     "look after": {
-      "seen": 8,
-      "correct": 6,
-      "streak": 4
+      "seen": 9,
+      "correct": 7,
+      "streak": 5
     },
     "settle down": {
       "seen": 3,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 645,
     "totalCorrect": 486
   },
-  "updatedAt": "2026-09-08T07:50:23.934Z"
+  "updatedAt": "2026-09-08T07:50:31.270Z"
 }
