@@ -2332,9 +2332,9 @@
       "streak": 1
     },
     "take in": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "step aside": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 222,
     "totalCorrect": 186
   },
-  "updatedAt": "2026-09-08T16:37:38.745Z"
+  "updatedAt": "2026-09-08T16:37:47.725Z"
 }
