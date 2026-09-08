@@ -2036,9 +2036,9 @@
       "streak": 2
     },
     "mix up": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 1
+      "seen": 3,
+      "correct": 2,
+      "streak": 2
     },
     "be through with": {
       "seen": 3,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 686,
     "totalCorrect": 520
   },
-  "updatedAt": "2026-09-08T08:00:14.066Z"
+  "updatedAt": "2026-09-08T08:00:19.703Z"
 }
