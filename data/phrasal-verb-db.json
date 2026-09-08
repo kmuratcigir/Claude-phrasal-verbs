@@ -2351,9 +2351,9 @@
       "streak": 4
     },
     "shuffle around": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "live through": {
       "seen": 4,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 739,
     "totalCorrect": 561
   },
-  "updatedAt": "2026-09-08T08:12:19.561Z"
+  "updatedAt": "2026-09-08T08:12:32.395Z"
 }
