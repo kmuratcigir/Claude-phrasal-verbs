@@ -2161,9 +2161,9 @@
       "streak": 8
     },
     "rush through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "get away with": {
       "seen": 7,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 689,
     "totalCorrect": 523
   },
-  "updatedAt": "2026-09-08T08:00:44.274Z"
+  "updatedAt": "2026-09-08T08:00:52.652Z"
 }
