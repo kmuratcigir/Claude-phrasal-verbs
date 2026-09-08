@@ -2715,6 +2715,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "knock out": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2723,5 +2728,5 @@
     "totalAttempts": 85,
     "totalCorrect": 70
   },
-  "updatedAt": "2026-09-08T14:33:17.196Z"
+  "updatedAt": "2026-09-08T14:33:22.541Z"
 }
