@@ -2317,9 +2317,9 @@
       "streak": 1
     },
     "get away": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "put through": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 200,
     "totalCorrect": 168
   },
-  "updatedAt": "2026-09-08T15:08:56.508Z"
+  "updatedAt": "2026-09-08T15:09:08.045Z"
 }
