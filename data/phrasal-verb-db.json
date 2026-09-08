@@ -2315,6 +2315,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "get away": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2323,5 +2328,5 @@
     "totalAttempts": 5,
     "totalCorrect": 5
   },
-  "updatedAt": "2026-09-08T13:13:20.704Z"
+  "updatedAt": "2026-09-08T13:13:37.871Z"
 }
