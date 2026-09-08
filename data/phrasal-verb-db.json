@@ -2051,9 +2051,9 @@
       "streak": 6
     },
     "stick with": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "give away": {
       "seen": 8,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 752,
     "totalCorrect": 568
   },
-  "updatedAt": "2026-09-08T08:14:59.624Z"
+  "updatedAt": "2026-09-08T08:15:32.383Z"
 }
