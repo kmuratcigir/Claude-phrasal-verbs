@@ -2900,6 +2900,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "talk through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2908,5 +2913,5 @@
     "totalAttempts": 122,
     "totalCorrect": 101
   },
-  "updatedAt": "2026-09-08T14:42:14.113Z"
+  "updatedAt": "2026-09-08T14:42:19.401Z"
 }
