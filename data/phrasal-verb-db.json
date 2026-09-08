@@ -2675,6 +2675,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "rifle through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2683,5 +2688,5 @@
     "totalAttempts": 77,
     "totalCorrect": 65
   },
-  "updatedAt": "2026-09-08T14:29:50.595Z"
+  "updatedAt": "2026-09-08T14:30:10.132Z"
 }
