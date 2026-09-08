@@ -2066,9 +2066,9 @@
       "streak": 4
     },
     "cut off": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "show off": {
       "seen": 4,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 673,
     "totalCorrect": 509
   },
-  "updatedAt": "2026-09-08T07:57:11.845Z"
+  "updatedAt": "2026-09-08T07:57:32.182Z"
 }
