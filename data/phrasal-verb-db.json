@@ -2910,6 +2910,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "potter around": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2918,5 +2923,5 @@
     "totalAttempts": 124,
     "totalCorrect": 102
   },
-  "updatedAt": "2026-09-08T14:42:40.552Z"
+  "updatedAt": "2026-09-08T14:42:53.530Z"
 }
