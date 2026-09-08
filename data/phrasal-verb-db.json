@@ -2091,7 +2091,7 @@
       "streak": 5
     },
     "tear off": {
-      "seen": 3,
+      "seen": 4,
       "correct": 0,
       "streak": 0
     },
@@ -2722,5 +2722,5 @@
     "totalAttempts": 751,
     "totalCorrect": 568
   },
-  "updatedAt": "2026-09-08T08:14:46.842Z"
+  "updatedAt": "2026-09-08T08:14:58.295Z"
 }
