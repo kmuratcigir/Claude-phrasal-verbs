@@ -2685,6 +2685,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "see through": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2693,5 +2698,5 @@
     "totalAttempts": 79,
     "totalCorrect": 66
   },
-  "updatedAt": "2026-09-08T14:30:38.694Z"
+  "updatedAt": "2026-09-08T14:31:29.788Z"
 }
