@@ -2671,9 +2671,9 @@
       "streak": 3
     },
     "drop out": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "hide away": {
       "seen": 2,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 698,
     "totalCorrect": 530
   },
-  "updatedAt": "2026-09-08T08:02:26.169Z"
+  "updatedAt": "2026-09-08T08:02:36.551Z"
 }
