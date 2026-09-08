@@ -2590,6 +2590,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "take over": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2598,5 +2603,5 @@
     "totalAttempts": 60,
     "totalCorrect": 51
   },
-  "updatedAt": "2026-09-08T13:32:24.029Z"
+  "updatedAt": "2026-09-08T13:33:08.971Z"
 }
