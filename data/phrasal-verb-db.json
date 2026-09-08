@@ -3000,6 +3000,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "fit in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -3008,5 +3013,5 @@
     "totalAttempts": 142,
     "totalCorrect": 117
   },
-  "updatedAt": "2026-09-08T14:46:31.310Z"
+  "updatedAt": "2026-09-08T14:46:38.186Z"
 }
