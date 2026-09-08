@@ -2526,9 +2526,9 @@
       "streak": 0
     },
     "potter around": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 1
+      "seen": 4,
+      "correct": 3,
+      "streak": 2
     },
     "move out": {
       "seen": 5,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 701,
     "totalCorrect": 533
   },
-  "updatedAt": "2026-09-08T08:02:52.047Z"
+  "updatedAt": "2026-09-08T08:03:03.918Z"
 }
