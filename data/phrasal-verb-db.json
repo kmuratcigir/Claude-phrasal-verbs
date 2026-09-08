@@ -2471,9 +2471,9 @@
       "streak": 2
     },
     "get across": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 3
+      "seen": 6,
+      "correct": 5,
+      "streak": 4
     },
     "think back": {
       "seen": 6,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 670,
     "totalCorrect": 506
   },
-  "updatedAt": "2026-09-08T07:56:34.521Z"
+  "updatedAt": "2026-09-08T07:56:47.479Z"
 }
