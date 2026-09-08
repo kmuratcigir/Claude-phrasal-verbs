@@ -2860,6 +2860,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "warn off": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -2868,5 +2873,5 @@
     "totalAttempts": 114,
     "totalCorrect": 94
   },
-  "updatedAt": "2026-09-08T14:40:30.135Z"
+  "updatedAt": "2026-09-08T14:40:45.908Z"
 }
