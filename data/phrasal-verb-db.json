@@ -2585,6 +2585,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "think through": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2593,5 +2598,5 @@
     "totalAttempts": 59,
     "totalCorrect": 50
   },
-  "updatedAt": "2026-09-08T13:32:16.652Z"
+  "updatedAt": "2026-09-08T13:32:22.629Z"
 }
