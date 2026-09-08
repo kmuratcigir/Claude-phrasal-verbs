@@ -2316,9 +2316,9 @@
       "streak": 3
     },
     "force through": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "opt into": {
       "seen": 4,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 709,
     "totalCorrect": 541
   },
-  "updatedAt": "2026-09-08T08:04:43.772Z"
+  "updatedAt": "2026-09-08T08:05:00.422Z"
 }
