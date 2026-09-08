@@ -2290,12 +2290,18 @@
       ]
     }
   ],
-  "stats": {},
+  "stats": {
+    "catch up on": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
+    }
+  },
   "globalStats": {
     "currentStreak": 0,
     "bestStreak": 0,
     "totalAttempts": 0,
     "totalCorrect": 0
   },
-  "updatedAt": "2026-09-08T12:55:13.818Z"
+  "updatedAt": "2026-09-08T13:08:43.972Z"
 }
