@@ -2732,9 +2732,9 @@
       "streak": 1
     },
     "cram in": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "hide away": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 193,
     "totalCorrect": 162
   },
-  "updatedAt": "2026-09-08T14:59:56.878Z"
+  "updatedAt": "2026-09-08T15:00:14.584Z"
 }
