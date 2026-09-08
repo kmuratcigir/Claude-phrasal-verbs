@@ -2446,9 +2446,9 @@
       "streak": 0
     },
     "pass through": {
-      "seen": 4,
+      "seen": 5,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "sing along": {
       "seen": 2,
@@ -2717,5 +2717,5 @@
     "totalAttempts": 635,
     "totalCorrect": 482
   },
-  "updatedAt": "2026-09-08T07:44:30.569Z"
+  "updatedAt": "2026-09-08T07:44:42.879Z"
 }
