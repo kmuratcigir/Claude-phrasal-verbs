@@ -2697,9 +2697,9 @@
       "streak": 0
     },
     "build up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "mix up": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 234,
     "totalCorrect": 196
   },
-  "updatedAt": "2026-09-08T16:44:47.863Z"
+  "updatedAt": "2026-09-08T16:44:56.026Z"
 }
