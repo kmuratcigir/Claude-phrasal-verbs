@@ -2705,6 +2705,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "piece together": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2713,5 +2718,5 @@
     "totalAttempts": 83,
     "totalCorrect": 68
   },
-  "updatedAt": "2026-09-08T14:32:17.287Z"
+  "updatedAt": "2026-09-08T14:32:43.838Z"
 }
