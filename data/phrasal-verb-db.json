@@ -2670,6 +2670,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "bulk up": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2678,5 +2683,5 @@
     "totalAttempts": 76,
     "totalCorrect": 64
   },
-  "updatedAt": "2026-09-08T14:29:36.100Z"
+  "updatedAt": "2026-09-08T14:29:49.056Z"
 }
