@@ -2241,9 +2241,9 @@
       "streak": 0
     },
     "dwell on": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 0
+      "seen": 4,
+      "correct": 3,
+      "streak": 1
     },
     "break in": {
       "seen": 7,
@@ -2722,5 +2722,5 @@
     "totalAttempts": 705,
     "totalCorrect": 537
   },
-  "updatedAt": "2026-09-08T08:03:50.009Z"
+  "updatedAt": "2026-09-08T08:03:58.789Z"
 }
