@@ -2730,6 +2730,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "cram in": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -2738,5 +2743,5 @@
     "totalAttempts": 88,
     "totalCorrect": 73
   },
-  "updatedAt": "2026-09-08T14:33:52.968Z"
+  "updatedAt": "2026-09-08T14:34:03.135Z"
 }
