@@ -2631,9 +2631,9 @@
       "streak": 2
     },
     "run through": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "hang out": {
       "seen": 4,
@@ -3027,5 +3027,5 @@
     "totalAttempts": 309,
     "totalCorrect": 265
   },
-  "updatedAt": "2026-09-09T10:15:13.548Z"
+  "updatedAt": "2026-09-09T10:15:25.839Z"
 }
