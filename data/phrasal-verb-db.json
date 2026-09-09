@@ -2881,9 +2881,9 @@
       "streak": 2
     },
     "cross over": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "stick with": {
       "seen": 4,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 370,
     "totalCorrect": 315
   },
-  "updatedAt": "2026-09-09T11:56:56.683Z"
+  "updatedAt": "2026-09-09T11:57:16.952Z"
 }
