@@ -3016,9 +3016,9 @@
       "streak": 2
     },
     "fit in": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "turn out": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 380,
     "totalCorrect": 321
   },
-  "updatedAt": "2026-09-09T11:58:50.743Z"
+  "updatedAt": "2026-09-09T11:59:00.352Z"
 }
