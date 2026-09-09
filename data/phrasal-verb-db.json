@@ -2871,9 +2871,9 @@
       "streak": 3
     },
     "bump into": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "warn off": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 386,
     "totalCorrect": 325
   },
-  "updatedAt": "2026-09-09T12:00:17.728Z"
+  "updatedAt": "2026-09-09T12:00:21.566Z"
 }
