@@ -2901,9 +2901,9 @@
       "streak": 3
     },
     "play up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "sing along": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 367,
     "totalCorrect": 313
   },
-  "updatedAt": "2026-09-09T11:56:33.074Z"
+  "updatedAt": "2026-09-09T11:56:38.583Z"
 }
