@@ -2791,9 +2791,9 @@
       "streak": 3
     },
     "jolt out of": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "follow through": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 357,
     "totalCorrect": 304
   },
-  "updatedAt": "2026-09-09T10:31:04.365Z"
+  "updatedAt": "2026-09-09T10:31:20.267Z"
 }
