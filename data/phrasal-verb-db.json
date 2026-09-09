@@ -2926,9 +2926,9 @@
       "streak": 0
     },
     "potter around": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "pick on": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 385,
     "totalCorrect": 324
   },
-  "updatedAt": "2026-09-09T11:59:58.692Z"
+  "updatedAt": "2026-09-09T12:00:16.082Z"
 }
