@@ -2931,7 +2931,7 @@
       "streak": 1
     },
     "pick on": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -3032,5 +3032,5 @@
     "totalAttempts": 337,
     "totalCorrect": 286
   },
-  "updatedAt": "2026-09-09T10:21:41.175Z"
+  "updatedAt": "2026-09-09T10:21:54.181Z"
 }
