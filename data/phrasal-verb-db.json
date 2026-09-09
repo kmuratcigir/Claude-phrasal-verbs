@@ -2410,9 +2410,9 @@
       "streak": 2
     },
     "catch on": {
-      "seen": 3,
-      "correct": 1,
-      "streak": 0
+      "seen": 4,
+      "correct": 2,
+      "streak": 1
     },
     "catch up with": {
       "seen": 3,
@@ -3066,5 +3066,5 @@
     "totalAttempts": 420,
     "totalCorrect": 353
   },
-  "updatedAt": "2026-09-09T14:43:30.498Z"
+  "updatedAt": "2026-09-09T14:44:10.025Z"
 }
