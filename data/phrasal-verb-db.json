@@ -2336,9 +2336,9 @@
       "streak": 4
     },
     "put through": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "step down": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 400,
     "totalCorrect": 336
   },
-  "updatedAt": "2026-09-09T12:48:30.002Z"
+  "updatedAt": "2026-09-09T12:52:13.936Z"
 }
