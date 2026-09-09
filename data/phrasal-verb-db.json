@@ -2796,9 +2796,9 @@
       "streak": 1
     },
     "follow through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "round up": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 335,
     "totalCorrect": 284
   },
-  "updatedAt": "2026-09-09T10:21:19.518Z"
+  "updatedAt": "2026-09-09T10:21:32.270Z"
 }
