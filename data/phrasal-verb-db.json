@@ -2566,9 +2566,9 @@
       "streak": 3
     },
     "catch out": {
-      "seen": 3,
-      "correct": 1,
-      "streak": 0
+      "seen": 4,
+      "correct": 2,
+      "streak": 1
     },
     "shake up": {
       "seen": 5,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 1,
+    "currentStreak": 2,
     "bestStreak": 30,
-    "totalAttempts": 407,
-    "totalCorrect": 342
+    "totalAttempts": 408,
+    "totalCorrect": 343
   },
-  "updatedAt": "2026-09-09T12:59:09.258Z"
+  "updatedAt": "2026-09-09T12:59:27.242Z"
 }
