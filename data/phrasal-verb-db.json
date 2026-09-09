@@ -2841,9 +2841,9 @@
       "streak": 1
     },
     "drown out": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "tense up": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 388,
     "totalCorrect": 327
   },
-  "updatedAt": "2026-09-09T12:00:39.207Z"
+  "updatedAt": "2026-09-09T12:00:50.119Z"
 }
