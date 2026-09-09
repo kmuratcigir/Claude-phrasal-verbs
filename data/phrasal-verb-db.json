@@ -2437,9 +2437,9 @@
       "streak": 1
     },
     "pass away": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "phase in": {
       "seen": 3,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 289,
     "totalCorrect": 245
   },
-  "updatedAt": "2026-09-09T10:03:23.544Z"
+  "updatedAt": "2026-09-09T10:03:34.750Z"
 }
