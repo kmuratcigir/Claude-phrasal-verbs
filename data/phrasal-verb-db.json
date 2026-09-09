@@ -2447,9 +2447,9 @@
       "streak": 3
     },
     "drift away": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "take off": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 296,
     "totalCorrect": 252
   },
-  "updatedAt": "2026-09-09T10:04:44.926Z"
+  "updatedAt": "2026-09-09T10:04:58.307Z"
 }
