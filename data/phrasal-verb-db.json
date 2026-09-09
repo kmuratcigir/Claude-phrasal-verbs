@@ -2666,9 +2666,9 @@
       "streak": 2
     },
     "sit through": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "figure out": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 321,
     "totalCorrect": 274
   },
-  "updatedAt": "2026-09-09T10:17:59.865Z"
+  "updatedAt": "2026-09-09T10:18:07.178Z"
 }
