@@ -2716,9 +2716,9 @@
       "streak": 3
     },
     "mix up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "piece together": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 341,
     "totalCorrect": 289
   },
-  "updatedAt": "2026-09-09T10:22:39.533Z"
+  "updatedAt": "2026-09-09T10:22:46.588Z"
 }
