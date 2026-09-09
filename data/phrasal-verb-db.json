@@ -2836,9 +2836,9 @@
       "streak": 1
     },
     "turn around": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "drown out": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 317,
     "totalCorrect": 270
   },
-  "updatedAt": "2026-09-09T10:17:23.549Z"
+  "updatedAt": "2026-09-09T10:17:25.877Z"
 }
