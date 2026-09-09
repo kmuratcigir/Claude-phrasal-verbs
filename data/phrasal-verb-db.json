@@ -2821,9 +2821,9 @@
       "streak": 4
     },
     "have over": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "be through with": {
       "seen": 2,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 1,
     "bestStreak": 30,
-    "totalAttempts": 361,
-    "totalCorrect": 307
+    "totalAttempts": 362,
+    "totalCorrect": 308
   },
-  "updatedAt": "2026-09-09T11:55:39.020Z"
+  "updatedAt": "2026-09-09T11:55:41.677Z"
 }
