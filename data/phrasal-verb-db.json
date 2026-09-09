@@ -2406,9 +2406,9 @@
       "streak": 2
     },
     "hang around": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "hang up": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 316,
     "totalCorrect": 269
   },
-  "updatedAt": "2026-09-09T10:17:11.405Z"
+  "updatedAt": "2026-09-09T10:17:22.084Z"
 }
