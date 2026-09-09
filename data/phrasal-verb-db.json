@@ -2592,9 +2592,9 @@
       "streak": 3
     },
     "take over": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "look after": {
       "seen": 3,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 307,
     "totalCorrect": 263
   },
-  "updatedAt": "2026-09-09T10:07:50.593Z"
+  "updatedAt": "2026-09-09T10:07:57.169Z"
 }
