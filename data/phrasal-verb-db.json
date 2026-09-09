@@ -2442,9 +2442,9 @@
       "streak": 1
     },
     "phase in": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "drift away": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 284,
     "totalCorrect": 240
   },
-  "updatedAt": "2026-09-09T10:02:17.615Z"
+  "updatedAt": "2026-09-09T10:02:26.318Z"
 }
