@@ -2946,9 +2946,9 @@
       "streak": 2
     },
     "settle down": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "wrap up": {
       "seen": 2,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 4,
     "bestStreak": 30,
-    "totalAttempts": 358,
-    "totalCorrect": 305
+    "totalAttempts": 359,
+    "totalCorrect": 306
   },
-  "updatedAt": "2026-09-09T10:31:21.976Z"
+  "updatedAt": "2026-09-09T10:31:25.332Z"
 }
