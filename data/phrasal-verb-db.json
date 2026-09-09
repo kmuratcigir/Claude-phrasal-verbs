@@ -2532,9 +2532,9 @@
       "streak": 3
     },
     "drift off": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "take back": {
       "seen": 3,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 303,
     "totalCorrect": 259
   },
-  "updatedAt": "2026-09-09T10:06:58.321Z"
+  "updatedAt": "2026-09-09T10:07:08.809Z"
 }
