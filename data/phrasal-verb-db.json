@@ -3021,9 +3021,9 @@
       "streak": 3
     },
     "turn out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     }
   },
   "globalStats": {
@@ -3032,5 +3032,5 @@
     "totalAttempts": 407,
     "totalCorrect": 342
   },
-  "updatedAt": "2026-09-09T12:57:45.938Z"
+  "updatedAt": "2026-09-09T12:59:09.258Z"
 }
