@@ -2537,9 +2537,9 @@
       "streak": 2
     },
     "take back": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "move out": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 285,
     "totalCorrect": 241
   },
-  "updatedAt": "2026-09-09T10:02:27.887Z"
+  "updatedAt": "2026-09-09T10:02:35.491Z"
 }
