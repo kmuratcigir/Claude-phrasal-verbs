@@ -2302,6 +2302,18 @@
         "Everything ___ fine in the end.",
         "Thousands ___ for the parade downtown."
       ]
+    },
+    {
+      "key": "vmtu3yte7j6wk",
+      "verb": "top up",
+      "meaning": "add more to something to bring it back to a full or desired level",
+      "example": "Can you ___ my coffee?",
+      "meanings": [
+        "add more to something to bring it back to a full or desired level"
+      ],
+      "examples": [
+        "Can you ___ my coffee?"
+      ]
     }
   ],
   "stats": {
@@ -3032,5 +3044,5 @@
     "totalAttempts": 413,
     "totalCorrect": 347
   },
-  "updatedAt": "2026-09-09T13:00:37.943Z"
+  "updatedAt": "2026-09-09T13:02:27.588Z"
 }
