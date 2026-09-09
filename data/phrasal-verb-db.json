@@ -2312,8 +2312,25 @@
         "add more to something to bring it back to a full or desired level"
       ],
       "examples": [
-        "Can you ___ my coffee?"
+        "Can you top up my coffee?",
+        "She topped up her phone before the trip.",
+        "We need to ___ the pool with more water.",
+        "He topped up his account with fifty dollars.",
+        "Remember to ___ the tank before we leave."
       ]
+    },
+    {
+      "key": "vmtu45p0bpp7r",
+      "verb": "stop up",
+      "meaning": "stay up late, or block something",
+      "example": "He ___ all night finishing the report.",
+      "meanings": [
+        "stay up late, or block something"
+      ],
+      "examples": [
+        "He ___ all night finishing the report."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3049,5 +3066,5 @@
     "totalAttempts": 414,
     "totalCorrect": 348
   },
-  "updatedAt": "2026-09-09T13:02:54.852Z"
+  "updatedAt": "2026-09-09T13:07:48.496Z"
 }
