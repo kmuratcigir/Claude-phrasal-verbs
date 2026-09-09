@@ -2401,9 +2401,9 @@
       "streak": 2
     },
     "hold off": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "hang around": {
       "seen": 3,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 5,
+    "currentStreak": 0,
     "bestStreak": 30,
-    "totalAttempts": 405,
+    "totalAttempts": 406,
     "totalCorrect": 341
   },
-  "updatedAt": "2026-09-09T12:54:01.431Z"
+  "updatedAt": "2026-09-09T12:55:49.955Z"
 }
