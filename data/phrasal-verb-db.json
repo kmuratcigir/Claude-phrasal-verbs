@@ -2492,9 +2492,9 @@
       "streak": 1
     },
     "give away": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "run down": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 273,
     "totalCorrect": 232
   },
-  "updatedAt": "2026-09-09T10:00:07.479Z"
+  "updatedAt": "2026-09-09T10:00:12.472Z"
 }
