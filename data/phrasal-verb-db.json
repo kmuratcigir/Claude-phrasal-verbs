@@ -2587,9 +2587,9 @@
       "streak": 2
     },
     "think through": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "take over": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 286,
     "totalCorrect": 242
   },
-  "updatedAt": "2026-09-09T10:02:36.857Z"
+  "updatedAt": "2026-09-09T10:03:06.379Z"
 }
