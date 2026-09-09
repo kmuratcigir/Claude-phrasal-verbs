@@ -2536,9 +2536,9 @@
       "streak": 3
     },
     "put up": {
-      "seen": 2,
+      "seen": 3,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "get up to": {
       "seen": 3,
@@ -3027,5 +3027,5 @@
     "totalAttempts": 311,
     "totalCorrect": 267
   },
-  "updatedAt": "2026-09-09T10:15:41.403Z"
+  "updatedAt": "2026-09-09T10:16:00.994Z"
 }
