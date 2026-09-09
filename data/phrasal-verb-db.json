@@ -2292,9 +2292,9 @@
   ],
   "stats": {
     "slip away": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "catch up on": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 254,
     "totalCorrect": 214
   },
-  "updatedAt": "2026-09-09T09:56:12.581Z"
+  "updatedAt": "2026-09-09T09:56:17.014Z"
 }
