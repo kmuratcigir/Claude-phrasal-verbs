@@ -2501,9 +2501,9 @@
       "streak": 3
     },
     "step up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "give away": {
       "seen": 2,
@@ -3027,5 +3027,5 @@
     "totalAttempts": 308,
     "totalCorrect": 264
   },
-  "updatedAt": "2026-09-09T10:14:59.542Z"
+  "updatedAt": "2026-09-09T10:15:12.079Z"
 }
