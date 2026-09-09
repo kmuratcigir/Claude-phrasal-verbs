@@ -2721,9 +2721,9 @@
       "streak": 2
     },
     "piece together": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "grieve over": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 352,
     "totalCorrect": 300
   },
-  "updatedAt": "2026-09-09T10:30:05.630Z"
+  "updatedAt": "2026-09-09T10:30:23.118Z"
 }
