@@ -2567,9 +2567,9 @@
       "streak": 2
     },
     "fall out": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "blow off (steam)": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 304,
     "totalCorrect": 260
   },
-  "updatedAt": "2026-09-09T10:07:10.320Z"
+  "updatedAt": "2026-09-09T10:07:26.817Z"
 }
