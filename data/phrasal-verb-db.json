@@ -2966,9 +2966,9 @@
       "streak": 1
     },
     "sell out": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "face off": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 344,
     "totalCorrect": 292
   },
-  "updatedAt": "2026-09-09T10:23:01.454Z"
+  "updatedAt": "2026-09-09T10:23:13.941Z"
 }
