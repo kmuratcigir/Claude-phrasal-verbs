@@ -2686,9 +2686,9 @@
       "streak": 1
     },
     "bulk up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "rifle through": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 327,
     "totalCorrect": 279
   },
-  "updatedAt": "2026-09-09T10:19:24.797Z"
+  "updatedAt": "2026-09-09T10:19:34.631Z"
 }
