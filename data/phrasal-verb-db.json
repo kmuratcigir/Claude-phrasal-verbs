@@ -2851,9 +2851,9 @@
       "streak": 2
     },
     "wander off": {
-      "seen": 1,
+      "seen": 2,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "call off": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 375,
     "totalCorrect": 319
   },
-  "updatedAt": "2026-09-09T11:57:58.864Z"
+  "updatedAt": "2026-09-09T11:58:04.967Z"
 }
