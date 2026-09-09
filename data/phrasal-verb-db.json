@@ -2331,6 +2331,19 @@
         "He ___ all night finishing the report."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmtu4ffls9695",
+      "verb": "get away from",
+      "meaning": "move physically away from something",
+      "example": "___ the edge, it's dangerous.",
+      "meanings": [
+        "move physically away from something"
+      ],
+      "examples": [
+        "___ the edge, it's dangerous."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3066,5 +3079,5 @@
     "totalAttempts": 414,
     "totalCorrect": 348
   },
-  "updatedAt": "2026-09-09T13:07:48.496Z"
+  "updatedAt": "2026-09-09T13:15:22.876Z"
 }
