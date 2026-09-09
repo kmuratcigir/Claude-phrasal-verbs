@@ -2891,9 +2891,9 @@
       "streak": 3
     },
     "tell off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "wash out": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 336,
     "totalCorrect": 285
   },
-  "updatedAt": "2026-09-09T10:21:33.830Z"
+  "updatedAt": "2026-09-09T10:21:39.953Z"
 }
