@@ -2741,9 +2741,9 @@
       "streak": 1
     },
     "opt into": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "cram in": {
       "seen": 4,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 347,
     "totalCorrect": 295
   },
-  "updatedAt": "2026-09-09T10:23:46.508Z"
+  "updatedAt": "2026-09-09T10:24:01.958Z"
 }
