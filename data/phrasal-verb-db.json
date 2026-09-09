@@ -2402,7 +2402,7 @@
       "streak": 2
     },
     "cut through": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -3013,5 +3013,5 @@
     "totalAttempts": 275,
     "totalCorrect": 233
   },
-  "updatedAt": "2026-09-09T10:00:28.545Z"
+  "updatedAt": "2026-09-09T10:00:39.147Z"
 }
