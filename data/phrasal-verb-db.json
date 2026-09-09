@@ -2861,9 +2861,9 @@
       "streak": 0
     },
     "fumble around": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "crack on": {
       "seen": 4,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 362,
     "totalCorrect": 308
   },
-  "updatedAt": "2026-09-09T11:55:41.677Z"
+  "updatedAt": "2026-09-09T11:55:51.631Z"
 }
