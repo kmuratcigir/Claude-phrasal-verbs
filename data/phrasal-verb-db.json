@@ -2846,9 +2846,9 @@
       "streak": 1
     },
     "tense up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "wander off": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 364,
     "totalCorrect": 310
   },
-  "updatedAt": "2026-09-09T11:56:07.482Z"
+  "updatedAt": "2026-09-09T11:56:14.741Z"
 }
