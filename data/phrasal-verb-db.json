@@ -2562,9 +2562,9 @@
       "streak": 0
     },
     "throw back": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "fall out": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 288,
     "totalCorrect": 244
   },
-  "updatedAt": "2026-09-09T10:03:17.637Z"
+  "updatedAt": "2026-09-09T10:03:22.015Z"
 }
