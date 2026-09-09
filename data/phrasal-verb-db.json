@@ -2720,9 +2720,9 @@
       "streak": 2
     },
     "rifle through": {
-      "seen": 3,
-      "correct": 1,
-      "streak": 0
+      "seen": 4,
+      "correct": 2,
+      "streak": 1
     },
     "flip through": {
       "seen": 5,
@@ -3066,5 +3066,5 @@
     "totalAttempts": 421,
     "totalCorrect": 354
   },
-  "updatedAt": "2026-09-09T14:44:11.648Z"
+  "updatedAt": "2026-09-09T14:45:00.741Z"
 }
