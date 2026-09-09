@@ -2786,9 +2786,9 @@
       "streak": 4
     },
     "break in": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "jolt out of": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 334,
     "totalCorrect": 283
   },
-  "updatedAt": "2026-09-09T10:21:11.356Z"
+  "updatedAt": "2026-09-09T10:21:17.932Z"
 }
