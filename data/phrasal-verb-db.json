@@ -2486,9 +2486,9 @@
       "streak": 2
     },
     "stand off": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "get into": {
       "seen": 5,
@@ -2571,9 +2571,9 @@
       "streak": 1
     },
     "shake up": {
-      "seen": 5,
-      "correct": 3,
-      "streak": 0
+      "seen": 6,
+      "correct": 4,
+      "streak": 1
     },
     "throw back": {
       "seen": 2,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 0,
+    "currentStreak": 3,
     "bestStreak": 30,
-    "totalAttempts": 410,
+    "totalAttempts": 409,
     "totalCorrect": 344
   },
-  "updatedAt": "2026-09-09T12:59:45.660Z"
+  "updatedAt": "2026-09-09T12:59:28.865Z"
 }
