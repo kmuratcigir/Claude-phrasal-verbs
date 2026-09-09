@@ -2432,9 +2432,9 @@
       "streak": 2
     },
     "slip up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "pass away": {
       "seen": 2,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 301,
     "totalCorrect": 257
   },
-  "updatedAt": "2026-09-09T10:06:30.769Z"
+  "updatedAt": "2026-09-09T10:06:38.104Z"
 }
