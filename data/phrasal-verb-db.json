@@ -2771,9 +2771,9 @@
       "streak": 2
     },
     "wear down": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "shoot out": {
       "seen": 4,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 332,
     "totalCorrect": 282
   },
-  "updatedAt": "2026-09-09T10:20:44.334Z"
+  "updatedAt": "2026-09-09T10:20:57.522Z"
 }
