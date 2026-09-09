@@ -2996,9 +2996,9 @@
       "streak": 3
     },
     "bang on about": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "drop out": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 365,
     "totalCorrect": 311
   },
-  "updatedAt": "2026-09-09T11:56:16.170Z"
+  "updatedAt": "2026-09-09T11:56:25.824Z"
 }
