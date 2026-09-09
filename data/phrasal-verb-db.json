@@ -3001,9 +3001,9 @@
       "streak": 4
     },
     "drop out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "sort through": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 366,
     "totalCorrect": 312
   },
-  "updatedAt": "2026-09-09T11:56:27.246Z"
+  "updatedAt": "2026-09-09T11:56:31.772Z"
 }
