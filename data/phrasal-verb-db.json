@@ -3011,9 +3011,9 @@
       "streak": 2
     },
     "spin off": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "fit in": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 349,
     "totalCorrect": 297
   },
-  "updatedAt": "2026-09-09T10:24:15.354Z"
+  "updatedAt": "2026-09-09T10:24:20.413Z"
 }
