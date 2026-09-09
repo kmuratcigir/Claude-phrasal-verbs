@@ -2806,9 +2806,9 @@
       "streak": 2
     },
     "snap out of": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "bring up": {
       "seen": 3,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 368,
     "totalCorrect": 314
   },
-  "updatedAt": "2026-09-09T11:56:39.976Z"
+  "updatedAt": "2026-09-09T11:56:47.312Z"
 }
