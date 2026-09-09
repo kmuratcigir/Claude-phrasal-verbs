@@ -2731,9 +2731,9 @@
       "streak": 1
     },
     "knock out": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     },
     "walk out": {
       "seen": 1,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 350,
     "totalCorrect": 298
   },
-  "updatedAt": "2026-09-09T10:24:21.924Z"
+  "updatedAt": "2026-09-09T10:24:32.955Z"
 }
