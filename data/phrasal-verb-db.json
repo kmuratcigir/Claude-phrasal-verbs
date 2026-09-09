@@ -2552,9 +2552,9 @@
       "streak": 2
     },
     "catch out": {
-      "seen": 2,
+      "seen": 3,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "shake up": {
       "seen": 4,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 274,
     "totalCorrect": 233
   },
-  "updatedAt": "2026-09-09T10:00:13.959Z"
+  "updatedAt": "2026-09-09T10:00:27.106Z"
 }
