@@ -2706,9 +2706,9 @@
       "streak": 0
     },
     "force through": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "build up": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 319,
     "totalCorrect": 272
   },
-  "updatedAt": "2026-09-09T10:17:35.961Z"
+  "updatedAt": "2026-09-09T10:17:52.998Z"
 }
