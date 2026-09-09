@@ -2362,9 +2362,9 @@
       "streak": 2
     },
     "think back": {
-      "seen": 1,
-      "correct": 0,
-      "streak": 0
+      "seen": 2,
+      "correct": 1,
+      "streak": 1
     },
     "catch on": {
       "seen": 1,
@@ -3013,5 +3013,5 @@
     "totalAttempts": 249,
     "totalCorrect": 210
   },
-  "updatedAt": "2026-09-08T16:47:10.450Z"
+  "updatedAt": "2026-09-09T09:54:49.888Z"
 }
