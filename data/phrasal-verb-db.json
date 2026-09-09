@@ -2661,9 +2661,9 @@
       "streak": 1
     },
     "pull through": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "sit through": {
       "seen": 2,
@@ -3032,5 +3032,5 @@
     "totalAttempts": 325,
     "totalCorrect": 277
   },
-  "updatedAt": "2026-09-09T10:19:06.767Z"
+  "updatedAt": "2026-09-09T10:19:10.408Z"
 }
