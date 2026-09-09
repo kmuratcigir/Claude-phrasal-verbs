@@ -2316,9 +2316,9 @@
       "streak": 3
     },
     "run away": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "go through": {
       "seen": 4,
@@ -2331,9 +2331,9 @@
       "streak": 0
     },
     "get away": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "put through": {
       "seen": 4,
@@ -3027,10 +3027,10 @@
     }
   },
   "globalStats": {
-    "currentStreak": 3,
+    "currentStreak": 4,
     "bestStreak": 30,
-    "totalAttempts": 403,
-    "totalCorrect": 339
+    "totalAttempts": 404,
+    "totalCorrect": 340
   },
-  "updatedAt": "2026-09-09T12:53:04.222Z"
+  "updatedAt": "2026-09-09T12:53:42.536Z"
 }
