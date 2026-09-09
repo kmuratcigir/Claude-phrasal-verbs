@@ -2288,6 +2288,20 @@
         "My uncle loves to ___ politics at dinner.",
         "She's been ___ that promotion for weeks."
       ]
+    },
+    {
+      "key": "vmttxzg9ksjgx",
+      "verb": "turn out",
+      "meaning": "end up being a certain way, or attend an event",
+      "example": "The party ___ better than expected.",
+      "meanings": [
+        "end up being a certain way, or attend an event"
+      ],
+      "examples": [
+        "The party ___ better than expected.",
+        "Everything ___ fine in the end.",
+        "Thousands ___ for the parade downtown."
+      ]
     }
   ],
   "stats": {
@@ -3013,5 +3027,5 @@
     "totalAttempts": 308,
     "totalCorrect": 264
   },
-  "updatedAt": "2026-09-09T10:07:58.489Z"
+  "updatedAt": "2026-09-09T10:14:59.542Z"
 }
