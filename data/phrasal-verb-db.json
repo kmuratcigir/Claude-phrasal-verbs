@@ -2875,9 +2875,9 @@
       "streak": 1
     },
     "tense up": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "wander off": {
       "seen": 3,
@@ -3080,8 +3080,8 @@
       "correct": 36
     },
     "verb_to_meaning": {
-      "seen": 35,
-      "correct": 33
+      "seen": 36,
+      "correct": 34
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3142,8 +3142,8 @@
       "correct": 6
     },
     "up": {
-      "seen": 18,
-      "correct": 16
+      "seen": 19,
+      "correct": 17
     },
     "to": {
       "seen": 1,
@@ -3186,5 +3186,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:02:21.558Z"
+  "updatedAt": "2026-09-10T11:02:27.754Z"
 }
