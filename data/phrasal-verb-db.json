@@ -2590,9 +2590,9 @@
       "streak": 4
     },
     "fall through": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "catch out": {
       "seen": 4,
@@ -3072,8 +3072,8 @@
       "correct": 5
     },
     "particle_focus": {
-      "seen": 13,
-      "correct": 12
+      "seen": 14,
+      "correct": 13
     },
     "multiple_choice": {
       "seen": 16,
@@ -3126,8 +3126,8 @@
       "correct": 1
     },
     "through": {
-      "seen": 8,
-      "correct": 5
+      "seen": 9,
+      "correct": 6
     },
     "across": {
       "seen": 1,
@@ -3158,5 +3158,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:41:50.664Z"
+  "updatedAt": "2026-09-10T10:42:05.354Z"
 }
