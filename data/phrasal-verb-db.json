@@ -2565,9 +2565,9 @@
       "streak": 3
     },
     "put up": {
-      "seen": 4,
-      "correct": 2,
-      "streak": 1
+      "seen": 5,
+      "correct": 3,
+      "streak": 2
     },
     "get up to": {
       "seen": 3,
@@ -3072,8 +3072,8 @@
       "correct": 5
     },
     "particle_focus": {
-      "seen": 7,
-      "correct": 6
+      "seen": 8,
+      "correct": 7
     },
     "multiple_choice": {
       "seen": 10,
@@ -3142,9 +3142,9 @@
       "correct": 2
     },
     "up": {
-      "seen": 1,
-      "correct": 0
+      "seen": 2,
+      "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:38:52.036Z"
+  "updatedAt": "2026-09-10T10:38:59.801Z"
 }
