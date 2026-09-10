@@ -2850,9 +2850,9 @@
       "streak": 5
     },
     "have over": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "be through with": {
       "seen": 3,
@@ -3080,8 +3080,8 @@
       "correct": 33
     },
     "verb_to_meaning": {
-      "seen": 28,
-      "correct": 26
+      "seen": 29,
+      "correct": 27
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3154,8 +3154,8 @@
       "correct": 2
     },
     "over": {
-      "seen": 1,
-      "correct": 1
+      "seen": 2,
+      "correct": 2
     },
     "ahead": {
       "seen": 1,
@@ -3186,5 +3186,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:59:32.218Z"
+  "updatedAt": "2026-09-10T11:00:05.309Z"
 }
