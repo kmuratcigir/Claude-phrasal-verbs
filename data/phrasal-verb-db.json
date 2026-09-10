@@ -2700,9 +2700,9 @@
       "streak": 1
     },
     "figure out": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "live through": {
       "seen": 2,
@@ -3076,8 +3076,8 @@
       "correct": 21
     },
     "multiple_choice": {
-      "seen": 21,
-      "correct": 20
+      "seen": 22,
+      "correct": 21
     },
     "verb_to_meaning": {
       "seen": 16,
@@ -3106,8 +3106,8 @@
       "correct": 1
     },
     "out": {
-      "seen": 11,
-      "correct": 7
+      "seen": 12,
+      "correct": 8
     },
     "on": {
       "seen": 4,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:47:59.725Z"
+  "updatedAt": "2026-09-10T10:48:09.425Z"
 }
