@@ -2410,9 +2410,9 @@
       "streak": 1
     },
     "catch on": {
-      "seen": 4,
+      "seen": 5,
       "correct": 2,
-      "streak": 1
+      "streak": 0
     },
     "catch up with": {
       "seen": 3,
@@ -3076,7 +3076,7 @@
       "correct": 5
     },
     "multiple_choice": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5
     },
     "verb_to_meaning": {
@@ -3110,7 +3110,7 @@
       "correct": 2
     },
     "on": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2
     },
     "in": {
@@ -3134,5 +3134,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:35:00.248Z"
+  "updatedAt": "2026-09-10T10:35:24.192Z"
 }
