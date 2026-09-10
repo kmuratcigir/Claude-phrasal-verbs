@@ -2880,9 +2880,9 @@
       "streak": 2
     },
     "wander off": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "call off": {
       "seen": 5,
@@ -3088,8 +3088,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 23,
-      "correct": 10
+      "seen": 24,
+      "correct": 11
     }
   },
   "particleStats": {
@@ -3098,8 +3098,8 @@
       "correct": 7
     },
     "off": {
-      "seen": 11,
-      "correct": 10
+      "seen": 12,
+      "correct": 11
     },
     "aside": {
       "seen": 2,
@@ -3170,5 +3170,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:54:10.843Z"
+  "updatedAt": "2026-09-10T10:54:20.473Z"
 }
