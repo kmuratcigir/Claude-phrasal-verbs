@@ -2765,9 +2765,9 @@
       "streak": 2
     },
     "walk out": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "opt into": {
       "seen": 2,
@@ -3088,7 +3088,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 31,
+      "seen": 32,
       "correct": 15
     }
   },
@@ -3106,7 +3106,7 @@
       "correct": 1
     },
     "out": {
-      "seen": 14,
+      "seen": 15,
       "correct": 9
     },
     "on": {
@@ -3174,5 +3174,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:57:16.732Z"
+  "updatedAt": "2026-09-10T10:57:25.732Z"
 }
