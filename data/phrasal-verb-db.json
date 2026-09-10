@@ -2335,9 +2335,9 @@
   ],
   "stats": {
     "slip away": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "catch up on": {
       "seen": 4,
@@ -3080,8 +3080,8 @@
       "correct": 4
     },
     "verb_to_meaning": {
-      "seen": 2,
-      "correct": 2
+      "seen": 3,
+      "correct": 3
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3114,9 +3114,9 @@
       "correct": 1
     },
     "away": {
-      "seen": 2,
-      "correct": 2
+      "seen": 3,
+      "correct": 3
     }
   },
-  "updatedAt": "2026-09-10T10:29:22.020Z"
+  "updatedAt": "2026-09-10T10:29:54.694Z"
 }
