@@ -2770,9 +2770,9 @@
       "streak": 0
     },
     "opt into": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "cram in": {
       "seen": 5,
@@ -3088,7 +3088,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 40,
+      "seen": 41,
       "correct": 21
     }
   },
@@ -3150,7 +3150,7 @@
       "correct": 1
     },
     "into": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2
     },
     "over": {
@@ -3186,5 +3186,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:01:31.272Z"
+  "updatedAt": "2026-09-10T11:01:45.012Z"
 }
