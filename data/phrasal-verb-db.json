@@ -2525,9 +2525,9 @@
       "streak": 1
     },
     "get in touch with": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "step up": {
       "seen": 2,
@@ -3076,8 +3076,8 @@
       "correct": 11
     },
     "multiple_choice": {
-      "seen": 15,
-      "correct": 14
+      "seen": 16,
+      "correct": 15
     },
     "verb_to_meaning": {
       "seen": 10,
@@ -3134,8 +3134,8 @@
       "correct": 1
     },
     "with": {
-      "seen": 1,
-      "correct": 1
+      "seen": 2,
+      "correct": 2
     },
     "around": {
       "seen": 2,
@@ -3158,5 +3158,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:41:27.511Z"
+  "updatedAt": "2026-09-10T10:41:32.345Z"
 }
