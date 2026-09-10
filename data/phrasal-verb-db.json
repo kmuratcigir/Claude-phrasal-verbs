@@ -3055,9 +3055,9 @@
       "streak": 0
     },
     "top up": {
-      "seen": 1,
-      "correct": 1,
-      "streak": 1
+      "seen": 2,
+      "correct": 2,
+      "streak": 2
     }
   },
   "globalStats": {
@@ -3080,8 +3080,8 @@
       "correct": 23
     },
     "verb_to_meaning": {
-      "seen": 19,
-      "correct": 17
+      "seen": 20,
+      "correct": 18
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3142,8 +3142,8 @@
       "correct": 2
     },
     "up": {
-      "seen": 10,
-      "correct": 8
+      "seen": 11,
+      "correct": 9
     },
     "to": {
       "seen": 1,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:50:17.240Z"
+  "updatedAt": "2026-09-10T10:50:27.677Z"
 }
