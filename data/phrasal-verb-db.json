@@ -2445,9 +2445,9 @@
       "streak": 3
     },
     "cut through": {
-      "seen": 2,
-      "correct": 0,
-      "streak": 0
+      "seen": 3,
+      "correct": 1,
+      "streak": 1
     },
     "blow out": {
       "seen": 3,
@@ -3080,8 +3080,8 @@
       "correct": 6
     },
     "verb_to_meaning": {
-      "seen": 6,
-      "correct": 5
+      "seen": 7,
+      "correct": 6
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3126,8 +3126,8 @@
       "correct": 1
     },
     "through": {
-      "seen": 4,
-      "correct": 3
+      "seen": 5,
+      "correct": 4
     },
     "across": {
       "seen": 1,
@@ -3142,5 +3142,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:36:28.533Z"
+  "updatedAt": "2026-09-10T10:36:34.772Z"
 }
