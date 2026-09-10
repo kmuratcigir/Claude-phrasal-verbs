@@ -2390,9 +2390,9 @@
       "streak": 5
     },
     "hold back": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "look through": {
       "seen": 3,
@@ -3082,12 +3082,16 @@
     "verb_to_meaning": {
       "seen": 2,
       "correct": 2
+    },
+    "meaning_to_verb": {
+      "seen": 1,
+      "correct": 1
     }
   },
   "particleStats": {
     "back": {
-      "seen": 2,
-      "correct": 1
+      "seen": 3,
+      "correct": 2
     },
     "off": {
       "seen": 2,
@@ -3114,5 +3118,5 @@
       "correct": 2
     }
   },
-  "updatedAt": "2026-09-10T10:29:02.659Z"
+  "updatedAt": "2026-09-10T10:29:20.590Z"
 }
