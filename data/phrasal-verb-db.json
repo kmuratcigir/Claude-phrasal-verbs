@@ -2695,9 +2695,9 @@
       "streak": 3
     },
     "sit through": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "figure out": {
       "seen": 3,
@@ -3080,8 +3080,8 @@
       "correct": 20
     },
     "verb_to_meaning": {
-      "seen": 15,
-      "correct": 13
+      "seen": 16,
+      "correct": 14
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3126,8 +3126,8 @@
       "correct": 3
     },
     "through": {
-      "seen": 11,
-      "correct": 7
+      "seen": 12,
+      "correct": 8
     },
     "across": {
       "seen": 1,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:47:44.805Z"
+  "updatedAt": "2026-09-10T10:47:58.339Z"
 }
