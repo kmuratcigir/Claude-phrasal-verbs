@@ -2615,9 +2615,9 @@
       "streak": 3
     },
     "blow off (steam)": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "throw yourself into": {
       "seen": 3,
@@ -3076,8 +3076,8 @@
       "correct": 5
     },
     "multiple_choice": {
-      "seen": 7,
-      "correct": 6
+      "seen": 8,
+      "correct": 7
     },
     "verb_to_meaning": {
       "seen": 7,
@@ -3098,8 +3098,8 @@
       "correct": 3
     },
     "off": {
-      "seen": 4,
-      "correct": 4
+      "seen": 5,
+      "correct": 5
     },
     "aside": {
       "seen": 2,
@@ -3142,5 +3142,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:36:36.160Z"
+  "updatedAt": "2026-09-10T10:36:45.439Z"
 }
