@@ -2530,9 +2530,9 @@
       "streak": 5
     },
     "step up": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "give away": {
       "seen": 5,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 162,
+      "seen": 163,
       "correct": 104
     }
   },
@@ -3147,7 +3147,7 @@
       "correct": 12
     },
     "up": {
-      "seen": 35,
+      "seen": 36,
       "correct": 27
     },
     "to": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T11:38:25.288Z"
+  "updatedAt": "2026-09-10T11:38:36.941Z"
 }
