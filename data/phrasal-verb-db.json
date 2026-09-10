@@ -2915,9 +2915,9 @@
       "streak": 0
     },
     "stick with": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "tell off": {
       "seen": 2,
@@ -3076,8 +3076,8 @@
       "correct": 21
     },
     "multiple_choice": {
-      "seen": 28,
-      "correct": 26
+      "seen": 29,
+      "correct": 27
     },
     "verb_to_meaning": {
       "seen": 22,
@@ -3134,8 +3134,8 @@
       "correct": 1
     },
     "with": {
-      "seen": 4,
-      "correct": 4
+      "seen": 5,
+      "correct": 5
     },
     "around": {
       "seen": 3,
@@ -3170,5 +3170,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:53:20.173Z"
+  "updatedAt": "2026-09-10T10:53:38.749Z"
 }
