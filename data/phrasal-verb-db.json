@@ -2490,9 +2490,9 @@
       "streak": 4
     },
     "drift away": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "take off": {
       "seen": 3,
@@ -3072,8 +3072,8 @@
       "correct": 5
     },
     "particle_focus": {
-      "seen": 21,
-      "correct": 20
+      "seen": 22,
+      "correct": 21
     },
     "multiple_choice": {
       "seen": 19,
@@ -3118,8 +3118,8 @@
       "correct": 6
     },
     "away": {
-      "seen": 7,
-      "correct": 7
+      "seen": 8,
+      "correct": 8
     },
     "down": {
       "seen": 3,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:46:16.186Z"
+  "updatedAt": "2026-09-10T10:46:23.871Z"
 }
