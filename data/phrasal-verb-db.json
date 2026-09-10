@@ -2545,7 +2545,7 @@
       "streak": 4
     },
     "hold up": {
-      "seen": 5,
+      "seen": 6,
       "correct": 4,
       "streak": 0
     },
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 171,
+      "seen": 172,
       "correct": 110
     }
   },
@@ -3147,7 +3147,7 @@
       "correct": 13
     },
     "up": {
-      "seen": 37,
+      "seen": 38,
       "correct": 28
     },
     "to": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T11:40:39.376Z"
+  "updatedAt": "2026-09-10T11:40:49.528Z"
 }
