@@ -3045,9 +3045,9 @@
       "streak": 3
     },
     "fit in": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "turn out": {
       "seen": 3,
@@ -3085,8 +3085,8 @@
       "correct": 37
     },
     "verb_to_meaning": {
-      "seen": 36,
-      "correct": 34
+      "seen": 37,
+      "correct": 35
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3119,8 +3119,8 @@
       "correct": 5
     },
     "in": {
-      "seen": 9,
-      "correct": 9
+      "seen": 10,
+      "correct": 10
     },
     "away": {
       "seen": 9,
@@ -3191,5 +3191,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:03:30.261Z"
+  "updatedAt": "2026-09-10T11:04:09.464Z"
 }
