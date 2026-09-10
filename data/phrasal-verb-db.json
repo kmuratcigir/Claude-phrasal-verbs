@@ -2405,9 +2405,9 @@
       "streak": 3
     },
     "think back": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "catch on": {
       "seen": 4,
@@ -3066,5 +3066,17 @@
     "totalAttempts": 426,
     "totalCorrect": 356
   },
-  "updatedAt": "2026-09-09T14:48:57.568Z"
+  "typeStats": {
+    "confusable_pairs": {
+      "seen": 1,
+      "correct": 0
+    }
+  },
+  "particleStats": {
+    "back": {
+      "seen": 1,
+      "correct": 0
+    }
+  },
+  "updatedAt": "2026-09-10T06:46:39.738Z"
 }
