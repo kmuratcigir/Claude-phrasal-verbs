@@ -2930,9 +2930,9 @@
       "streak": 4
     },
     "play up": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "sing along": {
       "seen": 4,
@@ -3076,8 +3076,8 @@
       "correct": 21
     },
     "multiple_choice": {
-      "seen": 36,
-      "correct": 34
+      "seen": 37,
+      "correct": 35
     },
     "verb_to_meaning": {
       "seen": 32,
@@ -3142,8 +3142,8 @@
       "correct": 6
     },
     "up": {
-      "seen": 16,
-      "correct": 14
+      "seen": 17,
+      "correct": 15
     },
     "to": {
       "seen": 1,
@@ -3186,5 +3186,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:01:12.423Z"
+  "updatedAt": "2026-09-10T11:01:14.733Z"
 }
