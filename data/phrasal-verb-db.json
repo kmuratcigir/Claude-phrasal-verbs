@@ -2820,9 +2820,9 @@
       "streak": 3
     },
     "jolt out of": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "follow through": {
       "seen": 3,
@@ -3076,7 +3076,7 @@
       "correct": 21
     },
     "multiple_choice": {
-      "seen": 25,
+      "seen": 26,
       "correct": 24
     },
     "verb_to_meaning": {
@@ -3164,7 +3164,11 @@
     "after": {
       "seen": 1,
       "correct": 1
+    },
+    "of": {
+      "seen": 1,
+      "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:51:05.086Z"
+  "updatedAt": "2026-09-10T10:51:18.756Z"
 }
