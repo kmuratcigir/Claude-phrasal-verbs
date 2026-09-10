@@ -2400,9 +2400,9 @@
       "streak": 0
     },
     "make out": {
-      "seen": 4,
-      "correct": 4,
-      "streak": 4
+      "seen": 5,
+      "correct": 5,
+      "streak": 5
     },
     "think back": {
       "seen": 5,
@@ -3080,8 +3080,8 @@
       "correct": 5
     },
     "verb_to_meaning": {
-      "seen": 3,
-      "correct": 3
+      "seen": 4,
+      "correct": 4
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3106,8 +3106,8 @@
       "correct": 0
     },
     "out": {
-      "seen": 1,
-      "correct": 1
+      "seen": 2,
+      "correct": 2
     },
     "on": {
       "seen": 1,
@@ -3130,5 +3130,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:30:45.355Z"
+  "updatedAt": "2026-09-10T10:31:57.246Z"
 }
