@@ -2870,9 +2870,9 @@
       "streak": 2
     },
     "drown out": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "tense up": {
       "seen": 2,
@@ -3080,8 +3080,8 @@
       "correct": 33
     },
     "verb_to_meaning": {
-      "seen": 31,
-      "correct": 29
+      "seen": 32,
+      "correct": 30
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3106,8 +3106,8 @@
       "correct": 1
     },
     "out": {
-      "seen": 15,
-      "correct": 9
+      "seen": 16,
+      "correct": 10
     },
     "on": {
       "seen": 7,
@@ -3186,5 +3186,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:00:24.137Z"
+  "updatedAt": "2026-09-10T11:00:32.322Z"
 }
