@@ -2860,9 +2860,9 @@
       "streak": 2
     },
     "draw in": {
-      "seen": 2,
-      "correct": 1,
-      "streak": 0
+      "seen": 3,
+      "correct": 2,
+      "streak": 1
     },
     "turn around": {
       "seen": 3,
@@ -3080,8 +3080,8 @@
       "correct": 27
     },
     "verb_to_meaning": {
-      "seen": 22,
-      "correct": 20
+      "seen": 23,
+      "correct": 21
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3114,8 +3114,8 @@
       "correct": 3
     },
     "in": {
-      "seen": 6,
-      "correct": 6
+      "seen": 7,
+      "correct": 7
     },
     "away": {
       "seen": 9,
@@ -3170,5 +3170,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:53:39.951Z"
+  "updatedAt": "2026-09-10T10:53:43.844Z"
 }
