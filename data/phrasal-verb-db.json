@@ -3025,9 +3025,9 @@
       "streak": 3
     },
     "bang on about": {
-      "seen": 4,
+      "seen": 5,
       "correct": 4,
-      "streak": 4
+      "streak": 0
     },
     "drop out": {
       "seen": 2,
@@ -3088,7 +3088,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 29,
+      "seen": 30,
       "correct": 14
     }
   },
@@ -3168,7 +3168,11 @@
     "of": {
       "seen": 1,
       "correct": 0
+    },
+    "about": {
+      "seen": 1,
+      "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:55:58.924Z"
+  "updatedAt": "2026-09-10T10:56:12.204Z"
 }
