@@ -2430,9 +2430,9 @@
       "streak": 3
     },
     "hold off": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 0
+      "seen": 4,
+      "correct": 3,
+      "streak": 1
     },
     "hang around": {
       "seen": 3,
@@ -3070,13 +3070,21 @@
     "confusable_pairs": {
       "seen": 1,
       "correct": 0
+    },
+    "particle_focus": {
+      "seen": 1,
+      "correct": 1
     }
   },
   "particleStats": {
     "back": {
       "seen": 1,
       "correct": 0
+    },
+    "off": {
+      "seen": 1,
+      "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T06:46:41.421Z"
+  "updatedAt": "2026-09-10T06:49:03.691Z"
 }
