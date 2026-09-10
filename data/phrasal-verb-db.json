@@ -2520,9 +2520,9 @@
       "streak": 4
     },
     "get into": {
-      "seen": 5,
-      "correct": 4,
-      "streak": 1
+      "seen": 6,
+      "correct": 5,
+      "streak": 2
     },
     "get in touch with": {
       "seen": 4,
@@ -3076,8 +3076,8 @@
       "correct": 21
     },
     "multiple_choice": {
-      "seen": 20,
-      "correct": 19
+      "seen": 21,
+      "correct": 20
     },
     "verb_to_meaning": {
       "seen": 14,
@@ -3150,8 +3150,8 @@
       "correct": 1
     },
     "into": {
-      "seen": 1,
-      "correct": 1
+      "seen": 2,
+      "correct": 2
     },
     "over": {
       "seen": 1,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:47:17.849Z"
+  "updatedAt": "2026-09-10T10:47:23.394Z"
 }
