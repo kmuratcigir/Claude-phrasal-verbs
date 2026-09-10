@@ -2465,9 +2465,9 @@
       "streak": 2
     },
     "phase out": {
-      "seen": 3,
-      "correct": 3,
-      "streak": 3
+      "seen": 4,
+      "correct": 4,
+      "streak": 4
     },
     "go ahead": {
       "seen": 2,
@@ -3080,8 +3080,8 @@
       "correct": 8
     },
     "verb_to_meaning": {
-      "seen": 8,
-      "correct": 7
+      "seen": 9,
+      "correct": 8
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3106,8 +3106,8 @@
       "correct": 1
     },
     "out": {
-      "seen": 3,
-      "correct": 2
+      "seen": 4,
+      "correct": 3
     },
     "on": {
       "seen": 4,
@@ -3146,5 +3146,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:38:36.661Z"
+  "updatedAt": "2026-09-10T10:38:44.750Z"
 }
