@@ -2785,9 +2785,9 @@
       "streak": 2
     },
     "slope up/down": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "shuffle around": {
       "seen": 3,
@@ -3088,7 +3088,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 36,
+      "seen": 37,
       "correct": 18
     }
   },
@@ -3180,7 +3180,11 @@
     "along": {
       "seen": 1,
       "correct": 1
+    },
+    "up/down": {
+      "seen": 1,
+      "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:58:28.711Z"
+  "updatedAt": "2026-09-10T10:58:42.833Z"
 }
