@@ -2465,9 +2465,9 @@
       "streak": 3
     },
     "phase out": {
-      "seen": 4,
+      "seen": 5,
       "correct": 4,
-      "streak": 4
+      "streak": 0
     },
     "go ahead": {
       "seen": 3,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 60,
+      "seen": 61,
       "correct": 35
     }
   },
@@ -3111,7 +3111,7 @@
       "correct": 1
     },
     "out": {
-      "seen": 21,
+      "seen": 22,
       "correct": 14
     },
     "on": {
@@ -3191,5 +3191,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T11:10:39.319Z"
+  "updatedAt": "2026-09-10T11:10:48.842Z"
 }
