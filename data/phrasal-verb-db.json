@@ -3035,9 +3035,9 @@
       "streak": 2
     },
     "sort through": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3,
-      "streak": 3
+      "streak": 0
     },
     "spin off": {
       "seen": 2,
@@ -3088,7 +3088,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 21,
+      "seen": 22,
       "correct": 10
     }
   },
@@ -3126,7 +3126,7 @@
       "correct": 3
     },
     "through": {
-      "seen": 19,
+      "seen": 20,
       "correct": 13
     },
     "across": {
@@ -3170,5 +3170,5 @@
       "correct": 0
     }
   },
-  "updatedAt": "2026-09-10T10:53:00.483Z"
+  "updatedAt": "2026-09-10T10:53:09.679Z"
 }
