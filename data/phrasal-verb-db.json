@@ -2750,9 +2750,9 @@
       "streak": 2
     },
     "piece together": {
-      "seen": 2,
-      "correct": 2,
-      "streak": 2
+      "seen": 3,
+      "correct": 3,
+      "streak": 3
     },
     "grieve over": {
       "seen": 2,
@@ -3080,8 +3080,8 @@
       "correct": 31
     },
     "verb_to_meaning": {
-      "seen": 25,
-      "correct": 23
+      "seen": 26,
+      "correct": 24
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3172,7 +3172,11 @@
     "about": {
       "seen": 1,
       "correct": 0
+    },
+    "together": {
+      "seen": 1,
+      "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:57:27.312Z"
+  "updatedAt": "2026-09-10T10:57:42.330Z"
 }
