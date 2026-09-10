@@ -2535,9 +2535,9 @@
       "streak": 2
     },
     "give away": {
-      "seen": 3,
-      "correct": 2,
-      "streak": 2
+      "seen": 4,
+      "correct": 3,
+      "streak": 3
     },
     "run down": {
       "seen": 4,
@@ -3080,8 +3080,8 @@
       "correct": 18
     },
     "verb_to_meaning": {
-      "seen": 12,
-      "correct": 11
+      "seen": 13,
+      "correct": 12
     },
     "meaning_to_verb": {
       "seen": 1,
@@ -3118,8 +3118,8 @@
       "correct": 6
     },
     "away": {
-      "seen": 6,
-      "correct": 6
+      "seen": 7,
+      "correct": 7
     },
     "down": {
       "seen": 3,
@@ -3166,5 +3166,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-10T10:44:35.557Z"
+  "updatedAt": "2026-09-10T10:44:52.989Z"
 }
