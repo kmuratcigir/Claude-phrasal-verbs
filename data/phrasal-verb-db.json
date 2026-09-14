@@ -2660,7 +2660,7 @@
       "streak": 0
     },
     "run through": {
-      "seen": 4,
+      "seen": 5,
       "correct": 1,
       "streak": 0
     },
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 209,
+      "seen": 210,
       "correct": 133
     }
   },
@@ -3131,7 +3131,7 @@
       "correct": 12
     },
     "through": {
-      "seen": 52,
+      "seen": 53,
       "correct": 29
     },
     "across": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-14T13:46:38.688Z"
+  "updatedAt": "2026-09-14T13:46:50.575Z"
 }
