@@ -2860,9 +2860,9 @@
       "streak": 0
     },
     "draw in": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 2
+      "streak": 0
     },
     "turn around": {
       "seen": 4,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 196,
+      "seen": 197,
       "correct": 125
     }
   },
@@ -3119,7 +3119,7 @@
       "correct": 7
     },
     "in": {
-      "seen": 19,
+      "seen": 20,
       "correct": 17
     },
     "away": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-14T13:39:54.337Z"
+  "updatedAt": "2026-09-14T13:40:19.709Z"
 }
