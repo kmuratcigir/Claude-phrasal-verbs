@@ -2625,7 +2625,7 @@
       "streak": 1
     },
     "stand in": {
-      "seen": 5,
+      "seen": 6,
       "correct": 3,
       "streak": 0
     },
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 275,
+      "seen": 276,
       "correct": 173
     }
   },
@@ -3119,7 +3119,7 @@
       "correct": 14
     },
     "in": {
-      "seen": 23,
+      "seen": 24,
       "correct": 18
     },
     "away": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-15T08:54:00.327Z"
+  "updatedAt": "2026-09-15T08:54:06.715Z"
 }
