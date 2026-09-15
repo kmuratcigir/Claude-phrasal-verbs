@@ -2455,9 +2455,9 @@
       "streak": 5
     },
     "cut out": {
-      "seen": 5,
+      "seen": 6,
       "correct": 4,
-      "streak": 2
+      "streak": 0
     },
     "get away with": {
       "seen": 4,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 330,
+      "seen": 331,
       "correct": 209
     }
   },
@@ -3111,7 +3111,7 @@
       "correct": 5
     },
     "out": {
-      "seen": 60,
+      "seen": 61,
       "correct": 42
     },
     "on": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-15T10:42:51.088Z"
+  "updatedAt": "2026-09-15T10:43:04.375Z"
 }
