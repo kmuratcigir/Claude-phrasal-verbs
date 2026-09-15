@@ -2985,9 +2985,9 @@
       "streak": 5
     },
     "show off": {
-      "seen": 5,
+      "seen": 6,
       "correct": 4,
-      "streak": 2
+      "streak": 0
     },
     "roam around": {
       "seen": 5,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 336,
+      "seen": 337,
       "correct": 214
     }
   },
@@ -3103,7 +3103,7 @@
       "correct": 23
     },
     "off": {
-      "seen": 41,
+      "seen": 42,
       "correct": 36
     },
     "aside": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-15T10:44:19.230Z"
+  "updatedAt": "2026-09-15T10:44:45.504Z"
 }
