@@ -2805,9 +2805,9 @@
       "streak": 6
     },
     "shoot out": {
-      "seen": 9,
+      "seen": 10,
       "correct": 1,
-      "streak": 1
+      "streak": 0
     },
     "open up": {
       "seen": 9,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 278,
+      "seen": 279,
       "correct": 174
     }
   },
@@ -3111,7 +3111,7 @@
       "correct": 5
     },
     "out": {
-      "seen": 55,
+      "seen": 56,
       "correct": 39
     },
     "on": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-15T08:54:43.177Z"
+  "updatedAt": "2026-09-15T08:54:51.673Z"
 }
