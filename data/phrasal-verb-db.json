@@ -2410,7 +2410,7 @@
       "streak": 1
     },
     "catch on": {
-      "seen": 7,
+      "seen": 8,
       "correct": 2,
       "streak": 0
     },
@@ -3073,7 +3073,7 @@
   },
   "typeStats": {
     "confusable_pairs": {
-      "seen": 37,
+      "seen": 38,
       "correct": 28
     },
     "particle_focus": {
@@ -3115,7 +3115,7 @@
       "correct": 33
     },
     "on": {
-      "seen": 16,
+      "seen": 17,
       "correct": 8
     },
     "in": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-15T08:28:00.226Z"
+  "updatedAt": "2026-09-15T08:28:09.310Z"
 }
