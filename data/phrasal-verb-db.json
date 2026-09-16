@@ -2426,6 +2426,19 @@
         "Everything ___ in the end."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v7fshi0d3",
+      "verb": "keep up with",
+      "meaning": "stay informed about, or match someone's pace",
+      "example": "I try to ___ the news every morning.",
+      "meanings": [
+        "stay informed about, or match someone's pace"
+      ],
+      "examples": [
+        "I try to ___ the news every morning."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3286,5 +3299,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:54:45.578Z"
+  "updatedAt": "2026-09-16T08:54:55.075Z"
 }
