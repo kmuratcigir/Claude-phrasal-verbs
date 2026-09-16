@@ -1255,7 +1255,13 @@
     "keep",
     "keep up with",
     "stay informed about, or match someone's pace",
-    "I try to keep up with the news every morning."
+    [
+      "I try to keep up with the news every morning.",
+      "She struggled to keep up with the faster runners.",
+      "It's hard to keep up with all the new software updates.",
+      "He can barely keep up with his younger siblings.",
+      "We try to keep up with old friends over video calls."
+    ]
   ],
   [
     "let",
@@ -1447,7 +1453,13 @@
     "work",
     "work out",
     "exercise, or find a solution/result",
-    "Everything worked out in the end."
+    [
+      "Everything worked out in the end.",
+      "She works out at the gym every morning.",
+      "We finally worked out a plan that satisfies everyone.",
+      "I couldn't work out how the machine functioned.",
+      "He works out three times a week."
+    ]
   ],
   [
     "work",
@@ -1465,7 +1477,13 @@
     "come",
     "come across",
     "find by chance, or give an impression",
-    "I came across an old letter in the attic."
+    [
+      "I came across an old letter in the attic.",
+      "She comes across as very confident in interviews.",
+      "We came across a great little cafe on our walk.",
+      "He came across as rude, though he didn't mean to.",
+      "I came across your old photos while cleaning."
+    ]
   ],
   [
     "come",
@@ -12235,7 +12253,13 @@
     "muddle",
     "muddle through",
     "manage despite lacking a clear plan",
-    "We muddled through the project somehow."
+    [
+      "We muddled through the project somehow.",
+      "He had no training, so he just muddled through the first week.",
+      "They muddled through without a proper budget.",
+      "I muddled through the exam despite barely studying.",
+      "The team muddled through the outage until support arrived."
+    ]
   ],
   [
     "muddle",
@@ -13951,7 +13975,13 @@
     "put",
     "put back on",
     "reschedule something to a later time",
-    "The meeting was put back on to Friday."
+    [
+      "The meeting was put back on to Friday.",
+      "They put the flight back on due to weather.",
+      "The launch was put back on until next quarter.",
+      "Organizers put the game back on a week.",
+      "The interview was put back on to next Monday."
+    ]
   ],
   [
     "put",
@@ -16939,7 +16969,13 @@
     "stock",
     "stock up",
     "buy a large supply of something for later use",
-    "We stocked up on canned goods before the storm."
+    [
+      "We stocked up on canned goods before the storm.",
+      "She stocked up on notebooks before the semester started.",
+      "They stocked up on firewood for the winter.",
+      "We should stock up on water before the trip.",
+      "He stocked up on his favorite snacks for the road trip."
+    ]
   ],
   [
     "stoke",
@@ -16974,8 +17010,14 @@
   [
     "feel",
     "feel your way through",
-    "proceed carefully in an unfamiliar situation",
-    "I'm new here, so I have to feel my way through the first few weeks."
+    "proceed carefully in an unfamiliar or difficult situation",
+    [
+      "I'm new to this job, so I have to feel my way through the first few weeks.",
+      "She had to feel her way through the negotiation without much guidance.",
+      "We're feeling our way through this new market since nobody's done it before.",
+      "He tried to feel his way through the dark hallway.",
+      "New managers often feel their way through their first few projects."
+    ]
   ],
   [
     "top",
