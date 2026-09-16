@@ -2916,9 +2916,9 @@
       "streak": 5
     },
     "hide away": {
-      "seen": 4,
+      "seen": 5,
       "correct": 3,
-      "streak": 1
+      "streak": 0
     },
     "slope up/down": {
       "seen": 6,
@@ -3269,7 +3269,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 484,
+      "seen": 485,
       "correct": 324
     }
   },
@@ -3299,7 +3299,7 @@
       "correct": 31
     },
     "away": {
-      "seen": 26,
+      "seen": 27,
       "correct": 24
     },
     "down": {
@@ -3367,5 +3367,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:24:05.892Z"
+  "updatedAt": "2026-09-16T09:24:31.962Z"
 }
