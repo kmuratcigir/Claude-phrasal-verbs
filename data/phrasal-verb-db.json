@@ -3199,6 +3199,11 @@
       "seen": 6,
       "correct": 2,
       "streak": 2
+    },
+    "come across": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -3229,7 +3234,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 428,
+      "seen": 429,
       "correct": 291
     }
   },
@@ -3271,7 +3276,7 @@
       "correct": 74
     },
     "across": {
-      "seen": 3,
+      "seen": 4,
       "correct": 2
     },
     "with": {
@@ -3327,5 +3332,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:10:41.662Z"
+  "updatedAt": "2026-09-16T09:10:52.799Z"
 }
