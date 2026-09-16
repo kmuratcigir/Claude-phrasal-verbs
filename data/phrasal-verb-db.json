@@ -2374,6 +2374,19 @@
         "I ___ an old letter in the attic."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v2vklfbby",
+      "verb": "muddle through",
+      "meaning": "manage despite lacking a clear plan",
+      "example": "We ___ the project somehow.",
+      "meanings": [
+        "manage despite lacking a clear plan"
+      ],
+      "examples": [
+        "We ___ the project somehow."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3234,5 +3247,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:51:06.077Z"
+  "updatedAt": "2026-09-16T08:51:22.247Z"
 }
