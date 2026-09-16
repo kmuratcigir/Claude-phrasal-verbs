@@ -3209,6 +3209,11 @@
       "seen": 1,
       "correct": 0,
       "streak": 0
+    },
+    "stock up": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -3239,7 +3244,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 434,
+      "seen": 435,
       "correct": 294
     }
   },
@@ -3293,7 +3298,7 @@
       "correct": 22
     },
     "up": {
-      "seen": 75,
+      "seen": 76,
       "correct": 51
     },
     "to": {
@@ -3337,5 +3342,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:12:15.023Z"
+  "updatedAt": "2026-09-16T09:12:27.876Z"
 }
