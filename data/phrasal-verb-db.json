@@ -2475,9 +2475,9 @@
       "streak": 6
     },
     "slip up": {
-      "seen": 4,
+      "seen": 5,
       "correct": 4,
-      "streak": 4
+      "streak": 0
     },
     "pass away": {
       "seen": 5,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 408,
+      "seen": 409,
       "correct": 274
     }
   },
@@ -3147,7 +3147,7 @@
       "correct": 20
     },
     "up": {
-      "seen": 72,
+      "seen": 73,
       "correct": 49
     },
     "to": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:39:07.095Z"
+  "updatedAt": "2026-09-16T08:39:21.720Z"
 }
