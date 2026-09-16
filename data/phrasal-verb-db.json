@@ -3040,9 +3040,9 @@
       "streak": 2
     },
     "spin off": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "fit in": {
       "seen": 5,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 365,
+      "seen": 366,
       "correct": 237
     }
   },
@@ -3103,7 +3103,7 @@
       "correct": 23
     },
     "off": {
-      "seen": 47,
+      "seen": 48,
       "correct": 41
     },
     "aside": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:28:50.190Z"
+  "updatedAt": "2026-09-16T08:29:06.628Z"
 }
