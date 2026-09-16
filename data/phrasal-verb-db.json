@@ -2346,6 +2346,21 @@
         "We're ___ the neighbors for dinner tonight."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v0pzyithd",
+      "verb": "put down",
+      "meaning": "write something, set something down, or criticize someone",
+      "example": "He ___ his phone and looked up.",
+      "meanings": [
+        "write something, set something down, or criticize someone"
+      ],
+      "examples": [
+        "He ___ his phone and looked up.",
+        "The vet had to ___ the old dog.",
+        "She ___ her thoughts in a notebook every night."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3206,5 +3221,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:49:16.935Z"
+  "updatedAt": "2026-09-16T08:49:41.714Z"
 }
