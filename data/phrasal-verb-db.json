@@ -2413,6 +2413,19 @@
         "We ___ on canned goods before the storm."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v78gj4xez",
+      "verb": "work out",
+      "meaning": "exercise, or find a solution/result",
+      "example": "Everything ___ in the end.",
+      "meanings": [
+        "exercise, or find a solution/result"
+      ],
+      "examples": [
+        "Everything ___ in the end."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3273,5 +3286,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:53:06.180Z"
+  "updatedAt": "2026-09-16T08:54:45.578Z"
 }
