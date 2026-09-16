@@ -3081,9 +3081,9 @@
       "streak": 0
     },
     "talk through": {
-      "seen": 9,
-      "correct": 5,
-      "streak": 2
+      "seen": 10,
+      "correct": 6,
+      "streak": 3
     },
     "work through": {
       "seen": 7,
@@ -3244,8 +3244,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 435,
-      "correct": 294
+      "seen": 436,
+      "correct": 295
     }
   },
   "particleStats": {
@@ -3282,8 +3282,8 @@
       "correct": 19
     },
     "through": {
-      "seen": 107,
-      "correct": 74
+      "seen": 108,
+      "correct": 75
     },
     "across": {
       "seen": 4,
@@ -3342,5 +3342,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:12:29.646Z"
+  "updatedAt": "2026-09-16T09:12:45.254Z"
 }
