@@ -2541,9 +2541,9 @@
       "streak": 9
     },
     "think back": {
-      "seen": 12,
+      "seen": 13,
       "correct": 6,
-      "streak": 2
+      "streak": 0
     },
     "catch on": {
       "seen": 11,
@@ -3264,13 +3264,13 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 472,
+      "seen": 473,
       "correct": 319
     }
   },
   "particleStats": {
     "back": {
-      "seen": 46,
+      "seen": 47,
       "correct": 27
     },
     "off": {
@@ -3362,5 +3362,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:21:11.893Z"
+  "updatedAt": "2026-09-16T09:21:27.460Z"
 }
