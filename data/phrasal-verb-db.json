@@ -2756,9 +2756,9 @@
       "streak": 6
     },
     "throw yourself into": {
-      "seen": 6,
+      "seen": 7,
       "correct": 4,
-      "streak": 1
+      "streak": 0
     },
     "stand in": {
       "seen": 10,
@@ -3264,7 +3264,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 469,
+      "seen": 470,
       "correct": 318
     }
   },
@@ -3326,7 +3326,7 @@
       "correct": 3
     },
     "into": {
-      "seen": 12,
+      "seen": 13,
       "correct": 10
     },
     "over": {
@@ -3362,5 +3362,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:20:24.651Z"
+  "updatedAt": "2026-09-16T09:20:41.402Z"
 }
