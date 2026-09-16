@@ -2800,9 +2800,9 @@
       "streak": 2
     },
     "wear down": {
-      "seen": 6,
+      "seen": 7,
       "correct": 6,
-      "streak": 6
+      "streak": 0
     },
     "shoot out": {
       "seen": 11,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 401,
+      "seen": 402,
       "correct": 269
     }
   },
@@ -3127,7 +3127,7 @@
       "correct": 23
     },
     "down": {
-      "seen": 22,
+      "seen": 23,
       "correct": 18
     },
     "through": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:37:30.907Z"
+  "updatedAt": "2026-09-16T08:37:50.487Z"
 }
