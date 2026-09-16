@@ -2806,9 +2806,9 @@
       "streak": 1
     },
     "drift through": {
-      "seen": 6,
+      "seen": 7,
       "correct": 4,
-      "streak": 1
+      "streak": 0
     },
     "make up": {
       "seen": 7,
@@ -3254,7 +3254,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 445,
+      "seen": 446,
       "correct": 300
     }
   },
@@ -3292,7 +3292,7 @@
       "correct": 19
     },
     "through": {
-      "seen": 109,
+      "seen": 110,
       "correct": 76
     },
     "across": {
@@ -3352,5 +3352,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:14:47.900Z"
+  "updatedAt": "2026-09-16T09:14:57.915Z"
 }
