@@ -2331,6 +2331,21 @@
         "He ___ all night finishing the report."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v06vf3bsr",
+      "verb": "take out",
+      "meaning": "remove something, or invite someone somewhere",
+      "example": "He ___ the trash before leaving.",
+      "meanings": [
+        "remove something, or invite someone somewhere"
+      ],
+      "examples": [
+        "He ___ the trash before leaving.",
+        "He ___ a loan to cover the repairs.",
+        "We're ___ the neighbors for dinner tonight."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3191,5 +3206,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:44:21.668Z"
+  "updatedAt": "2026-09-16T08:49:16.935Z"
 }
