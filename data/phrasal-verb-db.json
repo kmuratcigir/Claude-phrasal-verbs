@@ -2400,6 +2400,19 @@
         "The meeting was ___ to Friday."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v53r9gz03",
+      "verb": "stock up",
+      "meaning": "buy a large supply of something for later use",
+      "example": "We ___ on canned goods before the storm.",
+      "meanings": [
+        "buy a large supply of something for later use"
+      ],
+      "examples": [
+        "We ___ on canned goods before the storm."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3260,5 +3273,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:52:34.062Z"
+  "updatedAt": "2026-09-16T08:53:06.180Z"
 }
