@@ -2935,9 +2935,9 @@
       "streak": 5
     },
     "sing along": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "come up": {
       "seen": 6,
@@ -3093,7 +3093,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 417,
+      "seen": 418,
       "correct": 281
     }
   },
@@ -3183,7 +3183,7 @@
       "correct": 3
     },
     "along": {
-      "seen": 2,
+      "seen": 3,
       "correct": 2
     },
     "up/down": {
@@ -3191,5 +3191,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:42:02.641Z"
+  "updatedAt": "2026-09-16T08:42:21.561Z"
 }
