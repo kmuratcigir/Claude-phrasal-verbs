@@ -2387,6 +2387,19 @@
         "We ___ the project somehow."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v4ez4yvon",
+      "verb": "put back on",
+      "meaning": "reschedule something to a later time",
+      "example": "The meeting was ___ to Friday.",
+      "meanings": [
+        "reschedule something to a later time"
+      ],
+      "examples": [
+        "The meeting was ___ to Friday."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3247,5 +3260,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:51:22.247Z"
+  "updatedAt": "2026-09-16T08:52:34.062Z"
 }
