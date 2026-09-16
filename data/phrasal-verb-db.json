@@ -2361,6 +2361,19 @@
         "She ___ her thoughts in a notebook every night."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmu3v2j35odqs",
+      "verb": "come across",
+      "meaning": "find by chance, or give an impression",
+      "example": "I ___ an old letter in the attic.",
+      "meanings": [
+        "find by chance, or give an impression"
+      ],
+      "examples": [
+        "I ___ an old letter in the attic."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3221,5 +3234,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:49:41.714Z"
+  "updatedAt": "2026-09-16T08:51:06.077Z"
 }
