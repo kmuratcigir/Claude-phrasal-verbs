@@ -2341,9 +2341,11 @@
         "remove something, or invite someone somewhere"
       ],
       "examples": [
-        "He ___ the trash before leaving.",
-        "He ___ a loan to cover the repairs.",
-        "We're ___ the neighbors for dinner tonight."
+        "He took out the trash before leaving.",
+        "He took out a loan to cover the repairs.",
+        "We're taking out the neighbors for dinner tonight.",
+        "She took out her phone to check the time.",
+        "Can you take out the recycling before you leave?"
       ],
       "userAdded": true
     },
@@ -2356,9 +2358,11 @@
         "write something, set something down, or criticize someone"
       ],
       "examples": [
-        "He ___ his phone and looked up.",
-        "The vet had to ___ the old dog.",
-        "She ___ her thoughts in a notebook every night."
+        "He put down his phone and looked up.",
+        "She put down her thoughts in a notebook every night.",
+        "Please put down your bags before we head out.",
+        "He kept putting his coworker down in meetings.",
+        "Put down the remote and come help me."
       ],
       "userAdded": true
     },
@@ -2371,7 +2375,11 @@
         "find by chance, or give an impression"
       ],
       "examples": [
-        "I ___ an old letter in the attic."
+        "I came across an old letter in the attic.",
+        "She comes across as very confident in interviews.",
+        "We came across a great little cafe on our walk.",
+        "He came across as rude, though he didn't mean to.",
+        "I came across your old photos while cleaning."
       ],
       "userAdded": true
     },
@@ -2384,7 +2392,11 @@
         "manage despite lacking a clear plan"
       ],
       "examples": [
-        "We ___ the project somehow."
+        "We muddled through the project somehow.",
+        "He had no training, so he just muddled through the first week.",
+        "They muddled through without a proper budget.",
+        "I muddled through the exam despite barely studying.",
+        "The team muddled through the outage until support arrived."
       ],
       "userAdded": true
     },
@@ -2397,7 +2409,11 @@
         "reschedule something to a later time"
       ],
       "examples": [
-        "The meeting was ___ to Friday."
+        "The meeting was put back on to Friday.",
+        "They put the flight back on due to weather.",
+        "The launch was put back on until next quarter.",
+        "Organizers put the game back on a week.",
+        "The interview was put back on to next Monday."
       ],
       "userAdded": true
     },
@@ -2410,7 +2426,11 @@
         "buy a large supply of something for later use"
       ],
       "examples": [
-        "We ___ on canned goods before the storm."
+        "We stocked up on canned goods before the storm.",
+        "She stocked up on notebooks before the semester started.",
+        "They stocked up on firewood for the winter.",
+        "We should stock up on water before the trip.",
+        "He stocked up on his favorite snacks for the road trip."
       ],
       "userAdded": true
     },
@@ -2423,7 +2443,11 @@
         "exercise, or find a solution/result"
       ],
       "examples": [
-        "Everything ___ in the end."
+        "Everything worked out in the end.",
+        "She works out at the gym every morning.",
+        "We finally worked out a plan that satisfies everyone.",
+        "I couldn't work out how the machine functioned.",
+        "He works out three times a week."
       ],
       "userAdded": true
     },
@@ -2436,7 +2460,11 @@
         "stay informed about, or match someone's pace"
       ],
       "examples": [
-        "I try to ___ the news every morning."
+        "I try to keep up with the news every morning.",
+        "She struggled to keep up with the faster runners.",
+        "It's hard to keep up with all the new software updates.",
+        "He can barely keep up with his younger siblings.",
+        "We try to keep up with old friends over video calls."
       ],
       "userAdded": true
     }
@@ -2493,9 +2521,9 @@
       "streak": 6
     },
     "look back": {
-      "seen": 11,
-      "correct": 10,
-      "streak": 0
+      "seen": 12,
+      "correct": 11,
+      "streak": 1
     },
     "hold back": {
       "seen": 6,
@@ -3201,14 +3229,14 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 427,
-      "correct": 290
+      "seen": 428,
+      "correct": 291
     }
   },
   "particleStats": {
     "back": {
-      "seen": 43,
-      "correct": 25
+      "seen": 44,
+      "correct": 26
     },
     "off": {
       "seen": 53,
@@ -3299,5 +3327,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T08:54:55.075Z"
+  "updatedAt": "2026-09-16T09:10:39.682Z"
 }
