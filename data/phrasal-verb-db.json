@@ -2991,9 +2991,9 @@
       "streak": 0
     },
     "be through with": {
-      "seen": 9,
+      "seen": 10,
       "correct": 5,
-      "streak": 2
+      "streak": 0
     },
     "draw in": {
       "seen": 10,
@@ -3264,7 +3264,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 477,
+      "seen": 478,
       "correct": 321
     }
   },
@@ -3310,7 +3310,7 @@
       "correct": 3
     },
     "with": {
-      "seen": 23,
+      "seen": 24,
       "correct": 17
     },
     "around": {
@@ -3362,5 +3362,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-16T09:22:39.809Z"
+  "updatedAt": "2026-09-16T09:22:48.630Z"
 }
