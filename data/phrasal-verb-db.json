@@ -2531,9 +2531,9 @@
       "streak": 4
     },
     "look through": {
-      "seen": 10,
+      "seen": 11,
       "correct": 9,
-      "streak": 7
+      "streak": 0
     },
     "make out": {
       "seen": 10,
@@ -3249,7 +3249,7 @@
   },
   "typeStats": {
     "confusable_pairs": {
-      "seen": 84,
+      "seen": 85,
       "correct": 73
     },
     "particle_focus": {
@@ -3307,7 +3307,7 @@
       "correct": 24
     },
     "through": {
-      "seen": 138,
+      "seen": 139,
       "correct": 100
     },
     "across": {
@@ -3367,5 +3367,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-18T12:56:59.049Z"
+  "updatedAt": "2026-09-18T12:57:05.541Z"
 }
