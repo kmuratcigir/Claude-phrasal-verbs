@@ -3211,7 +3211,7 @@
       "streak": 0
     },
     "stock up": {
-      "seen": 1,
+      "seen": 2,
       "correct": 0,
       "streak": 0
     },
@@ -3269,7 +3269,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 519,
+      "seen": 520,
       "correct": 348
     }
   },
@@ -3323,7 +3323,7 @@
       "correct": 22
     },
     "up": {
-      "seen": 91,
+      "seen": 92,
       "correct": 64
     },
     "to": {
@@ -3367,5 +3367,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-18T12:42:38.462Z"
+  "updatedAt": "2026-09-18T12:43:01.352Z"
 }
