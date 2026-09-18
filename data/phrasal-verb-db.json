@@ -2506,9 +2506,9 @@
       "streak": 8
     },
     "step down": {
-      "seen": 8,
+      "seen": 9,
       "correct": 8,
-      "streak": 8
+      "streak": 0
     },
     "take in": {
       "seen": 11,
@@ -3242,14 +3242,14 @@
     }
   },
   "globalStats": {
-    "currentStreak": 23,
+    "currentStreak": 0,
     "bestStreak": 30,
-    "totalAttempts": 1156,
+    "totalAttempts": 1157,
     "totalCorrect": 888
   },
   "typeStats": {
     "confusable_pairs": {
-      "seen": 80,
+      "seen": 81,
       "correct": 70
     },
     "particle_focus": {
@@ -3303,7 +3303,7 @@
       "correct": 27
     },
     "down": {
-      "seen": 31,
+      "seen": 32,
       "correct": 24
     },
     "through": {
@@ -3367,5 +3367,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-18T12:56:20.075Z"
+  "updatedAt": "2026-09-18T12:56:24.436Z"
 }
