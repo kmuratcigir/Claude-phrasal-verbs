@@ -2921,7 +2921,7 @@
       "streak": 1
     },
     "slope up/down": {
-      "seen": 6,
+      "seen": 7,
       "correct": 4,
       "streak": 0
     },
@@ -3269,7 +3269,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 499,
+      "seen": 500,
       "correct": 335
     }
   },
@@ -3363,9 +3363,9 @@
       "correct": 3
     },
     "up/down": {
-      "seen": 3,
+      "seen": 4,
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-18T12:37:22.087Z"
+  "updatedAt": "2026-09-18T12:37:33.600Z"
 }
