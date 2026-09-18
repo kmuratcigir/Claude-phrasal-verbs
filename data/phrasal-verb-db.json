@@ -2651,7 +2651,7 @@
       "streak": 2
     },
     "stand off": {
-      "seen": 7,
+      "seen": 8,
       "correct": 5,
       "streak": 0
     },
@@ -3269,7 +3269,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 496,
+      "seen": 497,
       "correct": 333
     }
   },
@@ -3279,7 +3279,7 @@
       "correct": 31
     },
     "off": {
-      "seen": 57,
+      "seen": 58,
       "correct": 48
     },
     "aside": {
@@ -3367,5 +3367,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-18T12:36:29.922Z"
+  "updatedAt": "2026-09-18T12:36:45.646Z"
 }
