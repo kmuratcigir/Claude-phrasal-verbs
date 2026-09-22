@@ -3224,9 +3224,9 @@
       "streak": 0
     },
     "stock up": {
-      "seen": 3,
-      "correct": 0,
-      "streak": 0
+      "seen": 4,
+      "correct": 1,
+      "streak": 1
     },
     "take out": {
       "seen": 3,
@@ -3287,8 +3287,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 667,
-      "correct": 450
+      "seen": 668,
+      "correct": 451
     }
   },
   "particleStats": {
@@ -3341,8 +3341,8 @@
       "correct": 22
     },
     "up": {
-      "seen": 123,
-      "correct": 89
+      "seen": 124,
+      "correct": 90
     },
     "to": {
       "seen": 5,
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:01:11.698Z"
+  "updatedAt": "2026-09-22T11:01:26.502Z"
 }
