@@ -2664,9 +2664,9 @@
       "streak": 3
     },
     "stand off": {
-      "seen": 12,
+      "seen": 13,
       "correct": 8,
-      "streak": 1
+      "streak": 0
     },
     "get into": {
       "seen": 8,
@@ -3287,7 +3287,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 704,
+      "seen": 705,
       "correct": 476
     }
   },
@@ -3297,7 +3297,7 @@
       "correct": 46
     },
     "off": {
-      "seen": 74,
+      "seen": 75,
       "correct": 62
     },
     "aside": {
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:10:12.146Z"
+  "updatedAt": "2026-09-22T11:10:20.087Z"
 }
