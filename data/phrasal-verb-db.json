@@ -2814,9 +2814,9 @@
       "streak": 4
     },
     "hang out": {
-      "seen": 10,
+      "seen": 11,
       "correct": 7,
-      "streak": 2
+      "streak": 0
     },
     "drift through": {
       "seen": 10,
@@ -3287,7 +3287,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 660,
+      "seen": 661,
       "correct": 448
     }
   },
@@ -3305,7 +3305,7 @@
       "correct": 7
     },
     "out": {
-      "seen": 104,
+      "seen": 105,
       "correct": 72
     },
     "on": {
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T10:58:44.682Z"
+  "updatedAt": "2026-09-22T10:58:59.146Z"
 }
