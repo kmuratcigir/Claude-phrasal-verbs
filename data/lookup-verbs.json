@@ -704,9 +704,11 @@
     "turn out",
     "end up being a certain way, or attend an event",
     [
-      "The party turned out better than expected.",
-      "Everything turned out fine in the end.",
-      "Thousands turned out for the parade downtown."
+      "The party ___ better than expected.",
+      "Everything ___ fine in the end.",
+      "Thousands ___ for the parade downtown.",
+      "The weather turned out much colder than forecast.",
+      "The interview turned out to be a great opportunity."
     ]
   ],
   [
@@ -1917,7 +1919,13 @@
     "find",
     "find out",
     "discover information",
-    "I just found out the news."
+    [
+      "I just found out the news.",
+      "We didn't find out until it was too late.",
+      "She found out about the surprise party by accident.",
+      "It took weeks to find out the real cause.",
+      "He'll find out soon enough if the plan worked."
+    ]
   ],
   [
     "fit",
@@ -4527,7 +4535,13 @@
     "bring",
     "bring on",
     "cause something to happen, especially symptoms",
-    "Stress can bring on headaches."
+    [
+      "Stress can ___ headaches.",
+      "Cold weather can bring on his asthma symptoms.",
+      "Poor sleep can bring on migraines.",
+      "The scandal brought on a wave of resignations.",
+      "Overtraining can bring on injuries."
+    ]
   ],
   [
     "bring",
@@ -17520,7 +17534,13 @@
     "stop",
     "stop up",
     "stay up late, or block something",
-    "He stopped up all night finishing the report."
+    [
+      "He ___ all night finishing the report.",
+      "She stopped up late studying for the exam.",
+      "The drain was stopped up with hair and grease.",
+      "He stopped up past midnight watching the game.",
+      "Leaves had stopped up the gutter after the storm."
+    ]
   ],
   [
     "feel",
