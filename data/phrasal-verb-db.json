@@ -2554,7 +2554,7 @@
       "streak": 11
     },
     "think back": {
-      "seen": 15,
+      "seen": 16,
       "correct": 7,
       "streak": 0
     },
@@ -3282,13 +3282,13 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 561,
+      "seen": 562,
       "correct": 376
     }
   },
   "particleStats": {
     "back": {
-      "seen": 64,
+      "seen": 65,
       "correct": 40
     },
     "off": {
@@ -3380,5 +3380,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-22T10:29:20.469Z"
+  "updatedAt": "2026-09-22T10:29:52.960Z"
 }
