@@ -2300,7 +2300,9 @@
       "examples": [
         "The party ___ better than expected.",
         "Everything ___ fine in the end.",
-        "Thousands ___ for the parade downtown."
+        "Thousands ___ for the parade downtown.",
+        "The weather turned out much colder than forecast.",
+        "The interview turned out to be a great opportunity."
       ]
     },
     {
@@ -2328,7 +2330,11 @@
         "stay up late, or block something"
       ],
       "examples": [
-        "He ___ all night finishing the report."
+        "He ___ all night finishing the report.",
+        "She stopped up late studying for the exam.",
+        "The drain was stopped up with hair and grease.",
+        "He stopped up past midnight watching the game.",
+        "Leaves had stopped up the gutter after the storm."
       ],
       "userAdded": true
     },
@@ -2477,7 +2483,24 @@
         "cause something to happen, especially symptoms"
       ],
       "examples": [
-        "Stress can ___ headaches."
+        "Stress can ___ headaches.",
+        "Cold weather can bring on his asthma symptoms.",
+        "Poor sleep can bring on migraines.",
+        "The scandal brought on a wave of resignations.",
+        "Overtraining can bring on injuries."
+      ],
+      "userAdded": true
+    },
+    {
+      "key": "vmucnqov256wd",
+      "verb": "find out",
+      "meaning": "discover information",
+      "example": "I just ___ the news.",
+      "meanings": [
+        "discover information"
+      ],
+      "examples": [
+        "I just ___ the news."
       ],
       "userAdded": true
     }
@@ -3385,5 +3408,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:58:49.809Z"
+  "updatedAt": "2026-09-22T12:35:51.952Z"
 }
