@@ -3249,7 +3249,7 @@
       "streak": 0
     },
     "work out": {
-      "seen": 5,
+      "seen": 6,
       "correct": 2,
       "streak": 0
     },
@@ -3267,7 +3267,7 @@
   },
   "typeStats": {
     "confusable_pairs": {
-      "seen": 130,
+      "seen": 131,
       "correct": 115
     },
     "particle_focus": {
@@ -3305,7 +3305,7 @@
       "correct": 7
     },
     "out": {
-      "seen": 126,
+      "seen": 127,
       "correct": 89
     },
     "on": {
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:57:23.793Z"
+  "updatedAt": "2026-09-22T11:57:32.912Z"
 }
