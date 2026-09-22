@@ -2519,7 +2519,7 @@
       "streak": 9
     },
     "step down": {
-      "seen": 12,
+      "seen": 13,
       "correct": 10,
       "streak": 0
     },
@@ -3287,7 +3287,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 664,
+      "seen": 665,
       "correct": 449
     }
   },
@@ -3321,7 +3321,7 @@
       "correct": 38
     },
     "down": {
-      "seen": 39,
+      "seen": 40,
       "correct": 30
     },
     "through": {
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:00:17.497Z"
+  "updatedAt": "2026-09-22T11:00:48.313Z"
 }
