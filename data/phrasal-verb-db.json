@@ -3249,9 +3249,9 @@
       "streak": 0
     },
     "work out": {
-      "seen": 4,
+      "seen": 5,
       "correct": 2,
-      "streak": 2
+      "streak": 0
     },
     "bring on": {
       "seen": 3,
@@ -3287,7 +3287,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 701,
+      "seen": 702,
       "correct": 474
     }
   },
@@ -3305,7 +3305,7 @@
       "correct": 7
     },
     "out": {
-      "seen": 113,
+      "seen": 114,
       "correct": 78
     },
     "on": {
@@ -3385,5 +3385,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T11:09:26.470Z"
+  "updatedAt": "2026-09-22T11:09:57.146Z"
 }
