@@ -1193,7 +1193,13 @@
     "fall",
     "fall apart",
     "break into pieces, or collapse emotionally",
-    "The old chair fell apart when he sat on it."
+    [
+      "The old chair fell apart when he sat on it.",
+      "Their plans fell apart at the last minute.",
+      "She fell apart when she heard the news.",
+      "These cheap shoes fell apart after a month.",
+      "The team started to fall apart after the coach left."
+    ]
   ],
   [
     "fall",
@@ -14825,7 +14831,13 @@
     "rely",
     "rely on",
     "depend on someone or something",
-    "We rely on public transportation."
+    [
+      "We rely on public transportation.",
+      "You can always rely on her to tell the truth.",
+      "Many farmers rely on rain for their crops.",
+      "I try not to rely on my phone for directions.",
+      "The charity relies on donations from the public."
+    ]
   ],
   [
     "remark",
