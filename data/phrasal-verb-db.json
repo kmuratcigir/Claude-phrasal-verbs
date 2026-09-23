@@ -2563,7 +2563,7 @@
       "key": "vmudsjrzjjao3",
       "verb": "come to",
       "meaning": "regain consciousness, or amount to",
-      "example": "___tal came to fifty dollars.",
+      "example": "tal ___ fifty dollars.",
       "meanings": [
         "regain consciousness, or amount to"
       ],
@@ -3278,9 +3278,9 @@
       "streak": 4
     },
     "stick with": {
-      "seen": 7,
-      "correct": 7,
-      "streak": 7
+      "seen": 8,
+      "correct": 8,
+      "streak": 8
     },
     "tell off": {
       "seen": 6,
@@ -3501,8 +3501,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 741,
-      "correct": 505
+      "seen": 742,
+      "correct": 506
     }
   },
   "particleStats": {
@@ -3547,8 +3547,8 @@
       "correct": 6
     },
     "with": {
-      "seen": 36,
-      "correct": 29
+      "seen": 37,
+      "correct": 30
     },
     "around": {
       "seen": 32,
@@ -3599,5 +3599,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T09:35:46.841Z"
+  "updatedAt": "2026-09-23T09:42:46.163Z"
 }
