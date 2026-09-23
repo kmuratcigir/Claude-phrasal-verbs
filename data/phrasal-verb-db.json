@@ -3233,9 +3233,9 @@
       "streak": 0
     },
     "drown out": {
-      "seen": 6,
+      "seen": 7,
       "correct": 5,
-      "streak": 4
+      "streak": 0
     },
     "tense up": {
       "seen": 6,
@@ -3501,7 +3501,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 815,
+      "seen": 816,
       "correct": 572
     }
   },
@@ -3519,7 +3519,7 @@
       "correct": 8
     },
     "out": {
-      "seen": 143,
+      "seen": 144,
       "correct": 105
     },
     "on": {
@@ -3599,5 +3599,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-23T09:58:55.362Z"
+  "updatedAt": "2026-09-23T09:59:04.771Z"
 }
