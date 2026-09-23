@@ -2517,7 +2517,11 @@
         "break into pieces, or collapse emotionally"
       ],
       "examples": [
-        "The old chair ___ when he sat on it."
+        "The old chair fell apart when he sat on it.",
+        "Their plans fell apart at the last minute.",
+        "She fell apart when she heard the news.",
+        "These cheap shoes fell apart after a month.",
+        "The team started to fall apart after the coach left."
       ],
       "userAdded": true
     },
@@ -2530,7 +2534,24 @@
         "depend on someone or something"
       ],
       "examples": [
-        "We ___ public transportation."
+        "We rely on public transportation.",
+        "You can always rely on her to tell the truth.",
+        "Many farmers rely on rain for their crops.",
+        "I try not to rely on my phone for directions.",
+        "The charity relies on donations from the public."
+      ],
+      "userAdded": true
+    },
+    {
+      "key": "vmudsjc92nc4m",
+      "verb": "draw out",
+      "meaning": "prolong something, or withdraw money",
+      "example": "She ___ some cash from the ATM.",
+      "meanings": [
+        "prolong something, or withdraw money"
+      ],
+      "examples": [
+        "She ___ some cash from the ATM."
       ],
       "userAdded": true
     }
@@ -3438,5 +3459,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T06:32:10.357Z"
+  "updatedAt": "2026-09-23T07:37:53.286Z"
 }
