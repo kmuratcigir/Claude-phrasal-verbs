@@ -3308,9 +3308,9 @@
       "streak": 3
     },
     "talk through": {
-      "seen": 11,
+      "seen": 12,
       "correct": 7,
-      "streak": 4
+      "streak": 0
     },
     "work through": {
       "seen": 10,
@@ -3501,7 +3501,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 737,
+      "seen": 738,
       "correct": 502
     }
   },
@@ -3539,7 +3539,7 @@
       "correct": 32
     },
     "through": {
-      "seen": 187,
+      "seen": 188,
       "correct": 139
     },
     "across": {
@@ -3599,5 +3599,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T09:35:03.311Z"
+  "updatedAt": "2026-09-23T09:35:10.335Z"
 }
