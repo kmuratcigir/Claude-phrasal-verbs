@@ -2554,6 +2554,19 @@
         "She ___ some cash from the ATM."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudsjrzjjao3",
+      "verb": "come to",
+      "meaning": "regain consciousness, or amount to",
+      "example": "___tal came to fifty dollars.",
+      "meanings": [
+        "regain consciousness, or amount to"
+      ],
+      "examples": [
+        "___tal came to fifty dollars."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3459,5 +3472,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T07:37:53.286Z"
+  "updatedAt": "2026-09-23T07:38:13.679Z"
 }
