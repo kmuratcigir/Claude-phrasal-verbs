@@ -2567,6 +2567,32 @@
         "___tal came to fifty dollars."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudsk7tmu1h4",
+      "verb": "be up for",
+      "meaning": "be willing to do something",
+      "example": "Are ___ a hike this weekend?",
+      "meanings": [
+        "be willing to do something"
+      ],
+      "examples": [
+        "Are ___ a hike this weekend?"
+      ],
+      "userAdded": true
+    },
+    {
+      "key": "vmudsk8cqdbv2",
+      "verb": "be up to",
+      "meaning": "be doing, or be capable of",
+      "example": "What are ___ this weekend?",
+      "meanings": [
+        "be doing, or be capable of"
+      ],
+      "examples": [
+        "What are ___ this weekend?"
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3472,5 +3498,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T07:38:13.679Z"
+  "updatedAt": "2026-09-23T07:38:34.878Z"
 }
