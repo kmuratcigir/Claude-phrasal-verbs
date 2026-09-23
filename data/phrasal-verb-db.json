@@ -2634,6 +2634,19 @@
         "She ___ speaking as if nothing happened."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudtiznahy3j",
+      "verb": "stand out",
+      "meaning": "be noticeably different or better",
+      "example": "Her work really ___.",
+      "meanings": [
+        "be noticeably different or better"
+      ],
+      "examples": [
+        "Her work really ___."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3539,5 +3552,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T08:04:42.891Z"
+  "updatedAt": "2026-09-23T08:05:37.293Z"
 }
