@@ -2551,7 +2551,11 @@
         "prolong something, or withdraw money"
       ],
       "examples": [
-        "She ___ some cash from the ATM."
+        "She drew out some cash from the ATM.",
+        "The meeting was drawn out by endless questions.",
+        "He drew out £200 before the trip.",
+        "The lawyers drew out the case for months.",
+        "Don't draw out the goodbye; it only makes it harder."
       ],
       "userAdded": true
     },
@@ -2564,7 +2568,11 @@
         "regain consciousness, or amount to"
       ],
       "examples": [
-        "___tal came to fifty dollars."
+        "The total came to fifty dollars.",
+        "He fainted but came to a few minutes later.",
+        "The repairs came to more than we expected.",
+        "When she came to, she was in a hospital bed.",
+        "Our savings came to just under a thousand pounds."
       ],
       "userAdded": true
     },
@@ -2577,7 +2585,11 @@
         "be willing to do something"
       ],
       "examples": [
-        "Are ___ a hike this weekend?"
+        "Are you up for a hike this weekend?",
+        "I'm up for pizza if you are.",
+        "She's always up for a challenge.",
+        "Is anyone up for a game of cards?",
+        "I'm not really up for going out tonight."
       ],
       "userAdded": true
     },
@@ -2590,7 +2602,11 @@
         "be doing, or be capable of"
       ],
       "examples": [
-        "What are ___ this weekend?"
+        "What are you up to this weekend?",
+        "The kids are too quiet; they must be up to something.",
+        "I'm not sure he's up to the job.",
+        "She's been up to a lot since she moved.",
+        "Are you up to walking the whole way?"
       ],
       "userAdded": true
     },
@@ -2603,7 +2619,11 @@
         "fall asleep, decline, or deliver something"
       ],
       "examples": [
-        "I'll ___ the kids at school."
+        "I'll drop off the kids at school.",
+        "I dropped off to sleep during the film.",
+        "Sales dropped off after the holidays.",
+        "Can you drop this parcel off at the post office?",
+        "Attendance dropped off sharply in the second week."
       ],
       "userAdded": true
     },
@@ -2616,7 +2636,11 @@
         "cause something to fall over"
       ],
       "examples": [
-        "The cat ___ the vase."
+        "The cat knocked over the vase.",
+        "He knocked over his coffee reaching for the phone.",
+        "Careful, you'll knock the lamp over.",
+        "A strong wind knocked over the fence.",
+        "The dog knocked over the bin and scattered the rubbish."
       ],
       "userAdded": true
     },
@@ -2629,9 +2653,11 @@
         "continue doing something"
       ],
       "examples": [
-        "Please, ___ with what you were doing.",
-        "Despite the setback, the team ___ with the plan.",
-        "She ___ speaking as if nothing happened."
+        "Please, carry on with what you were doing.",
+        "Despite the setback, the team carried on with the plan.",
+        "She carried on speaking as if nothing happened.",
+        "If you carry on like this, you'll get hurt.",
+        "We carried on walking until it got dark."
       ],
       "userAdded": true
     },
@@ -2644,7 +2670,11 @@
         "be noticeably different or better"
       ],
       "examples": [
-        "Her work really ___."
+        "Her work really stands out.",
+        "His bright jacket made him stand out in the crowd.",
+        "One candidate stood out from the rest.",
+        "The red door stands out against the white wall.",
+        "What stood out most was how friendly everyone was."
       ],
       "userAdded": true
     },
@@ -2657,9 +2687,11 @@
         "accept a responsibility or challenge, or hire"
       ],
       "examples": [
-        "She ___ extra clients this quarter.",
-        "The firm doesn't usually ___ new clients in December.",
-        "She ___ a second job to pay off her loans."
+        "She took on extra clients this quarter.",
+        "The firm doesn't usually take on new clients in December.",
+        "She took on a second job to pay off her loans.",
+        "The company is taking on twenty new staff.",
+        "He took on the champion and won."
       ],
       "userAdded": true
     }
@@ -2771,9 +2803,9 @@
       "streak": 1
     },
     "hang up": {
-      "seen": 12,
+      "seen": 13,
       "correct": 10,
-      "streak": 4
+      "streak": 0
     },
     "cut through": {
       "seen": 7,
@@ -3469,7 +3501,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 731,
+      "seen": 732,
       "correct": 498
     }
   },
@@ -3523,7 +3555,7 @@
       "correct": 23
     },
     "up": {
-      "seen": 128,
+      "seen": 129,
       "correct": 92
     },
     "to": {
@@ -3567,5 +3599,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T08:10:45.337Z"
+  "updatedAt": "2026-09-23T09:33:25.679Z"
 }
