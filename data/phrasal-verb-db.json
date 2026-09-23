@@ -2606,6 +2606,19 @@
         "I'll ___ the kids at school."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudtdtydag3h",
+      "verb": "knock over",
+      "meaning": "cause something to fall over",
+      "example": "The cat ___ the vase.",
+      "meanings": [
+        "cause something to fall over"
+      ],
+      "examples": [
+        "The cat ___ the vase."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3511,5 +3524,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T07:39:02.993Z"
+  "updatedAt": "2026-09-23T08:01:35.906Z"
 }
