@@ -3113,9 +3113,9 @@
       "streak": 5
     },
     "piece together": {
-      "seen": 5,
+      "seen": 6,
       "correct": 5,
-      "streak": 5
+      "streak": 0
     },
     "grieve over": {
       "seen": 9,
@@ -3501,7 +3501,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 798,
+      "seen": 799,
       "correct": 556
     }
   },
@@ -3587,7 +3587,7 @@
       "correct": 5
     },
     "together": {
-      "seen": 3,
+      "seen": 4,
       "correct": 3
     },
     "along": {
@@ -3599,5 +3599,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T09:55:15.892Z"
+  "updatedAt": "2026-09-23T09:55:29.044Z"
 }
