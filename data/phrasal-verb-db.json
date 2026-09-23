@@ -2647,6 +2647,21 @@
         "Her work really ___."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudtplwhy4z9",
+      "verb": "take on",
+      "meaning": "accept a responsibility or challenge, or hire",
+      "example": "She ___ extra clients this quarter.",
+      "meanings": [
+        "accept a responsibility or challenge, or hire"
+      ],
+      "examples": [
+        "She ___ extra clients this quarter.",
+        "The firm doesn't usually ___ new clients in December.",
+        "She ___ a second job to pay off her loans."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3552,5 +3567,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T08:05:37.293Z"
+  "updatedAt": "2026-09-23T08:10:45.337Z"
 }
