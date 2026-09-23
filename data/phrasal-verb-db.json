@@ -2520,6 +2520,19 @@
         "The old chair ___ when he sat on it."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmudq6tviw005",
+      "verb": "rely on",
+      "meaning": "depend on someone or something",
+      "example": "We ___ public transportation.",
+      "meanings": [
+        "depend on someone or something"
+      ],
+      "examples": [
+        "We ___ public transportation."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3425,5 +3438,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-23T06:32:03.586Z"
+  "updatedAt": "2026-09-23T06:32:10.357Z"
 }
