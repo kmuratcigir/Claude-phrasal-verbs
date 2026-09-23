@@ -2500,7 +2500,24 @@
         "discover information"
       ],
       "examples": [
-        "I just ___ the news."
+        "I just found out the news.",
+        "We didn't find out until it was too late.",
+        "She found out about the surprise party by accident.",
+        "It took weeks to find out the real cause.",
+        "He'll find out soon enough if the plan worked."
+      ],
+      "userAdded": true
+    },
+    {
+      "key": "vmudq6on6zqv0",
+      "verb": "fall apart",
+      "meaning": "break into pieces, or collapse emotionally",
+      "example": "The old chair ___ when he sat on it.",
+      "meanings": [
+        "break into pieces, or collapse emotionally"
+      ],
+      "examples": [
+        "The old chair ___ when he sat on it."
       ],
       "userAdded": true
     }
@@ -3408,5 +3425,5 @@
       "correct": 4
     }
   },
-  "updatedAt": "2026-09-22T12:35:51.952Z"
+  "updatedAt": "2026-09-23T06:32:03.586Z"
 }
