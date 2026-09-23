@@ -2888,9 +2888,9 @@
       "streak": 6
     },
     "get in touch with": {
-      "seen": 6,
+      "seen": 7,
       "correct": 6,
-      "streak": 6
+      "streak": 0
     },
     "step up": {
       "seen": 7,
@@ -3501,7 +3501,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 846,
+      "seen": 847,
       "correct": 597
     }
   },
@@ -3547,7 +3547,7 @@
       "correct": 7
     },
     "with": {
-      "seen": 42,
+      "seen": 43,
       "correct": 35
     },
     "around": {
@@ -3599,5 +3599,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-23T10:05:59.396Z"
+  "updatedAt": "2026-09-23T10:06:19.209Z"
 }
