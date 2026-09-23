@@ -2694,6 +2694,19 @@
         "He took on the champion and won."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmue0pue1oe7z",
+      "verb": "elaborate on",
+      "meaning": "explain something in more detail",
+      "example": "Could you ___ that point?",
+      "meanings": [
+        "explain something in more detail"
+      ],
+      "examples": [
+        "Could you ___ that point?"
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3599,5 +3612,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-23T10:09:29.332Z"
+  "updatedAt": "2026-09-23T11:26:53.644Z"
 }
