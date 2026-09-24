@@ -2720,6 +2720,19 @@
         "We're ___ the year strong."
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmufakk9loute",
+      "verb": "bring forward",
+      "meaning": "move something to an earlier time, or propose it",
+      "example": "They ___ the meeting to Monday.",
+      "meanings": [
+        "move something to an earlier time, or propose it"
+      ],
+      "examples": [
+        "They ___ the meeting to Monday."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3625,5 +3638,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-24T08:50:01.202Z"
+  "updatedAt": "2026-09-24T08:50:29.581Z"
 }
