@@ -4569,7 +4569,13 @@
     "bring",
     "bring forward",
     "move something to an earlier time, or propose it",
-    "They brought forward the meeting to Monday."
+    [
+      "They brought forward the meeting to Monday.",
+      "The airline brought our flight forward by two hours.",
+      "She brought forward a new proposal at the meeting.",
+      "The deadline was brought forward due to the storm.",
+      "He brought forward evidence that changed the case."
+    ]
   ],
   [
     "bring",
@@ -6201,7 +6207,13 @@
     "close",
     "close out",
     "finish or terminate a stage",
-    "We're closing out the year strong."
+    [
+      "We're closing out the year strong.",
+      "The store is closing out its winter stock.",
+      "He closed out his position before the market dropped.",
+      "The band closed out the show with their biggest hit.",
+      "Let's close out this project by Friday."
+    ]
   ],
   [
     "cloud",
@@ -7827,7 +7839,13 @@
     "elaborate",
     "elaborate on",
     "explain something in more detail",
-    "Could you elaborate on that point?"
+    [
+      "Could you elaborate on that point?",
+      "She elaborated on her reasons for leaving.",
+      "He didn't elaborate on what happened next.",
+      "The report elaborates on the risks involved.",
+      "Can you elaborate on how the process works?"
+    ]
   ],
   [
     "emanate",
