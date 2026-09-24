@@ -2707,6 +2707,19 @@
         "Could you ___ that point?"
       ],
       "userAdded": true
+    },
+    {
+      "key": "vmufa5v87n1t4",
+      "verb": "close out",
+      "meaning": "finish or terminate a stage",
+      "example": "We're ___ the year strong.",
+      "meanings": [
+        "finish or terminate a stage"
+      ],
+      "examples": [
+        "We're ___ the year strong."
+      ],
+      "userAdded": true
     }
   ],
   "stats": {
@@ -3612,5 +3625,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-23T11:26:53.644Z"
+  "updatedAt": "2026-09-24T08:39:03.947Z"
 }
