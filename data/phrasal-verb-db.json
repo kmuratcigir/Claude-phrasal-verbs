@@ -2704,7 +2704,11 @@
         "explain something in more detail"
       ],
       "examples": [
-        "Could you ___ that point?"
+        "Could you elaborate on that point?",
+        "She elaborated on her reasons for leaving.",
+        "He didn't elaborate on what happened next.",
+        "The report elaborates on the risks involved.",
+        "Can you elaborate on how the process works?"
       ],
       "userAdded": true
     },
@@ -2717,7 +2721,11 @@
         "finish or terminate a stage"
       ],
       "examples": [
-        "We're ___ the year strong."
+        "We're closing out the year strong.",
+        "The store is closing out its winter stock.",
+        "He closed out his position before the market dropped.",
+        "The band closed out the show with their biggest hit.",
+        "Let's close out this project by Friday."
       ],
       "userAdded": true
     },
@@ -2730,7 +2738,11 @@
         "move something to an earlier time, or propose it"
       ],
       "examples": [
-        "They ___ the meeting to Monday."
+        "They brought forward the meeting to Monday.",
+        "The airline brought our flight forward by two hours.",
+        "She brought forward a new proposal at the meeting.",
+        "The deadline was brought forward due to the storm.",
+        "He brought forward evidence that changed the case."
       ],
       "userAdded": true
     }
@@ -3022,9 +3034,9 @@
       "streak": 7
     },
     "throw yourself into": {
-      "seen": 12,
-      "correct": 8,
-      "streak": 1
+      "seen": 13,
+      "correct": 9,
+      "streak": 2
     },
     "stand in": {
       "seen": 11,
@@ -3540,8 +3552,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 922,
-      "correct": 650
+      "seen": 923,
+      "correct": 651
     }
   },
   "particleStats": {
@@ -3602,8 +3614,8 @@
       "correct": 6
     },
     "into": {
-      "seen": 23,
-      "correct": 19
+      "seen": 24,
+      "correct": 20
     },
     "over": {
       "seen": 31,
@@ -3638,5 +3650,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-24T08:57:46.620Z"
+  "updatedAt": "2026-09-24T10:00:41.358Z"
 }
