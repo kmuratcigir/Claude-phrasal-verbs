@@ -2894,9 +2894,9 @@
       "streak": 4
     },
     "pass away": {
-      "seen": 8,
+      "seen": 9,
       "correct": 7,
-      "streak": 2
+      "streak": 0
     },
     "phase in": {
       "seen": 7,
@@ -3552,7 +3552,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 948,
+      "seen": 949,
       "correct": 672
     }
   },
@@ -3582,7 +3582,7 @@
       "correct": 45
     },
     "away": {
-      "seen": 52,
+      "seen": 53,
       "correct": 47
     },
     "down": {
@@ -3650,5 +3650,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-24T10:06:35.454Z"
+  "updatedAt": "2026-09-24T10:06:50.782Z"
 }
