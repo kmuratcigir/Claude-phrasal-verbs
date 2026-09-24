@@ -2927,9 +2927,9 @@
       "streak": 6
     },
     "get in touch with": {
-      "seen": 8,
-      "correct": 6,
-      "streak": 0
+      "seen": 9,
+      "correct": 7,
+      "streak": 1
     },
     "step up": {
       "seen": 8,
@@ -3540,8 +3540,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 913,
-      "correct": 648
+      "seen": 914,
+      "correct": 649
     }
   },
   "particleStats": {
@@ -3586,8 +3586,8 @@
       "correct": 7
     },
     "with": {
-      "seen": 44,
-      "correct": 35
+      "seen": 45,
+      "correct": 36
     },
     "around": {
       "seen": 39,
@@ -3638,5 +3638,5 @@
       "correct": 5
     }
   },
-  "updatedAt": "2026-09-24T08:55:39.293Z"
+  "updatedAt": "2026-09-24T08:55:50.032Z"
 }
