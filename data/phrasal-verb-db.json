@@ -3494,7 +3494,7 @@
       "streak": 0
     },
     "take out": {
-      "seen": 6,
+      "seen": 7,
       "correct": 0,
       "streak": 0
     },
@@ -3617,7 +3617,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1002,
+      "seen": 1003,
       "correct": 711
     }
   },
@@ -3635,7 +3635,7 @@
       "correct": 8
     },
     "out": {
-      "seen": 169,
+      "seen": 170,
       "correct": 121
     },
     "on": {
@@ -3727,5 +3727,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-29T12:06:08.256Z"
+  "updatedAt": "2026-09-29T12:06:23.560Z"
 }
