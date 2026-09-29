@@ -3024,9 +3024,9 @@
       "streak": 3
     },
     "fall out": {
-      "seen": 9,
-      "correct": 8,
-      "streak": 5
+      "seen": 10,
+      "correct": 9,
+      "streak": 6
     },
     "blow off (steam)": {
       "seen": 7,
@@ -3627,8 +3627,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1039,
-      "correct": 735
+      "seen": 1040,
+      "correct": 736
     }
   },
   "particleStats": {
@@ -3645,8 +3645,8 @@
       "correct": 8
     },
     "out": {
-      "seen": 179,
-      "correct": 124
+      "seen": 180,
+      "correct": 125
     },
     "on": {
       "seen": 74,
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-29T12:27:53.907Z"
+  "updatedAt": "2026-09-29T12:28:07.088Z"
 }
