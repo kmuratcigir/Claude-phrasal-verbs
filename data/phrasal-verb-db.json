@@ -3522,6 +3522,11 @@
       "seen": 6,
       "correct": 4,
       "streak": 4
+    },
+    "be up for": {
+      "seen": 1,
+      "correct": 1,
+      "streak": 1
     }
   },
   "globalStats": {
@@ -3552,8 +3557,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 974,
-      "correct": 694
+      "seen": 975,
+      "correct": 695
     }
   },
   "particleStats": {
@@ -3648,7 +3653,11 @@
     "up/down": {
       "seen": 8,
       "correct": 5
+    },
+    "for": {
+      "seen": 1,
+      "correct": 1
     }
   },
-  "updatedAt": "2026-09-29T11:55:57.928Z"
+  "updatedAt": "2026-09-29T11:56:12.696Z"
 }
