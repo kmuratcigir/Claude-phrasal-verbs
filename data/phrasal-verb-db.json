@@ -3582,6 +3582,11 @@
       "seen": 1,
       "correct": 1,
       "streak": 1
+    },
+    "close out": {
+      "seen": 1,
+      "correct": 0,
+      "streak": 0
     }
   },
   "globalStats": {
@@ -3612,7 +3617,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 998,
+      "seen": 999,
       "correct": 708
     }
   },
@@ -3630,7 +3635,7 @@
       "correct": 8
     },
     "out": {
-      "seen": 167,
+      "seen": 168,
       "correct": 120
     },
     "on": {
@@ -3722,5 +3727,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-29T12:04:46.712Z"
+  "updatedAt": "2026-09-29T12:05:29.425Z"
 }
