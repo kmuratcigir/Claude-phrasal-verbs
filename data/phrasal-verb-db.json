@@ -3414,9 +3414,9 @@
       "streak": 8
     },
     "face off": {
-      "seen": 7,
-      "correct": 7,
-      "streak": 7
+      "seen": 8,
+      "correct": 8,
+      "streak": 8
     },
     "dwell on": {
       "seen": 9,
@@ -3627,8 +3627,8 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1048,
-      "correct": 744
+      "seen": 1049,
+      "correct": 745
     }
   },
   "particleStats": {
@@ -3637,8 +3637,8 @@
       "correct": 64
     },
     "off": {
-      "seen": 109,
-      "correct": 91
+      "seen": 110,
+      "correct": 92
     },
     "aside": {
       "seen": 9,
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-09-29T12:33:37.604Z"
+  "updatedAt": "2026-09-29T12:33:51.452Z"
 }
