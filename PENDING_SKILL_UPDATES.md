@@ -1,7 +1,7 @@
 # Skill updates for the Overview tab
 
 STATUS 30.09.26: items 1-5 DONE (skills saved and verified identical; Overview tab live as ledger v41;
-468 labels + 29.09 report + meta/overview saved in one batch). Items 6-7 still open.
+468 labels + 29.09 report + meta/overview saved in one batch). Item 7 done 30.09. Item 6 still open (needs the vocab-session skill files).
 
 (Original list below.)
 
@@ -30,7 +30,8 @@ Agreed 30.09.2026 while building the Overview mock-up
 
 ## Other open items from the Build Log (0k C)
 6. Vocab session saves in two writes; could be one batch.
-7. Weekly backup prompt still checks obsolete meta/vocab_items → switch to vocab_tracker, add lexicon.
+7. DONE 30.09: weekly backup prompt already checked vocab_tracker (fixed 28.09); now also requires meta/lexicon
+   and meta/overview, at least 9 sessions, and reports the brief's date.
 
 ## Decided on the page side (no skill change needed)
 - Grid rows use the ledger's technical names + a real example; picked automatically (A: most frequent in last 3
