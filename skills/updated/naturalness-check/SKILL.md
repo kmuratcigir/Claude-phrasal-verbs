@@ -64,8 +64,14 @@ per checked chat in `sessions`.
 The ten scripts and the interference pass instructions live at the bottom of this file. Extract them into a work folder, using the
 skill's base directory (shown when the skill loads), and fetch the CEFR wordlists:
 
+**Start clean (added 30.09.26).** Files left in `/tmp/nc` by an earlier or failed attempt in this
+chat (a half-written `murat_turns.txt`, old pass files, old outputs) must never mix into this
+check: the turns file is appended to, so an old one would double or corrupt it (on 29.09.26 a
+partial 89-turn file from a failed attempt was still there). The first command below empties the
+folder, keeping only the wordlist clone.
+
 ```bash
-mkdir -p /tmp/nc && cd /tmp/nc
+mkdir -p /tmp/nc && find /tmp/nc -mindepth 1 -maxdepth 1 ! -name olp -exec rm -rf {} + && cd /tmp/nc
 python3 - "<SKILL_BASE_DIR>/SKILL.md" << 'EOF'
 import re, sys
 text = open(sys.argv[1], encoding="utf-8").read()
@@ -222,7 +228,11 @@ exactly this task, with `A` / `B` as its letter:
 > /tmp/nc/meta/interference.json. Turns file: /tmp/nc/murat_turns.txt. Write your output to
 > /tmp/nc/intf_A.json. Do not read any other file in /tmp/nc.
 
-They must not see each other's output. Then merge:
+They must not see each other's output. Before merging, make sure **both** passes finished: each
+subagent's reply gives its counts, and `/tmp/nc/intf_A.json` and `/tmp/nc/intf_B.json` must both
+exist. If a pass failed, ran out of time or wrote nothing, run that one pass again with the same
+task; never merge one pass on its own. `intf.py merge` also refuses (prints `STOP`) when a file is
+missing or broken, or when one pass found nothing while the other found 5 or more. Then merge:
 
 ```bash
 cd /tmp/nc && python3 intf.py merge intf_A.json intf_B.json meta/interference.json intf_merged.json
@@ -2120,8 +2130,24 @@ def union(ia, ib, interf):
     out.sort(key=lambda x: int(T(x["turn"])))
     return out
 
+def load_pass(path):
+    """A pass file must exist, be valid JSON and hold an "interference" list (added 30.09.26)."""
+    try:
+        d = json.load(open(path))
+    except FileNotFoundError:
+        sys.exit(f"STOP: {path} is missing. That pass didn't finish: run it again, then merge.")
+    except json.JSONDecodeError:
+        sys.exit(f"STOP: {path} is not valid JSON (the pass may have stopped mid-write): run it again, then merge.")
+    if not isinstance(d.get("interference"), list):
+        sys.exit(f'STOP: {path} has no "interference" list: run that pass again, then merge.')
+    return d
+
 def merge(pa, pb, metap, out):
-    A, B, meta = json.load(open(pa)), json.load(open(pb)), json.load(open(metap))
+    A, B, meta = load_pass(pa), load_pass(pb), json.load(open(metap))
+    for (x, px), (y, py) in (((A, pa), (B, pb)), ((B, pb), (A, pa))):
+        if not x["interference"] and len(y["interference"]) >= 5:
+            sys.exit(f"STOP: {px} found nothing while {py} found {len(y['interference'])}. "
+                     "The empty pass probably failed: run it again, then merge.")
     keys = {p["key"] for p in meta["patterns"]}
     items = union(A["interference"], B["interference"], True)
     ups = union(A.get("upgrades", []), B.get("upgrades", []), False)
