@@ -13,7 +13,8 @@ Agreed 30.09.2026 while building the Overview mock-up
 2. Label every mistake by impact, without asking Murat: `m` changes the meaning, `f` sounds foreign, `s` slip.
    Store per item (errors[].impact, interference.items[].impact). For grammar-list items, the correct/error
    ratio can back the call (≥80% correct → slip).
-3. Lock the 29.09 text-report format into Step 7 (Murat liked it).
+3. Lock the 29.09 text-report format into Step 7 (Murat liked it) AND save that day's report text to the
+   session doc (e.g. sessions/<id>.report) so the Overview's "Session report" panel shows it. Latest session only.
 4. Fallback when read_conversation is unavailable (29.09 problem).
 
    Backfill: all 468 past mistakes (9 sessions) were already labelled by hand for the mock-up

@@ -64,7 +64,7 @@ header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:cen
 /* the brief */
 .brief{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:26px 28px;display:grid;gap:22px;box-shadow:var(--shadow)}
 @media (max-width:640px){.brief{padding:20px 18px}}
-.headline{font-family:var(--letter);font-size:30px;line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:6px 0 0;max-width:30ch;text-wrap:balance}
+.headline{font-family:var(--letter);font-size:30px;line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:6px 0 0;text-align:justify;hyphens:auto}
 .headline + p{font-family:var(--letter);font-size:17px;line-height:1.55;margin:10px 0 0;color:var(--muted);text-align:justify;hyphens:auto}
 .periods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 @media (max-width:880px){.periods{grid-template-columns:1fr}}
@@ -206,6 +206,23 @@ table.heat{border-collapse:separate;border-spacing:3px;width:100%;min-width:860p
 .icol details summary::-webkit-details-marker{display:none}
 .icol details summary::after{content:" ▾"} .icol details[open] summary::after{content:" ▴"}
 .icol details ul{margin-top:6px}
+.exlab{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+.itrend[hidden],.ibar[hidden],.icols[hidden]{display:none}
+.chart .l-m{stroke:var(--err);stroke-width:2.2;fill:none} .chart .d-m{fill:var(--err);stroke:var(--surface);stroke-width:2}
+.chart .l-f{stroke:var(--warn);stroke-width:2.2;fill:none} .chart .d-f{fill:var(--warn);stroke:var(--surface);stroke-width:2}
+.chart .l-s{stroke:var(--faint);stroke-width:2;fill:none;stroke-dasharray:5 4} .chart .d-s{fill:var(--faint);stroke:var(--surface);stroke-width:2}
+.rep .rtop{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:4px;font-size:14px}
+.rgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media (max-width:820px){.rgrid{grid-template-columns:1fr}}
+.rstack{display:grid;gap:18px;align-content:start}
+.rblock{display:grid;gap:8px;align-content:start;min-width:0}
+.rblock h3{font-size:15px;border-bottom:2px solid var(--accent-soft);padding-bottom:4px}
+.rblock h4{margin:6px 0 0;font-family:var(--display);font-size:13px;color:var(--muted);display:flex;gap:6px}
+.rblock h4 span{color:var(--err)}
+.rblock p{margin:0;font-size:14px}
+.rblock ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px}
+.rblock ul.good li::marker{color:var(--good)}
+.rblock i{color:var(--muted)} .rblock q{quotes:"“" "”";color:var(--muted);font-style:italic}
 .inote{margin:0;font-size:13.5px;color:var(--muted);text-align:justify;hyphens:auto}
 .icol ul i{font-style:normal;color:var(--muted)} .icol ul b{font-weight:600}
 .gridnote{font-size:12.5px;color:var(--muted);margin:10px 0 0;max-width:80ch}
@@ -321,9 +338,10 @@ ul.rows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;di
   <!-- IMPACT -->
   <section class="panel impact" aria-label="Which mistakes matter">
     <div class="phead" style="margin:0"><h2>Which mistakes matter</h2><span class="sub" id="impSub"></span></div>
-    <div class="vpick" role="group" aria-label="Which sessions"><button type="button" id="iA" aria-pressed="true">A · Latest session</button><button type="button" id="iB" aria-pressed="false">B · All sessions</button></div>
+    <div class="vpick" role="group" aria-label="Which sessions"><button type="button" id="iA" aria-pressed="true">Latest session</button><button type="button" id="iB" aria-pressed="false">All sessions</button><button type="button" id="iC" aria-pressed="false">Trend</button></div>
     <div class="ibar" id="ibar" role="img"></div>
     <div class="icols" id="icols"></div>
+    <div class="itrend" id="itrend" hidden><div class="slegend"><span style="--sw:var(--err)">Changes the meaning</span><span style="--sw:var(--warn)">Sounds foreign</span><span class="dash" style="--sw:var(--faint)">Slip</span></div><div id="ch-imp" style="margin-top:8px"></div></div>
     <p class="inote" id="inote"></p>
   </section>
 
@@ -349,7 +367,7 @@ ul.rows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;di
   <!-- STRENGTHS AND SLIPS -->
   <section class="panel">
     <div class="phead"><h2>What's working, what isn't</h2><span class="sub">Times per 1,000 words, so long and short sessions compare fairly. Darker = more often.</span></div>
-    <div class="vpick" role="group" aria-label="How the rows are picked"><span class="label">Try both · pick rows by</span><button type="button" id="vA" aria-pressed="true">A · Most frequent lately</button><button type="button" id="vB" aria-pressed="false">B · Biggest movers</button></div>
+    <div class="vpick" role="group" aria-label="How the rows are picked"><span class="label">Try both · pick rows by</span><button type="button" id="vA" aria-pressed="true">Most frequent lately</button><button type="button" id="vB" aria-pressed="false">Biggest movers</button></div>
     <div class="scroll"><table class="heat" id="heat"></table></div>
   </section>
 
@@ -367,6 +385,113 @@ ul.rows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;di
       <li><div class="rowtop"><b>Grammar range 40 of 92</b><span class="pill easing">28.09</span></div><span class="sub">Your widest since 22–23.09</span></li>
     </ul>
   </section>
+
+  <!-- SESSION REPORT (that day's check, as delivered in chat) -->
+  <section class="panel rep" aria-label="Session report">
+    <div class="phead"><h2>Session report · Tue 29.09</h2><span class="sub">6,397 words · voice 5,929 · typed 468 · 673 observations · 85 errors</span></div>
+    <ul class="rtop">
+      <li><b>Voice: 1.11</b> errors per 100 words (0.97 on 28.09).</li>
+      <li><b>Typed: 4.06</b> per 100 (0.85 on 28.09). That comes from only 468 words, typed quickly after voice failed, so it's a small sample.</li>
+      <li>Part of the voice rise is how I measured it. My reading pass logged about 50 errors that the scripts had missed.</li>
+    </ul>
+    <div class="rgrid">
+      <div class="rblock">
+        <h3>Errors</h3>
+        <p><b>"In the meantime" for "by the way": 9 times.</b> It's still your top error. What's changed is that you're catching it: <q>Not in the meantime. I won't use in the meantime anymore</q> and <q>I've been caught red-handed again.</q></p>
+        <h4>Prepositions <span>12</span></h4>
+        <ul>
+          <li>"mention about" came up 4 times: <i>I mentioned about Spain trip</i> → <b>mentioned the Spain trip</b></li>
+          <li><i>I didn't ask the same question to my wife</i> → <b>ask my wife the same question</b></li>
+          <li><i>I messaged to Francesca</i> → <b>messaged Francesca</b></li>
+          <li><i>important at my side</i> → <b>important to me</b></li>
+          <li><i>start on 5:30</i> → <b>at 5:30</b></li>
+          <li><i>the hotel we stayed</i> → <b>stayed at</b></li>
+          <li><i>due the fatigue</i> → <b>due to fatigue</b></li>
+        </ul>
+        <h4>Word choice and collocation <span>18</span></h4>
+        <ul>
+          <li><i>take a deal with some vendor visits</i> → <b>fit in</b></li>
+          <li><i>bounds with them</i> → <b>bonds</b></li>
+          <li><i>went out of my mouth</i> → <b>slipped out</b></li>
+          <li><i>it really drew me something</i> → <b>it really threw me</b></li>
+          <li><i>warned them off</i> → <b>warned them</b></li>
+          <li><i>the lesson time went straight over our heads</i> → <b>slipped our minds</b></li>
+          <li><i>went lost in thought</i> → <b>got lost in thought</b></li>
+          <li><i>blow off the steam</i> → <b>blow off some steam</b></li>
+          <li><i>I couldn't get your question across</i> → <b>I couldn't get your question</b>. I told you in voice that this one was fine, and I was wrong.</li>
+        </ul>
+        <h4>Grammar and other <span>23</span></h4>
+        <ul>
+          <li><i>let us to use</i> → <b>let us use</b></li>
+          <li><i>some club seats tends</i> → <b>tend</b></li>
+          <li><i>what was I'm talking about</i> → <b>what was I talking about</b></li>
+          <li><i>made me drifted</i> → <b>made me drift</b></li>
+          <li><i>more strong</i> → <b>stronger</b></li>
+          <li><i>needs to be bulk up</i> → <b>bulked up</b></li>
+          <li><i>misunderestimated</i> → <b>underestimated</b></li>
+          <li><i>one my friend</i> → <b>one of my friends</b></li>
+          <li><i>a genuine relieve</i> → <b>relief</b></li>
+          <li><i>time to time</i> → <b>from time to time</b></li>
+        </ul>
+      </div>
+      <div class="rstack">
+        <div class="rblock">
+          <h3>Strong B2+ grammar</h3>
+          <ul class="good">
+            <li>This issue couldn't be managed very well</li>
+            <li>My colleagues will be accompanying me</li>
+            <li>I've been interrupted. I've been disturbed by an email.</li>
+            <li>Maybe alcohol could have played a small role</li>
+            <li>our export activities rather than just the trade activities</li>
+          </ul>
+        </div>
+        <div class="rblock">
+          <h3>Phrasal verbs</h3>
+          <p><b>1 per 42 words</b>, against the native rate of 1 per 192. That's your densest session on the ledger so far (1/56 on 28.09). You used 151 phrasal verbs, 79 different ones, and the 14 drilled words aren't counted. 71 of them are on the tracker.</p>
+          <ul>
+            <li><b>New:</b> break into, care about, complain about, fill up, pass out, step in, talk about, think about.</li>
+            <li><b>Moved up to Activated:</b> circle back, go over, take care of, check out, fade away, play up, turn out.</li>
+            <li><b>Moved up to In Progress:</b> come up with, get away with, keep up with, take back, catch up with, fit in, reach for, refer to, step into, block off.</li>
+            <li>The weak spot is precision, not quantity. Several were misused: <i>follow them through</i>, <i>warned them off</i>, <i>break it up</i>, <i>catch up myself</i>.</li>
+          </ul>
+        </div>
+        <div class="rblock">
+          <h3>Vocabulary</h3>
+          <ul>
+            <li><b>B2+ share: 2.9%</b> (3.0% on 28.09). Counting only words on the official CEFR lists, it's 1.7% (2.5% on 28.09).</li>
+            <li><b>Notable words:</b> egregious, advantageous, compliant, unmanageable, downplay, escalate, mismanagement, captivate, knackered, hiccup.</li>
+            <li><b>17 words from your list</b> came up on their own. The best was <q>she could downplay it</q>. "Egregious" and "go through the motions" were first-ever unprompted uses, though the idiom needs "motions", plural.</li>
+            <li><b>Lexical diversity (MTLD):</b> 37.0 in voice (38.8 on 28.09) and 135.2 typed (small sample).</li>
+            <li><b>Unique words:</b> 830 today. This is the first count, so it's the baseline to measure from.</li>
+            <li><b>Vocab tracker:</b> "Throughout" moved up to Activated. Egregious, go through the motions and be phallic moved up to Emerging. The 14 vocab-session reviews were already saved earlier today and weren't counted twice.</li>
+          </ul>
+        </div>
+        <div class="rblock">
+          <h3>Turkish interference</h3>
+          <p><b>2.28 per 100 words</b> in voice (2.35 on 28.09) and 3.63 typed (2.87 on 28.09).</p>
+          <h4>Top patterns in voice</h4>
+          <ul>
+            <li>other prepositions: 10</li>
+            <li>"in the meantime": 9</li>
+            <li>"for + -ing" for purpose: 9 (<i>for making an itinerary</i> → <b>to make</b>)</li>
+            <li>adverb placement: 9 (<i>I have still time</i> → <b>I still have time</b>)</li>
+          </ul>
+          <h4>Two new patterns added</h4>
+          <ul>
+            <li>"discover" for "explore" a place (keşfetmek), 4 times</li>
+            <li>"get retired" for "retire" (emekli olmak)</li>
+          </ul>
+          <h4>Useful upgrades</h4>
+          <ul>
+            <li><i>lift up the export numbers</i> → <b>boost exports</b></li>
+            <li><i>didn't want to follow me through</i> → <b>didn't want to take my advice</b></li>
+            <li><i>grab some bites</i> → <b>grab a bite</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 </div>
 
@@ -434,6 +559,8 @@ const IMP_HEAD = {M:["Changes the meaning","The listener may understand somethin
                   S:["Slip","You know the rule; it breaks under pressure. Lowest priority.","var(--faint)"]};
 const IMP_OPEN = {};
 function paintImpact(v){
+  document.getElementById("ibar").hidden = false; document.getElementById("icols").hidden = false; document.getElementById("itrend").hidden = true;
+  document.getElementById("iC").setAttribute("aria-pressed", false);
   const D = IMPACT_DATA[v], n = D.n, pct = L => Math.round(D.c[L]/n*100);
   document.getElementById("iA").setAttribute("aria-pressed", v==="latest"); document.getElementById("iB").setAttribute("aria-pressed", v==="all");
   document.getElementById("impSub").textContent = v==="latest" ? `Tue 29.09 · ${n} mistakes` : `All 9 sessions · ${n} mistakes`;
@@ -446,12 +573,22 @@ function paintImpact(v){
     return `<div class="icol" style="--ic:${IMP_HEAD[L][2]}"><h3>${IMP_HEAD[L][0]} <span>${pct(L)}%</span></h3><p>${IMP_HEAD[L][1]}</p>
       <ol>${shown.map(([name,k,c])=>`<li><a href="${LEDGER}#grammar" target="_blank" rel="noopener" title="Open in Grammar · Errors">${esc(name)}</a><span>${c}</span></li>`).join("")}</ol>
       ${rows.length>4?`<button type="button" class="more" data-imp="${v+L}">${open?"Show fewer":`Show all ${rows.length} types`}</button>`:""}
-      <details><summary>Examples</summary><ul>${IMP_EX[v][L].map(([a,b])=>`<li><i>${esc(a)}</i> → <b>${esc(b)}</b></li>`).join("")}</ul></details></div>`;
+      <div class="exlab">Examples</div><ul>${IMP_EX[v][L].map(([a,b])=>`<li><i>${esc(a)}</i> → <b>${esc(b)}</b></li>`).join("")}</ul></div>`;
   }).join("");
   document.getElementById("inote").textContent = IMP_NOTE[v];
   CUR_IMP = v;
 }
 let CUR_IMP = "latest";
+const IMP_TREND = {m:[1.22,1.29,2.08,1.31,2.38,3.34,4.29,2.46,3.91], f:[4.63,8.24,4.66,2.52,2.68,6.93,7.97,5.51,6.1], s:[1.95,1.03,1.69,1.86,2.08,3.34,4.29,1.45,3.28]};
+function paintTrend(){
+  ["iA","iB","iC"].forEach(id=>document.getElementById(id).setAttribute("aria-pressed", id==="iC"));
+  document.getElementById("ibar").hidden = true; document.getElementById("icols").hidden = true; document.getElementById("itrend").hidden = false;
+  document.getElementById("impSub").textContent = "Mistakes per 1,000 words, by session";
+  S.forEach((s,i)=>{ s.im=IMP_TREND.m[i]; s.if_=IMP_TREND.f[i]; s.is_=IMP_TREND.s[i]; });
+  document.getElementById("ch-imp").innerHTML = "";
+  lineChart("ch-imp",[{key:"if_",name:"Sounds foreign",cls:"l-f",dot:"d-f"},{key:"im",name:"Changes the meaning",cls:"l-m",dot:"d-m"},{key:"is_",name:"Slip",cls:"l-s",dot:"d-s",below:true}],0,9,[0,3,6,9],v=>v%1?v.toFixed(1):String(v),document.getElementById("ch-imp").clientWidth>600);
+  document.getElementById("inote").textContent = "Mistakes that change the meaning have tripled, from about 1.2 per 1,000 words in your first sessions to 3.9 on 29.09. Foreign-sounding ones swing between 2.5 and 8 with no clear direction. Part of the late rise is the check itself: since 29.09 it catches more mistakes than before.";
+}
 const NS = "http://www.w3.org/2000/svg";
 const el = (tag, attrs={}, txt) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (txt != null) e.textContent = txt; return e; };
 
@@ -488,8 +625,8 @@ T.append(
 );
 T.lastChild.querySelector(".d").innerHTML = "voice 5,929 · typed 468 · all time 49,682";
 
-function lineChart(host, series, yMin, yMax, ticks, fmt){
-  const W=480,H=210,l=34,r=26,t=16,b=28;
+function lineChart(host, series, yMin, yMax, ticks, fmt, wide){
+  const W=wide?960:480,H=wide?250:210,l=34,r=26,t=16,b=28;
   const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,class:"chart",role:"img","aria-label":series.map(s=>s.name).join(" and ")+" by session"});
   const X=i=>l+i*(W-l-r)/(S.length-1), Y=v=>t+(yMax-v)/(yMax-yMin)*(H-t-b);
   ticks.forEach(v=>{ svg.append(el("line",{x1:l,x2:W-r,y1:Y(v),y2:Y(v),class:"grid"})); svg.append(el("text",{x:l-6,y:Y(v)+4,"text-anchor":"end"},fmt(v))); });
@@ -498,7 +635,7 @@ function lineChart(host, series, yMin, yMax, ticks, fmt){
     const pts=S.map((s,i)=>[i,s[ser.key]]).filter(q=>q[1]!=null);
     svg.append(el("path",{d:pts.map((q,j)=>(j?"L":"M")+X(q[0]).toFixed(1)+" "+Y(q[1]).toFixed(1)).join(" "),class:ser.cls}));
     pts.forEach(q=>svg.append(el("circle",{cx:X(q[0]),cy:Y(q[1]),r:3.4,class:ser.dot})));
-    const e=pts.at(-1); svg.append(el("text",{x:X(e[0])-6,y:Y(e[1])-9,"text-anchor":"end",class:"val"},fmt(e[1])));
+    const e=pts.at(-1); svg.append(el("text",{x:X(e[0])-6,y:Y(e[1])+(ser.below?18:-9),"text-anchor":"end",class:"val"},fmt(e[1])));
   });
   document.getElementById(host).append(svg);
 }
@@ -558,6 +695,7 @@ $v("vB").addEventListener("click",()=>paintGrid("B"));
 paintGrid("A");
 document.getElementById("iA").addEventListener("click",()=>paintImpact("latest"));
 document.getElementById("iB").addEventListener("click",()=>paintImpact("all"));
+document.getElementById("iC").addEventListener("click",paintTrend);
 document.getElementById("icols").addEventListener("click",e=>{ const b=e.target.closest("[data-imp]"); if(!b) return; IMP_OPEN[b.dataset.imp]=!IMP_OPEN[b.dataset.imp]; paintImpact(CUR_IMP); });
 paintImpact("latest");
 </script>
