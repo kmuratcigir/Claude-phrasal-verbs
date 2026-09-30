@@ -1,0 +1,563 @@
+<title>Fluency Ledger Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: an executive brief up top (one headline, then Today / This week / Since the start, then 3 priorities); evidence underneath (tiles, trends, strengths-and-slips grid, best moments). */
+:root{
+  --bg:oklch(0.975 0.012 280); --surface:oklch(0.995 0.005 60); --ink:oklch(0.20 0.01 60); --muted:oklch(0.45 0.01 60); --faint:oklch(0.55 0.01 60); --rule:oklch(0.90 0.015 275);
+  --accent:oklch(0.47 0.14 275); --accent-deep:oklch(0.36 0.13 275); --accent-soft:oklch(0.92 0.045 275); --tint:oklch(0.94 0.025 275); --tint-rule:oklch(0.88 0.03 275);
+  --err:oklch(0.52 0.17 25); --err-soft:oklch(0.94 0.035 25); --warn:oklch(0.50 0.11 70); --warn-soft:oklch(0.94 0.05 85); --idle:oklch(0.955 0.008 275);
+  --good:oklch(0.50 0.12 160); --good-soft:oklch(0.93 0.045 160);
+  --c-voice:oklch(0.47 0.14 275); --c-typed:oklch(0.62 0.13 55);
+  --h1:oklch(0.95 0.03 25); --h2:oklch(0.87 0.07 25); --h3:oklch(0.76 0.12 25); --h4:oklch(0.62 0.16 25);
+  --g1:oklch(0.95 0.03 160); --g2:oklch(0.87 0.07 160); --g3:oklch(0.76 0.11 160); --g4:oklch(0.56 0.12 160);
+  --on-accent:#fff; --on-strong:#fff; --shadow:0 1px 2px oklch(0.2 0.02 60 / 0.04);
+  --display:"Plus Jakarta Sans","IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --letter:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:oklch(0.17 0.015 280); --surface:oklch(0.215 0.018 280); --ink:oklch(0.94 0.008 280); --muted:oklch(0.75 0.015 280); --faint:oklch(0.62 0.015 280); --rule:oklch(0.31 0.025 280);
+    --accent:oklch(0.74 0.12 275); --accent-deep:oklch(0.82 0.09 275); --accent-soft:oklch(0.30 0.06 275); --tint:oklch(0.26 0.04 275); --tint-rule:oklch(0.34 0.05 275);
+    --err:oklch(0.74 0.14 25); --err-soft:oklch(0.30 0.06 25); --warn:oklch(0.80 0.11 80); --warn-soft:oklch(0.32 0.06 75); --idle:oklch(0.25 0.015 280);
+    --good:oklch(0.76 0.12 160); --good-soft:oklch(0.30 0.05 160);
+    --c-voice:oklch(0.74 0.12 275); --c-typed:oklch(0.76 0.12 60);
+    --h1:oklch(0.29 0.04 25); --h2:oklch(0.38 0.08 25); --h3:oklch(0.50 0.12 25); --h4:oklch(0.64 0.15 25);
+    --g1:oklch(0.29 0.04 160); --g2:oklch(0.38 0.07 160); --g3:oklch(0.50 0.10 160); --g4:oklch(0.66 0.12 160);
+    --on-accent:oklch(0.17 0.015 280); --on-strong:oklch(0.17 0.015 280); --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:oklch(0.17 0.015 280); --surface:oklch(0.215 0.018 280); --ink:oklch(0.94 0.008 280); --muted:oklch(0.75 0.015 280); --faint:oklch(0.62 0.015 280); --rule:oklch(0.31 0.025 280);
+  --accent:oklch(0.74 0.12 275); --accent-deep:oklch(0.82 0.09 275); --accent-soft:oklch(0.30 0.06 275); --tint:oklch(0.26 0.04 275); --tint-rule:oklch(0.34 0.05 275);
+  --err:oklch(0.74 0.14 25); --err-soft:oklch(0.30 0.06 25); --warn:oklch(0.80 0.11 80); --warn-soft:oklch(0.32 0.06 75); --idle:oklch(0.25 0.015 280);
+  --good:oklch(0.76 0.12 160); --good-soft:oklch(0.30 0.05 160);
+  --c-voice:oklch(0.74 0.12 275); --c-typed:oklch(0.76 0.12 60);
+  --h1:oklch(0.29 0.04 25); --h2:oklch(0.38 0.08 25); --h3:oklch(0.50 0.12 25); --h4:oklch(0.64 0.15 25);
+  --g1:oklch(0.29 0.04 160); --g2:oklch(0.38 0.07 160); --g3:oklch(0.50 0.10 160); --g4:oklch(0.66 0.12 160);
+  --on-accent:oklch(0.17 0.015 280); --on-strong:oklch(0.17 0.015 280); --shadow:none;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;margin:0;padding:0 16px}
+.wrap{max-width:1080px;margin:0 auto;padding-block:24px 64px;display:grid;gap:20px}
+.wrap>*{min-width:0}
+h1,h2,h3{margin:0;text-wrap:balance;font-family:var(--display);font-weight:700}
+h1{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h1 span{color:var(--accent)}
+h2{font-size:17px;letter-spacing:-.01em}
+.label{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.sub{color:var(--muted);font-size:13.5px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,oklch(0.6 0.14 275),oklch(0.47 0.14 285));color:#fff;font-family:var(--display);font-weight:800;font-size:17px}
+.badge{font-size:12.5px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:4px 12px;border-radius:999px}
+.tabs{display:inline-flex;flex-wrap:wrap;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:4px;justify-self:start;max-width:100%}
+.tabs span{font-weight:600;font-size:13.5px;padding:9px 18px;border-radius:999px;color:var(--muted)}
+.tabs span.on{background:var(--accent);color:var(--on-accent)}
+@media (max-width:560px){.tabs{border-radius:20px}}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);min-width:0}
+.phead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+
+/* the brief */
+.brief{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:26px 28px;display:grid;gap:22px;box-shadow:var(--shadow)}
+@media (max-width:640px){.brief{padding:20px 18px}}
+.headline{font-family:var(--letter);font-size:30px;line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:6px 0 0;max-width:30ch;text-wrap:balance}
+.headline + p{font-family:var(--letter);font-size:17px;line-height:1.55;margin:10px 0 0;color:var(--muted);text-align:justify;hyphens:auto}
+.periods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:880px){.periods{grid-template-columns:1fr}}
+.period{border:1px solid var(--tint-rule);background:var(--tint);border-radius:14px;padding:16px 18px;display:grid;gap:12px;align-content:start;min-width:0}
+.period .when{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.period .when .sub{font-size:12.5px}
+.period h3{font-family:var(--letter);font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.005em}
+.score{display:grid;gap:0;border-top:1px solid var(--tint-rule)}
+.score div{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--tint-rule);font-size:13px}
+.score span:first-child{color:var(--muted)}
+.score .n{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.score .n s{text-decoration:none;color:var(--faint);font-weight:600}
+.mv{font-family:var(--display);font-weight:700;font-size:11.5px;padding:1px 7px;border-radius:999px;white-space:nowrap;min-width:52px;text-align:center}
+.mv.up{background:var(--good-soft);color:var(--good)}
+.mv.down{background:var(--err-soft);color:var(--err)}
+.mv.flat{background:var(--accent-soft);color:var(--accent-deep)}
+ul.pts{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+ul.pts li{position:relative;padding-left:22px;font-size:14px;line-height:1.45}
+ul.pts li::before{position:absolute;left:0;top:0;width:14px;font-family:var(--display);font-weight:800;font-size:14px;line-height:1.45;text-align:center}
+ul.pts li.g::before{content:"+";color:var(--good)}
+ul.pts li.b::before{content:"−";color:var(--err)}
+ul.pts q{quotes:"“" "”";font-style:italic;color:var(--muted)}
+ul.pts .fx{font-style:normal;color:var(--ink);font-weight:600}
+.note{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--tint-rule);padding-top:8px}
+
+.prio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:p}
+@media (max-width:880px){.prio{grid-template-columns:1fr}}
+.prio > div{border-left:3px solid var(--accent);padding:2px 0 2px 14px;display:grid;gap:4px;counter-increment:p;min-width:0}
+.prio b{font-family:var(--display);font-weight:700;font-size:15px}
+.prio b::before{content:counter(p) ". ";color:var(--accent)}
+.prio span{font-size:14px;line-height:1.45}
+.prio .say{font-size:13.5px;color:var(--muted)}
+.prio .say i{color:var(--err);font-style:normal;text-decoration:line-through;text-decoration-thickness:1px}
+.prio .say em{color:var(--good);font-style:normal;font-weight:600}
+.sig{font-size:12.5px;color:var(--muted)}
+
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--tint);border:1px solid var(--tint-rule);border-radius:12px;padding:14px 16px;display:grid;gap:4px;min-width:0}
+.tile .v{font-family:var(--display);font-size:26px;font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .v small{font-size:15px;color:var(--muted);font-weight:600}
+.tile .d{font-size:12.5px;color:var(--muted)}
+.tile .d .good{color:var(--good);font-weight:600}
+.tile .d .bad{color:var(--err);font-weight:600}
+.spark{width:100%;height:34px;display:block;margin-top:4px}
+.spark .ln{fill:none;stroke:var(--accent);stroke-width:1.8}
+.spark .ar{fill:var(--accent-soft)}
+.spark .end{fill:var(--accent);stroke:var(--tint);stroke-width:2}
+
+/* charts */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--faint);font-family:var(--sans);font-size:11px;font-variant-numeric:tabular-nums}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .l1{stroke:var(--c-voice);stroke-width:2.2;fill:none}
+.chart .l2{stroke:var(--c-typed);stroke-width:2;fill:none;stroke-dasharray:5 4}
+.chart .d1{fill:var(--c-voice);stroke:var(--surface);stroke-width:2}
+.chart .d2{fill:var(--c-typed);stroke:var(--surface);stroke-width:2}
+.chart .val{fill:var(--accent-deep);font-family:var(--display);font-weight:700;font-size:11px}
+.explain{font-size:13px;color:var(--muted);margin:-4px 0 10px;max-width:62ch}
+.slegend{display:flex;gap:16px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.slegend span::before{content:"";display:inline-block;width:16px;height:0;border-top:2px solid var(--sw);margin-right:6px;vertical-align:3px}
+.slegend span.dash::before{border-top-style:dashed}
+
+/* strengths and slips grid */
+.scroll{overflow-x:auto}
+table.heat{border-collapse:separate;border-spacing:3px;width:100%;min-width:860px;font-size:13px;table-layout:fixed}
+.heat th{font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:0 0 6px}
+.heat th.l{text-align:left}
+.heat tr.grp th{text-align:left;font-family:var(--display);font-size:13px;letter-spacing:0;text-transform:none;padding:14px 0 6px;color:var(--ink)}
+.heat tr.grp th small{font-family:var(--sans);font-weight:400;color:var(--muted);font-size:12.5px;margin-left:6px}
+.heat tr.grp.good th{color:var(--good)} .heat tr.grp.bad th{color:var(--err)}
+.heat td{text-align:center;padding:7px 4px;border-radius:6px;font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums;font-size:12.5px}
+.heat td.name{overflow-wrap:anywhere;text-align:left;font-family:var(--sans);font-weight:600;font-size:13.5px;padding-left:0;width:290px;min-width:240px;line-height:1.35}
+.heat td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+.heat td.name small i{font-style:normal;color:var(--err);text-decoration:line-through;text-decoration-thickness:1px}
+.heat td.name small em{font-style:normal;color:var(--good);font-weight:600}
+.heat td.z{background:var(--idle);color:var(--faint)}
+.heat td.c1{background:var(--h1);color:var(--ink)} .heat td.c2{background:var(--h2);color:var(--ink)}
+.heat td.c3{background:var(--h3);color:var(--ink)} .heat td.c4{background:var(--h4);color:var(--on-strong)}
+.heat td.g1{background:var(--g1);color:var(--ink)} .heat td.g2{background:var(--g2);color:var(--ink)}
+.heat td.g3{background:var(--g3);color:var(--ink)} .heat td.g4{background:var(--g4);color:var(--on-strong)}
+.lv{font-family:var(--display);font-weight:600;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:6px;background:var(--accent-soft);color:var(--accent-deep);white-space:nowrap;vertical-align:1px}
+.lv.mixed{background:var(--idle);color:var(--faint)}
+.heat th.base,.heat td.base{border-right:2px solid var(--rule)}
+.heat td.base{outline:1px dashed var(--tint-rule);outline-offset:-1px}
+.heat col.nm{width:310px} .heat col.st{width:150px}
+.heat td.chg{padding:4px 0 4px 6px}
+.stat{position:relative;display:block;overflow:hidden;font-family:var(--display);font-size:12px;font-weight:600;padding:4px 10px 7px;border-radius:10px;white-space:nowrap;text-align:left;font-variant-numeric:tabular-nums}
+.stat b{font-weight:700}
+.stat i{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;background:currentColor;opacity:.75}
+.stat.stuck{background:var(--err-soft);color:var(--err)}
+.stat.fading,.stat.solid,.stat.growing{background:var(--good-soft);color:var(--good)}
+.stat.rising,.stat.dipping{background:var(--warn-soft);color:var(--warn)}
+.cbar{display:grid;grid-template-columns:1fr 1fr;align-items:center;height:18px;position:relative}
+.cbar::after{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid var(--faint)}
+.cbar i{display:block;height:10px;border-radius:3px}
+.cbar .neg{justify-self:end} .cbar .pos{justify-self:start}
+.cbar i.better{background:var(--good)} .cbar i.worse{background:var(--err)}
+.cbar i.flat{background:var(--faint)} .ctext.flat{color:var(--muted)}
+.ctext{text-align:center;font-size:11.5px;font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums}
+.ctext.better{color:var(--good)} .ctext.worse{color:var(--err)}
+.vpick{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 8px}
+.vpick .label{margin-right:4px}
+.vpick button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--rule);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.vpick button:hover{color:var(--accent);border-color:var(--accent)}
+.vpick button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.vpick button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.heat a.go{color:var(--ink);text-decoration:underline dotted;text-decoration-color:var(--faint);text-underline-offset:3px}
+.heat a.go:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.heat a.go:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.heat .where{font-family:var(--display);font-size:10.5px;font-weight:600;color:var(--muted);margin-left:6px;white-space:nowrap}
+.heat .where::before{content:"→ "}
+.imp{font-family:var(--display);font-weight:700;font-size:10.5px;padding:1px 7px;border-radius:999px;white-space:nowrap;margin-left:6px;vertical-align:1px}
+.imp.m{background:var(--err-soft);color:var(--err)} .imp.f{background:var(--warn-soft);color:var(--warn)} .imp.s{background:var(--idle);color:var(--faint)}
+.imp.m::before{content:"● "} .imp.f::before{content:"◐ "} .imp.s::before{content:"○ "}
+.heat tr.slip td{opacity:.6}
+.impact{display:grid;gap:14px}
+.ibar{display:flex;gap:2px;height:26px;border-radius:8px;overflow:hidden}
+.ibar span{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:12.5px;min-width:0}
+.ibar .m{background:var(--err);color:var(--on-strong)} .ibar .f{background:var(--warn);color:var(--on-strong)} .ibar .s{background:var(--idle);color:var(--muted)}
+.icols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.icols{grid-template-columns:1fr}}
+.icol{display:grid;gap:8px;align-content:start;border-top:3px solid var(--ic);padding-top:10px;min-width:0}
+.icol h3{font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.icol h3 span{font-family:var(--display);color:var(--ic);font-size:20px}
+.icol p{margin:0;font-size:13px;color:var(--muted)}
+.icol ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13.5px}
+.icol ol{list-style:none;margin:0;padding:0;display:grid;gap:0;font-size:13.5px}
+.icol ol li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.icol ol li a{color:var(--ink);text-decoration:underline dotted;text-decoration-color:var(--faint);text-underline-offset:3px;min-width:0}
+.icol ol li a:hover{color:var(--accent)}
+.icol ol li span{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ic);white-space:nowrap}
+.icol .more{font:inherit;font-size:12.5px;font-weight:600;color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;justify-self:start}
+.icol .more:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.icol details summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(--accent);list-style:none}
+.icol details summary::-webkit-details-marker{display:none}
+.icol details summary::after{content:" ▾"} .icol details[open] summary::after{content:" ▴"}
+.icol details ul{margin-top:6px}
+.inote{margin:0;font-size:13.5px;color:var(--muted);text-align:justify;hyphens:auto}
+.icol ul i{font-style:normal;color:var(--muted)} .icol ul b{font-weight:600}
+.gridnote{font-size:12.5px;color:var(--muted);margin:10px 0 0;max-width:80ch}
+.pill{font-family:var(--display);font-weight:600;font-size:12px;padding:2px 10px;border-radius:999px;white-space:nowrap;display:inline-block}
+.pill.stuck{background:var(--err-soft);color:var(--err)}
+.pill.fading,.pill.solid,.pill.growing{background:var(--good-soft);color:var(--good)}
+.pill.rising,.pill.dipping{background:var(--warn-soft);color:var(--warn)}
+.pill.easing{background:var(--accent-soft);color:var(--accent-deep)}
+
+/* best moments */
+ul.rows{list-style:none;margin:0;padding:0;columns:2 300px;column-gap:28px}
+ul.rows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;display:grid;gap:3px}
+.rowtop{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.rowtop b{font-weight:600}
+.quote{color:var(--muted);font-size:13.5px}
+.quote::before{content:"“"} .quote::after{content:"”"}
+.pilot{font-size:13px;color:var(--muted);border:1px dashed var(--tint-rule);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
+.pilot b{color:var(--ink)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">FL</div>
+      <div>
+        <div class="label">Murat · English practice</div>
+        <h1>Fluency <span>Ledger</span></h1>
+      </div>
+    </div>
+    <div class="badge">Mock-up · 9 sessions · 18–29 Sept 2026</div>
+  </header>
+
+  <nav class="tabs" aria-label="Areas (preview)">
+    <span class="on">Overview</span><span>Grammar</span><span>Vocabulary</span><span>Phrasal verbs</span><span>Naturalness</span><span>Reading</span>
+  </nav>
+
+  <!-- THE BRIEF -->
+  <section class="brief" aria-label="Executive brief">
+    <div>
+      <div class="label">The brief · after the 29.09 session</div>
+      <div class="headline">Your English is getting bigger. It isn't getting cleaner yet.</div>
+      <p>You now reach for harder words and more phrasal verbs than ever. But the old slips haven't gone, and a few new ones came with the new words. The job for the next two weeks is precision.</p>
+    </div>
+
+    <div class="periods">
+      <!-- TODAY -->
+      <article class="period">
+        <div class="when"><span class="label">Today</span><span class="sub">Tue 29.09 · 6,397 words</span></div>
+        <h3>Ambitious day, sloppy edges.</h3>
+        <div class="score">
+          <div><span>Errors per 100 words</span><span class="n">1.11 <s>/ 0.97</s></span><span class="mv down">Worse</span></div>
+          <div><span>Mistakes that change the meaning</span><span class="n">25 <s>of 85</s></span><span class="mv down">Fix first</span></div>
+          <div><span>Phrasal verbs</span><span class="n">1 per 42</span><span class="mv up">Best yet</span></div>
+          <div><span>List words, unprompted</span><span class="n">17 <s>/ 14</s></span><span class="mv up">Better</span></div>
+        </div>
+        <ul class="pts">
+          <li class="g">Seven phrasal verbs are now part of your normal speech: <i>circle back, go over, check out, turn out</i> and three more.</li>
+          <li class="g">First time you used "egregious" without being asked. <q>there is an egregious mistake in our budget figures</q></li>
+          <li class="b">"In the meantime" 9 times. You noticed it 3 times, but only after it was out.</li>
+          <li class="b">"Mention about" 4 times. <q>I mentioned about Spain trip</q> → <span class="fx">I mentioned the Spain trip</span></li>
+          <li class="b">New phrasal verbs misfired. <q>the lesson time went straight over our heads</q> → <span class="fx">slipped our minds</span></li>
+        </ul>
+      </article>
+
+      <!-- THIS WEEK -->
+      <article class="period">
+        <div class="when"><span class="label">This week</span><span class="sub">Mon 28 – Tue 29.09 · vs last week</span></div>
+        <h3>More range, less accuracy.</h3>
+        <div class="score">
+          <div><span>Errors per 100 words</span><span class="n">1.04 <s>/ 0.88</s></span><span class="mv down">Worse</span></div>
+          <div><span>Turkish patterns per 100</span><span class="n">2.31 <s>/ 1.86</s></span><span class="mv down">Worse</span></div>
+          <div><span>Advanced words (B2+)</span><span class="n">2.95% <s>/ 2.36%</s></span><span class="mv up">Better</span></div>
+          <div><span>List words per session</span><span class="n">15.5 <s>/ 9.4</s></span><span class="mv up">Better</span></div>
+        </div>
+        <ul class="pts">
+          <li class="g">Your best week for vocabulary so far. You used more of your list words, more often, without being asked.</li>
+          <li class="b">Turkish patterns jumped by a quarter. This is the biggest move of the week and it's the wrong way.</li>
+          <li class="b">Small words went missing. <q>head to supermarket</q> → <span class="fx">head to the supermarket</span>. 25 missing "the/a" on Monday alone.</li>
+        </ul>
+        <div class="note">Part of the rise is how the check works now. Since 29.09 it catches more slips than before.</div>
+      </article>
+
+      <!-- SINCE THE START -->
+      <article class="period">
+        <div class="when"><span class="label">Since the start</span><span class="sub">9 sessions · 18–29.09</span></div>
+        <h3>Range up by 60%. Accuracy hasn't moved.</h3>
+        <div class="score">
+          <div><span>Advanced words (B2+)</span><span class="n">2.91% <s>/ 1.83%</s></span><span class="mv up">Better</span></div>
+          <div><span>Errors per 100 words</span><span class="n">1.12 <s>/ 0.87</s></span><span class="mv down">Worse</span></div>
+          <div><span>Turkish patterns per 100</span><span class="n">2.31 <s>/ 1.96</s></span><span class="mv down">Worse</span></div>
+        </div>
+        <ul class="pts">
+          <li class="g">Phrasal verbs are no longer a volume problem. You use one every 47 words; a native speaker uses one every 192.</li>
+          <li class="g">"Seats tends" type slips have almost gone: from 2.4 to 0.2 per 1,000 words in three sessions.</li>
+          <li class="b">"In the meantime" for "by the way" has shown up in all 9 sessions. It's your signature mistake.</li>
+          <li class="b">"For + -ing" to give a reason, also in all 9. <q>not just for making money</q> → <span class="fx">not just to make money</span></li>
+        </ul>
+        <div class="note">Scores compare your last 3 sessions with your first 3.</div>
+      </article>
+    </div>
+
+    <div>
+      <div class="label" style="margin-bottom:10px">Your 3 priorities for the next sessions</div>
+      <div class="prio">
+        <div><b>Say "by the way" first time</b><span><span class="imp m" style="margin:0">Changes the meaning</span></span><span>You already catch it. Now stop it before it starts. Target: one session with zero.</span><span class="say"><i>In the meantime,</i> <em>By the way,</em> this team doesn't report to me.</span></div>
+        <div><b>Drop the extra "about" and "to"</b><span><span class="imp f" style="margin:0">Sounds foreign</span></span><span>mention, discuss, message and ask take no small word after them.</span><span class="say">I <i>messaged to</i> <em>messaged</em> Francesca.</span></div>
+        <div><b>Check before a new phrasal verb</b><span><span class="imp m" style="margin:0">Changes the meaning</span></span><span>Use it only if you're sure it means what you mean. Quantity is done; accuracy is next.</span><span class="say">I need to blow off <i>the</i> <em>some</em> steam.</span></div>
+      </div>
+    </div>
+    <div class="sig">Written by Claude after the 29.09 check, from all 9 session records. Rewritten at every wrap-up.</div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="panel impact" aria-label="Which mistakes matter">
+    <div class="phead" style="margin:0"><h2>Which mistakes matter</h2><span class="sub" id="impSub"></span></div>
+    <div class="vpick" role="group" aria-label="Which sessions"><button type="button" id="iA" aria-pressed="true">A · Latest session</button><button type="button" id="iB" aria-pressed="false">B · All sessions</button></div>
+    <div class="ibar" id="ibar" role="img"></div>
+    <div class="icols" id="icols"></div>
+    <p class="inote" id="inote"></p>
+  </section>
+
+  <!-- TILES -->
+  <section class="tiles" id="tiles" aria-label="Key numbers, latest session"></section>
+
+  <!-- TRENDS -->
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Accuracy and Turkish patterns, voice</h2>
+        <div class="slegend"><span style="--sw:var(--c-voice)">Errors / 100</span><span class="dash" style="--sw:var(--c-typed)">Turkish patterns / 100</span></div></div>
+      <p class="explain">Lower is better. Voice only, because typed samples are small and swing a lot.</p>
+      <div id="ch-acc"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Range: advanced words (B2+)</h2>
+        <div class="slegend"><span style="--sw:var(--c-voice)">B2+ share, %</span></div></div>
+      <p class="explain">Share of your words at B2, C1 or C2 level. Higher is better; small moves matter.</p>
+      <div id="ch-b2"></div>
+    </section>
+  </div>
+
+  <!-- STRENGTHS AND SLIPS -->
+  <section class="panel">
+    <div class="phead"><h2>What's working, what isn't</h2><span class="sub">Times per 1,000 words, so long and short sessions compare fairly. Darker = more often.</span></div>
+    <div class="vpick" role="group" aria-label="How the rows are picked"><span class="label">Try both · pick rows by</span><button type="button" id="vA" aria-pressed="true">A · Most frequent lately</button><button type="button" id="vB" aria-pressed="false">B · Biggest movers</button></div>
+    <div class="scroll"><table class="heat" id="heat"></table></div>
+  </section>
+
+  <!-- BEST MOMENTS -->
+  <section class="panel">
+    <div class="phead"><h2>Best moments</h2><span class="sub">Last three sessions</span></div>
+    <ul class="rows">
+      <li><div class="rowtop"><b>7 phrasal verbs became part of your normal speech</b><span class="pill fading">29.09</span></div><span class="sub">circle back, go over, take care of, check out, fade away, play up, turn out</span></li>
+      <li><div class="rowtop"><b>First unprompted "egregious"</b><span class="pill fading">29.09</span></div><span class="quote">there is an egregious mistake in our budget figures</span></li>
+      <li><div class="rowtop"><b>"Downplay", unprompted</b><span class="pill fading">29.09</span></div><span class="quote">she could downplay it and she could manage it more efficiently</span></li>
+      <li><div class="rowtop"><b>"Couldn't be managed": a tricky passive, used right</b><span class="pill easing">29.09</span></div><span class="quote">this issue couldn't be managed very well</span></li>
+      <li><div class="rowtop"><b>"Will be accompanying": a polished future</b><span class="pill easing">29.09</span></div><span class="quote">my colleagues will be accompanying me</span></li>
+      <li><div class="rowtop"><b>Caught your own slip</b><span class="pill easing">29.09</span></div><span class="quote">Not in the meantime. I won't use in the meantime anymore.</span></li>
+      <li><div class="rowtop"><b>"Come across as", third clean use</b><span class="pill easing">29.09</span></div><span class="quote">I came across as rude for a little bit</span></li>
+      <li><div class="rowtop"><b>Grammar range 40 of 92</b><span class="pill easing">28.09</span></div><span class="sub">Your widest since 22–23.09</span></li>
+    </ul>
+  </section>
+
+</div>
+
+<script>
+const S = [
+ {d:"18.09",w:4103,ev:0.78,iv:2.02,pv:39,b2:1.5,mt:34.0,rg:31,cu:8},
+ {d:"20.09",w:3883,ev:1.04,iv:1.88,pv:null,b2:2.0,mt:39.5,rg:30,cu:8},
+ {d:"22.09",w:10076,ev:0.84,iv:1.96,pv:null,b2:1.9,mt:38.2,rg:42,cu:21},
+ {d:"23.09",w:9144,ev:0.56,iv:1.51,pv:null,b2:2.9,mt:40.7,rg:42,cu:13},
+ {d:"24.09",w:3362,ev:0.74,iv:1.84,pv:null,b2:2.2,mt:40.5,rg:35,cu:2},
+ {d:"25.09",w:4187,ev:1.36,iv:2.13,pv:null,b2:2.3,mt:37.9,rg:35,cu:6},
+ {d:"27.09",w:1632,ev:1.66,iv:2.33,pv:58,b2:2.6,mt:38.5,rg:25,cu:5},
+ {d:"28.09",w:6898,ev:0.97,iv:2.35,pv:56,b2:3.0,mt:38.8,rg:40,cu:14},
+ {d:"29.09",w:6397,ev:1.11,iv:2.28,pv:42,b2:2.9,mt:37.0,rg:33,cu:17}
+];
+// Grid rows: the 6 most frequent in the last 3 sessions (computed from the ledger on 29.09).
+// b = first-3-session average, v = per 1,000 words for the sessions after it, ch = last 3 vs first 3 in %, lv = CEFR level
+const GRID_DATES = ["23.09","24.09","25.09","27.09","28.09","29.09"];
+const GOOD = [
+ {n:"Passive voice",k:"b2_passive",go:"hl",lv:"B2",x:"“it's not locked in yet”",b:1.66,v:[1.64,2.38,1.67,1.23,1.3,1.72],ch:-11},
+ {n:"Pronoun inside a phrasal verb (figure it out)",k:"c1_split_phrasal_pronoun",go:"hl",lv:"C1",x:"“we can sort them out”",b:1.22,v:[1.09,2.08,1.43,0.61,1.3,1.25],ch:-1},
+ {n:"Verb + particle + preposition (come up with)",k:"b2_phrasal_prepositional_verb",go:"hl",lv:"B2",x:"“I showed up for another speaking session”",b:0.83,v:[0.87,1.19,0.72,1.23,0.87,1.41],ch:37},
+ {n:"Reported speech",k:"b2_reported_speech",go:"hl",lv:"B2",x:"“he said that we have two brains”",b:0.44,v:[0.33,0.3,1.19,0.61,0.43,1.09],ch:66},
+ {n:"Might / could / should have + past participle",k:"b2_modals_speculation_past",go:"hl",lv:"B2",x:"“maybe I should have said stick with it”",b:0.17,v:[0.33,0,1.91,0.61,0.43,0.63],ch:223},
+ {n:"Passive after modals / to (should be done, needs to be done)",k:"b2_passive_modal",go:"hl",lv:"B2",x:"“this issue couldn't be managed very well”",b:0.39,v:[0.44,0.3,0.96,0,0.58,0.47],ch:21}
+];
+const BAD = [
+ {n:"Wrong collocation (come across that)",k:"err_collocation",go:"err",lv:"mixed",x:["blow off the steam","some steam"],b:1.05,v:[0.66,0.59,0.96,3.06,1.88,2.81],ch:129},
+ {n:"Missing \"a\" / \"the\"",k:"missing_article",go:"nat",lv:"A1 est.",x:["head to supermarket","the supermarket"],b:0.28,v:[1.2,0,0.24,0,3.62,1.09],ch:674},
+ {n:"\"In the meantime\" used for \"by the way\"",k:"err_in_the_meantime",go:"err",lv:"B2 est.",x:["In the meantime, this team doesn't report to me","By the way"],b:1.00,v:[0.98,2.38,2.39,3.06,1.59,1.41],ch:68},
+ {n:"Preposition choice",k:"err_preposition",go:"err",lv:"mixed",x:["important at my side","to me"],b:1.33,v:[0.55,0.3,1.19,1.84,1.16,1.88],ch:16},
+ {n:"\"For + -ing\" for purpose",k:"for_ing_purpose",go:"nat",lv:"A2 est.",x:["not just for making money","to make"],b:1.00,v:[1.31,0.59,0.72,0.61,1.59,1.41],ch:41},
+ {n:"\"That's because\" for \"that's why\"",k:"thats_why",go:"nat",lv:"B1 est.",x:["that's because I can't say","that's why"],b:1.66,v:[0.55,1.19,0,2.45,1.01,0.94],ch:-31}
+];
+// Version B: biggest movers, 3 up and 3 down per group (seen in 3+ sessions, at least 0.4 per 1,000 words at one end)
+const GOOD_B = [
+ {n:"Be about to / be due to",k:"b2_be_about_due_to",go:"hl",lv:"B2",x:"“it's about to come to an end”",b:0.11,v:[0.11,0,0.48,1.23,0,0.78],ch:324},
+ GOOD[4], GOOD[3],
+ {n:"Perfect passive (has been done)",k:"b2_passive_perfect",go:"hl",lv:"B2",x:"“I've been interrupted”",b:0.55,v:[0.44,0.3,0,0,0,0.63],ch:-52},
+ {n:"Discourse markers (that said, in short…)",k:"c1_discourse_markers",go:"hl",lv:"C1",x:"“as far as I know”",b:0.61,v:[0.22,1.49,0.48,0.61,0.43,0.16],ch:-45},
+ GOOD[0]
+];
+const BAD_B = [
+ {n:"Extra \"the\" or wrong article",k:"extra_article",go:"nat",lv:"A2 est.",x:["blow off the steam","blow off steam"],b:0.06,v:[0,0,1.67,0.61,0.58,1.25],ch:1473},
+ BAD[1],
+ {n:"Dropped \"it\" / \"me\" / subject",k:"dropped_pronoun",go:"nat",lv:"A1 est.",x:["So should save this","So we should save this"],b:0.17,v:[0.11,0.89,0.24,0,0.43,0.94],ch:263},
+ {n:"\"This kind of\" + plural noun",k:"this_kind_of_plural",go:"nat",lv:"B1 est.",x:["this kind of incentives","these kinds of incentives"],b:0.72,v:[0.22,0,0.24,0,0.14,0.16],ch:-81},
+ {n:"\"The things\" for things in general",k:"the_things",go:"nat",lv:"A2 est.",x:["the things like that","things like that"],b:0.44,v:[0,0,1.19,0,0.29,0.16],ch:-55},
+ BAD[5]
+];
+// Which mistakes matter: every grammar mistake labelled m = changes the meaning, f = sounds foreign, s = slip
+const IMPACT_DATA = {"latest": {"n": 85, "c": {"M": 25, "F": 39, "S": 21}, "by": {"M": [["Wrong collocation (come across that)", "err_collocation", 10], ["\"In the meantime\" used for \"by the way\"", "err_in_the_meantime", 9], ["through", "old_through", 3], ["Past continuous", "b1_past_continuous", 1], ["Might / could / should have + past participle", "b2_modals_speculation_past", 1], ["Other errors", "err_other", 1]], "F": [["Preposition choice", "err_preposition", 12], ["Other errors", "err_other", 12], ["Wrong collocation (come across that)", "err_collocation", 6], ["Passive voice", "b2_passive", 4], ["Defining relative clauses", "b1_defining_relative", 2], ["Causative + to (let her to go)", "err_causative_to", 1], ["Past continuous", "b1_past_continuous", 1], ["Have to / should", "a2_have_to_should", 1]], "S": [["Other errors", "err_other", 10], ["through", "old_through", 2], ["Wrong collocation (come across that)", "err_collocation", 2], ["Present continuous", "a2_present_continuous", 1], ["Future with going to", "a2_going_to", 1], ["Subject–verb agreement", "err_subject_verb_agreement", 1], ["\"is\" before a finite verb (it's belongs)", "err_be_plus_finite_verb", 1], ["Have / get something done", "c1_causative_sophisticated", 1], ["Comparatives & superlatives", "a2_comparatives", 1], ["Defining relative clauses", "b1_defining_relative", 1]]}}, "all": {"n": 468, "c": {"M": 114, "F": 249, "S": 105}, "by": {"M": [["\"In the meantime\" used for \"by the way\"", "err_in_the_meantime", 70], ["Wrong collocation (come across that)", "err_collocation", 18], ["through", "old_through", 10], ["Other errors", "err_other", 4], ["Might / could / should have + past participle", "b2_modals_speculation_past", 4], ["Passive voice", "b2_passive", 3], ["Be about to / be due to", "b2_be_about_due_to", 2], ["Present perfect", "b1_present_perfect", 1], ["Defining relative clauses", "b1_defining_relative", 1], ["Past continuous", "b1_past_continuous", 1]], "F": [["Preposition choice", "err_preposition", 58], ["Other errors", "err_other", 58], ["Wrong collocation (come across that)", "err_collocation", 47], ["Passive voice", "b2_passive", 24], ["Present perfect", "b1_present_perfect", 10], ["Causative + to (let her to go)", "err_causative_to", 8], ["Present continuous", "a2_present_continuous", 8], ["Defining relative clauses", "b1_defining_relative", 8], ["Habitual past as continuous (we were hanging out)", "err_habitual_past", 5], ["through", "old_through", 5], ["Real conditionals (zero & first)", "b1_first_conditional", 4], ["Past continuous", "b1_past_continuous", 2], ["Have to / should", "a2_have_to_should", 2], ["Despite + full clause", "err_despite_clause", 2], ["as … as", "old_as_as", 2], ["Present perfect continuous", "b2_present_perfect_continuous", 1], ["Might / could / must be (deduction)", "b1_modals_deduction_present", 1], ["However / otherwise", "b1_however", 1], ["Second conditional", "b2_second_conditional", 1], ["Reported speech", "b2_reported_speech", 1], ["even (emphasis)", "old_even", 1]], "S": [["Subject–verb agreement", "err_subject_verb_agreement", 36], ["Other errors", "err_other", 25], ["Comparatives & superlatives", "a2_comparatives", 10], ["\"is\" before a finite verb (it's belongs)", "err_be_plus_finite_verb", 9], ["Passive voice", "b2_passive", 5], ["Present perfect", "b1_present_perfect", 3], ["didn't + past form (didn't broke)", "err_do_support_past", 3], ["through", "old_through", 2], ["Wrong collocation (come across that)", "err_collocation", 2], ["Past perfect", "b2_past_perfect", 1], ["Might / could / should have + past participle", "b2_modals_speculation_past", 1], ["-ed / -ing adjectives (frustrated / frustrating)", "err_ed_ing_adjective", 1], ["Have to / should", "a2_have_to_should", 1], ["Be about to / be due to", "b2_be_about_due_to", 1], ["As long as / in case / even if / as soon as / provided that", "b2_complex_conjunctions", 1], ["Present continuous", "a2_present_continuous", 1], ["Future with going to", "a2_going_to", 1], ["Have / get something done", "c1_causative_sophisticated", 1], ["Defining relative clauses", "b1_defining_relative", 1]]}}};
+const IMP_EX = {
+ latest:{M:[["went straight over our heads","slipped our minds"],["I should have missed that","I must have missed that"],["warned them off","warned them"]],
+         F:[["I mentioned about Spain trip","I mentioned the Spain trip"],["ask this question to her","ask her this question"],["important at my side","important to me"]],
+         S:[["club seats tends","tend"],["more strong","stronger"],["a genuine relieve","relief"]]},
+ all:{M:[["In the meantime, this team doesn't report to me","By the way"],["a throw up","a shot in the dark"],["none of my mistakes were not egregious","were egregious"]],
+      F:[["discuss about it","discuss it"],["let them to handle the process","let them handle"],["I've been in Dubai","I've been to Dubai"]],
+      S:[["our brains tends","tend"],["more strong","stronger"],["feedbacks","feedback"]]}};
+const IMP_NOTE = {
+ latest:"Only a quarter of your mistakes on 29.09 were slips. Three quarters are habits or meaning problems, and those won't go away by themselves.",
+ all:"Across all 9 sessions, half of your mistakes sound foreign and a quarter change the meaning. The meaning share is growing: 20% of mistakes in your first three sessions, 28% in your last three. More ambitious English is bringing more risk with it."};
+const IMP_HEAD = {M:["Changes the meaning","The listener may understand something else. Fix these first.","var(--err)"],
+                  F:["Sounds foreign","Clear meaning, but a native speaker wouldn't say it. Mostly Turkish habits.","var(--warn)"],
+                  S:["Slip","You know the rule; it breaks under pressure. Lowest priority.","var(--faint)"]};
+const IMP_OPEN = {};
+function paintImpact(v){
+  const D = IMPACT_DATA[v], n = D.n, pct = L => Math.round(D.c[L]/n*100);
+  document.getElementById("iA").setAttribute("aria-pressed", v==="latest"); document.getElementById("iB").setAttribute("aria-pressed", v==="all");
+  document.getElementById("impSub").textContent = v==="latest" ? `Tue 29.09 · ${n} mistakes` : `All 9 sessions · ${n} mistakes`;
+  const bar = document.getElementById("ibar");
+  bar.setAttribute("aria-label", `${D.c.M} change the meaning, ${D.c.F} sound foreign, ${D.c.S} are slips`);
+  bar.innerHTML = ["M","F","S"].map(L=>`<span class="${L.toLowerCase()}" style="flex:${D.c[L]}">${D.c[L]}</span>`).join("");
+  document.getElementById("icols").innerHTML = ["M","F","S"].map(L=>{
+    const rows = D.by[L], open = IMP_OPEN[v+L], shown = open ? rows : rows.slice(0,4);
+    const where = k => k.startsWith("err_") || /^[abc]\d_|^old_/.test(k) ? "Grammar · Errors" : "";
+    return `<div class="icol" style="--ic:${IMP_HEAD[L][2]}"><h3>${IMP_HEAD[L][0]} <span>${pct(L)}%</span></h3><p>${IMP_HEAD[L][1]}</p>
+      <ol>${shown.map(([name,k,c])=>`<li><a href="${LEDGER}#grammar" target="_blank" rel="noopener" title="Open in Grammar · Errors">${esc(name)}</a><span>${c}</span></li>`).join("")}</ol>
+      ${rows.length>4?`<button type="button" class="more" data-imp="${v+L}">${open?"Show fewer":`Show all ${rows.length} types`}</button>`:""}
+      <details><summary>Examples</summary><ul>${IMP_EX[v][L].map(([a,b])=>`<li><i>${esc(a)}</i> → <b>${esc(b)}</b></li>`).join("")}</ul></details></div>`;
+  }).join("");
+  document.getElementById("inote").textContent = IMP_NOTE[v];
+  CUR_IMP = v;
+}
+let CUR_IMP = "latest";
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs={}, txt) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (txt != null) e.textContent = txt; return e; };
+
+function spark(vals){
+  const W=160,H=34,p=4, pts=vals.map((v,i)=>v==null?null:[i,v]).filter(Boolean);
+  const svg = el("svg",{viewBox:`0 0 ${W} ${H}`,class:"spark","aria-hidden":"true",preserveAspectRatio:"none"});
+  if(pts.length<2) return svg;
+  const ys=pts.map(q=>q[1]), lo=Math.min(...ys), hi=Math.max(...ys), r=hi-lo||1;
+  const X=i=>p+i*(W-2*p)/(vals.length-1), Y=v=>H-p-(v-lo)/r*(H-2*p);
+  const d=pts.map((q,j)=>(j?"L":"M")+X(q[0]).toFixed(1)+" "+Y(q[1]).toFixed(1)).join(" ");
+  svg.append(el("path",{d:d+` L${X(pts.at(-1)[0])} ${H} L${X(pts[0][0])} ${H} Z`,class:"ar"}));
+  svg.append(el("path",{d,class:"ln"}));
+  const e=pts.at(-1); svg.append(el("circle",{cx:X(e[0]),cy:Y(e[1]),r:3.2,class:"end"}));
+  return svg;
+}
+function tile(label, val, unit, cur, prev, lowerBetter, digits, series, note){
+  const t=document.createElement("div"); t.className="tile";
+  let d = "First session";
+  if(prev!=null && cur!=null){ const x=cur-prev; const good=lowerBetter?x<0:x>0;
+    d = Math.abs(x)<1e-9 ? "Same as last session" : `<span class="${good?"good":"bad"}">${x>0?"+":"−"}${Math.abs(x).toFixed(digits)}</span> vs last session`; }
+  t.innerHTML = `<div class="label">${label}</div><div class="v">${val}${unit?` <small>${unit}</small>`:""}</div><div class="d">${d}${note?` · ${note}`:""}</div>`;
+  t.append(spark(series)); return t;
+}
+const L=S.at(-1), P=S.at(-2), T=document.getElementById("tiles");
+T.append(
+  tile("Voice errors per 100 words", L.ev.toFixed(2), "", L.ev, P.ev, true, 2, S.map(s=>s.ev)),
+  tile("Turkish patterns per 100, voice", L.iv.toFixed(2), "", L.iv, P.iv, true, 2, S.map(s=>s.iv)),
+  tile("Phrasal verbs", "1 / "+L.pv, "words", L.pv, P.pv, true, 0, S.map(s=>s.pv), "native 1 / 192"),
+  tile("Advanced words (B2+)", L.b2.toFixed(1)+"%", "", L.b2, P.b2, false, 1, S.map(s=>s.b2)),
+  tile("Word variety, voice", L.mt.toFixed(1), "", L.mt, P.mt, false, 1, S.map(s=>s.mt)),
+  tile("Grammar range", L.rg, "/ 92", L.rg, P.rg, false, 0, S.map(s=>s.rg)),
+  tile("List words used unprompted", L.cu, "", L.cu, P.cu, false, 0, S.map(s=>s.cu)),
+  tile("Words analysed", L.w.toLocaleString("en-GB"), "", null, null, false, 0, S.map(s=>s.w))
+);
+T.lastChild.querySelector(".d").innerHTML = "voice 5,929 · typed 468 · all time 49,682";
+
+function lineChart(host, series, yMin, yMax, ticks, fmt){
+  const W=480,H=210,l=34,r=26,t=16,b=28;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,class:"chart",role:"img","aria-label":series.map(s=>s.name).join(" and ")+" by session"});
+  const X=i=>l+i*(W-l-r)/(S.length-1), Y=v=>t+(yMax-v)/(yMax-yMin)*(H-t-b);
+  ticks.forEach(v=>{ svg.append(el("line",{x1:l,x2:W-r,y1:Y(v),y2:Y(v),class:"grid"})); svg.append(el("text",{x:l-6,y:Y(v)+4,"text-anchor":"end"},fmt(v))); });
+  S.forEach((s,i)=>{ if(i%2===0||i===S.length-1) svg.append(el("text",{x:X(i),y:H-8,"text-anchor":"middle"},s.d)); });
+  series.forEach((ser,k)=>{
+    const pts=S.map((s,i)=>[i,s[ser.key]]).filter(q=>q[1]!=null);
+    svg.append(el("path",{d:pts.map((q,j)=>(j?"L":"M")+X(q[0]).toFixed(1)+" "+Y(q[1]).toFixed(1)).join(" "),class:ser.cls}));
+    pts.forEach(q=>svg.append(el("circle",{cx:X(q[0]),cy:Y(q[1]),r:3.4,class:ser.dot})));
+    const e=pts.at(-1); svg.append(el("text",{x:X(e[0])-6,y:Y(e[1])-9,"text-anchor":"end",class:"val"},fmt(e[1])));
+  });
+  document.getElementById(host).append(svg);
+}
+lineChart("ch-acc",[{key:"ev",name:"Errors",cls:"l1",dot:"d1"},{key:"iv",name:"Turkish patterns",cls:"l2",dot:"d2"}],0,3,[0,1,2,3],v=>v.toFixed(v%1?2:0));
+lineChart("ch-b2",[{key:"b2",name:"B2+ share",cls:"l1",dot:"d1"}],0,4,[0,1,2,3,4],v=>(v%1?v.toFixed(1):v)+"%");
+
+const H=document.getElementById("heat");
+const shade=(v,p)=>v===0?"z":p+(v<0.75?1:v<1.5?2:v<2.25?3:4);
+const num=v=>v===0?"–":v.toFixed(1);
+// status and colour come from the change: ±25% or more counts as a real move
+function judge(ch, higherBetter){
+  const better = higherBetter ? ch>0 : ch<0;
+  if(Math.abs(ch)<25) return {cls:higherBetter?"solid":"stuck", txt:higherBetter?"Steady":"Stuck", better};
+  return higherBetter ? (ch>0?{cls:"growing",txt:"Growing",better}:{cls:"dipping",txt:"Dipping",better})
+                      : (ch>0?{cls:"rising",txt:"Rising",better}:{cls:"fading",txt:"Fading",better});
+}
+function bar(ch, better){
+  const w = Math.min(Math.abs(ch),200)/200*100, c = Math.abs(ch)<25?"flat":better?"better":"worse";
+  const i = `<i class="${ch<0?"neg":"pos"} ${c}" style="width:${Math.max(w,3)}%"></i>`;
+  return `<div class="cbar" aria-hidden="true">${ch<0?i+"<span></span>":"<span></span>"+i}</div><div class="ctext ${c}">${ch>0?"+":ch<0?"−":""}${Math.abs(ch)}%</div>`;
+}
+const IMPACT = {err_collocation:"m", err_in_the_meantime:"m", thats_why:"m", err_preposition:"f", for_ing_purpose:"f", the_things:"f",
+  missing_article:"s", extra_article:"s", dropped_pronoun:"s", this_kind_of_plural:"s"};
+const IMP_TXT = {m:"Changes the meaning", f:"Sounds foreign", s:"Slip"};
+const byImpact = rows => rows.slice().sort((a,b)=>"mfs".indexOf(IMPACT[a.k])-"mfs".indexOf(IMPACT[b.k]));
+const LEDGER = "https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function bubble(ch, j){
+  const w = Math.max(Math.min(Math.abs(ch),200)/200*100, 4);
+  return `<span class="stat ${j.cls}" title="Last 3 sessions vs first 3"><b>${j.txt}:</b> ${ch>0?"+":ch<0?"−":""}${Math.abs(ch)}%<i style="width:${w}%"></i></span>`;
+}
+function row(r, p, higherBetter){
+  const j = judge(r.ch, higherBetter);
+  const lv = `<span class="lv${r.lv==="mixed"?" mixed":""}" title="${r.lv==="mixed"?"Covers items from several levels":r.lv.includes("est.")?"Estimated: the level where this is normally learned":"On the CEFR grammar list at "+r.lv}">${r.lv}</span>`;
+  const ex = higherBetter ? r.x : `“${r.x[0]}” → <em>${r.x[1]}</em>`;
+  const where = {hl:["grammar","Grammar · Well-used structures"], err:["grammar","Grammar · Errors"], nat:["nat","Naturalness · Interference patterns"]}[r.go];
+  const nm = `<a class="go" href="${LEDGER}#${where[0]}" target="_blank" rel="noopener" title="Open in ${where[1]}" data-go="${r.go}" data-k="${r.k}">${esc(r.n)}</a><span class="where">${where[1].split(" · ")[0]}</span>`;
+  const im = IMPACT[r.k] && !higherBetter ? `<span class="imp ${IMPACT[r.k]}">${IMP_TXT[IMPACT[r.k]]}</span>` : "";
+  return `<tr${IMPACT[r.k]==="s"&&!higherBetter?' class="slip"':""}><td class="name">${nm} ${lv} ${im}<small>${ex}</small></td><td class="base ${shade(r.b,p)}" title="First 3 sessions: ${r.b.toFixed(2)} per 1,000 words">${num(r.b)}</td>${r.v.map((v,i)=>`<td class="${shade(v,p)}" title="${GRID_DATES[i]}: ${v.toFixed(2)} per 1,000 words">${num(v)}</td>`).join("")}<td class="chg">${bubble(r.ch,j)}</td></tr>`;
+}
+const cols=GRID_DATES.length+3;
+const NOTES = {A:"A: the 6 that came up most in your last three sessions. Shows what matters now.",
+               B:"B: the 3 that rose most and the 3 that fell most since your first three sessions. Shows what is moving."};
+function paintGrid(ver){
+  const G = ver==="B"?GOOD_B:GOOD, Bd = ver==="B"?BAD_B:BAD;
+  $v("vA").setAttribute("aria-pressed", ver==="A"); $v("vB").setAttribute("aria-pressed", ver==="B");
+  H.innerHTML = `<colgroup><col class="nm"><col>${GRID_DATES.map(()=>"<col>").join("")}<col class="st"></colgroup><thead><tr><th class="l"></th><th class="base">First 3</th>${GRID_DATES.map(d=>`<th>${d}</th>`).join("")}<th class="st">Status · change</th></tr></thead><tbody>
+<tr class="grp good"><th colspan="${cols}">What you do well<small>advanced structures you used correctly</small></th></tr>
+${G.map(r=>row(r,"g",true)).join("")}
+<tr class="grp bad"><th colspan="${cols}">What keeps slipping<small>most serious first · slips faded</small></th></tr>
+${byImpact(Bd).map(r=>row(r,"c",false)).join("")}
+</tbody>`;
+}
+const $v = id => document.getElementById(id);
+$v("vA").addEventListener("click",()=>paintGrid("A"));
+$v("vB").addEventListener("click",()=>paintGrid("B"));
+paintGrid("A");
+document.getElementById("iA").addEventListener("click",()=>paintImpact("latest"));
+document.getElementById("iB").addEventListener("click",()=>paintImpact("all"));
+document.getElementById("icols").addEventListener("click",e=>{ const b=e.target.closest("[data-imp]"); if(!b) return; IMP_OPEN[b.dataset.imp]=!IMP_OPEN[b.dataset.imp]; paintImpact(CUR_IMP); });
+paintImpact("latest");
+</script>

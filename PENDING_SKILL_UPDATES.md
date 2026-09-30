@@ -17,7 +17,7 @@ Agreed 30.09.2026 while building the Overview mock-up
 4. Fallback when read_conversation is unavailable (29.09 problem).
 
    Backfill: all 468 past mistakes (9 sessions) were already labelled by hand for the mock-up
-   (scratchpad impact_all.json); write them into the session docs when the tab goes live.
+   (overview/impact_labels_18-29.09.json: [session index 0-8, concept, M/F/S] in the ledger error order); write them into the session docs when the tab goes live.
 
 ## mini-prompt-update
 5. Same read_conversation fallback in Step 2.
