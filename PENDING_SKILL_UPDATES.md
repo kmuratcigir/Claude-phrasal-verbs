@@ -1,4 +1,9 @@
-# Pending skill updates (on hold until Murat says go)
+# Skill updates for the Overview tab
+
+STATUS 30.09.26: items 1-5 DONE (skills saved and verified identical; Overview tab live as ledger v41;
+468 labels + 29.09 report + meta/overview saved in one batch). Items 6-7 still open.
+
+(Original list below.)
 
 Agreed 30.09.2026 while building the Overview mock-up
 (https://claude.ai/artifact/9znAHGRJd7xAVQkGALtfjE). Do NOT start until Murat gives the prompt.
