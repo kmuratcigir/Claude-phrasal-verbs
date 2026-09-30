@@ -16,6 +16,9 @@ Agreed 30.09.2026 while building the Overview mock-up
 3. Lock the 29.09 text-report format into Step 7 (Murat liked it).
 4. Fallback when read_conversation is unavailable (29.09 problem).
 
+   Backfill: all 468 past mistakes (9 sessions) were already labelled by hand for the mock-up
+   (scratchpad impact_all.json); write them into the session docs when the tab goes live.
+
 ## mini-prompt-update
 5. Same read_conversation fallback in Step 2.
 
