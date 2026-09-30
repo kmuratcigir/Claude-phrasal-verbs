@@ -29,7 +29,7 @@ Agreed 30.09.2026 while building the Overview mock-up
 5. Same read_conversation fallback in Step 2.
 
 ## Other open items from the Build Log (0k C)
-6. Vocab session saves in two writes; could be one batch.
+6. Vocab session: one-batch Step 5 written (skills/updated/vocab-session/STEP5_CHANGE.md); waiting for Murat to save it.
 7. DONE 30.09: weekly backup prompt already checked vocab_tracker (fixed 28.09); now also requires meta/lexicon
    and meta/overview, at least 9 sessions, and reports the brief's date.
 
