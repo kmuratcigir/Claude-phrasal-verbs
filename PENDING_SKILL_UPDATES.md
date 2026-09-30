@@ -1,7 +1,7 @@
 # Skill updates for the Overview tab
 
 STATUS 30.09.26: items 1-5 DONE (skills saved and verified identical; Overview tab live as ledger v41;
-468 labels + 29.09 report + meta/overview saved in one batch). Item 7 done 30.09. Item 6 still open (needs the vocab-session skill files).
+468 labels + 29.09 report + meta/overview saved in one batch). Item 7 done 30.09. Item 6 done 30.09 (saved; real test at next vocab session).
 
 (Original list below.)
 
@@ -29,7 +29,7 @@ Agreed 30.09.2026 while building the Overview mock-up
 5. Same read_conversation fallback in Step 2.
 
 ## Other open items from the Build Log (0k C)
-6. Vocab session: one-batch Step 5 written (skills/updated/vocab-session/STEP5_CHANGE.md); waiting for Murat to save it.
+6. Vocab session: one-batch Step 5 written (skills/updated/vocab-session/STEP5_CHANGE.md); SAVED 30.09 and verified. Real test = next vocab session (one approval).
 7. DONE 30.09: weekly backup prompt already checked vocab_tracker (fixed 28.09); now also requires meta/lexicon
    and meta/overview, at least 9 sessions, and reports the brief's date.
 
