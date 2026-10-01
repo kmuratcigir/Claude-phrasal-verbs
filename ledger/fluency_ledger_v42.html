@@ -1,0 +1,2102 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Fluency Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --bg:oklch(0.975 0.012 280); --surface:oklch(0.995 0.005 60); --ink:oklch(0.20 0.01 60); --muted:oklch(0.45 0.01 60); --faint:oklch(0.55 0.01 60); --rule:oklch(0.90 0.015 275);
+  --accent:oklch(0.47 0.14 275); --accent-deep:oklch(0.36 0.13 275); --accent-soft:oklch(0.92 0.045 275); --tint:oklch(0.94 0.025 275); --tint-rule:oklch(0.88 0.03 275);
+  --err:oklch(0.52 0.17 25); --err-soft:oklch(0.94 0.035 25); --warn:oklch(0.50 0.11 70); --warn-soft:oklch(0.94 0.05 85); --idle:oklch(0.955 0.008 275);
+  --c-voice:oklch(0.47 0.14 275); --c-typed:oklch(0.62 0.13 55); --c-alt:var(--c-typed);
+  --s1:oklch(0.93 0.03 275); --s2:oklch(0.85 0.06 275); --s3:oklch(0.74 0.09 275); --s4:oklch(0.62 0.12 275); --s5:oklch(0.50 0.14 275); --s6:oklch(0.38 0.13 275);
+  --shadow:0 1px 2px oklch(0.2 0.02 60 / 0.04); --on-accent:#fff;
+  --display:"Plus Jakarta Sans","IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:var(--display);
+  --letter:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --good:oklch(0.50 0.12 160); --good-soft:oklch(0.93 0.045 160); --on-strong:#fff;
+  --h1:oklch(0.95 0.03 25); --h2:oklch(0.87 0.07 25); --h3:oklch(0.76 0.12 25); --h4:oklch(0.62 0.16 25);
+  --g1:oklch(0.95 0.03 160); --g2:oklch(0.87 0.07 160); --g3:oklch(0.76 0.11 160); --g4:oklch(0.56 0.12 160);
+  --c-m:var(--err); --c-f:var(--warn); --c-s:var(--faint);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:oklch(0.17 0.015 280); --surface:oklch(0.215 0.018 280); --ink:oklch(0.94 0.008 280); --muted:oklch(0.75 0.015 280); --faint:oklch(0.62 0.015 280); --rule:oklch(0.31 0.025 280);
+    --accent:oklch(0.74 0.12 275); --accent-deep:oklch(0.82 0.09 275); --accent-soft:oklch(0.30 0.06 275); --tint:oklch(0.26 0.04 275); --tint-rule:oklch(0.34 0.05 275);
+    --err:oklch(0.74 0.14 25); --err-soft:oklch(0.30 0.06 25); --warn:oklch(0.80 0.11 80); --warn-soft:oklch(0.32 0.06 75); --idle:oklch(0.25 0.015 280);
+    --c-voice:oklch(0.74 0.12 275); --c-typed:oklch(0.76 0.12 60);
+    --s1:oklch(0.30 0.05 275); --s2:oklch(0.38 0.08 275); --s3:oklch(0.48 0.11 275); --s4:oklch(0.58 0.12 275); --s5:oklch(0.70 0.11 275); --s6:oklch(0.84 0.07 275);
+    --good:oklch(0.76 0.12 160); --good-soft:oklch(0.30 0.05 160); --on-strong:oklch(0.17 0.015 280);
+    --h1:oklch(0.29 0.04 25); --h2:oklch(0.38 0.08 25); --h3:oklch(0.50 0.12 25); --h4:oklch(0.64 0.15 25);
+    --g1:oklch(0.29 0.04 160); --g2:oklch(0.38 0.07 160); --g3:oklch(0.50 0.10 160); --g4:oklch(0.66 0.12 160);
+    --shadow:none; --on-accent:oklch(0.17 0.015 280);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:oklch(0.17 0.015 280); --surface:oklch(0.215 0.018 280); --ink:oklch(0.94 0.008 280); --muted:oklch(0.75 0.015 280); --faint:oklch(0.62 0.015 280); --rule:oklch(0.31 0.025 280);
+  --accent:oklch(0.74 0.12 275); --accent-deep:oklch(0.82 0.09 275); --accent-soft:oklch(0.30 0.06 275); --tint:oklch(0.26 0.04 275); --tint-rule:oklch(0.34 0.05 275);
+  --err:oklch(0.74 0.14 25); --err-soft:oklch(0.30 0.06 25); --warn:oklch(0.80 0.11 80); --warn-soft:oklch(0.32 0.06 75); --idle:oklch(0.25 0.015 280);
+  --c-voice:oklch(0.74 0.12 275); --c-typed:oklch(0.76 0.12 60);
+  --s1:oklch(0.30 0.05 275); --s2:oklch(0.38 0.08 275); --s3:oklch(0.48 0.11 275); --s4:oklch(0.58 0.12 275); --s5:oklch(0.70 0.11 275); --s6:oklch(0.84 0.07 275);
+  --good:oklch(0.76 0.12 160); --good-soft:oklch(0.30 0.05 160); --on-strong:oklch(0.17 0.015 280);
+  --h1:oklch(0.29 0.04 25); --h2:oklch(0.38 0.08 25); --h3:oklch(0.50 0.12 25); --h4:oklch(0.64 0.15 25);
+  --g1:oklch(0.29 0.04 160); --g2:oklch(0.38 0.07 160); --g3:oklch(0.50 0.10 160); --g4:oklch(0.66 0.12 160);
+  --shadow:none; --on-accent:oklch(0.17 0.015 280);
+}
+*{box-sizing:border-box}
+::selection{background:var(--s2)}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;padding:0 16px}
+.wrap{max-width:1040px;margin:0 auto;padding-block:24px 64px;display:grid;gap:20px}
+h1,h2,h3{margin:0;text-wrap:balance;font-family:var(--display);font-weight:700}
+h1{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h1 span{color:var(--accent)}
+h2{font-size:17px;letter-spacing:-.01em}
+.label{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.sub{color:var(--muted);font-size:13.5px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,oklch(0.6 0.14 275),oklch(0.47 0.14 285));color:#fff;font-family:var(--display);font-weight:800;font-size:17px;box-shadow:0 4px 12px oklch(0.4 0.14 275 / 0.3)}
+#lastline{display:inline-block;font-size:12.5px;font-weight:600;color:var(--accent-deep);background:var(--accent-soft);padding:4px 12px;border-radius:999px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{background:var(--tint);border:1px solid var(--tint-rule);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
+.tile .label{color:var(--muted)}
+.tile .v{font-family:var(--display);font-size:28px;font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .v .of{font-size:17px;font-weight:600;color:var(--muted)}
+.tile .d{font-size:12.5px;color:var(--muted)}
+.d .up{color:var(--accent);font-weight:600} .d .down{color:var(--err);font-weight:600}
+@media (max-width:720px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.wrap>*,.two>*,.vgrid>*,.tiles>*{min-width:0}
+.tabs{display:inline-flex;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:4px;box-shadow:var(--shadow);justify-self:start;max-width:100%}
+.tabs button{display:flex;align-items:center;gap:6px;border:none;background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:13.5px;padding:9px 18px;border-radius:999px;cursor:pointer}
+.tabs button:hover{color:var(--accent)}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.tabpane{display:grid;gap:20px}
+.tabpane[hidden],.at[hidden]{display:none}
+.at{margin-top:6px;padding-top:6px;border-top:1px dashed var(--tint-rule);font-size:12px;color:var(--muted)}
+.at b{font-family:var(--display);font-weight:700;color:var(--ink)}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.tgrid{grid-template-columns:1fr}}
+.chart .t-line{stroke:var(--accent);stroke-width:2.2;fill:none}
+.chart .t-dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart .t-val{fill:var(--accent-deep);font-family:var(--display);font-weight:700;font-size:11.5px}
+.chart .t-avg{stroke:var(--faint);stroke-width:1;stroke-dasharray:4 4}
+.chart .t-trend{stroke:var(--c-typed);stroke-width:1.6;stroke-dasharray:6 5}
+.chart .t-trend.multi{stroke-width:1.5;stroke-dasharray:3 5;opacity:.85}
+.chart .l-alt{stroke:var(--c-alt);stroke-width:2;fill:none}
+.chart .d-alt{fill:var(--c-alt);stroke:var(--surface);stroke-width:2}
+.slegend span.dot::before{border-top-style:dotted;border-top-width:3px}
+.chart .t-avglab{fill:var(--muted);font-family:var(--sans);font-size:11px}
+.explain{font-size:13px;color:var(--muted);margin:-4px 0 10px;max-width:60ch}
+.tgrid>*{min-width:0}
+.tiles.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:720px){.tiles.three{grid-template-columns:1fr}}
+.secthead{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:6px 0 -8px}
+ul.rows.cols{columns:2 320px;column-gap:28px}
+ul.rows.cols li{break-inside:avoid;border-top:1px solid var(--rule);padding:12px 0}
+ul.rows.cols li:first-child{padding-top:12px;border-top:1px solid var(--rule)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.idle{background:var(--idle);color:var(--faint)}
+.pvtools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chipset{display:flex;gap:6px;flex-wrap:wrap}
+.chipset button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--rule);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.chipset button:hover{color:var(--accent);border-color:var(--accent)}
+.chipset button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.chipset button .c{font-family:var(--display);opacity:.8;margin-left:4px}
+input[type=search]{font:inherit;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:6px 14px;min-width:0;width:200px;max-width:100%}
+input[type=search]:focus-visible,.chipset button:focus-visible,.tabs button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.pvtable{min-width:720px}
+.pvtable td{vertical-align:top}
+.pvtable td.w{font-weight:600;white-space:nowrap}
+.pvtable .ago{color:var(--muted);font-size:12.5px}
+.pvtable details summary{cursor:pointer;color:var(--accent);font-size:12.5px;font-weight:600;list-style:none}
+.pvtable details summary::-webkit-details-marker{display:none}
+.pvtable details p{margin:6px 0 0;font-size:13px;color:var(--ink);max-width:52ch}
+.pvsess{display:grid;gap:12px}
+.pvsess .kv{margin-top:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.phead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--faint);font-family:var(--sans);font-size:11px;font-variant-numeric:tabular-nums}
+.chart .grid{stroke:var(--rule);stroke-width:1}
+.chart .line{stroke:var(--accent);stroke-width:2;fill:none}
+.chart .area{fill:var(--accent-soft)}
+.chart .dot{fill:var(--accent);stroke:var(--surface);stroke-width:2}
+.chart .hit{fill:transparent;cursor:pointer}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;padding:6px 10px;border-radius:8px;box-shadow:0 8px 24px oklch(0.15 0.01 60 / 0.12);white-space:nowrap;transform:translate(-50%,-110%)}
+.chartbox{position:relative}
+.empty-chart{color:var(--muted);font-size:14px;padding:24px 0}
+ul.rows{list-style:none;margin:0;padding:0}
+ul.rows li{padding:12px 0;border-top:1px solid var(--rule);display:grid;gap:4px}
+ul.rows li:first-child{border-top:0;padding-top:0}
+.rowtop{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.pill{font-family:var(--display);font-weight:600;font-size:12px;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.pill.err{background:var(--err-soft);color:var(--err)}
+.pill.ok{background:var(--accent-soft);color:var(--accent-deep)}
+.quote{color:var(--muted);font-size:14px}
+.quote::before{content:"“"} .quote::after{content:"”"}
+.fix{font-size:13.5px}
+.fix b{color:var(--accent);font-weight:600}
+.trail{min-width:0}
+.trail summary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;list-style:none}
+.trail summary::-webkit-details-marker{display:none}
+.trail summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.tdots{display:inline-flex;gap:3px}
+.tdot{width:10px;height:10px;border-radius:3px;background:var(--idle);border:1px solid var(--rule)}
+.tdot.l1{background:var(--err-soft);border-color:transparent}
+.tdot.l2{background:color-mix(in oklch,var(--err) 55%,var(--err-soft));border-color:transparent}
+.tdot.l3{background:var(--err);border-color:transparent}
+.tmore{color:var(--accent);font-size:12.5px;font-weight:600}
+.tmore::after{content:" ▾"}
+.trail[open] .tmore::after{content:" ▴"}
+.twrap{overflow-x:auto;margin-top:8px}
+table.ttab{width:100%;min-width:0;border-collapse:collapse;font-size:13px;table-layout:fixed}
+.ttab th:nth-child(1){width:64px} .ttab th:nth-child(2){width:48px}
+.ttab th{padding:0 10px 6px 0}
+.ttab td{padding:6px 10px 6px 0;border-top:1px solid var(--rule);vertical-align:top;overflow-wrap:anywhere}
+.ttab td:first-child{white-space:nowrap;color:var(--muted)}
+.ttab .n{text-align:right;font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ttab tr.zero td{color:var(--faint)}
+.ex{display:grid;gap:2px}
+.ex+.ex,.exmore .ex{margin-top:8px}
+.ex .fix{font-size:13px}
+.exmore summary{cursor:pointer;list-style:none;color:var(--accent);font-size:12.5px;font-weight:600;margin-top:6px}
+.exmore summary::-webkit-details-marker{display:none}
+.exmore summary::after{content:" ▾"}
+.exmore[open] summary::after{content:" ▴"}
+.exmore summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.levels{display:grid;gap:16px}
+.natmap .lvl{grid-template-columns:150px 1fr}
+.natmap .lvl .tag{font-size:13px;font-weight:700;line-height:1.3}
+@media (max-width:560px){.natmap .lvl{grid-template-columns:1fr;gap:6px}}
+.lvl{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start}
+.lvl .tag{font-family:var(--display);font-weight:800;font-size:15px;color:var(--accent-deep);padding-top:3px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.core{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:22px;align-items:start}
+.core .big{font-family:var(--display);font-size:40px;font-weight:600;line-height:1}
+.core .big .of{font-size:18px;color:var(--muted);font-weight:500}
+.cgrid{display:grid;grid-template-columns:repeat(25,minmax(0,1fr));gap:3px;max-width:640px}
+.cgrid span{aspect-ratio:1;border-radius:3px;background:var(--idle);border:1px solid var(--rule)}
+.cgrid span[data-st]{border-color:transparent}
+.nextlist{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.nextlist li{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid var(--rule)}
+.nextlist li small,.coretag{font-family:var(--display);font-size:11px;color:var(--muted);margin-left:5px}
+@media (max-width:640px){.core{grid-template-columns:1fr}.cgrid{grid-template-columns:repeat(15,minmax(0,1fr))}}
+.chip{font-size:13px;padding:4px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--idle);color:var(--faint)}
+.chip.ok{background:var(--accent-soft);color:var(--ink);border-color:transparent}
+.chip.mixed{background:var(--err-soft);color:var(--ink);border-color:transparent}
+.chip .c{font-family:var(--display);font-weight:600;font-size:11.5px;margin-left:6px;color:var(--muted)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--sw)}
+.sessions{overflow-x:auto}
+.tabpane,.tabpane>*,.panel{min-width:0}
+.listtag{font-family:var(--display);font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--c-typed);border:1px solid var(--c-typed);border-radius:999px;padding:0 6px;margin-left:6px;vertical-align:1px}
+.scoperow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}.scoperow .label{margin:0}
+.chipset.seg button{font-size:13.5px;padding:7px 14px}
+.typetag{font-size:11px;color:var(--muted);margin-left:6px;font-style:italic}
+.morebox{margin-top:12px}.morebox:empty{display:none}
+.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--accent);font-weight:600;cursor:pointer}
+.linkbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:0 10px 8px 0}
+td{padding:9px 10px 9px 0;border-top:1px solid var(--rule)}
+td.n{font-family:var(--display);font-weight:500;font-variant-numeric:tabular-nums;text-align:right}
+th.n{text-align:right}
+tr.sel td{background:var(--accent-soft)}
+tr.pick{cursor:pointer}
+tr.pick:hover td{background:var(--idle)}
+tr.pick:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+select{font:inherit;font-size:13px;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:6px 12px;cursor:pointer}
+select:hover{border-color:var(--accent);color:var(--accent)}
+/* dropdowns stay inside their panel; long session names end in "…" (Murat, 01.10) */
+select{max-width:100%;min-width:0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+@media (max-width:560px){.phead>select{flex:1 1 100%}}
+.status{color:var(--muted);font-size:14px}
+.chart .l-voice{stroke:var(--c-voice);stroke-width:2;fill:none}
+.chart .l-typed{stroke:var(--c-typed);stroke-width:2;fill:none;stroke-dasharray:5 4}
+.chart .d-voice{fill:var(--c-voice);stroke:var(--surface);stroke-width:2}
+.chart .d-typed{fill:var(--c-typed);stroke:var(--surface);stroke-width:2}
+.chart .endlab{font-family:var(--display);font-weight:600;font-size:12px}
+.slegend{display:flex;gap:16px;font-size:12.5px;color:var(--muted)}
+.slegend span::before{content:"";display:inline-block;width:16px;height:0;border-top:2px solid var(--sw);margin-right:6px;vertical-align:3px}
+.slegend span.dash::before{border-top-style:dashed}
+.mtag{font-family:var(--display);font-weight:600;font-size:11px;padding:0 8px;border-radius:999px;margin-right:6px;border:1px solid var(--rule);color:var(--muted);font-style:normal}
+.mtag.voice{color:var(--c-voice);border-color:var(--c-voice)}
+.mtag.typed{color:var(--c-typed);border-color:var(--c-typed)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:820px){.vgrid{grid-template-columns:1fr}}
+.lvbar{display:flex;gap:2px;height:22px;border-radius:999px;overflow:hidden;background:var(--surface)}
+.lvbar span{display:block;height:100%;min-width:0}
+.lvlegend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px;color:var(--muted)}
+.lvlegend b{font-family:var(--display);font-weight:700;color:var(--ink)}
+.lvlegend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.kv{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px}
+.kv div{display:grid;gap:2px}
+.kv .v{font-family:var(--display);font-weight:700;color:var(--accent-deep);font-size:22px;font-variant-numeric:tabular-nums}
+.words{display:flex;flex-wrap:wrap;gap:6px}
+.word{font-size:13px;padding:3px 11px;border-radius:999px;background:var(--tint);color:var(--ink)}
+.word small{font-family:var(--display);font-weight:600;font-size:11px;color:var(--muted);margin-left:5px}
+.sublabel{margin:16px 0 8px}
+.tile .v .pair{display:flex;gap:18px;align-items:flex-end}
+.tile .v .pair>span{display:grid;line-height:1.1}
+.tile .v .pair small{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.tile .v.small{font-size:17px;line-height:1.3}
+.tabs{flex-wrap:wrap}
+@media (max-width:560px){.tabs{border-radius:20px}}
+.sortbtn{font:inherit;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;color:var(--muted);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px 10px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.sortbtn::after{content:"↕";font-size:11px;opacity:.55}
+.sortbtn:hover{color:var(--accent);border-color:var(--accent)}
+.sortbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+th[aria-sort="ascending"] .sortbtn,th[aria-sort="descending"] .sortbtn{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+th[aria-sort="ascending"] .sortbtn::after{content:"↑";opacity:1}
+th[aria-sort="descending"] .sortbtn::after{content:"↓";opacity:1}
+.pvtable .rn{width:36px;padding-right:14px;color:var(--muted);font-weight:500}
+.sortnote{font-size:12.5px;color:var(--muted);margin:0 0 10px}
+.attn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.attn li{border:1px solid var(--rule);border-left:4px solid var(--sc);border-radius:10px;padding:7px 10px;display:grid;gap:1px;background:var(--surface)}
+.attn li b{font-weight:600;font-size:14px}
+.attn li span{font-size:12px;color:var(--muted)}
+.attn.lines{grid-template-columns:1fr;gap:4px}
+.attn.lines li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:5px 10px}
+.attn.lines li b{white-space:nowrap}
+.attn.lines li span{text-align:right}
+.attn li.status{border:0;padding:0;grid-column:1/-1;font-size:14px}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:20;width:44px;height:44px;border-radius:50%;border:none;background:var(--accent);color:var(--on-accent);font:700 20px/1 var(--display);cursor:pointer;box-shadow:0 6px 18px oklch(0.3 0.1 275 / 0.25);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s}
+#toTop.on{opacity:1;pointer-events:auto;transform:none}
+#toTop:focus-visible{outline:2px solid var(--accent-deep);outline-offset:3px}
+.chip .cgo{font:inherit;background:none;border:0;padding:0;color:inherit;cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-color:var(--faint)}
+.chip .cgo:hover{color:var(--accent)}
+.chip .cgo.x{color:var(--err);margin-left:4px;font-family:var(--display);font-weight:600;font-size:11.5px}
+.chip .cgo:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+li.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,40%{background:var(--accent-soft)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){#toTop{transition:none}li.flash{animation:none;outline:2px solid var(--accent)}}
+.tgl{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--rule);background:var(--surface);color:var(--accent);padding:5px 12px;border-radius:999px;cursor:pointer}
+/* ================= OVERVIEW (30.09): executive brief up top, evidence underneath ================= */
+.ovbrief{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:26px 28px;display:grid;gap:22px;box-shadow:var(--shadow)}
+@media (max-width:640px){.ovbrief{padding:20px 18px}}
+.ovbrief .headline{font-family:var(--letter);font-size:30px;line-height:1.2;font-weight:600;letter-spacing:-.01em;margin:6px 0 0;text-align:justify;hyphens:auto}
+.ovbrief .intro{font-family:var(--letter);font-size:17px;line-height:1.55;margin:10px 0 0;color:var(--muted);text-align:justify;hyphens:auto}
+.ovempty{margin:6px 0 0;color:var(--muted);font-size:15px}
+.periods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:880px){.periods{grid-template-columns:1fr}}
+.period{border:1px solid var(--tint-rule);background:var(--tint);border-radius:14px;padding:16px 18px;display:grid;gap:12px;align-content:start;min-width:0}
+.period .when{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.period .when .sub{font-size:12.5px}
+.period h3{font-family:var(--letter);font-weight:600;font-size:20px;line-height:1.25;letter-spacing:-.005em}
+.score{display:grid;border-top:1px solid var(--tint-rule)}
+.score div{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--tint-rule);font-size:13px}
+.score span:first-child{color:var(--muted)}
+.score .n{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.score .n s{text-decoration:none;color:var(--faint);font-weight:600}
+.mv{font-family:var(--display);font-weight:700;font-size:11.5px;padding:1px 7px;border-radius:999px;white-space:nowrap;min-width:52px;text-align:center}
+.mv.up{background:var(--good-soft);color:var(--good)}
+.mv.down{background:var(--err-soft);color:var(--err)}
+.mv.flat{background:var(--accent-soft);color:var(--accent-deep)}
+ul.pts{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+ul.pts li{position:relative;padding-left:22px;font-size:14px;line-height:1.45}
+ul.pts li::before{position:absolute;left:0;top:0;width:14px;font-family:var(--display);font-weight:800;font-size:14px;line-height:1.45;text-align:center}
+ul.pts li.g::before{content:"+";color:var(--good)}
+ul.pts li.b::before{content:"−";color:var(--err)}
+ul.pts q{quotes:"“" "”";font-style:italic;color:var(--muted)}
+ul.pts .fx{font-weight:600}
+.pnote{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--tint-rule);padding-top:8px}
+.prio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:p}
+@media (max-width:880px){.prio{grid-template-columns:1fr}}
+.prio > div{border-left:3px solid var(--accent);padding:2px 0 2px 14px;display:grid;gap:4px;counter-increment:p;min-width:0}
+.prio b{font-family:var(--display);font-weight:700;font-size:15px}
+.prio b::before{content:counter(p) ". ";color:var(--accent)}
+.prio span{font-size:14px;line-height:1.45}
+.prio .say{font-size:13.5px;color:var(--muted)}
+.prio .say i{color:var(--err);font-style:normal;text-decoration:line-through;text-decoration-thickness:1px}
+.prio .say em{color:var(--good);font-style:normal;font-weight:600}
+.ovsig{font-size:12.5px;color:var(--muted)}
+.imp{font-family:var(--display);font-weight:700;font-size:10.5px;padding:1px 7px;border-radius:999px;white-space:nowrap;vertical-align:1px}
+.imp.m{background:var(--err-soft);color:var(--err)} .imp.f{background:var(--warn-soft);color:var(--warn)} .imp.s{background:var(--idle);color:var(--faint)}
+.imp.m::before{content:"● "} .imp.f::before{content:"◐ "} .imp.s::before{content:"○ "}
+.vpick{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 8px}
+.vpick .label{margin-right:4px}
+.vpick button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--rule);background:var(--surface);color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.vpick button:hover{color:var(--accent);border-color:var(--accent)}
+.vpick button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.vpick button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.impact{display:grid;gap:14px}
+.ibar{display:flex;gap:2px;height:26px;border-radius:8px;overflow:hidden}
+.ibar span{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:12.5px;min-width:0}
+.ibar .m{background:var(--err);color:var(--on-strong)} .ibar .f{background:var(--warn);color:var(--on-strong)} .ibar .s{background:var(--idle);color:var(--muted)}
+.icols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.icols{grid-template-columns:1fr}}
+.icol{display:grid;gap:8px;align-content:start;border-top:3px solid var(--ic);padding-top:10px;min-width:0}
+.icol h3{font-size:15px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.icol h3 span{font-family:var(--display);color:var(--ic);font-size:20px}
+.icol p{margin:0;font-size:13px;color:var(--muted)}
+.icol ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13.5px}
+.icol ul i{font-style:normal;color:var(--muted)} .icol ul b{font-weight:600}
+.icol ol{list-style:none;margin:0;padding:0;display:grid;font-size:13.5px}
+.icol ol li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid var(--rule)}
+.icol ol li > span{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--ic);white-space:nowrap}
+.icol .more{font:inherit;font-size:12.5px;font-weight:600;color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;justify-self:start}
+.icol .more:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.exlab{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+.inote{margin:0;font-size:13.5px;color:var(--muted);text-align:justify;hyphens:auto}
+.itrend[hidden],.ibar[hidden],.icols[hidden]{display:none}
+.ovgo{font:inherit;background:none;border:0;padding:0;color:var(--ink);cursor:pointer;text-align:left;text-decoration:underline dotted;text-decoration-color:var(--faint);text-underline-offset:3px;min-width:0}
+.ovgo:hover{color:var(--accent);text-decoration-color:var(--accent)}
+.ovgo:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.chart .l-m{stroke:var(--err);stroke-width:2.2;fill:none} .chart .d-m{fill:var(--err);stroke:var(--surface);stroke-width:2}
+.chart .l-f{stroke:var(--warn);stroke-width:2.2;fill:none} .chart .d-f{fill:var(--warn);stroke:var(--surface);stroke-width:2}
+.chart .l-s{stroke:var(--faint);stroke-width:2;fill:none;stroke-dasharray:5 4} .chart .d-s{fill:var(--faint);stroke:var(--surface);stroke-width:2}
+.ovtiles .tile .v{font-size:26px}
+.ovtiles .tile .v small{font-size:15px;color:var(--muted);font-weight:600}
+.ovtiles .d .good{color:var(--good);font-weight:600} .ovtiles .d .bad{color:var(--err);font-weight:600}
+.spark{width:100%;height:34px;display:block;margin-top:4px}
+.spark .ln{fill:none;stroke:var(--accent);stroke-width:1.8}
+.spark .ar{fill:var(--accent-soft)}
+.spark .end{fill:var(--accent);stroke:var(--tint);stroke-width:2}
+.scroll{overflow-x:auto}
+table.heat{border-collapse:separate;border-spacing:3px;width:100%;min-width:860px;font-size:13px;table-layout:fixed}
+.heat col.nm{width:310px} .heat col.st{width:150px}
+.heat th{font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:0 0 6px}
+.heat th.l{text-align:left}
+.heat th.base,.heat td.base{border-right:2px solid var(--rule)}
+.heat td.base{outline:1px dashed var(--tint-rule);outline-offset:-1px}
+.heat tr.grp th{text-align:left;font-family:var(--display);font-size:13px;letter-spacing:0;text-transform:none;padding:14px 0 6px;color:var(--ink)}
+.heat tr.grp th small{font-family:var(--sans);font-weight:400;color:var(--muted);font-size:12.5px;margin-left:6px}
+.heat tr.grp.good th{color:var(--good)} .heat tr.grp.bad th{color:var(--err);padding-top:30px}
+.heat td{text-align:center;padding:7px 4px;border-radius:6px;border-top:0;font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums;font-size:12.5px;height:68px}
+.heat td.name{text-align:left;font-family:var(--sans);font-weight:600;font-size:13.5px;padding-left:0;line-height:1.35;overflow-wrap:anywhere}
+.heat td.name .nl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.3}
+.heat td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.heat td.name small em{font-style:normal;color:var(--good);font-weight:600}
+.heat td.z{background:var(--idle);color:var(--faint)}
+.heat td.c1{background:var(--h1);color:var(--ink)} .heat td.c2{background:var(--h2);color:var(--ink)}
+.heat td.c3{background:var(--h3);color:var(--ink)} .heat td.c4{background:var(--h4);color:var(--on-strong)}
+.heat td.g1{background:var(--g1);color:var(--ink)} .heat td.g2{background:var(--g2);color:var(--ink)}
+.heat td.g3{background:var(--g3);color:var(--ink)} .heat td.g4{background:var(--g4);color:var(--on-strong)}
+.heat tr.slip td{opacity:.6}
+.heat td.chg{padding:4px 0 4px 6px}
+.lv{font-family:var(--display);font-weight:600;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:6px;background:var(--accent-soft);color:var(--accent-deep);white-space:nowrap;vertical-align:1px}
+.lv.mixed{background:var(--idle);color:var(--faint)}
+.mk{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px;border:2px solid transparent}
+.mk.m{background:var(--err)} .mk.f{background:var(--warn)} .mk.s{background:transparent;border-color:var(--faint)}
+.mkkey .mk{margin-left:10px;margin-right:4px}
+.stat{position:relative;display:block;overflow:hidden;font-family:var(--display);font-size:12px;font-weight:600;padding:4px 10px 7px;border-radius:10px;white-space:nowrap;text-align:left;font-variant-numeric:tabular-nums}
+.stat b{font-weight:700}
+.stat i{position:absolute;left:0;bottom:0;height:3px;border-radius:0 3px 3px 0;background:currentColor;opacity:.75}
+.stat.stuck{background:var(--err-soft);color:var(--err)}
+.stat.fading,.stat.solid,.stat.growing{background:var(--good-soft);color:var(--good)}
+.stat.rising,.stat.dipping{background:var(--warn-soft);color:var(--warn)}
+.stat.new{background:var(--accent-soft);color:var(--accent-deep)}
+ul.mrows{list-style:none;margin:0;padding:0;columns:2 300px;column-gap:28px}
+ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;display:grid;gap:3px}
+.pill.word{background:var(--good-soft);color:var(--good)}
+.rep .rtop{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:4px;font-size:14px}
+.rgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media (max-width:820px){.rgrid{grid-template-columns:1fr}}
+.rstack{display:grid;gap:18px;align-content:start}
+.rblock{display:grid;gap:8px;align-content:start;min-width:0}
+.rblock h3{font-size:15px;border-bottom:2px solid var(--accent-soft);padding-bottom:4px}
+.rblock h4{margin:6px 0 0;font-family:var(--display);font-size:13px;color:var(--muted)}
+.rblock p{margin:0;font-size:14px}
+.rblock ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px}
+
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true">FL</div>
+      <div>
+        <div class="label">Murat · English practice</div>
+        <h1>Fluency <span>Ledger</span></h1>
+      </div>
+    </div>
+    <div id="lastline">Loading sessions…</div>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="Areas">
+    <button role="tab" id="tb-over" aria-selected="true" aria-controls="tab-over">Overview</button>
+    <button role="tab" id="tb-grammar" aria-selected="false" aria-controls="tab-grammar">Grammar</button>
+    <button role="tab" id="tb-vocab" aria-selected="false" aria-controls="tab-vocab">Vocabulary</button>
+    <button role="tab" id="tb-pv" aria-selected="false" aria-controls="tab-pv">Phrasal verbs</button>
+    <button role="tab" id="tb-nat" aria-selected="false" aria-controls="tab-nat">Naturalness</button>
+    <button role="tab" id="tb-read" aria-selected="false" aria-controls="tab-read">Reading</button>
+  </div>
+
+  <!-- ============ OVERVIEW (30.09) ============ -->
+  <div class="tabpane" id="tab-over" role="tabpanel" aria-labelledby="tb-over" hidden>
+  <section class="ovbrief" id="ovBrief" aria-label="Executive brief"><div class="label">The brief</div><p class="ovempty">Loading…</p></section>
+
+  <section class="panel impact" aria-label="Which mistakes matter">
+    <div class="phead" style="margin:0"><h2>Which mistakes matter</h2><span class="sub" id="impSub"></span></div>
+    <div class="vpick" role="group" aria-label="Which sessions"><button type="button" id="iA" aria-pressed="true">Latest session</button><button type="button" id="iB" aria-pressed="false">All sessions</button><button type="button" id="iC" aria-pressed="false">Trend</button></div>
+    <div class="ibar" id="ibar" role="img"></div>
+    <div class="icols" id="icols"></div>
+    <div class="itrend" id="itrend" hidden><div class="slegend"><span style="--sw:var(--err)">Changes the meaning</span><span style="--sw:var(--warn)">Sounds foreign</span><span class="dash" style="--sw:var(--faint)">Slip</span></div><div class="chartbox" id="ch-imp" style="margin-top:8px"></div></div>
+    <p class="inote" id="inote"></p>
+  </section>
+
+  <section class="tiles ovtiles" id="ovTiles" aria-label="Key numbers, latest session"></section>
+
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Accuracy and Turkish patterns, voice</h2>
+        <div class="slegend"><span style="--sw:var(--c-voice)">Errors / 100</span><span class="dash" style="--sw:var(--c-typed)">Turkish patterns / 100</span></div></div>
+      <p class="explain">Lower is better. Voice only, because typed samples are small and swing a lot.</p>
+      <div class="chartbox" id="ov-acc"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Range: advanced words (B2+)</h2>
+        <div class="slegend"><span style="--sw:var(--c-voice)">B2+ share, %</span></div></div>
+      <p class="explain">Share of your words at B2, C1 or C2 level. Higher is better; small moves matter.</p>
+      <div class="chartbox" id="ov-b2"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2>What's working, what isn't</h2><span class="sub">Times per 1,000 words, so long and short sessions compare fairly. Darker = more often.</span></div>
+    <div class="vpick" role="group" aria-label="How the rows are picked"><span class="label">Pick rows by</span><button type="button" id="vA" aria-pressed="true">Most frequent lately</button><button type="button" id="vB" aria-pressed="false">Biggest movers</button></div>
+    <div class="scroll"><table class="heat" id="heat"></table></div>
+  </section>
+
+  <section class="panel" id="ovMomentsBox">
+    <div class="phead"><h2>Best moments</h2><span class="sub">Last three sessions</span></div>
+    <ul class="mrows" id="ovMoments"></ul>
+  </section>
+
+  <section class="panel rep" id="ovReport" aria-label="Session report"></section>
+  </div>
+
+  <!-- ============ GRAMMAR ============ -->
+  <div class="tabpane" id="tab-grammar" role="tabpanel" aria-labelledby="tb-grammar" hidden>
+  <section class="tiles" id="tiles" aria-label="Grammar, latest session">
+    <div class="tile"><div class="label">Errors per 100 words</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Grammar range</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">B2+ grammar per 1,000 words</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">B2+ structures</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>Errors per 100 words, by session</h2>
+      <div class="slegend"><span style="--sw:var(--c-voice)">Voice</span><span class="dash" style="--sw:var(--c-typed)">Typed</span><span style="--sw:transparent">Lower is better</span></div>
+    </div>
+    <div class="chartbox" id="chartbox"><div class="empty-chart">The trend line appears after the second session.</div></div>
+  </section>
+
+  <h2 class="secthead">Grammar trends</h2>
+  <div class="tgrid">
+    <section class="panel"><div class="phead"><h2>B2+ coverage of all 92 structures</h2></div>
+      <p class="explain">Different B2+ structures used correctly, out of the whole list of <span id="b2base">92</span>. The list has <span id="b2max">71</span> B2+ items, so this cannot go above <span id="b2cap">77%</span>. Dashed line: trend.</p><div class="chartbox" id="tr-b2cov"></div></section>
+    <section class="panel"><div class="phead"><h2>B2+ share of structures used</h2></div>
+      <p class="explain">Of the structures you used correctly, how many were B2+. Dashed line: trend.</p><div class="chartbox" id="tr-b2share"></div></section>
+    <section class="panel"><div class="phead"><h2>B2+ grammar per 1,000 words</h2></div>
+      <p class="explain">Higher is better. How often advanced structures come out in real speech, adjusted for session length.</p><div class="chartbox" id="tr-b2"></div></section>
+    <section class="panel"><div class="phead"><h2>Grammar range</h2><span class="sub" id="tr-range-sub"></span></div>
+      <p class="explain">Different structures used correctly in each session. One chat rarely covers the whole list.</p><div class="chartbox" id="tr-range"></div></section>
+    <section class="panel"><div class="phead"><h2>Errors per 100 words, all words</h2></div>
+      <p class="explain">Voice and typed together. Lower is better.</p><div class="chartbox" id="tr-errn"></div></section>
+    <section class="panel"><div class="phead"><h2>Words analysed</h2></div>
+      <p class="explain">How much you said or wrote in each checked chat. Longer sessions give steadier figures.</p><div class="chartbox" id="tr-words"></div></section>
+  </div>
+
+  <section class="panel sessions">
+    <div class="phead"><h2>All sessions</h2><span class="sub">Newest first</span></div>
+    <table>
+      <thead><tr><th>Date</th><th>Thread</th><th class="n">Words</th><th class="n">Voice words</th><th class="n">Typed words</th><th class="n">Errors</th><th class="n">Per 100</th><th class="n">Voice /100</th><th class="n">Typed /100</th><th class="n">Range</th><th class="n">B2+ /1k</th><th class="n">B2+ vocab</th></tr></thead>
+      <tbody id="sessRows"></tbody>
+    </table>
+    <div class="morebox" id="more-sess"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2 id="hlTitle">Well-used structures</h2><select id="hlPick" aria-label="Choose all sessions or one session"></select></div>
+    <p class="explain" id="hlNote">B2 and above, used correctly.</p>
+    <ul class="rows" id="highlights"></ul>
+    <div class="morebox" id="more-hl"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2 id="sessTitle">Errors</h2>
+      <select id="sessPick" aria-label="Choose all sessions or one session"></select>
+    </div>
+    <p class="explain" id="errNote"></p>
+    <ul class="rows" id="sessErrors"></ul>
+    <div class="morebox" id="more-err"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>CEFR grammar range</h2>
+      <div class="legend">
+        <span style="--sw:var(--accent-soft)">Used correctly</span>
+        <span style="--sw:var(--err-soft)">Errors logged</span>
+        <span style="--sw:var(--idle)">Not yet seen</span>
+      </div>
+    </div>
+    <div class="levels" id="levels"></div>
+  </section>
+  </div>
+
+  <!-- ============ VOCABULARY ============ -->
+  <div class="tabpane" id="tab-vocab" role="tabpanel" aria-labelledby="tb-vocab" hidden>
+  <section class="tiles" id="vtiles" aria-label="Vocabulary, latest session">
+    <div class="tile"><div class="label">B2+ vocabulary share</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Distinct B2+ words, all time</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Vocab-list come-ups, latest session</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Word variety (MTLD)</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <h2 class="secthead">Vocabulary trends</h2>
+  <div class="tgrid">
+    <section class="panel"><div class="phead"><h2>B2+ vocabulary share</h2></div>
+      <p class="explain">Share of your words at B2, C1 or C2, including estimated levels ("est."). Small moves matter.</p><div class="chartbox" id="tr-voc"></div></section>
+    <section class="panel"><div class="phead"><h2>Distinct B2+ words, all time</h2></div>
+      <p class="explain">Running total of different B2+ words you have used. The slope shows how fast it grows.</p><div class="chartbox" id="tr-distinct"></div></section>
+    <section class="panel"><div class="phead"><h2>Vocab-list come-ups per session</h2></div>
+      <p class="explain">Uses of words from your list that came up unprompted.</p><div class="chartbox" id="tr-comeups"></div></section>
+    <section class="panel"><div class="phead"><h2>New B2+ words per session</h2></div>
+      <p class="explain">B2+ words used for the first time in that session.</p><div class="chartbox" id="tr-newadv"></div></section>
+  </div>
+
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Your vocabulary list</h2><span class="sub" id="vtAsOf"></span></div>
+      <div class="kv" id="vtkv" style="margin-bottom:14px"></div>
+      <div class="lvbar" id="vtbar" role="img" aria-label="List words by signal"></div>
+      <div class="lvlegend" id="vtlegend"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Unique words</h2><span class="sub">Running total</span></div>
+      <div class="kv" id="uqkv" style="margin:0 0 10px"></div>
+      <div class="chartbox" id="tr-unique"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2>Word variety (MTLD)</h2><div class="slegend"><span style="--sw:var(--c-voice)">Voice</span><span class="dash" style="--sw:var(--c-typed)">Typed</span><span class="dash" style="--sw:var(--faint)">Averages</span></div></div>
+    <p class="explain">How varied your words are. Higher is better; compare voice with voice.</p>
+    <div class="chartbox" id="tr-mtld"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Session vocabulary</h2><select id="vocPick" aria-label="Choose all sessions or one session"></select></div>
+    <div class="vgrid">
+      <div>
+        <div class="label">Words by CEFR level <span class="sub" id="vocSub" style="text-transform:none;letter-spacing:0;font-weight:400"></span></div>
+        <div class="lvbar" id="lvbar" role="img" aria-label="Share of words at each CEFR level" style="margin-top:8px"></div>
+        <div class="lvlegend" id="lvlegend"></div>
+        <div class="kv" id="vockv"></div>
+      </div>
+      <div>
+        <div class="label">B2+ and less common words</div>
+        <div class="words" id="advWords" style="margin-top:8px"></div>
+        <div class="morebox" id="more-adv"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Vocab-list come-ups</h2><select id="cuPick" aria-label="Choose all sessions or one session"></select></div>
+    <p class="explain" id="cuNote">Words from your vocabulary list that came up on their own, outside a vocab drill.</p>
+    <ul class="rows cols" id="comeups"></ul>
+      <div class="morebox" id="more-cu"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>Vocab tracker</h2>
+      <div class="pvtools">
+        <input type="search" id="vtSearch" placeholder="Find a word" aria-label="Find a word">
+      </div>
+    </div>
+    <div class="scoperow"><span class="label">Show</span><div class="chipset seg" id="vtType" role="group" aria-label="Which kind of item"></div></div>
+    <div class="scoperow"><span class="label">Signal</span><div class="chipset" id="vtFilter" role="group" aria-label="Filter by signal"></div></div>
+    <div class="sessions"><table class="pvtable">
+      <thead id="vtHead"><tr><th class="n rn" title="Row number in the current view">#</th><th data-k="word"><button type="button" class="sortbtn">Expression</button></th><th data-k="stage"><button type="button" class="sortbtn">Stage</button></th><th class="n" data-k="n"><button type="button" class="sortbtn">Days used</button></th><th data-k="last"><button type="button" class="sortbtn">Last used</button></th><th data-k="signal"><button type="button" class="sortbtn">Signal</button></th><th class="n" data-k="reviews"><button type="button" class="sortbtn">Reviews</button></th><th data-k="rlast"><button type="button" class="sortbtn">Last review</button></th></tr></thead>
+      <tbody id="vtRows"></tbody>
+    </table></div>
+    <div class="morebox" id="more-vt"></div>
+    <p class="sub" id="vtCount" style="margin:10px 0 0"></p>
+  </section>
+  </div>
+
+  <!-- ============ PHRASAL VERBS ============ -->
+  <div class="tabpane" id="tab-pv" role="tabpanel" aria-labelledby="tb-pv" hidden>
+  <section class="tiles" id="ptiles" aria-label="Phrasal verbs">
+    <div class="tile"><div class="label">Density, latest session</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Tracker words in use</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Activated (6+ uses)</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Need attention</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <h2 class="secthead">Phrasal verb trends</h2>
+  <div class="tgrid">
+    <section class="panel"><div class="phead"><h2>Density: 1 phrasal verb per X words</h2></div>
+      <p class="explain">Lower is closer to native speech. Dashed line: native 1 per 192.</p><div class="chartbox" id="tr-pvd"></div></section>
+    <section class="panel"><div class="phead"><h2>Tracker words used per day</h2></div>
+      <p class="explain">Different tracker words you used on each day the tracker was updated.</p><div class="chartbox" id="tr-pvday"></div></section>
+    <section class="panel"><div class="phead"><h2>Words reaching each stage</h2><div class="slegend"><span style="--sw:var(--c-voice)">Activated</span><span class="dash" style="--sw:var(--c-typed)">In progress or better</span></div></div>
+      <p class="explain">Running totals by date, built from the come-up dates.</p><div class="chartbox" id="tr-pvstage"></div></section>
+    <section class="panel"><div class="phead"><h2>New phrasal verbs per day</h2></div>
+      <p class="explain">Words used for the first time, including ones added to the tracker on the spot.</p><div class="chartbox" id="tr-pvnew"></div></section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2 id="pvSessTitle">Phrasal verbs by session</h2><select id="pvSessPick" aria-label="Choose all sessions or one session"></select></div>
+    <div id="pvSess"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Native core</h2><span class="sub">The 150 most common phrasal verbs in English</span></div>
+    <div class="core">
+      <div><div class="big" id="coreN">–</div><div class="sub" id="coreSub" style="margin-top:6px"></div></div>
+      <div><div class="cgrid" id="coreGrid" role="img" aria-label="The 150 core phrasal verbs in frequency order, coloured by signal"></div>
+        <div class="lvlegend" id="coreLegend" style="margin-top:10px"></div></div>
+    </div>
+    <div class="label sublabel">Most useful next: the most common ones you haven't used yet</div>
+    <ul class="nextlist" id="coreNext"></ul>
+  </section>
+
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Signals</h2><span class="sub" id="pvAsOf"></span></div>
+      <div class="lvbar" id="stbar" role="img" aria-label="Tracker words by signal"></div>
+      <div class="lvlegend" id="stlegend"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Need attention</h2><span class="sub">3+ uses, not used lately</span></div>
+      <ul class="attn lines" id="pvAttn"></ul>
+      <div class="morebox" id="more-pvAttn"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>Tracker</h2>
+      <div class="pvtools">
+        <input type="search" id="pvSearch" placeholder="Find a phrasal verb" aria-label="Find a phrasal verb">
+      </div>
+    </div>
+    <div class="scoperow"><span class="label">Show</span><div class="chipset seg" id="pvScope" role="group" aria-label="Which phrasal verbs"></div></div>
+    <div class="scoperow"><span class="label">Signal</span><div class="chipset" id="pvFilter" role="group" aria-label="Filter by signal"></div></div>
+    <div class="sessions"><table class="pvtable">
+      <thead id="pvHead"><tr><th class="n rn" title="Row number in the current view">#</th><th data-k="word"><button type="button" class="sortbtn">Phrasal verb</button></th><th data-k="stage"><button type="button" class="sortbtn">Stage</button></th><th class="n" data-k="n"><button type="button" class="sortbtn">Days used</button></th><th data-k="last"><button type="button" class="sortbtn">Last used</button></th><th data-k="signal"><button type="button" class="sortbtn">Signal</button></th><th class="n" data-k="reviews"><button type="button" class="sortbtn">Reviews</button></th><th data-k="rlast"><button type="button" class="sortbtn">Last review</button></th></tr></thead>
+      <tbody id="pvRows"></tbody>
+    </table></div>
+    <div class="morebox" id="more-pv"></div>
+    <p class="sub" id="pvCount" style="margin:10px 0 0"></p>
+  </section>
+  </div>
+
+  <!-- ============ NATURALNESS ============ -->
+  <div class="tabpane" id="tab-nat" role="tabpanel" aria-labelledby="tb-nat" hidden>
+  <section class="tiles" id="ntiles" aria-label="Turkish interference, latest session">
+    <div class="tile"><div class="label">Interference per 100 words</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Patterns in the latest session</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Most frequent pattern</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Upgrade suggestions</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>Turkish interference per 100 words, by session</h2>
+      <div class="slegend"><span style="--sw:var(--c-voice)">Voice</span><span class="dash" style="--sw:var(--c-typed)">Typed</span><span style="--sw:transparent">Lower is better</span></div>
+    </div>
+    <div class="chartbox" id="tr-nat"></div>
+  </section>
+
+  <h2 class="secthead">Naturalness trends</h2>
+  <div class="tgrid">
+    <section class="panel"><div class="phead"><h2>Different patterns per session</h2></div>
+      <p class="explain">How many distinct Turkish-interference patterns showed up. Fewer means the remaining ones are getting isolated.</p><div class="chartbox" id="tr-natpat"></div></section>
+    <section class="panel"><div class="phead"><h2>Upgrade suggestions per 1,000 words</h2></div>
+      <p class="explain">Correct but less natural choices, adjusted for session length. A signal, not a grade.</p><div class="chartbox" id="tr-natup"></div></section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2 id="upTitle">Upgrade suggestions</h2><select id="upPick" aria-label="Choose all sessions or one session"></select></div>
+    <p class="explain">Correct English, a more natural option. Not counted.</p>
+    <ul class="rows cols" id="upRows"></ul>
+    <p class="sub" id="upMore" style="margin:10px 0 0"></p>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2>Interference map</h2>
+      <div class="legend">
+        <span style="--sw:var(--err-soft)">In the latest session</span>
+        <span style="--sw:var(--accent-soft)">Seen before, not in the latest</span>
+        <span style="--sw:var(--idle)">Not seen yet</span>
+      </div>
+    </div>
+    <p class="explain" id="natMapNote"></p>
+    <div class="levels natmap" id="natMap"></div>
+    <div class="morebox" id="natMapMore"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead">
+      <h2 id="natTitle">Interference patterns</h2>
+      <select id="natPick" aria-label="Choose all sessions or one session"></select>
+    </div>
+    <p class="explain" id="natNote"></p>
+    <div class="lvbar" id="natTypeBar" role="img" aria-label="Interference by type"></div>
+    <div class="lvlegend" id="natTypeLegend" style="margin-bottom:14px"></div>
+    <ul class="rows" id="natRows"></ul>
+    <div class="morebox" id="more-nat"></div>
+  </section>
+  </div>
+
+  <!-- ============ READING ============ -->
+  <div class="tabpane" id="tab-read" role="tabpanel" aria-labelledby="tb-read" hidden>
+  <section class="tiles" id="rtiles" aria-label="Reading">
+    <div class="tile"><div class="label">Last reading</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Readings this week</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">List words met in reading</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Met, then spoken</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Passages</h2><span class="sub">Newest first</span></div>
+      <ul class="rows" id="rpRows"></ul>
+      <div class="morebox" id="more-rp"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Readings per week</h2><span class="sub">Target: 4</span></div>
+      <p class="explain">Weeks run Monday to Sunday.</p>
+      <div class="chartbox" id="tr-read"></div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2>From reading to speaking</h2><select id="rdPick" aria-label="Choose all readings or one reading"></select></div>
+    <p class="explain" id="rdSub"></p>
+    <ul class="rows" id="rdRows"></ul>
+    <div class="morebox" id="more-rd"></div>
+  </section>
+  </div>
+</div>
+
+<button type="button" id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+let REG = {}, SESS = [], selId = null, errAll = true, INTF = null, natSel = "__all";
+const LEVELS = ["A1","A2","B1","B2","C1","C2"];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const label = id => (REG[id] && REG[id][0]) || id.replace(/^(err|old|[abc]\d?)_/,"").replace(/_/g," ");
+const parseDate = s => { const [d,m,y] = s.split("."); return new Date(+y, m-1, +d); };
+const fmtDate = s => s ? parseDate(s).toLocaleDateString("en-GB",{day:"numeric",month:"short"}) : "–";
+
+function render(){
+  renderPV();
+  if(!SESS.length){ $("lastline").textContent = "No sessions yet. Say \"naturalness check\" in a practice chat."; return; }
+  if(!selId || !SESS.find(s=>s.id===selId)) selId = SESS[SESS.length-1].id;
+  const last = SESS[SESS.length-1], prev = SESS[SESS.length-2];
+  $("lastline").textContent = `${SESS.length} session${SESS.length>1?"s":""} · last check ${fmtDate(last.date)}`;
+  renderTiles(last, prev); renderVocabTiles(last, prev); renderTrends(); renderNat(); renderChart(); renderSession(); renderVocab(); renderLevels(); renderTable();
+  renderOverview();
+}
+
+function delta(cur, prev, key, lowerBetter, digits){
+  if(!prev || prev[key]==null || cur[key]==null) return "First session";
+  const d = cur[key]-prev[key];
+  if(Math.abs(d) < 1e-9) return "Same as last session";
+  const good = lowerBetter ? d<0 : d>0;
+  const v = (d>0?"+":"−") + Math.abs(d).toFixed(digits);
+  return `<span class="${good?"up":"down"}">${v}</span> vs last session`;
+}
+function renderTiles(s, p){
+  const t = $("tiles").children;
+  const set = (i, v, d) => { t[i].querySelector(".v").textContent = v; t[i].querySelector(".d").innerHTML = d; };
+  const bm = s.by_mode || {};
+  const mline = ["voice","typed"].filter(m=>bm[m] && bm[m].words).map(m=>`<span class="mtag ${m}">${m}</span>${bm[m].errors_per_100.toFixed(2)} <span class="sub">(${bm[m].words.toLocaleString()} words)</span>`).join(" &nbsp;");
+  set(0, s.errors_per_100?.toFixed(2) ?? "–", delta(s,p,"errors_per_100",true,2) + (mline ? `<br>${mline}` : ""));
+  const base = Object.keys(REG).filter(k => !k.startsWith("err_") && REG[k][1]).length;
+  set(1, s.range_concepts, delta(s,p,"range_concepts",false,0) + " · structures used correctly");
+  if(base) t[1].querySelector(".v").innerHTML = `${s.range_concepts} <span class="of">/ ${base}</span>`;
+  const pk = x => x && x.words && x.b2plus_correct!=null ? {k: x.b2plus_correct/x.words*1000} : null;
+  set(2, pk(s) ? pk(s).k.toFixed(1) : "–", delta(pk(s)||{},pk(p),"k",false,1) + `<br>${s.b2plus_correct} uses in total`);
+  // tile 4: B2+ structures as a share of all structures used correctly (Murat, 28.09)
+  // = B2+ structures used correctly / all structures used correctly in that session (not / 92)
+  const b2r = x => x && x.range_concepts ? {k: Math.round(b2pct(x))} : null;
+  const bc = x => x && gBase() ? {k: Math.round(b2cov(x))} : null;
+  const dd = (a,b) => delta(a||{}, b, "k", false, 0).replace("</span> vs last session", " pts</span>").replace("First session","first").replace("Same as last session","same");
+  set(3, "", `${dd(bc(s),bc(p))} · ${dd(b2r(s),b2r(p))} vs last session<br>${b2n(s)} of all ${gBase()} · ${b2n(s)} of the ${s.range_concepts} you used${s.top_level?` · top level ${s.top_level}`:""}`);
+  t[3].querySelector(".v").innerHTML = `<span class="pair"><span>${bc(s)?bc(s).k+"%":"–"}<small>of all ${gBase()}</small></span><span>${b2r(s)?b2r(s).k+"%":"–"}<small>of those used</small></span></span>`;
+  // all-time lines
+  const W = SESS.reduce((a,x)=>a+(x.words||0),0);
+  const E = SESS.reduce((a,x)=>a+(x.errors_total||0),0);
+  const B = SESS.reduce((a,x)=>a+(x.b2plus_correct||0),0);
+  const ever = new Set(); SESS.forEach(x=>Object.entries(x.concepts||{}).forEach(([k,c])=>{ if(!k.startsWith("err_") && c.correct>0) ever.add(k); }));
+  const avgR = SESS.reduce((a,x)=>a+(x.range_concepts||0),0)/SESS.length;
+  const rank = {A1:1,A2:2,B1:3,B2:4,C1:5,C2:6};
+  const best = SESS.map(x=>x.top_level).filter(Boolean).sort((a,b)=>rank[b]-rank[a])[0];
+  const n = SESS.length;
+  const rs = SESS.filter(x=>x.range_concepts);
+  const at = [
+    W ? `All ${n} sessions: <b>${(E/W*100).toFixed(2)}</b>` : "",
+    `All-time: <b>${ever.size}${base?" / "+base:""}</b> used · avg <b>${avgR.toFixed(0)}</b> per session`,
+    W ? `All ${n} sessions: <b>${(B/W*1000).toFixed(1)}</b>` : "",
+    rs.length ? `All ${rs.length} sessions, average: <b>${Math.round(rs.reduce((a,x)=>a+b2cov(x),0)/rs.length)}%</b> of all ${gBase()} · <b>${Math.round(rs.reduce((a,x)=>a+b2pct(x),0)/rs.length)}%</b> of those used${best?` · highest level ever ${best}`:""}` : "",
+  ];
+  at.forEach((h,i)=>{ let el=t[i].querySelector(".at"); if(!el){ el=document.createElement("div"); el.className="at"; t[i].appendChild(el); } el.innerHTML=h; el.hidden=!h; });
+}
+
+// voice fillers (uh, um, mmm, hmm, erm...) are removed from every quote shown on the page (Murat, 29.09)
+const FILL = /(^|[\s,.;])(?:u+h+m*|u+m+|m{2,}|h+m+|e+r+m+|e+h+m*|a+h+|er)(?=[\s,.;!?]|$)[,.]?/gi;
+const cq = q => typeof q !== "string" ? q : q.replace(FILL, "$1").replace(/\s+([,.;!?])/g, "$1").replace(/([,.])\s*[,.]+/g, "$1").replace(/^[\s,.;]+/, "").replace(/\s{2,}/g, " ").trim();
+function cleanDoc(d){
+  const fixQ = arr => (arr||[]).forEach(o => { if(o && o.quote) o.quote = cq(o.quote); if(o && o.sentence) o.sentence = cq(o.sentence); });
+  fixQ(d.errors); fixQ(d.highlights);
+  if(d.interference){ fixQ(d.interference.items); fixQ(d.interference.upgrades); }
+  if(d.vocab){ fixQ(d.vocab.comeups); fixQ(d.vocab.advanced); }
+  if(d.pv) fixQ(d.pv.items);
+  return d;
+}
+// least-squares trend through the points shown
+function trendOf(vals){ const n = vals.length, mx = (n-1)/2, my = vals.reduce((a,b)=>a+b,0)/n;
+  let sxy = 0, sxx = 0; vals.forEach((v,i)=>{ sxy += (i-mx)*(v-my); sxx += (i-mx)*(i-mx); });
+  const b = sxx ? sxy/sxx : 0; return i => my + b*(i-mx); }
+// smooth line through points (monotone cubic: no overshoot above or below the real values)
+function smoothPath(p){
+  if(p.length < 2) return p.length ? `M${p[0][0]},${p[0][1]}` : "";
+  if(p.length === 2) return `M${p[0][0]},${p[0][1]}L${p[1][0]},${p[1][1]}`;
+  const n = p.length, dx = [], m = [], t = [];
+  for(let i=0;i<n-1;i++){ dx[i] = p[i+1][0]-p[i][0]; m[i] = (p[i+1][1]-p[i][1])/dx[i]; }
+  t[0] = m[0]; t[n-1] = m[n-2];
+  for(let i=1;i<n-1;i++) t[i] = (m[i-1]*m[i] <= 0) ? 0 : 3*(dx[i-1]+dx[i]) / ((2*dx[i]+dx[i-1])/m[i-1] + (dx[i]+2*dx[i-1])/m[i]);
+  let d = `M${p[0][0]},${p[0][1]}`;
+  for(let i=0;i<n-1;i++){ const h = dx[i]/3;
+    d += `C${p[i][0]+h},${p[i][1]+t[i]*h} ${p[i+1][0]-h},${p[i+1][1]-t[i+1]*h} ${p[i+1][0]},${p[i+1][1]}`; }
+  return d;
+}
+// Murat's rule (28.09): a zero value is not drawn; the line joins the points either side of it
+const nz = v => (v == null || v === 0 || !isFinite(v)) ? null : v;
+function lineChart(box, pts, series, o){
+  // series: [{get, cls, name}] ; o: {digits, avg, label, fmt, floor0, W, H, avgs:[{v,label,cls}]}
+  series = series.map(sr => ({...sr, get: p => nz(sr.get(p))}));
+  const ok = pts.filter(p=>series.some(sr=>sr.get(p)!=null));
+  if(ok.length < 2){ box.innerHTML = `<div class="empty-chart">The chart appears after the second session.</div>`; return; }
+  const W=o.W||560,H=o.H||220,L=40,R=series.length>1?54:20,T=22,B=28, iw=W-L-R, ih=H-T-B;
+  const vals = ok.flatMap(p=>series.map(sr=>sr.get(p))).filter(v=>v!=null);
+  let hi = Math.max(...vals, o.avg??0, o.max??0, ...(o.avgs||[]).map(a=>a.v)), lo = o.floor0===false ? Math.min(...vals) : 0;
+  const pad = (hi-lo)*0.15 || 1; hi += pad; if(o.floor0===false) lo = Math.max(0, lo-pad);
+  const PX=18, x = i => L + PX + i*(iw-2*PX)/(ok.length-1), y = v => T + ih - (v-lo)/(hi-lo)*ih;
+  const f = v => o.fmt ? o.fmt(v) : v.toFixed(o.digits??0);
+  const fa = o.fmtAxis || f;
+  let g = [lo,(lo+hi)/2,hi].map(v=>`<line class="grid" x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${fa(v)}</text>`).join("");
+  if(o.avg!=null) g += `<line class="t-avg" x1="${L}" x2="${W-R}" y1="${y(o.avg)}" y2="${y(o.avg)}"/><text class="t-avglab" x="${L+4}" y="${y(o.avg)-5}">${o.avgLabel||"all-time"} ${f(o.avg)}</text>`;
+  (o.avgs||[]).forEach(a=>{ g += `<line class="t-avg" style="stroke:var(--c-${a.cls})" x1="${L}" x2="${W-R}" y1="${y(a.v)}" y2="${y(a.v)}"/><text class="t-avglab" x="${L+4}" y="${y(a.v)-5}" style="fill:var(--c-${a.cls})">${a.label} ${f(a.v)}</text>`; });
+  const every = Math.ceil(ok.length/7);
+  const xl = ok.map((p,i)=> (i%every===0||i===ok.length-1) ? `<text x="${x(i)}" y="${H-8}" text-anchor="middle">${fmtDate(p.date)}</text>`:"").join("");
+  const ends = series.map(sr=>{ const v=[...ok].reverse().map(sr.get).find(v=>v!=null); return v==null?null:y(v); });
+  if(ends.length===2 && ends[0]!=null && ends[1]!=null && Math.abs(ends[0]-ends[1])<13){ const m=(ends[0]+ends[1])/2, up=ends[0]<=ends[1]?0:1; ends[up]=m-7; ends[1-up]=m+7; }
+  const body = series.map((sr,si)=>{
+    const idx = ok.map((p,i)=>[i,sr.get(p)]).filter(a=>a[1]!=null); if(!idx.length) return "";
+    const d = smoothPath(idx.map(([i,v])=>[x(i),y(v)]));
+    const lc = sr.cls ? `l-${sr.cls}` : "t-line", dc = sr.cls ? `d-${sr.cls}` : "t-dot";
+    const labs = series.length===1 ? idx.map(([i,v])=>`<text class="t-val" x="${x(i)}" y="${y(v)-10}" text-anchor="middle">${f(v)}</text>`).join("") : "";
+    const last = idx[idx.length-1];
+    const end = series.length>1 ? `<text class="endlab" x="${x(last[0])+8}" y="${ends[si]+4}" style="fill:var(--c-${sr.cls})">${sr.name}</text>` : "";
+    return `<path class="${lc}" d="${d}"/>` + idx.map(([i,v])=>`<circle class="${dc}" cx="${x(i)}" cy="${y(v)}" r="3.5"/>`).join("") + labs + end;
+  }).join("");
+  let tr = "";
+  if(o.trend && series.length===1 && ok.length>=3){ const tf = trendOf(ok.map(series[0].get)), n = ok.length-1;
+    tr = `<line class="t-trend" x1="${x(0)}" y1="${y(tf(0))}" x2="${x(n)}" y2="${y(tf(n))}"/><text class="t-avglab" x="${x(n)}" y="${y(tf(n))+16}" text-anchor="end">trend</text>`; }
+  else if(o.trend && series.length>1){
+    // one least-squares trend per series, over that series' own points, in the series colour (Murat, 29.09)
+    tr = series.map(sr=>{ const idx = ok.map((p,i)=>[i,sr.get(p)]).filter(a=>a[1]!=null); if(idx.length<3) return "";
+      const n = idx.length, mx = idx.reduce((a,[i])=>a+i,0)/n, my = idx.reduce((a,[,v])=>a+v,0)/n;
+      let sxy = 0, sxx = 0; idx.forEach(([i,v])=>{ sxy += (i-mx)*(v-my); sxx += (i-mx)*(i-mx); });
+      const b = sxx ? sxy/sxx : 0, tf = i => my + b*(i-mx), i0 = idx[0][0], i1 = idx[n-1][0];
+      return `<line class="t-trend multi" style="stroke:var(--c-${sr.cls})" x1="${x(i0)}" y1="${y(tf(i0))}" x2="${x(i1)}" y2="${y(tf(i1))}"/>`; }).join(""); }
+  const hw = Math.max(24, iw/ok.length);
+  const hits = ok.map((p,i)=>`<rect class="hit" data-i="${i}" x="${x(i)-hw/2}" y="${T}" width="${hw}" height="${ih}"/>`).join("");
+  box.innerHTML = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.label)}">${g}${tr}${body}${xl}${hits}</svg><div class="tip" hidden></div>`;
+  const tip = box.querySelector(".tip"), svg = box.querySelector("svg");
+  svg.querySelectorAll(".hit").forEach(r=>{
+    const i=+r.dataset.i, p=ok[i];
+    r.addEventListener("mouseenter",()=>{ const b=svg.getBoundingClientRect(), k=b.width/W; tip.hidden=false;
+      const vs = series.map(sr=>sr.get(p)).filter(v=>v!=null);
+      tip.style.left=x(i)*k+"px"; tip.style.top=y(Math.max(...vs))*k+"px";
+      tip.textContent = `${fmtDate(p.date)} · ` + series.map(sr=>{const v=sr.get(p); return (series.length>1?sr.name+" ":"")+(v!=null?f(v):"–");}).join(" · "); });
+    r.addEventListener("mouseleave",()=>{ tip.hidden=true; });
+  });
+}
+const b2n = x => Object.entries(x.concepts||{}).filter(([k,c])=>!k.startsWith("err_") && c.correct>0 && ["B2","C1","C2"].includes((REG[k]||[])[1])).length;
+const b2pct = x => x && x.range_concepts ? b2n(x)/x.range_concepts*100 : null;
+const gBase = () => Object.keys(REG).filter(k => !k.startsWith("err_") && REG[k][1]).length;
+const b2cov = x => x && gBase() ? b2n(x)/gBase()*100 : null;   // B2+ used correctly / all 92 (Murat, 29.09)
+// unique words (Murat, 29.09): different words used (go/went/gone = one), counted from the 29 Sept checks on
+function renderUnique(){
+  const us = SESS.filter(x=>x.vocab && x.vocab.unique && x.vocab.unique.total!=null), last = us[us.length-1];
+  if(!last){ $("uqkv").innerHTML = `<div><span class="v">–</span><span class="sub">Starts with your next naturalness check</span></div>`;
+    $("tr-unique").innerHTML = `<div class="empty-chart">Each check counts the different words you use (go, went and gone count as one) and adds the new ones to a running total.</div>`; return; }
+  const u = last.vocab.unique;
+  $("uqkv").innerHTML = `<div><span class="label">All time</span><span class="v">${u.total.toLocaleString()}</span><span class="sub">different words since ${esc(fmtDate(us[0].date))}</span></div>
+    <div><span class="label">Latest session</span><span class="v">${u.session.toLocaleString()}</span><span class="sub">${us.length>1 ? `+${u.new.toLocaleString()} new` : "first count"}</span></div>`;
+  lineChart($("tr-unique"), us, [{get:x=>x.vocab.unique.total}], {floor0:false, H:180, fmt:v=>Math.round(v).toLocaleString(), label:"Unique words, running total"});
+}
+function renderTrends(){
+  renderUnique();
+  // two separate charts, each with a trend line (Murat, 29.09)
+  const gB2 = Object.keys(REG).filter(k => !k.startsWith("err_") && ["B2","C1","C2"].includes(REG[k][1])).length;
+  if(gBase()){ $("b2base").textContent = gBase(); $("b2max").textContent = gB2; $("b2cap").textContent = Math.round(gB2/gBase()*100)+"%"; }
+  lineChart($("tr-b2cov"), SESS, [{get:b2cov}], {fmt:v=>Math.round(v)+"%", trend:true, label:"B2+ coverage of all structures, by session"});
+  lineChart($("tr-b2share"), SESS, [{get:b2pct}], {fmt:v=>Math.round(v)+"%", trend:true, label:"B2+ share of structures used, by session"});
+  const W = SESS.reduce((a,x)=>a+(x.words||0),0);
+  const bm = (s,m,k) => s.by_mode && s.by_mode[m] && s.by_mode[m].words ? s.by_mode[m][k] : null;
+  const b2 = s => s.words && s.b2plus_correct!=null ? s.b2plus_correct/s.words*1000 : null;
+  lineChart($("tr-b2"), SESS, [{get:b2}], {digits:1, avg: W ? SESS.reduce((a,x)=>a+(x.b2plus_correct||0),0)/W*1000 : null, label:"B2+ grammar per 1,000 words by session"});
+  const base = Object.keys(REG).filter(k => !k.startsWith("err_") && REG[k][1]).length;
+  $("tr-range-sub").textContent = base ? `out of ${base}` : "";
+  lineChart($("tr-range"), SESS, [{get:s=>s.range_concepts??null}], {digits:0, avg: SESS.reduce((a,x)=>a+(x.range_concepts||0),0)/SESS.length, label:"Grammar range by session"});
+  const vs = SESS.filter(s=>s.vocab && s.vocab.b2plus_share!=null);
+  lineChart($("tr-voc"), SESS, [{get:s=>s.vocab && s.vocab.b2plus_share!=null ? s.vocab.b2plus_share : null}], {fmt:v=>v.toFixed(1)+"%", avg: vs.length ? vs.reduce((a,x)=>a+x.vocab.b2plus_share,0)/vs.length : null, label:"B2+ vocabulary share by session"});
+  lineChart($("tr-words"), SESS, [{get:s=>s.words??null}], {fmt:v=>v>=1000?(v/1000).toFixed(1)+"k":v.toFixed(0), label:"Words analysed by session"});
+  lineChart($("tr-errn"), SESS, [{get:s=>s.errors_per_100??null}], {digits:2, avg: W ? SESS.reduce((a,x)=>a+(x.errors_total||0),0)/W*100 : null, label:"Errors per 100 words by session, voice and typed together"});
+  const G = advGrowth();
+  lineChart($("tr-distinct"), SESS, [{get:s=>G[s.id]?G[s.id].total:null}], {digits:0, label:"Distinct B2+ words, all time"});
+  lineChart($("tr-newadv"), SESS, [{get:s=>G[s.id]?G[s.id].fresh:null}], {digits:0, label:"New B2+ words per session"});
+  const md = (s,m) => s.vocab && s.vocab.mtld && s.vocab.mtld[m]!=null ? s.vocab.mtld[m] : null;
+  const mavg = m => { const v = SESS.map(s=>md(s,m)).filter(x=>x!=null && x>0); return v.length ? v.reduce((a,b)=>a+b,0)/v.length : null; };
+  const avgs = [["voice","voice avg"],["typed","typed avg"]].map(([m,l])=>({v:mavg(m), label:l, cls:m})).filter(a=>a.v!=null);
+  lineChart($("tr-mtld"), SESS, [{get:s=>md(s,"voice"), cls:"voice", name:"voice"},{get:s=>md(s,"typed"), cls:"typed", name:"typed"}], {digits:0, W:960, H:200, avgs, label:"Word variety (MTLD) by session, voice and typed, with the average of each"});
+  lineChart($("tr-comeups"), SESS, [{get:s=>s.vocab&&s.vocab.comeups?s.vocab.comeups.reduce((a,c)=>a+c.count,0):null}], {digits:0, label:"Vocab-list come-ups per session"});
+}
+
+const TABS = ["over","grammar","vocab","pv","nat","read"];
+function showTab(name){
+  if(!TABS.includes(name)) name = "over";
+  TABS.forEach(n=>{ $("tab-"+n).hidden = n!==name; $("tb-"+n).setAttribute("aria-selected", n===name); });
+  try{ localStorage.setItem("fl-tab", name); }catch(e){}
+}
+TABS.forEach(n=>$("tb-"+n).addEventListener("click",()=>showTab(n)));
+(()=>{ let t = location.hash.slice(1); if(!TABS.includes(t)){ try{ t = localStorage.getItem("fl-tab"); }catch(e){ t = null; } } showTab(TABS.includes(t) ? t : "over"); })();
+
+// distinct B2+ words: running total and first-time words per session
+function advGrowth(){
+  const seen = new Set(), out = {};
+  SESS.forEach(s=>{
+    const adv = (s.vocab && s.vocab.advanced) || [];
+    if(!s.vocab){ out[s.id] = null; return; }
+    let fresh = 0;
+    adv.forEach(a=>{ const w = String(a.word||"").toLowerCase(); if(w && !seen.has(w)){ seen.add(w); fresh++; } });
+    out[s.id] = {fresh, total: seen.size};
+  });
+  return out;
+}
+function renderVocabTiles(s, p){
+  const t = $("vtiles").children;
+  const set = (i, v, d, at) => { t[i].querySelector(".v").textContent = v; t[i].querySelector(".d").innerHTML = d;
+    let el = t[i].querySelector(".at"); if(!el){ el = document.createElement("div"); el.className = "at"; t[i].appendChild(el); } el.innerHTML = at||""; el.hidden = !at; };
+  const vs = SESS.filter(x=>x.vocab && x.vocab.b2plus_share!=null);
+  const v = s.vocab, pv = p && p.vocab;
+  if(v){
+    const d = pv ? v.b2plus_share - pv.b2plus_share : null;
+    const dt = d==null ? "First session" : Math.abs(d)<0.05 ? "Same as last session" : `<span class="${d>0?"up":"down"}">${d>0?"+":"−"}${Math.abs(d).toFixed(1)} pts</span> vs last session`;
+    set(0, v.b2plus_share.toFixed(1)+"%", dt + (v.b2plus_share_list!=null ? `<br>CEFR list only: ${v.b2plus_share_list.toFixed(1)}%` : ""),
+      vs.length ? `All ${vs.length} sessions: <b>${(vs.reduce((a,x)=>a+x.vocab.b2plus_share,0)/vs.length).toFixed(1)}%</b> average` : "");
+  } else set(0, "–", "No vocabulary data", "");
+  const G = advGrowth(), g = G[s.id];
+  set(1, g ? g.total : "–", g ? `<span class="up">+${g.fresh}</span> new in the latest session` : "No vocabulary data",
+    g ? "Counts each B2+ word once, the first time you use it" : "");
+  const cu = x => x && x.vocab && x.vocab.comeups ? x.vocab.comeups.reduce((a,c)=>a+c.count,0) : null;
+  const allCu = SESS.reduce((a,x)=>a+(cu(x)||0),0);
+  const items = new Set(); SESS.forEach(x=>((x.vocab&&x.vocab.comeups)||[]).forEach(c=>items.add(c.id)));
+  // tile 4: MTLD (voice leads; typed shown with a small-sample note)
+  const mt = x => x && x.vocab && x.vocab.mtld;
+  const mv = SESS.filter(x=>mt(x) && mt(x).voice!=null);
+  // voice leads: if the latest session has no voice figure (a typed-only chat), fall back to the latest one that does
+  const vs0 = (mt(s) && mt(s).voice!=null) ? s : mv[mv.length-1];
+  if(vs0){
+    const prevV = [...mv].reverse().find(x=>x.id < vs0.id);
+    const d = prevV ? mt(vs0).voice - mt(prevV).voice : null;
+    const tsrc = mt(s) ? s : vs0;
+    const ty = mt(tsrc).typed, tw = (mt(tsrc).words||{}).typed || 0;
+    set(3, mt(vs0).voice.toFixed(0), `voice` + (vs0!==s ? ` (${esc(fmtDate(vs0.date))}, latest voice session)` : "") + ` · ` + (d==null ? "first session" : Math.abs(d)<0.5 ? "same as last session" : `<span class="${d>0?"up":"down"}">${d>0?"+":"−"}${Math.abs(d).toFixed(1)}</span> vs last session`)
+      + `<br>typed${tsrc!==vs0 ? " (latest session)" : ""}: ${ty!=null ? ty.toFixed(0) + (tw<300 ? " (small sample)" : "") : "under 100 words"}`,
+      `All ${mv.length} sessions, voice: <b>${(mv.reduce((a,x)=>a+mt(x).voice,0)/mv.length).toFixed(0)}</b> average`);
+  } else set(3, "–", "Starts with your next naturalness check", "");
+  set(2, cu(s) ?? "–", cu(s)==null ? "No vocabulary data" : `uses of ${(s.vocab.comeups||[]).length} list words on ${esc(fmtDate(s.date))}`,
+    `All-time: <b>${allCu}</b> uses of <b>${items.size}</b> list items`);
+}
+
+// ---------------------------------------------------------------- naturalness (Turkish interference)
+const NAT_TYPE_VAR = {lex_false_friend:"--s6", calque_phrase:"--s5", collocation_transfer:"--s4", preposition_case:"--s3",
+  structure_transfer:"--s2", article:"--s1", pro_drop:"--c-typed", word_order:"--warn", discourse_transfer:"--err"};
+const natPat = k => ((INTF && INTF.patterns) || []).find(p => p.key === k) || {key:k, label:k.replace(/_/g," "), turkish:"", fix:""};
+const natTypeLabel = t => (INTF && INTF.types && INTF.types[t]) || t.replace(/_/g," ");
+const natOf = s => s && s.interference;
+const natItems = s => (natOf(s) && natOf(s).items || []).filter(x => x.counted !== false);
+function natSessions(){ return SESS.filter(s => natOf(s)); }
+
+function renderNat(){
+  const ns = natSessions();
+  const t = $("ntiles").children;
+  const set = (i, v, d, at) => { t[i].querySelector(".v").innerHTML = v; t[i].querySelector(".d").innerHTML = d;
+    let el = t[i].querySelector(".at"); if(!el){ el = document.createElement("div"); el.className = "at"; t[i].appendChild(el); } el.innerHTML = at||""; el.hidden = !at; };
+  if(!ns.length){
+    [0,1,2,3].forEach(i => set(i, "–", "Starts with your next naturalness check", ""));
+    $("tr-nat").innerHTML = `<div class="empty-chart">No sessions analysed yet.</div>`;
+    ["natRows","upRows","natTypeBar","natTypeLegend"].forEach(i => $(i).innerHTML = "");
+    return;
+  }
+  const last = ns[ns.length-1], prev = ns[ns.length-2];
+  const bm = (s,m) => natOf(s).by_mode && natOf(s).by_mode[m] && natOf(s).by_mode[m].words ? natOf(s).by_mode[m].per_100 : null;
+  // tile 1: voice leads (fall back to the latest session that has voice)
+  const vs = ns.filter(s => bm(s,"voice") != null), vLast = vs[vs.length-1], vPrev = vs[vs.length-2];
+  if(vLast){
+    const d = vPrev ? bm(vLast,"voice") - bm(vPrev,"voice") : null;
+    const ty = bm(last,"typed"), tw = natOf(last).by_mode.typed ? natOf(last).by_mode.typed.words : 0;
+    const W = vs.reduce((a,s)=>a+natOf(s).by_mode.voice.words,0), C = vs.reduce((a,s)=>a+natOf(s).by_mode.voice.count,0);
+    set(0, bm(vLast,"voice").toFixed(2), `voice${vLast!==last?` (${esc(fmtDate(vLast.date))})`:""} · ` + (d==null ? "first session" : Math.abs(d)<0.005 ? "same as last session" : `<span class="${d<0?"up":"down"}">${d>0?"+":"−"}${Math.abs(d).toFixed(2)}</span> vs last session`)
+      + `<br>typed: ${ty!=null ? ty.toFixed(2) + (tw<500 ? " (small sample)" : "") : "–"}`,
+      `All ${vs.length} sessions, voice: <b>${(C/W*100).toFixed(2)}</b>`);
+  } else set(0, "–", "No voice data yet", "");
+  // tile 2: distinct patterns in the latest session, all-time distinct
+  const lp = new Set(natItems(last).map(x=>x.pattern)), allp = new Set(ns.flatMap(s=>natItems(s).map(x=>x.pattern)));
+  const pp = prev ? new Set(natItems(prev).map(x=>x.pattern)) : null;
+  set(1, lp.size, pp ? `${pp.size} in the session before` : "First session", `All-time: <b>${allp.size}</b> different patterns`);
+  // tile 3: most frequent pattern, latest session and all-time
+  const cnt = arr => { const c = {}; arr.forEach(x => c[x.pattern] = (c[x.pattern]||0)+1); return Object.entries(c).sort((a,b)=>b[1]-a[1]); };
+  const lt = cnt(natItems(last)), at = cnt(ns.flatMap(natItems));
+  set(2, lt.length ? esc(natPat(lt[0][0]).label) : "–", lt.length ? `${lt[0][1]}× in the latest session` : "&nbsp;",
+    at.length ? `All-time: <b>${esc(natPat(at[0][0]).label)}</b>, ${at[0][1]}×` : "");
+  // tile 4: upgrades
+  const ups = s => (natOf(s).upgrades||[]).length, words = s => (natOf(s).by_mode.voice.words||0)+(natOf(s).by_mode.typed.words||0);
+  set(3, ups(last), `${(ups(last)/words(last)*1000).toFixed(1)} per 1,000 words`, `All-time: <b>${ns.reduce((a,s)=>a+ups(s),0)}</b> suggestions`);
+
+  // trends
+  lineChart($("tr-nat"), ns, [{get:s=>bm(s,"voice"), cls:"voice", name:"voice"},{get:s=>bm(s,"typed"), cls:"typed", name:"typed"}], {digits:2, label:"Turkish interference per 100 words by session"});
+  lineChart($("tr-natpat"), ns, [{get:s=>new Set(natItems(s).map(x=>x.pattern)).size}], {digits:0, label:"Different interference patterns per session"});
+  lineChart($("tr-natup"), ns, [{get:s=>ups(s)/words(s)*1000}], {digits:1, label:"Upgrade suggestions per 1,000 words"});
+
+  // picker
+  if(natSel !== "__all" && !ns.find(s=>s.id===natSel)) natSel = "__all";
+  $("natPick").innerHTML = `<option value="__all"${natSel==="__all"?" selected":""}>All sessions</option>` +
+    ns.slice().reverse().map(s=>`<option value="${esc(s.id)}"${s.id===natSel?" selected":""}>${esc(fmtDate(s.date))} · ${esc(s.title||"")}</option>`).join("");
+  renderNatList(ns);
+  renderUpgrades(ns);
+  renderNatMap(ns);
+}
+// interference map (Murat, 29.09): every known pattern, grouped by type, like the CEFR grammar range
+function renderNatMap(ns){
+  const last = ns[ns.length-1], tot = {}, inLast = {};
+  ns.forEach(s => natItems(s).forEach(x => { tot[x.pattern] = (tot[x.pattern]||0)+1; if(s===last) inLast[x.pattern] = (inLast[x.pattern]||0)+1; }));
+  const pats = ((INTF && INTF.patterns) || []).slice();
+  Object.keys(tot).forEach(k => { if(!pats.find(p=>p.key===k)) pats.push(natPat(k)); });
+  const MIN = 5, showAll = !!EXPAND.natmap, shown = pats.filter(p => showAll || (tot[p.key]||0) >= MIN);
+  const byType = {}; shown.forEach(p => (byType[p.type||"other"] ||= []).push(p));
+  const tsum = t => byType[t].reduce((a,p)=>a+(tot[p.key]||0),0);
+  const types = Object.keys(byType).sort((a,b)=>tsum(b)-tsum(a));
+  const nLast = Object.keys(inLast).length, nPast = Object.keys(tot).filter(k=>!inLast[k]).length;
+  $("natMapNote").textContent = `${pats.length} patterns: ${nLast} came up on ${fmtDate(last.date)}, ${nPast} seen before but not then${pats.length-nLast-nPast ? `, ${pats.length-nLast-nPast} not seen yet` : ""}. ${showAll ? "" : `Showing the ${shown.length} that came up ${MIN}+ times. `}Click one to see its examples.`;
+  $("natMapMore").innerHTML = `<button type="button" class="tgl" id="natMapTgl">${showAll ? `Show the ${MIN}+ ones only` : `Show all ${pats.length}`}</button>`;
+  $("natMapTgl").onclick = () => { EXPAND.natmap = !showAll; renderNatMap(natSessions()); };
+  $("natMap").innerHTML = types.map(t => `<div class="lvl"><div class="tag">${esc(natTypeLabel(t))}</div><div class="chips">${
+    byType[t].sort((a,b)=>(tot[b.key]||0)-(tot[a.key]||0)).map(p => {
+      const n = tot[p.key]||0, cls = inLast[p.key] ? "mixed" : n ? "ok" : "";
+      const tip = `${esc(p.label)}: ${n ? `${n}× in all sessions${inLast[p.key]?`, ${inLast[p.key]}× on ${esc(fmtDate(last.date))}`:""}` : "not seen yet"}`;
+      return n ? `<span class="chip ${cls}" title="${tip}"><button type="button" class="cgo" data-nat="${esc(p.key)}">${esc(p.label)}<span class="c">${n}</span></button></span>`
+               : `<span class="chip" title="${tip}">${esc(p.label)}</span>`;
+    }).join("")}</div></div>`).join("");
+}
+$("natMap").addEventListener("click", e=>{
+  const b = e.target.closest("[data-nat]"); if(!b) return; const k = b.dataset.nat;
+  natSel = "__all"; EXPAND.nat = false; renderNat();
+  if(!$("natRows").querySelector(`li[data-k="${CSS.escape(k)}"]`)){ EXPAND.nat = true; renderNatList(natSessions()); }
+  const li = $("natRows").querySelector(`li[data-k="${CSS.escape(k)}"]`); if(!li) return;
+  li.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"center"});
+  li.classList.remove("flash"); void li.offsetWidth; li.classList.add("flash");
+});
+let upSel = null;   // default: the latest session (Murat, 28.09)
+function renderUpgrades(ns){
+  if(upSel===null || (upSel!=="__all" && !ns.find(s=>s.id===upSel))) upSel = ns[ns.length-1].id;
+  const all = upSel==="__all", src = all ? ns : ns.filter(s=>s.id===upSel);
+  $("upPick").innerHTML = `<option value="__all"${all?" selected":""}>All sessions</option>` +
+    ns.slice().reverse().map(s=>`<option value="${esc(s.id)}"${s.id===upSel?" selected":""}>${esc(fmtDate(s.date))} · ${esc(s.title||"")}</option>`).join("");
+  const cut = q => q.length > 180 ? q.slice(0,180).replace(/\s+\S*$/,"") + "…" : q;
+  const up = []; src.slice().reverse().forEach(s => (natOf(s).upgrades||[]).forEach(u => up.push({...u, date:s.date})));
+  const LIM = 20, showAll = $("upRows").dataset.all === "1";
+  $("upTitle").textContent = all ? `Upgrade suggestions · All sessions (${up.length})` : `Upgrade suggestions · ${fmtDate(src[0].date)} (${up.length})`;
+  $("upRows").innerHTML = up.length ? up.slice(0, showAll ? up.length : LIM).map(u=>`<li>
+    <div>${u.mode?`<i class="mtag ${u.mode}">${u.mode}</i>`:""}<span class="quote">${esc(cut(u.quote))}</span></div>
+    <div class="fix"><b>More natural:</b> ${esc(u.suggestion)}</div>
+    ${all?`<div class="sub">${esc(fmtDate(u.date))}</div>`:""}</li>`).join("") : `<li class="status">No upgrade suggestions${all?"":" in this session"}.</li>`;
+  $("upMore").innerHTML = up.length > LIM ? `<button type="button" class="tgl" id="upTgl">${showAll ? "Show fewer" : `Show all ${up.length}`}</button>` : "";
+  const b = $("upTgl"); if(b) b.addEventListener("click", ()=>{ $("upRows").dataset.all = showAll ? "0" : "1"; renderUpgrades(natSessions()); });
+}
+
+function renderNatList(ns){
+  const all = natSel === "__all", last = ns[ns.length-1];
+  const src = all ? ns : ns.filter(s=>s.id===natSel);
+  const cut = q => q.length > 180 ? q.slice(0,180).replace(/\s+\S*$/,"") + "…" : q;
+  // type bar
+  const tc = {}; src.forEach(s => natItems(s).forEach(x => tc[x.type] = (tc[x.type]||0)+1));
+  const tot = Object.values(tc).reduce((a,b)=>a+b,0);
+  const tt = Object.entries(tc).sort((a,b)=>b[1]-a[1]);
+  $("natTypeBar").innerHTML = tt.map(([k,n])=>`<span style="flex:${n} 0 0;background:var(${NAT_TYPE_VAR[k]||"--s3"})" title="${esc(natTypeLabel(k))}: ${n}"></span>`).join("");
+  $("natTypeLegend").innerHTML = tt.map(([k,n])=>`<span><i style="background:var(${NAT_TYPE_VAR[k]||"--s3"})"></i>${esc(natTypeLabel(k))} <b>${Math.round(n/tot*100)}%</b></span>`).join("");
+  // patterns
+  const agg = {};
+  src.forEach(s => natItems(s).forEach(x => {
+    const a = agg[x.pattern] ||= {n:0, sessions:new Set(), lastId:null, lastDate:null, ex:[], per:{}};
+    a.n++; a.sessions.add(s.id); a.lastId = s.id; a.lastDate = s.date; a.ex.push(x); (a.per[s.id] ||= []).push(x);
+  }));
+  const rows = Object.entries(agg).sort((p,q)=>q[1].n-p[1].n || q[1].sessions.size-p[1].sessions.size);
+  if(all){
+    const active = rows.filter(([,a])=>a.lastId===last.id).length;
+    $("natTitle").textContent = "Interference patterns · All sessions";
+    $("natNote").textContent = `${tot} flags in ${rows.length} patterns across ${ns.length} sessions. ${active} came up in the latest session (${fmtDate(last.date)}); the rest have not appeared since.`;
+  } else {
+    const s = src[0];
+    $("natTitle").textContent = `Interference patterns · ${fmtDate(s.date)}`;
+    $("natNote").textContent = `${tot} flags in ${rows.length} patterns · ${natOf(s).per_100.toFixed(2)} per 100 words.`;
+  }
+  paintMore("nat", limitList("nat", rows).length, rows.length);
+  $("natRows").innerHTML = rows.length ? limitList("nat", rows).map(([k,a])=>{
+    const p = natPat(k), on = a.lastId===last.id;
+    const ex = all ? [a.ex[a.ex.length-1]] : a.ex.slice(0,2);
+    return `<li data-k="${esc(k)}">
+    <div class="rowtop"><strong>${esc(p.label)}</strong><span class="pill err">${a.n}×${all?` · ${a.sessions.size} session${a.sessions.size>1?"s":""}`:""}</span></div>
+    <div class="sub">Turkish: <i>${esc(p.turkish)}</i> · ${esc(natTypeLabel(p.type))}</div>
+    ${all ? trailHtml(a.per, ns, on, a.lastDate) : ""}
+    ${exList(all ? [a.ex[a.ex.length-1]] : a.ex, all ? 1 : 2).replace(/<div class="fix"><b>Fix:<\/b> <\/div>/g, "")}
+    ${ex[0].fix ? "" : `<div class="fix"><b>Fix:</b> ${esc(p.fix)}</div>`}</li>`;
+  }).join("") : `<li class="status">No interference flagged.</li>`;
+}
+$("rdPick").addEventListener("change", e=>{ rdSel = e.target.value; EXPAND.rd = false; renderRead(); });
+$("natPick").addEventListener("change", e => { natSel = e.target.value; renderNat(); });
+$("upPick").addEventListener("change", e => { upSel = e.target.value; $("upRows").dataset.all = "0"; renderUpgrades(natSessions()); });
+
+
+function renderChart(){
+  const box = $("chartbox");
+  const pts = SESS.filter(s=>s.errors_per_100!=null);
+  const val = (s,m) => s.by_mode && s.by_mode[m] && s.by_mode[m].words ? nz(s.by_mode[m].errors_per_100) : null;
+  if(pts.length < 2){
+    const s = pts[0], v = s && val(s,"voice"), t = s && val(s,"typed");
+    box.innerHTML = `<div class="empty-chart">One session so far: voice ${v!=null?v.toFixed(2):"–"}, typed ${t!=null?t.toFixed(2):"–"} errors per 100 words. The trend lines appear after the second session.</div>`;
+    return;
+  }
+  const W=900,H=220,L=40,R=64,T=14,B=28, iw=W-L-R, ih=H-T-B;
+  const all = pts.flatMap(s=>[val(s,"voice"),val(s,"typed")]).filter(v=>v!=null);
+  const top = Math.max(0.5, Math.ceil(Math.max(...all)*4)/4 + 0.25);
+  const x = i => L + i*iw/(pts.length-1);
+  const y = v => T + ih - v/top*ih;
+  let g = [0, top/2, top].map(v=>`<line class="grid" x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`).join("");
+  const series = m => {
+    const idx = pts.map((s,i)=>[i,val(s,m)]).filter(a=>a[1]!=null);
+    if(!idx.length) return "";
+    const d = smoothPath(idx.map(([i,v])=>[x(i),y(v)]));
+    const last = idx[idx.length-1];
+    return `<path class="l-${m}" d="${d}"/>` + idx.map(([i,v])=>`<circle class="d-${m}" cx="${x(i)}" cy="${y(v)}" r="3.5"/>`).join("")
+      + `<text class="endlab" x="${x(last[0])+8}" y="${y(last[1])+4}" style="fill:var(--c-${m})">${m}</text>`;
+  };
+  const every = Math.ceil(pts.length/8);
+  const xl = pts.map((p,i)=> (i%every===0||i===pts.length-1) ? `<text x="${x(i)}" y="${H-8}" text-anchor="middle">${fmtDate(p.date)}</text>`:"").join("");
+  const hw = Math.max(24, iw/pts.length);
+  const hits = pts.map((p,i)=>`<rect class="hit" data-i="${i}" x="${x(i)-hw/2}" y="${T}" width="${hw}" height="${ih}"/>`).join("");
+  box.innerHTML = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Errors per 100 words across sessions, voice and typed">${g}${series("typed")}${series("voice")}${xl}${hits}</svg><div class="tip" hidden></div>`;
+  const tip = box.querySelector(".tip"), svg = box.querySelector("svg");
+  svg.querySelectorAll(".hit").forEach(r=>{
+    const i = +r.dataset.i, p = pts[i];
+    r.addEventListener("mouseenter",()=>{ const b=svg.getBoundingClientRect(), k=b.width/W; tip.hidden=false;
+      const v = val(p,"voice"), t = val(p,"typed");
+      tip.style.left = x(i)*k+"px"; tip.style.top = y(Math.max(v??0,t??0))*k+"px";
+      tip.textContent = `${fmtDate(p.date)} · voice ${v!=null?v.toFixed(2):"–"} · typed ${t!=null?t.toFixed(2):"–"}`; });
+    r.addEventListener("mouseleave",()=>{ tip.hidden=true; });
+    r.addEventListener("click",()=>{ selId = p.id; vocSel = p.id; errAll = false; renderSession(); renderVocab(); renderTable(); });
+  });
+}
+
+function renderSession(){
+  const s = SESS.find(x=>x.id===selId); if(!s) return;
+  const pick = $("sessPick");
+  pick.innerHTML = `<option value="__all"${errAll?" selected":""}>All sessions</option>` + SESS.slice().reverse().map(x=>`<option value="${esc(x.id)}"${!errAll&&x.id===selId?" selected":""}>${esc(fmtDate(x.date))} · ${esc(x.title||"")}</option>`).join("");
+  if(errAll) renderAllErrors(); else renderOneSession(s);
+  renderHighlights();
+}
+// CEFR level next to each error type (Murat, 29.09). Structures on the grammar list use the list's level;
+// error-only types have none there, so they get an estimated level (the level where the rule is normally learned)
+// or "mixed" when the type covers many unrelated items.
+const ERR_LEVEL = {err_subject_verb_agreement:"A1", err_be_plus_finite_verb:"A1", err_do_support_past:"A1",
+  err_ed_ing_adjective:"A2", err_causative_to:"B1", err_habitual_past:"B1", err_despite_clause:"B2", err_in_the_meantime:"B2",
+  err_other:"mixed", err_collocation:"mixed", err_preposition:"mixed"};
+function lvlPill(k){
+  const reg = (REG[k]||[])[1], est = ERR_LEVEL[k], v = reg || est;
+  if(!v) return "";
+  const tip = reg ? `On the CEFR grammar list at ${reg}` : v==="mixed" ? "Covers items from several levels" : `Estimated: the level where this rule is normally learned (not on the CEFR grammar list)`;
+  return ` <span class="pill ${v==="mixed"?"idle":"ok"}" style="font-size:11px" title="${tip}">${v}${!reg && v!=="mixed" ? " est." : ""}</span>`;
+}
+function renderAllErrors(){
+  const last = SESS[SESS.length-1];
+  const agg = {};
+  SESS.forEach(x => (x.errors||[]).forEach(e => {
+    const a = agg[e.concept] ||= {n:0, sessions:new Set(), lastDate:null, lastId:null, ex:null, fix:"", per:{}};
+    a.n++; a.sessions.add(x.id); a.lastDate = x.date; a.lastId = x.id; a.ex = e; if(e.fix) a.fix = e.fix;
+    (a.per[x.id] ||= []).push(e);
+  }));
+  const rows = Object.entries(agg).sort((p,q)=>q[1].n-p[1].n || q[1].sessions.size-p[1].sessions.size);
+  const active = rows.filter(([,a])=>a.lastId===last.id).length;
+  $("sessTitle").textContent = "Errors · All sessions";
+  $("errNote").textContent = rows.length ? `${rows.length} error types across ${SESS.length} sessions. ${active} came up in the latest session (${fmtDate(last.date)}); the rest have not appeared since.` : "";
+  const cut = q => q.length > 200 ? q.slice(0,200).replace(/\s+\S*$/,"") + "…" : q;
+  paintMore("err", limitList("err", rows).length, rows.length);
+  $("sessErrors").innerHTML = rows.length ? limitList("err", rows).map(([k,a])=>{
+    const on = a.lastId===last.id;
+    return `<li data-k="${esc(k)}">
+    <div class="rowtop"><strong>${esc(label(k))}${lvlPill(k)}</strong><span class="pill err">${a.n}× · ${a.sessions.size} session${a.sessions.size>1?"s":""}</span></div>
+    ${trailHtml(a.per, SESS, on, a.lastDate)}
+    <div>${a.ex.mode?`<i class="mtag ${a.ex.mode}">${a.ex.mode}</i>`:""}<span class="quote">${esc(cut(a.ex.quote))}</span></div>
+    ${(a.ex.fix||a.fix)?`<div class="fix"><b>Fix:</b> ${esc(a.ex.fix||a.fix)}</div>`:""}</li>`;
+  }).join("") : `<li class="status">No errors logged yet.</li>`;
+}
+// status + one square per session + an expandable session-by-session table (errors and interference patterns)
+function trailHtml(per, sessions, on, lastDate){
+  const peak = Math.max(1, ...sessions.map(x=>(per[x.id]||[]).length));
+  const dots = sessions.map(x=>{ const c=(per[x.id]||[]).length, lv = !c?0:(c/peak>0.66?3:c/peak>0.33?2:1);
+    return `<i class="tdot l${lv}" title="${esc(fmtDate(x.date))}: ${c?c+"×":"not seen"}"></i>`; }).join("");
+  const trows = sessions.slice().reverse().map(x=>{ const it = per[x.id]||[];
+    if(!it.length) return `<tr class="zero"><td>${esc(fmtDate(x.date))}</td><td class="n">–</td><td>not seen</td></tr>`;
+    return `<tr><td>${esc(fmtDate(x.date))}</td><td class="n">${it.length}×</td><td>${exList(it, 1)}</td></tr>`; }).join("");
+  return `<details class="trail"><summary><span class="pill ${on?"err":"ok"}" style="font-size:11px">${on?"Still active":"Not seen since "+esc(fmtDate(lastDate))}</span><span class="tdots" aria-label="Oldest to newest session">${dots}</span><span class="tmore">Session by session</span></summary>
+    <div class="twrap"><table class="ttab"><thead><tr><th>Session</th><th class="n">Times</th><th>Example</th></tr></thead><tbody>${trows}</tbody></table></div></details>`;
+}
+// one example per line, each with its own fix; the rest fold under "+N more"
+function exList(items, shown){
+  const cut = q => q.length > 200 ? q.slice(0,200).replace(/\s+\S*$/,"") + "…" : q;
+  const one = e => `<div class="ex"><div>${e.mode?`<i class="mtag ${e.mode}">${e.mode}</i>`:""}<span class="quote">${esc(cut(e.quote))}</span></div>${e.fix?`<div class="fix"><b>Fix:</b> ${esc(e.fix)}</div>`:""}</div>`;
+  const head = items.slice(0, shown).map(one).join(""), rest = items.slice(shown);
+  return head + (rest.length ? `<details class="exmore"><summary>+${rest.length} more</summary>${rest.map(one).join("")}</details>` : "");
+}
+function renderOneSession(s){
+  $("sessTitle").textContent = `Errors · ${fmtDate(s.date)}`;
+  $("errNote").textContent = "";
+  const groups = {};
+  (s.errors||[]).forEach(e => { const g = groups[e.concept] ||= {items:[], fix:""}; g.items.push(e); if(!g.fix && e.fix) g.fix = e.fix; });
+  const cut = q => q.length > 200 ? q.slice(0,200).replace(/\s+\S*$/,"") + "…" : q;
+  const rows = Object.entries(groups).sort((a,b)=>b[1].items.length-a[1].items.length);
+  paintMore("err", limitList("err", rows).length, rows.length);
+  $("sessErrors").innerHTML = rows.length ? limitList("err", rows).map(([k,g])=>`<li>
+    <div class="rowtop"><strong>${esc(label(k))}${lvlPill(k)}</strong><span class="pill err">${g.items.length}×</span></div>
+    ${exList(g.items, 2)}</li>`).join("") : `<li class="status">No errors in this session.</li>`;
+}
+let hlSel = "__all";
+function renderHighlights(){
+  if(hlSel!=="__all" && !SESS.find(x=>x.id===hlSel)) hlSel = "__all";
+  const all = hlSel==="__all", src = all ? SESS : SESS.filter(x=>x.id===hlSel);
+  $("hlPick").innerHTML = `<option value="__all"${all?" selected":""}>All sessions</option>` + SESS.slice().reverse().map(x=>`<option value="${esc(x.id)}"${x.id===hlSel?" selected":""}>${esc(fmtDate(x.date))} · ${esc(x.title||"")}</option>`).join("");
+  // B2+ structures used correctly: counts from each session's concept tallies, quote from its highlights
+  const agg = {};
+  src.forEach(x => Object.entries(x.concepts||{}).forEach(([k,c]) => {
+    const lvl = (REG[k]||[])[1];
+    if(k.startsWith("err_") || !(c.correct>0) || !["B2","C1","C2"].includes(lvl)) return;
+    const a = agg[k] ||= {n:0, sessions:0, quote:""}; a.n += c.correct; a.sessions++;
+    const h = (x.highlights||[]).find(h=>h.concept===k); if(h) a.quote = h.quote;
+  }));
+  const rank = {C2:3, C1:2, B2:1};
+  const rows = Object.entries(agg).sort((p,q)=>q[1].n-p[1].n || rank[(REG[q[0]]||[])[1]]-rank[(REG[p[0]]||[])[1]]);
+  $("hlTitle").textContent = all ? "Well-used structures · All sessions" : `Well-used structures · ${fmtDate(src[0].date)}`;
+  $("hlNote").textContent = rows.length ? `${rows.length} different B2+ structures used correctly${all?` across ${SESS.length} sessions`:""}.` : "";
+  const shown = limitList("hl", rows); paintMore("hl", shown.length, rows.length);
+  $("highlights").innerHTML = rows.length ? shown.map(([k,a])=>`<li data-k="${esc(k)}">
+    <div class="rowtop"><strong>${esc(label(k))} <span class="pill ok" style="font-size:11px">${esc((REG[k]||[])[1]||"")}</span></strong><span class="pill ok">${a.n}×${all?` · ${a.sessions} session${a.sessions>1?"s":""}`:""}</span></div>
+    ${a.quote?`<div class="quote">${esc(a.quote.length>200?a.quote.slice(0,200).replace(/\s+\S*$/,"")+"…":a.quote)}</div>`:""}</li>`).join("") : `<li class="status">No B2+ structures logged${all?" yet":" in this session"}.</li>`;
+}
+// jump from a CEFR chip to its row (Murat, 28.09)
+function jumpTo(kind, k){
+  if(kind==="err"){ errAll = true; EXPAND.err = false; renderSession(); if(!$("sessErrors").querySelector(`li[data-k="${CSS.escape(k)}"]`)){ EXPAND.err = true; renderSession(); } }
+  else { hlSel = "__all"; EXPAND.hl = false; renderHighlights(); if(!$("highlights").querySelector(`li[data-k="${CSS.escape(k)}"]`)){ EXPAND.hl = true; renderHighlights(); } }
+  const li = $(kind==="err" ? "sessErrors" : "highlights").querySelector(`li[data-k="${CSS.escape(k)}"]`); if(!li) return;
+  const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+  li.scrollIntoView({behavior: smooth ? "smooth" : "auto", block:"center"});
+  li.classList.remove("flash"); void li.offsetWidth; li.classList.add("flash");
+}
+$("levels").addEventListener("click", e=>{ const b = e.target.closest("[data-go]"); if(b) jumpTo(b.dataset.go, b.dataset.k); });
+$("hlPick").addEventListener("change", e=>{ hlSel = e.target.value; EXPAND.hl = false; renderHighlights(); });
+
+function renderLevels(){
+  const tot = {};
+  SESS.forEach(s => Object.entries(s.concepts||{}).forEach(([k,c]) => {
+    const t = tot[k] ||= {correct:0,error:0}; t.correct += c.correct||0; t.error += c.error||0;
+  }));
+  $("levels").innerHTML = LEVELS.map(L => {
+    const ids = Object.keys(REG).filter(k => REG[k][1]===L);
+    if(!ids.length) return "";
+    return `<div class="lvl"><div class="tag">${L}</div><div class="chips">${ids.map(k=>{
+      const t = tot[k]; const cls = !t ? "" : (t.error ? "mixed" : "ok");
+      const tip = `${esc(label(k))}${t?`: ${t.correct} correct, ${t.error} errors`:": not yet seen"}`;
+      if(!t) return `<span class="chip" title="${tip}">${esc(label(k))}</span>`;
+      // click: B2+ used correctly -> Well-used structures; the ✗ count (or any chip below B2 with errors) -> Errors
+      const hl = t.correct>0 && ["B2","C1","C2"].includes(L), er = t.error>0;
+      const name = `${esc(label(k))}<span class="c">${t.correct}</span>`;
+      const main = hl ? `<button type="button" class="cgo" data-go="hl" data-k="${esc(k)}" title="${tip} · show in Well-used structures">${name}</button>`
+        : (er ? `<button type="button" class="cgo" data-go="err" data-k="${esc(k)}" title="${tip} · show in Errors">${name}</button>` : name);
+      const x = er ? (hl ? `<button type="button" class="cgo x" data-go="err" data-k="${esc(k)}" title="${t.error} errors · show in Errors">/ ${t.error}✗</button>` : `<span class="c" style="margin-left:4px">/ ${t.error}✗</span>`) : "";
+      return `<span class="chip ${cls}" title="${tip}">${main}${x}</span>`;
+    }).join("")}</div></div>`;
+  }).join("");
+}
+
+
+const LV = ["A1","A2","B1","B2","C1","C2"];
+let vocSel = "__all", cuSel = null;   // come-ups default to the latest session (Murat, 28.09)
+function vocAgg(list){
+  // combine several sessions: word-weighted level mix, union of B2+ and off-list words, summed come-ups
+  const vs = list.filter(x=>x.vocab).map(x=>x.vocab);
+  if(!vs.length) return null;
+  const T = vs.reduce((a,v)=>a+(v.tokens||0),0), TL = vs.reduce((a,v)=>a+(v.tokens_list||v.tokens||0),0);
+  const levels = {}; LV.forEach(L=>levels[L] = T ? vs.reduce((a,v)=>a+(v.levels[L]||0)*(v.tokens||0),0)/T : 0);
+  const b2 = levels.B2+levels.C1+levels.C2;
+  const b2l = TL ? vs.reduce((a,v)=>a+(v.b2plus_share_list??v.b2plus_share)*(v.tokens_list||v.tokens||0),0)/TL : null;
+  const adv = {}, off = {};
+  vs.forEach(v=>{ (v.advanced||[]).forEach(a=>{ const k=String(a.word).toLowerCase(); if(!adv[k]) adv[k]={...a, n:0}; adv[k].n++; });
+    (v.offlist||[]).forEach(w=>{ const o = typeof w==="string" ? {word:w} : w; const k=String(o.word).toLowerCase(); if(!off[k]) off[k]={...o}; }); });
+  const rank = {A1:1,A2:2,B1:3,B2:4,C1:5,C2:6};
+  return {tokens:T, levels, b2plus_share:b2, b2plus_share_list:b2l, sessions:vs.length,
+    advanced:Object.values(adv).sort((a,b)=>(rank[b.level]||0)-(rank[a.level]||0) || b.n-a.n || a.word.localeCompare(b.word)),
+    offlist:Object.values(off), estWords:Object.values(off).filter(o=>o.level).length,
+    comeups:[].concat(...vs.map(v=>v.comeups||[]))};
+}
+function renderVocab(){
+  if(vocSel!=="__all" && !SESS.find(x=>x.id===vocSel)) vocSel = "__all";
+  const all = vocSel==="__all";
+  const opts = s => `<option value="__all"${s==="__all"?" selected":""}>All sessions</option>` + SESS.slice().reverse().map(x=>`<option value="${esc(x.id)}"${x.id===s?" selected":""}>${esc(fmtDate(x.date))} · ${esc(x.title||"")}</option>`).join("");
+  $("vocPick").innerHTML = opts(vocSel);
+  const s = all ? null : SESS.find(x=>x.id===vocSel);
+  const v = all ? vocAgg(SESS) : s && s.vocab;
+  if(!v){ $("vocSub").textContent = "No vocabulary data for this session"; ["lvbar","lvlegend","vockv","advWords"].forEach(i=>$(i).innerHTML=""); }
+  else {
+    $("vocSub").textContent = all ? `· ${v.tokens.toLocaleString()} words graded across ${v.sessions} sessions` + (v.estWords ? `, ${v.estWords} with estimated levels` : "")
+      : `· ${v.tokens.toLocaleString()} words graded` + (v.est && v.est.words ? `, ${v.est.words} with estimated levels` : "");
+    $("lvbar").innerHTML = LV.map((L,i)=> v.levels[L]>0 ? `<span style="flex:${v.levels[L]} 0 0;background:var(--s${i+1})" title="${L}: ${v.levels[L].toFixed(1)}%"></span>` : "").join("");
+    $("lvlegend").innerHTML = LV.map((L,i)=>`<span><i style="background:var(--s${i+1})"></i>${L} <b>${(v.levels[L]||0).toFixed(1)}%</b></span>`).join("");
+    let dtxt = "", modes = "";
+    if(all){ dtxt = "all sessions combined"; }
+    else {
+      const idx = SESS.findIndex(x=>x.id===vocSel), prev = SESS.slice(0,idx).reverse().find(x=>x.vocab);
+      const d = prev ? v.b2plus_share - prev.vocab.b2plus_share : null;
+      dtxt = d==null ? "first session" : (Math.abs(d)<0.05 ? "same as before" : `<span class="${d>0?'up':'down'}">${d>0?'+':'−'}${Math.abs(d).toFixed(1)} pts</span> vs previous`);
+      modes = v.b2plus_by_mode ? `<span class="sub">${["voice","typed"].filter(m=>v.b2plus_by_mode[m]!=null).map(m=>`${m} ${v.b2plus_by_mode[m].toFixed(1)}%`).join(" · ")}${v.b2plus_by_mode_basis==="list"?" (list only)":""}</span>` : "";
+    }
+    const cuN = v.comeups.reduce((a,c)=>a+c.count,0), cuItems = new Set(v.comeups.map(c=>c.id)).size;
+    $("vockv").innerHTML = `<div><span class="label">B2+ share</span><span class="v">${v.b2plus_share.toFixed(1)}%</span><span class="d sub">${dtxt}</span>${v.b2plus_share_list!=null ? `<span class="sub">CEFR list only: ${v.b2plus_share_list.toFixed(1)}%</span>` : ""}${modes}</div>
+      <div><span class="label">B2+ words</span><span class="v">${v.advanced.length}</span><span class="sub">distinct</span></div>
+      <div><span class="label">Come-ups</span><span class="v">${cuN}</span><span class="sub">${cuItems} items</span></div>`;
+    // one list: B2+ words (official and estimated), then the other words that are not on the CEFR lists
+    const seenW = new Set(v.advanced.map(a=>String(a.word).toLowerCase()));
+    const others = (v.offlist||[]).map(w=>typeof w==="string" ? {word:w} : w).filter(o=>!seenW.has(String(o.word).toLowerCase()))
+      .map(o=>({word:o.word, level:o.level||"", est:!!o.level, off:true}));
+    const words = [...v.advanced, ...others];
+    const advShown = limitList("adv", words); paintMore("adv", advShown.length, words.length);
+    $("advWords").innerHTML = words.length ? advShown.map(a=>`<span class="word"${a.quote?` title="${esc(a.quote)}"`:""}>${esc(a.word)}${a.level||a.off?`<small>${a.level}${a.est?" est.":""}${!a.level&&a.off?"not graded":""}${all&&a.n>1?` ×${a.n}`:""}</small>`:""}</span>`).join("") : `<span class="status">None this session.</span>`;
+  }
+  renderComeups(opts);
+}
+function renderComeups(opts){
+  if(cuSel===null || (cuSel!=="__all" && !SESS.find(x=>x.id===cuSel))) cuSel = SESS[SESS.length-1].id;
+  $("cuPick").innerHTML = opts(cuSel);
+  const one = cuSel!=="__all", src = one ? SESS.filter(x=>x.id===cuSel) : SESS;
+  const agg = {};
+  src.forEach(x => ((x.vocab&&x.vocab.comeups)||[]).forEach(c => {
+    const a = agg[c.id] ||= {expr:c.expr, n:0, sessions:0, quote:c.quote}; a.n += c.count; a.sessions++; a.quote = c.quote;
+  }));
+  const allCu = Object.values(agg).sort((a,b)=>b.n-a.n || b.sessions-a.sessions);
+  const rows = limitList("cu", allCu);
+  paintMore("cu", rows.length, allCu.length);
+  $("cuNote").textContent = one ? `${allCu.length} list word${allCu.length===1?"":"s"} came up on their own in this session.` : `Words from your vocabulary list that came up on their own, outside a vocab drill. ${allCu.length} different words across ${SESS.length} sessions.`;
+  $("comeups").innerHTML = rows.length ? rows.map(a=>`<li>
+    <div class="rowtop"><strong>${esc(a.expr)}</strong><span class="pill ok">${a.n}×${one?"":` · ${a.sessions} session${a.sessions>1?"s":""}`}</span></div>
+    <div class="quote">${esc(a.quote.length>180 ? a.quote.slice(0,180).replace(/\s+\S*$/,"")+"…" : a.quote)}</div></li>`).join("")
+    : `<li class="status">No vocab-list words came up ${one?"in this session":"yet"}.</li>`;
+}
+
+function renderTable(){
+  const all = SESS.slice().reverse(), shown = limitList("sess", all);
+  $("sessRows").innerHTML = shown.map(s=>`<tr>
+    <td>${esc(fmtDate(s.date))}</td><td>${esc(s.title||"")}</td><td class="n">${s.words?.toLocaleString()??"–"}</td>
+    <td class="n">${s.by_mode?.voice?.words!=null?s.by_mode.voice.words.toLocaleString():"–"}</td><td class="n">${s.by_mode?.typed?.words!=null?s.by_mode.typed.words.toLocaleString():"–"}</td>
+    <td class="n">${s.errors_total??"–"}</td><td class="n">${s.errors_per_100?.toFixed(2)??"–"}</td><td class="n">${s.by_mode?.voice?.errors_per_100?.toFixed(2)??"–"}</td><td class="n">${s.by_mode?.typed?.errors_per_100?.toFixed(2)??"–"}</td>
+    <td class="n">${s.range_concepts??"–"}</td><td class="n">${s.words&&s.b2plus_correct!=null?(s.b2plus_correct/s.words*1000).toFixed(1):"–"}</td><td class="n">${s.vocab&&s.vocab.b2plus_share!=null?s.vocab.b2plus_share.toFixed(1)+"%":"–"}</td></tr>`).join("");
+  paintMore("sess", shown.length, all.length);
+}
+
+$("vocPick").addEventListener("change", e=>{ vocSel = e.target.value; EXPAND.adv = false; renderVocab(); });
+$("cuPick").addEventListener("change", e=>{ cuSel = e.target.value; EXPAND.cu = false; renderVocab(); });
+$("sessPick").addEventListener("change", e=>{ if(e.target.value==="__all"){ errAll = true; renderSession(); return; } errAll = false; selId = e.target.value; renderSession(); renderVocab(); renderTable(); });
+
+
+// ---------------------------------------------------------------- phrasal verbs
+// Same rules as the tracker's recalc.py: stage from the number of different days a
+// word was used, recency from days since the last use (measured against today).
+// ---- "Show all / Show fewer" for long lists
+const EXPAND = {};
+const LIMIT = {vt:40, pv:40, vtAttn:12, pvAttn:10, cu:12, err:10, nat:10, adv:15, rd:12, rp:8, sess:5, hl:10, pvs:20};
+function limitList(key, list, force){ return (EXPAND[key] || force) ? list : list.slice(0, LIMIT[key]); }
+function paintMore(key, shown, total){
+  const box = $("more-"+key); if(!box) return;
+  box.innerHTML = total > LIMIT[key] && (EXPAND[key] || shown < total)
+    ? `<button type="button" class="tgl" data-more="${key}" aria-expanded="${!!EXPAND[key]}">${EXPAND[key] ? "Show fewer" : `Show all ${total}`}</button>` : "";
+}
+document.addEventListener("click", e=>{
+  const b = e.target.closest("[data-more]"); if(!b) return;
+  const k = b.dataset.more; EXPAND[k] = !EXPAND[k];
+  ({vt:()=>renderVTTable(vtRows()), vtAttn:renderVT, pv:renderPV, pvAttn:renderPV, cu:renderVocab, adv:renderVocab, err:renderSession, nat:()=>renderNatList(natSessions()), rd:renderRead, rp:renderRead, sess:renderTable, hl:renderHighlights, pvs:()=>renderPVSession()})[k]();
+});
+
+let PHAVE = null, PV = null, pvStage = "all", pvQuery = "", pvScope = "all";
+const STAGES = ["Activated","In Progress","Emerging","Not Yet Observed"];
+const STAGE_LABEL = {"Activated":"Activated","In Progress":"In progress","Emerging":"Emerging","Not Yet Observed":"Not yet observed"};
+const SIGNAL = {
+  "Activated|Green":"Solid & Active","Activated|Yellow":"Solid but Cooling","Activated|Red":"Fading Despite Strong Base",
+  "In Progress|Green":"Building Momentum","In Progress|Yellow":"Stalling","In Progress|Red":"At Risk",
+  "Emerging|Green":"Fresh Start","Emerging|Yellow":"Early Fade","Emerging|Red":"Lost Spark"};
+const stageOf = n => n>=6 ? "Activated" : n>=3 ? "In Progress" : n>=1 ? "Emerging" : "Not Yet Observed";
+const DAY = 86400000;
+function pvRows(asOf){
+  const today = asOf || new Date(new Date().toDateString());
+  return ((PV && PV.rows) || []).map(r=>{
+    const dates = [...new Set(r.dates||[])].sort((a,b)=>parseDate(a)-parseDate(b));
+    const n = dates.length, stage = stageOf(n);
+    const last = n ? parseDate(dates[n-1]) : null;
+    const ago = last ? Math.max(0, Math.round((today - last)/DAY)) : null;
+    const rec = ago==null ? "" : ago<=7 ? "Green" : ago<=14 ? "Yellow" : "Red";
+    const pr = r.practice || {count:0, last:null};
+    return {word:r.word, dates, notes:r.notes||"", n, stage, ago, rec, last: n ? dates[n-1] : "", signal: n ? SIGNAL[stage+"|"+rec] : "—",
+      onList: !!r.list, mastered: !!(r.list && r.list.mastered), listExprs: r.list ? r.list.exprs || [] : [], reviews: pr.count||0, rlast: pr.last};
+  });
+}
+// ---- column sorting (shared by the phrasal verb and vocab trackers)
+// Click a header: first click uses the natural direction for that column, second reverses, third returns to the default order.
+const STAGE_RANK = {"Mastered":0,"Activated":1,"In Progress":2,"Emerging":3,"Not Yet Observed":4};
+const SIG_RANK = ["Solid & Active","Building Momentum","Fresh Start","Solid but Cooling","Stalling","Early Fade","Fading Despite Strong Base","At Risk","Lost Spark"];
+// signal groups (Murat, 28.09): colour follows recency (fresh = indigo, cooling = amber, fading = red), shade follows the stage
+const mixc = (v,p) => `color-mix(in oklch, var(${v}) ${p}%, var(--surface))`;
+const SIG_COLOR = {"Solid & Active":"var(--s6)","Building Momentum":"var(--s5)","Fresh Start":"var(--s3)",
+  "Solid but Cooling":"var(--warn)","Stalling":mixc("--warn",60),"Early Fade":mixc("--warn",35),
+  "Fading Despite Strong Base":"var(--err)","At Risk":mixc("--err",60),"Lost Spark":mixc("--err",35),"—":"var(--idle)"};
+const SIG_LABEL = s => s==="—" ? "Not used yet" : s;
+const SIG_KEYS = [...SIG_RANK, "—"];
+function sigBar(rows, barId, legId){
+  const c = k => rows.filter(r=>r.signal===k).length, keys = SIG_KEYS.filter(k=>c(k));
+  $(barId).innerHTML = keys.map(k=>`<span style="flex:${c(k)} 0 0;background:${SIG_COLOR[k]}" title="${esc(SIG_LABEL(k))}: ${c(k)}"></span>`).join("");
+  $(legId).innerHTML = keys.map(k=>`<span><i style="background:${SIG_COLOR[k]}"></i>${esc(SIG_LABEL(k))} <b>${c(k)}</b></span>`).join("");
+}
+function sigChips(rows, cur){
+  const c = k => k==="all" ? rows.length : rows.filter(r=>r.signal===k).length;
+  return ["all", ...SIG_KEYS.filter(k=>c(k))].map(k=>`<button type="button" data-s="${esc(k)}" aria-pressed="${cur===k}">${k==="all"?"All signals":esc(SIG_LABEL(k))}<span class="c">${c(k)}</span></button>`).join("");
+}
+const SORT_KEY = {
+  word: r => r.word.toLowerCase(),
+  stage: r => r.mastered ? 0 : (STAGE_RANK[r.stage] ?? 9),   // one label per row: Mastered wins (Murat, 29.09)
+  n: r => r.n,
+  last: r => r.ago,                       // days ago; unused words have null
+  signal: r => r.n ? SIG_RANK.indexOf(r.signal) : null,
+  reviews: r => r.reviews,
+  rlast: r => r.rlast ? Math.round((new Date(new Date().toDateString()) - parseDate(r.rlast))/DAY) : null,   // days since the last review
+};
+const SORT_FIRST = {word:"asc", stage:"asc", n:"desc", last:"asc", signal:"asc", reviews:"desc", rlast:"asc"};
+function applySort(list, st){
+  if(!st.key) return list;
+  const get = SORT_KEY[st.key], dir = st.dir==="asc" ? 1 : -1;
+  return list.slice().sort((a,b)=>{
+    const x = get(a), y = get(b);
+    if(x==null && y==null) return a.word.localeCompare(b.word);
+    if(x==null) return 1; if(y==null) return -1;   // empty values always at the bottom
+    const c = typeof x==="string" ? x.localeCompare(y) : x-y;
+    return c ? c*dir : a.word.localeCompare(b.word);
+  });
+}
+function nextSort(st, key){
+  if(st.key!==key) return {key, dir:SORT_FIRST[key]};
+  if(st.dir===SORT_FIRST[key]) return {key, dir: st.dir==="asc"?"desc":"asc"};
+  return {key:null, dir:null};
+}
+function paintSort(headId, st){
+  $(headId).querySelectorAll("th[data-k]").forEach(th=>{
+    const on = th.dataset.k===st.key;
+    if(on) th.setAttribute("aria-sort", st.dir==="asc"?"ascending":"descending"); else th.removeAttribute("aria-sort");
+    th.querySelector("button").title = on ? (st.dir===SORT_FIRST[st.key] ? "Click to reverse" : "Click to go back to the default order") : "Sort by this column";
+  });
+}
+let pvSort = {key:null, dir:null}, vtSort = {key:null, dir:null};
+// last review date with "N days ago", same style as Last used
+const revDate = d => { const ago = Math.max(0, Math.round((new Date(new Date().toDateString()) - parseDate(d))/DAY)); return `${esc(fmtDate(d))} <span class="ago">· ${ago===0?"today":ago+"d ago"}</span>`; };
+
+// Need attention (Murat, 28.09): one small box per word, edge coloured by its signal
+const attnBox = r => `<li style="--sc:${SIG_COLOR[r.signal]||"var(--rule)"}" title="${esc(r.signal)} · last used ${esc(fmtDate(r.last))}"><b>${esc(r.word)}</b><span>Used on ${r.n} days · ${r.ago} days ago${r.mastered?" · mastered":""}</span></li>`;
+const sigClass = r =>!r.n ? "idle" : r.rec==="Green" ? "ok" : r.rec==="Yellow" ? "warn" : "err";
+const stageVar = {"Activated":"--s6","In Progress":"--s4","Emerging":"--s2","Not Yet Observed":"--idle"};
+
+const CORE_STAGE = ["Activated","In Progress","Emerging"];
+function coreStatus(rows){
+  const byWord = {}; rows.forEach(r=>byWord[r.word]=r);
+  return ((PHAVE && PHAVE.items) || []).map(it=>{
+    const linked = (it.rows||[]).map(w=>byWord[w]).filter(Boolean);
+    const days = [...new Set(linked.flatMap(r=>r.dates))].sort((a,b)=>parseDate(a)-parseDate(b));
+    const n = days.length, stage = stageOf(n), today = new Date(new Date().toDateString());
+    const ago = n ? Math.max(0, Math.round((today - parseDate(days[n-1]))/DAY)) : null;
+    const rec = ago==null ? "" : ago<=7 ? "Green" : ago<=14 ? "Yellow" : "Red";
+    return {rank:it.rank, word:it.word, rows:it.rows||[], n, stage, rec, signal: n ? SIGNAL[stage+"|"+rec] : "—"};
+  });
+}
+function coreRankOf(){ const m = {}; ((PHAVE && PHAVE.items) || []).forEach(it=>(it.rows||[]).forEach(w=>{ if(!(w in m)) m[w] = it.rank; })); return m; }
+function renderCore(rows){
+  const cs = coreStatus(rows);
+  if(!cs.length){ $("coreN").textContent = "–"; $("coreSub").textContent = "Core list not loaded"; $("coreGrid").innerHTML = ""; $("coreNext").innerHTML = ""; return; }
+  const used = cs.filter(c=>c.n>0), cnt = st => cs.filter(c=>c.stage===st).length;
+  $("coreN").innerHTML = `${used.length} <span class="of">/ ${cs.length}</span>`;
+  const rc = k => cs.filter(c=>c.rec===k).length;
+  $("coreSub").innerHTML = `used at least once<br>${rc("Green")} used in the last week · ${rc("Yellow")} cooling · ${rc("Red")} fading`;
+  $("coreGrid").innerHTML = cs.map(c=>`<span${c.n?` data-st style="background:${SIG_COLOR[c.signal]}"`:""} title="#${c.rank} ${esc(c.word)}: ${c.n ? esc(c.signal)+", "+c.n+" day"+(c.n>1?"s":"") : "not used yet"}"></span>`).join("");
+  $("coreLegend").innerHTML = SIG_KEYS.filter(k=>cs.some(c=>c.signal===k)).map(k=>`<span><i style="background:${SIG_COLOR[k]}"></i>${esc(SIG_LABEL(k))} <b>${cs.filter(c=>c.signal===k).length}</b></span>`).join("");
+  const next = cs.filter(c=>!c.n).slice(0,12);
+  $("coreNext").innerHTML = next.map(c=>`<li>${esc(c.word)}<small>#${c.rank}</small></li>`).join("") || `<li>All 150 used. Impressive.</li>`;
+}
+
+function pvSessions(){ return SESS.filter(s=>s.pv && s.pv.words && s.pv.instances!=null); }
+const per1k = s => s.pv.instances / s.pv.words * 1000;
+
+function renderPV(){
+  const rows = pvRows();
+  const t = $("ptiles").children;
+  const set = (i, v, d, at) => { t[i].querySelector(".v").innerHTML = v; t[i].querySelector(".d").innerHTML = d;
+    let el = t[i].querySelector(".at"); if(!el){ el = document.createElement("div"); el.className = "at"; t[i].appendChild(el); } el.innerHTML = at||""; el.hidden = !at; };
+  // tile 1: density
+  const ps = pvSessions(), lastS = ps[ps.length-1], prevS = ps[ps.length-2];
+  if(lastS){
+    const k = per1k(lastS), words = Math.round(lastS.pv.words / lastS.pv.instances);
+    const d = prevS ? k - per1k(prevS) : null;
+    const W = ps.reduce((a,s)=>a+s.pv.words,0), I = ps.reduce((a,s)=>a+s.pv.instances,0);
+    set(0, `1 <span class="of">per</span> ${words}`, `${k.toFixed(1)} per 1,000 words · native 1 per 192` + (d==null ? "" : `<br><span class="${d>=0?"up":"down"}">${d>=0?"+":"−"}${Math.abs(d).toFixed(1)}</span> per 1,000 vs last session`),
+      `All ${ps.length} session${ps.length>1?"s":""}: <b>1 per ${Math.round(W/I)}</b>`);
+  } else set(0, "–", "Starts with your next naturalness check", "Native benchmark: <b>1 per 192</b> words");
+  // tiles 2-4
+  const used = rows.filter(r=>r.n>0), by = s => rows.filter(r=>r.stage===s).length;
+  set(1, rows.length ? `${used.length} <span class="of">/ ${rows.length}</span>` : "–", rows.length ? `${rows.length-used.length} not yet observed` : "Tracker not loaded", "");
+  set(2, rows.length ? by("Activated") : "–", rows.length ? `${by("In Progress")} in progress · ${by("Emerging")} emerging` : "&nbsp;", "");
+  const attn = rows.filter(r=>r.n>=3 && r.rec!=="Green").sort((a,b)=>b.ago-a.ago || b.n-a.n);
+  set(3, rows.length ? attn.length : "–", "Used on 3+ days, but not in the last week", rows.length ? `Lost spark (1–2 days, 15+ days ago): <b>${rows.filter(r=>r.signal==="Lost Spark").length}</b>` : "");
+  // stage bar
+  $("pvAsOf").textContent = PV ? `Tracker updated ${fmtDate(PV.as_of)} · recency as of today` : "";
+  sigBar(rows, "stbar", "stlegend");
+  // attention list
+  const attnShown = limitList("pvAttn", attn);
+  $("pvAttn").innerHTML = attn.length ? attnShown.map(attnBox).join("")
+    : `<li class="status">Nothing here: every word used on 3+ days came up in the last week.</li>`;
+  paintMore("pvAttn", attnShown.length, attn.length);
+  renderCore(rows);
+  renderPVSession();
+  renderPVTable(rows);
+  renderPVTrends(rows);
+}
+
+let pvsSel = null;   // default: the latest measured session (Murat, 28.09)
+function renderPVSession(){
+  const ps = pvSessions();
+  if(!ps.length){ $("pvSessPick").innerHTML = ""; $("pvSess").innerHTML = `<p class="status" style="margin:0">No session measured yet. From the next naturalness check, this shows the phrasal verbs you used, the density, and which tracker words came up.</p>`; return; }
+  if(pvsSel===null || (pvsSel!=="__all" && !ps.find(x=>x.id===pvsSel))) pvsSel = ps[ps.length-1].id;
+  const all = pvsSel==="__all", src = all ? ps : ps.filter(x=>x.id===pvsSel);
+  $("pvSessPick").innerHTML = `<option value="__all"${all?" selected":""}>All sessions</option>` + ps.slice().reverse().map(x=>`<option value="${esc(x.id)}"${x.id===pvsSel?" selected":""}>${esc(fmtDate(x.date))} · ${esc(x.title||"")}</option>`).join("");
+  const W = src.reduce((a,x)=>a+x.pv.words,0), I = src.reduce((a,x)=>a+x.pv.instances,0);
+  const agg = {}, cu = new Set(), fresh = new Set();
+  src.forEach(x => { (x.pv.items||[]).forEach(it => { const a = agg[it.word] ||= {word:it.word, count:0, sessions:0}; a.count += it.count; a.sessions++; });
+    (x.pv.comeups||[]).forEach(w=>cu.add(w)); (x.pv.new_words||[]).forEach(w=>fresh.add(w)); });
+  const items = Object.values(agg).sort((a,b)=>b.count-a.count || a.word.localeCompare(b.word));
+  const shown = limitList("pvs", items);
+  $("pvSessTitle").textContent = all ? "Phrasal verbs · All sessions" : `Phrasal verbs · ${fmtDate(src[0].date)}`;
+  $("pvSess").innerHTML = `<div class="pvsess"><div class="kv">
+      <div><span class="label">Density</span><span class="v">${I ? "1 per "+Math.round(W/I) : "–"}</span><span class="sub">native 1 per 192</span></div>
+      <div><span class="label">Uses</span><span class="v">${I}</span><span class="sub">${items.length} different</span></div>
+      <div><span class="label">Tracker come-ups</span><span class="v">${cu.size}</span><span class="sub">${fresh.size} new to the tracker</span></div></div>
+    <div><div class="label sublabel" style="margin-top:0">Phrasal verbs used</div><div class="words">${shown.map(i=>`<span class="word">${esc(i.word)}${i.count>1?`<small>×${i.count}</small>`:""}${fresh.has(i.word)?`<small>new</small>`:""}</span>`).join("") || `<span class="status">None.</span>`}</div>
+    <div class="morebox" id="more-pvs"></div></div></div>`;
+  paintMore("pvs", shown.length, items.length);
+}
+$("pvSessPick").addEventListener("change", e=>{ pvsSel = e.target.value; EXPAND.pvs = false; renderPVSession(); });
+
+function renderPVTable(rows){
+  const q = pvQuery.trim().toLowerCase();
+  const all = rows, rk0 = coreRankOf();
+  $("pvScope").innerHTML = [["all","All phrasal verbs",all.length],["core","Native core",all.filter(r=>rk0[r.word]).length]].map(([k,l,c])=>`<button type="button" data-s="${k}" aria-pressed="${pvScope===k}">${l}<span class="c">${c}</span></button>`).join("");
+  if(pvScope==="list") pvScope = "all";
+  if(pvScope==="core") rows = rows.filter(r=>rk0[r.word]);
+  if(pvStage!=="all" && !rows.some(r=>r.signal===pvStage)) pvStage = "all";
+  const pvMatch = (r,s) => s==="all" || r.signal===s;
+  const PV_CHIP = {all:"All stages", mastered:"Mastered", ...STAGE_LABEL};
+  $("pvFilter").innerHTML = sigChips(rows, pvStage);
+  const list = applySort(rows.filter(r=>pvMatch(r,pvStage) && (!q || r.word.toLowerCase().includes(q) || r.listExprs.some(e=>e.toLowerCase().includes(q))))
+    .sort((a,b)=>b.n-a.n || a.word.localeCompare(b.word)), pvSort);
+  paintSort("pvHead", pvSort);
+  const rk = coreRankOf();
+  const pvShown = limitList("pv", list, !!q);
+  $("pvRows").innerHTML = pvShown.map((r,i)=>`<tr><td class="n rn">${i+1}</td><td class="w">${esc(r.word)}${rk[r.word]?`<span class="listtag" title="Native core: #${rk[r.word]} of the 150 most common phrasal verbs">core #${rk[r.word]}</span>`:""}</td><td>${r.mastered ? `<span class="pill ok" title="Your own label on the vocab list · usage stage: ${STAGE_LABEL[r.stage]}">Mastered</span>` : STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
+    <td>${r.n ? `${esc(fmtDate(r.last))} <span class="ago">· ${r.ago===0?"today":r.ago+"d ago"}</span>` : `<span class="ago">–</span>`}</td>
+    <td>${r.n ? `<span class="pill ${sigClass(r)}">${esc(r.signal)}</span>` : `<span class="ago">–</span>`}</td>
+    <td class="n">${r.onList ? (r.reviews ? r.reviews : `<span class="ago">0</span>`) : `<span class="ago">–</span>`}</td>
+    <td>${r.onList && r.rlast ? revDate(r.rlast) : `<span class="ago">${r.onList ? "not yet" : "–"}</span>`}</td>
+</tr>`).join("")
+    || `<tr><td colspan="8" class="status">No phrasal verbs match.</td></tr>`;
+  paintMore("pv", pvShown.length, list.length);
+  $("pvCount").textContent = `${pvShown.length} of ${list.length} shown${list.length<all.length?` (${all.length} in the tracker)`:""} · ask Claude for the tracker as a .docx file any time`;
+}
+$("pvFilter").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; pvStage = b.dataset.s; EXPAND.pv = false; renderPVTable(pvRows()); });
+$("pvScope").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; pvScope = b.dataset.s; EXPAND.pv = false; renderPVTable(pvRows()); });
+$("pvSearch").addEventListener("input", e=>{ pvQuery = e.target.value; renderPVTable(pvRows()); });
+$("pvHead").addEventListener("click", e=>{ const th = e.target.closest("th[data-k]"); if(!th) return; pvSort = nextSort(pvSort, th.dataset.k); renderPVTable(pvRows()); });
+
+function renderPVTrends(rows){
+  const ps = pvSessions();
+  lineChart($("tr-pvd"), ps, [{get:s=>s.pv.instances ? s.pv.words/s.pv.instances : null}], {fmt:v=>"1 per "+Math.round(v), fmtAxis:v=>Math.round(v), avg:192, avgLabel:"native", label:"Words per phrasal verb by session (1 per X); native speakers 1 per 192"});
+  if(ps.length < 2) $("tr-pvd").innerHTML = `<div class="empty-chart">Starts with your next naturalness check. The chart appears after two measured sessions.</div>`;
+  // day series from the come-up dates
+  const days = [...new Set(rows.flatMap(r=>r.dates))].sort((a,b)=>parseDate(a)-parseDate(b));
+  const firstSeen = {}; rows.forEach(r=>{ if(r.dates[0]) firstSeen[r.word] = r.dates[0]; });
+  const pts = days.map(d=>{
+    const upto = parseDate(d);
+    let act = 0, prog = 0;
+    rows.forEach(r=>{ const n = r.dates.filter(x=>parseDate(x)<=upto).length; if(n>=6) act++; if(n>=3) prog++; });
+    return {date:d, used: rows.filter(r=>r.dates.includes(d)).length, act, prog, fresh: Object.values(firstSeen).filter(x=>x===d).length};
+  });
+  lineChart($("tr-pvday"), pts, [{get:p=>p.used}], {digits:0, label:"Tracker words used per day"});
+  lineChart($("tr-pvstage"), pts, [{get:p=>p.act, cls:"voice", name:"activated"},{get:p=>p.prog, cls:"typed", name:"3+ days"}], {digits:0, label:"Words reaching each stage by date"});
+  lineChart($("tr-pvnew"), pts, [{get:p=>p.fresh}], {digits:0, label:"New phrasal verbs per day"});
+}
+
+let VT = null, vtStage = "all", vtQuery = "", vtAll = false, vtType = "all";
+const VT_TYPES = [["all","All"],["word","Words"],["collocation","Collocations"],["expression","Expressions"],["idiom","Idioms"]];
+const VT_STAGES = ["Mastered", ...STAGES];
+const VT_LABEL = {...STAGE_LABEL, "Mastered":"Mastered", "unpractised":"Not practised yet"};
+const vtVar = {...stageVar, "Mastered":"--c-typed"};
+function vtRows(){
+  const today = new Date(new Date().toDateString());
+  return ((VT && VT.rows) || []).map(r=>{
+    const dates = [...new Set(r.dates||[])].sort((a,b)=>parseDate(a)-parseDate(b));
+    const n = dates.length, used = stageOf(n);
+    const last = n ? parseDate(dates[n-1]) : null;
+    const ago = last ? Math.max(0, Math.round((today - last)/DAY)) : null;
+    const rec = ago==null ? "" : ago<=7 ? "Green" : ago<=14 ? "Yellow" : "Red";
+    const pr = r.practice || {count:0, last:null};
+    return {id:r.id, word:r.expr, dates, n, used, stage: r.mastered ? "Mastered" : used, mastered: !!r.mastered, ago, rec,
+      last: n ? dates[n-1] : "", signal: n ? SIGNAL[used+"|"+rec] : "—", reviews: pr.count||0, rlast: pr.last, importance: r.importance||"", type: r.type||"word"};
+  });
+}
+function renderVT(){
+  const rows = vtRows();
+  if(!rows.length){ $("vtAsOf").textContent = ""; $("vtkv").innerHTML = `<p class="status" style="margin:0">Vocab list not loaded.</p>`; return; }
+  const by = s => rows.filter(r=>r.stage===s).length, usedAny = rows.filter(r=>r.n>0).length, unpr = rows.filter(r=>!r.reviews).length;
+  $("vtAsOf").textContent = VT.as_of ? `Updated ${fmtDate(VT.as_of)}` : "";
+  $("vtkv").innerHTML = `<div><span class="label">On the list</span><span class="v">${rows.length}</span><span class="sub">${by("Mastered")} mastered</span></div>
+    <div><span class="label">Used on their own</span><span class="v">${usedAny}</span><span class="sub">at least one day</span></div>
+    <div><span class="label">Not practised yet</span><span class="v">${unpr}</span><span class="sub">no vocab session so far</span></div>`;
+  sigBar(rows, "vtbar", "vtlegend");
+  const attn = rows.filter(r=>r.n>=3 && r.rec!=="Green").sort((a,b)=>b.ago-a.ago || b.n-a.n);
+  renderVTTable(rows);
+}
+function renderVTTable(rows){
+  const q = vtQuery.trim().toLowerCase();
+  const allRows = rows;
+  $("vtType").innerHTML = VT_TYPES.map(([k,l])=>`<button type="button" data-s="${k}" aria-pressed="${vtType===k}">${l}<span class="c">${k==="all"?rows.length:rows.filter(r=>r.type===k).length}</span></button>`).join("");
+  if(vtType!=="all") rows = rows.filter(r=>r.type===vtType);
+  const keys = ["all", ...VT_STAGES, "unpractised"];
+  if(vtStage!=="all" && !rows.some(r=>r.signal===vtStage)) vtStage = "all";
+  const match = (r,s) => s==="all" || r.signal===s;
+  $("vtFilter").innerHTML = sigChips(rows, vtStage);
+  const list = applySort(rows.filter(r=>match(r,vtStage) && (!q || r.word.toLowerCase().includes(q)))
+    .sort((a,b)=>b.n-a.n || (b.last?parseDate(b.last):0)-(a.last?parseDate(a.last):0) || a.id-b.id), vtSort);
+  paintSort("vtHead", vtSort);
+  const shown = limitList("vt", list, !!q);
+  $("vtRows").innerHTML = shown.map((r,i)=>`<tr><td class="n rn">${i+1}</td><td class="w">${esc(r.word)}<span class="coretag">#${r.id}</span>${r.type!=="word"?`<span class="typetag">${esc(r.type)}</span>`:""}</td>
+    <td>${r.mastered ? `<span class="pill ok">Mastered</span>` : STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
+    <td>${r.n ? `${esc(fmtDate(r.last))} <span class="ago">· ${r.ago===0?"today":r.ago+"d ago"}</span>` : `<span class="ago">–</span>`}</td>
+    <td>${r.n ? `<span class="pill ${sigClass(r)}">${esc(r.signal)}</span>` : `<span class="ago">–</span>`}</td>
+    <td class="n">${r.reviews ? r.reviews : `<span class="ago">0</span>`}</td>
+    <td>${r.rlast ? revDate(r.rlast) : `<span class="ago">not yet</span>`}</td></tr>`).join("")
+    || `<tr><td colspan="8" class="status">No words match.</td></tr>`;
+  paintMore("vt", shown.length, list.length);
+  $("vtCount").textContent = `${shown.length} of ${list.length} shown${list.length<allRows.length?` (${allRows.length} on the list)`:""} · to add a word, tell Claude`;
+}
+$("vtFilter").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; vtStage = b.dataset.s; EXPAND.vt = false; renderVTTable(vtRows()); });
+$("vtType").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; vtType = b.dataset.s; EXPAND.vt = false; renderVTTable(vtRows()); });
+$("vtSearch").addEventListener("input", e=>{ vtQuery = e.target.value; renderVTTable(vtRows()); });
+$("vtHead").addEventListener("click", e=>{ const th = e.target.closest("th[data-k]"); if(!th) return; vtSort = nextSort(vtSort, th.dataset.k); renderVTTable(vtRows()); });
+
+
+// ---------- Reading ----------
+let READ = [];
+function weekStart(d){ const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()); const wd = (x.getDay()+6)%7; x.setDate(x.getDate()-wd); return x; }
+let rdSel = "__all";
+function readLinks(rid){
+  const pvBy = {}, vtBy = {};
+  ((PV && PV.rows) || []).forEach(r=>{ pvBy[String(r.word).trim().toLowerCase()] = r; });
+  ((VT && VT.rows) || []).forEach(r=>{ vtBy[String(r.expr).trim().toLowerCase()] = r; });
+  const firstMet = {};
+  READ.filter(r=>!rid || r.id===rid).sort((a,b)=>parseDate(a.date)-parseDate(b.date)).forEach(rd=>{
+    (rd.items||[]).forEach(it=>{
+      const k = (it.list==="pv"?"p:":"v:") + String(it.key).trim().toLowerCase();
+      if(!firstMet[k]) firstMet[k] = {key: it.key, list: it.list, date: rd.date, times: 0, title: rd.title};
+      firstMet[k].times++;
+    });
+  });
+  return Object.values(firstMet).map(m=>{
+    const row = m.list==="pv" ? pvBy[m.key.toLowerCase()] : vtBy[m.key.toLowerCase()];
+    const dates = row ? (row.dates||[]) : [];
+    const rd = parseDate(m.date);
+    const after = dates.filter(d=>parseDate(d) > rd).sort((a,b)=>parseDate(a)-parseDate(b));
+    const before = dates.filter(d=>parseDate(d) < rd).length;
+    const days = after.length ? Math.round((parseDate(after[0]) - rd)/86400000) : null;
+    return {...m, found: !!row, before, after: after.length, first: after[0] || null, days};
+  }).sort((a,b)=> (b.after>0)-(a.after>0) || (a.days??999)-(b.days??999) || parseDate(b.date)-parseDate(a.date));
+}
+function renderRead(){
+  const t = $("rtiles").children;
+  const set = (i, v, d) => { t[i].querySelector(".v").innerHTML = v; t[i].querySelector(".d").innerHTML = d; };
+  const list = READ.slice().sort((a,b)=>parseDate(b.date)-parseDate(a.date) || (a.id<b.id?1:-1));
+  const today = new Date(); today.setHours(0,0,0,0);
+  if(!list.length){
+    set(0, "–", "No reading logged yet"); set(1, "0 <span class=\"of\">/ 4</span>", "Target: 4 a week");
+    set(2, "–", "&nbsp;"); set(3, "–", "&nbsp;");
+    $("rdSub").textContent = "";
+    $("rdRows").innerHTML = `<li class="status">Nothing yet. Say "reading session" in a practice chat: the passage and the list words in it are logged here.</li>`;
+    $("rpRows").innerHTML = `<li class="status">No passages yet.</li>`;
+    paintMore("rd", 0, 0); paintMore("rp", 0, 0);
+    $("tr-read").innerHTML = `<div class="empty-chart">The chart appears after the second week with a reading.</div>`;
+    return;
+  }
+  const last = list[0], ago = Math.round((today - parseDate(last.date))/86400000);
+  set(0, esc(fmtDate(last.date)), `${ago===0?"today":ago===1?"yesterday":ago+" days ago"}<br>${esc(last.title||"")}`);
+  const ws = weekStart(today), thisWeek = list.filter(r=>parseDate(r.date) >= ws).length;
+  set(1, `${thisWeek} <span class="of">/ 4</span>`, thisWeek>=4 ? `<span class="up">Target reached</span>` : `${4-thisWeek} to go this week`);
+  const links = readLinks(), spoken = links.filter(l=>l.after>0);
+  set(2, links.length, `in ${list.length} passage${list.length>1?"s":""}`);
+  set(3, `${spoken.length} <span class="of">/ ${links.length}</span>`, links.length ? `${Math.round(spoken.length/links.length*100)}% used on a later day` : "&nbsp;");
+  if(rdSel!=="__all" && !list.find(r=>r.id===rdSel)) rdSel = "__all";
+  $("rdPick").innerHTML = `<option value="__all"${rdSel==="__all"?" selected":""}>All readings</option>` + list.map(r=>`<option value="${esc(r.id)}"${r.id===rdSel?" selected":""}>${esc(fmtDate(r.date))} · ${esc(r.title||"Untitled")}</option>`).join("");
+  const view = rdSel==="__all" ? links : readLinks(rdSel), vsp = view.filter(l=>l.after>0);
+  $("rdSub").textContent = `${vsp.length} of ${view.length} list words used on your own on a later day.`;
+  const shown = limitList("rd", view);
+  $("rdRows").innerHTML = shown.map(l=>`<li><div class="rowtop"><strong>${esc(l.key)}</strong>${l.after
+      ? `<span class="pill ok">Spoken ${l.days===1?"1 day":l.days+" days"} later</span>`
+      : `<span class="pill">Not yet</span>`}</div>
+    <div class="sub">${l.list==="pv"?"phrasal verb":"vocab list"} · read ${esc(fmtDate(l.date))}${l.times>1?` · in ${l.times} passages`:""}${l.after?` · first use after: ${esc(fmtDate(l.first))}${l.after>1?`, ${l.after} days in all`:""}`:""}${l.before?` · already used on ${l.before} day${l.before>1?"s":""} before`:""}${l.found?"":" · not on the lists any more"}</div></li>`).join("");
+  paintMore("rd", shown.length, view.length);
+  const pshown = limitList("rp", list);
+  $("rpRows").innerHTML = pshown.map(r=>`<li><div class="rowtop"><strong>${esc(r.title||"Untitled")}</strong><span class="sub">${esc(fmtDate(r.date))}</span></div>
+    <div class="sub">${r.words||"?"} words · ${(r.items||[]).length} list words${r.b2plus_share!=null?` · ${r.b2plus_share}% B2+ words`:""}${r.topic?` · ${esc(r.topic)}`:""}</div></li>`).join("");
+  paintMore("rp", pshown.length, list.length);
+  // weekly counts, from the first reading's week to this week
+  const first = weekStart(parseDate(list[list.length-1].date)), weeks = [];
+  for(let w = new Date(first); w <= ws; w.setDate(w.getDate()+7)){
+    const end = new Date(w); end.setDate(end.getDate()+7);
+    weeks.push({date: `${String(w.getDate()).padStart(2,"0")}.${String(w.getMonth()+1).padStart(2,"0")}.${w.getFullYear()}`,
+      n: list.filter(r=>{ const d = parseDate(r.date); return d >= w && d < end; }).length});
+  }
+  lineChart($("tr-read"), weeks, [{get:w=>w.n}], {digits:0, avg:4, avgLabel:"target", label:"Readings per week"});
+}
+
+// ---------------------------------------------------------------- overview (Murat, 30.09)
+// The brief, the priorities, the best moments and the notes are written by Claude at each check
+// (meta/overview). Everything else here is worked out from the session docs on the page.
+let OV = null, ovGridVer = "A", ovImpVer = "latest";
+const OV_OPEN = {};
+const IMP_KEYS = ["m","f","s"];
+const IMP_HEAD = {m:["Changes the meaning","The listener may understand something else. Fix these first.","var(--err)"],
+                  f:["Sounds foreign","Clear meaning, but a native speaker wouldn't say it. Mostly Turkish habits.","var(--warn)"],
+                  s:["Slip","You know the rule; it breaks under pressure. Lowest priority.","var(--faint)"]};
+const IMP_TXT = {m:"Changes the meaning", f:"Sounds foreign", s:"Slip"};
+// impact of a Turkish-interference item when the check didn't store one (same rule as intf.py)
+const NAT_IMPACT_P = {by_the_way:"m", thats_why:"m"}, NAT_IMPACT_T = {article:"s", pro_drop:"s", lex_false_friend:"m"};
+const natImpact = x => x.impact || NAT_IMPACT_P[x.pattern] || NAT_IMPACT_T[x.type] || "f";
+// estimated CEFR level of an interference pattern: the level where the rule is normally learned
+const NAT_LEVEL_P = {missing_article:"A1", extra_article:"A2", the_things:"A2", a_with_uncountable:"A2", for_ing_purpose:"A2",
+  dropped_pronoun:"A1", adverb_placement:"B1", thats_why:"B1", this_kind_of_plural:"B1", verb_about:"B1", by_the_way:"B2"};
+const NAT_LEVEL_T = {article:"A2", pro_drop:"A1", word_order:"B1", structure_transfer:"B1", calque_phrase:"B1"};
+const ovDay = s => { const d = parseDate(s.date); return d.toLocaleDateString("en-GB",{weekday:"short"}) + " " + s.date.slice(0,5); };
+const cut = (q, n) => { q = String(q||""); return q.length > n ? q.slice(0, n).replace(/\s+\S*$/, "") + "…" : q; };
+
+function renderOverview(){
+  if(!$("tab-over")) return;
+  ovRenderBrief(); ovRenderImpact(); ovRenderTiles(); ovRenderCharts(); ovRenderGrid(); ovRenderMoments(); ovRenderReport();
+}
+
+// ---- the brief (Claude's text from meta/overview)
+function ovRenderBrief(){
+  const box = $("ovBrief"), last = SESS[SESS.length-1];
+  if(!OV){ box.innerHTML = `<div class="label">The brief</div><p class="ovempty">The written summary appears after the next wrap-up. The numbers below update on their own.</p>`; return; }
+  const moveCls = m => m==="better"||m==="best" ? "up" : m==="worse"||m==="worst" ? "down" : "flat";
+  const moveTxt = m => ({better:"Better", best:"Best yet", worse:"Worse", worst:"Worst yet", same:"Same"})[m] || "";
+  const was = w => w==null || w==="" ? "" : /^[0-9.,+−-]/.test(String(w)) ? ` <s>/ ${esc(w)}</s>` : ` <s>${esc(w)}</s>`;
+  const period = (k, lab) => { const p = (OV.periods||{})[k]; if(!p) return "";
+    return `<article class="period"><div class="when"><span class="label">${lab}</span><span class="sub">${esc(p.sub||"")}</span></div>
+      <h3>${esc(p.verdict||"")}</h3>
+      <div class="score">${(p.scores||[]).map(s=>`<div><span>${esc(s.label)}</span><span class="n">${esc(s.value)}${was(s.was)}</span><span class="mv ${moveCls(s.move)}">${esc(s.tag||moveTxt(s.move))}</span></div>`).join("")}</div>
+      <ul class="pts">${(p.points||[]).map(x=>`<li class="${x.kind==="good"?"g":"b"}">${esc(x.text)}${x.said?` <q>${esc(x.said)}</q>`:""}${x.say?` → <span class="fx">${esc(x.say)}</span>`:""}</li>`).join("")}</ul>
+      ${p.note?`<div class="pnote">${esc(p.note)}</div>`:""}</article>`; };
+  const pr = (OV.priorities||[]).map(x=>`<div><b>${esc(x.title)}</b><span><span class="imp ${esc(x.impact)}">${IMP_TXT[x.impact]||""}</span></span><span>${esc(x.text)}</span>
+    ${x.said||x.say?`<span class="say">${x.said?`<i>${esc(x.said)}</i> `:""}${x.say?`<em>${esc(x.say)}</em>`:""}${x.rest?" "+esc(x.rest):""}</span>`:""}</div>`).join("");
+  const stale = last && OV.session && OV.session !== last.id;
+  box.innerHTML = `<div><div class="label">The brief · after the ${esc(fmtDate(OV.as_of))} session</div>
+      <div class="headline">${esc(OV.headline)}</div><p class="intro">${esc(OV.intro)}</p></div>
+    <div class="periods">${period("today","Today")}${period("week","This week")}${period("start","Since the start")}</div>
+    ${pr?`<div><div class="label" style="margin-bottom:10px">Your 3 priorities for the next sessions</div><div class="prio">${pr}</div></div>`:""}
+    <div class="ovsig">Written by Claude after the ${esc(fmtDate(OV.as_of))} check, from ${OV.sessions_covered||"all"} session records. Rewritten at every wrap-up.${stale?" Newer sessions are in the numbers below; the text catches up at the next wrap-up.":""}</div>`;
+}
+
+// ---- which mistakes matter (from the impact label on every grammar error)
+function ovImpactOf(src){
+  const c = {m:0,f:0,s:0}, by = {m:{},f:{},s:{}}, ex = {m:[],f:[],s:[]};
+  src.forEach(s => (s.errors||[]).forEach(e => { if(!IMP_KEYS.includes(e.impact)) return; c[e.impact]++; by[e.impact][e.concept] = (by[e.impact][e.concept]||0)+1; }));
+  // examples: newest first, one per mistake type, "wrong part -> right part" from the fix
+  src.slice().reverse().forEach(s => (s.errors||[]).slice().reverse().forEach(e => {
+    const L = e.impact; if(!IMP_KEYS.includes(L) || ex[L].length >= 3 || ex[L].some(x=>x.k===e.concept)) return;
+    const [a, b] = String(e.fix||"").split(/\s*->\s*/);
+    if(!b) return;
+    ex[L].push({k:e.concept, said: / used for /.test(a) ? cut(e.quote, 70) : a, say: b});
+  }));
+  return {n: c.m+c.f+c.s, c, by, ex};
+}
+function ovRenderImpact(){
+  const labelled = SESS.filter(s => (s.errors||[]).some(e => e.impact));
+  ["iA","iB","iC"].forEach((id,i)=>$(id).setAttribute("aria-pressed", ["latest","all","trend"][i]===ovImpVer));
+  const note = k => (OV && OV.impact_notes && OV.impact_notes[k]) || "";
+  if(!labelled.length){ $("ibar").hidden = true; $("itrend").hidden = true; $("icols").hidden = false;
+    $("icols").innerHTML = `<p class="status">Starts with the next check: every mistake gets a label (changes the meaning, sounds foreign, or slip).</p>`; $("inote").textContent = ""; $("impSub").textContent = ""; return; }
+  if(ovImpVer === "trend"){
+    $("ibar").hidden = true; $("icols").hidden = true; $("itrend").hidden = false;
+    $("impSub").textContent = "Share of each session's mistakes, %";
+    const sh = (s,L) => { const d = ovImpactOf([s]); return d.n ? d.c[L]/d.n*100 : null; };
+    lineChart($("ch-imp"), labelled, [{get:s=>sh(s,"f"), cls:"f", name:"foreign"},{get:s=>sh(s,"m"), cls:"m", name:"meaning"},{get:s=>sh(s,"s"), cls:"s", name:"slip"}],
+      {fmt:v=>Math.round(v)+"%", W:960, H:250, label:"Share of mistakes by impact, by session"});
+    $("inote").textContent = note("trend"); return;
+  }
+  $("ibar").hidden = false; $("icols").hidden = false; $("itrend").hidden = true;
+  const last = labelled[labelled.length-1], src = ovImpVer === "latest" ? [last] : labelled, D = ovImpactOf(src);
+  $("impSub").textContent = ovImpVer === "latest" ? `${ovDay(last)} · ${D.n} mistakes` : `All ${labelled.length} sessions · ${D.n} mistakes`;
+  $("ibar").setAttribute("aria-label", `${D.c.m} change the meaning, ${D.c.f} sound foreign, ${D.c.s} are slips`);
+  $("ibar").innerHTML = IMP_KEYS.map(L=>D.c[L]?`<span class="${L}" style="flex:${D.c[L]}">${D.c[L]}</span>`:"").join("");
+  $("icols").innerHTML = IMP_KEYS.map(L=>{
+    const rows = Object.entries(D.by[L]).sort((a,b)=>b[1]-a[1]), key = ovImpVer+L, open = OV_OPEN[key], shown = open ? rows : rows.slice(0,4);
+    return `<div class="icol" style="--ic:${IMP_HEAD[L][2]}"><h3>${IMP_HEAD[L][0]} <span>${D.n?Math.round(D.c[L]/D.n*100):0}%</span></h3><p>${IMP_HEAD[L][1]}</p>
+      <ol>${shown.map(([k,n])=>`<li><button type="button" class="ovgo" data-go="err" data-k="${esc(k)}" title="Show in Grammar · Errors">${esc(label(k))}</button><span>${n}</span></li>`).join("") || `<li class="status">None.</li>`}</ol>
+      ${rows.length>4?`<button type="button" class="more" data-imp="${key}">${open?"Show fewer":`Show all ${rows.length} types`}</button>`:""}
+      ${D.ex[L].length?`<div class="exlab">Examples</div><ul>${D.ex[L].map(x=>`<li><i>${esc(x.said)}</i> → <b>${esc(x.say)}</b></li>`).join("")}</ul>`:""}</div>`;
+  }).join("");
+  $("inote").textContent = note(ovImpVer);
+}
+
+// ---- tiles (latest session vs the one before, sparkline over all sessions)
+function ovSpark(vals){
+  const W=160,H=34,p=4, pts=vals.map((v,i)=>v==null?null:[i,v]).filter(Boolean);
+  if(pts.length<2) return "";
+  const ys=pts.map(q=>q[1]), lo=Math.min(...ys), hi=Math.max(...ys), r=hi-lo||1;
+  const X=i=>p+i*(W-2*p)/(vals.length-1), Y=v=>H-p-(v-lo)/r*(H-2*p);
+  const d=smoothPath(pts.map(q=>[+X(q[0]).toFixed(1),+Y(q[1]).toFixed(1)])), e=pts[pts.length-1];
+  return `<svg viewBox="0 0 ${W} ${H}" class="spark" aria-hidden="true" preserveAspectRatio="none"><path class="ar" d="${d} L${X(e[0])} ${H} L${X(pts[0][0])} ${H} Z"/><path class="ln" d="${d}"/><circle class="end" cx="${X(e[0])}" cy="${Y(e[1])}" r="3.2"/></svg>`;
+}
+function ovRenderTiles(){
+  const box = $("ovTiles"); if(!SESS.length){ box.innerHTML = ""; return; }
+  const L = SESS[SESS.length-1], P = SESS[SESS.length-2];
+  const bm = (s,k) => s && s.by_mode && s.by_mode.voice && s.by_mode.voice.words ? s.by_mode.voice[k] : null;
+  const F = {
+    ev: s => bm(s,"errors_per_100"),
+    iv: s => s && s.interference && s.interference.by_mode && s.interference.by_mode.voice && s.interference.by_mode.voice.words ? s.interference.by_mode.voice.per_100 : null,
+    pv: s => s && s.pv && s.pv.instances ? s.pv.words/s.pv.instances : null,
+    b2: s => s && s.vocab && s.vocab.b2plus_share!=null ? s.vocab.b2plus_share : null,
+    mt: s => s && s.vocab && s.vocab.mtld && s.vocab.mtld.voice!=null ? s.vocab.mtld.voice : null,
+    rg: s => s ? s.range_concepts ?? null : null,
+    cu: s => s && s.vocab && s.vocab.comeups ? s.vocab.comeups.length : null,
+    w:  s => s ? s.words ?? null : null };
+  const tile = (lab, key, fmt, unit, lowerBetter, digits, note) => {
+    const c = F[key](L), p = F[key](P);
+    let d = P ? "No figure last session" : "First session";
+    if(c!=null && p!=null){ const x = c-p, good = lowerBetter ? x<0 : x>0;
+      d = Math.abs(x) < 1e-9 ? "Same as last session" : `<span class="${good?"good":"bad"}">${x>0?"+":"−"}${Math.abs(x).toFixed(digits)}</span> vs last session`; }
+    return `<div class="tile"><div class="label">${lab}</div><div class="v">${c==null?"–":fmt(c)}${unit?` <small>${unit}</small>`:""}</div><div class="d">${note!=null?note:d}</div>${ovSpark(SESS.map(F[key]))}</div>`;
+  };
+  const base = gBase(), W = SESS.reduce((a,x)=>a+(x.words||0),0);
+  const vw = bm(L,"words"), tw = L.by_mode && L.by_mode.typed ? L.by_mode.typed.words : 0;
+  box.innerHTML = [
+    tile("Voice errors per 100 words", "ev", v=>v.toFixed(2), "", true, 2),
+    tile("Turkish patterns per 100, voice", "iv", v=>v.toFixed(2), "", true, 2),
+    tile("Phrasal verbs", "pv", v=>"1 / "+Math.round(v), "words", true, 0, F.pv(L)!=null&&F.pv(P)!=null ? null : "native 1 / 192"),
+    tile("Advanced words (B2+)", "b2", v=>v.toFixed(1)+"%", "", false, 1),
+    tile("Word variety, voice", "mt", v=>v.toFixed(1), "", false, 1),
+    tile("Grammar range", "rg", v=>v, base?`/ ${base}`:"", false, 0),
+    tile("List words used unprompted", "cu", v=>v, "", false, 0),
+    tile("Words analysed", "w", v=>v.toLocaleString("en-GB"), "", false, 0, `voice ${(vw||0).toLocaleString("en-GB")} · typed ${(tw||0).toLocaleString("en-GB")} · all time ${W.toLocaleString("en-GB")}`)
+  ].join("");
+  // the phrasal verb tile keeps the native benchmark visible next to the change
+  const pvT = box.children[2]; if(pvT && F.pv(L)!=null && F.pv(P)!=null) pvT.querySelector(".d").innerHTML += " · native 1 / 192";
+}
+
+// ---- two trend charts
+function ovRenderCharts(){
+  const vv = s => s.by_mode && s.by_mode.voice && s.by_mode.voice.words ? s.by_mode.voice.errors_per_100 : null;
+  const iv = s => s.interference && s.interference.by_mode && s.interference.by_mode.voice && s.interference.by_mode.voice.words ? s.interference.by_mode.voice.per_100 : null;
+  lineChart($("ov-acc"), SESS, [{get:vv, cls:"voice", name:"errors"},{get:iv, cls:"typed", name:"Turkish"}], {digits:2, label:"Voice errors and Turkish patterns per 100 words, by session"});
+  lineChart($("ov-b2"), SESS, [{get:s=>s.vocab && s.vocab.b2plus_share!=null ? s.vocab.b2plus_share : null}], {fmt:v=>v.toFixed(1)+"%", label:"B2+ vocabulary share by session"});
+}
+
+// ---- what's working, what isn't (rows picked by rule, per 1,000 words)
+function ovRows(){
+  const n = SESS.length, W = SESS.map(s=>s.words||0), good = {}, bad = {};
+  const add = (map, k, i, v, meta) => { const r = map[k] ||= {k, c:new Array(n).fill(0), ...meta}; r.c[i] += v; return r; };
+  SESS.forEach((s,i) => {
+    Object.entries(s.concepts||{}).forEach(([k,c]) => { if(["B2","C1","C2"].includes((REG[k]||[])[1]) && c.correct>0) add(good, k, i, c.correct, {kind:"hl"}); });
+    (s.errors||[]).forEach(e => { if(e.concept.startsWith("err_") && e.concept!=="err_other"){ const r = add(bad, e.concept, i, 1, {kind:"err", imp:{}}); if(e.impact) r.imp[e.impact] = (r.imp[e.impact]||0)+1; } });
+    natItems(s).forEach(x => { if(x.pattern.startsWith("other_") || x.pattern==="by_the_way") return;
+      const r = add(bad, "nat:"+x.pattern, i, 1, {kind:"nat", key:x.pattern, type:x.type, imp:{}}); const L = natImpact(x); r.imp[L] = (r.imp[L]||0)+1; });
+  });
+  const rate = (r, a, b) => { const w = W.slice(a,b).reduce((x,y)=>x+y,0); return w ? r.c.slice(a,b).reduce((x,y)=>x+y,0)/w*1000 : 0; };
+  const fin = r => { r.v = r.c.map((c,i)=>W[i]?c/W[i]*1000:0); r.base = rate(r,0,3); r.last = rate(r,n-3,n);
+    r.seen = r.c.filter(Boolean).length; r.ch = r.base ? (r.last-r.base)/r.base*100 : null; return r; };
+  return {good: Object.values(good).map(fin), bad: Object.values(bad).map(fin)};
+}
+function ovPick(list, ver){
+  if(ver === "A") return list.filter(r=>r.seen>=3).sort((a,b)=>b.last-a.last).slice(0,6);
+  const ok = list.filter(r=>r.seen>=3 && r.base>0 && Math.max(r.base,r.last)>=0.4);
+  const up = ok.filter(r=>r.ch>0).sort((a,b)=>b.ch-a.ch), down = ok.filter(r=>r.ch<0).sort((a,b)=>a.ch-b.ch);
+  let u = up.slice(0,3), d = down.slice(0,3);
+  if(u.length<3) d = down.slice(0, 6-u.length); if(d.length<3) u = up.slice(0, 6-d.length);
+  return [...u, ...d];
+}
+function ovRenderGrid(){
+  const H = $("heat"), n = SESS.length;
+  ["vA","vB"].forEach(id=>$(id).setAttribute("aria-pressed", (id==="vA")===(ovGridVer==="A")));
+  if(n < 4){ H.innerHTML = `<tbody><tr><td class="status" style="text-align:left">The grid needs 4 sessions: the first 3 are the starting point.</td></tr></tbody>`; return; }
+  const {good, bad} = ovRows(), cols = SESS.slice(Math.max(3, n-6)), ci = cols.map(s=>SESS.indexOf(s));
+  const G = ovPick(good, ovGridVer), rank = r => "mfs".indexOf(ovRowImpact(r));
+  const B = ovPick(bad, ovGridVer).sort((a,b)=>rank(a)-rank(b));
+  const shade = (v,p) => v===0 ? "z" : p+(v<0.75?1:v<1.5?2:v<2.25?3:4), num = v => v===0 ? "–" : v.toFixed(1);
+  const row = (r, p, higherBetter) => {
+    const j = ovJudge(r.ch, higherBetter), imp = higherBetter ? "" : ovRowImpact(r);
+    const nm = r.kind==="nat" ? natPat(r.key).label : label(r.k);
+    const where = r.kind==="hl" ? "Grammar · Well-used structures" : r.kind==="err" ? "Grammar · Errors" : "Naturalness · Interference patterns";
+    const lv = ovLevel(r), ex = ovExample(r);
+    return `<tr${imp==="s"?' class="slip"':""}><td class="name"><div class="nl">${imp?`<span class="mk ${imp}" title="${IMP_TXT[imp]}" aria-label="${IMP_TXT[imp]}"></span>`:""}<button type="button" class="ovgo" data-go="${r.kind}" data-k="${esc(r.kind==="nat"?r.key:r.k)}" title="${esc(nm)} · show in ${where}">${esc(nm)}</button>${lv?` <span class="lv${lv==="mixed"?" mixed":""}">${esc(lv)}</span>`:""}</div><small>${ex}</small></td>`
+      + `<td class="base ${shade(r.base,p)}" title="First 3 sessions: ${r.base.toFixed(2)} per 1,000 words">${num(r.base)}</td>`
+      + ci.map(i=>`<td class="${shade(r.v[i],p)}" title="${esc(fmtDate(SESS[i].date))}: ${r.v[i].toFixed(2)} per 1,000 words">${num(r.v[i])}</td>`).join("")
+      + `<td class="chg">${ovBubble(r.ch, j)}</td></tr>`;
+  };
+  const span = cols.length + 3;
+  H.innerHTML = `<colgroup><col class="nm"><col>${cols.map(()=>"<col>").join("")}<col class="st"></colgroup><thead><tr><th class="l"></th><th class="base">First 3</th>${cols.map(s=>`<th>${esc(s.date.slice(0,5))}</th>`).join("")}<th>Status · change</th></tr></thead><tbody>
+<tr class="grp good"><th colspan="${span}">What you do well<small>advanced structures you used correctly</small></th></tr>
+${G.map(r=>row(r,"g",true)).join("")}
+<tr class="grp bad"><th colspan="${span}">What keeps slipping<small class="mkkey"><span class="mk m"></span>changes the meaning <span class="mk f"></span>sounds foreign <span class="mk s"></span>slip</small></th></tr>
+${B.map(r=>row(r,"c",false)).join("")}</tbody>`;
+}
+function ovRowImpact(r){ const e = Object.entries(r.imp||{}).sort((a,b)=>b[1]-a[1]); return e.length ? e[0][0] : ""; }
+function ovLevel(r){
+  if(r.kind==="nat") { const L = NAT_LEVEL_P[r.key] || NAT_LEVEL_T[r.type]; return L ? L+" est." : "mixed"; }
+  const reg = (REG[r.k]||[])[1]; if(reg) return reg;
+  const est = ERR_LEVEL[r.k]; return est ? (est==="mixed" ? "mixed" : est+" est.") : "";
+}
+function ovExample(r){
+  for(let i = SESS.length-1; i >= 0; i--){ const s = SESS[i];
+    if(r.kind==="hl"){ const h = (s.highlights||[]).find(h=>h.concept===r.k); if(h) return `“${esc(cut(h.quote,70))}”`; }
+    else if(r.kind==="err"){ const e = [...(s.errors||[])].reverse().find(e=>e.concept===r.k && /->/.test(e.fix||""));
+      if(e){ const [a,b] = e.fix.split(/\s*->\s*/); return `“${esc(/ used for /.test(a) ? cut(e.quote,60) : a)}” → <em>${esc(b)}</em>`; } }
+    else { const x = [...natItems(s)].reverse().find(x=>x.pattern===r.key && x.fix); if(x) return `“${esc(cut(x.quote,50))}” → <em>${esc(cut(x.fix,40))}</em>`; }
+  }
+  return "";
+}
+function ovJudge(ch, higherBetter){
+  if(ch==null) return {cls:"new", txt:"New"};
+  if(Math.abs(ch) < 25) return higherBetter ? {cls:"solid", txt:"Steady"} : {cls:"stuck", txt:"Stuck"};
+  return higherBetter ? (ch>0 ? {cls:"growing", txt:"Growing"} : {cls:"dipping", txt:"Dipping"}) : (ch>0 ? {cls:"rising", txt:"Rising"} : {cls:"fading", txt:"Fading"});
+}
+function ovBubble(ch, j){
+  if(ch==null) return `<span class="stat new" title="Not seen in the first 3 sessions"><b>New</b></span>`;
+  const w = Math.max(Math.min(Math.abs(ch),200)/200*100, 4), r = Math.round(ch);
+  return `<span class="stat ${j.cls}" title="Last 3 sessions vs first 3"><b>${j.txt}:</b> ${r>0?"+":r<0?"−":""}${Math.abs(r)}%<i style="width:${w}%"></i></span>`;
+}
+// jump from the Overview to the row it names, in the Grammar or Naturalness tab
+function ovJump(kind, k){
+  if(kind==="nat"){
+    showTab("nat"); natSel = "__all"; EXPAND.nat = false; renderNat();
+    if(!$("natRows").querySelector(`li[data-k="${CSS.escape(k)}"]`)){ EXPAND.nat = true; renderNatList(natSessions()); }
+    const li = $("natRows").querySelector(`li[data-k="${CSS.escape(k)}"]`); if(!li) return;
+    li.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"center"});
+    li.classList.remove("flash"); void li.offsetWidth; li.classList.add("flash"); return;
+  }
+  showTab("grammar"); jumpTo(kind, k);
+}
+
+// ---- best moments (Claude's picks) and the latest session's report
+function ovRenderMoments(){
+  const list = (OV && OV.best_moments) || [];
+  $("ovMomentsBox").hidden = !list.length;
+  $("ovMoments").innerHTML = list.map(m=>`<li><div class="rowtop"><b>${esc(m.title)}</b><span class="pill ${m.kind==="word"?"word":"ok"}">${esc(m.date)}</span></div>${m.quote?`<span class="quote">${esc(m.quote)}</span>`:`<span class="sub">${esc(m.sub||"")}</span>`}</li>`).join("");
+}
+function ovMd(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
+function ovRenderReport(){
+  const box = $("ovReport"), last = SESS[SESS.length-1];
+  if(!last || !last.report){ box.innerHTML = `<div class="phead" style="margin:0"><h2>Session report</h2></div><p class="status" style="margin:6px 0 0">The report of each check appears here from the next wrap-up.</p>`; return; }
+  // the report's fixed format: opening lines, then "## Errors" and the other sections; "###" sub-groups; "- " lines
+  const blocks = [], top = []; let cur = null, list = null;
+  last.report.split("\n").forEach(raw => { const t = raw.trim(); if(!t) { list = null; return; }
+    if(t.startsWith("## ")){ cur = {h:t.slice(3), html:""}; blocks.push(cur); list = null; return; }
+    const tgt = cur ? cur : null;
+    if(t.startsWith("### ")){ if(tgt){ tgt.html += `<h4>${ovMd(t.slice(4))}</h4>`; } list = null; return; }
+    if(t.startsWith("- ")){ const li = `<li>${ovMd(t.slice(2))}</li>`;
+      if(!tgt){ top.push(li); return; }
+      if(!list){ tgt.html += `<ul></ul>`; list = true; } tgt.html = tgt.html.replace(/<\/ul>$/, li + "</ul>"); return; }
+    list = null; if(tgt) tgt.html += `<p>${ovMd(t)}</p>`; else top.push(`<li>${ovMd(t)}</li>`);
+  });
+  const blk = b => `<div class="rblock"><h3>${esc(b.h)}</h3>${b.html}</div>`;
+  const errs = blocks.filter(b=>/^errors/i.test(b.h)), rest = blocks.filter(b=>!/^errors/i.test(b.h));
+  box.innerHTML = `<div class="phead"><h2>Session report · ${esc(ovDay(last))}</h2><span class="sub">${(last.words||0).toLocaleString("en-GB")} words · ${esc(last.title||"")}</span></div>
+    <ul class="rtop">${top.join("")}</ul>
+    <div class="rgrid"><div class="rstack">${errs.map(blk).join("")}</div><div class="rstack">${rest.map(blk).join("")}</div></div>`;
+}
+
+document.addEventListener("click", e => {
+  const g = e.target.closest(".ovgo"); if(g){ ovJump(g.dataset.go, g.dataset.k); return; }
+  const m = e.target.closest("[data-imp]"); if(m){ OV_OPEN[m.dataset.imp] = !OV_OPEN[m.dataset.imp]; ovRenderImpact(); }
+});
+$("iA").addEventListener("click", ()=>{ ovImpVer = "latest"; ovRenderImpact(); });
+$("iB").addEventListener("click", ()=>{ ovImpVer = "all"; ovRenderImpact(); });
+$("iC").addEventListener("click", ()=>{ ovImpVer = "trend"; ovRenderImpact(); });
+$("vA").addEventListener("click", ()=>{ ovGridVer = "A"; ovRenderGrid(); });
+$("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
+
+(async () => {
+  const db = window.claude ? await window.claude.use("db") : null;
+  if(!db){ $("lastline").textContent = "Open this page in Claude to load your sessions."; return; }
+  db.doc("meta/registry").onSnapshot(snap => { REG = (snap.exists && snap.data().concepts) || {}; render(); },
+    () => { $("lastline").textContent = "Couldn't load the concept list. Reload the page."; });
+  db.doc("meta/interference").onSnapshot(snap => { INTF = snap.exists ? snap.data() : null; if(SESS.length){ renderNat(); ovRenderGrid(); } }, () => {});
+  db.doc("meta/overview").onSnapshot(snap => { OV = snap.exists ? snap.data() : null; if(SESS.length) renderOverview(); else ovRenderBrief(); }, () => { OV = null; });
+  db.doc("meta/phave").onSnapshot(snap => { PHAVE = snap.exists ? snap.data() : null; renderPV(); }, () => {});
+  db.doc("meta/pv_tracker").onSnapshot(snap => { PV = snap.exists ? snap.data() : null; renderPV(); renderRead(); }, () => {});
+  db.doc("meta/vocab_tracker").onSnapshot(snap => { VT = snap.exists ? snap.data() : null; renderVT(); renderRead(); }, () => {});
+  db.collection("reading").onSnapshot(snap => {
+    READ = snap.docs.map(d => ({id:d.id, ...d.data()}));
+    renderRead();
+  }, () => { READ = []; renderRead(); });
+  db.collection("sessions").onSnapshot(snap => {
+    SESS = snap.docs.map(d => cleanDoc({id:d.id, ...d.data()})).sort((a,b)=>a.id<b.id?-1:1);
+    render();
+  }, () => { $("lastline").textContent = "Couldn't load sessions. Reload the page."; });
+})();
+
+// back to top (Murat, 28.09): appears after scrolling down, on every tab
+(function(){
+  const b = $("toTop");
+  const upd = () => b.classList.toggle("on", window.scrollY > 500);
+  window.addEventListener("scroll", upd, {passive:true}); upd();
+  b.addEventListener("click", ()=>{ window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); const t = document.querySelector('.tabs [aria-selected="true"]'); if(t) t.focus({preventScroll:true}); });
+})();
+</script>
+
+
+</body></html>

@@ -1,0 +1,4 @@
+## 0m. UPDATE 01 Oct — visual improvements round (Claude Code)
+- Page v42 (same link): all 8 dropdowns (Grammar: Well-used structures, Errors; Vocab: Session vocabulary, Come-ups; PV: by session; Naturalness: Upgrades, Patterns; Reading: From reading to speaking) now stay inside their panel on phone. Before, a long session name ("30 Sept · Finishing Touch - Week 58 Day 6-7") made each dropdown ~520px wide and widened the whole page to 557px at 390px. Fix is CSS only: `select{max-width:100%; text-overflow:ellipsis}`, full-width under the title below 560px. Tested 390 + 1200, light + dark, every tab: page width = screen width, no errors. No numbers can change (style only).
+- Comment thread b2e60552 (not sent to Claude) stays open for Murat to resolve.
+- Data note: sessions now 10 (30.09 added: s_20260930_6a7d3de9), reading 2.
