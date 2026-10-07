@@ -109,3 +109,20 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 Prerequisite: the page must read the speaking snapshot and extra items from its db (for example `speech/snapshot` and `items_extra/*`) instead of from built-in code, so updates need no republish.
 
 **Open question to the user:** should the feed run automatically as the last step of wrap-up, or only when asked?
+Claude's recommendation (07.10): only when asked, plus a one-line reminder at wrap-up ("N new sessions waiting"). Not answered yet.
+
+## Parked (07.10): merge all practices into a Ledger "Practice" tab?
+The user raised merging the three quizzes (prep quiz, phrasal verb quiz, irregular verb drill) into the Fluency Ledger under a new **Practice** tab. **Decision parked; the user is sleeping on it.** Nothing was built or changed.
+
+What was found:
+- **Ledger:** one published page, about 166 KB / 2,141 lines, plain JS, `db` collections `sessions` and `reading`. Its source is **not** in the repo.
+- **Phrasal verb quiz** (Claude Design, React): about 5,000 lines, mostly a built-in verb dataset (about 450 KB). Progress lives in browser storage (`pvq_*` keys) and is pushed to this repo (`data/phrasal-verb-db.json`, `data/lookup-verbs.json`, branch `main`). Its "targeted" mode means verbs are pasted in by hand. **Security: its code contains a hard-coded GitHub token (`DEFAULT_GH_TOKEN`). The user was told to revoke it. Never commit that file while the token is in it.**
+- **Irregular verb drill** (Claude Design, React): small (about 430 lines plus 6 KB of verb data), browser storage only (`irregularVerbStats_v1`), no link to the Ledger, and the Ledger has no irregular-verb field.
+
+Claude's assessment:
+- **Feed cost:** merging removes the speaking snapshot, because the quiz would read `sessions` live, and lets the phrasal verb quiz pick verbs from the Ledger automatically. The judgement step (sorting slips, approving items) stays the same.
+- **Risk:** the code wouldn't change daily, only the data. The risks are one much bigger page to read and edit, a quiz bug breaking the dashboard that four skills write to, and a React-to-plain-JS rewrite.
+- **Coherence:** one place, one style, one progress view. This is a real gain.
+- **Progress:** both Design quizzes keep results in that browser's storage, so moving them needs a one-off export.
+- **Suggested order if the user says yes:** revoke the token → put the Ledger source in the repo with a build step → prep quiz first → phrasal verb quiz → irregular drill last.
+- **Next question for the user:** does the irregular drill's saved history matter, or can it start fresh?
