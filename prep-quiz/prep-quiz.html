@@ -1,0 +1,1333 @@
+<title>Prepositions & Collocations</title>
+<style>
+  /* Layout: single centred column (780px) like the vocab quiz; mode switch, then cards. Light-only by design, matching the vocab page. */
+  :root{--hm0:#f1f2f8;--q1:#e6e2fe;--q2:#c4b9fb;--q3:#9a88f6;--q4:#7460ee;--q5:#4f3bc9;--s1:#fde7e5;--s2:#f8bfb9;--s3:#f08f86;--s4:#dc5f55;--s5:#ac3b33;--bg:#f6f7fb;--card:#ffffff;--border:#e7e9f2;--text:#232842;--head:#191d33;--text-dim:#6b7290;--text-faint:#9498b0;--accent:#6d5cf6;--accent-soft:#efecff;--accent-line:#e2ddff;--accent-ink:#544a9e;--mint:#1fb383;--mint-soft:#e4f8f0;--mint-ink:#0e7c58;--coral:#f2554c;--coral-soft:#fdeceb;--coral-ink:#c23930;--gold:#e69a1f;--gold-soft:#fdf3e2;--gold-ink:#a3730e;--gold-line:#f3dba3;--sky:#3b82c4;--sky-soft:#e6f0fa;color-scheme:light;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:radial-gradient(circle at 10% -5%,#efeaff 0%,transparent 45%),radial-gradient(circle at 95% 10%,#e2f9f0 0%,transparent 40%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,sans-serif;min-height:100vh;padding:32px 16px 60px;}
+  .wrap{max-width:780px;margin:0 auto;}
+  .top{text-align:center;margin-bottom:18px;}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;}
+  .top h1{font-size:27px;font-weight:800;margin:0 0 6px;letter-spacing:-0.01em;color:var(--head);text-wrap:balance;}
+  .top p{font-size:13.5px;color:var(--text-dim);margin:0;}
+  .mode-switch{display:flex;justify-content:center;gap:8px;margin:18px 0 20px;}
+  .mode-btn{font:inherit;font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--text-dim);cursor:pointer;}
+  .mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .banner{font-size:12.5px;background:var(--gold-soft);border:1px solid var(--gold-line);color:var(--gold-ink);padding:9px 13px;border-radius:12px;margin-bottom:14px;line-height:1.5;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px 24px 20px;box-shadow:0 12px 34px rgba(90,80,180,0.07);margin-bottom:16px;}
+  .ex-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .ex-head h2{font-size:17.5px;font-weight:800;margin:0;color:var(--head);}
+  .type-pill{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-faint);background:var(--bg);border:1px solid var(--border);padding:4px 9px;border-radius:99px;white-space:nowrap;}
+  .note{font-size:12.5px;background:var(--accent-soft);border:1px solid var(--accent-line);padding:10px 14px;border-radius:12px;margin-bottom:16px;color:var(--accent-ink);line-height:1.5;}
+  .btn{font-family:inherit;font-size:13px;font-weight:700;padding:10px 18px;border-radius:10px;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text-dim);}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .btn:disabled{opacity:.4;cursor:default;}
+  .btn:focus-visible,.mini-btn:focus-visible,.mc-option:focus-visible,.mode-btn:focus-visible,.blank-input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .start-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .start-box{border:1px solid var(--border);border-radius:14px;padding:16px;background:var(--bg);display:flex;flex-direction:column;gap:10px;min-width:0;}
+  .start-box h3{margin:0;font-size:14.5px;color:var(--head);}
+  .start-box p{margin:0;font-size:12.5px;color:var(--text-dim);line-height:1.5;}
+  .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .size-input{width:64px;font:inherit;font-size:14px;font-weight:700;padding:6px 8px;border:1px solid var(--border);border-radius:8px;color:var(--accent);background:var(--card);}
+  .lbl{font-size:12px;color:var(--text-faint);}
+  .check-lbl{font-size:12.5px;color:var(--text-dim);display:flex;align-items:center;gap:6px;cursor:pointer;}
+  .preview{font-size:12px;color:var(--text-dim);line-height:1.6;}
+  .preview b{color:var(--head);}
+  .picker{margin-top:14px;display:none;}
+  .picker.open{display:block;}
+  .pick-group h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin:14px 0 6px;}
+  .pick-list{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;}
+  .pick-item{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:4px 0;cursor:pointer;min-width:0;}
+  .pick-item span.l{flex:1;min-width:0;}
+  .pick-item .meta{font-size:11px;color:var(--text-faint);white-space:nowrap;}
+  .quick{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px;}
+  .progress-track{height:7px;background:var(--card);border-radius:99px;margin:0 0 16px;overflow:hidden;border:1px solid var(--border);}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--mint));border-radius:99px;transition:width .3s ease;}
+  .item{padding:14px 16px;margin:0 0 14px;border:1px solid var(--border);border-radius:14px;background:#fbfbfe;box-shadow:0 2px 6px rgba(90,80,180,0.04);}
+  .item:last-of-type{margin-bottom:0;}
+  .item.ok{border-left:4px solid var(--mint);}
+  .item.bad{border-left:4px solid var(--coral);}
+  @media (max-width:600px){.item{padding:12px;}}
+  .item-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px;}
+  .chip{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:99px;border:1px solid var(--border);color:var(--text-faint);background:var(--bg);white-space:nowrap;}
+  .chip.yours{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--accent-line);}
+  .chip.newc{color:var(--sky);background:var(--sky-soft);border-color:#cfe0f3;}
+  .chip.tr{color:var(--gold-ink);background:var(--gold-soft);border-color:var(--gold-line);white-space:normal;}
+  .reason{font-size:11px;color:var(--text-faint);}
+  .item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .prompt{font-size:14.5px;line-height:1.7;flex:1;min-width:0;}
+  .num{color:var(--accent);font-weight:800;margin-right:6px;}
+  .btn-row{display:flex;gap:6px;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end;}
+  .mini-btn{font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:8px;cursor:pointer;border:1px solid transparent;white-space:nowrap;font-family:inherit;}
+  .mini-btn.hint{color:var(--gold);background:var(--gold-soft);border-color:var(--gold-line);}
+  .mini-btn.check{color:#fff;background:var(--accent);}
+  .mini-btn.zero{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--accent-line);}
+  .mini-btn.self{font-size:11px;padding:5px 9px;border:1px solid var(--border);background:var(--bg);color:var(--text-dim);}
+  .mini-btn:disabled{opacity:.4;cursor:default;}
+  .hint-text{font-size:12.5px;color:var(--gold-ink);margin-top:8px;background:var(--gold-soft);padding:8px 12px;border-radius:9px;line-height:1.5;}
+  .hint-text div+div{margin-top:3px;}
+  .blank-input{font-family:inherit;border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14.5px;padding:2px 6px;width:110px;max-width:100%;color:var(--accent);font-weight:700;margin:0 2px;}
+  .blank-input:focus{outline:none;border-bottom-color:var(--accent);}
+  .blank-input.wide{width:100%;margin-top:8px;}
+  .mc-options{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+  .mc-option{font:inherit;text-align:left;font-size:13.5px;padding:9px 13px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;background:var(--bg);color:var(--text);display:flex;align-items:center;gap:8px;}
+  .mc-option:hover{border-color:var(--accent);}
+  .mc-option.selected{border-color:var(--accent);background:var(--accent-soft);}
+  .mc-option.dimmed{opacity:.35;text-decoration:line-through;pointer-events:none;}
+  .mc-option.correct{background:var(--mint-soft);border-color:var(--mint);color:var(--mint-ink);font-weight:700;}
+  .mc-option.incorrect{background:var(--coral-soft);border-color:var(--coral);color:var(--coral-ink);}
+  .mc-icon{font-size:12px;width:16px;text-align:center;flex-shrink:0;}
+  .feedback{font-size:12.5px;margin-top:8px;padding:9px 12px;border-radius:9px;line-height:1.55;}
+  .feedback.correct{color:var(--mint-ink);background:var(--mint-soft);}
+  .feedback.incorrect{color:var(--coral-ink);background:var(--coral-soft);}
+  .feedback .ans{font-weight:800;}
+  .why{font-size:12.5px;color:var(--text-dim);margin-top:6px;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:9px;line-height:1.55;display:flex;flex-direction:column;gap:6px;}
+  .why b{color:var(--head);}
+  .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
+  .stat{border:1px solid var(--border);border-radius:12px;padding:12px;background:var(--bg);text-align:center;}
+  .stat .v{white-space:nowrap;font-size:clamp(16px,4.5vw,22px);font-weight:800;color:var(--head);font-variant-numeric:tabular-nums;}
+  .stat .k{font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;}
+  .quad{display:grid;grid-template-columns:auto 1fr 1fr;gap:8px;}
+  .quad .axis{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);display:flex;align-items:center;justify-content:center;text-align:center;}
+  .quad .axis.side{writing-mode:vertical-rl;transform:rotate(180deg);}
+  .cell{border-radius:12px;padding:12px;min-height:90px;border:1px solid var(--border);display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .cell h5{margin:0;font-size:12px;color:var(--head);}
+  .cell p{margin:0;font-size:11.5px;color:var(--text-dim);line-height:1.4;}
+  .cell .chips{display:flex;flex-wrap:wrap;gap:4px;}
+  .cell.c1{background:var(--gold-soft);border-color:var(--gold-line);}
+  .cell.c2{background:var(--coral-soft);border-color:#f6c9c5;}
+  .cell.c3{background:var(--mint-soft);border-color:#bfe9d8;}
+  .cell.c4{background:var(--bg);}
+  .pchip{font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px;background:var(--card);border:1px solid var(--border);color:var(--text);}
+  .pchip.quiet{border-style:dashed;color:var(--text-dim);}
+  .tbl-wrap{overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-faint);text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  td{padding:8px;border-bottom:1px solid var(--border);vertical-align:middle;}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text-dim);}
+  .pill{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap;}
+  .pill.rising{background:var(--coral-soft);color:var(--coral-ink);}
+  .pill.steady{background:var(--gold-soft);color:var(--gold-ink);}
+  .pill.fading{background:var(--mint-soft);color:var(--mint-ink);}
+  .pill.quiet{background:var(--bg);color:var(--text-faint);border:1px dashed var(--border);}
+  .pill.strong{background:var(--mint-soft);color:var(--mint-ink);}
+  .pill.weak{background:var(--coral-soft);color:var(--coral-ink);}
+  .pill.none{background:var(--bg);color:var(--text-faint);}
+  .spark{display:block;}
+  .legend{font-size:11.5px;color:var(--text-faint);margin-top:10px;line-height:1.5;}
+  .pair-line{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;font-size:14.5px;line-height:1.9;}
+  .pair-line .tag{font-size:11px;font-weight:800;color:var(--accent);width:16px;}
+  .mini-btn.zin{font-size:11px;padding:3px 7px;color:var(--accent-ink);background:var(--accent-soft);border-color:var(--accent-line);}
+  .mix-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;font-size:12.5px;color:var(--text-dim);}
+  .mix-row select{font:inherit;font-size:12.5px;font-weight:700;color:var(--accent);padding:5px 8px;border:1px solid var(--border);border-radius:8px;background:var(--card);}
+  .hm-ctrl{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:12px;}
+  .hm-ctrl .sep{width:1px;height:20px;background:var(--border);margin:0 4px;}
+  .seg{font:inherit;font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;border:1px solid var(--border);background:var(--card);color:var(--text-dim);cursor:pointer;}
+  .seg.on{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-line);}
+  .hm-wrap{overflow-x:auto;padding-bottom:4px;}
+  .hm{display:grid;gap:2px;align-items:center;font-size:11.5px;}
+  .hm .rl{padding-right:10px;white-space:nowrap;color:var(--text);font-weight:600;min-width:0;max-width:230px;overflow:hidden;text-overflow:ellipsis;position:sticky;left:0;z-index:1;background:var(--card);align-self:stretch;display:flex;align-items:center;}
+  .hm .rl.sub{font-weight:500;color:var(--text-dim);padding-left:14px;}
+  .hm .rl button{font:inherit;font-size:10.5px;color:var(--accent);background:none;border:none;cursor:pointer;padding:0 0 0 6px;font-weight:700;}
+  .hm .ch{font-size:9.5px;letter-spacing:-.02em;color:var(--text-faint);text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .hm .c{height:24px;border-radius:4px;background:var(--hm0);cursor:default;outline-offset:1px;}
+  .hm .c.none{background:transparent;border:1px dashed var(--border);}
+  .hm .c:hover,.hm .c:focus-visible{outline:2px solid var(--head);}
+  .chips-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+  .pchip2{font:inherit;display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border-radius:10px;border:none;color:#fff;font-size:14px;font-weight:800;cursor:default;line-height:1.2;}
+  .pchip2 .pct{font-weight:500;font-variant-numeric:tabular-nums;opacity:.95;}
+  .pchip2.nodata{background:var(--hm0)!important;color:var(--text-faint);border:1px dashed var(--border);font-weight:700;}
+  .pchip2.quiet{box-shadow:inset 0 0 0 2px rgba(255,255,255,.55);}
+  .pchip2:focus-visible{outline:2px solid var(--head);outline-offset:2px;}
+  .hm-sec{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;margin:6px 0 10px;}
+  .hm-sec.second{margin-top:20px;}
+  .scale-bar{height:10px;width:160px;border-radius:99px;background:linear-gradient(90deg,#a8402f,#a87100 50%,#6f8a12 75%,#2f8f4e);}
+  .hm-legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--text-faint);}
+  .hm-legend .sw{width:22px;height:12px;border-radius:3px;}
+  .hm-legend .sw.none{border:1px dashed var(--border);}
+  .hm-tip{white-space:pre-line;position:fixed;z-index:20;pointer-events:none;background:var(--head);color:#fff;font-size:11.5px;line-height:1.45;padding:7px 9px;border-radius:8px;max-width:240px;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+  .quizbar{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.95);border-top:1px solid var(--border);box-shadow:0 -6px 20px rgba(90,80,180,0.08);}
+  .quizbar .in{max-width:780px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+  .quizbar .count{font-size:12.5px;font-weight:700;color:var(--text-dim);font-variant-numeric:tabular-nums;}
+  .quizbar .acts{display:flex;gap:8px;}
+  .quizbar .btn{padding:8px 14px;font-size:12.5px;}
+  body.has-bar{padding-bottom:96px;}
+  .qnote{font-size:11.5px;color:var(--text-faint);line-height:1.5;margin:2px 0 4px;}
+  .fam-head{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--border);}
+  .fam-head h4{margin:0;font-size:12.5px;color:var(--head);flex:1;min-width:0;}
+  .fam-head .meta{font-size:11px;color:var(--text-faint);white-space:nowrap;}
+  .fam-body{display:none;padding:0 0 8px 24px;}
+  .fam-body.open{display:block;}
+  tr.fam td{background:var(--bg);font-weight:700;color:var(--head);}
+  tr.fam td.n{font-weight:600;}
+  tr.sub td:first-child{padding-left:22px;}
+  .toggle{font:inherit;font-size:11px;font-weight:700;color:var(--accent);background:none;border:none;cursor:pointer;padding:2px 0;white-space:nowrap;}
+  @media (prefers-reduced-motion:reduce){.progress-fill{transition:none;}}
+  @media (max-width:600px){.card{padding:18px 16px 16px;}.start-grid{grid-template-columns:1fr;}.pick-list{grid-template-columns:1fr;}.item-top{flex-direction:column;}.btn-row{justify-content:flex-start;}.quad{grid-template-columns:1fr;}.quad .axis{display:none;}}
+</style>
+<div class="wrap">
+  <div class="top">
+    <div class="eyebrow">Murat's English Journey</div>
+    <h1>Prepositions &amp; Collocations</h1>
+    <p id="subtitle">Your own Turkish-shaped prepositions and verb + noun collocations, from the Fluency Ledger</p>
+  </div>
+  <div class="mode-switch">
+    <button class="mode-btn active" id="modePractice">Practice</button>
+    <button class="mode-btn" id="modeChallenge">Challenge</button>
+    <button class="mode-btn" id="modeProgress">Progress</button>
+  </div>
+  <div id="banner" class="banner" hidden></div>
+  <div id="practiceView"></div>
+  <div id="progressView" hidden></div>
+</div>
+<script>
+const SESSIONS=[{"d": "18.09", "w": 4103}, {"d": "20.09", "w": 3883}, {"d": "22.09", "w": 10076}, {"d": "23.09", "w": 9144}, {"d": "24.09", "w": 3362}, {"d": "25.09", "w": 4187}, {"d": "27.09", "w": 1632}, {"d": "28.09", "w": 6898}, {"d": "29.09", "w": 6397}, {"d": "30.09", "w": 4954}, {"d": "01.10", "w": 8022}, {"d": "02.10", "w": 5969}, {"d": "03.10", "w": 3656}, {"d": "05.10", "w": 6546}, {"d": "06.10", "w": 5921}];
+const HITS={"of_not_for":[0,1,1,0,1,2,1,3,0,1,3,1,2,1,2],"no_prep_verbs":[0,0,3,0,2,0,1,1,1,1,7,0,3,1,3],"add_to":[6,0,0,0,0,1,0,3,0,2,1,0,2,0,5],"on_my_list":[0,0,0,0,2,0,0,2,0,0,0,5,0,0,2],"include_in":[0,0,0,2,0,0,0,2,0,0,3,1,0,0,1],"move_on_to":[0,0,0,0,0,0,0,2,0,0,2,2,0,0,1],"dedicate_to":[0,0,1,0,1,0,0,0,0,0,0,2,0,0,0],"these_days":[1,2,0,2,1,0,0,1,0,0,0,2,0,1,0],"over_time":[0,1,0,2,0,0,0,3,1,0,0,0,0,1,0],"weekends":[0,3,0,0,0,1,0,0,0,0,0,1,1,3,0],"dates_times":[0,0,0,0,0,0,0,0,2,0,3,0,0,11,1],"begin_lastmin":[0,0,1,2,0,0,0,0,1,0,3,0,0,0,1],"time_duration":[0,0,0,0,1,0,1,0,0,0,0,0,1,0,0],"sense_of":[0,1,3,2,1,0,0,1,0,1,0,0,0,1,0],"confused_about":[0,0,0,1,1,2,0,1,0,0,0,0,1,1,0],"same_about":[0,1,0,0,0,2,0,0,0,0,0,0,0,3,0],"same_as":[1,0,0,1,0,0,0,1,0,0,0,0,0,1,1],"for_me":[1,0,1,1,0,0,0,0,0,1,1,1,2,0,0],"ask_sb_q":[0,0,2,2,0,2,0,0,2,0,2,0,0,1,0],"no_point_in":[0,0,0,0,2,0,0,1,0,1,1,0,0,1,0],"mention_discuss":[0,0,0,2,0,2,0,1,4,1,0,0,0,0,0],"rooted_in":[0,0,5,1,1,0,0,0,0,0,0,0,1,0,0],"responsible_for":[0,0,2,0,0,0,0,0,0,0,2,0,0,0,0],"against":[0,0,5,0,0,0,0,0,0,0,0,0,0,0,0],"seek_chase":[0,0,1,1,0,0,0,0,0,0,0,3,1,0,0],"invest_in":[0,0,1,0,0,1,0,0,0,1,1,2,0,2,0],"swap_for":[0,1,0,0,0,0,0,1,0,0,1,1,1,1,0],"limit_to":[0,0,1,0,0,0,0,0,0,0,0,0,1,1,1],"key_to":[0,0,0,0,0,0,0,0,0,1,1,0,0,1,0],"leave_out_of":[0,1,1,4,0,0,0,1,0,1,2,0,0,0,0],"on_device":[3,1,0,0,0,1,0,0,1,0,0,0,0,1,1],"on_trip_leave":[0,0,1,0,0,0,0,1,1,0,0,2,0,0,0],"angry_with":[0,0,2,0,0,0,0,0,1,0,1,1,1,0,0],"good_at":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,4],"save_for":[0,0,2,0,0,0,0,0,1,0,1,1,0,0,0],"remind_of":[1,0,0,0,0,0,0,0,1,1,0,0,0,0,0],"been_to":[0,0,1,0,0,3,0,0,0,0,0,0,0,0,0],"specific_to":[0,0,0,2,0,0,0,1,0,0,0,1,0,0,0],"pace_at":[0,1,0,3,0,0,0,0,0,0,0,0,0,0,0],"superior_to":[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0],"different_from":[0,0,0,0,0,0,0,0,0,0,2,0,0,0,0],"accused_of":[0,0,0,0,0,0,0,0,0,0,1,2,0,0,0],"get_used_to":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"worth_ing":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],"short_on_time":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"congratulate_on":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"scene":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"help_with":[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1],"wait_for":[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],"insist_on":[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0],"resonate_with":[0,0,0,0,0,0,0,3,0,0,0,0,0,0,0],"paste_into":[0,0,0,0,0,0,0,1,0,1,0,0,0,0,0],"come_across_as":[0,0,0,0,2,0,0,0,0,0,1,0,0,0,0],"by_using":[0,0,0,0,0,0,0,0,1,0,0,0,1,0,0],"basis":[0,0,0,0,1,0,0,0,0,0,1,0,0,0,0],"struggle_to":[0,2,0,0,0,0,0,1,0,0,1,0,0,0,0],"in_form":[0,0,0,0,0,0,0,2,0,0,0,0,0,0,0],"have_a_talk":[0,4,0,0,0,0,0,0,0,0,0,0,0,0,0],"do_practice":[0,1,2,0,0,0,0,0,0,0,1,0,0,1,0],"lift_mood":[0,0,1,0,0,1,0,0,0,1,1,0,0,0,0],"throw_question":[0,0,0,1,1,0,0,2,1,1,1,0,1,0,0],"put_add":[0,0,0,2,0,0,0,1,0,0,0,1,1,0,0],"vn_decision":[0,1,0,0,0,0,0,0,0,0,1,0,0,0,0],"vn_break":[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0],"vn_analysis":[0,0,0,1,0,0,0,0,0,0,1,0,0,0,1],"vn_score":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,2],"vn_call":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"vn_meeting":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]};
+Object.assign(HITS,{"adv_towards":[0,0,0,1,0,0,0,1,1,0,0,0,0,2,0],"adv_along":[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0],"adv_among_between":[0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],"adv_above_level":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"adv_as_for":[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0],"adv_through":[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0],"adv_out_of":[0,0,0,0,0,0,0,1,0,0,1,0,0,0,0]});
+
+// Item bank. Y = your sentence (session date), N = new context, X = fix-my-sentence (your sentence).
+// Answers: "a|b" = all accepted, "∅" = no preposition. w = this item's own distractors.
+function Y(d,t,a,w,n){return{s:'y',d,t,a,w,n};}
+function N(t,a,w,n){return{s:'n',t,a,w,n};}
+function X(d,t,a,bad,good){return{s:'y',d,x:true,t,a,bad,good};}
+const BANK=[
+// ---------- Prepositions ----------
+{k:'of_not_for',sec:'prep',label:'knowledge / example / chances of',tr:'için (… için bilgim)',wrong:['for','about','to'],
+ trap:'Turkish için pulls you towards "for". Which word links a noun like knowledge or example to its topic?',
+ why:'Nouns of knowing, showing and likelihood take "of": knowledge of, awareness of, an example of, a test of, the chances of + -ing.',
+ items:[Y('06.10','I need to increase my knowledge ___ them.','of'),Y('03.10','That’s a good example ___ "had better".','of'),
+ Y('03.10','I’m slowly building my awareness ___ it.','of'),Y('27.09','What are the chances ___ getting this deal?','of'),
+ Y('06.10','There’s not much chance ___ eating out tonight.','of'),Y('02.10','That’s a real test ___ my memory.','of'),
+ N('Her knowledge ___ Turkish history surprised everyone.','of')]},
+{k:'no_prep_verbs',sec:'prep',label:'join / contact / message (no "to")',tr:'dative -e / ile (arkadaşlarına katılmak, benimle iletişime geçmek)',wrong:['to','with'],
+ trap:'Turkish marks this object with -e or ile. Does the English verb take its object directly?',
+ why:'Join, contact, message, approach and continue take a direct object: join her friends, contact me, message Francesca. "Reply" is the exception: reply to someone.',
+ items:[Y('06.10','Yaz wants to join ___ her friends.','∅'),Y('01.10','He still contacts ___ me every week.','∅'),
+ Y('29.09','I messaged ___ Francesca last night.','∅'),Y('22.09','There was a car approaching ___ us.','∅'),
+ Y('06.10','Let’s continue ___ this lovely chat.','∅|with',['to']),Y('06.10','I replied ___ him straight away.','to',['∅','with'],'"Reply" is the one that needs "to".'),
+ N('You can contact ___ the hotel directly.','∅'),X('01.10','There’s no point in contacting to me.','There’s no point in contacting me.|There\'s no point in contacting me.','contacting to me','contacting me')]},
+{k:'add_to',sec:'prep',label:'add / save to (not "into")',tr:'listeme eklemek (dative -e)',wrong:['into','in'],
+ trap:'Turkish -e (listeme) feels like "into". Is anything physically moving inside?',
+ why:'"Add" and "save" take "to": add it to my list, save it to your memory. "Into" is for movement inside a space: put the box into the car.',
+ items:[Y('06.10','Can you add them ___ my list?','to'),Y('06.10','I added the quiz work ___ my pipeline.','to'),
+ Y('03.10','Please add them ___ your notes.','to'),Y('01.10','Save this ___ your memory.','to'),
+ Y('02.10','Let’s add new categories ___ the naturalness check.','to'),N('I’ve added two new columns ___ the spreadsheet.','to'),
+ X('18.09','I have already added it into my list.','I have already added it to my list.|I\'ve already added it to my list.','into my list','to my list')]},
+{k:'on_my_list',sec:'prep',label:'on my list',tr:'listemde (locative -de)',wrong:['in'],
+ trap:'Turkish says listemde (-de, "in"). How do items sit on a list in English?',
+ why:'Items are on a list, on the agenda, on the menu. Think of the list as a surface.',
+ items:[Y('06.10','That one is already ___ my list.','on'),Y('02.10','Is there another one ___ our list?','on'),
+ Y('02.10','Let’s keep it ___ the list.','on'),Y('24.09','I’ve got 40 items ___ my list.','on'),N('What is next ___ the agenda?','on')]},
+{k:'include_in',sec:'prep',label:'include in / involved in',tr:'dahil etmek / dahil olmak (dative -e)',wrong:['into'],
+ trap:'Turkish -e (analize dahil etmek) suggests movement. English treats this as being inside.',
+ why:'"Include" and "involved" take "in": include it in the analysis, be involved in a process, put him back in the loop.',
+ items:[Y('01.10','Can you include it ___ your analysis?','in'),Y('01.10','Include them ___ the statistics.','in'),
+ Y('28.09','I will be involved ___ the selection process.','in'),Y('01.10','I put him back ___ the loop.','in'),N('Breakfast is included ___ the price.','in')]},
+{k:'move_on_to',sec:'prep',label:'move on to',tr:'konuya geçmek (dative -e)',wrong:['into','onto'],
+ trap:'Changing topic is a phrasal verb plus a preposition. Two words.',
+ why:'To change topic, "move on to" the next point. "Move into" means entering a place, like a new flat.',
+ items:[Y('06.10','Before moving ___ that one, I have a question.','on to'),Y('01.10','Let me move ___ my story.','on to'),
+ Y('01.10','Moving ___ the next point.','on to'),N('Shall we move ___ the second question?','on to')]},
+{k:'dedicate_to',sec:'prep',label:'committed / dedicated to',tr:'kendini bir şeye adamak (dative -e)',wrong:['into','on'],thin:true,
+ trap:'Commitment words all share one preposition.',
+ why:'Commitment words take "to": committed to, dedicated to, devoted to. A verb after them takes -ing: committed to improving.',
+ items:[Y('02.10','You’re dedicating yourself ___ something.','to'),Y('22.09','I will do my best to stay committed ___ this.','to'),
+ Y('24.09','This session is dedicated ___ phrasal verbs only.','to'),N('She’s committed ___ improving her speaking.','to')]},
+{k:'these_days',sec:'prep',label:'these days (no "in")',tr:'bu günlerde',wrong:['in','at'],
+ trap:'"Bu günlerde" has -de. Does "these days" need any preposition?',
+ why:'"These days", "this week", "this morning" need no preposition. "In these days" copies "bu günlerde" word for word.',
+ items:[Y('24.09','I feel less fluent ___ these days.','∅'),Y('28.09','I want to increase my automaticity ___ these days.','∅'),
+ Y('02.10','___ these days, it’s a well-known fact.','∅'),N('Prices are rising fast ___ these days.','∅'),
+ Y('05.10','It all started back ___ those days.','in',['at','∅'],'"In those days" (the past) is correct. Only "these days" drops the preposition.')]},
+{k:'over_time',sec:'prep',label:'over time',tr:'zamanla',wrong:['in','with'],
+ trap:'"Zamanla" describes gradual change. "In time" means something else in English.',
+ why:'Gradual change happens "over time". "In time" means early enough (in time for the meeting) or eventually.',
+ items:[Y('05.10','Things have changed ___ time.','over'),Y('28.09','The habit just faded away ___ time.','over'),
+ Y('28.09','It clicked ___ time.','over'),Y('29.09','It gets tedious ___ time.','over'),
+ N('Don’t worry, we will get there ___ time for the meeting.','in',['over'],'Here it means early enough: "in time for".')]},
+{k:'weekends',sec:'prep',label:'at / on weekends',tr:'hafta sonlarında (locative -de)',wrong:['in'],
+ trap:'"Hafta sonlarında" has -de, which feels like "in". Weekends behave like days.',
+ why:'British English says "at the weekend / at weekends", American English "on the weekend / on weekends". Both are right; "in the weekends" is not.',
+ items:[Y('03.10','I do my shadowing ___ weekends.','at|on'),Y('20.09','I practise for about 30 minutes ___ weekends.','at|on'),
+ Y('25.09','I’m in a good mood ___ most weekends.','on'),N('What are you doing ___ the weekend?','at|on|over'),
+ Y('05.10','We will link this national holiday ___ the weekend.','to',['towards','into'],'"Link X to Y" joins two things.')]},
+{k:'dates_times',sec:'prep',label:'on + day/date, at + clock time',tr:'27 Ekim\'de / 5:30\'da (-de covers at, on, in)',wrong:['in','at','on'],
+ trap:'Turkish -de covers at, on and in. Is this a day, a date, or a clock time?',
+ why:'Days and dates take "on" (on Saturday, on 27 October), clock times take "at" (at 5:30), parts of the day take "in" (in the morning), except "at night".',
+ items:[Y('05.10','As I mentioned ___ Saturday, we are flying to Abu Dhabi.','on'),Y('05.10','We’re heading to Abu Dhabi ___ 27 October.','on'),
+ Y('29.09','The lesson will start ___ 5:30.','at'),Y('01.10','As usual ___ Fridays, the office was quiet.','on'),
+ Y('05.10','We fly back ___ the night of the same day.','on'),Y('29.09','I usually cannot sleep ___ night.','at'),
+ Y('01.10','It was hard to focus ___ such a busy day.','on'),N('Her birthday is ___ 1 October.','on')]},
+{k:'begin_lastmin',sec:'prep',label:'at the beginning / at the last minute',tr:'oturumun başında / son dakikada (-de)',wrong:['in','for'],
+ trap:'Turkish -de (başında) pulls in "in". Is this a point in time?',
+ why:'A point in time takes "at": at the beginning of the session, at the last minute, at the end. "In the middle of" is the exception.',
+ items:[Y('06.10','The change arrived ___ the last minute.','at'),Y('01.10','I made the same mistake ___ the beginning of our conversation.','at'),
+ Y('23.09','We talked about it ___ the beginning of this session.','at'),Y('01.10','I’m always tired ___ the middle of the day.','in',['at']),
+ N('Sign your name ___ the end of the page.','at')]},
+{k:'time_duration',sec:'prep',label:'for + length of time',tr:'iki gündür / 20 dakika (no postposition)',wrong:['since','∅'],thin:true,
+ trap:'Is this a length of time, or a starting point?',
+ why:'"For" goes with a length of time (for two days, for 20 minutes). "Since" needs a starting point (since Monday, since last night).',
+ items:[Y('03.10','She’s been ill ___ two days.','for',['since']),Y('27.09','We have been talking ___ about 20 minutes.','for',['∅','around']),
+ Y('03.10','She’s been ill ___ last night.','since',['for'])]},
+{k:'sense_of',sec:'prep',label:'a sense of / benefits of / wrong with',tr:'hakkında',wrong:['about'],
+ trap:'"Hakkında" pulls in "about". These nouns have their own fixed partner.',
+ why:'These nouns take "of": a sense of, the benefits of, an assessment of, the cost of. A fault is "wrong with" something.',
+ items:[Y('05.10','This gives you a general sense ___ it.','of'),Y('23.09','I want to get a sense ___ my needs.','of'),
+ Y('22.09','What are the benefits ___ the investment?','of'),Y('23.09','I would like your honest assessment ___ the timeline.','of'),
+ Y('24.09','Is there something wrong ___ it?','with',['about','of']),N('Do you know the cost ___ the trip?','of')]},
+{k:'confused_about',sec:'prep',label:'confused / indecisive about',tr:'bu konuda / konusunda',wrong:['on','for'],
+ trap:'"Bu konuda" sounds like "on this". Feelings towards a topic use another word.',
+ why:'Feelings and attitudes towards a topic take "about": confused about, enthusiastic about, indecisive about, nervous about.',
+ items:[Y('28.09','I’m a bit confused ___ this one.','about'),Y('03.10','She’s indecisive ___ almost everything.','about'),
+ Y('24.09','I’m really enthusiastic ___ this topic.','about'),Y('25.09','People are compulsive ___ scrolling.','about'),
+ Y('05.10','I feel a bit tense ___ speaking.','about'),N('He’s very nervous ___ the interview.','about')]},
+{k:'same_about',sec:'prep',label:'say the same about',tr:'… için de aynısı',wrong:['for'],
+ trap:'"X için de aynısı" gives "for". After "say the same", what do we use?',
+ why:'"I can say the same about X." The other fixed phrase, "the same goes for X", does use "for".',
+ items:[Y('05.10','I can say the same ___ my family.','about'),Y('25.09','I can’t say the same ___ myself.','about'),
+ Y('20.09','I can say the same ___ Francesca too.','about'),N('The same goes ___ the other children.','for',['about'],'"The same goes for" is its own fixed phrase.')]},
+{k:'same_as',sec:'prep',label:'the same as',tr:'ile aynı',wrong:['with'],
+ trap:'"Ile aynı" gives "with". "The same" has a fixed partner.',
+ why:'"The same" is followed by "as": the same number as Luke, the same crew as last time.',
+ items:[Y('06.10','It’s the same crew ___ on the Dubai trip.','as'),Y('18.09','You have the same lucky number ___ Luke.','as'),
+ Y('28.09','Use the same layout ___ the phrasal verb tracker.','as'),N('My answer is the same ___ yours.','as')]},
+{k:'for_me',sec:'prep',label:'hard / safer / better for me',tr:'bana / benim için',wrong:['to'],
+ trap:'"Bana" (-e) pulls in "to". After an adjective, who is affected?',
+ why:'After an adjective, the person affected usually takes "for": hard for me, safer for me, better for you. Some adjectives take "to" (unclear to you, new to me), and "okay with you" asks for agreement.',
+ items:[Y('18.09','It’s hard ___ me to pronounce.','for'),Y('30.09','That’s safer ___ me.','for'),
+ Y('03.10','It’s better ___ you to record them.','for'),Y('03.10','It’s a tradition ___ us.','for'),
+ Y('02.10','Is that okay ___ you?','with',['for']),Y('01.10','Is it unclear ___ you?','to',['for'])]},
+{k:'ask_sb_q',sec:'prep',label:'ask someone / share with you',tr:'ona soru sormak / sana paylaşmak (dative -e)',wrong:['to'],
+ trap:'Turkish -e (sana) pulls in "to". Where does the person go after "ask"?',
+ why:'"Ask" puts the person straight after it: ask her this question. "Share" needs "with": share it with you. A question is "for" someone.',
+ items:[X('01.10','Let me ask my question to you.','Let me ask you my question.|Let me ask you a question.','my question to you','you my question'),
+ X('29.09','I didn’t ask the same question to my wife.','I didn’t ask my wife the same question.|I didn\'t ask my wife the same question.','the same question to my wife','my wife the same question'),
+ Y('05.10','Let me share my signature image ___ you.','with',['to','∅']),Y('23.09','They don’t share their budget figures ___ us.','with',['to']),
+ Y('25.09','I have one last question ___ you.','for',['to'])]},
+{k:'no_point_in',sec:'prep',label:'no point in + -ing',tr:'… için anlamı yok',wrong:['for','to'],
+ trap:'"… için anlamı yok" gives "for". The -ing form after "no point" follows another word.',
+ why:'"There is no point in doing something." The -ing form follows "in".',
+ items:[Y('30.09','There’s no point ___ discussing it.','in'),Y('28.09','There’s no point ___ complaining.','in'),
+ Y('24.09','There’s no point ___ dwelling on it.','in'),N('There’s no point ___ waiting any longer.','in'),
+ X('05.10','There’s no point to play with it.','There’s no point in playing with it.|There is no point in playing it.|There\'s no point in playing with it.','to play','in playing')]},
+{k:'mention_discuss',sec:'prep',label:'mention / discuss (no "about")',tr:'hakkında bahsetmek / tartışmak',wrong:['about'],
+ trap:'"Hakkında" pulls in "about". Does this verb take its object directly?',
+ why:'Mention, discuss and research take a direct object: mention the trip, discuss it, research the topic. "Talk about" does take "about"; "refer" needs "to".',
+ items:[Y('29.09','I mentioned ___ the Spain trip yesterday.','∅'),Y('23.09','We will discuss ___ it tomorrow.','∅'),
+ Y('28.09','He researched ___ the topic.','∅'),N('We talked ___ it for an hour.','about',['∅']),
+ Y('30.09','That’s what I was referring ___.','to',['∅'],'"Refer" is the opposite case: it needs "to".')]},
+{k:'rooted_in',sec:'prep',label:'rooted in / based on',tr:'-e dayanmak / -den kaynaklanmak',wrong:['to','on','from'],
+ trap:'Turkish -e dayanmak gives "to", -den kaynaklanmak gives "from". Roots grow in soil.',
+ why:'"Rooted in", "based on", "stems from". Only "stems from" keeps the Turkish "from".',
+ items:[Y('23.09','Maybe it is rooted ___ her character.','in'),Y('22.09','It’s rooted ___ a board decision.','in'),
+ Y('22.09','This plan isn’t based ___ anything.','on',['to']),Y('24.09','The problem stems ___ poor planning.','from',['by']),
+ N('Her fear is rooted ___ her childhood.','in')]},
+{k:'responsible_for',sec:'prep',label:'responsible for',tr:'-den sorumlu',wrong:['from'],thin:true,
+ trap:'"-den sorumlu" gives "from".',
+ why:'"Responsible for something." A decision is "up to" someone.',
+ items:[Y('22.09','My department is responsible ___ this process.','for'),Y('22.09','Who is responsible ___ the investment activities?','for'),
+ Y('01.10','That decision will be up ___ our management office.','to',['on']),N('Parents are responsible ___ their children\'s safety.','for')]},
+{k:'against',sec:'prep',label:'against (no "to")',tr:'-e karşı',wrong:['to'],thin:true,
+ trap:'"-e karşı" adds a dative. "Against" is already a preposition.',
+ why:'"Against" is itself a preposition, so nothing follows it: against him, against me.',
+ items:[Y('22.09','They constantly vote against ___ him.','∅'),Y('22.09','Don’t use it against ___ me.','∅'),
+ Y('22.09','This was meant to protect me ___ our old CEO.','from',['against to'])]},
+{k:'seek_chase',sec:'prep',label:'seek / chase (no "for")',tr:'peşinde / … için',wrong:['for'],
+ trap:'"Look for" has "for". Do "seek" and "chase" need it?',
+ why:'"Seek" and "chase" take a direct object: seek a solution, chase big yields. "Look for" and "search for" do take "for".',
+ items:[Y('02.10','They’re seeking ___ a solution.','∅'),Y('23.09','They were just chasing ___ big yields.','∅'),
+ Y('03.10','I was chasing ___ a meaning.','∅'),N('We’re looking ___ a new flat.','for',['∅'])]},
+{k:'invest_in',sec:'prep',label:'put effort into / invest in',tr:'emek vermek / -e yatırmak',wrong:['on','to'],
+ trap:'"Üzerine emek vermek" gives "on". Where does effort go?',
+ why:'Effort, time and money go "into" something: put effort into it, put savings into a fund. You "invest in" something. Without an object: "put in a lot of effort".',
+ items:[Y('30.09','I put a lot of effort and time ___ it.','into'),Y('02.10','He put all his savings ___ that fund.','into'),
+ Y('25.09','You need to invest ___ it.','in',['∅']),Y('02.10','They invested ___ this fund.','in',['∅']),
+ Y('05.10','We put ___ a lot of effort, as I said before.','in',['∅'],'"Put in effort" with no object after it uses "in".'),N('She put a lot of work ___ this project.','into')]},
+{k:'swap_for',sec:'prep',label:'swap X for Y',tr:'X\'i Y ile değiştirmek',wrong:['with','over'],
+ trap:'"Ile değiştirmek" gives "with". You give X and get Y.',
+ why:'"Swap X for Y" and "trade X for Y": you give X and get Y. "Replace X with Y" is the one that uses "with".',
+ items:[Y('03.10','She swapped horse riding ___ gymnastics.','for'),Y('01.10','You’re trading fluency ___ accuracy.','for'),
+ Y('28.09','Can we replace it ___ the core-list indicator?','with',['over','for']),N('I swapped my old phone ___ a newer model.','for')]},
+{k:'limit_to',sec:'prep',label:'limit it to',tr:'ile sınırlamak',wrong:['with','for'],
+ trap:'"Ile sınırlamak" gives "with". What marks the maximum?',
+ why:'"Limit something to an amount": limit it to 10. "There is a limit to that" also takes "to".',
+ items:[Y('06.10','Let’s limit it ___ 10.','to'),Y('22.09','I will limit it ___ twice a week.','to'),
+ Y('05.10','We can limit it ___ a few days.','to'),Y('03.10','There’s a limit ___ that.','to')]},
+{k:'key_to',sec:'prep',label:'the key / answer to',tr:'başarı için anahtar / sorunun cevabı',wrong:['for'],
+ trap:'"Için" gives "for". Keys fit into locks.',
+ why:'"The key to success", "the answer to your question", "a solution to a problem" all take "to".',
+ items:[Y('30.09','Practice is the key ___ success.','to'),Y('05.10','Here’s the answer ___ your question.','to'),
+ Y('01.10','Regular practice is the key ___ that.','to'),N('Is there a solution ___ this problem?','to')]},
+{k:'leave_out_of',sec:'prep',label:'leave X out of',tr:'dışında tutmak / kenarda tutmak',wrong:['out from','apart from'],
+ trap:'"Dışında tutmak" suggests "out from". English uses a fixed two-word pair.',
+ why:'To exclude something: "leave it out of the analysis". It is "out of", never "out from". "Set aside" means put off for later.',
+ items:[Y('01.10','Please leave it ___ your analysis.','out of'),Y('30.09','Leave these words ___ the analysis.','out of'),
+ Y('28.09','I couldn’t get ___ this selection process.','out of'),Y('20.09','Let’s set the divorce decision ___ for now.','aside',['out','apart']),
+ N('They left my name ___ the report.','out of')]},
+{k:'on_device',sec:'prep',label:'on Instagram / on my computer',tr:'Instagram\'da / bilgisayarımda (-de)',wrong:['in','at'],
+ trap:'Turkish -de gives "in". Screens and apps behave like surfaces.',
+ why:'Apps, websites, devices and screens take "on": on Instagram, on my computer, on the Switch. Islands take "on" too, and so does "on my end".',
+ items:[Y('06.10','She plays sports games ___ the Nintendo Switch.','on'),Y('05.10','We will visit the theme parks ___ Yas Island.','on'),
+ Y('25.09','I saw it ___ Instagram.','on'),Y('18.09','The files are saved ___ my computer.','on'),
+ Y('18.09','Everything is fine ___ my end.','on',['at']),N('I read the news ___ my phone.','on')]},
+{k:'on_trip_leave',sec:'prep',label:'on a trip / on leave',tr:'bu seyahatte / yıllık izinde (-de)',wrong:['in'],
+ trap:'Turkish -de (seyahatte) gives "in". Trips and leave take another word.',
+ why:'Trips, holidays, leave and trial take "on": on a business trip, on annual leave, on trial.',
+ items:[Y('29.09','My colleague will accompany me ___ this business trip.','on'),Y('22.09','Everyone was ___ annual leave.','on'),
+ Y('02.10','He’s never been ___ trial.','on'),N('They met ___ holiday in Spain.','on')]},
+{k:'angry_with',sec:'prep',label:'angry with / mad at / close to',tr:'birine kızgın (-e) / -den sıkılmak',wrong:['to','from'],
+ trap:'Turkish -e (kızgın) and -den (sıkılmak) pull in "to" and "from". Each adjective has its own partner.',
+ why:'Feelings towards a person: angry with, mad at, bored with (or of), bothered by. Closeness: close to.',
+ items:[Y('01.10','We were angry ___ each other.','with',['to']),Y('02.10','I’m getting mad ___ you.','at',['with']),
+ Y('22.09','I’m bored ___ this topic.','with|of',['from']),Y('03.10','We’re very close ___ them.','to',['with']),
+ Y('29.09','I was bothered ___ this move.','by',['from'])]},
+{k:'good_at',sec:'prep',label:'good at / better at',tr:'o konuda / badmintonda (-de)',wrong:['in','on'],thin:true,
+ trap:'"O konuda" gives "on", "badmintonda" gives "in". Skills use another word.',
+ why:'Skills take "at": good at badminton, better at it, not as good as me at it.',
+ items:[Y('06.10','She’s better ___ badminton.','at'),Y('06.10','She’s not that good ___ it.','at'),
+ Y('06.10','She’s not as good as me ___ it.','at'),N('My son is really good ___ maths.','at')]},
+{k:'save_for',sec:'prep',label:'save it for tomorrow',tr:'yarına saklamak (dative -e)',wrong:['to'],
+ trap:'"Yarına" (-e) gives "to". Keeping something for later uses another word.',
+ why:'Keeping something for later takes "for": save it for tomorrow, keep this one for another round.',
+ items:[Y('22.09','Maybe I can save it ___ tomorrow.','for'),Y('01.10','Let’s save "unfold" ___ another round.','for'),
+ Y('02.10','Let’s keep this one ___ another round.','for'),N('I’m saving this wine ___ a special day.','for')]},
+{k:'remind_of',sec:'prep',label:'remind someone of',tr:'bana … hatırlattı',wrong:['∅'],
+ trap:'"Hatırlatmak" takes a plain object, so the English word disappears. Which word does English need?',
+ why:'"Remind someone of something." "Remind someone to do something" is a different pattern.',
+ items:[Y('30.09','It reminded me ___ something else.','of'),Y('18.09','Let me remind you ___ the basics first.','of'),
+ Y('29.09','Can you remind me ___ the meaning of "bounds"?','of'),N('Remind me ___ call her tomorrow.','to',['of'],'"Remind someone to do" is the other pattern.')]},
+{k:'been_to',sec:'prep',label:'have been to',tr:'Dubai\'de bulundum (-de)',wrong:['in'],thin:true,
+ trap:'"Dubai\'de bulundum" has -de. Visiting uses another word.',
+ why:'For visits, "have been to": I have been to Dubai. "Been in" means you stayed there for a period.',
+ items:[Y('25.09','I’ve been ___ Dubai.','to'),Y('25.09','We’ve been ___ Singapore.','to'),
+ Y('25.09','I’ve been ___ almost all European countries.','to'),N('Have you ever been ___ Japan?','to')]},
+{k:'specific_to',sec:'prep',label:'specific to / applies to',tr:'için',wrong:['for'],thin:true,
+ trap:'"Için" gives "for".',why:'"Specific to" something, and "applies to" something.',
+ items:[Y('23.09','This rule is specific ___ the filtering.','to'),Y('02.10','This mostly applies ___ the ledger update.','to'),N('These problems are specific ___ large companies.','to')]},
+{k:'pace_at',sec:'prep',label:'at a pace',tr:'doğal bir hızla (-le) / hızda (-de)',wrong:['with','in'],thin:true,
+ trap:'Turkish -le gives "with", -de gives "in". Speed uses another word.',why:'Speed takes "at": at a natural pace, at 100 km/h.',
+ items:[Y('23.09','They speak ___ a natural pace.','at'),Y('23.09','I’m not speaking ___ the pace I want.','at'),N('Prices are rising ___ a worrying pace.','at')]},
+{k:'superior_to',sec:'prep',label:'superior to',tr:'-den üstün',wrong:['than'],thin:true,
+ trap:'"-den üstün" looks like a comparison, but "superior" is not a comparative form.',why:'"Superior", "inferior" and "prefer" take "to", not "than".',
+ items:[Y('22.09','This one is superior ___ the others.','to'),N('The new model is far superior ___ the old one.','to')]},
+{k:'different_from',sec:'prep',label:'different from',tr:'no Turkish source recorded',wrong:['than'],thin:true,
+ trap:'The safest standard form uses a "from" idea.',why:'"Different from" is the safe standard form; "different to" is British. "Different than" is common in American speech but often marked in exams.',
+ items:[Y('01.10','They’re so different ___ each other.','from|to'),Y('01.10','The smoke isn’t so different ___ steam.','from|to')]},
+{k:'accused_of',sec:'prep',label:'accused of + -ing',tr:'bir şey yapmakla suçlanmak (-la)',wrong:['by','with'],thin:true,
+ trap:'"-la suçlanmak" gives "with" or "by". The crime takes another word.',why:'"Accused of something" or "accused of doing something". "By" names the accuser.',
+ items:[Y('02.10','You might get accused ___ doing something.','of'),Y('01.10','He was accused ___ betrayal.','of'),N('She was accused ___ lying.','of')]},
+{k:'get_used_to',sec:'prep',label:'get used to',tr:'ile (alışmak)',wrong:['with'],thin:true,
+ trap:'"Ile" gives "with".',why:'"Get used to something" or "get used to doing something".',
+ items:[Y('06.10','She needs to get used ___ wearing the plate.','to'),N('I’m getting used ___ waking up early.','to')]},
+{k:'worth_ing',sec:'prep',label:'worth + -ing',tr:'bilmeye değer (-meye)',wrong:[],thin:true,
+ trap:'"-meye değer" pulls in "to". What form follows "worth"?',why:'"Worth" is followed by -ing: worth knowing, worth flagging, worth watching.',
+ items:[Y('06.10','The difference wasn’t worth ___ (flag).','flagging',['to flag']),Y('06.10','They’re worth ___ (know).','knowing',['to know']),N('The film is worth ___ (watch).','watching',['to watch'])]},
+{k:'short_on_time',sec:'prep',label:'short on time',tr:'no Turkish source recorded',wrong:['in'],thin:true,
+ trap:'Lacking something uses a surface word.',why:'"Short on time" or "short on money" means you do not have enough.',
+ items:[Y('06.10','She’s always short ___ time.','on'),N('We’re a bit short ___ money this month.','on')]},
+{k:'congratulate_on',sec:'prep',label:'congratulate someone on',tr:'için (tebrik etmek)',wrong:['for'],thin:true,
+ trap:'"Için" gives "for".',why:'"Congratulate someone on something", and "congratulations on your new job".',
+ items:[Y('06.10','I congratulated him ___ his courage.','on'),N('Congratulations ___ your new job!','on')]},
+{k:'scene',sec:'prep',label:'come onto the scene',tr:'sahneye (dative -e)',wrong:['into'],thin:true,
+ trap:'"Sahneye" (-e) feels like "into". A scene is a surface you appear on.',why:'"Come onto the scene" or "arrive on the scene".',
+ items:[Y('06.10','Then a new player came ___ the scene.','onto|on'),N('The police arrived ___ the scene quickly.','on')]},
+{k:'help_with',sec:'prep',label:'help someone with',tr:'için / bu konuda',wrong:['for','on'],thin:true,
+ trap:'"Için" gives "for", "bu konuda" gives "on".',why:'"Help someone with something": help me with shadowing.',
+ items:[Y('06.10','Can you help me ___ shadowing?','with'),Y('05.10','Maybe you could help me ___ that.','with'),N('Can you help me ___ my bags?','with')]},
+{k:'wait_for',sec:'prep',label:'wait for',tr:'onu bekliyorum (accusative)',wrong:['∅'],thin:true,
+ trap:'"Onu bekliyorum" takes a plain object. English needs a word.',why:'"Wait for someone" and "wait for someone to do something".',
+ items:[Y('03.10','I’m waiting ___ her to come out.','for'),N('We’re waiting ___ the bus.','for')]},
+{k:'insist_on',sec:'prep',label:'insist on',tr:'-e ısrar etmek (dative -e)',wrong:['to'],thin:true,
+ trap:'"-e ısrar etmek" gives "to".',why:'"Insist on something" and "insistent on something"; a verb after it takes -ing.',
+ items:[Y('27.09','The landlord is insistent ___ a minimum rent.','on'),N('She insisted ___ paying the bill.','on')]},
+{k:'resonate_with',sec:'prep',label:'resonate with',tr:'sana hitap etmek (dative -e)',wrong:['∅','on'],thin:true,
+ trap:'"Sana hitap etmek" takes -e. English needs a partner word.',why:'"Something resonates with you" and "how does that land with you?".',
+ items:[Y('28.09','It might resonate ___ you.','with'),Y('28.09','How does that land ___ you?','with')]},
+{k:'paste_into',sec:'prep',label:'paste into',tr:'sohbete yapıştırmak (dative -e)',wrong:['to'],thin:true,
+ trap:'"Sohbete" (-e) gives "to".',why:'You "paste into" a chat, a document or a box.',
+ items:[Y('30.09','Paste it ___ our chat.','into'),N('Paste the link ___ the search box.','into')]},
+{k:'come_across_as',sec:'prep',label:'come across as',tr:'no Turkish source recorded',wrong:['that'],thin:true,
+ trap:'This phrasal verb has a fixed word before the impression.',why:'"Come across as pushy", "come across as rushing", or "come across as if I’m rushing".',
+ items:[Y('24.09','I don’t want to come across ___ if I’m rushing.','as'),Y('01.10','I don’t want to come across ___ pushy.','as')]},
+{k:'by_using',sec:'prep',label:'by + -ing (method)',tr:'kullanarak (-arak)',wrong:['with','through'],thin:true,
+ trap:'"-arak" becomes "with" or "through" in your sentences. How does English name a method?',why:'A method is "by + -ing": by using this construction.',
+ items:[Y('03.10','You can say it ___ using this construction.','by'),Y('29.09','Look at it ___ using Gemini.','by')]},
+{k:'basis',sec:'prep',label:'on a … basis',tr:'gerçek zamanlı bazda (-da)',wrong:['in','∅'],thin:true,
+ trap:'"Bazda" (-da) gives "in".',why:'"On a remote basis", "on a daily basis", "on a real-time basis".',
+ items:[Y('01.10','They work ___ a remote basis.','on'),Y('24.09','We update it ___ a real-time basis.','on')]},
+{k:'struggle_to',sec:'prep',label:'struggle to / interested in -ing',tr:'no Turkish source recorded',wrong:['for','in to'],thin:true,
+ trap:'Check what form the verb takes after this word.',why:'"Struggle to do something", and "interested in doing something".',
+ items:[Y('28.09','I have been struggling ___ increase my automaticity.','to'),Y('20.09','He might be interested ___ buying our horse.','in')]},
+{k:'in_form',sec:'prep',label:'in its original form',tr:'orijinal halleriyle (-le)',wrong:['with'],thin:true,
+ trap:'"-le" gives "with".',why:'"In its original form", "in its current form".',
+ items:[Y('28.09','Keep them ___ their original form.','in'),N('I like the essay ___ its current form.','in')]},
+// ---------- Verb + noun ----------
+{k:'vn_decision',sec:'vn',label:'make a decision',tr:'karar vermek',wrong:['give','do'],
+ trap:'"Karar vermek" uses "vermek" (give). English uses a different light verb.',
+ why:'"Make a decision", "make a choice", "make a selection".',
+ items:[Y('20.09','Let her ___ her own decision.','make'),Y('01.10','We ___ our selection yesterday.','made',['did','gave']),N('I need to ___ a decision by Friday.','make')]},
+{k:'vn_break',sec:'vn',label:'take a break',tr:'mola vermek',wrong:['give','make'],thin:true,
+ trap:'"Mola vermek" uses "vermek" (give).',why:'"Take a break", "take a rest".',
+ items:[Y('22.09','Maybe I could ___ a break.','take'),N('Let’s ___ a five-minute break.','take')]},
+{k:'vn_analysis',sec:'vn',label:'do an analysis / do research',tr:'analiz yapmak / araştırma yapmak',wrong:['make'],
+ trap:'"Yapmak" covers make and do. Which one fits work and tasks?',
+ why:'Work and tasks use "do": do an analysis, do some research. ("Run an analysis" also works.)',
+ items:[Y('06.10','Can you ___ a thorough analysis?','do|run'),Y('23.09','I ___ some quick research.','did',['made']),N('She’s ___ research on sleep.','doing',['making'])]},
+{k:'vn_score',sec:'vn',label:'get a score',tr:'skor yapmak',wrong:['make'],thin:true,
+ trap:'"Skor yapmak" uses "yapmak". English uses another verb for results.',why:'"Get a score" or simply "score": she scored 85.',
+ items:[Y('06.10','If she ___ a certain score, she qualifies.','gets',['makes']),N('He ___ a high score on the test.','got',['made'])]},
+{k:'have_a_talk',sec:'vn',label:'have a talk / conversation',tr:'konuşma yapmak',wrong:['make','do'],
+ trap:'"Konuşma yapmak" uses "yapmak". Conversations use another light verb.',
+ why:'"Have a talk", "have a conversation", "have a chat".',
+ items:[Y('20.09','I need to ___ this talk with Shahin.','have'),Y('20.09','It’s not a good time to ___ this conversation.','have'),N('We ___ a long chat last night.','had',['made','did'])]},
+{k:'do_practice',sec:'vn',label:'do practice / exercises',tr:'pratik yapmak / egzersiz yapmak',wrong:['make'],
+ trap:'"Pratik yapmak" uses "yapmak". Which English verb fits exercises?',
+ why:'"Do some practice", "do exercises", or just "practise".',
+ items:[Y('22.09','I’m reluctant to ___ any speaking practice.','do'),Y('05.10','Let’s ___ some shadowing practice.','do'),N('She ___ her exercises every morning.','does',['makes'])]},
+{k:'lift_mood',sec:'vn',label:'lift / boost my mood',tr:'moral yükseltmek',wrong:['increase'],
+ trap:'"Moral yükseltmek" suggests "increase". Moods go up with another verb.',
+ why:'"Lift my mood" or "boost my mood". When it goes the other way: "I feel down".',
+ items:[Y('25.09','It really helps to ___ my mood.','lift|boost'),N('Music always ___ my mood.','lifts|boosts',['increases'])]},
+{k:'throw_question',sec:'vn',label:'ask a question / float an idea',tr:'ortaya atmak',wrong:['throw'],
+ trap:'"Ortaya atmak" suggests "throw". English uses other verbs for questions and ideas.',
+ why:'"Ask a question", "float an idea", "put it to them". "Fire away" means "go ahead and ask".',
+ items:[Y('30.09','Maybe I can ___ this idea to them.','float|put'),Y('29.09','Go ahead, ___ away!','fire'),N('Can I ___ you a question?','ask')]},
+{k:'put_add',sec:'vn',label:'add / set (not "put")',tr:'koymak',wrong:['put','putting'],
+ trap:'"Koymak" suggests "put". Columns, buttons and criteria use other verbs.',
+ why:'You "add" a column or a button and "set" criteria. "Put" is for placing physical things.',
+ items:[Y('23.09','You can do it by ___ a new column.','adding'),Y('23.09','You need to ___ some criteria.','set|establish'),Y('28.09','Let’s ___ a "show more" button.','add')]},
+{k:'vn_call',sec:'vn',label:'take a call',tr:'aramayı almak',wrong:['receive'],thin:true,
+ trap:'"Almak" suggests "receive".',why:'You "take a call" or "answer a call".',
+ items:[Y('06.10','I had to ___ a call from Serkan.','take|answer'),N('Sorry, I need to ___ this call.','take|answer')]},
+{k:'vn_meeting',sec:'vn',label:'have / hold a meeting',tr:'toplantı yapmak',wrong:['do','make'],thin:true,
+ trap:'"Toplantı yapmak" uses "yapmak".',why:'"Have a meeting" or, more formally, "hold a meeting".',
+ items:[Y('29.09','We will ___ a meeting in person.','have|hold'),N('They ___ a meeting every Monday.','have|hold')]}
+];
+// ---------- Extra new-context items (so sessions can run 50% your sentences / 50% new contexts) ----------
+const EXTRA={
+of_not_for:[N('He has a deep knowledge ___ local tax rules.','of'),N('Can you give me an example ___ a phrasal verb with "up"?','of'),N('The chances ___ rain tomorrow are low.','of'),N('There is a growing awareness ___ climate risk in banking.','of'),N('This exam is a real test ___ your patience.','of')],
+no_prep_verbs:[N('Would you like to join ___ us for dinner?','∅'),N('A stranger approached ___ me at the station.','∅'),N('Please reply ___ this email by Friday.','to',['∅','with'],'"Reply" is the exception: it needs "to".'),N('The auditors will contact ___ you next week.','∅')],
+add_to:[N('Add a pinch of salt ___ the soup.','to'),N('Please add my name ___ the guest list.','to'),N('Save the file ___ the shared folder.','to'),N('I added a few notes ___ the report.','to')],
+on_my_list:[N('Milk is ___ my shopping list.','on'),N('Is fish ___ the menu tonight?','on'),N('Visiting Japan is high ___ my bucket list.','on')],
+include_in:[N('Are drinks included ___ the package?','in'),N('She wasn’t involved ___ the decision.','in'),N('Please keep me ___ the loop.','in')],
+move_on_to:[N('Let’s move ___ the budget figures now.','on to'),N('After the introduction, the teacher moved ___ the main topic.','on to')],
+dedicate_to:[N('He dedicated his life ___ teaching.','to'),N('We are fully committed ___ the project.','to')],
+these_days:[N('Everyone seems so busy ___ these days.','∅'),N('What are you reading ___ these days?','∅'),N('Kids grow up so fast ___ these days.','∅')],
+over_time:[N('Prices have risen steadily ___ time.','over'),N('The colours faded gradually ___ time.','over'),N('Our team has changed a lot ___ time.','over')],
+weekends:[N('The office is closed ___ weekends.','at|on'),N('We usually visit my parents ___ the weekend.','at|on|over'),N('Shops get very busy ___ weekends.','at|on')],
+dates_times:[N('The meeting is ___ Monday morning.','on'),N('My flight leaves ___ 6:45.','at'),N('We got married ___ 2012.','in',['on','at'],'Years take "in".'),N('I always feel sleepy ___ the afternoon.','in',['at','on'],'Parts of the day take "in", except "at night".'),N('The report is due ___ 15 November.','on')],
+begin_lastmin:[N('He always arrives ___ the last minute.','at'),N('There is a summary ___ the end of each chapter.','at')],
+time_duration:[N('I’ve lived in Istanbul ___ ten years.','for',['since']),N('He has worked here ___ 2019.','since',['for'])],
+sense_of:[N('She has a great sense ___ humour.','of'),N('What are the advantages ___ this plan?','of'),N('There’s something wrong ___ my laptop.','with',['about','of'])],
+confused_about:[N('I’m really excited ___ the trip.','about'),N('She was worried ___ the results.','about'),N('Don’t be so negative ___ everything.','about')],
+same_about:[N('I could say the same ___ my brother.','about')],
+same_as:[N('Her dress is the same colour ___ mine.','as'),N('This year’s budget is the same ___ last year’s.','as')],
+for_me:[N('This chair is too low ___ me.','for'),N('It’s difficult ___ him to say no.','for'),N('This idea is completely new ___ me.','to',['for'],'"New to me" means I haven’t met it before.'),N('Running every day is good ___ your health.','for')],
+ask_sb_q:[N('Thanks for sharing your story ___ us.','with',['to']),N('I’ll share the slides ___ the team.','with',['to']),N('Here’s a question ___ you: why did you choose finance?','for',['to'])],
+no_point_in:[N('There’s no point ___ arguing with him.','in'),N('Is there any point ___ calling them again?','in')],
+mention_discuss:[N('Did she mention ___ the price?','∅'),N('Let’s discuss ___ the plan over lunch.','∅'),N('Can you tell me ___ your weekend?','about',['∅'],'"Tell someone about" does take "about".')],
+rooted_in:[N('The tradition is rooted ___ Ottoman history.','in'),N('The film is based ___ a true story.','on',['to']),N('Most of the delays stem ___ one bad decision.','from',['by'])],
+responsible_for:[N('Who is responsible ___ the budget?','for'),N('It’s up ___ you to decide.','to',['on'])],
+against:[N('Most people voted against ___ the plan.','∅'),N('Lean your bike against ___ the wall.','∅')],
+seek_chase:[N('Many young people are seeking ___ jobs abroad.','∅'),N('I’m searching ___ my keys.','for',['∅'],'"Search for" does take "for".')],
+invest_in:[N('They invested heavily ___ property.','in'),N('I put a lot of time ___ learning English.','into'),N('You should invest ___ a good pair of shoes.','in'),N('If you put ___ the hours, you’ll see results.','in',['∅','into'],'"Put in the hours" with nothing after it uses "in".')],
+swap_for:[N('Can I swap this shirt ___ a bigger size?','for'),N('We replaced the old printer ___ a new one.','with',['for'])],
+limit_to:[N('Please limit your talk ___ ten minutes.','to'),N('Each guest is limited ___ two drinks.','to'),N('There’s no limit ___ what you can learn.','to',['for']),N('Let’s keep the list limited ___ five items.','to',['with'])],
+key_to:[N('Patience is the key ___ good parenting.','to'),N('Nobody knows the answer ___ that question.','to')],
+leave_out_of:[N('Please leave me ___ this argument.','out of'),N('Let’s set this issue ___ until next week.','aside',['out']),N('He was left ___ the team photo.','out of')],
+on_device:[N('Is this film ___ Netflix?','on'),N('I found it ___ their website.','on'),N('She spends hours ___ her tablet.','on'),N('We stayed ___ a small Greek island.','on')],
+on_trip_leave:[N('She’s ___ maternity leave until March.','on'),N('He’s away ___ business this week.','on')],
+angry_with:[N('Don’t be angry ___ me.','with',['to']),N('She got mad ___ the referee.','at',['with']),N('I’m tired ___ waiting.','of',['from']),N('My daughter is very close ___ her grandmother.','to',['with']),N('We were all shocked ___ the news.','by|at',['from'])],
+good_at:[N('I’m not very good ___ remembering names.','at'),N('She’s getting better ___ tennis.','at')],
+save_for:[N('Let’s save the dessert ___ later.','for'),N('Keep some energy ___ the second half.','for')],
+remind_of:[N('This song reminds me ___ my school days.','of'),N('You remind me ___ your father.','of')],
+been_to:[N('She has never been ___ London.','to'),N('Have you been ___ the new shopping centre yet?','to')],
+specific_to:[N('This problem isn’t specific ___ Turkey.','to')],
+pace_at:[N('Walk ___ your own pace.','at')],
+superior_to:[N('This hotel is superior ___ the one we stayed in last year.','to')],
+different_from:[N('My job is very different ___ yours.','from|to',['than']),N('Life in Dubai is different ___ life in Istanbul.','from|to',['than'])],
+accused_of:[N('They were accused ___ cheating.','of')],
+get_used_to:[N('You’ll soon get used ___ the noise.','to')],
+worth_ing:[N('Istanbul is worth ___ (visit) in spring.','visiting',['to visit'])],
+short_on_time:[N('Sorry, I’m a bit short ___ time today.','on')],
+congratulate_on:[N('We congratulated them ___ their wedding.','on')],
+scene:[N('A new band burst ___ the music scene last year.','onto|on',['into'])],
+help_with:[N('Could you help me ___ this form?','with')],
+wait_for:[N('Wait ___ me, I’m coming!','for')],
+insist_on:[N('He insisted ___ driving me home.','on')],
+resonate_with:[N('His speech really resonated ___ young voters.','with'),N('That idea doesn’t resonate ___ me.','with')],
+paste_into:[N('Copy the text and paste it ___ an email.','into')],
+come_across_as:[N('He comes across ___ very confident.','as'),N('I didn’t mean to come across ___ rude.','as')],
+by_using:[N('You can save time ___ using shortcuts.','by'),N('She learned English ___ watching films.','by')],
+basis:[N('We meet ___ a weekly basis.','on'),N('Staff are paid ___ a monthly basis.','on')],
+struggle_to:[N('Many students struggle ___ concentrate in the afternoon.','to'),N('Are you interested ___ joining our team?','in')],
+in_form:[N('The document is only available ___ PDF form.','in')],
+vn_decision:[N('It’s time to ___ a choice.','make')],
+vn_break:[N('You look tired. Why don’t you ___ a rest?','take|have')],
+vn_analysis:[N('We need to ___ more research before we decide.','do')],
+vn_score:[N('She ___ 90 out of 100 in the exam.','scored|got',['made'])],
+have_a_talk:[N('Let’s ___ a quick chat after lunch.','have')],
+do_practice:[N('I ___ some stretching exercises before work.','do')],
+lift_mood:[N('A sunny day can really ___ your mood.','lift|boost',['increase'])],
+throw_question:[N('He ___ the idea of a four-day week at the meeting.','floated|raised|suggested',['threw'])],
+put_add:[N('Can you ___ a new column for the dates?','add'),N('We need to ___ clear rules for the team.','set|establish')],
+vn_call:[N('She couldn’t ___ my call because she was driving.','take|answer',['receive'])],
+vn_meeting:[N('We’ll ___ a meeting to discuss it.','have|hold',['do','make'])]
+};
+BANK.forEach(p=>{if(EXTRA[p.k])p.items.push(...EXTRA[p.k]);});
+// ---------- Contrast pairs: two sentences, same gap, different answers ----------
+function C(t1,a1,t2,a2,n){return{s:'n',c:true,t:t1,a:a1,t2,a2,n};}
+const PAIRS={
+over_time:[C('We got there just ___ time for the start.','in','Prices have risen steadily ___ time.','over','"In time" = early enough; "over time" = gradually.')],
+begin_lastmin:[C('We met ___ the beginning of the session.','at','___ the beginning, everything felt confusing.','in','"At the beginning of X" is a point; "In the beginning" (no "of") means "at first".')],
+these_days:[C('I’m really busy ___ these days.','∅','Life was harder back ___ those days.','in','"These days" takes nothing; "in those days" talks about the past.')],
+been_to:[C('I’ve been ___ Dubai twice.','to','I’ve been ___ Dubai for three days now.','in','"Been to" = visited; "been in" = staying there for a period.')],
+same_about:[C('I can say the same ___ my sister.','about','The same goes ___ my sister.','for','"Say the same about" vs the fixed phrase "the same goes for".')],
+remind_of:[C('This place reminds me ___ my childhood.','of','Remind me ___ call the bank tomorrow.','to','"Remind someone of a thing" vs "remind someone to do something".')],
+no_prep_verbs:[C('Please contact ___ me by Friday.','∅','Please reply ___ me by Friday.','to','"Contact" takes its object directly; "reply" needs "to".')],
+mention_discuss:[C('We discussed ___ the plan for an hour.','∅','We talked ___ the plan for an hour.','about','"Discuss" takes its object directly; "talk" needs "about".')],
+seek_chase:[C('They are seeking ___ a solution.','∅','They are looking ___ a solution.','for','"Seek" takes its object directly; "look" needs "for".')],
+swap_for:[C('I swapped tea ___ coffee.','for','I replaced tea ___ coffee.','with','"Swap X for Y" and "replace X with Y" mean the same change.')],
+angry_with:[C('I’m angry ___ him.','with','I’m angry ___ the delay.','about','"Angry with" a person, "angry about" a situation.')],
+for_me:[C('This topic is completely new ___ me.','to','This topic is really hard ___ me.','for','"New to me" (I haven’t met it) vs "hard for me" (it affects me).')],
+time_duration:[C('I’ve worked here ___ 2019.','since','I’ve worked here ___ six years.','for','"Since" + a starting point; "for" + a length of time.')],
+dates_times:[C('See you ___ Friday.','on','See you ___ 5 pm.','at','Days take "on"; clock times take "at".'),C('I can’t sleep ___ night.','at','I work best ___ the morning.','in','"At night" is the exception; other parts of the day take "in".')],
+move_on_to:[C('Let’s move ___ the next point.','on to','Next month we’re moving ___ a bigger flat.','into','"Move on to" a topic; "move into" a place.')],
+add_to:[C('Please add it ___ the list.','to','Please include it ___ the list.','in','"Add to" but "include in".')],
+good_at:[C('She’s really good ___ tennis.','at','She’s really good ___ children.','with','"Good at" a skill; "good with" people or tools.')]
+};
+BANK.forEach(p=>{if(PAIRS[p.k])p.items.push(...PAIRS[p.k]);});
+// ---------- Challenge tab: harder prepositions (sec 'adv'). gen:true = Turkish link is a general mapping, not from the ledger ----------
+const ADV=[
+// Path and movement
+{k:'adv_through',sec:'adv',fam:'path',label:'through',tr:'-den geçerek / aracılığıyla (yours: "through using" for "by using")',wrong:['across','along'],
+ trap:'Think of going in one side and out the other, or of a channel something passes through.',
+ why:'"Through" = in one side and out the other (through the tunnel), from start to end (through the night), or by means of a person or channel (through a friend). A method with -ing takes "by": by using Gemini.',
+ items:[N('We drove ___ the tunnel.','through'),N('I read ___ the contract twice.','through'),N('The light came in ___ the window.','through',['across','from']),
+ N('We got the job ___ a friend.','through',['by','with'],'"Through" a person or channel = by means of them.'),N('He worked ___ the night to finish it.','through'),
+ Y('29.09','Look at it ___ using Gemini.','by',['through','with'],'A method with -ing takes "by", not "through".')]},
+{k:'adv_across',sec:'adv',fam:'path',label:'across',tr:'karşısında / karşıya',gen:true,wrong:['through','along'],
+ trap:'Think of a flat surface or a line you go from one side of to the other.',
+ why:'"Across" = from one side to the other of a surface or line (across the street, across the river), or in every part of something (across all sectors).',
+ items:[N('There’s a café just ___ the street.','across'),N('She swam ___ the river.','across'),N('Prices rose ___ all sectors.','across',['through','along'],'"Across" = in every part of.'),N('I came ___ an old photo yesterday.','across',['through','along'],'"Come across" = find by chance.')]},
+{k:'adv_along',sec:'adv',fam:'path',label:'along / during',tr:'boyunca (one word for space and time)',wrong:['through','across'],
+ trap:'Turkish "boyunca" covers both space and time. English splits them.',
+ why:'"Along" follows a line in space: along the beach, along the road. For a stretch of time, use "during" or "throughout": during the week.',
+ items:[N('We walked ___ the beach.','along'),N('There are trees ___ the road.','along'),N('I’ll bring a friend ___.','along',['with','together'],'"Bring someone along" = take them with you.'),
+ Y('05.10','I’ll be busy ___ the week.','during|throughout',['along'],'"Along" is for space. For time, use "during" or "throughout".')]},
+{k:'adv_towards',sec:'adv',fam:'path',label:'towards vs to',tr:'-e doğru / -e karşı',wrong:['towards'],
+ trap:'Turkish "-e karşı / -e doğru" pulls you to "towards". Does the thing arrive at its target or join it?',
+ why:'"Towards" = in the direction of (walk towards the door) or about feelings (attitude towards). When something reaches or joins a target, English uses "to": delegate to, link to.',
+ items:[Y('29.09','I’m delegating these tasks ___ my team members.','to'),Y('05.10','Let’s link this holiday ___ the weekend.','to'),
+ Y('23.09','I need to go easy ___ myself.','on',['towards'],'"Go easy on someone" is a fixed phrase.'),Y('28.09','My parents have a soft spot ___ me.','for',['towards'],'"A soft spot for someone" is a fixed phrase.'),
+ N('He walked slowly ___ the door.','towards|toward',['to'],'Moving in that direction, not arriving yet: "towards".'),N('Her attitude ___ work has changed.','towards|to',['for','against'],'Attitudes and feelings: "towards" (British English also says "to").')]},
+{k:'adv_beyond',sec:'adv',fam:'path',label:'beyond',tr:'ötesinde',gen:true,wrong:['over','after'],
+ trap:'Think of something further than a limit.',
+ why:'"Beyond" = further than a place or a limit: beyond that hill, beyond my control, "it’s beyond me" (I can’t understand it).',
+ items:[N('The village is just ___ that hill.','beyond',['over','after']),N('Sorry, the delay is ___ our control.','beyond|out of',['over','above']),
+ N('That’s ___ me. I just don’t understand it.','beyond',['over','above'],'"It’s beyond me" = I can’t understand it.')]},
+{k:'adv_throughout',sec:'adv',fam:'path',label:'throughout',tr:'boyunca',gen:true,wrong:['along'],
+ trap:'From the start to the end, or in every part.',
+ why:'"Throughout" = during the whole time (throughout the day) or in every part of a place (throughout the country).',
+ items:[N('It rained ___ the day.','throughout|all through',['along']),N('The song is famous ___ the country.','throughout|across|all over',['along']),N('She smiled ___ the whole meeting.','throughout|all through',['along'])]},
+// Multi-word prepositions
+{k:'adv_out_of',sec:'adv',fam:'multi',label:'out of',tr:'-den dışarı (yours: "out from")',wrong:['out from','from'],
+ trap:'English uses a fixed two-word pair here, never "out from".',
+ why:'"Out of" = leaving the inside of something (ran out of the room), having none left (out of milk), proportions (three out of ten). Never "out from".',
+ items:[N('She ran ___ the room.','out of'),N('We’ve run ___ milk.','out of'),N('Three ___ ten people said yes.','out of',['from','in'],'Proportions: "three out of ten".'),
+ N('Stay ___ trouble!','out of',['away','from']),Y('01.10','Please keep it ___ the analysis.','out of')]},
+{k:'adv_instead_of',sec:'adv',fam:'multi',label:'instead of',tr:'yerine',gen:true,wrong:['instead','rather'],
+ trap:'Two words, and the verb after it takes -ing.',
+ why:'"Instead of" + noun or -ing: tea instead of coffee, walk instead of taking a taxi.',
+ items:[N('Can I have tea ___ coffee?','instead of'),N('Let’s walk ___ taking a taxi.','instead of',['instead','rather'],'"Instead of" + -ing.')]},
+{k:'adv_apart_except',sec:'adv',fam:'multi',label:'apart from / except for',tr:'dışında / hariç',gen:true,wrong:['without','despite'],
+ trap:'You are leaving one thing out of a group.',
+ why:'"Apart from" and "except (for)" leave one thing out: everyone except Ali; apart from the weather, it was perfect.',
+ items:[N('Everyone came ___ Ali.','except|apart from|except for',['without']),N('___ the weather, the trip was perfect.','Apart from|Except for',['Without','Despite'])]},
+{k:'adv_due_to',sec:'adv',fam:'multi',label:'due to / because of',tr:'yüzünden / nedeniyle',gen:true,wrong:['because','for'],
+ trap:'A noun follows, not a full clause.',
+ why:'"Due to" and "because of" + noun: cancelled due to the storm. "Because" needs a clause: because it was stormy.',
+ items:[N('The flight was cancelled ___ the storm.','due to|because of',['because','for'],'"Because" needs a full clause.'),N('The delay was ___ a technical problem.','due to|because of',['because','for']),
+ N('Many people stayed home ___ the snow.','because of|due to',['because'])]},
+{k:'adv_according_to',sec:'adv',fam:'multi',label:'according to',tr:'-e göre',gen:true,wrong:['regarding','due to'],
+ trap:'It names the source of information, or the plan you follow.',
+ why:'"According to" names a source (according to the forecast) or a plan (everything went according to plan).',
+ items:[N('___ the forecast, it will rain tomorrow.','According to',['Regarding','Due to']),N('Everything went ___ plan.','according to',['as','by'],'"Go according to plan" is fixed.')]},
+{k:'adv_in_terms_of',sec:'adv',fam:'multi',label:'in terms of',tr:'açısından (your ledger has "in these terms" as a calque)',wrong:['in these terms','according to'],
+ trap:'"Açısından" becomes a fixed English phrase here.',
+ why:'"In terms of" = when we talk about this aspect: in terms of salary, the new job is better.',
+ items:[N('___ salary, the new job is better.','In terms of',['In these terms','According to']),N('The project was a success ___ sales.','in terms of',['according to','due to'])]},
+{k:'adv_on_behalf_of',sec:'adv',fam:'multi',label:'on behalf of',tr:'adına',gen:true,wrong:['in the name of','for the sake of'],
+ trap:'"Adına" tempts a word-for-word "in the name of".',
+ why:'"On behalf of" = representing someone: I’m writing on behalf of my company. "In the name of" sounds religious or legal.',
+ items:[N('I’m writing ___ my company.','on behalf of'),N('She accepted the award ___ her team.','on behalf of')]},
+{k:'adv_despite',sec:'adv',fam:'multi',label:'despite / in spite of',tr:'-e rağmen',gen:true,wrong:['although','even though'],
+ trap:'A noun or -ing follows, not a full clause.',
+ why:'"Despite" and "in spite of" + noun or -ing: despite the rain, despite being tired. "Although" needs a full clause. Never "despite of".',
+ items:[N('We went out ___ the rain.','despite|in spite of',['although','even']),N('___ being tired, she finished the report.','Despite|In spite of',['Although','Even though'],'"Despite" + -ing.'),N('He failed, ___ all his efforts.','despite|in spite of',['although'])]},
+{k:'adv_regardless_of',sec:'adv',fam:'multi',label:'regardless of',tr:'-e bakmaksızın',gen:true,wrong:['regardless','despite of'],
+ trap:'Two words; it means "it doesn’t matter what".',
+ why:'"Regardless of" = it does not matter: everyone pays the same, regardless of age.',
+ items:[N('Everyone pays the same, ___ age.','regardless of'),N('The rule applies to everyone, ___ their position.','regardless of')]},
+{k:'adv_as_for',sec:'adv',fam:'multi',label:'as for',tr:'-e gelince',wrong:['for','about'],
+ trap:'You are turning to a new topic.',
+ why:'"As for X" turns to a new topic: as for the weather, it’s another story.',
+ items:[Y('03.10','___ the feedback you gave, I agree with most of it.','As for',['For','About']),N('I love the city. ___ the weather, that’s another story.','As for',['For','About'])]},
+{k:'adv_prior_to',sec:'adv',fam:'multi',label:'prior to',tr:'-den önce',gen:true,wrong:['prior','ago'],
+ trap:'A formal word for "before" needs its partner.',
+ why:'"Prior to" is a formal "before": prior to joining us. "Prior" alone is an adjective.',
+ items:[N('Please arrive 30 minutes ___ the meeting.','prior to|before',['prior','ago']),N('___ joining us, she worked in a bank.','Prior to|Before',['Prior','Ago'])]},
+// Position and relation
+{k:'adv_among_between',sec:'adv',fam:'position',label:'among / between / from',tr:'arasında (one word for both)',wrong:['among','between'],
+ trap:'Turkish "arasında" covers both. Two clear items, or a group? Or are you choosing out of a group?',
+ why:'"Between" two (or clearly separate) things; "among" a group; choosing out of a group is "from": pick three from the list.',
+ items:[Y('28.09','Pick three items ___ the phrasal verbs.','from',['among','between'],'Choosing out of a group: "from".'),N('She was ___ the first to arrive.','among',['between']),
+ N('The house is ___ the bank and the school.','between',['among']),N('There’s a lot of stress ___ students.','among',['between']),N('Let’s split the bill ___ the two of us.','between',['among'])]},
+{k:'adv_within',sec:'adv',fam:'position',label:'within',tr:'içinde',gen:true,wrong:['in','inside'],
+ trap:'Inside a limit of time, money or distance.',
+ why:'"Within" = inside a limit: within 24 hours (no later than), within budget, within walking distance. "In 24 hours" means after 24 hours.',
+ items:[N('We’ll reply ___ 24 hours.','within',['inside'],'"Within" = no later than.'),N('Please try to stay ___ budget.','within',['inside','in']),N('Is the hotel ___ walking distance?','within',['in','inside'])]},
+{k:'adv_below',sec:'adv',fam:'position',label:'below / under / beneath',tr:'altında',gen:true,wrong:['below','beneath'],
+ trap:'Is this a position, or a level on a scale?',
+ why:'"Under" (or "beneath") for position: hiding under the bed. "Below" for levels and numbers: below zero, below average.',
+ items:[N('The cat is hiding ___ the bed.','under|beneath|underneath',['below']),N('The temperature fell ___ zero last night.','below',['beneath'],'Levels and numbers: "below".')]},
+{k:'adv_alongside',sec:'adv',fam:'position',label:'alongside',tr:'yanında / ile birlikte',gen:true,wrong:['along'],
+ trap:'Next to, or together with.',
+ why:'"Alongside" = next to, or together with: she works alongside her husband. "Along" is for following a line.',
+ items:[N('She works ___ her husband in the shop.','alongside|with',['along']),N('The new rules will run ___ the old ones for a year.','alongside',['along'])]},
+{k:'adv_amid',sec:'adv',fam:'position',label:'amid',tr:'ortasında',gen:true,wrong:['among','between'],
+ trap:'In the middle of a situation (news style).',
+ why:'"Amid" = in the middle of a situation, mostly in news and formal writing: shares fell amid fears of a recession.',
+ items:[N('The shares fell ___ fears of a recession.','amid|amidst',['among','between'],'"Amid" goes with situations; "among" with groups of people or things.'),N('He stayed calm ___ the chaos.','amid|in',['among'])]},
+{k:'adv_upon',sec:'adv',fam:'position',label:'upon / on arrival',tr:'-ince / üzerine',gen:true,wrong:['at','in'],
+ trap:'A formal way to say "when this happens".',
+ why:'"On" or "upon" + noun = when it happens: on arrival, upon receipt. "Once upon a time" is fixed.',
+ items:[N('___ arrival, please check in at reception.','On|Upon',['At','In'],'"On arrival" = when you arrive.'),N('Once ___ a time, there was a king.','upon',['on','in'],'A fixed phrase in stories.')]},
+{k:'adv_above_level',sec:'adv',fam:'position',label:'above a level',tr:'belli bir seviyeden sonra',wrong:['after','over'],
+ trap:'Turkish "-den sonra" gives "after". Is this about time, or about a level?',
+ why:'Levels and amounts take "above": above a certain level, above average. "After" is for time.',
+ items:[Y('06.10','___ a certain level, the questions get much harder.','Above|Beyond',['After']),N('His results are well ___ average.','above',['over','after'])]}
+];
+const ADV_FAMILIES=[
+ {id:'path',label:'Path and movement',keys:['adv_through','adv_across','adv_along','adv_towards','adv_beyond','adv_throughout']},
+ {id:'multi',label:'Multi-word prepositions',keys:['adv_out_of','adv_instead_of','adv_apart_except','adv_due_to','adv_according_to','adv_in_terms_of','adv_on_behalf_of','adv_despite','adv_regardless_of','adv_as_for','adv_prior_to']},
+ {id:'position',label:'Position and relation',keys:['adv_among_between','adv_within','adv_below','adv_alongside','adv_amid','adv_upon','adv_above_level']}];
+ADV.forEach(p=>BANK.push(p));
+// Contrast-pair hints (level 1) for both sentences
+const PAIR_HINTS={over_time:'A is about being early enough; B is about gradual change.',begin_lastmin:'A has "of the session" after it; B stands alone and means "at first".',
+these_days:'A is about now; B is about the past.',been_to:'A counts visits; B is about staying there right now.',same_about:'A follows "say the same"; B follows "the same goes".',
+remind_of:'A is followed by a thing; B by a verb.',no_prep_verbs:'Look at the verbs: "contact" in A, "reply" in B.',mention_discuss:'Look at the verbs: "discuss" in A, "talk" in B.',
+seek_chase:'Look at the verbs: "seek" in A, "look" in B.',swap_for:'Look at the verbs: "swap" in A, "replace" in B.',angry_with:'A is about a person; B is about a situation.',
+for_me:'A: something you haven’t met before. B: something that is difficult for you.',time_duration:'A gives a starting point; B gives a length of time.',
+add_to:'Look at the verbs: "add" in A, "include" in B.',good_at:'A is a skill; B is about people.',move_on_to:'A is a topic; B is a place.'};
+const PAIR_HINTS_2={dates_times:['A is a day; B is a clock time.','A is night-time; B is a part of the day.']};
+
+const INTERVALS=[0,1,3,7,14,30];
+const FAMILIES=[
+ {id:'zero',label:'No preposition (∅)',keys:['no_prep_verbs','these_days','mention_discuss','seek_chase','against','ask_sb_q']},
+ {id:'of',label:'of / out of',keys:['of_not_for','sense_of','remind_of','accused_of','leave_out_of']},
+ {id:'about',label:'about',keys:['confused_about','same_about']},
+ {id:'to',label:'to / on to',keys:['add_to','move_on_to','dedicate_to','limit_to','key_to','specific_to','superior_to','get_used_to','been_to']},
+ {id:'in',label:'in / into',keys:['include_in','rooted_in','no_point_in','invest_in','paste_into','in_form']},
+ {id:'on',label:'on',keys:['on_my_list','on_device','on_trip_leave','basis','short_on_time','congratulate_on','scene','insist_on']},
+ {id:'time',label:'at / on / in for time',keys:['dates_times','begin_lastmin','weekends','over_time','time_duration']},
+ {id:'at',label:'at (skill, speed)',keys:['good_at','pace_at']},
+ {id:'for',label:'for',keys:['for_me','swap_for','save_for','responsible_for','wait_for']},
+ {id:'with',label:'with / as',keys:['same_as','angry_with','help_with','resonate_with','come_across_as']},
+ {id:'forms',label:'Word forms (-ing, by, from)',keys:['worth_ing','by_using','struggle_to','different_from']},
+ {id:'vn',label:'Verb + noun collocations',keys:['vn_decision','vn_break','vn_analysis','vn_score','have_a_talk','do_practice','lift_mood','throw_question','put_add','vn_call','vn_meeting']}];
+let hmSet='prep', hmMetric='combined', hmOpen=new Set();
+let openFams=new Set(), openPick=new Set(), advSel=new Set(), advPickOpen=false, sessions={core:null,adv:null};
+const ZERO='∅';
+const AS_OF=SESSIONS[SESSIONS.length-1].d;
+const P={}; BANK.forEach(p=>{P[p.k]=p; p.items.forEach((it,i)=>it.i=i); let pi=0; p.items.forEach(it=>{if(it.c){it.h=(PAIR_HINTS_2[p.k]&&PAIR_HINTS_2[p.k][pi])||PAIR_HINTS[p.k]||'';pi++;}});});
+const isCore=p=>p.sec!=='adv';
+let db=null, memState={}, prefs={size:20,vn:false,mix:0.5}, session=null, view='practice', manualOpen=false, manualSel=new Set();
+const writeChains={};
+
+// ---------- helpers ----------
+function todayStr(d){d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function addDays(n){const d=new Date();d.setDate(d.getDate()+n);return todayStr(d);}
+function fmtDate(s){if(!s)return '';const [y,m,d]=s.split('-');return d+'.'+m;}
+const CONTR=[[/\blet's\b/g,'let us'],[/\bit's\b/g,'it is'],[/\bthere's\b/g,'there is'],[/\bthat's\b/g,'that is'],[/\bi'm\b/g,'i am'],[/\bi've\b/g,'i have'],[/\bcan't\b/g,'cannot'],[/\bwon't\b/g,'will not'],[/(\w)n't\b/g,'$1 not']];
+function norm(s){s=(s||'').toLowerCase().replace(/[’‘`]/g,"'").replace(/[“”]/g,'"').replace(/\s+/g,' ').trim().replace(/[.!?]+$/,'').trim();CONTR.forEach(([a,b])=>s=s.replace(a,b));return s;}
+function answers(it){return it.a.split('|').map(a=>a===ZERO?'':a);}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function lsGet(k){try{return JSON.parse(localStorage.getItem(k));}catch(e){return null;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+
+// ---------- speaking stats ----------
+const N_S=SESSIONS.length, RECENT=5;
+function speech(k){return speechArr(HITS[k]||new Array(N_S).fill(0));}
+function famHits(f){const h=new Array(N_S).fill(0);f.keys.forEach(k=>(HITS[k]||[]).forEach((c,i)=>h[i]+=c));return h;}
+function speechArr(h){
+  const rate=h.map((c,i)=>c/SESSIONS[i].w*1000);
+  const r5=h.slice(-RECENT).reduce((a,b)=>a+b,0), w5=SESSIONS.slice(-RECENT).reduce((a,s)=>a+s.w,0);
+  const rE=h.slice(0,-RECENT).reduce((a,b)=>a+b,0), wE=SESSIONS.slice(0,-RECENT).reduce((a,s)=>a+s.w,0);
+  const total=r5+rE, rate5=r5/w5*1000, rateE=rE/wE*1000;
+  let trend;
+  if(r5===0) trend='quiet'; else if(r5>=3&&(rE===0||rate5>=rateE*1.5)) trend='rising'; else if(rE>0&&rate5<=rateE*0.5) trend='fading'; else trend='steady';
+  return {h,rate,r5,total,trend,last3:h.slice(-3).reduce((a,b)=>a+b,0)};
+}
+const TREND_LABEL={rising:'Rising',steady:'Steady',fading:'Fading',quiet:'Quiet (unproven)'};
+
+// ---------- quiz state ----------
+function st(k){return memState[k]||(memState[k]={k,box:0,due:null,reviews:0,history:[],seen:[]});}
+function quizStrength(k){
+  const s=memState[k]; if(!s||!s.history.length) return {cls:'none',label:'Not quizzed',n:0,acc:null};
+  const last=s.history.slice(-6); const sc=last.reduce((a,h)=>a+(h.ok?(h.hint?0.5:1):0),0)/last.length;
+  if(last.length<3) return {cls:'none',label:'Too few ('+last.length+')',n:last.length,acc:sc};
+  return sc>=0.75?{cls:'strong',label:'Strong '+Math.round(sc*100)+'%',n:last.length,acc:sc}:{cls:'weak',label:'Weak '+Math.round(sc*100)+'%',n:last.length,acc:sc};
+}
+function isDue(k){const s=memState[k];return !!(s&&s.due&&s.due<=todayStr());}
+function lastMiss(k){const s=memState[k];return !!(s&&s.history.length&&!s.history[s.history.length-1].ok);}
+
+function queueWrite(path,data){
+  lsSet('ppq_state',memState);
+  if(!db) return;
+  const prev=writeChains[path]||Promise.resolve();
+  writeChains[path]=prev.then(()=>db.doc(path).set(data)).catch(e=>{showBanner('A result could not be saved ('+(e&&e.code||'error')+'). It is kept in this browser for now.');});
+}
+
+// ---------- session building ----------
+function pickItem(p,want,used){
+  const s=st(p.k); const avail=p.items.filter(it=>!used.has(it.i)); if(!avail.length) return null;
+  let kind=want?avail.filter(it=>it.s===want):avail; if(!kind.length) kind=avail;
+  if(want==='n'){const pairs=kind.filter(it=>it.c); if(pairs.length&&Math.random()<0.5) kind=pairs;}
+  const fresh=kind.filter(it=>!s.seen.includes(it.i)); const src=fresh.length?fresh:kind;
+  return src[Math.floor(Math.random()*src.length)];
+}
+function chooseFmt(p,it){
+  if(it.x) return 'fix';
+  if(it.c) return 'pair';
+  const acc=answers(it).map(norm);
+  const wrong=(it.w||p.wrong).filter(w=>!acc.includes(norm(w===ZERO?'':w)));
+  return (wrong.length&&Math.random()<0.3)?'mc':'fill';
+}
+function autoPlan(size,vn){
+  const cands=BANK.filter(p=>isCore(p)&&(vn||p.sec==='prep')).map(p=>{
+    const sp=speech(p.k), due=isDue(p.k), miss=lastMiss(p.k), tested=!!(memState[p.k]&&memState[p.k].history.length);
+    let score=3*sp.r5+(due?4:0)+(miss?3:0); const why=[];
+    if(sp.r5) why.push(sp.r5+'× in your last '+RECENT+' sessions');
+    if(due) why.push('due for review'); if(miss) why.push('missed last time');
+    if(!tested&&sp.r5===0) score+=0.2;
+    return {p,score,why,quiet:sp.r5===0&&sp.total>=4,quota:(sp.r5>=3||miss)?2:1};
+  });
+  const main=cands.filter(c=>c.score>=1).sort((a,b)=>b.score-a.score||Math.random()-0.5);
+  const quiet=shuffle(cands.filter(c=>c.quiet&&!isDue(c.p.k)&&c.score<1)).slice(0,size>=12?2:(size>=6?1:0));
+  quiet.forEach(c=>c.why=['quiet check: not heard in '+RECENT+' sessions']);
+  const slots=size-quiet.length; const alloc=new Map();
+  let used=0;
+  for(const c of main){if(used>=slots)break;const n=Math.min(c.quota,slots-used);alloc.set(c,n);used+=n;}
+  for(let pass=0;pass<3&&used<slots;pass++){for(const c of main){if(used>=slots)break;const cur=alloc.get(c)||0;if(cur<3&&cur<c.p.items.length){alloc.set(c,cur+1);used++;}}}
+  if(used<slots){for(const c of shuffle(cands)){if(used>=slots)break;if(!alloc.has(c)&&!quiet.includes(c)){alloc.set(c,1);used++;if(!c.why.length)c.why=['extra practice'];}}}
+  quiet.forEach(c=>alloc.set(c,1));
+  return alloc;
+}
+function manualPlan(size,keys){
+  const ps=keys.map(k=>P[k]); const alloc=new Map(ps.map(p=>[{p,why:['your pick']},0]));
+  let used=0,guard=0; const entries=[...alloc.keys()];
+  while(used<size&&guard<500&&entries.length){const c=entries[guard%entries.length];guard++;const cur=alloc.get(c);if(cur<c.p.items.length){alloc.set(c,cur+1);used++;}}
+  return alloc;
+}
+function buildSession(alloc,mode,size,tab){
+  tab=tab||'core';
+  const items=[]; const cnt={y:0,n:0};
+  for(const [c,n] of alloc){
+    const used=new Set(); const s=st(c.p.k);
+    for(let j=0;j<n;j++){
+      const mix=typeof prefs.mix==='number'?prefs.mix:0.5; const want=tab==='adv'?null:(cnt.y<mix*(cnt.y+cnt.n+1)?'y':'n');
+      const it=pickItem(c.p,want,used); if(!it) break;
+      used.add(it.i); cnt[it.s]++; s.seen=[it.i].concat(s.seen.filter(x=>x!==it.i)).slice(0,Math.max(1,Math.min(6,c.p.items.length-2)));
+      items.push({p:c.p,it,fmt:chooseFmt(c.p,it),why:c.why.join(' · '),hint:0,answer:null,done:false,ok:null,opts:null,dimmed:null});
+    }
+  }
+  const sess={id:'r_'+Date.now(),tab,mode,size,started:new Date().toISOString(),items:shuffle(items),promoted:new Set()};
+  sess.items.forEach(x=>{if(x.fmt==='mc'){const acc=answers(x.it).map(norm);const wrong=(x.it.w||x.p.wrong).filter(w=>!acc.includes(norm(w===ZERO?'':w)));x.opts=shuffle([x.it.a.split('|')[0]].concat(shuffle(wrong).slice(0,3)));}});
+  return sess;
+}
+
+// ---------- recording ----------
+function record(x){
+  const k=x.p.k, s=st(k), today=todayStr();
+  x.prev={box:s.box,due:s.due};
+  s.reviews++; s.history.push({t:new Date().toISOString(),ok:x.ok,hint:x.hint,fmt:x.fmt,item:x.it.i,src:x.it.s,gaveUp:!!x.gaveUp});
+  if(s.history.length>40) s.history=s.history.slice(-40);
+  if(!x.ok){s.box=0;s.due=addDays(1);session.promoted.delete(k);session.missed=session.missed||new Set();session.missed.add(k);}
+  else if(x.hint===0&&!session.promoted.has(k)&&!(session.missed&&session.missed.has(k))){s.box=Math.min(s.box+1,INTERVALS.length-1);s.due=addDays(INTERVALS[s.box]);session.promoted.add(k);}
+  else if(!s.due){s.due=addDays(Math.max(1,INTERVALS[s.box]));}
+  s.last=today;
+  queueWrite('patterns/'+k,{k,box:s.box,due:s.due,reviews:s.reviews,last:s.last,history:s.history,seen:s.seen,label:x.p.label,sec:x.p.sec});
+  const done=session.items.filter(y=>y.done);
+  queueWrite('runs/'+session.id,{tab:session.tab||'core',mode:session.mode,size:session.items.length,started:session.started,updated:new Date().toISOString(),kind:'review',
+    answered:done.length,correct:done.filter(y=>y.ok).length,hinted:done.filter(y=>y.hint>0).length,
+    items:done.map(y=>({p:y.p.k,item:y.it.i,src:y.it.s,fmt:y.fmt,ok:y.ok,hint:y.hint,gaveUp:!!y.gaveUp}))});
+}
+
+// ---------- practice view ----------
+function showBanner(t){const b=document.getElementById('banner');b.textContent=t;b.hidden=!t;}
+function render(){
+  const quizView=view==='practice'||view==='challenge', tab=view==='challenge'?'adv':'core';
+  document.getElementById('practiceView').hidden=!quizView;
+  document.getElementById('progressView').hidden=view!=='progress';
+  document.getElementById('modePractice').classList.toggle('active',view==='practice');
+  document.getElementById('modeChallenge').classList.toggle('active',view==='challenge');
+  document.getElementById('modeProgress').classList.toggle('active',view==='progress');
+  if(quizView) session=sessions[tab];
+  const showQuiz=quizView&&!!session;
+  document.body.classList.toggle('has-bar',!!showQuiz);
+  if(showQuiz) renderQuiz(); else if(view==='practice') renderStart(); else if(view==='challenge') renderChallengeStart(); else renderProgress();
+}
+function renderStart(){
+  const root=document.getElementById('practiceView'); root.innerHTML='';
+  const card=el('div','card');
+  const head=el('div','ex-head'); head.appendChild(el('h2',null,'Start a session')); head.appendChild(el('span','type-pill','speaking data as of '+AS_OF)); card.appendChild(head);
+  const mr0=el('div','mix-row'); mr0.appendChild(el('span',null,'Mix:'));
+  const ms=el('select'); ms.id='mixSel'; [[1,'100% your sentences'],[0.75,'75% yours · 25% new'],[0.5,'50% yours · 50% new'],[0.25,'25% yours · 75% new'],[0,'100% new contexts']].forEach(([v,t])=>{const o=el('option',null,t);o.value=v;if(Math.abs((prefs.mix??0.5)-v)<0.01)o.selected=true;ms.appendChild(o);});
+  ms.onchange=()=>{prefs.mix=parseFloat(ms.value);savePrefs();}; mr0.appendChild(ms);
+  mr0.appendChild(el('span','lbl','New contexts include contrast pairs. Applies to both ways of starting.')); card.appendChild(mr0);
+  const grid=el('div','start-grid');
+  // auto
+  const a=el('div','start-box'); a.appendChild(el('h3',null,'Auto pick'));
+  a.appendChild(el('p',null,'Builds the mix from your last '+RECENT+' speaking sessions, reviews that are due, and the ones you missed. Verb + noun collocations (make a decision, take a break) join when you tick the box.'));
+  const r=el('div','row'); r.appendChild(el('span','lbl','Items'));
+  const inp=el('input','size-input'); inp.type='number'; inp.min='5'; inp.max='60'; inp.id='autoSize'; inp.value=prefs.size; r.appendChild(inp);
+  const vnL=el('label','check-lbl'); const vn=el('input'); vn.type='checkbox'; vn.id='vnToggle'; vn.checked=prefs.vn; vnL.appendChild(vn); vnL.appendChild(document.createTextNode('include verb + noun collocations')); r.appendChild(vnL);
+  a.appendChild(r);
+  const prev=el('div','preview'); a.appendChild(prev);
+  const go=el('button','btn primary','Start auto session'); a.appendChild(go);
+  const updPrev=()=>{const plan=autoPlan(clampSize(inp.value),vn.checked);const byFam={};for(const [c,n] of plan){const f=FAMILIES.find(f=>f.keys.includes(c.p.k));const l=f?f.label:'other';byFam[l]=(byFam[l]||0)+n;}const top=Object.entries(byFam).sort((x,y)=>y[1]-x[1]).map(([l,n])=>l+' ×'+n);prev.innerHTML='';prev.appendChild(el('b',null,'Today’s mix by group: '));prev.appendChild(document.createTextNode(top.join(', ')));};
+  inp.oninput=updPrev; vn.onchange=()=>{prefs.vn=vn.checked;savePrefs();updPrev();};
+  go.onclick=()=>{const size=clampSize(inp.value);prefs.size=size;prefs.vn=vn.checked;savePrefs();session=sessions.core=buildSession(autoPlan(size,vn.checked),'auto',size,'core');saveSession();render();window.scrollTo(0,0);};
+  updPrev(); grid.appendChild(a);
+  // manual
+  const m=el('div','start-box'); m.appendChild(el('h3',null,'Choose myself'));
+  m.appendChild(el('p',null,'Pick the patterns and the number of items yourself.'));
+  const mb=el('button','btn',manualOpen?'Hide the pattern list':'Open the pattern list'); mb.onclick=()=>{manualOpen=!manualOpen;render();}; m.appendChild(mb);
+  grid.appendChild(m); card.appendChild(grid);
+  // picker
+  const pk=el('div','picker'+(manualOpen?' open':''));
+  const q=el('div','quick');
+  const qb=(t,f)=>{const b=el('button','mini-btn self',t);b.onclick=()=>{f();render();};q.appendChild(b);};
+  qb('Select active',()=>{manualSel=new Set(BANK.filter(p=>p.sec==='prep'&&speech(p.k).r5>0).map(p=>p.k));});
+  const dueKeys=BANK.filter(p=>isCore(p)&&isDue(p.k)).map(p=>p.k), weakKeys=BANK.filter(p=>isCore(p)&&quizStrength(p.k).cls==='weak').map(p=>p.k);
+  qb('Select due ('+dueKeys.length+')',()=>{manualSel=new Set(dueKeys);}); if(!dueKeys.length)q.lastChild.disabled=true;
+  qb('Select weak ('+weakKeys.length+')',()=>{manualSel=new Set(weakKeys);}); if(!weakKeys.length)q.lastChild.disabled=true;
+  const lp=leastPractised();
+  qb('Select least practised ('+lp.keys.length+')',()=>{manualSel=new Set(lp.keys);});
+  qb('Clear',()=>{manualSel=new Set();});
+  pk.appendChild(q);
+  if(lp.groups.length) pk.appendChild(el('div','qnote','Least practised groups right now: '+lp.groups.join(', ')+'.'));
+  const notes=[]; const dues=Object.values(memState).filter(v=>P[v.k]&&isCore(P[v.k])).map(v=>v.due).filter(Boolean).sort();
+  if(!dueKeys.length) notes.push(dues.length?'Nothing is due today. Your next reviews start on '+fmtDate(dues[0])+'.':'Nothing is due yet. Reviews get dates once you answer items.');
+  if(!weakKeys.length) notes.push('“Weak” needs at least 3 answers on a pattern, and none has that yet.');
+  if(notes.length) pk.appendChild(el('div','qnote',notes.join(' ')));
+  FAMILIES.forEach(f=>{
+    const ps=f.keys.map(k=>P[k]).filter(Boolean); const sel=ps.filter(p=>manualSel.has(p.k)).length; const isOpen=openPick.has(f.id);
+    const h=el('div','fam-head'); const gc=el('input'); gc.type='checkbox'; gc.id='pg_'+f.id; gc.checked=sel===ps.length; gc.indeterminate=sel>0&&sel<ps.length;
+    gc.onchange=()=>{ps.forEach(p=>gc.checked?manualSel.add(p.k):manualSel.delete(p.k));render();}; h.appendChild(gc);
+    h.appendChild(el('h4',null,f.label)); const fs=speechArr(famHits(f)); h.appendChild(el('span','meta',fs.r5+'× in last '+RECENT+' · '+(sel?sel+' of ':'')+ps.length+' patterns'));
+    const tg=el('button','toggle',isOpen?'Hide':'Show'); tg.onclick=()=>{isOpen?openPick.delete(f.id):openPick.add(f.id);render();}; h.appendChild(tg); pk.appendChild(h);
+    const body=el('div','fam-body'+(isOpen?' open':'')); const l=el('div','pick-list');
+    ps.sort((a,b)=>speech(b.k).total-speech(a.k).total).forEach(p=>{const lab=el('label','pick-item');const c=el('input');c.type='checkbox';c.id='pk_'+p.k;c.checked=manualSel.has(p.k);c.onchange=()=>{c.checked?manualSel.add(p.k):manualSel.delete(p.k);render();};
+      lab.appendChild(c);lab.appendChild(el('span','l',p.label));const sp=speech(p.k);lab.appendChild(el('span','meta',sp.r5+' of '+sp.total+(p.thin?' · thin':'')));l.appendChild(lab);});
+    body.appendChild(l); pk.appendChild(body);});
+  const mr=el('div','row'); mr.style.marginTop='14px'; mr.appendChild(el('span','lbl','Items'));
+  const mi=el('input','size-input'); mi.type='number'; mi.min='5'; mi.max='60'; mi.id='manSize'; mi.value=prefs.size; mr.appendChild(mi);
+  const cnt=el('span','lbl',manualSel.size+' selected'); mr.appendChild(cnt);
+  const mg=el('button','btn primary','Start my session'); mr.appendChild(mg);
+  mg.onclick=()=>{if(!manualSel.size){cnt.textContent='Select at least one pattern first.';return;}const size=clampSize(mi.value);prefs.size=size;savePrefs();session=sessions.core=buildSession(manualPlan(size,[...manualSel]),'manual',size,'core');saveSession();render();window.scrollTo(0,0);};
+  pk.appendChild(mr); card.appendChild(pk);
+  root.appendChild(card);
+  const note=el('div','note','Each session is about half your own sentences (from a checked session, with its date) and half new contexts written around the same patterns. Pressing Check on an empty answer shows the answer and counts as a miss. Results count as reviews in this quiz’s own memory, never as uses.');
+  root.appendChild(note);
+}
+function leastPractised(){
+  const fams=FAMILIES.filter(f=>prefs.vn||f.id!=='vn').map(f=>{const ks=f.keys.filter(k=>P[k]);const rev=ks.reduce((a,k)=>a+((memState[k]&&memState[k].reviews)||0),0);return {f,ks,per:rev/ks.length};}).sort((a,b)=>a.per-b.per||b.ks.length-a.ks.length);
+  const keys=[],groups=[];
+  for(const x of fams){if(keys.length>=8)break;groups.push(x.f.label);x.ks.slice().sort((a,b)=>((memState[a]&&memState[a].reviews)||0)-((memState[b]&&memState[b].reviews)||0)).forEach(k=>keys.push(k));}
+  return {keys,groups};
+}
+function autoPlanAdv(size){
+  const cands=BANK.filter(p=>p.sec==='adv').map(p=>{const sp=speech(p.k),due=isDue(p.k),miss=lastMiss(p.k),tested=!!(memState[p.k]&&memState[p.k].history.length);
+    const why=[]; let score=Math.random()*0.5+3*sp.r5;
+    if(sp.r5) why.push(sp.r5+'× in your last '+RECENT+' sessions'); if(due){score+=4;why.push('due for review');} if(miss){score+=3;why.push('missed last time');} if(!tested){score+=2;why.push('not practised yet');}
+    if(!why.length) why.push('extra practice');
+    return {p,score,why,quota:miss?2:1};}).sort((a,b)=>b.score-a.score);
+  const alloc=new Map(); let used=0;
+  for(const c of cands){if(used>=size)break;const n=Math.min(c.quota,size-used);alloc.set(c,n);used+=n;}
+  for(let pass=0;pass<3&&used<size;pass++){for(const c of cands){if(used>=size)break;const cur=alloc.get(c)||0;if(cur<c.p.items.length&&cur<3){alloc.set(c,cur+1);used++;}}}
+  return alloc;
+}
+function renderChallengeStart(){
+  const root=document.getElementById('practiceView'); root.innerHTML='';
+  const card=el('div','card'); const head=el('div','ex-head'); head.appendChild(el('h2',null,'Challenge: harder prepositions')); head.appendChild(el('span','type-pill','24 patterns · 3 groups')); card.appendChild(head);
+  card.appendChild(el('div','note','Through, out of, despite, among, within and more. Your ledger has only a few of these (towards, out from, along the week, among, as for), so most items here are new contexts. The 50/50 mix does not apply in this tab.'));
+  const grid=el('div','start-grid');
+  const a=el('div','start-box'); a.appendChild(el('h3',null,'Auto pick'));
+  a.appendChild(el('p',null,'Starts with patterns you haven’t practised, then reviews that are due and the ones you missed.'));
+  const r=el('div','row'); r.appendChild(el('span','lbl','Items')); const inp=el('input','size-input'); inp.type='number'; inp.min='5'; inp.max='60'; inp.id='advSize'; inp.value=prefs.advSize||15; r.appendChild(inp); a.appendChild(r);
+  const go=el('button','btn primary','Start challenge session'); go.onclick=()=>{const size=clampSize(inp.value);prefs.advSize=size;savePrefs();session=sessions.adv=buildSession(autoPlanAdv(size),'auto',size,'adv');saveSession();render();window.scrollTo(0,0);}; a.appendChild(go);
+  grid.appendChild(a);
+  const m=el('div','start-box'); m.appendChild(el('h3',null,'Choose myself')); m.appendChild(el('p',null,'Pick whole groups or single patterns.'));
+  const mb=el('button','btn',advPickOpen?'Hide the pattern list':'Open the pattern list'); mb.onclick=()=>{advPickOpen=!advPickOpen;render();}; m.appendChild(mb); grid.appendChild(m); card.appendChild(grid);
+  const pk=el('div','picker'+(advPickOpen?' open':''));
+  ADV_FAMILIES.forEach(f=>{
+    const ps=f.keys.map(k=>P[k]).filter(Boolean); const sel=ps.filter(p=>advSel.has(p.k)).length; const isOpen=openPick.has('adv_'+f.id);
+    const h=el('div','fam-head'); const gc=el('input'); gc.type='checkbox'; gc.id='apg_'+f.id; gc.checked=sel===ps.length; gc.indeterminate=sel>0&&sel<ps.length;
+    gc.onchange=()=>{ps.forEach(p=>gc.checked?advSel.add(p.k):advSel.delete(p.k));render();}; h.appendChild(gc); h.appendChild(el('h4',null,f.label));
+    const quizzed=ps.filter(p=>memState[p.k]&&memState[p.k].history.length).length; h.appendChild(el('span','meta',quizzed+' of '+ps.length+' practised'));
+    const tg=el('button','toggle',isOpen?'Hide':'Show'); tg.onclick=()=>{isOpen?openPick.delete('adv_'+f.id):openPick.add('adv_'+f.id);render();}; h.appendChild(tg); pk.appendChild(h);
+    const body=el('div','fam-body'+(isOpen?' open':'')); const l=el('div','pick-list');
+    ps.forEach(p=>{const lab=el('label','pick-item');const c=el('input');c.type='checkbox';c.id='apk_'+p.k;c.checked=advSel.has(p.k);c.onchange=()=>{c.checked?advSel.add(p.k):advSel.delete(p.k);render();};
+      lab.appendChild(c);lab.appendChild(el('span','l',p.label));const q=quizStrength(p.k);lab.appendChild(el('span','meta',q.cls==='none'?(memState[p.k]?'practised':'new'):q.label));l.appendChild(lab);});
+    body.appendChild(l); pk.appendChild(body);});
+  const mr=el('div','row'); mr.style.marginTop='14px'; mr.appendChild(el('span','lbl','Items'));
+  const mi=el('input','size-input'); mi.type='number'; mi.min='5'; mi.max='60'; mi.id='advManSize'; mi.value=prefs.advSize||15; mr.appendChild(mi);
+  const cnt=el('span','lbl',advSel.size+' selected'); mr.appendChild(cnt);
+  const mg=el('button','btn primary','Start my challenge'); mr.appendChild(mg);
+  mg.onclick=()=>{if(!advSel.size){cnt.textContent='Select at least one pattern first.';return;}const size=clampSize(mi.value);prefs.advSize=size;savePrefs();session=sessions.adv=buildSession(manualPlan(size,[...advSel]),'manual',size,'adv');saveSession();render();window.scrollTo(0,0);};
+  pk.appendChild(mr); card.appendChild(pk); root.appendChild(card);
+}
+function clampSize(v){v=parseInt(v,10);return isNaN(v)?20:Math.max(5,Math.min(60,v));}
+function savePrefs(){lsSet('ppq_prefs',prefs);if(db)db.doc('settings/prefs').set(prefs).catch(()=>{});}
+
+function maskHint(ans,level){
+  if(ans===''){return level===2?'Ask yourself: does English join these two words directly?':'Nothing goes here. Press ∅.';}
+  const n=level===2?1:2;
+  return ans.split(' ').map((w,i)=>i===0?w.slice(0,n)+'_'.repeat(Math.max(w.length-n,0)):'_'.repeat(w.length)).join(' ');
+}
+function hintLines(x){
+  const L=['Pattern: '+x.p.label+'. '+(x.fmt==='pair'&&x.it.h?x.it.h:x.p.trap)];
+  if(x.fmt==='pair'){
+    const A=[x.it.a,x.it.a2].map(a=>a.split('|')[0]).map(a=>a===ZERO?'':a);
+    if(x.hint>=2)L.push('First letters: A '+(A[0]===''?'(nothing?)':maskHint(A[0],2))+' · B '+(A[1]===''?'(nothing?)':maskHint(A[1],2)));
+    if(x.hint>=3)L.push('First two letters: A '+(A[0]===''?'∅':maskHint(A[0],3))+' · B '+(A[1]===''?'∅':maskHint(A[1],3)));
+  }else if(x.fmt==='fix'){
+    if(x.hint>=2)L.push('Look at: “'+x.it.bad+'”');
+    if(x.hint>=3)L.push('The fixed part starts: “'+(x.it.good?x.it.good.split(' ').map(w=>w[0]+'…').join(' '):'(delete it)')+'”');
+  }else{
+    const a=answers(x.it)[0];
+    if(x.hint>=2)L.push(a===''?maskHint(a,2):'First letter: '+maskHint(a,2));
+    if(x.hint>=3)L.push(a===''?maskHint(a,3):'First two letters: '+maskHint(a,3));
+  }
+  return L;
+}
+function renderQuiz(){
+  const root=document.getElementById('practiceView'); root.innerHTML='';
+  const total=session.items.length, done=session.items.filter(x=>x.done).length;
+  const tr=el('div','progress-track'); const fill=el('div','progress-fill'); fill.style.width=(done/total*100)+'%'; tr.appendChild(fill); root.appendChild(tr);
+  const card=el('div','card');
+  const head=el('div','ex-head'); head.appendChild(el('h2',null,(session.tab==='adv'?'Challenge · ':'')+(session.mode==='auto'?'Auto session':'Your session')+' · '+total+' items')); head.appendChild(el('span','type-pill',done+' / '+total+' answered')); card.appendChild(head);
+  session.items.forEach((x,i)=>card.appendChild(renderItem(x,i)));
+  root.appendChild(card);
+  if(done===total) root.appendChild(renderSummary());
+  const bar=el('div','quizbar'); const bi=el('div','in'); bi.appendChild(el('span','count',done+' / '+total+' answered'));
+  const acts=el('div','acts');
+  if(done<total){const nx=el('button','btn','Next unanswered ↓');nx.onclick=()=>{const k=session.items.findIndex(y=>!y.done);const e=document.getElementById('item'+k);if(e){e.scrollIntoView({block:'center'});const i=document.getElementById('in'+k);if(i)i.focus({preventScroll:true});}};acts.appendChild(nx);}
+  const back=el('button','btn'+(done===total?' primary':''),done===total?'Start a new session':'Leave this session'); back.onclick=()=>{const tb=session.tab||'core';sessions[tb]=null;try{localStorage.removeItem('ppq_session_'+tb);if(tb==='core')localStorage.removeItem('ppq_session');}catch(e){}session=null;render();window.scrollTo(0,0);};
+  acts.appendChild(back); bi.appendChild(acts); bar.appendChild(bi); root.appendChild(bar);
+}
+function renderItem(x,i){
+  const div=el('div','item'+(x.done?(x.ok?' ok':' bad'):'')); div.id='item'+i;
+  const meta=el('div','item-meta');
+  meta.appendChild(el('span','chip '+(x.it.s==='y'?'yours':'newc'),x.it.s==='y'?'your sentence · '+x.it.d:'new context'));
+  if(x.hint||x.done) meta.appendChild(el('span','chip',x.p.label));
+  meta.appendChild(el('span','reason',x.why));
+  div.appendChild(meta);
+  const top=el('div','item-top'); const pr=el('div','prompt'); const num=el('span','num',(i+1)+'.'); pr.appendChild(num);
+  const btns=el('div','btn-row');
+  const hb=el('button','mini-btn hint',x.hint?'Hint '+x.hint+'/3':'Hint'); hb.disabled=x.hint>=3; hb.hidden=x.done;
+  hb.onclick=()=>{x.hint=Math.min(3,x.hint+1);saveSession(); if(x.fmt==='mc'&&x.hint===2&&x.dimmed==null){const w=x.opts.map((o,oi)=>oi).filter(oi=>!answers(x.it).map(norm).includes(norm(x.opts[oi]===ZERO?'':x.opts[oi])));x.dimmed=w[Math.floor(Math.random()*w.length)];} rerender(i);};
+  btns.appendChild(hb);
+  if(x.fmt==='fill'){
+    const parts=x.it.t.split('___'); pr.appendChild(document.createTextNode(parts[0]));
+    const inp=el('input','blank-input'); inp.id='in'+i; inp.placeholder='...'; inp.autocomplete='off'; inp.autocapitalize='off'; inp.spellcheck=false;
+    inp.value=x.answer==null?'':(x.answer===''?ZERO:x.answer); inp.disabled=x.done;
+    inp.oninput=inp.onchange=()=>{x.answer=inp.value;}; inp.onkeydown=e=>{if(e.key==='Enter'&&!x.done)check(x,i);};
+    pr.appendChild(inp); pr.appendChild(document.createTextNode(parts.slice(1).join('___')));
+    if(!x.done){
+      if(x.p.sec==='prep'){const z=el('button','mini-btn zero','∅ no preposition');z.title='Nothing goes in this gap';z.onclick=()=>check(x,i,true);btns.appendChild(z);}
+      const cb=el('button','mini-btn check','Check'); cb.onclick=()=>check(x,i); btns.appendChild(cb);
+    }
+  }else if(x.fmt==='pair'){
+    pr.appendChild(el('div','reason','Contrast pair: same gap, different answers?'));
+    [['A',x.it.t,'a'],['B',x.it.t2,'b']].forEach(([tag,t,suf],li)=>{const line=el('div','pair-line');line.appendChild(el('span','tag',tag));const parts=t.split('___');line.appendChild(document.createTextNode(parts[0]));
+      const inp=el('input','blank-input');inp.id='in'+i+suf;inp.placeholder='...';inp.autocomplete='off';inp.autocapitalize='off';inp.spellcheck=false;inp.disabled=x.done;const prevA=Array.isArray(x.answer)?x.answer[li]:null;inp.value=prevA==null?'':(prevA===''?ZERO:prevA);
+      inp.onkeydown=e=>{if(e.key==='Enter'&&!x.done)check(x,i);};line.appendChild(inp);line.appendChild(document.createTextNode(parts.slice(1).join('___')));
+      if(!x.done){const z=el('button','mini-btn zin','∅');z.title='Nothing goes here';z.onclick=()=>{inp.value=ZERO;};line.appendChild(z);}
+      pr.appendChild(line);});
+    if(!x.done){const cb=el('button','mini-btn check','Check');cb.onclick=()=>check(x,i);btns.appendChild(cb);}
+  }else{
+    pr.appendChild(document.createTextNode(x.fmt==='fix'?'Correct this sentence: “'+x.it.t+'”':x.it.t));
+  }
+  top.appendChild(pr); top.appendChild(btns); div.appendChild(top);
+  if(x.hint&&!x.done){const ht=el('div','hint-text');hintLines(x).forEach(l=>ht.appendChild(el('div',null,l)));div.appendChild(ht);}
+  if(x.fmt==='mc'){
+    const box=el('div','mc-options');
+    x.opts.forEach((o,oi)=>{const b=el('button','mc-option');const okSet=answers(x.it).map(norm);const isOk=okSet.includes(norm(o===ZERO?'':o));
+      if(!x.done&&x.answer===oi)b.classList.add('selected'); if(!x.done&&x.dimmed===oi)b.classList.add('dimmed');
+      let icon=String.fromCharCode(97+oi)+')';
+      if(x.done){if(isOk){b.classList.add('correct');icon='✓';}else if(x.answer===oi){b.classList.add('incorrect');icon='✗';}}
+      b.appendChild(el('span','mc-icon',icon)); b.appendChild(el('span',null,o===ZERO?'∅ (nothing)':o));
+      b.disabled=x.done; b.onclick=()=>{x.answer=oi;saveSession();rerender(i);}; box.appendChild(b);});
+    div.appendChild(box);
+    if(!x.done){const cb=el('button','mini-btn check','Check');cb.style.marginTop='10px';cb.onclick=()=>check(x,i);div.appendChild(cb);}
+  }
+  if(x.fmt==='fix'){
+    const inp=el('input','blank-input wide'); inp.id='in'+i; inp.placeholder='write the corrected sentence...'; inp.autocomplete='off'; inp.value=x.answer||''; inp.disabled=x.done;
+    inp.oninput=()=>{x.answer=inp.value;}; inp.onkeydown=e=>{if(e.key==='Enter'&&!x.done)check(x,i);};
+    div.appendChild(inp);
+    if(!x.done){const cb=el('button','mini-btn check','Check');cb.style.marginTop='10px';cb.onclick=()=>check(x,i);div.appendChild(cb);}
+  }
+  if(x.done) div.appendChild(renderFeedback(x,i));
+  return div;
+}
+function renderFeedback(x,i){
+  const wrap=el('div');
+  const fb=el('div','feedback '+(x.ok?'correct':'incorrect'));
+  if(x.fmt==='pair'){const fbp=el('div','feedback '+(x.ok?'correct':'incorrect'));const show=a=>a.split('|').map(z=>z===ZERO?'∅ (nothing)':z).join(' / ');
+    if(x.gaveUp)fbp.appendChild(document.createTextNode('No answer given. '));
+    else if(x.ok)fbp.appendChild(document.createTextNode('✓ both correct'+(x.hint?' (with a hint: counts as a review, does not move the pattern up)':'')+'. '));
+    [['A',x.it.a,0],['B',x.it.a2,1]].forEach(([tag,a,k])=>{if(x.ok&&!x.gaveUp)return;const sp=el('span',null,tag+': '+(x.gaveUp?'':(x.pairOk&&x.pairOk[k]?'✓ ':'✗ '))+'');fbp.appendChild(sp);const s2=el('span','ans',show(a));fbp.appendChild(s2);fbp.appendChild(document.createTextNode(k===0?'   ':''));});
+    wrap.appendChild(fbp);
+    const why=el('div','why');const w1=el('div');w1.appendChild(el('b',null,'The contrast: '));w1.appendChild(document.createTextNode(x.it.n||''));why.appendChild(w1);const w2=el('div');w2.appendChild(el('span','chip tr',(x.p.gen?'Turkish link (general, not from your ledger): ':'Turkish source: ')+x.p.tr));why.appendChild(w2);wrap.appendChild(why);return wrap;}
+  const model=x.fmt==='fix'?x.it.a.split('|')[0]:x.it.a.split('|').join(' / ');
+  if(x.ok){fb.textContent='✓ correct'+(x.hint?' (with '+x.hint+' hint'+(x.hint>1?'s':'')+': counts as a review, does not move the pattern up)':'');
+    if(x.it.a.includes('|')&&x.fmt!=='fix'){fb.appendChild(document.createTextNode(' · all accepted: '));const s=el('span','ans',model);fb.appendChild(s);}}
+  else if(x.gaveUp){fb.appendChild(document.createTextNode('No answer given. The answer is: '));fb.appendChild(el('span','ans',model.replace(/^∅$/,'∅ (nothing)')));}
+  else{const given=x.fmt==='mc'?(x.opts[x.answer]===ZERO?'∅':x.opts[x.answer]):(x.answer===''?'∅':(x.answer||'(blank)'));
+    fb.appendChild(document.createTextNode('✗ your answer: “'+given+'” · correct: ')); const s=el('span','ans',model.replace(/^∅$/,'∅ (nothing)'));fb.appendChild(s);}
+  wrap.appendChild(fb);
+  if(x.fmt==='fix'&&!x.ok&&!x.overridden&&!x.gaveUp){const sg=el('div','row');sg.style.marginTop='6px';const b=el('button','mini-btn self','Mine means the same, count it as correct');b.onclick=()=>{x.ok=true;x.overridden=true;fixLast(x);saveSession();rerender(i);};sg.appendChild(b);wrap.appendChild(sg);}
+  const why=el('div','why'); const w1=el('div'); w1.appendChild(el('b',null,'Why: ')); w1.appendChild(document.createTextNode(x.p.why+(x.it.n?' '+x.it.n:''))); why.appendChild(w1);
+  const w2=el('div'); w2.appendChild(el('span','chip tr',(x.p.gen?'Turkish link (general, not from your ledger): ':'Turkish source: ')+x.p.tr)); why.appendChild(w2);
+  wrap.appendChild(why); return wrap;
+}
+function fixLast(x){
+  const s=st(x.p.k); const h=s.history[s.history.length-1]; if(h){h.ok=true;h.self=true;}
+  if(x.prev){s.box=x.prev.box;s.due=x.prev.due||addDays(1);} if(session.missed)session.missed.delete(x.p.k);
+  queueWrite('patterns/'+x.p.k,{k:x.p.k,box:s.box,due:s.due,reviews:s.reviews,last:s.last,history:s.history,seen:s.seen,label:x.p.label,sec:x.p.sec});
+}
+function flash(i,msg){const d=document.getElementById('item'+i);if(!d)return;let m=d.querySelector('.flash');if(!m){m=el('div','feedback incorrect flash');d.appendChild(m);}m.textContent=msg;}
+function check(x,i,zero){
+  try{
+    if(x.done) return;
+    const acc=answers(x.it).map(norm);
+    if(x.fmt==='pair'){
+      const ea=document.getElementById('in'+i+'a'), eb=document.getElementById('in'+i+'b');
+      const raw=[ea?ea.value:'',eb?eb.value:''];
+      if(!raw[0].trim()&&!raw[1].trim()){x.gaveUp=true;x.ok=false;x.answer=null;x.pairOk=[false,false];}
+      else{const v=raw.map(r=>r.trim()===ZERO?'':r);const A1=answers(x.it).map(norm),A2=x.it.a2.split('|').map(a=>a===ZERO?'':a).map(norm);
+        x.pairOk=[A1.includes(norm(v[0]))&&!(raw[0].trim()===''),A2.includes(norm(v[1]))&&!(raw[1].trim()==='')];x.answer=v;x.ok=x.pairOk[0]&&x.pairOk[1];}
+    }else if(x.fmt==='mc'){
+      if(x.answer==null){x.gaveUp=true;x.ok=false;}
+      else{const o=x.opts[x.answer]; x.ok=acc.includes(norm(o===ZERO?'':o));}
+    }else{
+      const e=document.getElementById('in'+i);
+      let v=zero?'':(e?e.value:(x.answer||''));
+      if(!zero&&x.fmt==='fill'&&v.trim()===ZERO) v='';
+      if(!zero&&!v.trim()&&!(x.fmt==='fill'&&e&&e.value.trim()===ZERO)){x.gaveUp=true;x.answer=null;x.ok=false;}
+      else{x.answer=v; x.ok=acc.includes(norm(v));}
+    }
+    x.done=true; record(x); saveSession(); rerender(i);
+    if(session.items.every(y=>y.done)) render();
+  }catch(err){showBanner('Check failed on item '+(i+1)+' ('+(err&&err.message||err)+'). Please tell Claude what you typed.');}
+}
+function saveSession(){
+  if(!session) return;
+  lsSet('ppq_session_'+(session.tab||'core'),{id:session.id,tab:session.tab||'core',mode:session.mode,size:session.size,started:session.started,promoted:[...session.promoted],missed:[...(session.missed||[])],
+    items:session.items.map(x=>({k:x.p.k,i:x.it.i,fmt:x.fmt,why:x.why,hint:x.hint,answer:x.answer,done:x.done,ok:x.ok,opts:x.opts,dimmed:x.dimmed,overridden:!!x.overridden,gaveUp:!!x.gaveUp}))});
+}
+function restoreSession(tab){
+  const v=lsGet('ppq_session_'+tab)||(tab==='core'?lsGet('ppq_session'):null); if(!v||!Array.isArray(v.items)) return null;
+  try{const items=v.items.filter(y=>P[y.k]&&P[y.k].items[y.i]).map(y=>Object.assign({},y,{p:P[y.k],it:P[y.k].items[y.i]}));
+    if(!items.length||items.every(y=>y.done)) return null;
+    return {id:v.id,tab:v.tab||'core',mode:v.mode,size:v.size,started:v.started,promoted:new Set(v.promoted||[]),missed:new Set(v.missed||[]),items};}catch(e){return null;}
+}
+function rerender(i){
+  const old=document.getElementById('item'+i); if(!old){render();return;}
+  const x=session.items[i]; const n=renderItem(x,i); old.replaceWith(n);
+  const total=session.items.length, done=session.items.filter(y=>y.done).length;
+  const f=document.querySelector('.progress-fill'); if(f)f.style.width=(done/total*100)+'%';
+  const pill=document.querySelector('#practiceView .ex-head .type-pill'); if(pill)pill.textContent=done+' / '+total+' answered';
+  const bc=document.querySelector('.quizbar .count'); if(bc)bc.textContent=done+' / '+total+' answered';
+  const inp=document.getElementById('in'+i); if(inp&&!x.done&&x.fmt!=='mc')inp.focus();
+}
+function renderSummary(){
+  const c=el('div','card'); const h=el('div','ex-head'); h.appendChild(el('h2',null,'Session done')); h.appendChild(el('span','type-pill',db?'saved to the quiz memory':'saved in this browser only')); c.appendChild(h);
+  const its=session.items, ok=its.filter(x=>x.ok).length, clean=its.filter(x=>x.ok&&!x.hint).length, hinted=its.filter(x=>x.hint).length;
+  const sm=el('div','summary');
+  [[ok+' / '+its.length,'correct'],[clean,'correct with no hint'],[hinted,'items with a hint']].forEach(([v,k])=>{const s=el('div','stat');s.appendChild(el('div','v',String(v)));s.appendChild(el('div','k',k));sm.appendChild(s);});
+  c.appendChild(sm);
+  const up=[...session.promoted].map(k=>P[k].label), miss=[...(session.missed||[])].map(k=>P[k].label);
+  if(up.length)c.appendChild(el('div','feedback correct','Moved up: '+up.join(', ')));
+  if(miss.length){const m=el('div','feedback incorrect','Back to the start (review tomorrow): '+miss.join(', '));c.appendChild(m);}
+  return c;
+}
+
+// ---------- progress view ----------
+function sparkSVG(sp){
+  const W=120,H=28,pad=3,max=Math.max(...sp.rate,0.01);
+  const pts=sp.rate.map((r,i)=>[pad+i*(W-2*pad)/(N_S-1),H-pad-(r/max)*(H-2*pad)]);
+  const ns='http://www.w3.org/2000/svg'; const svg=document.createElementNS(ns,'svg'); svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('width',W); svg.setAttribute('height',H); svg.classList.add('spark');
+  const area=document.createElementNS(ns,'path'); area.setAttribute('d','M'+pts[0][0]+','+(H-pad)+' '+pts.map(p=>'L'+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')+' L'+pts[pts.length-1][0]+','+(H-pad)+' Z'); area.setAttribute('fill','var(--accent-soft)'); svg.appendChild(area);
+  const line=document.createElementNS(ns,'path'); line.setAttribute('d',pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')); line.setAttribute('fill','none'); line.setAttribute('stroke','var(--accent)'); line.setAttribute('stroke-width','1.5'); svg.appendChild(line);
+  const sep=document.createElementNS(ns,'line'); const sx=pad+(N_S-RECENT-0.5)*(W-2*pad)/(N_S-1); sep.setAttribute('x1',sx);sep.setAttribute('x2',sx);sep.setAttribute('y1',pad);sep.setAttribute('y2',H-pad);sep.setAttribute('stroke','var(--border)');sep.setAttribute('stroke-dasharray','2 2'); svg.appendChild(sep);
+  const e=pts[pts.length-1]; const dot=document.createElementNS(ns,'circle'); dot.setAttribute('cx',e[0]);dot.setAttribute('cy',e[1]);dot.setAttribute('r','2.4');dot.setAttribute('fill','var(--accent)'); svg.appendChild(dot);
+  return svg;
+}
+function tabScore(tab){
+  const ps=BANK.filter(p=>tab==='adv'?p.sec==='adv':isCore(p)); let hist=[];
+  ps.forEach(p=>{const s=memState[p.k];if(s)s.history.forEach(h=>hist.push(h));}); hist.sort((a,b)=>a.t<b.t?-1:1);
+  const last=hist.slice(-30); const acc=last.length?last.reduce((a,h)=>a+(h.ok?(h.hint?0.5:1):0),0)/last.length:null;
+  const quizzed=ps.filter(p=>memState[p.k]&&memState[p.k].history.length).length, strong=ps.filter(p=>quizStrength(p.k).cls==='strong').length, weak=ps.filter(p=>quizStrength(p.k).cls==='weak').length;
+  const lastDay=hist.length?hist[hist.length-1].t.slice(0,10):null;
+  return {answers:hist.length,acc,quizzed,total:ps.length,strong,weak,lastDay};
+}
+function dayOf(t){const d=new Date(t);return isNaN(d)?String(t).slice(0,10):todayStr(d);}
+function quizCell(keys,day){let n=0,sc=0;keys.forEach(k=>{const s=memState[k];if(s)s.history.forEach(h=>{if(dayOf(h.t)===day){n++;sc+=h.ok?(h.hint?0.5:1):0;}});});return n?{n,acc:sc/n}:null;}
+function speechCell(keys,i){const c=keys.reduce((a,k)=>a+((HITS[k]||[])[i]||0),0);return {c,rate:c/SESSIONS[i].w*1000};}
+function hmTip(e,text){let t=document.getElementById('hmTip');if(!t){t=el('div','hm-tip');t.id='hmTip';document.body.appendChild(t);}if(!text){t.hidden=true;return;}t.hidden=false;t.textContent=text;
+  const r=e.target.getBoundingClientRect();let x=r.left+r.width/2-110,y=r.top-8-t.offsetHeight;if(y<8)y=r.bottom+8;x=Math.max(8,Math.min(window.innerWidth-248,x));t.style.left=x+'px';t.style.top=y+'px';}
+const CHIPS={prep:[
+ ['∅ no preposition',['no_prep_verbs','these_days','mention_discuss','seek_chase','against','ask_sb_q']],['of',['of_not_for','sense_of','remind_of','accused_of']],['out of',['leave_out_of','adv_out_of']],
+ ['about',['confused_about','same_about']],['to',['add_to','dedicate_to','limit_to','key_to','specific_to','superior_to','get_used_to','been_to','struggle_to']],['on to',['move_on_to']],
+ ['in',['include_in','rooted_in','no_point_in','in_form']],['into',['invest_in','paste_into']],['on',['on_my_list','on_device','on_trip_leave','basis','short_on_time','congratulate_on','insist_on','scene']],
+ ['at / on / in (time)',['dates_times','weekends']],['at',['begin_lastmin','good_at','pace_at']],['over',['over_time']],['for',['for_me','swap_for','save_for','responsible_for','wait_for','time_duration']],
+ ['with',['angry_with','help_with','resonate_with']],['as',['same_as','come_across_as']],['by',['by_using']],['from',['different_from']],['worth + -ing',['worth_ing']],
+ ['through',['adv_through']],['across',['adv_across']],['along / during',['adv_along']],['towards',['adv_towards']],['beyond',['adv_beyond']],['throughout',['adv_throughout']],
+ ['instead of',['adv_instead_of']],['apart from / except',['adv_apart_except']],['due to',['adv_due_to']],['according to',['adv_according_to']],['in terms of',['adv_in_terms_of']],
+ ['on behalf of',['adv_on_behalf_of']],['despite',['adv_despite']],['regardless of',['adv_regardless_of']],['as for',['adv_as_for']],['prior to',['adv_prior_to']],
+ ['among / between',['adv_among_between']],['within',['adv_within']],['below / under',['adv_below']],['alongside',['adv_alongside']],['amid',['adv_amid']],['upon',['adv_upon']],['above',['adv_above_level']]],
+ vn:[['make',['vn_decision']],['take',['vn_break','vn_call']],['do',['vn_analysis','do_practice']],['get',['vn_score']],['have',['have_a_talk','vn_meeting']],['lift / boost',['lift_mood']],['ask / float',['throw_question']],['add / set',['put_add']]]};
+const SPEECH_CEIL=1.0, W_SPEECH=0.7, MIN_SLIPS=3;
+function chipSpeech(keys){const h=new Array(N_S).fill(0);keys.forEach(k=>(HITS[k]||[]).forEach((c,i)=>h[i]+=c));const total=h.reduce((a,b)=>a+b,0);
+  const r5=h.slice(-RECENT).reduce((a,b)=>a+b,0), w5=SESSIONS.slice(-RECENT).reduce((a,x)=>a+x.w,0), rate=r5/w5*1000;
+  if(total<MIN_SLIPS) return {thin:true,total}; return {score:Math.max(0,1-rate/SPEECH_CEIL),r5,rate,total,quiet:r5===0};}
+function chipQuiz(keys){let hs=[];keys.forEach(k=>{const s=memState[k];if(s)hs=hs.concat(s.history||[]);});if(!hs.length)return null;hs.sort((a,b)=>a.t<b.t?-1:1);const last=hs.slice(-10);
+  return {score:last.reduce((a,h)=>a+(h.ok?(h.hint?0.5:1):0),0)/last.length,n:last.length,all:hs.length};}
+function chipScore(keys,metric){const sp0=chipSpeech(keys),sp=sp0&&!sp0.thin?sp0:null,q=chipQuiz(keys);
+  const thin=sp0&&sp0.thin?(sp0.total||0):(sp0?0:0); const T=(o)=>Object.assign(o,{thin:sp0&&sp0.thin?sp0.total:null});
+  if(metric==='speech') return T(sp?{v:sp.score,sp,q,note:sp.quiet?'quiet':''}:{v:null,sp,q});
+  if(metric==='quiz') return T(q?{v:q.score,sp,q}:{v:null,sp,q});
+  if(sp&&q) return T({v:W_SPEECH*sp.score+(1-W_SPEECH)*q.score,sp,q});
+  if(sp) return T({v:sp.score,sp,q,note:'speaking only'}); if(q) return T({v:q.score,sp,q,note:'quiz only'}); return T({v:null,sp,q});}
+function scoreColor(v){const stops=[[0,[168,64,47]],[0.5,[168,113,0]],[0.75,[111,138,18]],[1,[47,143,78]]];
+  for(let i=1;i<stops.length;i++){if(v<=stops[i][0]){const[a0,c0]=stops[i-1],[a1,c1]=stops[i];const t=(v-a0)/(a1-a0);return 'rgb('+c0.map((c,j)=>Math.round(c+(c1[j]-c)*t)).join(',')+')';}}return 'rgb(47,143,78)';}
+function chipTip(label,r,metric){const parts=[label];
+  if(r.thin) parts.push('Speaking: only '+r.thin+' slip'+(r.thin===1?'':'s')+' on record (needs '+MIN_SLIPS+'), so no score yet');
+  else if(r.sp) parts.push('Speaking: '+Math.round(r.sp.score*100)+'% · '+r.sp.r5+' slip'+(r.sp.r5===1?'':'s')+' in last '+RECENT+' sessions ('+r.sp.rate.toFixed(2)+' per 1,000 words)'+(r.sp.quiet?' · quiet, not proof':''));
+  else parts.push('Speaking: no slips ever recorded, so no score');
+  parts.push(r.q?'Quiz: '+Math.round(r.q.score*100)+'% over the last '+r.q.n+' answers':'Quiz: not practised yet');
+  if(metric==='combined'&&r.v!=null) parts.push(r.note?'Combined uses '+r.note:'Combined: 70% speaking + 30% quiz');
+  return parts.join('\n');}
+function renderHeatmap(){
+  const card=el('div','card'); const h=el('div','ex-head'); h.appendChild(el('h2',null,'Performance heatmap')); h.appendChild(el('span','type-pill',{speech:'speaking',quiz:'quiz',combined:'70% speaking · 30% quiz'}[hmMetric]||'')); card.appendChild(h);
+  if(!['speech','quiz','combined'].includes(hmMetric)) hmMetric='combined';
+  const ctrl=el('div','hm-ctrl');
+  [['speech','Speaking'],['quiz','Quiz'],['combined','Combined (70/30)']].forEach(([m,t])=>{const b=el('button','seg'+(hmMetric===m?' on':''),t);b.setAttribute('aria-pressed',hmMetric===m);b.onclick=()=>{hmMetric=m;renderProgress();};ctrl.appendChild(b);});
+  card.appendChild(ctrl);
+  [['prep','Prepositions'],['vn','Collocations (verb + noun)']].forEach(([set,title],si)=>{
+    card.appendChild(el('div','hm-sec'+(si?' second':''),title));
+    const cloud=el('div','chips-cloud');
+    const items=CHIPS[set].map(([label,keys])=>{keys=keys.filter(k=>P[k]);return {label,keys,r:chipScore(keys,hmMetric)};});
+    items.sort((a,b)=>(a.r.v==null)-(b.r.v==null)||(a.r.v??0)-(b.r.v??0)||a.label.localeCompare(b.label));
+    items.forEach(({label,r})=>{const c=el('button','pchip2');c.appendChild(el('span',null,label));
+      if(r.v==null){c.classList.add('nodata');c.appendChild(el('span','pct','—'));}
+      else{c.style.background=scoreColor(r.v);c.appendChild(el('span','pct',Math.round(r.v*100)+'%'+(r.note==='quiet'?' ·q':r.note==='speaking only'?' ·s':r.note==='quiz only'?' ·z':'')));if(r.note==='quiet')c.classList.add('quiet');}
+      const tip=chipTip(label,r,hmMetric); c.setAttribute('aria-label',tip.replace(/\n/g,'. ')); c.title=tip;
+      c.onmouseenter=c.onfocus=e=>hmTip(e,tip); c.onmouseleave=c.onblur=e=>hmTip(e,null); c.onclick=e=>hmTip(e,tip);
+      cloud.appendChild(c);});
+    card.appendChild(cloud);});
+  const lg=el('div','hm-legend'); lg.appendChild(el('span',null,'0%')); lg.appendChild(el('span','scale-bar')); lg.appendChild(el('span',null,'100%'));
+  const n=el('span','sw none'); lg.appendChild(n); lg.appendChild(el('span',null,'no data')); card.appendChild(lg);
+  const notes={speech:'Speaking % = 100 minus your slips per 1,000 words in the last '+RECENT+' sessions × 100 (1 slip per 1,000 words or more = 0%). A preposition stays grey until it has at least '+MIN_SLIPS+' slips on record, so rarely used ones don’t look strong by accident. The ledger records slips only, so this is a stand-in, not a true accuracy. “·q” = quiet: no slips lately, which is not proof yet. Data as of '+AS_OF+'.',
+    quiz:'Quiz % = your last 10 answers for that preposition; a correct answer after a hint counts as half.',
+    combined:'Combined = 70% speaking + 30% quiz. Where one side is missing, the chip shows the other side alone: “·s” = speaking only, “·z” = quiz only.'};
+  card.appendChild(el('div','legend',notes[hmMetric]));
+  return card;
+}
+function renderProgress(){
+  const root=document.getElementById('progressView'); root.innerHTML='';
+  const sc=el('div','card'); const sh=el('div','ex-head'); sh.appendChild(el('h2',null,'Scores')); sh.appendChild(el('span','type-pill','last 30 answers per tab')); sc.appendChild(sh);
+  const sg=el('div','start-grid');
+  [['core','Practice (your patterns)'],['adv','Challenge (harder prepositions)']].forEach(([tab,name])=>{const t=tabScore(tab);const b=el('div','start-box');b.appendChild(el('h3',null,name));
+    const sm=el('div','summary');[[t.acc==null?'—':Math.round(t.acc*100)+'%','accuracy'],[t.answers,'answers'],[t.quizzed+' / '+t.total,'patterns practised']].forEach(([v,k])=>{const s=el('div','stat');s.appendChild(el('div','v',String(v)));s.appendChild(el('div','k',k));sm.appendChild(s);});
+    b.appendChild(sm); b.appendChild(el('p',null,(t.strong||t.weak?t.strong+' strong · '+t.weak+' weak · ':'')+(t.lastDay?'last practised '+fmtDate(t.lastDay):'not practised yet')+'. A hinted correct answer counts as half.'));sg.appendChild(b);});
+  sc.appendChild(sg); root.appendChild(sc);
+  root.appendChild(renderHeatmap());
+  const card=el('div','card'); const head=el('div','ex-head'); head.appendChild(el('h2',null,'How each pattern is going')); head.appendChild(el('span','type-pill','speaking data as of '+AS_OF+' · '+N_S+' sessions')); card.appendChild(head);
+  const showVn=prefs.vn; const pats=BANK.filter(p=>p.sec==='adv'||showVn||p.sec==='prep').filter(p=>speech(p.k).total>0||memState[p.k]);
+  const noSpeech=[];
+  const cells={c1:[],c2:[],c3:[],c4:[]}, untested=[];
+  pats.forEach(p=>{const sp=speech(p.k), q=quizStrength(p.k); const inSpeech=sp.trend==='rising'||sp.trend==='steady';
+    if(q.cls==='none'){untested.push(p);return;}
+    if(sp.total===0){noSpeech.push(p);return;}
+    const key=inSpeech?(q.cls==='strong'?'c1':'c2'):(q.cls==='strong'?'c3':'c4'); cells[key].push(p);});
+  const quad=el('div','quad');
+  quad.appendChild(el('div','axis topax','')); quad.appendChild(el('div','axis topax','Quiz strong')); quad.appendChild(el('div','axis topax','Quiz weak'));
+  const mk=(cls,t,d,list)=>{const c=el('div','cell '+cls);c.appendChild(el('h5',null,t+' ('+list.length+')'));c.appendChild(el('p',null,d));const ch=el('div','chips');list.forEach(p=>ch.appendChild(el('span','pchip'+(speech(p.k).trend==='quiet'?' quiet':''),p.label)));c.appendChild(ch);return c;};
+  quad.appendChild(el('div','axis side','Still in speech'));
+  quad.appendChild(mk('c1','Known, not automatic yet','You get it right in the quiz but still say it the Turkish way. Use it on purpose in your next speaking session.',cells.c1));
+  quad.appendChild(mk('c2','Top priority','Weak in the quiz and still in your speech.',cells.c2));
+  quad.appendChild(el('div','axis side','Leaving speech'));
+  quad.appendChild(mk('c3','Going well','Strong in the quiz and fading from your speech. Dashed means quiet, which is not proof yet.',cells.c3));
+  quad.appendChild(mk('c4','Check','Weak in the quiz but not heard lately. Probably the topic just did not come up.',cells.c4));
+  card.appendChild(quad);
+  if(noSpeech.length){const u=el('div','legend');u.textContent='Challenge patterns with no speaking data ('+noSpeech.map(p=>p.label+': '+quizStrength(p.k).label).join(', ')+') stay out of the grid, because there is no speech side to compare.';card.appendChild(u);}
+  if(untested.length){const u=el('div','legend');u.textContent='Not quizzed enough yet (need 3 answers): '+untested.length+' patterns. They join the grid once you have answered them a few times.';card.appendChild(u);}
+  root.appendChild(card);
+  const t=el('div','card'); const th=el('div','ex-head'); th.appendChild(el('h2',null,'Pattern groups')); th.appendChild(el('span','type-pill','hits per 1,000 words')); t.appendChild(th);
+  const wrap=el('div','tbl-wrap'); const tb=el('table'); const hr=el('tr'); ['Group / pattern','Speaking trend','Last 5','Speech','Quiz','Next review'].forEach(h=>hr.appendChild(el('th',null,h))); const thead=el('thead'); thead.appendChild(hr); tb.appendChild(thead);
+  const body=el('tbody');
+  const fams=FAMILIES.filter(f=>showVn||f.id!=='vn').concat(ADV_FAMILIES.map(f=>Object.assign({},f,{id:'adv_'+f.id,label:'Challenge · '+f.label}))).map(f=>({f,ps:f.keys.map(k=>P[k]).filter(p=>p&&pats.includes(p)),sp:speechArr(famHits(f))})).filter(x=>x.ps.length).sort((a,b)=>b.sp.r5-a.sp.r5||b.sp.total-a.sp.total);
+  fams.forEach(({f,ps,sp})=>{
+    const isOpen=openFams.has(f.id); const tr=el('tr','fam');
+    const td1=el('td'); td1.appendChild(el('div',null,f.label)); const tg=el('button','toggle',(isOpen?'Hide':'Show')+' '+ps.length+' patterns'); tg.onclick=()=>{isOpen?openFams.delete(f.id):openFams.add(f.id);renderProgress();}; td1.appendChild(tg); tr.appendChild(td1);
+    const td2=el('td'); td2.appendChild(sparkSVG(sp)); tr.appendChild(td2);
+    tr.appendChild(el('td','n',sp.r5+' of '+sp.total));
+    const td3=el('td'); td3.appendChild(el('span','pill '+sp.trend,TREND_LABEL[sp.trend])); tr.appendChild(td3);
+    const qs=ps.map(p=>quizStrength(p.k)); const nw=qs.filter(q=>q.cls==='weak').length, quizzed=ps.filter(p=>memState[p.k]&&memState[p.k].history.length).length;
+    tr.appendChild(el('td','n',quizzed?quizzed+' of '+ps.length+' quizzed'+(nw?' · '+nw+' weak':''):'not quizzed'));
+    const dues=ps.map(p=>memState[p.k]&&memState[p.k].due).filter(Boolean).sort(); tr.appendChild(el('td','n',dues.length?fmtDate(dues[0])+(dues[0]<=todayStr()?' · due':''):'—'));
+    body.appendChild(tr);
+    if(isOpen) ps.slice().sort((a,b)=>speech(b.k).r5-speech(a.k).r5||speech(b.k).total-speech(a.k).total).forEach(p=>{const sp=speech(p.k),q=quizStrength(p.k),s=memState[p.k];
+      const tr=el('tr','sub'); const td1=el('td'); td1.appendChild(el('div',null,p.label)); if(p.thin){td1.appendChild(el('span','reason','thin data'));} tr.appendChild(td1);
+      const td2=el('td'); td2.appendChild(sparkSVG(sp)); tr.appendChild(td2);
+      tr.appendChild(el('td','n',sp.r5+' of '+sp.total));
+      const td3=el('td'); td3.appendChild(el('span','pill '+sp.trend,TREND_LABEL[sp.trend])); tr.appendChild(td3);
+      const td4=el('td'); td4.appendChild(el('span','pill '+q.cls,q.label)); tr.appendChild(td4);
+      tr.appendChild(el('td','n',s&&s.due?fmtDate(s.due)+(s.due<=todayStr()?' · due':''):'—'));
+      body.appendChild(tr);});
+  });
+  tb.appendChild(body); wrap.appendChild(tb); t.appendChild(wrap);
+  t.appendChild(el('div','legend','Speaking trend compares your last '+RECENT+' sessions (right of the dashed line) with the earlier ones, per 1,000 words, so long sessions do not look worse. The ledger records mistakes only, so “Quiet” means not heard, not proven fixed. Rising and Steady count as still in speech.'));
+  root.appendChild(t);
+}
+
+// ---------- boot ----------
+document.getElementById('modePractice').onclick=()=>{view='practice';render();};
+document.getElementById('modeProgress').onclick=()=>{view='progress';render();};
+document.getElementById('modeChallenge').onclick=()=>{view='challenge';render();};
+(function boot(){
+  const ls=lsGet('ppq_state'); if(ls&&typeof ls==='object') memState=ls;
+  const lp=lsGet('ppq_prefs'); if(lp&&typeof lp==='object') prefs=Object.assign(prefs,lp);
+  sessions.core=restoreSession('core'); sessions.adv=restoreSession('adv'); if(sessions.adv&&!sessions.core) view='challenge';
+  window.addEventListener('error',e=>showBanner('Something went wrong on the page ('+(e.message||'error')+'). Please tell Claude.'));
+  render();
+  const c=window.claude;
+  if(!c||!c.use){showBanner('Quiz memory is not available in this view. Results are kept in this browser only.');return;}
+  c.use('db').then(async d=>{
+    if(!d){showBanner('Quiz memory is not available in this view. Results are kept in this browser only.');return;}
+    db=d;
+    try{
+      const snap=await db.collection('patterns').get(); const fromDb={};
+      snap.docs.forEach(doc=>{const v=doc.data();if(v&&v.k){const c=JSON.parse(JSON.stringify(v));c.seen=Array.isArray(c.seen)?c.seen:[];c.history=Array.isArray(c.history)?c.history:[];fromDb[c.k]=c;}});
+      Object.keys(fromDb).forEach(k=>{const loc=memState[k];if(!loc||(fromDb[k].reviews||0)>=(loc.reviews||0))memState[k]=fromDb[k];});
+      const pd=await db.doc('settings/prefs').get(); if(pd.exists) prefs=Object.assign({},prefs,JSON.parse(JSON.stringify(pd.data()||{})));
+      showBanner(''); if(!session) render();
+    }catch(e){showBanner('Could not load the quiz memory ('+(e&&e.code||'error')+'). Results are kept in this browser for now.');}
+  });
+})();
+</script>
