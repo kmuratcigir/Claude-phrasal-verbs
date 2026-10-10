@@ -3279,9 +3279,9 @@
       "streak": 5
     },
     "turn around": {
-      "seen": 14,
+      "seen": 15,
       "correct": 4,
-      "streak": 2
+      "streak": 0
     },
     "drown out": {
       "seen": 10,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1073,
+      "seen": 1074,
       "correct": 768
     }
   },
@@ -3677,7 +3677,7 @@
       "correct": 42
     },
     "around": {
-      "seen": 43,
+      "seen": 44,
       "correct": 33
     },
     "up": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-10T11:30:44.139Z"
+  "updatedAt": "2026-10-10T11:31:05.202Z"
 }
