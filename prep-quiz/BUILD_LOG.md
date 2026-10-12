@@ -13,7 +13,8 @@ Session date: 07.10.2026 · Published versions: 1 to 12 · Status: working, in u
 | `src/template.html` | Page layout, CSS and all logic. Has two placeholders, `/*__STATS__*/` and `/*__BANK__*/` |
 | `src/bank.js` | Practice bank: 68 patterns (56 prepositions + 12 verb + noun), `EXTRA` new contexts, `PAIRS` contrast pairs |
 | `src/bank_adv.js` | Challenge bank: 24 harder prepositions (`ADV`), `ADV_FAMILIES`, contrast-pair hints |
-| `src/stats.js` | Speaking snapshot: `SESSIONS` (15 sessions, words) and `HITS` (slips per pattern per session), ledger as of 06.10 |
+| `src/bank_topup.js` | `TOPUP`: 48 new-context items (12.10) so every pattern has at least 3. Loaded last |
+| `src/stats.js` | Speaking snapshot: `SESSIONS` (19 sessions, words) and `HITS` (slips per pattern per session), ledger as of 10.10 |
 | `src/stats_adv.js` | Speaking hits for Challenge patterns (`Object.assign(HITS, …)`) |
 | `src/group.py` | The regex grouping used to sort ledger slips into patterns (reference; needs manual review) |
 | `build.py` | Assembles `prep-quiz.html` from `src/`. Run it, then publish that file to the artifact URL |
@@ -57,6 +58,8 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 - Each item is labelled "your sentence · date" or "new context".
 - The pattern label stays hidden until hint 1 or the answer.
 
+**Which sentence comes up (12.10):** oldest first. Within the kind the mix asks for, items are ranked by when they were last answered (from `history`) or served (from `seen`), never-seen first; one is picked at random from the 1–3 oldest, so the order can't be memorised.
+
 **Spacing:** per pattern, Leitner intervals 1 → 3 → 7 → 14 → 30 days. A miss goes back to the start (due tomorrow).
 
 **Progress tab**
@@ -94,7 +97,7 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 - Don't write to the ledger yet; ledger integration is on hold.
 
 ## Known limitations
-- The speaking data is a **static snapshot (06.10)** built into the page.
+- The speaking data is a **static snapshot (10.10)** built into the page.
 - "towards" and "out from" hits are counted in both Practice and Challenge patterns.
 - The ledger records slips only, so Speaking % is a stand-in, not an accuracy.
 - Comment threads on the page can't be replied to or resolved by Claude unless the user sends them to Claude.
@@ -109,3 +112,27 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 Prerequisite: the page must read the speaking snapshot and extra items from its db (for example `speech/snapshot` and `items_extra/*`) instead of from built-in code, so updates need no republish.
 
 **Open question to the user:** should the feed run automatically as the last step of wrap-up, or only when asked?
+Claude's recommendation (07.10): only when asked, plus a one-line reminder at wrap-up ("N new sessions waiting"). Not answered yet.
+
+## Parked (07.10): merge all practices into a Ledger "Practice" tab?
+The user raised merging the three quizzes (prep quiz, phrasal verb quiz, irregular verb drill) into the Fluency Ledger under a new **Practice** tab. **Decision parked; the user is sleeping on it.** Nothing was built or changed.
+
+What was found:
+- **Ledger:** one published page, about 166 KB / 2,141 lines, plain JS, `db` collections `sessions` and `reading`. Its source is **not** in the repo.
+- **Phrasal verb quiz** (Claude Design, React): about 5,000 lines, mostly a built-in verb dataset (about 450 KB). Progress lives in browser storage (`pvq_*` keys) and is pushed to this repo (`data/phrasal-verb-db.json`, `data/lookup-verbs.json`, branch `main`). Its "targeted" mode means verbs are pasted in by hand. **Security: its code contains a hard-coded GitHub token (`DEFAULT_GH_TOKEN`). The user was told to revoke it. Never commit that file while the token is in it.**
+- **Irregular verb drill** (Claude Design, React): small (about 430 lines plus 6 KB of verb data), browser storage only (`irregularVerbStats_v1`), no link to the Ledger, and the Ledger has no irregular-verb field.
+
+Claude's assessment:
+- **Feed cost:** merging removes the speaking snapshot, because the quiz would read `sessions` live, and lets the phrasal verb quiz pick verbs from the Ledger automatically. The judgement step (sorting slips, approving items) stays the same.
+- **Risk:** the code wouldn't change daily, only the data. The risks are one much bigger page to read and edit, a quiz bug breaking the dashboard that four skills write to, and a React-to-plain-JS rewrite.
+- **Coherence:** one place, one style, one progress view. This is a real gain.
+- **Progress:** both Design quizzes keep results in that browser's storage, so moving them needs a one-off export.
+- **Suggested order if the user says yes:** revoke the token → put the Ledger source in the repo with a build step → prep quiz first → phrasal verb quiz → irregular drill last.
+- **Next question for the user:** does the irregular drill's saved history matter, or can it start fresh?
+
+## 12.10 update (not yet published)
+- **Speaking snapshot to 10.10.** 07.10 is the hand-sorted column from the 07.10 thread. 08.10, 09.10 and 10.10 were sorted by Claude (regex from `group.py`, then each slip checked by hand). One-off word-choice slips and phrasal-verb misuse are left out as before.
+- **Top-up rule (agreed 12.10):** every pattern keeps at least 3 new-context items. Whenever the feed adds the user's sentences, it also checks the pattern's new-context count and proposes enough to reach 3; brand-new patterns get 3. Each new item changes the frame (subject, tense, question/negative, position, topic), not just the noun.
+- **Why:** the mix is applied per session, so adding the user's sentences never breaks the ratio. The real risk was repetition: 46 patterns had only 1–2 new contexts, so the user would memorise sentences rather than the pattern.
+- **Tests:** frozen fake db with the real 12.10 `patterns` data. 0 existing items moved, 48 added. Mix exact at 0, 50 and 75%. Oldest-first: no repeats back-to-back; with 6 items over 40 picks, each came up 5–8 times. A full session saved without errors.
+- **Possible new patterns seen in 08.10–10.10, not in the quiz yet:** "the first time" with no preposition (4: in/at the first time), "evolve into" (3), "apologise to me" (3), "on the right track" (2), "at dinner" (2).
