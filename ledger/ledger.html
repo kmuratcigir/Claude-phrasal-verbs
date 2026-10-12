@@ -414,6 +414,28 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
 .rblock h4{margin:6px 0 0;font-family:var(--display);font-size:13px;color:var(--muted)}
 .rblock p{margin:0;font-size:14px}
 .rblock ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13.5px}
+/* ================= CHUNKS (12.10) ================= */
+.ckgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+.ck{border:1px solid var(--tint-rule);background:var(--tint);border-radius:14px;padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
+.ck .cktop{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.ck h3{font-size:16px;line-height:1.3}
+.ck .layer{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.ckmeter{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.ckmeter .big{font-family:var(--display);font-size:30px;font-weight:700;line-height:1;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+.ckmeter .big small{font-size:14px;color:var(--muted);font-weight:600}
+.ckbar{position:relative;height:10px;border-radius:999px;background:var(--surface);border:1px solid var(--tint-rule);overflow:hidden}
+.ckbar i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:999px}
+.ckbar b{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);opacity:.55}
+.ckdots{display:flex;gap:4px;flex-wrap:wrap}
+.ckdot{width:16px;height:16px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;font-family:var(--display)}
+.ckdot.ok{background:var(--good-soft);color:var(--good)} .ckdot.bad{background:var(--err-soft);color:var(--err)}
+.ckdot.half{background:var(--warn-soft);color:var(--warn)} .ckdot.empty{background:transparent;border:1px dashed var(--tint-rule)}
+.ckdot.gap{width:1px;background:var(--tint-rule);border-radius:0;margin:0 2px}
+.ck .exs{font-size:13px;color:var(--muted);display:grid;gap:2px}
+.ck .exs .x{color:var(--err)} .ck .exs .y{color:var(--good);font-weight:600}
+.pill.sched-ahead{background:var(--good-soft);color:var(--good)} .pill.sched-on{background:var(--accent-soft);color:var(--accent-deep)}
+.pill.sched-behind{background:var(--warn-soft);color:var(--warn)} .pill.ready{background:var(--good);color:var(--on-strong)}
+.pill.slip{background:var(--err-soft);color:var(--err)}
 
 </style>
 
@@ -435,6 +457,7 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
     <button role="tab" id="tb-vocab" aria-selected="false" aria-controls="tab-vocab">Vocabulary</button>
     <button role="tab" id="tb-pv" aria-selected="false" aria-controls="tab-pv">Phrasal verbs</button>
     <button role="tab" id="tb-nat" aria-selected="false" aria-controls="tab-nat">Naturalness</button>
+    <button role="tab" id="tb-chunks" aria-selected="false" aria-controls="tab-chunks">Chunks</button>
     <button role="tab" id="tb-read" aria-selected="false" aria-controls="tab-read">Reading</button>
   </div>
 
@@ -770,6 +793,33 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
   </div>
 
   <!-- ============ READING ============ -->
+  <!-- ============ CHUNKS (12.10): accuracy of the open chunks in speech, pooled over the last 12 uses ============ -->
+  <div class="tabpane" id="tab-chunks" role="tabpanel" aria-labelledby="tb-chunks" hidden>
+  <section class="tiles" id="ctiles" aria-label="Chunks">
+    <div class="tile"><div class="label">Open now</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Settled</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Schedule</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Uses in the last session</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Open chunks</h2><span class="sub" id="cRule"></span></div>
+    <div class="ckgrid" id="cOpen"></div>
+  </section>
+
+  <div class="two">
+    <section class="panel">
+      <div class="phead"><h2>Coming up</h2><span class="sub">Draft dates; you open each one when you're ready</span></div>
+      <ul class="rows" id="cNext"></ul>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Settled</h2><span class="sub">Still tracked, so a slip back shows</span></div>
+      <ul class="rows" id="cDone"></ul>
+    </section>
+  </div>
+  <p class="explain" id="cNote" style="margin:0"></p>
+  </div>
+
   <div class="tabpane" id="tab-read" role="tabpanel" aria-labelledby="tb-read" hidden>
   <section class="tiles" id="rtiles" aria-label="Reading">
     <div class="tile"><div class="label">Last reading</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
@@ -817,7 +867,7 @@ function render(){
   const last = SESS[SESS.length-1], prev = SESS[SESS.length-2];
   $("lastline").textContent = `${SESS.length} session${SESS.length>1?"s":""} · last check ${fmtDate(last.date)}`;
   renderTiles(last, prev); renderVocabTiles(last, prev); renderTrends(); renderNat(); renderChart(); renderSession(); renderVocab(); renderLevels(); renderTable();
-  renderOverview();
+  renderOverview(); renderChunks();
 }
 
 function delta(cur, prev, key, lowerBetter, digits){
@@ -988,7 +1038,7 @@ function renderTrends(){
   lineChart($("tr-comeups"), SESS, [{get:s=>s.vocab&&s.vocab.comeups?s.vocab.comeups.reduce((a,c)=>a+c.count,0):null}], {digits:0, label:"Vocab-list come-ups per session"});
 }
 
-const TABS = ["over","grammar","vocab","pv","nat","read"];
+const TABS = ["over","grammar","vocab","pv","nat","chunks","read"];
 function showTab(name){
   if(!TABS.includes(name)) name = "over";
   TABS.forEach(n=>{ $("tab-"+n).hidden = n!==name; $("tb-"+n).setAttribute("aria-selected", n===name); });
@@ -1841,6 +1891,113 @@ function renderRead(){
   lineChart($("tr-read"), weeks, [{get:w=>w.n}], {digits:0, avg:4, avgLabel:"target", label:"Readings per week"});
 }
 
+// ---------------------------------------------------------------- chunks (Murat, 12.10)
+// meta/chunks holds the list and the settled rule (Murat edits it by hand). Each session doc's
+// `chunks` block holds that session's counted uses (written by the naturalness check since 12.10).
+// Settled = the last 12 voice uses at 80%+, over at least 4 sessions; a use corrected straight away counts half.
+let CHUNKS = null;
+const isoDay = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const fromIso = s => { const [y,m,d] = s.split("-"); return new Date(+y, m-1, +d); };
+const fmtIso = s => s ? fromIso(s).toLocaleDateString("en-GB",{day:"numeric",month:"short"}) : "";
+function ckUses(id){
+  // every counted voice use of this item, oldest first, tagged with its session
+  const out = [];
+  SESS.forEach(s => { const b = s.chunks && s.chunks[id]; if(!b) return;
+    (b.items||[]).forEach(u => { if(u.mode === "voice") out.push({...u, sid:s.id, date:s.date}); }); });
+  return out;
+}
+function ckPool(id){
+  const r = (CHUNKS && CHUNKS.rule) || {}, win = r.window_uses || 12, tgt = r.target ?? 0.8, minS = r.min_sessions || 4;
+  const all = ckUses(id), last = all.slice(-win);
+  const score = last.reduce((a,u)=>a + (u.ok ? 1 : (u.caught ? 0.5 : 0)), 0);
+  const sess = new Set(last.map(u=>u.sid)).size, acc = last.length ? score/last.length : null;
+  return {all, last, acc, sess, win, tgt, minS, ready: last.length >= win && sess >= minS && acc >= tgt};
+}
+function ckSchedule(it, today){
+  // ahead / on track / behind, against the draft dates (pauses don't count against Murat)
+  const per = (it.planned||[]).filter(p=>p.from);
+  if(!per.length) return null;
+  const start = per[0].from, ends = per.map(p=>p.to).filter(Boolean), end = ends.length ? ends[ends.length-1] : null, t = isoDay(today);
+  if(it.status === "settled"){
+    const on = it.settled_on;
+    if(!on || !end) return {cls:"on", text:"Settled"};
+    return on <= end ? {cls:"ahead", text:`Settled ${fmtIso(on)}, ahead of ${fmtIso(end)}`} : {cls:"behind", text:`Settled ${fmtIso(on)}, after ${fmtIso(end)}`};
+  }
+  if(it.status === "open"){
+    if(t < start) return {cls:"ahead", text:`Started early (plan: ${fmtIso(start)})`};
+    if(!end || t <= end) return {cls:"on", text: end ? `On track · plan to ${fmtIso(end)}` : "On track"};
+    const days = Math.round((today - fromIso(end))/86400000);
+    return {cls:"behind", text:`${days} day${days===1?"":"s"} past the plan (${fmtIso(end)})`};
+  }
+  if(t > start) return {cls:"behind", text:`Plan was to start ${fmtIso(start)}`};
+  return {cls:"on", text:`Plan: from ${fmtIso(start)}`};
+}
+function ckDots(p){
+  // the last 12 uses as squares, newest on the right; a thin line marks each new session
+  const cells = []; let prev = null;
+  p.last.forEach(u => { if(prev && u.sid !== prev) cells.push(`<span class="ckdot gap" aria-hidden="true"></span>`); prev = u.sid;
+    const c = u.ok ? "ok" : (u.caught ? "half" : "bad");
+    cells.push(`<span class="ckdot ${c}" title="${esc(fmtDate(u.date))}: ${esc(u.sentence||"")}">${u.ok?"✓":(u.caught?"½":"✗")}</span>`); });
+  for(let i = p.last.length; i < p.win; i++) cells.push(`<span class="ckdot empty" aria-hidden="true"></span>`);
+  return `<div class="ckdots" role="img" aria-label="Last ${p.last.length} uses: ${p.last.filter(u=>u.ok).length} correct">${cells.join("")}</div>`;
+}
+function ckCard(it, today){
+  const p = ckPool(it.id), sch = ckSchedule(it, today);
+  const lastS = SESS.length ? SESS[SESS.length-1] : null, lb = lastS && lastS.chunks && lastS.chunks[it.id];
+  const todayLine = !lastS ? "" : !lb ? `Not counted in the last session (${esc(fmtDate(lastS.date))})`
+    : `Last session (${esc(fmtDate(lastS.date))}): ${lb.voice.uses} voice use${lb.voice.uses===1?"":"s"}, ${lb.voice.correct} correct` + (lb.typed && lb.typed.uses ? ` · ${lb.typed.uses} typed` : "");
+  const pct = p.acc==null ? "–" : Math.round(p.acc*100) + "%";
+  const need = p.last.length < p.win ? `${p.last.length} of ${p.win} uses so far` : `last ${p.win} uses`;
+  const lastWrong = p.all.filter(u=>!u.ok).slice(-1)[0];
+  const ex = (it.examples||[])[0];
+  const status = p.ready && it.status==="open" ? `<span class="pill ready">Ready to settle · you decide</span>`
+    : (it.status==="settled" && p.acc!=null && p.acc < p.tgt ? `<span class="pill slip">Slipping back</span>` : "");
+  return `<article class="ck">
+    <div class="cktop"><div><div class="layer">${it.layer==="slice"?"Grammar slice":"Chunk"} ${esc(it.n)}</div><h3>${esc(it.title)}</h3></div>
+      <div class="chips">${status}${sch?`<span class="pill sched-${sch.cls}">${esc(sch.text)}</span>`:""}</div></div>
+    <div class="ckmeter"><div class="big">${pct}<small> ${p.acc==null?"":"accuracy"}</small></div>
+      <div><div class="ckbar" aria-hidden="true"><i style="width:${p.acc==null?0:Math.round(p.acc*100)}%"></i><b style="left:${Math.round(p.tgt*100)}%"></b></div>
+      <div class="sub" style="margin-top:4px">${need} · ${p.sess} session${p.sess===1?"":"s"} (needs ${p.minS}) · target ${Math.round(p.tgt*100)}%</div></div></div>
+    ${ckDots(p)}
+    <div class="sub">${todayLine}</div>
+    ${lastWrong ? `<div class="exs"><span>Latest slip: <span class="x">“${esc(lastWrong.sentence)}”</span></span></div>`
+      : ex ? `<div class="exs"><span><span class="x">✗ ${esc(ex.wrong)}</span> → <span class="y">${esc(ex.right)}</span>${ex.yours?" (yours)":""}</span></div>` : ""}
+  </article>`;
+}
+function renderChunks(){
+  const t = $("ctiles"); if(!t) return;
+  const set = (i, v, d) => { t.children[i].querySelector(".v").innerHTML = v; t.children[i].querySelector(".d").innerHTML = d; };
+  if(!CHUNKS || !(CHUNKS.items||[]).length){
+    ["–","–","–","–"].forEach((v,i)=>set(i, v, "&nbsp;"));
+    $("cOpen").innerHTML = `<p class="status">No chunk list yet. Say "let's update the chunks" in a practice chat to set one up.</p>`;
+    $("cNext").innerHTML = ""; $("cDone").innerHTML = ""; $("cRule").textContent = ""; $("cNote").textContent = ""; return;
+  }
+  const today = new Date(); today.setHours(0,0,0,0);
+  const items = CHUNKS.items, open = items.filter(i=>i.status==="open"), done = items.filter(i=>i.status==="settled"), next = items.filter(i=>i.status==="not_started");
+  const r = CHUNKS.rule || {};
+  $("cRule").textContent = `Settled: last ${r.window_uses||12} uses at ${Math.round((r.target??0.8)*100)}%+ over ${r.min_sessions||4}+ sessions · voice only`;
+  set(0, open.length, open.map(i=>esc(i.title)).join("<br>") || "Nothing open");
+  set(1, `${done.length} <span class="of">/ ${items.length}</span>`, done.length ? done.map(i=>esc(i.title)).join("<br>") : "None yet");
+  const sch = open.map(i=>ckSchedule(i, today)).filter(Boolean), behind = sch.filter(s=>s.cls==="behind").length, ahead = sch.filter(s=>s.cls==="ahead").length;
+  set(2, behind ? "Behind" : ahead ? "Ahead" : "On track", open.length ? `${open.length - behind} of ${open.length} open item${open.length===1?"":"s"} on or ahead of plan` : "&nbsp;");
+  const lastS = SESS.length ? SESS[SESS.length-1] : null, counted = SESS.filter(s=>s.chunks).length;
+  if(lastS && lastS.chunks){
+    const n = open.reduce((a,i)=>a + ((lastS.chunks[i.id]||{}).voice||{uses:0}).uses, 0);
+    set(3, n, `${esc(fmtDate(lastS.date))} · voice, open chunks`);
+  } else set(3, "–", "Counting starts at your next check");
+  $("cOpen").innerHTML = open.length ? open.map(i=>ckCard(i, today)).join("") : `<p class="status">Nothing open right now.</p>`;
+  $("cNext").innerHTML = next.length ? next.map(i=>{ const s = ckSchedule(i, today);
+    return `<li><div class="rowtop"><strong>${i.layer==="slice"?"Slice":"Chunk"} ${esc(i.n)}: ${esc(i.title)}</strong>${s?`<span class="pill sched-${s.cls}">${esc(s.text)}</span>`:""}</div>
+      ${(i.examples||[])[0]?`<div class="sub"><span style="color:var(--err)">✗ ${esc(i.examples[0].wrong)}</span> → ${esc(i.examples[0].right)}</div>`:""}</li>`; }).join("")
+    : `<li class="status">Nothing waiting.</li>`;
+  $("cDone").innerHTML = done.length ? done.map(i=>{ const p = ckPool(i.id), s = ckSchedule(i, today);
+    return `<li><div class="rowtop"><strong>${esc(i.title)}</strong><span class="pill ${p.acc!=null&&p.acc<p.tgt?"slip":"ok"}">${p.acc==null?"no uses":Math.round(p.acc*100)+"% · last "+p.last.length}</span></div>${s?`<div class="sub">${esc(s.text)}</div>`:""}</li>`; }).join("")
+    : `<li class="status">None yet. A chunk moves here when you settle it.</li>`;
+  $("cNote").textContent = counted
+    ? `Counted in ${counted} session${counted===1?"":"s"} so far. Only the words in each chunk's definition count; typed uses are shown but don't count towards settling. Hover a square to see the sentence.`
+    : "Counting started on 12.10, so the first figures appear after your next naturalness check. Uses from earlier sessions weren't recorded.";
+}
+
 // ---------------------------------------------------------------- overview (Murat, 30.09)
 // The brief, the priorities, the best moments and the notes are written by Claude at each check
 // (meta/overview). Everything else here is worked out from the session docs on the page.
@@ -2117,6 +2274,7 @@ $("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
   db.doc("meta/phave").onSnapshot(snap => { PHAVE = snap.exists ? snap.data() : null; renderPV(); }, () => {});
   db.doc("meta/pv_tracker").onSnapshot(snap => { PV = snap.exists ? snap.data() : null; renderPV(); renderRead(); }, () => {});
   db.doc("meta/vocab_tracker").onSnapshot(snap => { VT = snap.exists ? snap.data() : null; renderVT(); renderRead(); }, () => {});
+  db.doc("meta/chunks").onSnapshot(snap => { CHUNKS = snap.exists ? JSON.parse(JSON.stringify(snap.data())) : null; renderChunks(); }, () => { CHUNKS = null; renderChunks(); });
   db.collection("reading").onSnapshot(snap => {
     READ = snap.docs.map(d => ({id:d.id, ...d.data()}));
     renderRead();
