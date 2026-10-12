@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: source copied into the repo, no changes made yet
+Started 12.10.2026 · Status: source in the repo; `meta/chunks` written (12.10); page unchanged
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -10,6 +10,7 @@ Started 12.10.2026 · Status: source copied into the repo, no changes made yet
 ## Files
 | File | What it is |
 |---|---|
+| `data/meta_chunks.json` | The chunk list as written to `meta/chunks` (version 1, 12.10). Edit here, then write it back with `if_version`. |
 | `ledger.html` | The page source, identical to live version `1790860799-3eb9` (read 12.10). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
 
 ## How to republish
@@ -28,9 +29,15 @@ The page only reads. Skills write, each in one approval:
 
 ## Plan (from the chunk tracking plan)
 1. ✅ Source into the repo (this commit).
-2. Store the chunk list (`meta/chunks`).
+2. ✅ Store the chunk list (`meta/chunks`, version 1, 12.10). Open: chunk 1 and slice 1; the rest not started.
 3. Naturalness check counts correct uses of open chunks; test on 2–3 past chats against a hand count.
 4. Chunks tab in the Ledger.
 5. New quiz items for chunks 3–5 and grammar slices 1–4.
 6. Chunk mode in the prep quiz.
 7. Step that copies chunk statuses into the quiz.
+
+## `meta/chunks` schema
+`{as_of, version, plan_url, rule:{target, streak, min_uses, mode, caught_counts_as, text}, shared_rules[], statuses[], pauses[{from,to,label}], later[], items[]}`
+
+Each item: `{id ("c1".."c5", "s1".."s4"), layer ("chunk" | "slice"), n, title, status ("not_started" | "open" | "settled"), planned[{from,to}], difficulty, counts, correct[], wrong[], left_out[], examples[{wrong,right,yours}], words[]?, note?}`.
+Murat changes statuses and adds items by hand ("let's update the chunks"); no skill changes statuses on its own.

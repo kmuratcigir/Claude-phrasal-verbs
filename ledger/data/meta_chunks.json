@@ -1,0 +1,446 @@
+{
+ "as_of": "2026-10-12",
+ "version": 1,
+ "plan_url": "https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf",
+ "rule": {
+  "target": 0.8,
+  "streak": 4,
+  "min_uses": 3,
+  "mode": "voice",
+  "caught_counts_as": 0.5,
+  "text": "Settled = accuracy (correct / all uses, voice turns) at 80% or more in each of the last 4 sessions in a row, counting only sessions with at least 3 uses. A session with fewer uses neither helps nor breaks the streak. The Ledger suggests \"settled\"; Murat confirms."
+ },
+ "shared_rules": [
+  "Voice turns only; each use counts once.",
+  "A mistake corrected straight away counts as half.",
+  "Not counted: repeating a sentence Claude just modelled, quoting a text, or talking about the chunk.",
+  "If the transcript is unclear (\"to\" or \"into\"?), the use is dropped, not guessed."
+ ],
+ "statuses": [
+  "not_started",
+  "open",
+  "settled"
+ ],
+ "pauses": [
+  {
+   "from": "2026-10-19",
+   "to": "2026-10-21",
+   "label": "Barcelona"
+  },
+  {
+   "from": null,
+   "to": null,
+   "label": "London (late Nov)"
+  }
+ ],
+ "later": [
+  "January: Ledger review; decide how to handle collocations",
+  "Passives and subject-verb agreement, sliced the same way (e.g. \"the data is just covers\" -> \"the data just covers\")"
+ ],
+ "items": [
+  {
+   "id": "c1",
+   "layer": "chunk",
+   "n": 1,
+   "title": "\"to\" or \"into\" after add, put, paste, devote",
+   "status": "open",
+   "planned": [
+    {
+     "from": "2026-10-12",
+     "to": "2026-10-18"
+    },
+    {
+     "from": "2026-10-22",
+     "to": "2026-11-01"
+    }
+   ],
+   "difficulty": "easy",
+   "counts": "Every add / paste / devote / dedicate with its object and a following preposition phrase. \"put\" only with a list, notes, chat, document or system, or with effort, time or money.",
+   "correct": [
+    "add it to",
+    "paste it into / in",
+    "devote myself to (+ -ing)",
+    "put effort into",
+    "put it on my list"
+   ],
+   "wrong": [
+    "add it into",
+    "paste it to",
+    "devote myself for / on",
+    "put it into my list"
+   ],
+   "left_out": [
+    "no preposition phrase (\"I'll add it\")",
+    "physical placing (\"put the box in the car\")",
+    "phrasal verbs (add up, put off, put up with)",
+    "\"put it to a vote\""
+   ],
+   "examples": [
+    {
+     "wrong": "add these points into that list",
+     "right": "add these points to that list",
+     "yours": true
+    },
+    {
+     "wrong": "paste it to the chat",
+     "right": "paste it into the chat",
+     "yours": false
+    }
+   ],
+   "words": [
+    "add",
+    "put",
+    "paste",
+    "devote",
+    "dedicate"
+   ]
+  },
+  {
+   "id": "c2",
+   "layer": "chunk",
+   "n": 2,
+   "title": "verbs with a fixed preposition, or none",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-11-02",
+     "to": "2026-11-15"
+    }
+   ],
+   "difficulty": "medium",
+   "counts": "A closed list of 10, only when the word has its object or complement: approach, mention, research, contact, join, discuss (no preposition); remind of, responsible for, bored with / of, knowledge of.",
+   "correct": [
+    "approaching us",
+    "mention it",
+    "research it",
+    "contact me",
+    "join her friends",
+    "discuss it",
+    "remind you of",
+    "responsible for",
+    "bored with",
+    "knowledge of"
+   ],
+   "wrong": [
+    "approaching to",
+    "mention about",
+    "research about",
+    "contacting to me",
+    "join to",
+    "discuss about",
+    "remind you the basics",
+    "responsible from",
+    "bored from",
+    "knowledge for"
+   ],
+   "left_out": [
+    "nouns with their own preposition (\"an approach to\", \"research on\", \"in contact with\")",
+    "\"join in\" (a phrasal verb)",
+    "\"remind someone to do\" (a different pattern)"
+   ],
+   "examples": [
+    {
+     "wrong": "approaching to us",
+     "right": "approaching us",
+     "yours": false
+    },
+    {
+     "wrong": "mention about it",
+     "right": "mention it",
+     "yours": false
+    },
+    {
+     "wrong": "remind you the basics",
+     "right": "remind you of the basics",
+     "yours": false
+    },
+    {
+     "wrong": "responsible from",
+     "right": "responsible for",
+     "yours": false
+    }
+   ],
+   "words": [
+    "approach",
+    "mention",
+    "research",
+    "contact",
+    "join",
+    "discuss",
+    "remind of",
+    "responsible for",
+    "bored with",
+    "knowledge of"
+   ]
+  },
+  {
+   "id": "c3",
+   "layer": "chunk",
+   "n": 3,
+   "title": "\"to\", not \"for + -ing\", for purpose",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-11-16",
+     "to": null
+    }
+   ],
+   "difficulty": "hard",
+   "counts": "A verb phrase saying why someone does something (= in order to).",
+   "correct": [
+    "I called him to ask"
+   ],
+   "wrong": [
+    "I called him for asking",
+    "for to ask"
+   ],
+   "left_out": [
+    "\"to\" after want, need, try, decide (not purpose)",
+    "\"for + noun\" (for dinner)",
+    "what a thing is for (\"a tool for cutting\" is correct)"
+   ],
+   "examples": [
+    {
+     "wrong": "I called him for asking",
+     "right": "I called him to ask",
+     "yours": false
+    }
+   ],
+   "note": "Mistakes are easy to find; correct uses are hard for a script to separate from other \"to + verb\", so accuracy is rough."
+  },
+  {
+   "id": "c4",
+   "layer": "chunk",
+   "n": 4,
+   "title": "no \"a\" before uncountable nouns",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-11-16",
+     "to": null
+    }
+   ],
+   "difficulty": "medium",
+   "counts": "Every use of a closed list of uncountable nouns.",
+   "correct": [
+    "some feedback",
+    "a piece of feedback",
+    "the news",
+    "feedback (bare)"
+   ],
+   "wrong": [
+    "a feedback",
+    "feedbacks",
+    "a news",
+    "many advices"
+   ],
+   "left_out": [
+    "\"knowledge\" and \"practice\" (\"a good knowledge of\" and \"a practice\" can be correct)"
+   ],
+   "examples": [
+    {
+     "wrong": "a feedback",
+     "right": "some feedback / a piece of feedback",
+     "yours": false
+    },
+    {
+     "wrong": "a news",
+     "right": "some news",
+     "yours": false
+    }
+   ],
+   "words": [
+    "feedback",
+    "news",
+    "advice",
+    "information",
+    "homework",
+    "equipment",
+    "evidence",
+    "progress",
+    "luggage",
+    "furniture",
+    "research (noun)"
+   ]
+  },
+  {
+   "id": "c5",
+   "layer": "chunk",
+   "n": 5,
+   "title": "\"still\" goes before \"have\"",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-12-01",
+     "to": "2026-12-31"
+    }
+   ],
+   "difficulty": "easy",
+   "counts": "Every \"still\" in a clause with have / has.",
+   "correct": [
+    "I still have",
+    "I still haven't",
+    "I've still got"
+   ],
+   "wrong": [
+    "I have still lots of",
+    "I haven't still"
+   ],
+   "left_out": [
+    "\"Still, ...\" meaning \"however\"",
+    "\"stay still\""
+   ],
+   "examples": [
+    {
+     "wrong": "I have still lots of way to take",
+     "right": "I still have a long way to go",
+     "yours": true
+    }
+   ]
+  },
+  {
+   "id": "s1",
+   "layer": "slice",
+   "n": 1,
+   "title": "\"yet\" → present perfect",
+   "status": "open",
+   "planned": [
+    {
+     "from": "2026-10-12",
+     "to": "2026-10-18"
+    },
+    {
+     "from": "2026-10-22",
+     "to": "2026-11-01"
+    }
+   ],
+   "difficulty": "easy",
+   "counts": "Every \"yet\" as an adverb: \"not ... yet\" and questions (\"Has it ... yet?\").",
+   "correct": [
+    "it hasn't come up yet",
+    "have you finished yet?"
+   ],
+   "wrong": [
+    "it didn't come up yet",
+    "did you finish yet?"
+   ],
+   "left_out": [
+    "\"yet\" meaning \"but / however\"",
+    "\"yet another\"",
+    "\"the best yet\"",
+    "\"not yet\" on its own as an answer"
+   ],
+   "examples": [
+    {
+     "wrong": "it didn't come up yet",
+     "right": "it hasn't come up yet",
+     "yours": false
+    }
+   ],
+   "note": "May be too rare to reach 3 uses per session; review after two weeks."
+  },
+  {
+   "id": "s2",
+   "layer": "slice",
+   "n": 2,
+   "title": "\"already\" and \"just\" → present perfect",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-11-02",
+     "to": "2026-11-08"
+    }
+   ],
+   "difficulty": "easy",
+   "counts": "\"already\", or \"just\" meaning \"a moment ago\", with a finished action.",
+   "correct": [
+    "I've already sent it",
+    "she's just left"
+   ],
+   "wrong": [
+    "I already sent it",
+    "she just left"
+   ],
+   "left_out": [
+    "\"just\" meaning \"only / simply\" (\"I just want...\")",
+    "\"already\" with a state (\"it's already late\")",
+    "\"had already\""
+   ],
+   "examples": [
+    {
+     "wrong": "I already sent it",
+     "right": "I've already sent it",
+     "yours": false
+    }
+   ],
+   "note": "Lowest priority: American English accepts the past simple; Murat follows British English, so these count as slips."
+  },
+  {
+   "id": "s3",
+   "layer": "slice",
+   "n": 3,
+   "title": "finished time → past simple",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-11-09",
+     "to": "2026-11-15"
+    }
+   ],
+   "difficulty": "easy",
+   "counts": "A clause with a finished-time word: yesterday, last week / month / year / night / Monday, ... ago, in 2016, when I was...",
+   "correct": [
+    "I saw him yesterday"
+   ],
+   "wrong": [
+    "I've seen him yesterday"
+   ],
+   "left_out": [
+    "\"since last week\" and \"the last few days\" (time still going on)",
+    "\"last\" meaning \"final\""
+   ],
+   "examples": [
+    {
+     "wrong": "I've seen him yesterday",
+     "right": "I saw him yesterday",
+     "yours": false
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "layer": "slice",
+   "n": 4,
+   "title": "\"for\" and \"since\" for things still going on",
+   "status": "not_started",
+   "planned": [
+    {
+     "from": "2026-12-01",
+     "to": "2026-12-31"
+    }
+   ],
+   "difficulty": "medium",
+   "counts": "\"for + a length of time\" or \"since + a starting point\" for something still true now.",
+   "correct": [
+    "I've been working at SOCAR for 15 years",
+    "I've known him since 2010"
+   ],
+   "wrong": [
+    "I'm working at SOCAR for 15 years",
+    "I know him since 2010"
+   ],
+   "left_out": [
+    "\"since\" meaning \"because\"",
+    "finished periods (\"I lived there for five years\")",
+    "future plans (\"I'm staying for two weeks\")"
+   ],
+   "examples": [
+    {
+     "wrong": "I'm working at SOCAR for 15 years",
+     "right": "I've been working at SOCAR for 15 years",
+     "yours": false
+    }
+   ]
+  }
+ ]
+}
