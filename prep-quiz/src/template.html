@@ -255,7 +255,12 @@ function pickItem(p,want,used){
   const s=st(p.k); const avail=p.items.filter(it=>!used.has(it.i)); if(!avail.length) return null;
   let kind=want?avail.filter(it=>it.s===want):avail; if(!kind.length) kind=avail;
   if(want==='n'){const pairs=kind.filter(it=>it.c); if(pairs.length&&Math.random()<0.5) kind=pairs;}
-  const fresh=kind.filter(it=>!s.seen.includes(it.i)); const src=fresh.length?fresh:kind;
+  // Oldest first: rank by when each item was last answered (or last served, from `seen`), never-seen first,
+  // then pick at random among the 1-3 oldest so the order can't be memorised.
+  const last={}; s.history.forEach(h=>{const t=Date.parse(h.t)||0; if(!(last[h.item]>=t)) last[h.item]=t;});
+  const now=Date.now(); s.seen.forEach((i,j)=>{const t=now-j; if(!(last[i]>=t)) last[i]=t;});
+  const ranked=shuffle(kind.slice()).sort((x,y)=>(last[x.i]||0)-(last[y.i]||0));
+  const src=ranked.slice(0,Math.min(3,Math.max(1,ranked.length-1)));
   return src[Math.floor(Math.random()*src.length)];
 }
 function chooseFmt(p,it){
