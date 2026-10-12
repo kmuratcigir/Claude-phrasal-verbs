@@ -34,7 +34,8 @@ The page only reads. Skills write, each in one approval:
 4. ✅ Chunks tab in the Ledger (published 12.10). Tiles (open, settled, schedule, uses in the last session), one card per open chunk (pooled last-12 accuracy against the 80% line, the 12 uses as squares split by session, last session's uses, latest slip), "Coming up" with draft dates, "Settled" with a slip-back flag. Reads `meta/chunks` and each session's `chunks` block; writes nothing. Tested with a frozen copy of the real db: no errors, the other six tabs render identical text to the old page, synthetic data gives the right pooled figures (10 of 12 = 83%, ready to settle), no sideways scroll at 390px in dark mode.
 5. ✅ New quiz items for chunks 3–5 and grammar slices 1–4 (65 items, `prep-quiz/src/bank_chunks.js`, approved 12.10).
 6. ✅ Chunk mode in the prep quiz (version 14, 12.10). It reads `chunks/state` from the quiz's own db; built-in default until step 7.
-7. Step that copies chunk statuses into the quiz.
+7. ✅ New skill `chunk-update` (`skill-upload/chunk-update/`, 12.10): shows status and evidence (`scripts/status.py`), changes `meta/chunks` only on Murat's word, and writes the quiz's `chunks/state` (`{open, settled, as_of, source:"ledger"}`) in the same run (two approvals: two pages). The quiz's `chunks/state` was seeded on 12.10 with c1 + s1 open.
+   Also 12.10: `chunks.py find` no longer stops when an open item has no finder; it counts the others and prints `NOT COUNTED`. **Before 2 Nov:** write and test finders for c2 and s2 (then s3, c3, c4, c5, s4), update `COUNTABLE` in `status.py`, and re-upload both skills.
 
 ## `meta/chunks` schema
 `{as_of, version, plan_url, rule:{target, window_uses, min_sessions, mode, caught_counts_as, text, changed}, practice_nudge, shared_rules[], statuses[], pauses[{from,to,label}], later[], items[]}`

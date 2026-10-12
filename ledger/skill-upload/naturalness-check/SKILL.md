@@ -209,9 +209,9 @@ python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json
 
 `chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for the **open** chunks and slices only:
 index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
-tell), the matched words and the sentence. If it prints `STOP: no finder yet for open item(s)`,
-Murat opened a chunk the script can't count yet: skip the chunk part of this check, say so in the
-report ("chunk X isn't counted yet"), and never estimate its numbers by eye.
+tell), the matched words and the sentence. If it prints `NOT COUNTED (no finder yet ...)`, Murat opened
+a chunk the script can't count yet: the other open chunks are still counted; say in the report
+("chunk X isn't counted yet") and never estimate its numbers by eye.
 
 `detect.py` prints the word count (voice and typed) and a REVIEW LIST of grammar candidates: index, kind
 (`use` = a structure was used, `error` = an error signature), concept id, match, sentence.

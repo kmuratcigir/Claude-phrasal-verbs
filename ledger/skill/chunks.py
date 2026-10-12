@@ -117,7 +117,8 @@ def cmd_find(turns_path, chunks_path, out_path):
     open_ids = [it["id"] for it in meta["items"] if it["status"] == "open"]
     missing = [i for i in open_ids if i not in FINDERS]
     if missing:
-        print("STOP: no finder yet for open item(s):", ", ".join(missing)); sys.exit(1)
+        print("NOT COUNTED (no finder yet, say so in the report):", ", ".join(missing))
+        open_ids = [i for i in open_ids if i in FINDERS]
     cands = []
     for t in read_turns(turns_path):
         for raw in sentences(t["text"]):
