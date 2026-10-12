@@ -29,15 +29,17 @@ The page only reads. Skills write, each in one approval:
 
 ## Plan (from the chunk tracking plan)
 1. ✅ Source into the repo (this commit).
-2. ✅ Store the chunk list (`meta/chunks`, version 1, 12.10). Open: chunk 1 and slice 1; the rest not started.
-3. Naturalness check counts correct uses of open chunks; test on 2–3 past chats against a hand count.
+2. ✅ Store the chunk list (`meta/chunks`, now version 2, 12.10). Open: chunk 1 and slice 1; the rest not started.
+3. Naturalness check counts correct uses of open chunks. **Started 12.10:** `skill/chunks.py` (finders for c1 and s1), `skill/tests/` (26/26). Tested on the 10.10 session, which Murat pasted in: it matched a hand count (c1: 1 voice use, wrong; 1 typed use, correct; no "yet"). Still to do: wire it into the skill (SKILL.md steps 3–5, a `chunks` block in the session doc, the same single save), and add the practice nudge to the Mini Prompt.
 4. Chunks tab in the Ledger.
 5. New quiz items for chunks 3–5 and grammar slices 1–4.
 6. Chunk mode in the prep quiz.
 7. Step that copies chunk statuses into the quiz.
 
 ## `meta/chunks` schema
-`{as_of, version, plan_url, rule:{target, streak, min_uses, mode, caught_counts_as, text}, shared_rules[], statuses[], pauses[{from,to,label}], later[], items[]}`
+`{as_of, version, plan_url, rule:{target, window_uses, min_sessions, mode, caught_counts_as, text, changed}, practice_nudge, shared_rules[], statuses[], pauses[{from,to,label}], later[], items[]}`
+
+**Settled rule (v2, 12.10):** the last 12 voice uses at 80%+, spread over at least 4 sessions. It replaced "80% in 4 sessions in a row with 3+ uses each" because one full session had only 1 chunk-1 use and no "yet".
 
 Each item: `{id ("c1".."c5", "s1".."s4"), layer ("chunk" | "slice"), n, title, status ("not_started" | "open" | "settled"), planned[{from,to}], difficulty, counts, correct[], wrong[], left_out[], examples[{wrong,right,yours}], words[]?, note?}`.
 Murat changes statuses and adds items by hand ("let's update the chunks"); no skill changes statuses on its own.

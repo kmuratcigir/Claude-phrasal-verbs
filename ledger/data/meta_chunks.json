@@ -1,14 +1,15 @@
 {
  "as_of": "2026-10-12",
- "version": 1,
+ "version": 2,
  "plan_url": "https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf",
  "rule": {
   "target": 0.8,
-  "streak": 4,
-  "min_uses": 3,
+  "window_uses": 12,
+  "min_sessions": 4,
   "mode": "voice",
   "caught_counts_as": 0.5,
-  "text": "Settled = accuracy (correct / all uses, voice turns) at 80% or more in each of the last 4 sessions in a row, counting only sessions with at least 3 uses. A session with fewer uses neither helps nor breaks the streak. The Ledger suggests \"settled\"; Murat confirms."
+  "text": "Settled = your last 12 uses (voice turns) are at 80% accuracy or better, and those uses are spread over at least 4 sessions. Uses are pooled across sessions, so a rare chunk is judged fairly. The Ledger suggests \"settled\"; Murat confirms.",
+  "changed": "12.10: replaced \"80% in 4 sessions in a row, at least 3 uses each\" after the 10.10 test showed 1 chunk-1 use and no \"yet\" in a full session."
  },
  "shared_rules": [
   "Voice turns only; each use counts once.",
@@ -442,5 +443,6 @@
     }
    ]
   }
- ]
+ ],
+ "practice_nudge": "At the start of each practice, the Mini Prompt asks Claude to steer the conversation towards the open chunks and slices (e.g. what Murat has added to a list, what he has not done yet), so they come up more often. Uses prompted this way count; repeating a sentence Claude just modelled does not."
 }
