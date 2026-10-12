@@ -17,7 +17,7 @@ No third-party libraries, so it runs wherever python3 does.
 """
 import json, re, sys
 
-FILLERS = re.compile(r"\b(?:uh|um|erm|er|hmm)\b,?|\bsorry\b,?", re.I)
+FILLERS = re.compile(r"\b(?:uh|um|erm|er|hmm)\b,?|\bsorry\b,?(?!\s+(?:for|about|if|that|to)\b)", re.I)
 
 def clean(text):
     t = FILLERS.sub(" ", text)
@@ -105,7 +105,176 @@ def find_s1(sent):
     else: ok = None                       # Claude decides
     return [{"item": "s1", "match": clause.strip(), "suggest": ok}]
 
-FINDERS = {"c1": find_c1, "s1": find_s1}
+# ---------- shared helpers for the finders below ----------
+SUBJ = r"(?:i|you|we|they|he|she|it|this|that|there|people|everyone|nobody|someone)"
+IRREG_PAST = "went|came|saw|did|got|made|took|gave|told|said|found|heard|sent|left|met|began|ran|wrote|read|bought|thought|brought|caught|taught|won|lost|built|spent|put|set|cut|let|knew|felt|kept|held|stood|understood|forgot|became|chose|drove|ate|drank|spoke|broke|woke|sat|fell|grew|threw|flew|paid|sold|slept|meant|left|lent|led|fed|hung|hit|hurt|shut|quit|rose"
+IRREG_PP = "gone|come|seen|done|got|gotten|made|taken|given|told|said|found|heard|sent|left|met|begun|run|written|read|bought|thought|brought|caught|taught|won|lost|built|spent|put|set|cut|let|known|felt|kept|held|stood|understood|forgotten|become|chosen|driven|eaten|drunk|spoken|broken|woken|sat|fallen|grown|thrown|flown|paid|sold|slept|meant|been|had"
+PAST_W = rf"(?:\w+ed|{IRREG_PAST})"
+PP_W = rf"(?:\w+ed|{IRREG_PP})"
+HAVE = r"(?:have|has|had|'ve|’ve|'s|’s|haven't|hasn't|haven’t|hasn’t)"
+
+def prev_words(sent, pos, n=2):
+    return [w.lower().strip(",.") for w in sent[:pos].split()[-n:]]
+
+NOUN_PRE = {"an", "the", "my", "our", "your", "his", "her", "their", "this", "new", "different", "good", "right", "wrong", "same", "that", "whole"}
+CONTACT_PRE = {"in", "the", "a", "my", "our", "your", "his", "her", "their", "this", "that", "of", "main", "first"}
+
+def clauses(sent):
+    return [c.strip() for c in re.split(r"[,;:]|\b(?:but|and|so|because|although|while)\b", sent, flags=re.I) if c.strip()]
+
+# ---------- chunk 2: verbs with a fixed preposition, or none (closed list of 10) ----------
+DET = r"(?:me|us|you|him|her|them|it|this|that|these|those|the|a|an|my|our|your|his|their|its|some|any|all|every|each|people|everyone|\d+|(?-i:[A-Z])\w+)"
+C2_RULES = [
+    # (name, regex, suggestion)  suggestion True = correct, False = wrong
+    ("approach", re.compile(rf"\bapproach(?:es|ed|ing)?\s+to\b(?!\s+(?:the\s+)?(?:problem|issue|question|learning|it\b))", re.I), False),
+    ("approach", re.compile(rf"\bapproach(?:es|ed|ing)?\s+{DET}\b", re.I), True),
+    ("mention", re.compile(r"\bmention(?:s|ed|ing)?\s+about\b", re.I), False),
+    ("mention", re.compile(rf"\bmention(?:s|ed|ing)?\s+(?!about\b|before\b|earlier\b|above\b|previously\b|again\b|already\b)(?:it|that|this|these|the|a|an|my|our|your|his|her|their|some|any|him|them|(?-i:[A-Z])\w+)\b", re.I), True),
+    ("research", re.compile(rf"\b(?:to|will|can|could|should|would|did|didn['’]t|{SUBJ})\s+research(?:ed)?\s+about\b|\bresearch(?:ed|ing)\s+about\b", re.I), False),
+    ("research", re.compile(rf"\b(?:to|will|can|could|should|would|did|didn['’]t|{SUBJ})\s+research(?:ed)?\s+(?!about\b|on\b|into\b|is\b|was\b|shows\b){DET}\b|\bresearch(?:ed|ing)\s+(?!about\b|on\b|into\b){DET}\b", re.I), True),
+    ("contact", re.compile(r"\bcontact(?:s|ed|ing)?\s+(?:with|to)\b", re.I), False),
+    ("contact", re.compile(rf"\bcontact(?:s|ed|ing)?\s+(?!with\b|to\b|person\b|details\b|list\b|form\b|number\b){DET}\b", re.I), True),
+    ("join", re.compile(r"\bjoin(?:s|ed|ing)?\s+(?:to|with)\b", re.I), False),
+    ("join", re.compile(rf"\bjoin(?:s|ed|ing)?\s+(?!in\b|to\b|with\b|up\b|forces\b){DET}\b", re.I), True),
+    ("discuss", re.compile(r"\bdiscuss(?:es|ed|ing)?\s+about\b", re.I), False),
+    ("discuss", re.compile(rf"\bdiscuss(?:es|ed|ing)?\s+(?!about\b){DET}\b", re.I), True),
+    ("remind of", re.compile(rf"\bremind(?:s|ed|ing)?\s+{DET}(?:\s+\w+)?\s+(?:of|about)\b", re.I), True),
+    ("remind of", re.compile(r"\bremind(?:s|ed|ing)?\s+(?:me|us|you|him|her|them)\s+(?!of\b|about\b|to\b|that\b|how\b|what\b|when\b|why\b|where\b|who\b|if\b|again\b|later\b|tomorrow\b)(?:the|a|an|my|your|his|her|our|their|this|that|these|some|\w+ing)\b", re.I), False),
+    ("responsible for", re.compile(r"\bresponsible\s+for\b", re.I), True),
+    ("responsible for", re.compile(r"\bresponsible\s+(?:from|of|about|on)\b", re.I), False),
+    ("bored with", re.compile(r"\bbored\s+(?:with|of)\b", re.I), True),
+    ("bored with", re.compile(r"\bbored\s+(?:from|about|to|on)\b", re.I), False),
+    ("knowledge of", re.compile(r"\bknowledge\s+of\b", re.I), True),
+    ("knowledge of", re.compile(r"\bknowledge\s+for\b", re.I), False),
+    ("knowledge of", re.compile(r"\bknowledge\s+(?:about|on)\b", re.I), None),
+]
+
+def find_c2(sent):
+    out, spans = [], []
+    for name, rx, ok in C2_RULES:
+        for m in rx.finditer(sent):
+            if any(m.start() < e and s < m.end() for s, e in spans): continue
+            pw = prev_words(sent, m.start(), 1)
+            if name == "approach" and pw and pw[-1] in NOUN_PRE: continue
+            if name == "contact" and pw and pw[-1] in CONTACT_PRE: continue
+            spans.append((m.start(), m.end()))
+            out.append({"item": "c2", "match": m.group(0).strip(), "word": name, "suggest": ok})
+    return out
+
+# ---------- chunk 3: "to", not "for + -ing", for purpose (rough) ----------
+NOT_PURPOSE_BEFORE = r"(?:used|useful|good|bad|great|perfect|ideal|thanks?|thank\s+you|sorry|apologi\w+|responsible|known|famous|excuse|reason|time|way|chance|opportunity|tool|tools|machine|app|place|room|space|plan|ready|blame\w*|forgive\w*|punish\w*|arrest\w*|instead|pay|paid|criticis\w+|look|looking|interested|passion|need|room|motivation|eager\w*|struggle\w*|struggling|appetite|habit|skill|talent|tendency)"
+C3_WRONG = re.compile(r"\bfor\s+(?:\w+ly\s+)?(\w+ing)\b", re.I)
+NOT_PURPOSE_RX = re.compile(rf"^{NOT_PURPOSE_BEFORE}$", re.I)
+C3_RIGHT = [
+    re.compile(r"\bin order to\s+\w+", re.I),
+    re.compile(r"^\s*to\s+(?!be\s+honest|me\b|you\b|him\b|her\b|us\b|them\b|the\b|a\b|my\b|your\b|be\s+fair)[a-z]+\b[^,]{0,60},", re.I),
+    re.compile(r"\b(?:use|used|uses|using)\s+(?:[\w'’]+\s+){1,4}to\s+(?!the\b|a\b|my\b|me\b|you\b|him\b|her\b|us\b|them\b|this\b|that\b)[a-z]+\b", re.I),
+    re.compile(r"(?<!it\s)\b(?:came|come|comes|went|go|goes|going|called|call|calls|stayed|stay|here|there)\s+(?!to\s+(?:surface|mind|terms|an end|light|life)\b)(?:[\w'’]+\s+){0,3}to\s+(?!the\b|a\b|my\b|me\b|you\b|him\b|her\b|us\b|them\b|this\b|that\b|bed\b|work\b|school\b|London\b|office\b)[a-z]+\b", re.I),
+]
+ING_NOT_VERB = {"something", "anything", "nothing", "everything", "morning", "evening", "thing", "things", "during", "spring", "king", "ring", "string", "ceiling", "building", "meeting", "wedding", "training", "feeling", "beginning", "living", "being"}
+
+def find_c3(sent):
+    out = []
+    for m in C3_WRONG.finditer(sent):
+        if any(NOT_PURPOSE_RX.match(w) for w in prev_words(sent, m.start(), 2)): continue
+        if m.group(1).lower() in ING_NOT_VERB and m.group(1).lower() not in ("being", "living"): continue
+        use_before = re.search(r"\b(?:use|used|uses|using)\b(?:\s+[\w'’]+){0,6}\s*$", sent[:m.start()], re.I)
+        out.append({"item": "c3", "match": m.group(0).strip(), "suggest": None if use_before else False})
+    for rx in C3_RIGHT:
+        for m in rx.finditer(sent):
+            out.append({"item": "c3", "match": m.group(0).strip()[:60], "suggest": True})
+            break
+    return out
+
+# ---------- chunk 4: no "a" before uncountable nouns (closed list) ----------
+UNC = "feedback|news|advice|information|homework|equipment|evidence|progress|luggage|furniture|research"
+UNC_PL = "feedbacks|advices|informations|homeworks|equipments|evidences|luggages|furnitures"
+NOUN_AFTER = r"(?:session|sessions|loop|form|forms|tool|meeting|report|system|channel|call|item|items|request|page|link|programme|program|team|desk|centre|center|agency|anchor|article|articles|bulletin|app|site|website|paper|papers|project|projects|grant|question|questions|study|lab|group|assistant|scientist|scientists|method|methods|area|field|topic|bar|bag|bags|allowance|rack|store|shop|policy|check|update|reel|story|stories|outlet|feed)"
+C4_A = re.compile(rf"\b(a|an)\s+((?:(?!of\b|lot\b|bit\b|piece\b|kind\b|sort\b|type\b|lack\b)[\w'’-]+\s+){{0,2}})({UNC})\b(?!\s+{NOUN_AFTER}\b)", re.I)
+C4_PL = re.compile(rf"\b({UNC_PL})\b", re.I)
+C4_ANY = re.compile(rf"\b({UNC})\b(?!\s+{NOUN_AFTER}\b)", re.I)
+RESEARCH_VERB = re.compile(rf"\b(?:to|will|can|could|should|would|did|didn['’]t|{SUBJ})\s+research\b", re.I)
+
+def find_c4(sent):
+    out, spans = [], []
+    for m in C4_A.finditer(sent):
+        spans.append(m.span(3)); out.append({"item": "c4", "match": m.group(0).strip(), "suggest": False})
+    for m in C4_PL.finditer(sent):
+        spans.append(m.span(1)); out.append({"item": "c4", "match": m.group(0), "suggest": False})
+    for m in C4_ANY.finditer(sent):
+        if any(s <= m.start() < e for s, e in spans): continue
+        if m.group(1).lower() == "research" and RESEARCH_VERB.search(sent[max(0, m.start()-25):m.end()]): continue
+        out.append({"item": "c4", "match": sent[max(0, m.start()-12):m.end()].strip(), "suggest": True})
+    return out
+
+# ---------- chunk 5: "still" goes before "have" ----------
+C5_WRONG = re.compile(r"\b(?:have|has|had)\s+still\s+(?!not\b|got\b|been\b|\w+ed\b|gone\b|done\b|seen\b|made\b)(?:[\w'’]+)", re.I)
+C5_WRONG2 = re.compile(r"\b(?:haven['’]t|hasn['’]t|hadn['’]t)\s+still\b", re.I)
+C5_RIGHT = re.compile(r"\bstill\s+(?:have|has|had|haven['’]t|hasn['’]t|hadn['’]t)\b|\b(?:['’]ve|have|has|['’]s)\s+still\s+got\b", re.I)
+
+def find_c5(sent):
+    out = []
+    for rx, ok in ((C5_WRONG, False), (C5_WRONG2, False), (C5_RIGHT, True)):
+        for m in rx.finditer(sent):
+            out.append({"item": "c5", "match": m.group(0).strip(), "suggest": ok})
+    return out
+
+# ---------- slice 2: "already" / "just" -> present perfect ----------
+HAVE_PRES = r"(?:have|has|'ve|’ve|'s|’s|haven't|hasn't|haven’t|hasn’t)"
+S2_RIGHT = re.compile(rf"\b{HAVE_PRES}\s+(?:already|just)\s+{PP_W}\b|\b{HAVE_PRES}\s+{PP_W}\s+(?:[\w'’]+\s+){{0,4}}already\b", re.I)
+S2_WRONG_ALREADY = re.compile(rf"\balready\s+({PAST_W}|{IRREG_PP})\b|\b{SUBJ}\s+({PAST_W})\s+(?:[\w'’]+\s+){{0,4}}already\b", re.I)
+JUST_EVENT = "finished|arrived|left|came|got|saw|heard|sent|told|started|began|ended|landed|called|said|found|met|woke|returned|joined|bought|read|published|launched|signed|received|done|seen"
+S2_WRONG_JUST = re.compile(rf"\b{SUBJ}\s+just\s+({JUST_EVENT})\b", re.I)
+S2_FIXED = re.compile(r"\bas\s+(?:you|i|we|he|she|they)\s+just\s+(?:said|mentioned|told|did|saw|heard)\b", re.I)
+
+def find_s2(sent):
+    out, spans = [], []
+    for m in S2_RIGHT.finditer(sent):
+        spans.append(m.span()); out.append({"item": "s2", "match": m.group(0).strip(), "suggest": True})
+    for rx in (S2_WRONG_ALREADY, S2_WRONG_JUST):
+        for m in rx.finditer(sent):
+            if any(s <= m.start() < e for s, e in spans): continue
+            if re.search(rf"\b(?:have|has|had|'ve|'s|'d|’ve|’s|’d)\b", sent[max(0, m.start()-12):m.start()], re.I): continue
+            if any(f.start() <= m.start() < f.end() + 2 for f in S2_FIXED.finditer(sent)): continue
+            out.append({"item": "s2", "match": m.group(0).strip(), "suggest": False})
+    return out
+
+# ---------- slice 3: finished time -> past simple ----------
+FIN = re.compile(r"\byesterday\b|\b\w+\s+ago\b|(?<!\bthe\s)(?<!\bsince\s)(?<!\bfor\s)(?<!\bin\s)\blast\s+(?:week|month|year|night|time|weekend|summer|winter|spring|autumn|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b|(?<!\bsince\s)\bin\s+(?:19|20)\d\d\b|\bwhen i was\b", re.I)
+S3_PERFECT = re.compile(rf"\b{HAVE}\s+(?:not\s+|never\s+|already\s+|just\s+|also\s+)?(?:been\s+)?{PP_W}\b", re.I)
+S3_PAST = re.compile(rf"\b(?:was|were|did|didn['’]t|{PAST_W})\b", re.I)
+
+def find_s3(sent):
+    out = []
+    for c in clauses(sent):
+        if not FIN.search(c) or re.search(r"\b(?:since|for the last|the last few|in the last|so far|this (?:week|month|year))\b", c, re.I): continue
+        if S3_PERFECT.search(c): out.append({"item": "s3", "match": c[:80], "suggest": False})
+        elif S3_PAST.search(c): out.append({"item": "s3", "match": c[:80], "suggest": True})
+    return out
+
+# ---------- slice 4: "for" / "since" for things still going on ----------
+DUR = re.compile(r"\bfor\s+(?:about\s+|almost\s+|nearly\s+|over\s+|more than\s+)?(?:\d+|a|an|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|fifteen|twenty|thirty|many|several|a few|a couple of)\s+(?:years?|months?|weeks?|days?|hours?|decades?)\b|\bfor\s+(?:ages|a long time|a while)\b", re.I)
+SINCE_T = re.compile(r"\bsince\s+(?:\d{4}\b|last\b|(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december)\b|then\b|childhood\b|the (?:start|beginning)\b|(?:i|we|he|she|they)\s+(?:was|were)\b|\d)", re.I)
+S4_PERF = re.compile(rf"\b{HAVE}\s+(?:not\s+|never\s+|been\s+\w+ing|{PP_W})", re.I)
+S4_PRES = re.compile(rf"\b(?:am|is|are|['’]m|['’]re)\s+\w+ing\b|\b(?:i|we|they|you)\s+(?:know|live|work|have|study|teach|use|play|own)\b|\b(?:he|she|it)\s+(?:knows|lives|works|has|studies|teaches|uses|plays|owns)\b", re.I)
+S4_FUT = re.compile(r"\b(?:will|going to|next|tomorrow|plan to|planning)\b", re.I)
+
+def find_s4(sent):
+    out = []
+    for c in clauses(sent):
+        d, s = DUR.search(c), SINCE_T.search(c)
+        if not (d or s): continue
+        if S4_FUT.search(c): continue
+        if S4_PERF.search(c): out.append({"item": "s4", "match": c[:80], "suggest": True})
+        elif S4_PRES.search(c):
+            cont = re.search(r"\b(?:am|is|are|['’]m|['’]re)\s+\w+ing\b", c, re.I)
+            long_ = re.search(r"\b(?:years?|months?|decades?|ages|a long time)\b", c, re.I)
+            out.append({"item": "s4", "match": c[:80], "suggest": False if (s or not cont or long_) else None})
+        elif s: out.append({"item": "s4", "match": c[:80], "suggest": None})
+    return out
+
+FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5,
+           "s1": find_s1, "s2": find_s2, "s3": find_s3, "s4": find_s4}
 
 def cmd_find(turns_path, chunks_path, out_path):
     import os

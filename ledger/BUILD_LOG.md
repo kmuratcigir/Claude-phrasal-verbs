@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: Chunks tab live (version id `1791806356-4a32`, 12.10)
+Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1791808670-cc1f`, 12.10)
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -10,12 +10,12 @@ Started 12.10.2026 · Status: Chunks tab live (version id `1791806356-4a32`, 12.
 ## Files
 | File | What it is |
 |---|---|
-| `data/meta_chunks.json` | The chunk list as written to `meta/chunks` (version 1, 12.10). Edit here, then write it back with `if_version`. |
-| `ledger.html` | The page source, identical to live version `1791806356-4a32` (published 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
+| `data/meta_chunks.json` | The chunk list as written to `meta/chunks` (version 3, 12.10). Edit here, then write it back with `if_version`. |
+| `ledger.html` | The page source, identical to live version `1791808670-cc1f` (published 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
 
 ## How to republish
 1. Edit `ledger.html` in the repo, never a copy elsewhere.
-2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1791806356-4a32`, someone published in between: diff it against `ledger.html` and merge before going on.
+2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1791808670-cc1f`, someone published in between: diff it against `ledger.html` and merge before going on.
 3. Test against a **frozen** copy of the real db (the lesson from the prep quiz: the db returns frozen objects, so a page that mutates loaded data breaks).
 4. Publish `ledger/ledger.html` with `url` = the Ledger URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -44,3 +44,16 @@ The page only reads. Skills write, each in one approval:
 
 Each item: `{id ("c1".."c5", "s1".."s4"), layer ("chunk" | "slice"), n, title, status ("not_started" | "open" | "settled"), planned[{from,to}], difficulty, counts, correct[], wrong[], left_out[], examples[{wrong,right,yours}], words[]?, note?}`.
 Murat changes statuses and adds items by hand ("let's update the chunks"); no skill changes statuses on its own.
+
+## 12.10 (later): all nine tracked, focus first (Murat's decisions)
+Murat pointed out that he wanted **all** chunks monitored from the start, because any of them can improve before its date; only c1 and s1 had been set up. Decisions:
+1. Track all 9 from 12.10 (`status: "open"` for every item; `meta/chunks` version 3).
+2. Quiz Chunk mode: focus about 70%, other tracked about 20%, settled about 10% (version 15; with nothing settled, focus is about 80%).
+3. Mini Prompt nudges towards all tracked chunks, focus items first.
+4. Any item settles under the same rule (12 uses, 80%, 4 sessions), whatever its dates; dates change only when Murat changes them.
+5. Ledger: full cards for focus items, one compact row for each other tracked item ("Also tracked"), Settled list.
+6. Chunk 3 is tracked as a rough count.
+7. Token cost accepted (about +3,000–5,000 per wrap-up).
+8. Built all at once on 12.10 so the skills are installed once.
+
+Finders for c2–c5, s2–s4 added to `skill/chunks.py`; `skill/tests/cases.json` now has 109 cases (all pass). On the 10.10 session all nine finders gave 24 candidates; after 3 hand verdicts ("use X for -ing" set correct) the counts were c1 0/1, c2 1/1, c3 4/8 (rough), c4 0/1, c5 0/1, s1 none, s2 6/9, s3 1/1, s4 none. Fixed during that test: "sorry for…" was stripped as a filler; "as you just said" is now left out of s2; `(?-i:[A-Z])` for proper names under `re.I`; "when it comes to" isn't purpose.

@@ -1,6 +1,6 @@
 {
  "as_of": "2026-10-12",
- "version": 2,
+ "version": 3,
  "plan_url": "https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf",
  "rule": {
   "target": 0.8,
@@ -18,7 +18,6 @@
   "If the transcript is unclear (\"to\" or \"into\"?), the use is dropped, not guessed."
  ],
  "statuses": [
-  "not_started",
   "open",
   "settled"
  ],
@@ -94,14 +93,16 @@
     "paste",
     "devote",
     "dedicate"
-   ]
+   ],
+   "focus": true,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "c2",
    "layer": "chunk",
    "n": 2,
    "title": "verbs with a fixed preposition, or none",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-11-02",
@@ -172,14 +173,16 @@
     "responsible for",
     "bored with",
     "knowledge of"
-   ]
+   ],
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "c3",
    "layer": "chunk",
    "n": 3,
    "title": "\"to\", not \"for + -ing\", for purpose",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-11-16",
@@ -198,7 +201,8 @@
    "left_out": [
     "\"to\" after want, need, try, decide (not purpose)",
     "\"for + noun\" (for dinner)",
-    "what a thing is for (\"a tool for cutting\" is correct)"
+    "what a thing is for (\"a tool for cutting\" is correct)",
+    "\"use X for -ing\" when it names what X is used for (\"I use Luke's episodes for shadowing\"); Claude decides each one"
    ],
    "examples": [
     {
@@ -207,14 +211,16 @@
      "yours": false
     }
    ],
-   "note": "Mistakes are easy to find; correct uses are hard for a script to separate from other \"to + verb\", so accuracy is rough."
+   "note": "Mistakes are easy to find; correct uses are hard for a script to separate from other \"to + verb\", so accuracy is rough.",
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "c4",
    "layer": "chunk",
    "n": 4,
    "title": "no \"a\" before uncountable nouns",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-11-16",
@@ -262,14 +268,16 @@
     "luggage",
     "furniture",
     "research (noun)"
-   ]
+   ],
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "c5",
    "layer": "chunk",
    "n": 5,
    "title": "\"still\" goes before \"have\"",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-12-01",
@@ -297,7 +305,9 @@
      "right": "I still have a long way to go",
      "yours": true
     }
-   ]
+   ],
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "s1",
@@ -338,14 +348,16 @@
      "yours": false
     }
    ],
-   "note": "May be too rare to reach 3 uses per session; review after two weeks."
+   "note": "May be too rare to reach 3 uses per session; review after two weeks.",
+   "focus": true,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "s2",
    "layer": "slice",
    "n": 2,
    "title": "\"already\" and \"just\" → present perfect",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-11-02",
@@ -365,7 +377,8 @@
    "left_out": [
     "\"just\" meaning \"only / simply\" (\"I just want...\")",
     "\"already\" with a state (\"it's already late\")",
-    "\"had already\""
+    "\"had already\"",
+    "\"as you just said\" and similar fixed phrases (\"as I just mentioned\")"
    ],
    "examples": [
     {
@@ -374,14 +387,16 @@
      "yours": false
     }
    ],
-   "note": "Lowest priority: American English accepts the past simple; Murat follows British English, so these count as slips."
+   "note": "Lowest priority: American English accepts the past simple; Murat follows British English, so these count as slips.",
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "s3",
    "layer": "slice",
    "n": 3,
    "title": "finished time → past simple",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-11-09",
@@ -406,14 +421,16 @@
      "right": "I saw him yesterday",
      "yours": false
     }
-   ]
+   ],
+   "focus": false,
+   "opened_on": "2026-10-12"
   },
   {
    "id": "s4",
    "layer": "slice",
    "n": 4,
    "title": "\"for\" and \"since\" for things still going on",
-   "status": "not_started",
+   "status": "open",
    "planned": [
     {
      "from": "2026-12-01",
@@ -441,8 +458,11 @@
      "right": "I've been working at SOCAR for 15 years",
      "yours": false
     }
-   ]
+   ],
+   "focus": false,
+   "opened_on": "2026-10-12"
   }
  ],
- "practice_nudge": "At the start of each practice, the Mini Prompt asks Claude to steer the conversation towards the open chunks and slices (e.g. what Murat has added to a list, what he has not done yet), so they come up more often. Uses prompted this way count; repeating a sentence Claude just modelled does not."
+ "practice_nudge": "At the start of each practice, the Mini Prompt asks Claude to steer the conversation so Murat has natural chances to use the open chunks and slices, focus items first (e.g. what he has added to a list, what he has not done yet). Uses prompted this way count; repeating a sentence Claude just modelled does not.",
+ "tracking": "All items are tracked in every session from 12.10. \"focus\" marks what the dated plan says to work on now; it steers the quiz (about 70% of a chunk session) and the Mini Prompt (focus items first). Any item can settle at any time under the rule, whatever its dates."
 }

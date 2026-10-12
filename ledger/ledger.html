@@ -796,20 +796,20 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
   <!-- ============ CHUNKS (12.10): accuracy of the open chunks in speech, pooled over the last 12 uses ============ -->
   <div class="tabpane" id="tab-chunks" role="tabpanel" aria-labelledby="tb-chunks" hidden>
   <section class="tiles" id="ctiles" aria-label="Chunks">
-    <div class="tile"><div class="label">Open now</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Tracked</div><div class="v">–</div><div class="d">&nbsp;</div></div>
     <div class="tile"><div class="label">Settled</div><div class="v">–</div><div class="d">&nbsp;</div></div>
     <div class="tile"><div class="label">Schedule</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
     <div class="tile"><div class="label">Uses in the last session</div><div class="v">–</div><div class="d">&nbsp;</div></div>
   </section>
 
   <section class="panel">
-    <div class="phead"><h2>Open chunks</h2><span class="sub" id="cRule"></span></div>
+    <div class="phead"><h2>Focus now</h2><span class="sub" id="cRule"></span></div>
     <div class="ckgrid" id="cOpen"></div>
   </section>
 
   <div class="two">
     <section class="panel">
-      <div class="phead"><h2>Coming up</h2><span class="sub">Draft dates; you open each one when you're ready</span></div>
+      <div class="phead"><h2>Also tracked</h2><span class="sub">Counted every session; can settle any time</span></div>
       <ul class="rows" id="cNext"></ul>
     </section>
     <section class="panel">
@@ -1923,6 +1923,10 @@ function ckSchedule(it, today){
     if(!on || !end) return {cls:"on", text:"Settled"};
     return on <= end ? {cls:"ahead", text:`Settled ${fmtIso(on)}, ahead of ${fmtIso(end)}`} : {cls:"behind", text:`Settled ${fmtIso(on)}, after ${fmtIso(end)}`};
   }
+  if(it.status === "open" && !it.focus){
+    if(ckPool(it.id).ready) return {cls:"ahead", text:`Ready before its plan (${fmtIso(start)})`};
+    return {cls:"on", text: t < start ? `Plan: from ${fmtIso(start)}` : `Plan: ${fmtIso(start)}${end?` to ${fmtIso(end)}`:" on"}`};
+  }
   if(it.status === "open"){
     if(t < start) return {cls:"ahead", text:`Started early (plan: ${fmtIso(start)})`};
     if(!end || t <= end) return {cls:"on", text: end ? `On track · plan to ${fmtIso(end)}` : "On track"};
@@ -1973,23 +1977,26 @@ function renderChunks(){
     $("cNext").innerHTML = ""; $("cDone").innerHTML = ""; $("cRule").textContent = ""; $("cNote").textContent = ""; return;
   }
   const today = new Date(); today.setHours(0,0,0,0);
-  const items = CHUNKS.items, open = items.filter(i=>i.status==="open"), done = items.filter(i=>i.status==="settled"), next = items.filter(i=>i.status==="not_started");
+  const items = CHUNKS.items, tracked = items.filter(i=>i.status!=="settled"), open = tracked.filter(i=>i.focus), done = items.filter(i=>i.status==="settled"), next = tracked.filter(i=>!i.focus);
   const r = CHUNKS.rule || {};
-  $("cRule").textContent = `Settled: last ${r.window_uses||12} uses at ${Math.round((r.target??0.8)*100)}%+ over ${r.min_sessions||4}+ sessions · voice only`;
-  set(0, open.length, open.map(i=>esc(i.title)).join("<br>") || "Nothing open");
+  $("cRule").textContent = `Settled: last ${r.window_uses||12} uses at ${Math.round((r.target??0.8)*100)}%+ over ${r.min_sessions||4}+ sessions · voice only · any item, any time`;
+  set(0, `${tracked.length} <span class="of">/ ${items.length}</span>`, `${open.length} in focus · the rest counted too`);
   set(1, `${done.length} <span class="of">/ ${items.length}</span>`, done.length ? done.map(i=>esc(i.title)).join("<br>") : "None yet");
   const sch = open.map(i=>ckSchedule(i, today)).filter(Boolean), behind = sch.filter(s=>s.cls==="behind").length, ahead = sch.filter(s=>s.cls==="ahead").length;
-  set(2, behind ? "Behind" : ahead ? "Ahead" : "On track", open.length ? `${open.length - behind} of ${open.length} open item${open.length===1?"":"s"} on or ahead of plan` : "&nbsp;");
+  const early = next.filter(i=>ckPool(i.id).ready).length;
+  set(2, behind ? "Behind" : (ahead || early) ? "Ahead" : "On track", (open.length ? `${open.length - behind} of ${open.length} focus item${open.length===1?"":"s"} on or ahead of plan` : "No focus set") + (early ? `<br>${early} more ready before its plan` : ""));
   const lastS = SESS.length ? SESS[SESS.length-1] : null, counted = SESS.filter(s=>s.chunks).length;
   if(lastS && lastS.chunks){
-    const n = open.reduce((a,i)=>a + ((lastS.chunks[i.id]||{}).voice||{uses:0}).uses, 0);
-    set(3, n, `${esc(fmtDate(lastS.date))} · voice, open chunks`);
+    const n = tracked.reduce((a,i)=>a + ((lastS.chunks[i.id]||{}).voice||{uses:0}).uses, 0);
+    set(3, n, `${esc(fmtDate(lastS.date))} · voice, all tracked`);
   } else set(3, "–", "Counting starts at your next check");
-  $("cOpen").innerHTML = open.length ? open.map(i=>ckCard(i, today)).join("") : `<p class="status">Nothing open right now.</p>`;
-  $("cNext").innerHTML = next.length ? next.map(i=>{ const s = ckSchedule(i, today);
-    return `<li><div class="rowtop"><strong>${i.layer==="slice"?"Slice":"Chunk"} ${esc(i.n)}: ${esc(i.title)}</strong>${s?`<span class="pill sched-${s.cls}">${esc(s.text)}</span>`:""}</div>
+  $("cOpen").innerHTML = open.length ? open.map(i=>ckCard(i, today)).join("") : `<p class="status">No focus set. Say "let's update the chunks" in a practice chat to choose one.</p>`;
+  $("cNext").innerHTML = next.length ? next.map(i=>{ const s = ckSchedule(i, today), p = ckPool(i.id);
+    const acc = p.acc==null ? "no uses yet" : `${Math.round(p.acc*100)}%`;
+    return `<li><div class="rowtop"><strong>${i.layer==="slice"?"Slice":"Chunk"} ${esc(i.n)}: ${esc(i.title)}</strong><span class="pill ${p.ready?"ready":p.acc==null?"":p.acc>=p.tgt?"ok":"warn"}">${p.ready?"Ready to settle":acc}</span></div>
+      <div class="sub">${p.last.length} of ${p.win} uses · ${p.sess} session${p.sess===1?"":"s"}${i.difficulty==="hard"?" · rough count":""}${s?` · ${esc(s.text)}`:""}</div>
       ${(i.examples||[])[0]?`<div class="sub"><span style="color:var(--err)">✗ ${esc(i.examples[0].wrong)}</span> → ${esc(i.examples[0].right)}</div>`:""}</li>`; }).join("")
-    : `<li class="status">Nothing waiting.</li>`;
+    : `<li class="status">Everything tracked is in focus.</li>`;
   $("cDone").innerHTML = done.length ? done.map(i=>{ const p = ckPool(i.id), s = ckSchedule(i, today);
     return `<li><div class="rowtop"><strong>${esc(i.title)}</strong><span class="pill ${p.acc!=null&&p.acc<p.tgt?"slip":"ok"}">${p.acc==null?"no uses":Math.round(p.acc*100)+"% · last "+p.last.length}</span></div>${s?`<div class="sub">${esc(s.text)}</div>`:""}</li>`; }).join("")
     : `<li class="status">None yet. A chunk moves here when you settle it.</li>`;

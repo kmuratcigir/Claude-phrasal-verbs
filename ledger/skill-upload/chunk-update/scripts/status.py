@@ -8,7 +8,7 @@ Also prints which items the naturalness check can count yet (FINDERS in chunks.p
 """
 import glob, json, os, sys
 
-COUNTABLE = {"c1", "s1"}          # keep in step with FINDERS in naturalness-check/scripts/chunks.py
+COUNTABLE = {"c1", "c2", "c3", "c4", "c5", "s1", "s2", "s3", "s4"}   # keep in step with FINDERS in naturalness-check/scripts/chunks.py
 
 def load(p):
     d = json.load(open(p, encoding="utf-8")); return d.get("data", d)
@@ -31,5 +31,5 @@ for it in meta["items"]:
     plan = " / ".join(f'{p["from"] or "?"}→{p["to"] or "?"}' for p in it.get("planned", []))
     acc_s = "—" if acc is None else f"{acc:.0%}"
     cnt = "" if it["id"] in COUNTABLE else " · the check can't count this one yet"
-    print(f'{it["id"]:3} {it["status"]:11} {it["title"][:52]:52} | plan {plan} | last {len(last)}/{win} uses, {n_s} sessions, {acc_s}'
+    print(f'{it["id"]:3} {it["status"] + (" ·focus" if it.get("focus") else ""):14} {it["title"][:52]:52} | plan {plan} | last {len(last)}/{win} uses, {n_s} sessions, {acc_s}'
           + (" · READY TO SETTLE" if ready else "") + cnt)

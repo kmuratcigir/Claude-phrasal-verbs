@@ -109,7 +109,7 @@ that was forgotten; writing it out every time is the only way Murat can trust wh
 5. **Recent Sessions**: last 3–4 days in full detail; days 5–14 in 2–3 sentences each;
    anything older than 14 days removed.
 6. **Supportive System Tracking** ("what to watch live" since 28.09.26): only what should
-   change how Claude behaves in the next chat, at most about 18 lines (3 more since 12.10.26 for the chunks). The come-up lists,
+   change how Claude behaves in the next chat, at most about 24 lines (up to 9 more since 12.10.26 for the chunks). The come-up lists,
    stage-ups, tracker counts and Native core numbers live in the ledger; don't copy them here.
    - **Flag live**: the top 3–5 recurring error or Turkish-interference patterns from the
      last few session documents, each with the natural fix (e.g. "in the meantime" for "by
@@ -124,13 +124,14 @@ that was forgotten; writing it out every time is the only way Murat can trust wh
      against Murat's target of 4. Don't list the words it contained; the Reading tab shows
      them and whether he later used them.
    - **Chunks: practice nudge** (added 12.10.26): read `meta/chunks` (`ArtifactData` `get`
-     `meta/chunks`) and list every item with status `open`, one line each: its title, what counts
-     (one short example of right and wrong from the item's `examples`), and the latest pooled figure
-     from the naturalness check's `chunks.py rolling` output (last-12 accuracy and sessions spanned,
-     or "few uses so far"). Then one instruction line for the next chat, word for word: "Steer the
-     conversation so Murat has natural chances to use the open chunks (e.g. ask what he has added to
-     a list, what he hasn't done yet). Don't announce it, don't model the sentence for him first,
-     and flag a wrong use lightly like any other slip." Never change `meta/chunks`; only Murat
+     `meta/chunks`) and list every item with status `open` (all are tracked since 12.10.26), **focus
+     items first** (`focus: true`), one short line each: its title, one example of right and wrong
+     from the item's `examples`, and the latest pooled figure from the naturalness check's
+     `chunks.py rolling` output (last-12 accuracy and sessions spanned, or "few uses so far"). Then
+     one instruction line for the next chat, word for word: "Steer the conversation so Murat has
+     natural chances to use the open chunks, focus items first (e.g. ask what he has added to a
+     list, what he hasn't done yet, what he did last week). Don't announce it, don't model the
+     sentence for him first, and flag a wrong use lightly like any other slip." Never change `meta/chunks`; only Murat
      opens or settles chunks. If the check printed `SUGGEST SETTLED`, add "(ready to settle: Murat
      decides)" to that line.
    - **Open items**: shadowing, Taboo and any other system thread that is waiting on Murat,
@@ -159,7 +160,7 @@ Target **under 10,000 words**. Check the count before finalising.
 ## Step 6: Quality check before delivering
 
 - All 6 sections fully written out (highest-priority check).
-- Under 10,000 words; Section 4 about 8 lines and Section 6 about 18 lines at most.
+- Under 10,000 words; Section 4 about 8 lines and Section 6 about 24 lines at most.
 - Section 6 lists every open chunk from `meta/chunks` with the steering line (since 12.10.26).
 - Every number in Section 4 matches the ledger's session documents (spot-check at least
   today's figures against the check's `session_doc.json`).

@@ -103,4 +103,4 @@ const CHUNKS=[
  {id:'s2',layer:'slice',n:2,title:'"already" and "just" → present perfect',keys:['ch_s2_already']},
  {id:'s3',layer:'slice',n:3,title:'finished time → past simple',keys:['ch_s3_finished']},
  {id:'s4',layer:'slice',n:4,title:'"for" and "since" for things still going on',keys:['ch_s4_forsince']}];
-const CHUNK_DEFAULT={open:['c1','s1'],settled:[],as_of:'2026-10-12',source:'built-in'};
+const CHUNK_DEFAULT={open:['c1','c2','c3','c4','c5','s1','s2','s3','s4'],focus:['c1','s1'],settled:[],as_of:'2026-10-12',source:'built-in'};

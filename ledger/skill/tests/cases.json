@@ -1,28 +1,547 @@
 [
- ["Can you add it to my list?", "c1", true],
- ["I added the quiz work to my pipeline.", "c1", true],
- ["Maybe we should add these points into that list too.", "c1", false],
- ["Let's add new categories in the naturalness check.", "c1", false],
- ["Just paste it into the chat.", "c1", true],
- ["Paste the link in the search box.", "c1", true],
- ["Can you paste it to the chat?", "c1", false],
- ["I devote myself to improving my English.", "c1", true],
- ["I am devoting myself for doing something.", "c1", false],
- ["She dedicated her life to teaching.", "c1", true],
- ["I put a lot of effort into it.", "c1", true],
- ["Put it on my list, please.", "c1", true],
- ["I put it into my list yesterday.", "c1", false],
- ["Put the box in the car.", "c1", null],
- ["It all adds up in the end.", "c1", null],
- ["Let's put off the meeting to next week.", "c1", null],
- ["I'll add it later.", "c1", null],
- ["It hasn't come up yet.", "s1", true],
- ["Have you finished it yet?", "s1", true],
- ["It didn't come up yet.", "s1", false],
- ["Did you finish yet?", "s1", false],
- ["I didn't let him know about it yet.", "s1", false],
- ["It's a simple idea, yet it works.", "s1", null],
- ["That was the best yet.", "s1", null],
- ["Yet another meeting today.", "s1", null],
- ["Not yet.", "s1", null]
+[
+"Can you add it to my list?",
+"c1",
+true
+],
+[
+"I added the quiz work to my pipeline.",
+"c1",
+true
+],
+[
+"Maybe we should add these points into that list too.",
+"c1",
+false
+],
+[
+"Let's add new categories in the naturalness check.",
+"c1",
+false
+],
+[
+"Just paste it into the chat.",
+"c1",
+true
+],
+[
+"Paste the link in the search box.",
+"c1",
+true
+],
+[
+"Can you paste it to the chat?",
+"c1",
+false
+],
+[
+"I devote myself to improving my English.",
+"c1",
+true
+],
+[
+"I am devoting myself for doing something.",
+"c1",
+false
+],
+[
+"She dedicated her life to teaching.",
+"c1",
+true
+],
+[
+"I put a lot of effort into it.",
+"c1",
+true
+],
+[
+"Put it on my list, please.",
+"c1",
+true
+],
+[
+"I put it into my list yesterday.",
+"c1",
+false
+],
+[
+"Put the box in the car.",
+"c1",
+null
+],
+[
+"It all adds up in the end.",
+"c1",
+null
+],
+[
+"Let's put off the meeting to next week.",
+"c1",
+null
+],
+[
+"I'll add it later.",
+"c1",
+null
+],
+[
+"It hasn't come up yet.",
+"s1",
+true
+],
+[
+"Have you finished it yet?",
+"s1",
+true
+],
+[
+"It didn't come up yet.",
+"s1",
+false
+],
+[
+"Did you finish yet?",
+"s1",
+false
+],
+[
+"I didn't let him know about it yet.",
+"s1",
+false
+],
+[
+"It's a simple idea, yet it works.",
+"s1",
+null
+],
+[
+"That was the best yet.",
+"s1",
+null
+],
+[
+"Yet another meeting today.",
+"s1",
+null
+],
+[
+"Not yet.",
+"s1",
+null
+],
+[
+"There was a car approaching to us.",
+"c2",
+false
+],
+[
+"She approached me after the meeting.",
+"c2",
+true
+],
+[
+"I like your approach to the problem.",
+"c2",
+null
+],
+[
+"I mentioned about the Spain trip yesterday.",
+"c2",
+false
+],
+[
+"I mentioned the trip yesterday.",
+"c2",
+true
+],
+[
+"As I mentioned before, it's fine.",
+"c2",
+null
+],
+[
+"We will discuss about it tomorrow.",
+"c2",
+false
+],
+[
+"Let's discuss the plan.",
+"c2",
+true
+],
+[
+"He still contacts with me every week.",
+"c2",
+false
+],
+[
+"You can contact me any time.",
+"c2",
+true
+],
+[
+"We're in contact with them.",
+"c2",
+null
+],
+[
+"Yaz wants to join to her friends.",
+"c2",
+false
+],
+[
+"Yaz wants to join her friends.",
+"c2",
+true
+],
+[
+"Can I join in?",
+"c2",
+null
+],
+[
+"He researched about the topic.",
+"c2",
+false
+],
+[
+"He researched the topic.",
+"c2",
+true
+],
+[
+"There is a lot of research on sleep.",
+"c2",
+null
+],
+[
+"Let me remind you the basics first.",
+"c2",
+false
+],
+[
+"Let me remind you of the basics first.",
+"c2",
+true
+],
+[
+"Remind me to call her.",
+"c2",
+null
+],
+[
+"Who is responsible from this process?",
+"c2",
+false
+],
+[
+"My department is responsible for this process.",
+"c2",
+true
+],
+[
+"I'm bored from this topic.",
+"c2",
+false
+],
+[
+"I'm bored with this topic.",
+"c2",
+true
+],
+[
+"I need to increase my knowledge for them.",
+"c2",
+false
+],
+[
+"Her knowledge of history is huge.",
+"c2",
+true
+],
+[
+"His knowledge about cars is good.",
+"c2",
+"decide"
+],
+[
+"For doing this, I'm building some tools.",
+"c3",
+false
+],
+[
+"I called him for asking about the price.",
+"c3",
+false
+],
+[
+"To do this, I'm building some tools.",
+"c3",
+true
+],
+[
+"We use this window to take care of other things.",
+"c3",
+true
+],
+[
+"Thank you for helping me.",
+"c3",
+null
+],
+[
+"This knife is used for cutting bread.",
+"c3",
+null
+],
+[
+"I need enough time for doing this.",
+"c3",
+null
+],
+[
+"I'm interested in learning Spanish.",
+"c3",
+null
+],
+[
+"I have a feedback for you.",
+"c4",
+false
+],
+[
+"It's a good news.",
+"c4",
+false
+],
+[
+"Can I get some feedbacks from you?",
+"c4",
+false
+],
+[
+"Thanks for all the informations.",
+"c4",
+false
+],
+[
+"I have some feedback for you.",
+"c4",
+true
+],
+[
+"That's good news.",
+"c4",
+true
+],
+[
+"Let's book a feedback session.",
+"c4",
+null
+],
+[
+"I gave her a piece of advice.",
+"c4",
+true
+],
+[
+"We need to research the market.",
+"c4",
+null
+],
+[
+"There's a lot of research on sleep.",
+"c4",
+true
+],
+[
+"We have still 45 minutes to go.",
+"c5",
+false
+],
+[
+"I still have around five minutes.",
+"c5",
+true
+],
+[
+"I still haven't finished.",
+"c5",
+true
+],
+[
+"I haven't still finished.",
+"c5",
+false
+],
+[
+"I've still got time.",
+"c5",
+true
+],
+[
+"Still, it was a good day.",
+"c5",
+null
+],
+[
+"I have still not decided.",
+"c5",
+null
+],
+[
+"I already done it.",
+"s2",
+false
+],
+[
+"We already saw many countries.",
+"s2",
+false
+],
+[
+"I've already done it.",
+"s2",
+true
+],
+[
+"She has just left.",
+"s2",
+true
+],
+[
+"She just left the office.",
+"s2",
+false
+],
+[
+"I just want to say thanks.",
+"s2",
+null
+],
+[
+"It's already late.",
+"s2",
+null
+],
+[
+"I handled two of the items already.",
+"s2",
+false
+],
+[
+"I've done it already.",
+"s2",
+true
+],
+[
+"I had already left.",
+"s2",
+null
+],
+[
+"We've been to Singapore a few months ago.",
+"s3",
+false
+],
+[
+"We went to Singapore a few months ago.",
+"s3",
+true
+],
+[
+"I saw him yesterday.",
+"s3",
+true
+],
+[
+"I've seen him yesterday.",
+"s3",
+false
+],
+[
+"She moved to Baku in 2016.",
+"s3",
+true
+],
+[
+"I've lived here since last year.",
+"s3",
+null
+],
+[
+"I've been busy in the last few days.",
+"s3",
+null
+],
+[
+"I'm working at SOCAR for 15 years.",
+"s4",
+false
+],
+[
+"I've been working at SOCAR for 15 years.",
+"s4",
+true
+],
+[
+"I know him since 2010.",
+"s4",
+false
+],
+[
+"I've known him since 2010.",
+"s4",
+true
+],
+[
+"I lived in Ankara for five years.",
+"s4",
+null
+],
+[
+"I'm staying for two weeks next month.",
+"s4",
+null
+],
+[
+"Since you asked, here it is.",
+"s4",
+null
+],
+[
+"She's been ill for two days.",
+"s4",
+true
+],
+[
+"As you just said, this is Saturday.",
+"s2",
+null
+],
+[
+"Sorry for fumbling around.",
+"c3",
+null
+],
+[
+"I'm sure I mentioned actually.",
+"c2",
+null
+],
+[
+"When it comes to vocabulary, it's fine.",
+"c3",
+null
+],
+[
+"I will use one of Luke's episodes for shadowing.",
+"c3",
+"decide"
+],
+[
+"Sorry, I need to check.",
+"c2",
+null
+]
 ]

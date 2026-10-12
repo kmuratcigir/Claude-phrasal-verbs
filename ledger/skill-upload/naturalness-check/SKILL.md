@@ -44,10 +44,13 @@ numbers", frank both ways, like an executive report.
 
 Since 12.10.26 the check also tracks Murat's **chunks**: a few small targets at a time
 (prepositions, Turkish-shaped patterns, grammar slices), listed in `meta/chunks` with exact
-"what counts" definitions. For every **open** chunk it counts correct *and* wrong uses in his
-speech (a script finds candidates, Claude checks each one) and stores them in the session doc
-as a `chunks` block. The Ledger's Chunks tab pools them across sessions: a chunk is "settled"
-when its last 12 voice uses are at 80% or better, spread over at least 4 sessions. The check
+"what counts" definitions. Since 12.10.26 (later that day) **every** chunk and slice is tracked
+(status `open`) from day one, not only the current one: Murat may get one right before its date.
+`focus: true` marks what the dated plan says to work on now; it doesn't change what is counted.
+For every open item the check counts correct *and* wrong uses in his speech (a script finds
+candidates, Claude checks each one) and stores them in the session doc as a `chunks` block. The
+Ledger's Chunks tab pools them across sessions: any item is "settled" when its last 12 voice uses
+are at 80% or better, spread over at least 4 sessions, whatever its dates. The check
 **never changes `meta/chunks`**: only Murat opens, settles or adds chunks. Plan:
 https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf
 
@@ -207,7 +210,7 @@ python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json drilled_wo
 python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json
 ```
 
-`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for the **open** chunks and slices only:
+`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (all nine since 12.10.26):
 index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
 tell), the matched words and the sentence. If it prints `NOT COUNTED (no finder yet ...)`, Murat opened
 a chunk the script can't count yet: the other open chunks are still counted; say in the report
@@ -578,8 +581,10 @@ Mistakes by impact: <m> change the meaning, <f> sound foreign, <s> slips.
 - "<quote>" → <suggestion>   (2–3)
 
 ## Chunks
-- **<item title>:** <n> uses in voice today, <c> correct. Last 12: <acc>% over <s> sessions<, SUGGEST SETTLED>.
-   (one line per open chunk or slice; "no uses today" when none; quote one wrong use with its fix)
+- **<focus item title>:** <n> uses in voice today, <c> correct. Last 12: <acc>% over <s> sessions<, SUGGEST SETTLED>.
+   (one line per focus item; "no uses today" when none; quote one wrong use with its fix)
+- **Also tracked:** <title> <c>/<n>, <title> <c>/<n>, ... (only items used today, one line; then any
+   SUGGEST SETTLED among them, with its last-12 figure)
 ```
 
 Headings must stay exactly `## Errors`, `## Strong B2+ grammar`, `## Phrasal verbs`, `## Vocabulary`,
@@ -713,10 +718,11 @@ part of the report holds:
    from the previous session's same mode; the top 3 patterns this session, each with one quote and
    its fix; any pattern that is new; two or three of the most useful upgrade suggestions. Lead with
    a pattern that is still recurring across sessions (the Naturalness tab's "All sessions" view).
-7. Chunks (added 12.10.26): one line per open chunk or slice from `chunks.py rolling`: today's voice
-   uses and how many were correct, the last-12 accuracy and how many sessions it spans, and
-   `SUGGEST SETTLED` when it appears (Murat confirms; never change `meta/chunks` yourself). A
-   rare chunk with no uses today is normal: say "no uses today", not "fixed".
+7. Chunks (added 12.10.26): one line per **focus** item from `chunks.py rolling` (today's voice uses
+   and how many were correct, the last-12 accuracy and how many sessions it spans), one line for the
+   other tracked items that came up today, and every `SUGGEST SETTLED`, focus or not (Murat
+   confirms; never change `meta/chunks` yourself). A rare chunk with no uses today is normal: say
+   "no uses today", not "fixed". Chunk 3 is a rough count: say so if you quote its figure.
 8. The dashboard link for the full view (the Phrasal verbs tab shows the whole tracker, the
    Naturalness tab the interference patterns, the Vocabulary tab the vocab tracker).
 
@@ -789,8 +795,9 @@ from estimation.
 - Chunk counts (added 12.10.26) cover only the words and patterns in each chunk's definition; similar
   mistakes outside it are still errors but don't count for the chunk. Chunk 3 ("to", not "for +
   -ing") is rough: correct purpose clauses are hard to find mechanically. Rare chunks give few uses
-  per session, which is why the settled rule pools the last 12 uses. Tested 12.10.26: 26/26 example
-  sentences, 6/6 rolling-rule cases, and the 10.10 session matched a hand count.
+  per session, which is why the settled rule pools the last 12 uses. Tested 12.10.26: 109/109 example
+  sentences across all nine finders, 6/6 rolling-rule cases, and the 10.10 session (24 candidates,
+  3 set by hand) matched a hand count. "As you just said" and similar phrases are left out of slice 2.
 - Pronunciation, fluency and pauses aren't measured. Only the transcript text is available.
 
 ## Scripts
