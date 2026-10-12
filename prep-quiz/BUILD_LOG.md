@@ -1,9 +1,9 @@
 # Prepositions & Collocations quiz: build log
 
-Session date: 07.10.2026 · Published versions: 1 to 12 · Status: working, in use
+Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 13 · Status: working, in use
 
 ## Links
-- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 12)
+- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 13)
 - **Fluency Ledger (source of truth, read-only for this project so far):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK
 - **Vocab quiz (style reference, never edited):** https://claude.ai/artifact/PkXEna9VTLyi2FDj4LDtD9
 
@@ -18,7 +18,7 @@ Session date: 07.10.2026 · Published versions: 1 to 12 · Status: working, in u
 | `src/stats_adv.js` | Speaking hits for Challenge patterns (`Object.assign(HITS, …)`) |
 | `src/group.py` | The regex grouping used to sort ledger slips into patterns (reference; needs manual review) |
 | `build.py` | Assembles `prep-quiz.html` from `src/`. Run it, then publish that file to the artifact URL |
-| `prep-quiz.html` | Built page, identical to published version 12 |
+| `prep-quiz.html` | Built page, identical to published version 13 |
 
 To republish from a new thread: run `python3 prep-quiz/build.py`, read the artifact first (`Artifact action:"read"` with the URL), then publish `prep-quiz/prep-quiz.html` with `url` = the artifact URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -130,9 +130,10 @@ Claude's assessment:
 - **Suggested order if the user says yes:** revoke the token → put the Ledger source in the repo with a build step → prep quiz first → phrasal verb quiz → irregular drill last.
 - **Next question for the user:** does the irregular drill's saved history matter, or can it start fresh?
 
-## 12.10 update (not yet published)
+## 12.10 update (published as version 13)
 - **Speaking snapshot to 10.10.** 07.10 is the hand-sorted column from the 07.10 thread. 08.10, 09.10 and 10.10 were sorted by Claude (regex from `group.py`, then each slip checked by hand). One-off word-choice slips and phrasal-verb misuse are left out as before.
 - **Top-up rule (agreed 12.10):** every pattern keeps at least 3 new-context items. Whenever the feed adds the user's sentences, it also checks the pattern's new-context count and proposes enough to reach 3; brand-new patterns get 3. Each new item changes the frame (subject, tense, question/negative, position, topic), not just the noun.
 - **Why:** the mix is applied per session, so adding the user's sentences never breaks the ratio. The real risk was repetition: 46 patterns had only 1–2 new contexts, so the user would memorise sentences rather than the pattern.
+- The river item ("rose ___ its normal level") accepts "above" or "over", at the user's request.
 - **Tests:** frozen fake db with the real 12.10 `patterns` data. 0 existing items moved, 48 added. Mix exact at 0, 50 and 75%. Oldest-first: no repeats back-to-back; with 6 items over 40 picks, each came up 5–8 times. A full session saved without errors.
 - **Possible new patterns seen in 08.10–10.10, not in the quiz yet:** "the first time" with no preposition (4: in/at the first time), "evolve into" (3), "apologise to me" (3), "on the right track" (2), "at dinner" (2).
