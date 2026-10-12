@@ -173,6 +173,7 @@
   <div class="mode-switch">
     <button class="mode-btn active" id="modePractice">Practice</button>
     <button class="mode-btn" id="modeChallenge">Challenge</button>
+    <button class="mode-btn" id="modeChunks">Chunks</button>
     <button class="mode-btn" id="modeProgress">Progress</button>
   </div>
   <div id="banner" class="banner" hidden></div>
@@ -771,6 +772,112 @@ adv_upon:[N('___ hearing the news, she burst into tears.','On|Upon',['At','In'],
 adv_above_level:[N('The river rose ___ its normal level after the storm.','above|over',['after','beyond']),N('Your blood pressure is slightly ___ normal.','above',['over','after'])]
 };
 BANK.forEach(p=>{if(TOPUP[p.k])p.items.push(...TOPUP[p.k]);});
+// ---------- Chunk bank (12.10): chunks 3-5 and grammar slices 1-4 from the chunk plan ----------
+// New patterns only (sec 'chunk'), so no existing item index moves. Not wired into Practice/Challenge:
+// the Chunk mode (step 6) serves them. Y = Murat's sentence from the Fluency Ledger (fillers removed,
+// dated); N = new context. "(verb)" after a gap gives the base form to use.
+const CHUNK_BANK=[
+{k:'ch_c3_purpose',sec:'chunk',chunk:'c3',label:'"to", not "for + -ing", for purpose',tr:'-mek için (yapmak için → "for doing")',wrong:['for doing','for -ing'],
+ trap:'Turkish "-mek için" turns into "for + -ing". Is this saying WHY someone does something?',
+ why:'To say why someone does something, English uses "to" + the base verb: I called him to ask, use the car to go. "For + -ing" is for what a thing is used for: a knife for cutting bread.',
+ items:[Y('10.10','___ (do) this, I\'m building some tools.','To do',['For doing']),
+ Y('30.09','___ (build) the connection, I had to …','To build',['For building']),
+ Y('28.09','… use that car ___ (go) to Alicante.','to go',['for going','for heading']),
+ Y('22.09','… use this window ___ (take) care of other things.','to take',['for taking']),
+ Y('01.10','… come to the office ___ (work).','to work',['for working']),
+ Y('22.09','… was mainly ___ (protect) me.','to protect',['for protecting']),
+ Y('09.10','We need to eat ___ (do) something.','to do',['for doing']),
+ X('05.10','We will use these national holidays for expanding our stay.','We will use these national holidays to extend our stay.|We\'ll use these national holidays to extend our stay.|We will use these national holidays to expand our stay.','for expanding','to extend'),
+ N('She saved for months ___ (buy) her first car.','to buy',['for buying']),
+ N('___ (avoid) the traffic, we left at six.','To avoid',['For avoiding']),
+ N('I went to the bank ___ (open) an account.','to open',['for opening']),
+ N('This knife is only ___ (cut) bread.','for cutting',['to cut'],'What a thing is for: "for + -ing" is right here. Nobody is doing anything on purpose.')]},
+{k:'ch_c4_uncount',sec:'chunk',chunk:'c4',label:'no "a" before uncountable nouns',tr:'bir geri bildirim / geri bildirimler (Turkish counts these nouns)',wrong:['a','an'],zero:true,
+ trap:'Turkish happily says "bir geri bildirim" and "geri bildirimler". Can this English noun take "a" or a plural -s?',
+ why:'Feedback, news, advice, information, homework, research, progress, luggage and furniture are uncountable: no "a", no -s. Use "some", nothing, or "a piece of": some feedback, good news, a piece of advice.',
+ items:[Y('06.10','I have ___ feedback for you.','some|∅',['a']),
+ Y('06.10','It\'s ___ good news.','∅',['a']),
+ Y('29.09','I need ___ reassurance.','some|∅',['a']),
+ Y('08.10','… all the ___ . (information)','information',['informations']),
+ Y('10.10','Maybe I can get some ___ from you. (feedback)','feedback',['feedbacks']),
+ Y('01.10','… send you over her ___ . (homework)','homework',['homeworks']),
+ Y('28.09','He was speaking from his ___ . (research)','research',['researches']),
+ X('06.10','Too much feedbacks can be overwhelming.','Too much feedback can be overwhelming.','feedbacks','feedback'),
+ N('Can you give me ___ advice?','some|∅',['an','a']),
+ N('Our ___ was lost at the airport. (luggage)','luggage',['luggages']),
+ N('We bought some new ___ for the flat. (furniture)','furniture',['furnitures']),
+ N('You\'ve made ___ great progress this month.','∅',['a'])]},
+{k:'ch_c5_still',sec:'chunk',chunk:'c5',label:'"still" goes before "have"',tr:'zamanım hâlâ var (free word order in Turkish)',wrong:['have still'],
+ trap:'Turkish lets "hâlâ" move around. In English, where does "still" sit next to "have"?',
+ why:'"Still" goes before the main verb: I still have time, we still have 45 minutes. With a helping verb it goes after the first one: it will still work, I\'ve still got time. In a negative it comes first: I still haven\'t finished.',
+ items:[Y('18.09','We ___ 45 minutes to go. (still / have)','still have',['have still']),
+ Y('03.10','I ___ around five minutes. (still / have)','still have',['have still']),
+ Y('08.10','I ___ a long journey ahead of me. (still / have)','still have',['have still']),
+ Y('09.10','We ___ one to go. (still / have)','still have',['have still']),
+ Y('02.10','The skill ___ catch it. (still / will)','will still',['still will'],'With a helping verb, "still" goes after it.'),
+ X('05.10','I have still some tasks to complete.','I still have some tasks to complete.','have still','still have'),
+ N('She ___ the receipt from the shop. (still / have)','still has',['has still']),
+ N('Do they ___ the old car? (still / have)','still have',['have still']),
+ N('I ___ my bonus. (still / haven\'t got)','still haven\'t got|still have not got',['haven\'t still got']),
+ N('We\'ve ___ two days left. (still / got)','still got',['got still'])]},
+{k:'ch_s1_yet',sec:'chunk',chunk:'s1',label:'"yet" → present perfect',tr:'henüz söylemedim (Turkish uses the past form)',wrong:['didn\'t'],
+ trap:'Turkish says "henüz söylemedim" with a past ending. With "yet", which English tense joins the past to now?',
+ why:'"Yet" asks whether something has happened up to now, so it takes the present perfect: I haven\'t told him yet, has it arrived yet? "Didn\'t ... yet" is common in American speech but marked in British English.',
+ items:[Y('22.09','I ___ him know about it yet. (let)','haven\'t let|have not let',['didn\'t let']),
+ Y('08.10','We ___ them yet. (meet)','haven\'t met|have not met',['didn\'t meet']),
+ Y('09.10','It ___ yet. (come up)','hasn\'t come up|has not come up',['didn\'t come up']),
+ Y('05.10','The decision ___ yet. (make)','hasn\'t been made|has not been made',['is not made','wasn\'t made']),
+ Y('30.09','I ___ the final version yet. (launch)','haven\'t launched|have not launched',['didn\'t launch']),
+ Y('09.10','I ___ anything about it yet. (hear)','haven\'t heard|have not heard',['didn\'t hear']),
+ X('02.10','I didn\'t finish it yet.','I haven\'t finished it yet.|I have not finished it yet.','didn\'t finish','haven\'t finished'),
+ N('___ the parcel arrived yet?','Has',['Did']),
+ N('She ___ her exams yet. (finish)','hasn\'t finished|has not finished',['didn\'t finish']),
+ N('We ___ to the new restaurant yet. (be)','haven\'t been|have not been',['didn\'t go','weren\'t'])]},
+{k:'ch_s2_already',sec:'chunk',chunk:'s2',label:'"already" and "just" → present perfect',tr:'zaten yaptım / az önce geldi (Turkish uses the past form)',wrong:['already did','just came'],
+ trap:'Turkish says "zaten yaptım" and "az önce geldi" with a past ending. In British English, which tense goes with "already" and "just"?',
+ why:'For something finished very recently or earlier than expected, British English uses the present perfect: I\'ve already done it, she\'s just left. American English often says "I already did it", so this is the lowest priority.',
+ items:[Y('23.09','I ___ it. (already / do)','\'ve already done|have already done',['already did','already done']),
+ Y('25.09','We ___ many countries. (already / see)','\'ve already seen|have already seen',['already saw','already seen']),
+ Y('27.09','He ___ to Turkey from England. (just / come)','has just come|\'s just come',['has just came','just came']),
+ Y('10.10','I ___ two of the items. (already / handle)','\'ve already handled|have already handled',['already handled']),
+ Y('23.09','You ___ this question three times. (already / ask)','\'ve already asked|have already asked',['already asked']),
+ N('Sorry, she ___ . (just / leave)','\'s just left|has just left',['just left']),
+ N('I ___ lunch, thanks. (already / have)','\'ve already had|have already had',['already had']),
+ N('Quick, the film ___ ! (just / start)','\'s just started|has just started',['just started'])]},
+{k:'ch_s3_finished',sec:'chunk',chunk:'s3',label:'finished time → past simple',tr:'Turkish has no present perfect, so the choice feels arbitrary',gen:true,wrong:['have been','have done'],
+ trap:'Is the time finished (yesterday, last week, a few months ago)? Then which tense?',
+ why:'With a finished time (yesterday, last week, ago, in 2016) English uses the past simple: we went to Singapore a few months ago. The present perfect is for time that is still running: this week, so far, since Monday.',
+ items:[Y('07.10','We ___ to Singapore a few months ago. (go)','went',['\'ve been','have been']),
+ Y('22.09','Let\'s look at the items we ___ yesterday. (do)','did',['\'ve done','have done']),
+ Y('02.10','Eventually they ___ their money. (lose)','lost',['\'ve lost','have lost'],'A finished story: past simple.'),
+ X('07.10','We\'ve been to Singapore a few months ago.','We went to Singapore a few months ago.','\'ve been to','went to'),
+ N('I ___ him yesterday at the gym. (see)','saw',['have seen','\'ve seen']),
+ N('She ___ to Baku in 2016. (move)','moved',['has moved','\'s moved']),
+ N('They ___ the contract last week. (sign)','signed',['have signed','\'ve signed']),
+ N('I ___ him three times this week. (see)','\'ve seen|have seen',['saw'],'"This week" isn\'t finished yet, so the present perfect fits.')]},
+{k:'ch_s4_forsince',sec:'chunk',chunk:'s4',label:'"for" and "since" for things still going on',tr:'15 yıldır çalışıyorum (Turkish present + -dır)',wrong:['am working','know'],
+ trap:'Turkish says "15 yıldır çalışıyorum" in the present. Is it still going on now, from a point in the past?',
+ why:'For something that started in the past and is still true, English uses the present perfect (simple or continuous) with "for" (a length of time) or "since" (a starting point): I\'ve been working here for 15 years, I\'ve known him since 2010.',
+ items:[N('I ___ at SOCAR for 15 years. (work)','\'ve been working|have been working|\'ve worked|have worked',['\'m working','am working','work']),
+ N('I ___ him since 2010. (know)','\'ve known|have known',['know','\'m knowing']),
+ N('She ___ in London since March. (live)','\'s lived|has lived|\'s been living|has been living',['lives','is living']),
+ N('We ___ this car for six years. (have)','\'ve had|have had',['have','\'re having']),
+ N('I lived in Ankara ___ five years, then moved to Baku.','for',['since'],'A finished period: past simple with "for".')]}
+];
+CHUNK_BANK.forEach(p=>BANK.push(p));
+// Chunk list as agreed on 12.10 (meta/chunks in the Fluency Ledger). keys = the quiz patterns that train it.
+// CHUNK_DEFAULT is used until the Ledger's statuses are copied into this quiz's memory (chunks/state).
+const CHUNKS=[
+ {id:'c1',layer:'chunk',n:1,title:'"to" or "into" after add, put, paste, devote',keys:['add_to','paste_into','dedicate_to','invest_in','on_my_list','put_add']},
+ {id:'c2',layer:'chunk',n:2,title:'verbs with a fixed preposition, or none',keys:['no_prep_verbs','mention_discuss','remind_of','responsible_for','angry_with','of_not_for']},
+ {id:'c3',layer:'chunk',n:3,title:'"to", not "for + -ing", for purpose',keys:['ch_c3_purpose']},
+ {id:'c4',layer:'chunk',n:4,title:'no "a" before uncountable nouns',keys:['ch_c4_uncount']},
+ {id:'c5',layer:'chunk',n:5,title:'"still" goes before "have"',keys:['ch_c5_still']},
+ {id:'s1',layer:'slice',n:1,title:'"yet" → present perfect',keys:['ch_s1_yet']},
+ {id:'s2',layer:'slice',n:2,title:'"already" and "just" → present perfect',keys:['ch_s2_already']},
+ {id:'s3',layer:'slice',n:3,title:'finished time → past simple',keys:['ch_s3_finished']},
+ {id:'s4',layer:'slice',n:4,title:'"for" and "since" for things still going on',keys:['ch_s4_forsince']}];
+const CHUNK_DEFAULT={open:['c1','s1'],settled:[],as_of:'2026-10-12',source:'built-in'};
 
 const INTERVALS=[0,1,3,7,14,30];
 const FAMILIES=[
@@ -787,11 +894,11 @@ const FAMILIES=[
  {id:'forms',label:'Word forms (-ing, by, from)',keys:['worth_ing','by_using','struggle_to','different_from']},
  {id:'vn',label:'Verb + noun collocations',keys:['vn_decision','vn_break','vn_analysis','vn_score','have_a_talk','do_practice','lift_mood','throw_question','put_add','vn_call','vn_meeting']}];
 let hmSet='prep', hmMetric='combined', hmOpen=new Set();
-let openFams=new Set(), openPick=new Set(), advSel=new Set(), advPickOpen=false, sessions={core:null,adv:null};
+let openFams=new Set(), openPick=new Set(), advSel=new Set(), advPickOpen=false, sessions={core:null,adv:null,chunk:null}, chunkSel=new Set(), chunkState=JSON.parse(JSON.stringify(CHUNK_DEFAULT));
 const ZERO='∅';
 const AS_OF=SESSIONS[SESSIONS.length-1].d;
 const P={}; BANK.forEach(p=>{P[p.k]=p; p.items.forEach((it,i)=>it.i=i); let pi=0; p.items.forEach(it=>{if(it.c){it.h=(PAIR_HINTS_2[p.k]&&PAIR_HINTS_2[p.k][pi])||PAIR_HINTS[p.k]||'';pi++;}});});
-const isCore=p=>p.sec!=='adv';
+const isCore=p=>p.sec!=='adv'&&p.sec!=='chunk';
 let db=null, memState={}, prefs={size:20,vn:false,mix:0.5}, session=null, view='practice', manualOpen=false, manualSel=new Set();
 const writeChains={};
 
@@ -923,16 +1030,17 @@ function record(x){
 // ---------- practice view ----------
 function showBanner(t){const b=document.getElementById('banner');b.textContent=t;b.hidden=!t;}
 function render(){
-  const quizView=view==='practice'||view==='challenge', tab=view==='challenge'?'adv':'core';
+  const quizView=view==='practice'||view==='challenge'||view==='chunks', tab=view==='challenge'?'adv':view==='chunks'?'chunk':'core';
   document.getElementById('practiceView').hidden=!quizView;
   document.getElementById('progressView').hidden=view!=='progress';
   document.getElementById('modePractice').classList.toggle('active',view==='practice');
   document.getElementById('modeChallenge').classList.toggle('active',view==='challenge');
+  document.getElementById('modeChunks').classList.toggle('active',view==='chunks');
   document.getElementById('modeProgress').classList.toggle('active',view==='progress');
   if(quizView) session=sessions[tab];
   const showQuiz=quizView&&!!session;
   document.body.classList.toggle('has-bar',!!showQuiz);
-  if(showQuiz) renderQuiz(); else if(view==='practice') renderStart(); else if(view==='challenge') renderChallengeStart(); else renderProgress();
+  if(showQuiz) renderQuiz(); else if(view==='practice') renderStart(); else if(view==='challenge') renderChallengeStart(); else if(view==='chunks') renderChunkStart(); else renderProgress();
 }
 function renderStart(){
   const root=document.getElementById('practiceView'); root.innerHTML='';
@@ -1045,6 +1153,51 @@ function renderChallengeStart(){
   mg.onclick=()=>{if(!advSel.size){cnt.textContent='Select at least one pattern first.';return;}const size=clampSize(mi.value);prefs.advSize=size;savePrefs();session=sessions.adv=buildSession(manualPlan(size,[...advSel]),'manual',size,'adv');saveSession();render();window.scrollTo(0,0);};
   pk.appendChild(mr); card.appendChild(pk); root.appendChild(card);
 }
+// ---------- chunk mode (12.10): the open chunks from the Fluency Ledger, settled ones as light review ----------
+const CK=Object.fromEntries(CHUNKS.map(c=>[c.id,c]));
+const ckName=c=>(c.layer==='slice'?'Slice ':'Chunk ')+c.n;
+function autoPlanChunk(size){
+  const open=chunkState.open.map(id=>CK[id]).filter(Boolean), settled=(chunkState.settled||[]).map(id=>CK[id]).filter(Boolean);
+  const review=settled.length?Math.min(settled.length*2,Math.max(1,Math.round(size*0.2))):0;
+  const alloc=new Map(); let used=0;
+  const plan=(chunks,slots,tag)=>{
+    if(!chunks.length||slots<=0) return;
+    const cands=chunks.flatMap(c=>c.keys.filter(k=>P[k]).map(k=>{const p=P[k],due=isDue(k),miss=lastMiss(k),tested=!!(memState[k]&&memState[k].history.length);
+      const why=[ckName(c)+' · '+tag]; let score=Math.random();
+      if(due){score+=4;why.push('due for review');} if(miss){score+=3;why.push('missed last time');} if(!tested){score+=2;why.push('not practised yet');}
+      return {p,c,score,why};}));
+    // share the slots evenly between chunks, then by score inside each chunk
+    const per={}; chunks.forEach((c,i)=>per[c.id]=Math.floor(slots/chunks.length)+(i<slots%chunks.length?1:0));
+    chunks.forEach(c=>{let left=per[c.id]; const mine=cands.filter(x=>x.c===c).sort((a,b)=>b.score-a.score);
+      let moved=true; while(left>0&&moved){moved=false; for(const x of mine){if(left<=0)break;const cur=alloc.get(x)||0;if(cur<x.p.items.length){alloc.set(x,cur+1);left--;used++;moved=true;}}}});
+  };
+  plan(open,size-review,'open'); plan(settled,review,'review');
+  return alloc;
+}
+function renderChunkStart(){
+  const root=document.getElementById('practiceView'); root.innerHTML='';
+  const card=el('div','card'); const head=el('div','ex-head'); head.appendChild(el('h2',null,'Chunks: your current targets'));
+  head.appendChild(el('span','type-pill',chunkState.source==='ledger'?'from the Ledger · '+fmtDate(chunkState.as_of):'list as of '+fmtDate(chunkState.as_of))); card.appendChild(head);
+  const open=chunkState.open.map(id=>CK[id]).filter(Boolean), settled=(chunkState.settled||[]).map(id=>CK[id]).filter(Boolean);
+  card.appendChild(el('div','note','Practice for the chunks you are tracking in speech. Open chunks make up the session; settled ones come back now and then as review. The Fluency Ledger decides what is open, not this quiz, and quiz results never go to the Ledger.'));
+  const ol=el('div','preview'); ol.appendChild(el('b',null,'Open: ')); ol.appendChild(document.createTextNode(open.length?open.map(c=>ckName(c)+': '+c.title).join(' · '):'nothing open')); card.appendChild(ol);
+  if(settled.length){const sl=el('div','preview'); sl.appendChild(el('b',null,'Settled (review): ')); sl.appendChild(document.createTextNode(settled.map(c=>ckName(c)+': '+c.title).join(' · '))); card.appendChild(sl);}
+  const grid=el('div','start-grid'); grid.style.marginTop='14px';
+  const a=el('div','start-box'); a.appendChild(el('h3',null,'Auto pick'));
+  a.appendChild(el('p',null,'Your open chunks, shared evenly, with due reviews and last-time misses first. Uses your mix setting from Practice.'));
+  const r=el('div','row'); r.appendChild(el('span','lbl','Items')); const inp=el('input','size-input'); inp.type='number'; inp.min='5'; inp.max='60'; inp.id='chunkSize'; inp.value=prefs.chunkSize||15; r.appendChild(inp); a.appendChild(r);
+  const go=el('button','btn primary','Start chunk session'); go.disabled=!open.length;
+  go.onclick=()=>{const size=clampSize(inp.value);prefs.chunkSize=size;savePrefs();session=sessions.chunk=buildSession(autoPlanChunk(size),'auto',size,'chunk');saveSession();render();window.scrollTo(0,0);};
+  a.appendChild(go); grid.appendChild(a);
+  const m=el('div','start-box'); m.appendChild(el('h3',null,'Choose myself')); m.appendChild(el('p',null,'Practise any chunk, open or not.'));
+  CHUNKS.forEach(c=>{const lab=el('label','pick-item');const cb=el('input');cb.type='checkbox';cb.id='ck_'+c.id;cb.checked=chunkSel.has(c.id);cb.onchange=()=>{cb.checked?chunkSel.add(c.id):chunkSel.delete(c.id);};
+    lab.appendChild(cb);lab.appendChild(el('span','l',ckName(c)+': '+c.title));const st=chunkState.open.includes(c.id)?'open':(chunkState.settled||[]).includes(c.id)?'settled':'';if(st)lab.appendChild(el('span','meta',st));m.appendChild(lab);});
+  const mr=el('div','row'); const mi=el('input','size-input'); mi.type='number'; mi.min='5'; mi.max='60'; mi.id='chunkManSize'; mi.value=prefs.chunkSize||15; mr.appendChild(el('span','lbl','Items')); mr.appendChild(mi);
+  const cnt=el('span','lbl',''); const mg=el('button','btn primary','Start my chunks'); mr.appendChild(mg); mr.appendChild(cnt);
+  mg.onclick=()=>{if(!chunkSel.size){cnt.textContent='Tick at least one chunk first.';return;}const size=clampSize(mi.value);prefs.chunkSize=size;savePrefs();
+    const keys=[...chunkSel].flatMap(id=>CK[id].keys).filter(k=>P[k]);session=sessions.chunk=buildSession(manualPlan(size,keys),'manual',size,'chunk');saveSession();render();window.scrollTo(0,0);};
+  m.appendChild(mr); grid.appendChild(m); card.appendChild(grid); root.appendChild(card);
+}
 function clampSize(v){v=parseInt(v,10);return isNaN(v)?20:Math.max(5,Math.min(60,v));}
 function savePrefs(){lsSet('ppq_prefs',prefs);if(db)db.doc('settings/prefs').set(prefs).catch(()=>{});}
 
@@ -1074,7 +1227,7 @@ function renderQuiz(){
   const total=session.items.length, done=session.items.filter(x=>x.done).length;
   const tr=el('div','progress-track'); const fill=el('div','progress-fill'); fill.style.width=(done/total*100)+'%'; tr.appendChild(fill); root.appendChild(tr);
   const card=el('div','card');
-  const head=el('div','ex-head'); head.appendChild(el('h2',null,(session.tab==='adv'?'Challenge · ':'')+(session.mode==='auto'?'Auto session':'Your session')+' · '+total+' items')); head.appendChild(el('span','type-pill',done+' / '+total+' answered')); card.appendChild(head);
+  const head=el('div','ex-head'); head.appendChild(el('h2',null,(session.tab==='adv'?'Challenge · ':session.tab==='chunk'?'Chunks · ':'')+(session.mode==='auto'?'Auto session':'Your session')+' · '+total+' items')); head.appendChild(el('span','type-pill',done+' / '+total+' answered')); card.appendChild(head);
   session.items.forEach((x,i)=>card.appendChild(renderItem(x,i)));
   root.appendChild(card);
   if(done===total) root.appendChild(renderSummary());
@@ -1103,7 +1256,7 @@ function renderItem(x,i){
     inp.oninput=inp.onchange=()=>{x.answer=inp.value;}; inp.onkeydown=e=>{if(e.key==='Enter'&&!x.done)check(x,i);};
     pr.appendChild(inp); pr.appendChild(document.createTextNode(parts.slice(1).join('___')));
     if(!x.done){
-      if(x.p.sec==='prep'){const z=el('button','mini-btn zero','∅ no preposition');z.title='Nothing goes in this gap';z.onclick=()=>check(x,i,true);btns.appendChild(z);}
+      if(x.p.sec==='prep'||x.p.zero){const z=el('button','mini-btn zero',x.p.zero?'∅ nothing':'∅ no preposition');z.title='Nothing goes in this gap';z.onclick=()=>check(x,i,true);btns.appendChild(z);}
       const cb=el('button','mini-btn check','Check'); cb.onclick=()=>check(x,i); btns.appendChild(cb);
     }
   }else if(x.fmt==='pair'){
@@ -1234,7 +1387,8 @@ function sparkSVG(sp){
   return svg;
 }
 function tabScore(tab){
-  const ps=BANK.filter(p=>tab==='adv'?p.sec==='adv':isCore(p)); let hist=[];
+  const chunkKeys=new Set(CHUNKS.flatMap(c=>c.keys));
+  const ps=BANK.filter(p=>tab==='adv'?p.sec==='adv':tab==='chunk'?chunkKeys.has(p.k):isCore(p)); let hist=[];
   ps.forEach(p=>{const s=memState[p.k];if(s)s.history.forEach(h=>hist.push(h));}); hist.sort((a,b)=>a.t<b.t?-1:1);
   const last=hist.slice(-30); const acc=last.length?last.reduce((a,h)=>a+(h.ok?(h.hint?0.5:1):0),0)/last.length:null;
   const quizzed=ps.filter(p=>memState[p.k]&&memState[p.k].history.length).length, strong=ps.filter(p=>quizStrength(p.k).cls==='strong').length, weak=ps.filter(p=>quizStrength(p.k).cls==='weak').length;
@@ -1308,13 +1462,13 @@ function renderProgress(){
   const root=document.getElementById('progressView'); root.innerHTML='';
   const sc=el('div','card'); const sh=el('div','ex-head'); sh.appendChild(el('h2',null,'Scores')); sh.appendChild(el('span','type-pill','last 30 answers per tab')); sc.appendChild(sh);
   const sg=el('div','start-grid');
-  [['core','Practice (your patterns)'],['adv','Challenge (harder prepositions)']].forEach(([tab,name])=>{const t=tabScore(tab);const b=el('div','start-box');b.appendChild(el('h3',null,name));
+  [['core','Practice (your patterns)'],['adv','Challenge (harder prepositions)'],['chunk','Chunks (all chunk patterns)']].forEach(([tab,name])=>{const t=tabScore(tab);const b=el('div','start-box');b.appendChild(el('h3',null,name));
     const sm=el('div','summary');[[t.acc==null?'—':Math.round(t.acc*100)+'%','accuracy'],[t.answers,'answers'],[t.quizzed+' / '+t.total,'patterns practised']].forEach(([v,k])=>{const s=el('div','stat');s.appendChild(el('div','v',String(v)));s.appendChild(el('div','k',k));sm.appendChild(s);});
     b.appendChild(sm); b.appendChild(el('p',null,(t.strong||t.weak?t.strong+' strong · '+t.weak+' weak · ':'')+(t.lastDay?'last practised '+fmtDate(t.lastDay):'not practised yet')+'. A hinted correct answer counts as half.'));sg.appendChild(b);});
   sc.appendChild(sg); root.appendChild(sc);
   root.appendChild(renderHeatmap());
   const card=el('div','card'); const head=el('div','ex-head'); head.appendChild(el('h2',null,'How each pattern is going')); head.appendChild(el('span','type-pill','speaking data as of '+AS_OF+' · '+N_S+' sessions')); card.appendChild(head);
-  const showVn=prefs.vn; const pats=BANK.filter(p=>p.sec==='adv'||showVn||p.sec==='prep').filter(p=>speech(p.k).total>0||memState[p.k]);
+  const showVn=prefs.vn; const pats=BANK.filter(p=>p.sec!=='chunk'&&(p.sec==='adv'||showVn||p.sec==='prep')).filter(p=>speech(p.k).total>0||memState[p.k]);
   const noSpeech=[];
   const cells={c1:[],c2:[],c3:[],c4:[]}, untested=[];
   pats.forEach(p=>{const sp=speech(p.k), q=quizStrength(p.k); const inSpeech=sp.trend==='rising'||sp.trend==='steady';
@@ -1366,10 +1520,12 @@ function renderProgress(){
 document.getElementById('modePractice').onclick=()=>{view='practice';render();};
 document.getElementById('modeProgress').onclick=()=>{view='progress';render();};
 document.getElementById('modeChallenge').onclick=()=>{view='challenge';render();};
+document.getElementById('modeChunks').onclick=()=>{view='chunks';render();};
 (function boot(){
   const ls=lsGet('ppq_state'); if(ls&&typeof ls==='object') memState=ls;
   const lp=lsGet('ppq_prefs'); if(lp&&typeof lp==='object') prefs=Object.assign(prefs,lp);
-  sessions.core=restoreSession('core'); sessions.adv=restoreSession('adv'); if(sessions.adv&&!sessions.core) view='challenge';
+  sessions.core=restoreSession('core'); sessions.adv=restoreSession('adv'); sessions.chunk=restoreSession('chunk'); if(sessions.adv&&!sessions.core) view='challenge';
+  const lc=lsGet('ppq_chunks'); if(lc&&Array.isArray(lc.open)) chunkState=lc;
   window.addEventListener('error',e=>showBanner('Something went wrong on the page ('+(e.message||'error')+'). Please tell Claude.'));
   render();
   const c=window.claude;
@@ -1382,6 +1538,7 @@ document.getElementById('modeChallenge').onclick=()=>{view='challenge';render();
       snap.docs.forEach(doc=>{const v=doc.data();if(v&&v.k){const c=JSON.parse(JSON.stringify(v));c.seen=Array.isArray(c.seen)?c.seen:[];c.history=Array.isArray(c.history)?c.history:[];fromDb[c.k]=c;}});
       Object.keys(fromDb).forEach(k=>{const loc=memState[k];if(!loc||(fromDb[k].reviews||0)>=(loc.reviews||0))memState[k]=fromDb[k];});
       const pd=await db.doc('settings/prefs').get(); if(pd.exists) prefs=Object.assign({},prefs,JSON.parse(JSON.stringify(pd.data()||{})));
+      const cs=await db.doc('chunks/state').get(); if(cs.exists){const v=JSON.parse(JSON.stringify(cs.data()||{})); if(Array.isArray(v.open)){chunkState=v; lsSet('ppq_chunks',v);}}
       showBanner(''); if(!session) render();
     }catch(e){showBanner('Could not load the quiz memory ('+(e&&e.code||'error')+'). Results are kept in this browser for now.');}
   });

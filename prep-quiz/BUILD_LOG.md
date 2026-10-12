@@ -1,9 +1,9 @@
 # Prepositions & Collocations quiz: build log
 
-Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 13 · Status: working, in use
+Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 14 · Status: working, in use
 
 ## Links
-- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 13)
+- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 14)
 - **Fluency Ledger (source of truth, read-only for this project so far):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK
 - **Vocab quiz (style reference, never edited):** https://claude.ai/artifact/PkXEna9VTLyi2FDj4LDtD9
 
@@ -14,11 +14,13 @@ Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 13 · Status
 | `src/bank.js` | Practice bank: 68 patterns (56 prepositions + 12 verb + noun), `EXTRA` new contexts, `PAIRS` contrast pairs |
 | `src/bank_adv.js` | Challenge bank: 24 harder prepositions (`ADV`), `ADV_FAMILIES`, contrast-pair hints |
 | `src/bank_topup.js` | `TOPUP`: 48 new-context items (12.10) so every pattern has at least 3. Loaded last |
+| `src/bank_chunks.js` | `CHUNK_BANK` (7 patterns, sec `chunk`, 65 items: chunks 3–5 and grammar slices 1–4), `CHUNKS` (chunk → quiz patterns) and `CHUNK_DEFAULT`. Loaded last |
+| `chunk-items-review.html` | The review page for those 65 items (approved 12.10) |
 | `src/stats.js` | Speaking snapshot: `SESSIONS` (19 sessions, words) and `HITS` (slips per pattern per session), ledger as of 10.10 |
 | `src/stats_adv.js` | Speaking hits for Challenge patterns (`Object.assign(HITS, …)`) |
 | `src/group.py` | The regex grouping used to sort ledger slips into patterns (reference; needs manual review) |
 | `build.py` | Assembles `prep-quiz.html` from `src/`. Run it, then publish that file to the artifact URL |
-| `prep-quiz.html` | Built page, identical to published version 13 |
+| `prep-quiz.html` | Built page, identical to published version 14 |
 
 To republish from a new thread: run `python3 prep-quiz/build.py`, read the artifact first (`Artifact action:"read"` with the URL), then publish `prep-quiz/prep-quiz.html` with `url` = the artifact URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -137,3 +139,11 @@ Claude's assessment:
 - The river item ("rose ___ its normal level") accepts "above" or "over", at the user's request.
 - **Tests:** frozen fake db with the real 12.10 `patterns` data. 0 existing items moved, 48 added. Mix exact at 0, 50 and 75%. Oldest-first: no repeats back-to-back; with 6 items over 40 picks, each came up 5–8 times. A full session saved without errors.
 - **Possible new patterns seen in 08.10–10.10, not in the quiz yet:** "the first time" with no preposition (4: in/at the first time), "evolve into" (3), "apologise to me" (3), "on the right track" (2), "at dinner" (2).
+
+## 12.10 update 2 (published as version 14): Chunk mode
+- New **Chunks** tab (Practice | Challenge | Chunks | Progress). Auto pick shares the session evenly between the open chunks (due reviews and last-time misses first); settled chunks get about 20% as review. "Choose myself" practises any chunk. Uses the Practice mix setting.
+- Chunk 1 and chunk 2 reuse existing patterns (see `CHUNKS` in `bank_chunks.js`); the others use the new `ch_*` patterns. Patterns with sec `chunk` are kept out of Practice auto pick, the picker, the heatmap and the 2×2 grid (`isCore` excludes them). Progress has a third score box, "Chunks".
+- **Which chunks are open** comes from this quiz's db doc `chunks/state` = `{open:[ids], settled:[ids], as_of, source:"ledger"}`. Until step 7 writes it, the built-in `CHUNK_DEFAULT` (c1 and s1 open, as of 12.10) is used. The quiz never writes it, and quiz results never go to the Ledger.
+- c4 items use the ∅ button (`zero:true` on the pattern, label "∅ nothing").
+- **Tests (frozen real db):** 0 existing items moved; Practice auto pick never served a chunk pattern (30 runs × 40 items); chunk sessions split c1/s1 8/7 at size 15 and kept the 50% mix (0.53); a 15-item chunk session saved patterns and a `runs` doc with tab `chunk`; a fake `chunks/state` (c1 + c4 open, s1 settled) gave c1/c4 sessions with 2 s1 review items; manual c3 session served only `ch_c3_purpose`; no sideways scroll at 390px dark; no console errors.
+- Fixed before publishing: a chunk with a single pattern was capped at 6 items per session.

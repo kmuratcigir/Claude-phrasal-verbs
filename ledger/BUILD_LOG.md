@@ -32,8 +32,8 @@ The page only reads. Skills write, each in one approval:
 2. ✅ Store the chunk list (`meta/chunks`, now version 2, 12.10). Open: chunk 1 and slice 1; the rest not started.
 3. ✅ Naturalness check counts correct uses of open chunks. Upload files in `skill-upload/` (Murat installed them 12.10). **Built 12.10:** `skill/chunks.py` (finders for c1 and s1), `skill/tests/` (26/26). Tested on the 10.10 session, which Murat pasted in: it matched a hand count (c1: 1 voice use, wrong; 1 typed use, correct; no "yet"). Still to do: wire it into the skill (SKILL.md steps 3–5, a `chunks` block in the session doc, the same single save), and add the practice nudge to the Mini Prompt.
 4. ✅ Chunks tab in the Ledger (published 12.10). Tiles (open, settled, schedule, uses in the last session), one card per open chunk (pooled last-12 accuracy against the 80% line, the 12 uses as squares split by session, last session's uses, latest slip), "Coming up" with draft dates, "Settled" with a slip-back flag. Reads `meta/chunks` and each session's `chunks` block; writes nothing. Tested with a frozen copy of the real db: no errors, the other six tabs render identical text to the old page, synthetic data gives the right pooled figures (10 of 12 = 83%, ready to settle), no sideways scroll at 390px in dark mode.
-5. New quiz items for chunks 3–5 and grammar slices 1–4.
-6. Chunk mode in the prep quiz.
+5. ✅ New quiz items for chunks 3–5 and grammar slices 1–4 (65 items, `prep-quiz/src/bank_chunks.js`, approved 12.10).
+6. ✅ Chunk mode in the prep quiz (version 14, 12.10). It reads `chunks/state` from the quiz's own db; built-in default until step 7.
 7. Step that copies chunk statuses into the quiz.
 
 ## `meta/chunks` schema

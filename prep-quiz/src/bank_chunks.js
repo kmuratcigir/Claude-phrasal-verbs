@@ -91,3 +91,16 @@ const CHUNK_BANK=[
  N('I lived in Ankara ___ five years, then moved to Baku.','for',['since'],'A finished period: past simple with "for".')]}
 ];
 CHUNK_BANK.forEach(p=>BANK.push(p));
+// Chunk list as agreed on 12.10 (meta/chunks in the Fluency Ledger). keys = the quiz patterns that train it.
+// CHUNK_DEFAULT is used until the Ledger's statuses are copied into this quiz's memory (chunks/state).
+const CHUNKS=[
+ {id:'c1',layer:'chunk',n:1,title:'"to" or "into" after add, put, paste, devote',keys:['add_to','paste_into','dedicate_to','invest_in','on_my_list','put_add']},
+ {id:'c2',layer:'chunk',n:2,title:'verbs with a fixed preposition, or none',keys:['no_prep_verbs','mention_discuss','remind_of','responsible_for','angry_with','of_not_for']},
+ {id:'c3',layer:'chunk',n:3,title:'"to", not "for + -ing", for purpose',keys:['ch_c3_purpose']},
+ {id:'c4',layer:'chunk',n:4,title:'no "a" before uncountable nouns',keys:['ch_c4_uncount']},
+ {id:'c5',layer:'chunk',n:5,title:'"still" goes before "have"',keys:['ch_c5_still']},
+ {id:'s1',layer:'slice',n:1,title:'"yet" → present perfect',keys:['ch_s1_yet']},
+ {id:'s2',layer:'slice',n:2,title:'"already" and "just" → present perfect',keys:['ch_s2_already']},
+ {id:'s3',layer:'slice',n:3,title:'finished time → past simple',keys:['ch_s3_finished']},
+ {id:'s4',layer:'slice',n:4,title:'"for" and "since" for things still going on',keys:['ch_s4_forsince']}];
+const CHUNK_DEFAULT={open:['c1','s1'],settled:[],as_of:'2026-10-12',source:'built-in'};
