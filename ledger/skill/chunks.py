@@ -1,10 +1,13 @@
-"""Chunk-use detector for the naturalness check (draft, 12.10.26).
+"""Chunk-use detector for the naturalness check (added 12.10.26).
 
 Finds candidate uses of the OPEN chunks and grammar slices in Murat's turns and suggests
 correct / wrong for each. Claude verifies every line (the script finds, Claude judges).
 
   python3 chunks.py find  murat_turns.txt meta/chunks.json chunk_candidates.json
-  python3 chunks.py apply chunk_candidates.json chunk_verdicts.json chunk_counts.json
+  python3 chunks.py apply chunk_candidates.json chunk_verdicts.json session_doc.json
+
+"apply" adds a `chunks` block to session_doc.json: {"open": [...], "<id>": {"voice": {uses, correct, wrong,
+accuracy}, "typed": {...}, "items": [...]}}. Running it twice replaces the block (safe to rerun).
 
 Turns file format (same as the skill's): "### T<n> [voice]" or "### T<n> [typed]", then the text.
 Verdicts: {"drop": [idx..], "flip": [idx..], "caught": [idx..], "extra": [{"item": "c1", "turn": "T5",
@@ -152,7 +155,14 @@ def cmd_apply(cand_path, verdict_path, out_path):
             blk[mode] = {"uses": n, "correct": correct, "wrong": wrong, "accuracy": round(correct / n, 3) if n else None}
         blk["items"] = [u for u in uses if u["item"] == iid]
         out[iid] = blk
-    json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
+    out = {"open": d["open"], **out}
+    if out_path.endswith("session_doc.json"):
+        doc = json.load(open(out_path, encoding="utf-8"))
+        doc["chunks"] = out
+        json.dump(doc, open(out_path, "w"), ensure_ascii=False, indent=1)
+        print(f"chunks block written into {out_path}")
+    else:
+        json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
     for iid in d["open"]:
         b = out[iid]["voice"]
         acc = "—" if b["accuracy"] is None else f'{b["accuracy"]:.0%}'
