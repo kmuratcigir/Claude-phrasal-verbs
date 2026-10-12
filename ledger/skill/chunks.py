@@ -5,6 +5,7 @@ correct / wrong for each. Claude verifies every line (the script finds, Claude j
 
   python3 chunks.py find  murat_turns.txt meta/chunks.json chunk_candidates.json
   python3 chunks.py apply chunk_candidates.json chunk_verdicts.json session_doc.json
+  python3 chunks.py rolling sessions session_doc.json meta/chunks.json   (DOC_ID=<doc_id> in the env)
 
 "apply" adds a `chunks` block to session_doc.json: {"open": [...], "<id>": {"voice": {uses, correct, wrong,
 accuracy}, "typed": {...}, "items": [...]}}. Running it twice replaces the block (safe to rerun).
@@ -107,6 +108,10 @@ def find_s1(sent):
 FINDERS = {"c1": find_c1, "s1": find_s1}
 
 def cmd_find(turns_path, chunks_path, out_path):
+    import os
+    if not os.path.exists(chunks_path):
+        json.dump({"open": [], "candidates": []}, open(out_path, "w"))
+        print("No meta/chunks in the ledger: chunk counting skipped."); return
     meta = json.load(open(chunks_path, encoding="utf-8"))
     meta = meta.get("data", meta)
     open_ids = [it["id"] for it in meta["items"] if it["status"] == "open"]
@@ -168,5 +173,37 @@ def cmd_apply(cand_path, verdict_path, out_path):
         acc = "—" if b["accuracy"] is None else f'{b["accuracy"]:.0%}'
         print(f'{iid}: voice {b["uses"]} uses, {b["correct"]} correct, {b["wrong"]} wrong, accuracy {acc} · typed {out[iid]["typed"]["uses"]} uses')
 
+def cmd_rolling(sessions_dir, sess_path, chunks_path):
+    """Pool voice uses across sessions (newest last) and test the settled rule from meta/chunks."""
+    import glob, os
+    meta = json.load(open(chunks_path, encoding="utf-8")); meta = meta.get("data", meta)
+    rule = meta["rule"]; win, tgt, min_s = rule["window_uses"], rule["target"], rule["min_sessions"]
+    cur = json.load(open(sess_path, encoding="utf-8")); cur = cur.get("data", cur)
+    docs = {}
+    for f in glob.glob(os.path.join(sessions_dir, "*.json")):
+        x = json.load(open(f, encoding="utf-8")); x = x.get("data", x)
+        docs[os.path.basename(f)[:-5]] = x
+    cur_id = os.environ.get("DOC_ID") or cur.get("id")
+    if cur_id: docs[cur_id] = cur
+    else: docs["~current"] = cur
+    order = sorted(docs, key=lambda k: (k.split("_")[1] if k.count("_") >= 2 else "99999999", k))
+    print("CHUNK ROLLING CHECK (voice uses, newest last)")
+    for it in meta["items"]:
+        if it["status"] not in ("open", "settled"): continue
+        uses = []
+        for k in order:
+            blk = (docs[k].get("chunks") or {}).get(it["id"])
+            if not blk: continue
+            for u in blk.get("items", []):
+                if u["mode"] == "voice": uses.append((k, u))
+        last = uses[-win:]
+        score = sum(1 if u["ok"] else (0.5 if u["caught"] else 0) for _, u in last)
+        sess = len({k for k, _ in last})
+        acc = score / len(last) if last else None
+        ready = len(last) == win and sess >= min_s and acc >= tgt
+        acc_s = "—" if acc is None else f"{acc:.0%}"
+        print(f'{it["id"]} ({it["status"]}): last {len(last)}/{win} uses over {sess} session(s), accuracy {acc_s}'
+              + (" · SUGGEST SETTLED" if ready and it["status"] == "open" else ""))
+
 if __name__ == "__main__":
-    {"find": cmd_find, "apply": cmd_apply}[sys.argv[1]](*sys.argv[2:])
+    {"find": cmd_find, "apply": cmd_apply, "rolling": cmd_rolling}[sys.argv[1]](*sys.argv[2:])

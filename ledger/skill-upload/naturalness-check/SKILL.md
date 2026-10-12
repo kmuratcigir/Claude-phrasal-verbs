@@ -42,6 +42,15 @@ rewrites the brief (`meta/overview`) from all session docs. All of it goes into 
 save, so it is still one approval. Murat's words for the brief: "put a story behind the
 numbers", frank both ways, like an executive report.
 
+Since 12.10.26 the check also tracks Murat's **chunks**: a few small targets at a time
+(prepositions, Turkish-shaped patterns, grammar slices), listed in `meta/chunks` with exact
+"what counts" definitions. For every **open** chunk it counts correct *and* wrong uses in his
+speech (a script finds candidates, Claude checks each one) and stores them in the session doc
+as a `chunks` block. The Ledger's Chunks tab pools them across sessions: a chunk is "settled"
+when its last 12 voice uses are at 80% or better, spread over at least 4 sessions. The check
+**never changes `meta/chunks`**: only Murat opens, settles or adds chunks. Plan:
+https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf
+
 Why it is built this way (rebuilt 25.09.26): the earlier version asked Claude to read the
 transcript and "notice" patterns. On a real 100+ minute thread that found 5 items. The same
 thread through this pipeline gave 186 verified observations and 24 real errors. The difference:
@@ -61,7 +70,7 @@ per checked chat in `sessions`.
 
 ## Step 1: Set up the tools
 
-The ten scripts and the interference pass instructions are separate files in this skill's `scripts/`
+The eleven scripts (`chunks.py` added 12.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
 folder (since 06.10.26; until v23 they were embedded at the bottom of this file, which loaded about
 100,000 characters of code into every check without need). Copy them into a work folder, using the
 skill's base directory (shown when the skill loads), and fetch the CEFR wordlists. **Run them, don't
@@ -88,7 +97,8 @@ off-list level yourself.
 
 Then fetch everything the check may change, in one go: `ArtifactData` `list` collection `meta`
 with `out_dir: /tmp/nc` (it saves `meta/vocab_tracker`, `meta/pv_tracker`, `meta/interference`,
-`meta/phave`, `meta/registry`, `meta/lexicon` and `meta/overview` under `/tmp/nc/meta/`). Note the `version` of each of those
+`meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview` and `meta/chunks` under `/tmp/nc/meta/`).
+`meta/chunks` is read-only for this check: never write it. Note the `version` of each of those
 seven docs from the listing (`meta/lexicon` only exists after the first check from 29.09.26 on, `meta/overview` after
 the first one from 30.09.26 on): Step 7 writes them back with `if_version`. (`meta/vocab_items` is the
 old copy of the list from before 27.09.26; don't use it.)
@@ -104,7 +114,7 @@ earlier, never a follow-up write afterwards. Reads don't change anything; keep a
 Step 7.
 
 If the skill's `scripts/` folder isn't readable from the sandbox (the `cp` fails, or fewer than the
-ten scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
+eleven scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
 until the skill files are reachable. Never rewrite a script from memory. If spaCy can't be installed (no network to PyPI/GitHub), stop and tell
 Murat plainly that the check can't run in this environment. Don't fall back to reading and
 judging by eye. If only the wordlist clone fails, run the grammar part, skip vocabulary, and
@@ -194,7 +204,14 @@ answered "claude_ai server does not offer this tool here". Then:
 cd /tmp/nc && python3 detect.py murat_turns.txt candidates.json
 python3 vocab.py murat_turns.txt meta/vocab_tracker.json olp vocab_candidates.json drilled_words.txt
 python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json drilled_words.txt
+python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json
 ```
+
+`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for the **open** chunks and slices only:
+index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
+tell), the matched words and the sentence. If it prints `STOP: no finder yet for open item(s)`,
+Murat opened a chunk the script can't count yet: skip the chunk part of this check, say so in the
+report ("chunk X isn't counted yet"), and never estimate its numbers by eye.
 
 `detect.py` prints the word count (voice and typed) and a REVIEW LIST of grammar candidates: index, kind
 (`use` = a structure was used, `error` = an error signature), concept id, match, sentence.
@@ -303,6 +320,24 @@ Then read Murat's turns once for **clear errors the detector missed** and add th
 `err_causative_to`, `err_collocation`, `err_other`. Give each extra the `mode` of its turn
 (`voice` or `typed`). Add only errors you are sure about. The pass is capped at clear
 mistakes, not style preferences.
+
+**Chunk list (added 12.10.26).** The definitions are in `meta/chunks` (each item's `counts`,
+`correct`, `wrong` and `left_out`); judge every line against them, not against general taste.
+For each index:
+- **keep** (default): the suggestion is right.
+- **flip**: the use is real but the suggestion is wrong (marked correct but it's a mistake, or the
+  other way round).
+- **set**: the suggestion is `decide`: give `true` (correct) or `false` (wrong).
+- **drop**: not a real use under the definitions: quoting a text, talking *about* the chunk ("is
+  it add to or into?"), repeating a sentence Claude just modelled, a "left out" case, or a
+  transcript you can't trust ("to" or "into"? drop it, don't guess).
+- **caught**: he corrected it straight away; it counts as half, as elsewhere.
+- **extra**: a clear use of an open chunk the script missed, with item, turn, mode, sentence and
+  `ok`. Only ones you are sure about.
+A wrong chunk use is usually also a grammar error or an interference item; log it there as
+usual too. The chunk count is a separate measure, not a replacement.
+Write `/tmp/nc/chunk_verdicts.json`: `{"drop": [..], "flip": [..], "set": {"index": true},
+"caught": [..], "extra": [{"item": "c1", "turn": "T7", "mode": "voice", "sentence": "...", "ok": false}]}`.
 
 **Vocab list.** Put an index in `vocab_drop` when:
 - he is quoting a list, a reading text or Claude ("let's swap these ones: dwell, …");
@@ -429,7 +464,15 @@ python3 pv_apply.py meta/pv_tracker.json session_doc.json <DD.MM.YYYY today> pv_
 python3 intf.py apply intf_merged.json intf_verdicts.json meta/interference.json session_doc.json meta_interference_out.json
 python3 vt_apply.py meta/vocab_tracker.json session_doc.json <DD.MM.YYYY today> vocab_tracker_out.json drilled_words.txt pv_tracker_out.json
 python3 lex_apply.py meta/lexicon.json vocab_candidates.json session_doc.json <doc_id> lexicon_out.json
+python3 chunks.py apply chunk_candidates.json chunk_verdicts.json session_doc.json
+DOC_ID=<doc_id> python3 chunks.py rolling sessions session_doc.json meta/chunks.json
 ```
+
+`chunks.py apply` (added 12.10.26) writes the `chunks` block into `session_doc.json` (per open item:
+voice and typed uses, correct, wrong, accuracy, and every counted use). It stops if a `decide`
+line still has no verdict. `chunks.py rolling` pools the voice uses across all sessions and prints,
+per open chunk, the last 12 uses, how many sessions they span, the accuracy, and `SUGGEST SETTLED`
+when the rule is met. It only suggests: tell Murat in the report; he decides.
 
 `lex_apply.py` (added 29.09.26) keeps the running count of **unique words**: every different
 word Murat has used since 29.09.26, counted by base form (go, went and gone are one word; names,
@@ -533,10 +576,14 @@ Mistakes by impact: <m> change the meaning, <f> sound foreign, <s> slips.
 
 ### Useful upgrades
 - "<quote>" → <suggestion>   (2–3)
+
+## Chunks
+- **<item title>:** <n> uses in voice today, <c> correct. Last 12: <acc>% over <s> sessions<, SUGGEST SETTLED>.
+   (one line per open chunk or slice; "no uses today" when none; quote one wrong use with its fix)
 ```
 
-Headings must stay exactly `## Errors`, `## Strong B2+ grammar`, `## Phrasal verbs`, `## Vocabulary`
-and `## Turkish interference` (the page lays the report out by them; `overview.py` checks them).
+Headings must stay exactly `## Errors`, `## Strong B2+ grammar`, `## Phrasal verbs`, `## Vocabulary`,
+`## Turkish interference` and (since 12.10.26) `## Chunks` (the page lays the report out by them; `overview.py` checks the first five).
 Sub-groups use `###`, lines use `- `, bold uses `**`. Nothing else.
 
 **2. The numbers for the brief.**
@@ -666,13 +713,17 @@ part of the report holds:
    from the previous session's same mode; the top 3 patterns this session, each with one quote and
    its fix; any pattern that is new; two or three of the most useful upgrade suggestions. Lead with
    a pattern that is still recurring across sessions (the Naturalness tab's "All sessions" view).
-7. The dashboard link for the full view (the Phrasal verbs tab shows the whole tracker, the
+7. Chunks (added 12.10.26): one line per open chunk or slice from `chunks.py rolling`: today's voice
+   uses and how many were correct, the last-12 accuracy and how many sessions it spans, and
+   `SUGGEST SETTLED` when it appears (Murat confirms; never change `meta/chunks` yourself). A
+   rare chunk with no uses today is normal: say "no uses today", not "fixed".
+8. The dashboard link for the full view (the Phrasal verbs tab shows the whole tracker, the
    Naturalness tab the interference patterns, the Vocabulary tab the vocab tracker).
 
 **Voice mode:** the report and the brief are still written and saved in full (Step 6); only what
 you say is short. Keep it short and spoken. Give the error rate, the top two error types with
 one example each, one good structure, the phrasal verb density, the interference rate with the
-top pattern, and one vocab-list come-up if there was one. Say the
+top pattern, one vocab-list come-up if there was one, and the open chunks in one sentence. Say the
 rest is on the dashboard. Section 0's voice rules apply: no recap of the conversation.
 
 Quote only Murat's own words, never Claude's. Numbers come from `session_doc.json`, never
@@ -735,8 +786,13 @@ from estimation.
   measurement. The nine sessions from 18 to 29 Sept were labelled by hand on 30.09 (468 errors).
   Shares move with how many errors the check finds, so read the trend together with the method
   notes.
+- Chunk counts (added 12.10.26) cover only the words and patterns in each chunk's definition; similar
+  mistakes outside it are still errors but don't count for the chunk. Chunk 3 ("to", not "for +
+  -ing") is rough: correct purpose clauses are hard to find mechanically. Rare chunks give few uses
+  per session, which is why the settled rule pools the last 12 uses. Tested 12.10.26: 26/26 example
+  sentences, 6/6 rolling-rule cases, and the 10.10 session matched a hand count.
 - Pronunciation, fluency and pauses aren't measured. Only the transcript text is available.
 
 ## Scripts
 
-In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `intf_instructions.md`.
+In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `chunks.py`, `intf_instructions.md`.
