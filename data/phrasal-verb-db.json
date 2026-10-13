@@ -3394,9 +3394,9 @@
       "streak": 8
     },
     "wrap up": {
-      "seen": 7,
+      "seen": 8,
       "correct": 7,
-      "streak": 7
+      "streak": 0
     },
     "show off": {
       "seen": 11,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1116,
+      "seen": 1117,
       "correct": 806
     }
   },
@@ -3681,7 +3681,7 @@
       "correct": 36
     },
     "up": {
-      "seen": 181,
+      "seen": 182,
       "correct": 129
     },
     "to": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T06:33:26.457Z"
+  "updatedAt": "2026-10-13T06:33:41.230Z"
 }
