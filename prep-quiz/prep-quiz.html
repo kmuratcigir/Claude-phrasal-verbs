@@ -140,6 +140,22 @@
   .pchip2:focus-visible{outline:2px solid var(--head);outline-offset:2px;}
   .hm-sec{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;margin:6px 0 10px;}
   .hm-sec.second{margin-top:20px;}
+  .ck-row-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:14px 0 8px;}
+  .ck-name{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800;white-space:nowrap;}
+  .ck-title{font-size:12.5px;color:var(--text-dim);flex:1;min-width:0;}
+  .ck-tag{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;background:var(--bg);color:var(--text-faint);border:1px solid var(--border);}
+  .ck-tag.focus{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-line);}
+  .ck-tag.settled{background:var(--mint-soft);color:var(--mint-ink);border-color:#bfe9d8;}
+  .pchip2.thin{opacity:.55;}
+  .ck-rec{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+  .ck-rec-box{border-radius:12px;padding:12px 14px;border:1px solid var(--border);min-width:0;}
+  .ck-rec-box.good{background:var(--mint-soft);border-color:#bfe9d8;}
+  .ck-rec-box.focus{background:var(--coral-soft);border-color:#f6c9c5;}
+  .ck-rec-box h3{margin:0 0 6px;font-size:13px;color:var(--head);}
+  .ck-rec-box p{margin:0;font-size:12px;color:var(--text-dim);line-height:1.5;}
+  .ck-rec-box ul{margin:0;padding-left:18px;font-size:12px;color:var(--text);line-height:1.5;}
+  .ck-rec-box li+li{margin-top:4px;}
+  @media (max-width:600px){.ck-rec{grid-template-columns:1fr;}}
   .scale-bar{height:10px;width:160px;border-radius:99px;background:linear-gradient(90deg,#a8402f,#a87100 50%,#6f8a12 75%,#2f8f4e);}
   .hm-legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--text-faint);}
   .hm-legend .sw{width:22px;height:12px;border-radius:3px;}
@@ -1467,6 +1483,49 @@ function renderHeatmap(){
   card.appendChild(el('div','legend',notes[hmMetric]));
   return card;
 }
+// 13.10: chunk heatmap (quiz side only; speaking accuracy for chunks lives in the Ledger's Chunks tab) plus recommendations
+function chunkPat(k){const s=memState[k], q=chipQuiz([k]); if(!s||!q) return {k,label:P[k].label,q:null};
+  const last=s.history.slice(-10); return {k,label:P[k].label,q,box:s.box||0,due:s.due,hints:last.filter(h=>h.hint).length,misses:last.filter(h=>!h.ok).length,last5:s.history.slice(-5).map(h=>h.ok?(h.hint?'h':'✓'):'✗').join(' '),clean5:s.history.length>=5&&s.history.slice(-5).every(h=>h.ok&&!h.hint)};}
+function chunkStatus(id){const fIds=Array.isArray(chunkState.focus)?chunkState.focus:chunkState.open;
+  return (chunkState.settled||[]).includes(id)?'settled':!chunkState.open.includes(id)?'':fIds.includes(id)?'focus':'tracked';}
+function renderChunkHeatmap(){
+  const card=el('div','card'); const h=el('div','ex-head'); h.appendChild(el('h2',null,'Chunk heatmap')); h.appendChild(el('span','type-pill','quiz · last 10 answers')); card.appendChild(h);
+  const rank={focus:0,tracked:1,settled:2,'':3};
+  const rows=CHUNKS.map(c=>({c,st:chunkStatus(c.id),ps:c.keys.filter(k=>P[k]).map(chunkPat)})).sort((a,b)=>rank[a.st]-rank[b.st]);
+  rows.forEach(({c,st,ps})=>{
+    const head=el('div','ck-row-head'); head.appendChild(el('span','ck-name',ckName(c))); head.appendChild(el('span','ck-title',c.title)); if(st)head.appendChild(el('span','ck-tag '+st,st)); card.appendChild(head);
+    const cloud=el('div','chips-cloud ck-cloud');
+    ps.slice().sort((a,b)=>(a.q==null)-(b.q==null)||(a.q?a.q.score:0)-(b.q?b.q.score:0)||a.label.localeCompare(b.label)).forEach(p=>{
+      const b=el('button','pchip2'); b.appendChild(el('span',null,p.label));
+      let tip;
+      if(!p.q){b.classList.add('nodata');b.appendChild(el('span','pct','—'));tip=p.label+'\nNot practised yet';}
+      else{b.style.background=scoreColor(p.q.score);b.appendChild(el('span','pct',Math.round(p.q.score*100)+'%'+(p.box===0?' ↺':'')+(p.q.all<3?' · '+p.q.all:'')));if(p.q.all<3)b.classList.add('thin');
+        tip=p.label+'\nQuiz: '+Math.round(p.q.score*100)+'% over the last '+p.q.n+' answers ('+p.q.all+' in all)'+(p.hints?'\n'+p.hints+' with a hint (count as half)':'')+'\nLast 5: '+p.last5+(p.box===0?'\nBack to the start':'\nStep '+p.box+' of 5')+(p.due?' · next review '+fmtDate(p.due):'');}
+      b.setAttribute('aria-label',tip.replace(/\n/g,'. ')); b.title=tip;
+      b.onmouseenter=b.onfocus=e=>hmTip(e,tip); b.onmouseleave=b.onblur=e=>hmTip(e,null); b.onclick=e=>hmTip(e,tip);
+      cloud.appendChild(b);});
+    card.appendChild(cloud);});
+  const lg=el('div','hm-legend'); lg.appendChild(el('span',null,'0%')); lg.appendChild(el('span','scale-bar')); lg.appendChild(el('span',null,'100%'));
+  lg.appendChild(el('span','sw none')); lg.appendChild(el('span',null,'not practised')); lg.appendChild(el('span',null,'· ↺ back to the start · “· 1” = only 1 answer so far')); card.appendChild(lg);
+  // recommendations: plain rules on the quiz data, focus chunks first
+  const all=[]; rows.forEach(({c,st,ps})=>ps.forEach(p=>all.push(Object.assign({c,st},p))));
+  const byRank=(a,b)=>rank[a.st]-rank[b.st];
+  const well=all.filter(p=>p.q&&p.q.n>=5&&p.q.score>=0.8&&p.box>=2).sort((a,b)=>byRank(a,b)||b.q.score-a.q.score||b.box-a.box).slice(0,4);
+  const focus=all.filter(p=>p.q&&p.q.all>=3&&(p.box===0||p.q.score<0.75)).sort((a,b)=>byRank(a,b)||(a.box===0?0:1)-(b.box===0?0:1)||a.q.score-b.q.score).slice(0,4);
+  const untried=rows.filter(r=>r.st&&r.st!=='settled'&&r.ps.every(p=>!p.q)).map(r=>r.c);
+  const why=p=>{const bits=[];if(p.box===0)bits.push('back to the start');bits.push(Math.round(p.q.score*100)+'% over the last '+p.q.n);
+    if(p.misses)bits.push(p.misses+' missed');if(p.hints)bits.push(p.hints+' with a hint');return bits.join(', ')+(p.clean5?'; the last 5 were all right, so it is improving':'');};
+  const rec=el('div','ck-rec');
+  const col=(cls,title,list,empty,line)=>{const b=el('div','ck-rec-box '+cls);b.appendChild(el('h3',null,title));
+    if(!list.length)b.appendChild(el('p',null,empty)); else{const ul=el('ul');list.forEach(p=>{const li=el('li');li.appendChild(el('b',null,p.label));li.appendChild(document.createTextNode(' ('+ckName(p.c)+'): '+line(p)));ul.appendChild(li);});b.appendChild(ul);}
+    rec.appendChild(b);};
+  col('good','What’s going well',well,'Nothing has settled in yet: a pattern needs 5+ answers at 80% or more and has to reach step 2.',p=>Math.round(p.q.score*100)+'% over the last '+p.q.n+', step '+p.box+' of 5.');
+  col('focus','What to focus on',focus,'No weak spots right now.',p=>why(p)+'.');
+  card.appendChild(rec);
+  if(untried.length){const u=el('p','legend');u.textContent='Not practised yet: '+untried.map(c=>ckName(c)+' ('+c.title+')').join(', ')+'. Choose them on the Chunks tab under “Choose myself”, or wait for Auto pick to bring them in.';card.appendChild(u);}
+  card.appendChild(el('div','legend','Quiz % = the last 10 answers for that pattern; a correct answer after a hint counts as half. “Going well” = 5+ answers at 80% or more and at least step 2 of the review steps. “Focus” = back to the start, or under 75%. Patterns with fewer than 3 answers are faded and left out of both lists. This is quiz practice only: how you use the chunks when you speak is on the Fluency Ledger’s Chunks tab.'));
+  return card;
+}
 function renderProgress(){
   const root=document.getElementById('progressView'); root.innerHTML='';
   const sc=el('div','card'); const sh=el('div','ex-head'); sh.appendChild(el('h2',null,'Scores')); sh.appendChild(el('span','type-pill','last 30 answers per tab')); sc.appendChild(sh);
@@ -1475,6 +1534,7 @@ function renderProgress(){
     const sm=el('div','summary');[[t.acc==null?'—':Math.round(t.acc*100)+'%','accuracy'],[t.answers,'answers'],[t.quizzed+' / '+t.total,'patterns practised']].forEach(([v,k])=>{const s=el('div','stat');s.appendChild(el('div','v',String(v)));s.appendChild(el('div','k',k));sm.appendChild(s);});
     b.appendChild(sm); b.appendChild(el('p',null,(t.strong||t.weak?t.strong+' strong · '+t.weak+' weak · ':'')+(t.lastDay?'last practised '+fmtDate(t.lastDay):'not practised yet')+'. A hinted correct answer counts as half.'));sg.appendChild(b);});
   sc.appendChild(sg); root.appendChild(sc);
+  root.appendChild(renderChunkHeatmap());
   root.appendChild(renderHeatmap());
   const card=el('div','card'); const head=el('div','ex-head'); head.appendChild(el('h2',null,'How each pattern is going')); head.appendChild(el('span','type-pill','speaking data as of '+AS_OF+' · '+N_S+' sessions')); card.appendChild(head);
   const showVn=prefs.vn; const pats=BANK.filter(p=>p.sec!=='chunk'&&(p.sec==='adv'||showVn||p.sec==='prep')).filter(p=>speech(p.k).total>0||memState[p.k]);

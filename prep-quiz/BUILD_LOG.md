@@ -1,9 +1,9 @@
 # Prepositions & Collocations quiz: build log
 
-Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 14 · Status: working, in use
+Session date: 07.10.2026, updated 13.10 · Published versions: 1 to 16 · Status: working, in use
 
 ## Links
-- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 14)
+- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 16, id `1791883230-2842`)
 - **Fluency Ledger (source of truth, read-only for this project so far):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK
 - **Vocab quiz (style reference, never edited):** https://claude.ai/artifact/PkXEna9VTLyi2FDj4LDtD9
 
@@ -20,7 +20,7 @@ Session date: 07.10.2026, updated 12.10 · Published versions: 1 to 14 · Status
 | `src/stats_adv.js` | Speaking hits for Challenge patterns (`Object.assign(HITS, …)`) |
 | `src/group.py` | The regex grouping used to sort ledger slips into patterns (reference; needs manual review) |
 | `build.py` | Assembles `prep-quiz.html` from `src/`. Run it, then publish that file to the artifact URL |
-| `prep-quiz.html` | Built page, identical to published version 14 |
+| `prep-quiz.html` | Built page, identical to published version 16 |
 
 To republish from a new thread: run `python3 prep-quiz/build.py`, read the artifact first (`Artifact action:"read"` with the URL), then publish `prep-quiz/prep-quiz.html` with `url` = the artifact URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -147,3 +147,14 @@ Claude's assessment:
 - c4 items use the ∅ button (`zero:true` on the pattern, label "∅ nothing").
 - **Tests (frozen real db):** 0 existing items moved; Practice auto pick never served a chunk pattern (30 runs × 40 items); chunk sessions split c1/s1 8/7 at size 15 and kept the 50% mix (0.53); a 15-item chunk session saved patterns and a `runs` doc with tab `chunk`; a fake `chunks/state` (c1 + c4 open, s1 settled) gave c1/c4 sessions with 2 s1 review items; manual c3 session served only `ch_c3_purpose`; no sideways scroll at 390px dark; no console errors.
 - Fixed before publishing: a chunk with a single pattern was capped at 6 items per session.
+
+## Version 15 (12.10)
+Chunk mode split: focus about 70%, other tracked about 20%, settled about 10% (see `ledger/BUILD_LOG.md`).
+
+## 13.10 update (published as version 16): chunk heatmap + recommendations
+Murat's comment on the Progress tab (13.10): a chunk-specific heatmap showing the parts (committed / dedicated to, on my list, put effort into / invest in, add / set, add / save to, and "paste into", which went back to the start), plus recommendations: what's going well and what to focus on.
+- New **Chunk heatmap** card on Progress, right under Scores (`renderChunkHeatmap` in `template.html`). One row per chunk/slice (focus first, then tracked, then settled, with a tag), one chip per quiz pattern. Chip % = the last 10 answers (hint = half), same colour scale as the main heatmap; ↺ = back to the start (box 0); faded with "· n" when fewer than 3 answers; grey "—" = not practised. Tooltip: %, answers, hints, last 5 (✓ / h / ✗), review step and next date.
+- **What's going well:** 5+ answers, 80%+, at least step 2. **What to focus on:** 3+ answers and either back to the start or under 75%; adds "the last 5 were all right, so it is improving" when true. Focus chunks are listed first, at most 4 per list. A line lists tracked chunks with no practice yet.
+- **Quiz only.** Speaking accuracy for chunks is on the Ledger's Chunks tab; the card says so. The page still writes nothing new.
+- **Tests (frozen copy of the real db, 13.10):** no console errors; no sideways scroll at 390px; Practice, Challenge, Chunks and Progress render the same text as version 15 apart from the new card; no db writes from opening Progress. On 13.10 data: going well = on my list, committed / dedicated to, add / set; focus = paste into (↺), invest in (70%, improving), "yet" (70%, improving), join / contact / message (↺, 50%). Not practised yet: c3, c4, c5, s3, s4.
+- Fixed before publishing: chips with a single answer from 07.10 (responsible for 0%, mention / discuss 50%) had full colour and reached the focus list.
