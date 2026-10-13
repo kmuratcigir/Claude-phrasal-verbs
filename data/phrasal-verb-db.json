@@ -2834,9 +2834,9 @@
       "streak": 0
     },
     "get across": {
-      "seen": 11,
+      "seen": 12,
       "correct": 10,
-      "streak": 5
+      "streak": 0
     },
     "get through": {
       "seen": 15,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1192,
+      "seen": 1193,
       "correct": 876
     }
   },
@@ -3669,7 +3669,7 @@
       "correct": 198
     },
     "across": {
-      "seen": 14,
+      "seen": 15,
       "correct": 8
     },
     "with": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T06:54:36.765Z"
+  "updatedAt": "2026-10-13T06:55:01.725Z"
 }
