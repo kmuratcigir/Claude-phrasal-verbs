@@ -3249,9 +3249,9 @@
       "streak": 2
     },
     "snap out of": {
-      "seen": 15,
+      "seen": 16,
       "correct": 10,
-      "streak": 4
+      "streak": 0
     },
     "bring up": {
       "seen": 10,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1211,
+      "seen": 1212,
       "correct": 892
     }
   },
@@ -3705,7 +3705,7 @@
       "correct": 5
     },
     "of": {
-      "seen": 19,
+      "seen": 20,
       "correct": 14
     },
     "about": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T06:59:02.428Z"
+  "updatedAt": "2026-10-13T06:59:15.567Z"
 }
