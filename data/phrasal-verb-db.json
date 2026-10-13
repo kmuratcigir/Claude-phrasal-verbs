@@ -3209,9 +3209,9 @@
       "streak": 8
     },
     "sleep through": {
-      "seen": 10,
+      "seen": 11,
       "correct": 8,
-      "streak": 4
+      "streak": 0
     },
     "wear down": {
       "seen": 13,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1199,
+      "seen": 1200,
       "correct": 882
     }
   },
@@ -3665,7 +3665,7 @@
       "correct": 51
     },
     "through": {
-      "seen": 254,
+      "seen": 255,
       "correct": 200
     },
     "across": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T06:56:17.666Z"
+  "updatedAt": "2026-10-13T06:56:26.189Z"
 }
