@@ -2924,9 +2924,9 @@
       "streak": 5
     },
     "shake down": {
-      "seen": 11,
+      "seen": 12,
       "correct": 9,
-      "streak": 5
+      "streak": 0
     },
     "stand off": {
       "seen": 17,
@@ -3627,7 +3627,7 @@
       "correct": 1
     },
     "fill_blank": {
-      "seen": 1155,
+      "seen": 1156,
       "correct": 842
     }
   },
@@ -3661,7 +3661,7 @@
       "correct": 57
     },
     "down": {
-      "seen": 60,
+      "seen": 61,
       "correct": 49
     },
     "through": {
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T06:42:18.125Z"
+  "updatedAt": "2026-10-13T06:42:40.366Z"
 }
