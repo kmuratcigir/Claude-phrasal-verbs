@@ -2879,9 +2879,9 @@
       "streak": 8
     },
     "phase out": {
-      "seen": 12,
-      "correct": 10,
-      "streak": 6
+      "seen": 13,
+      "correct": 11,
+      "streak": 7
     },
     "go ahead": {
       "seen": 9,
@@ -3607,8 +3607,8 @@
   },
   "typeStats": {
     "confusable_pairs": {
-      "seen": 145,
-      "correct": 129
+      "seen": 146,
+      "correct": 130
     },
     "particle_focus": {
       "seen": 22,
@@ -3645,8 +3645,8 @@
       "correct": 10
     },
     "out": {
-      "seen": 206,
-      "correct": 148
+      "seen": 207,
+      "correct": 149
     },
     "on": {
       "seen": 81,
@@ -3737,5 +3737,5 @@
       "correct": 1
     }
   },
-  "updatedAt": "2026-10-13T07:02:45.239Z"
+  "updatedAt": "2026-10-13T07:02:48.771Z"
 }
