@@ -114,8 +114,7 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 
 Prerequisite: the page must read the speaking snapshot and extra items from its db (for example `speech/snapshot` and `items_extra/*`) instead of from built-in code, so updates need no republish.
 
-**Open question to the user:** should the feed run automatically as the last step of wrap-up, or only when asked?
-Claude's recommendation (07.10): only when asked, plus a one-line reminder at wrap-up ("N new sessions waiting"). Not answered yet.
+**Decision (14.10): parked.** No feed skill for now; the naturalness check is already complex enough. The feed stays manual: when Murat asks, Claude reads the new Ledger sessions, sorts the slips by hand, proposes items for approval, then rebuilds and publishes (see "14.10 manual feed" below for the method). Revisit later.
 
 ## Parked (07.10): merge all practices into a Ledger "Practice" tab?
 The user raised merging the three quizzes (prep quiz, phrasal verb quiz, irregular verb drill) into the Fluency Ledger under a new **Practice** tab. **Decision parked; the user is sleeping on it.** Nothing was built or changed.
