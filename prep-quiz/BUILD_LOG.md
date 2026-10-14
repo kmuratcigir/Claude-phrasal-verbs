@@ -1,9 +1,9 @@
 # Prepositions & Collocations quiz: build log
 
-Session date: 07.10.2026, updated 13.10 · Published versions: 1 to 16 · Status: working, in use
+Session date: 07.10.2026, updated 14.10 · Published versions: 1 to 17 · Status: working, in use
 
 ## Links
-- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 16, id `1791883230-2842`)
+- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 17, id `1791970190-8813`)
 - **Fluency Ledger (source of truth, read-only for this project so far):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK
 - **Vocab quiz (style reference, never edited):** https://claude.ai/artifact/PkXEna9VTLyi2FDj4LDtD9
 
@@ -16,11 +16,12 @@ Session date: 07.10.2026, updated 13.10 · Published versions: 1 to 16 · Status
 | `src/bank_topup.js` | `TOPUP`: 48 new-context items (12.10) so every pattern has at least 3. Loaded last |
 | `src/bank_chunks.js` | `CHUNK_BANK` (7 patterns, sec `chunk`, 65 items: chunks 3–5 and grammar slices 1–4), `CHUNKS` (chunk → quiz patterns) and `CHUNK_DEFAULT`. Loaded last |
 | `chunk-items-review.html` | The review page for those 65 items (approved 12.10) |
-| `src/stats.js` | Speaking snapshot: `SESSIONS` (19 sessions, words) and `HITS` (slips per pattern per session), ledger as of 10.10 |
+| `src/stats.js` | Speaking snapshot: `SESSIONS` (21 sessions, words) and `HITS` (slips per pattern per session), ledger as of 13.10 |
+| `src/bank_feed.js` | `FEED_1310`: 26 "your sentence" items from 12.10 and 13.10 (approved 14.10). Loaded last |
 | `src/stats_adv.js` | Speaking hits for Challenge patterns (`Object.assign(HITS, …)`) |
 | `src/group.py` | The regex grouping used to sort ledger slips into patterns (reference; needs manual review) |
 | `build.py` | Assembles `prep-quiz.html` from `src/`. Run it, then publish that file to the artifact URL |
-| `prep-quiz.html` | Built page, identical to published version 16 |
+| `prep-quiz.html` | Built page, identical to published version 17 |
 
 To republish from a new thread: run `python3 prep-quiz/build.py`, read the artifact first (`Artifact action:"read"` with the URL), then publish `prep-quiz/prep-quiz.html` with `url` = the artifact URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -99,7 +100,7 @@ To republish from a new thread: run `python3 prep-quiz/build.py`, read the artif
 - Don't write to the ledger yet; ledger integration is on hold.
 
 ## Known limitations
-- The speaking data is a **static snapshot (10.10)** built into the page.
+- The speaking data is a **static snapshot (13.10)** built into the page.
 - "towards" and "out from" hits are counted in both Practice and Challenge patterns.
 - The ledger records slips only, so Speaking % is a stand-in, not an accuracy.
 - Comment threads on the page can't be replied to or resolved by Claude unless the user sends them to Claude.
@@ -158,3 +159,13 @@ Murat's comment on the Progress tab (13.10): a chunk-specific heatmap showing th
 - **Quiz only.** Speaking accuracy for chunks is on the Ledger's Chunks tab; the card says so. The page still writes nothing new.
 - **Tests (frozen copy of the real db, 13.10):** no console errors; no sideways scroll at 390px; Practice, Challenge, Chunks and Progress render the same text as version 15 apart from the new card; no db writes from opening Progress. On 13.10 data: going well = on my list, committed / dedicated to, add / set; focus = paste into (↺), invest in (70%, improving), "yet" (70%, improving), join / contact / message (↺, 50%). Not practised yet: c3, c4, c5, s3, s4.
 - Fixed before publishing: chips with a single answer from 07.10 (responsible for 0%, mention / discuss 50%) had full colour and reached the focus list.
+
+## 14.10 manual feed (published as version 17)
+Murat asked for a manual feed this time (the skill is still to be designed).
+- **Snapshot to 13.10:** sessions 12.10 (4,953 words) and 13.10 (3,984) added to `SESSIONS` / `HITS` / adv hits. Slips sorted by hand, as for 08–10.10: interference items of type preposition_case / collocation_transfer plus `err_preposition` / `err_collocation` errors not already in interference; phrasal-verb misuse and one-off word choices left out.
+  - 12.10: sense_of 1 (⚑ "outcome from"), confused_about 1, add_to 2, ask_sb_q 1, over_time 2, same_about 1, for_me 2, time_duration 1, save_for 1, rooted_in 1, adv_among_between 1, adv_along 1.
+  - 13.10: time_duration 1, no_prep_verbs 3, save_for 1, same_about 1, of_not_for 1, confused_about 1, wait_for 1, key_to 2, dates_times 1, for_me 1, put_add 1, add_to 1, on_device 1, over_time 1, on_my_list 1, vn_decision 1 (⚑ "make a mistake", no item), adv_along 1.
+  - Judgement calls: "important for me" not counted (it is correct English); "moving onto the wrap-up" not counted (the Ledger did not flag it); "turns to" was listed twice in interference for one utterance and counted once.
+- **26 new "your sentence" items** in `src/bank_feed.js` (22 + 4 extras, all approved by Murat 14.10), appended after all existing items.
+- **Tests (frozen real db):** 0 existing items moved, 26 added; every new answer accepted and none of its distractors; manual sessions over the fed patterns served new items 28% of the time at 100% "yours"; a 30-item session answered and saved (60 writes) with no errors; Progress shows "speaking data as of 13.10 · 21 sessions"; no sideways scroll at 390px.
+- **Unsorted, possible new patterns (not added):** turn into / evolve into (1 + 3 earlier), stay over with us / at ours (2), "-e karşı" said as "against" for with / towards (2), late for a meeting (1), plus single slips: look back on, recommended to me, open to, read → look at my notes, from time to time, than (comparative -den), a question about.
