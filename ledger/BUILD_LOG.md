@@ -73,3 +73,14 @@ Finders for c2–c5, s2–s4 added to `skill/chunks.py`; `skill/tests/cases.json
 - **Two accuracies on each chunk card:** the big number is the last 12 voice uses (the settle rule); under it "All uses since <first use>: x% · n uses in m sessions" (Murat asked for a year-to-date figure; counting only started 12.10, so for now it is "since the start"). `ckPool` returns `allAcc`, `allSess`, `since`.
 - **Chunks left, slices right** in Focus, Also tracked and Settled (`.cksplit` with two `.ckcol` columns; one column under 820px, chunks first).
 - Tests: frozen real db, no errors at 1100px and 390px, no sideways scroll.
+
+## 16.10: Prepositions tab, agreed design (mockup https://claude.ai/artifact/8GoFrdXp9rJerSDqeMirVh, `mockups/prepositions-tab.html`)
+Nothing built yet; build starts on Murat's go.
+- **True accuracy in speech**, voice only. A new spaCy script in the naturalness check lists every word + preposition pair; a pair is wrong if the check flagged it, right otherwise. Dropped prepositions come from the flags. Infinitive "to" never counts. No new installs (spaCy already runs).
+- **Watch list** (live): one row per word + preposition pair Murat has slipped on; every later use of that word counts, right or wrong. New slips add rows automatically. Seeded from the Ledger's past slips (353 pairs from 753 slips on 16.10).
+- **Row key = the word he said**, not the word in the fix (Murat, 16.10). "bridge the holiday towards the weekend" → row *bridge*, the fix ("link it to the weekend") shown as an example.
+- **Story by Turkish source**, 9 fixed groups: -e, için, time words, -de, ∅ no preposition, ile, hakkında, -den, unsorted. A row's group comes from the Turkish source the check records. New groups only on Murat's word.
+- **Heatmap:** the quiz's 41 chips, true speaking accuracy, grey under 5 uses.
+- Also: 2×2 "how each word is going", session dropdowns, "Show more" examples with fixes per row.
+- Estimated cost: about 4,000–8,000 tokens per wrap-up (to be measured). The step fails softly: if it errors, the check says so and carries on.
+- The tab reads only the Ledger; the quiz stays separate.
