@@ -432,7 +432,8 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
 .ckdot.half{background:var(--warn-soft);color:var(--warn)} .ckdot.empty{background:transparent;border:1px dashed var(--tint-rule)}
 .ckdot.gap{width:1px;background:var(--tint-rule);border-radius:0;margin:0 2px}
 .ck .exs{font-size:13px;color:var(--muted);display:grid;gap:2px}
-.ck .exs .x{color:var(--err)} .ck .exs .y{color:var(--good);font-weight:600}
+.ck .exs .x{color:var(--err)}
+.ck .exs .clip{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden} .ck .exs .y{color:var(--good);font-weight:600}
 .pill.sched-ahead{background:var(--good-soft);color:var(--good)} .pill.sched-on{background:var(--accent-soft);color:var(--accent-deep)}
 .pill.sched-behind{background:var(--warn-soft);color:var(--warn)} .pill.ready{background:var(--good);color:var(--on-strong)}
 .pill.slip{background:var(--err-soft);color:var(--err)}
@@ -807,16 +808,14 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
     <div class="ckgrid" id="cOpen"></div>
   </section>
 
-  <div class="two">
-    <section class="panel">
-      <div class="phead"><h2>Also tracked</h2><span class="sub">Counted every session; can settle any time</span></div>
-      <ul class="rows" id="cNext"></ul>
-    </section>
-    <section class="panel">
-      <div class="phead"><h2>Settled</h2><span class="sub">Still tracked, so a slip back shows</span></div>
-      <ul class="rows" id="cDone"></ul>
-    </section>
-  </div>
+  <section class="panel">
+    <div class="phead"><h2>Also tracked</h2><span class="sub">Counted every session; can settle any time</span></div>
+    <div class="ckgrid" id="cNext"></div>
+  </section>
+  <section class="panel">
+    <div class="phead"><h2>Settled</h2><span class="sub">Still tracked, so a slip back shows</span></div>
+    <div class="ckgrid" id="cDone"></div>
+  </section>
   <p class="explain" id="cNote" style="margin:0"></p>
   </div>
 
@@ -968,7 +967,7 @@ function lineChart(box, pts, series, o){
     const idx = ok.map((p,i)=>[i,sr.get(p)]).filter(a=>a[1]!=null); if(!idx.length) return "";
     const d = smoothPath(idx.map(([i,v])=>[x(i),y(v)]));
     const lc = sr.cls ? `l-${sr.cls}` : "t-line", dc = sr.cls ? `d-${sr.cls}` : "t-dot";
-    const labs = series.length===1 ? idx.map(([i,v])=>`<text class="t-val" x="${x(i)}" y="${y(v)-10}" text-anchor="middle">${f(v)}</text>`).join("") : "";
+    const labs = series.length===1 && !o.noVals ? idx.map(([i,v])=>`<text class="t-val" x="${x(i)}" y="${y(v)-10}" text-anchor="middle">${f(v)}</text>`).join("") : "";
     const last = idx[idx.length-1];
     const end = series.length>1 ? `<text class="endlab" x="${x(last[0])+8}" y="${ends[si]+4}" style="fill:var(--c-${sr.cls})">${sr.name}</text>` : "";
     return `<path class="${lc}" d="${d}"/>` + idx.map(([i,v])=>`<circle class="${dc}" cx="${x(i)}" cy="${y(v)}" r="3.5"/>`).join("") + labs + end;
@@ -1141,7 +1140,7 @@ function renderNat(){
   set(3, ups(last), `${(ups(last)/words(last)*1000).toFixed(1)} per 1,000 words`, `All-time: <b>${ns.reduce((a,s)=>a+ups(s),0)}</b> suggestions`);
 
   // trends
-  lineChart($("tr-nat"), ns, [{get:s=>bm(s,"voice"), cls:"voice", name:"voice"},{get:s=>bm(s,"typed"), cls:"typed", name:"typed"}], {digits:2, label:"Turkish interference per 100 words by session"});
+  lineChart($("tr-nat"), ns, [{get:s=>bm(s,"voice"), cls:"voice", name:"voice"},{get:s=>bm(s,"typed"), cls:"typed", name:"typed"}], {digits:2, W:960, H:240, label:"Turkish interference per 100 words by session"});
   lineChart($("tr-natpat"), ns, [{get:s=>new Set(natItems(s).map(x=>x.pattern)).size}], {digits:0, label:"Different interference patterns per session"});
   lineChart($("tr-natup"), ns, [{get:s=>ups(s)/words(s)*1000}], {digits:1, label:"Upgrade suggestions per 1,000 words"});
 
@@ -1585,7 +1584,7 @@ function sigChips(rows, cur){
 }
 const SORT_KEY = {
   word: r => r.word.toLowerCase(),
-  stage: r => r.mastered ? 0 : (STAGE_RANK[r.stage] ?? 9),   // one label per row: Mastered wins (Murat, 29.09)
+  stage: r => STAGE_RANK[r.stage] ?? 9,   // the matrix stage only; the imported "Mastered" label is no longer shown (Murat, 16.10)
   n: r => r.n,
   last: r => r.ago,                       // days ago; unused words have null
   signal: r => r.n ? SIG_RANK.indexOf(r.signal) : null,
@@ -1621,7 +1620,7 @@ let pvSort = {key:null, dir:null}, vtSort = {key:null, dir:null};
 const revDate = d => { const ago = Math.max(0, Math.round((new Date(new Date().toDateString()) - parseDate(d))/DAY)); return `${esc(fmtDate(d))} <span class="ago">· ${ago===0?"today":ago+"d ago"}</span>`; };
 
 // Need attention (Murat, 28.09): one small box per word, edge coloured by its signal
-const attnBox = r => `<li style="--sc:${SIG_COLOR[r.signal]||"var(--rule)"}" title="${esc(r.signal)} · last used ${esc(fmtDate(r.last))}"><b>${esc(r.word)}</b><span>Used on ${r.n} days · ${r.ago} days ago${r.mastered?" · mastered":""}</span></li>`;
+const attnBox = r => `<li style="--sc:${SIG_COLOR[r.signal]||"var(--rule)"}" title="${esc(r.signal)} · last used ${esc(fmtDate(r.last))}"><b>${esc(r.word)}</b><span>Used on ${r.n} days · ${r.ago} days ago</span></li>`;
 const sigClass = r =>!r.n ? "idle" : r.rec==="Green" ? "ok" : r.rec==="Yellow" ? "warn" : "err";
 const stageVar = {"Activated":"--s6","In Progress":"--s4","Emerging":"--s2","Not Yet Observed":"--idle"};
 
@@ -1727,7 +1726,7 @@ function renderPVTable(rows){
   paintSort("pvHead", pvSort);
   const rk = coreRankOf();
   const pvShown = limitList("pv", list, !!q);
-  $("pvRows").innerHTML = pvShown.map((r,i)=>`<tr><td class="n rn">${i+1}</td><td class="w">${esc(r.word)}${rk[r.word]?`<span class="listtag" title="Native core: #${rk[r.word]} of the 150 most common phrasal verbs">core #${rk[r.word]}</span>`:""}</td><td>${r.mastered ? `<span class="pill ok" title="Your own label on the vocab list · usage stage: ${STAGE_LABEL[r.stage]}">Mastered</span>` : STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
+  $("pvRows").innerHTML = pvShown.map((r,i)=>`<tr><td class="n rn">${i+1}</td><td class="w">${esc(r.word)}${rk[r.word]?`<span class="listtag" title="Native core: #${rk[r.word]} of the 150 most common phrasal verbs">core #${rk[r.word]}</span>`:""}</td><td>${STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
     <td>${r.n ? `${esc(fmtDate(r.last))} <span class="ago">· ${r.ago===0?"today":r.ago+"d ago"}</span>` : `<span class="ago">–</span>`}</td>
     <td>${r.n ? `<span class="pill ${sigClass(r)}">${esc(r.signal)}</span>` : `<span class="ago">–</span>`}</td>
     <td class="n">${r.onList ? (r.reviews ? r.reviews : `<span class="ago">0</span>`) : `<span class="ago">–</span>`}</td>
@@ -1744,7 +1743,7 @@ $("pvHead").addEventListener("click", e=>{ const th = e.target.closest("th[data-
 
 function renderPVTrends(rows){
   const ps = pvSessions();
-  lineChart($("tr-pvd"), ps, [{get:s=>s.pv.instances ? s.pv.words/s.pv.instances : null}], {fmt:v=>"1 per "+Math.round(v), fmtAxis:v=>Math.round(v), avg:192, avgLabel:"native", label:"Words per phrasal verb by session (1 per X); native speakers 1 per 192"});
+  lineChart($("tr-pvd"), ps, [{get:s=>s.pv.instances ? s.pv.words/s.pv.instances : null}], {fmt:v=>"1 per "+Math.round(v), fmtAxis:v=>Math.round(v), avg:192, avgLabel:"native", noVals:true, label:"Words per phrasal verb by session (1 per X); native speakers 1 per 192"});
   if(ps.length < 2) $("tr-pvd").innerHTML = `<div class="empty-chart">Starts with your next naturalness check. The chart appears after two measured sessions.</div>`;
   // day series from the come-up dates
   const days = [...new Set(rows.flatMap(r=>r.dates))].sort((a,b)=>parseDate(a)-parseDate(b));
@@ -1774,16 +1773,16 @@ function vtRows(){
     const ago = last ? Math.max(0, Math.round((today - last)/DAY)) : null;
     const rec = ago==null ? "" : ago<=7 ? "Green" : ago<=14 ? "Yellow" : "Red";
     const pr = r.practice || {count:0, last:null};
-    return {id:r.id, word:r.expr, dates, n, used, stage: r.mastered ? "Mastered" : used, mastered: !!r.mastered, ago, rec,
+    return {id:r.id, word:r.expr, dates, n, used, stage: used, mastered: !!r.mastered, ago, rec,
       last: n ? dates[n-1] : "", signal: n ? SIGNAL[used+"|"+rec] : "—", reviews: pr.count||0, rlast: pr.last, importance: r.importance||"", type: r.type||"word"};
   });
 }
 function renderVT(){
   const rows = vtRows();
   if(!rows.length){ $("vtAsOf").textContent = ""; $("vtkv").innerHTML = `<p class="status" style="margin:0">Vocab list not loaded.</p>`; return; }
-  const by = s => rows.filter(r=>r.stage===s).length, usedAny = rows.filter(r=>r.n>0).length, unpr = rows.filter(r=>!r.reviews).length;
+  const bySig = k => rows.filter(r=>r.signal===k).length, solid = bySig("Solid & Active"), usedAny = rows.filter(r=>r.n>0).length, unpr = rows.filter(r=>!r.reviews).length;
   $("vtAsOf").textContent = VT.as_of ? `Updated ${fmtDate(VT.as_of)}` : "";
-  $("vtkv").innerHTML = `<div><span class="label">On the list</span><span class="v">${rows.length}</span><span class="sub">${by("Mastered")} mastered</span></div>
+  $("vtkv").innerHTML = `<div><span class="label">On the list</span><span class="v">${rows.length}</span><span class="sub">${solid} solid &amp; active (${Math.round(solid/rows.length*100)}%)</span></div>
     <div><span class="label">Used on their own</span><span class="v">${usedAny}</span><span class="sub">at least one day</span></div>
     <div><span class="label">Not practised yet</span><span class="v">${unpr}</span><span class="sub">no vocab session so far</span></div>`;
   sigBar(rows, "vtbar", "vtlegend");
@@ -1804,7 +1803,7 @@ function renderVTTable(rows){
   paintSort("vtHead", vtSort);
   const shown = limitList("vt", list, !!q);
   $("vtRows").innerHTML = shown.map((r,i)=>`<tr><td class="n rn">${i+1}</td><td class="w">${esc(r.word)}<span class="coretag">#${r.id}</span>${r.type!=="word"?`<span class="typetag">${esc(r.type)}</span>`:""}</td>
-    <td>${r.mastered ? `<span class="pill ok">Mastered</span>` : STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
+    <td>${STAGE_LABEL[r.stage]}</td><td class="n">${r.n}</td>
     <td>${r.n ? `${esc(fmtDate(r.last))} <span class="ago">· ${r.ago===0?"today":r.ago+"d ago"}</span>` : `<span class="ago">–</span>`}</td>
     <td>${r.n ? `<span class="pill ${sigClass(r)}">${esc(r.signal)}</span>` : `<span class="ago">–</span>`}</td>
     <td class="n">${r.reviews ? r.reviews : `<span class="ago">0</span>`}</td>
@@ -1952,8 +1951,11 @@ function ckCard(it, today){
     : `Last session (${esc(fmtDate(lastS.date))}): ${lb.voice.uses} voice use${lb.voice.uses===1?"":"s"}, ${lb.voice.correct} correct` + (lb.typed && lb.typed.uses ? ` · ${lb.typed.uses} typed` : "");
   const pct = p.acc==null ? "–" : Math.round(p.acc*100) + "%";
   const need = p.last.length < p.win ? `${p.last.length} of ${p.win} uses so far` : `last ${p.win} uses`;
-  const lastWrong = p.all.filter(u=>!u.ok).slice(-1)[0];
+  const wrongs = p.all.filter(u=>!u.ok).reverse(), lastWrong = wrongs[0];
   const ex = (it.examples||[])[0];
+  const moreSlips = wrongs.slice(1).map(u=>`<span class="clip" title="${esc(u.sentence)}">${esc(fmtDate(u.date))}: <span class="x">“${esc(u.sentence)}”</span>${u.caught?" (you caught it)":""}</span>`);
+  const moreEx = (it.examples||[]).slice(lastWrong?0:1).map(e=>`<span><span class="x">✗ ${esc(e.wrong)}</span> → <span class="y">${esc(e.right)}</span>${e.yours?" (yours)":""}</span>`);
+  const more = moreSlips.length + moreEx.length ? `<details class="exmore"><summary>Show ${moreSlips.length + moreEx.length} more example${moreSlips.length + moreEx.length===1?"":"s"}</summary><div class="exs" style="margin-top:6px">${moreSlips.length?`<span class="label">Earlier slips</span>${moreSlips.join("")}`:""}${moreEx.length?`<span class="label"${moreSlips.length?' style="margin-top:6px"':""}>From the plan</span>${moreEx.join("")}`:""}</div></details>` : "";
   const status = p.ready && it.status==="open" ? `<span class="pill ready">Ready to settle · you decide</span>`
     : (it.status==="settled" && p.acc!=null && p.acc < p.tgt ? `<span class="pill slip">Slipping back</span>` : "");
   return `<article class="ck">
@@ -1961,11 +1963,12 @@ function ckCard(it, today){
       <div class="chips">${status}${sch?`<span class="pill sched-${sch.cls}">${esc(sch.text)}</span>`:""}</div></div>
     <div class="ckmeter"><div class="big">${pct}<small> ${p.acc==null?"":"accuracy"}</small></div>
       <div><div class="ckbar" aria-hidden="true"><i style="width:${p.acc==null?0:Math.round(p.acc*100)}%"></i><b style="left:${Math.round(p.tgt*100)}%"></b></div>
-      <div class="sub" style="margin-top:4px">${need} · ${p.sess} session${p.sess===1?"":"s"} (needs ${p.minS}) · target ${Math.round(p.tgt*100)}%</div></div></div>
+      <div class="sub" style="margin-top:4px">${need} · ${p.sess} session${p.sess===1?"":"s"} (needs ${p.minS}) · target ${Math.round(p.tgt*100)}%${it.difficulty==="hard"?" · rough count":""}</div></div></div>
     ${ckDots(p)}
     <div class="sub">${todayLine}</div>
-    ${lastWrong ? `<div class="exs"><span>Latest slip: <span class="x">“${esc(lastWrong.sentence)}”</span></span></div>`
+    ${lastWrong ? `<div class="exs"><span class="clip" title="${esc(lastWrong.sentence)}">Latest slip: <span class="x">“${esc(lastWrong.sentence)}”</span></span></div>`
       : ex ? `<div class="exs"><span><span class="x">✗ ${esc(ex.wrong)}</span> → <span class="y">${esc(ex.right)}</span>${ex.yours?" (yours)":""}</span></div>` : ""}
+    ${more}
   </article>`;
 }
 function renderChunks(){
@@ -1991,15 +1994,8 @@ function renderChunks(){
     set(3, n, `${esc(fmtDate(lastS.date))} · voice, all tracked`);
   } else set(3, "–", "Counting starts at your next check");
   $("cOpen").innerHTML = open.length ? open.map(i=>ckCard(i, today)).join("") : `<p class="status">No focus set. Say "let's update the chunks" in a practice chat to choose one.</p>`;
-  $("cNext").innerHTML = next.length ? next.map(i=>{ const s = ckSchedule(i, today), p = ckPool(i.id);
-    const acc = p.acc==null ? "no uses yet" : `${Math.round(p.acc*100)}%`;
-    return `<li><div class="rowtop"><strong>${i.layer==="slice"?"Slice":"Chunk"} ${esc(i.n)}: ${esc(i.title)}</strong><span class="pill ${p.ready?"ready":p.acc==null?"":p.acc>=p.tgt?"ok":"warn"}">${p.ready?"Ready to settle":acc}</span></div>
-      <div class="sub">${p.last.length} of ${p.win} uses · ${p.sess} session${p.sess===1?"":"s"}${i.difficulty==="hard"?" · rough count":""}${s?` · ${esc(s.text)}`:""}</div>
-      ${(i.examples||[])[0]?`<div class="sub"><span style="color:var(--err)">✗ ${esc(i.examples[0].wrong)}</span> → ${esc(i.examples[0].right)}</div>`:""}</li>`; }).join("")
-    : `<li class="status">Everything tracked is in focus.</li>`;
-  $("cDone").innerHTML = done.length ? done.map(i=>{ const p = ckPool(i.id), s = ckSchedule(i, today);
-    return `<li><div class="rowtop"><strong>${esc(i.title)}</strong><span class="pill ${p.acc!=null&&p.acc<p.tgt?"slip":"ok"}">${p.acc==null?"no uses":Math.round(p.acc*100)+"% · last "+p.last.length}</span></div>${s?`<div class="sub">${esc(s.text)}</div>`:""}</li>`; }).join("")
-    : `<li class="status">None yet. A chunk moves here when you settle it.</li>`;
+  $("cNext").innerHTML = next.length ? next.map(i=>ckCard(i, today)).join("") : `<p class="status">Everything tracked is in focus.</p>`;
+  $("cDone").innerHTML = done.length ? done.map(i=>ckCard(i, today)).join("") : `<p class="status">None yet. A chunk moves here when you settle it.</p>`;
   $("cNote").textContent = counted
     ? `Counted in ${counted} session${counted===1?"":"s"} so far. Only the words in each chunk's definition count; typed uses are shown but don't count towards settling. Hover a square to see the sentence.`
     : "Counting started on 12.10, so the first figures appear after your next naturalness check. Uses from earlier sessions weren't recorded.";

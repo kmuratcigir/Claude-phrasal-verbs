@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1791808670-cc1f`, 12.10)
+Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1792140084-a3c6`, 16.10)
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -11,11 +11,11 @@ Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version 
 | File | What it is |
 |---|---|
 | `data/meta_chunks.json` | The chunk list as written to `meta/chunks` (version 3, 12.10). Edit here, then write it back with `if_version`. |
-| `ledger.html` | The page source, identical to live version `1791808670-cc1f` (published 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
+| `ledger.html` | The page source, identical to live version `1792140084-a3c6` (published 16.10; before that `1791808670-cc1f`, 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
 
 ## How to republish
 1. Edit `ledger.html` in the repo, never a copy elsewhere.
-2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1791808670-cc1f`, someone published in between: diff it against `ledger.html` and merge before going on.
+2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1792140084-a3c6`, someone published in between: diff it against `ledger.html` and merge before going on.
 3. Test against a **frozen** copy of the real db (the lesson from the prep quiz: the db returns frozen objects, so a page that mutates loaded data breaks).
 4. Publish `ledger/ledger.html` with `url` = the Ledger URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -57,3 +57,13 @@ Murat pointed out that he wanted **all** chunks monitored from the start, becaus
 8. Built all at once on 12.10 so the skills are installed once.
 
 Finders for c2–c5, s2–s4 added to `skill/chunks.py`; `skill/tests/cases.json` now has 109 cases (all pass). On the 10.10 session all nine finders gave 24 candidates; after 3 hand verdicts ("use X for -ing" set correct) the counts were c1 0/1, c2 1/1, c3 4/8 (rough), c4 0/1, c5 0/1, s1 none, s2 6/9, s3 1/1, s4 none. Fixed during that test: "sorry for…" was stripped as a filler; "as you just said" is now left out of s2; `(?-i:[A-Z])` for proper names under `re.I`; "when it comes to" isn't purpose.
+
+## 16.10: Murat's comments on the page (published as `1792140084-a3c6`)
+1. **Chunks tab:** every tracked item now gets a full card, like the focus ones ("Also tracked" and "Settled" are card grids; this replaces decision 5 of 12.10). Cards show the latest slip, then "Show N more examples" with the earlier slips (newest first) and the plan's examples. Long slips are cut to 3 lines; the full sentence is on hover. "Rough count" moved onto the card for c3.
+2. **Stage = the matrix.** The Stage column in both trackers shows the stage from days used (Activated / In progress / Emerging / Not yet observed). The imported "Mastered" label (from Murat's Word file, `mastered` in `meta/vocab_tracker` and `list.mastered` in `meta/pv_tracker`) is no longer shown or used for sorting. The data is unchanged, so nothing the skills write had to change.
+3. **Vocab list summary:** "140 mastered" became "N solid & active (x%)" from the signal (12, 4% on 16.10).
+4. **Interference chart** (Naturalness): drawn at 960×240 like the MTLD chart, so it is no longer very tall at full width.
+5. **Density chart** (Phrasal verbs): no value labels on the line (`noVals` option in `lineChart`); values show on hover.
+6. Answered only (no change): the faded rows at the bottom of the Overview grid are mistakes whose main impact is "slip" (`tr.slip`, opacity .6), sorted last on purpose.
+- **Tests (frozen copy of the real db, 23 sessions, 16.10):** no console errors on any tab at 1100px light and 390px dark; no sideways scroll; Overview, Grammar, Naturalness and Reading render the same text as before; the only text changes are the ones above. Density hover shows "1 Oct · 1 per 47".
+- **Seen in the data, not changed:** several chunk uses store the whole turn as `sentence` (c2, c3, s2, s3), so a slip can be a 60-word passage. The naturalness check could store a short excerpt around the chunk instead.
