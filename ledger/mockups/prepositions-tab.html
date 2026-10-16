@@ -187,7 +187,7 @@ ul.how{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;max-width:
 
   <section class="panel">
     <div class="phead"><h2>Preposition heatmap</h2><span class="sub">Accuracy by the preposition you needed · last 5 sessions <span class="s">SAMPLE</span></span></div>
-    <p class="explain">One chip per preposition, coloured by how often you chose it right when it was the right word. "∅" is the places where no preposition was needed.</p>
+    <p class="explain">The same 41 chips as the quiz heatmap, so both pages use the same names. Here a chip is your accuracy in speech only: of the times this preposition was the right one, how often you chose it. Grey until it has 5 uses.</p>
     <div class="hm" id="hm"></div>
     <div class="hmkey"><span><i style="background:var(--err-soft)"></i>under 60%</span><span><i style="background:var(--warn-soft)"></i>60–79%</span><span><i style="background:var(--accent-soft)"></i>80–89%</span><span><i style="background:var(--good-soft)"></i>90%+</span><span><i style="border:1px dashed var(--faint)"></i>under 5 uses</span></div>
   </section>
@@ -242,8 +242,9 @@ const EX={"add to":[["I just want to add this into my list","add this to my list
  "the same about":[["I can say the same things for Turkish too","the same about my Turkish","13 Oct"],["the same things for find out","the same about 'find out'","12 Oct"]],
  "responsible for":[["who's responsible from the investment activities","responsible for","22 Sept"]],
  "rooted in":[["this is rooted to to have their own countries","rooted in having","12 Oct"]]};
-const HM=[["to",62,48],["into",55,11],["onto",null,2],["on",74,39],["in",86,71],["at",81,26],["of",84,58],["for",72,44],["with",88,25],["about",90,21],["from",83,12],["as",92,13],["by",null,3],["∅ none",74,31]];
-document.getElementById("hm").innerHTML=HM.sort((a,b)=>(a[1]??999)-(b[1]??999)).map(([p,a,n])=>a==null?`<span class="hc few">${p}<small>${n} uses</small></span>`:`<span class="hc ${a<60?"h1":a<80?"h2":a<90?"h3":"h4"}" title="${p}: ${a}% of ${n} uses">${p}<small>${a}% · ${n}</small></span>`).join("");
+const HM=[["∅ no preposition",61,31],["for",66,44],["about",70,21],["to",64,48],["of",81,58],["on",76,39],["out of",84,9],["along / during",88,8],["at / on / in (time)",62,42],["over",85,14],["towards",87,8],["in",89,71],["at",92,26],["with",93,25],["as",95,13],["into",55,11],["on to",60,9],
+ ["above",null,1],["according to",null,0],["across",null,0],["alongside",null,0],["amid",null,0],["among / between",null,2],["apart from / except",null,0],["as for",null,2],["below / under",null,0],["beyond",null,0],["by",null,3],["despite",null,0],["due to",null,0],["from",83,12],["in terms of",null,0],["instead of",null,0],["on behalf of",null,0],["prior to",null,0],["regardless of",null,0],["through",null,2],["throughout",null,0],["upon",null,0],["within",null,1],["worth + -ing",null,2]];
+document.getElementById("hm").innerHTML=HM.sort((a,b)=>(a[1]??999)-(b[1]??999)).map(([p,a,n])=>a==null?`<span class="hc few">${p}<small>${n?n+" use"+(n>1?"s":""):"—"}</small></span>`:`<span class="hc ${a<60?"h1":a<80?"h2":a<90?"h3":"h4"}" title="${p}: ${a}% of ${n} uses">${p}<small>${a}% · ${n}</small></span>`).join("");
 const GROUPS={all:"All",e:"-e → to / into",de:"-de → in / at / on",icin:"için → for",ile:"ile → with",den:"-den → from / of"};
 let cur="all";
 const status=r=>r[6]>=80?(r[5].slice(-2).every(Boolean)?["up","Fixed in speech"]:["flat","Slipping back"]):(r[5].slice(-3).filter(Boolean).length>=2?["new","Getting there"]:["down","Top priority"]);
