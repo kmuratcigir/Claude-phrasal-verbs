@@ -84,3 +84,9 @@ Nothing built yet; build starts on Murat's go.
 - Also: 2×2 "how each word is going", session dropdowns, "Show more" examples with fixes per row.
 - Estimated cost: about 4,000–8,000 tokens per wrap-up (to be measured). The step fails softly: if it errors, the check says so and carries on.
 - The tab reads only the Ledger; the quiz stays separate.
+
+### 16.10.26 — Watch list seed and the second-slip rule
+- Seed rebuilt from all 23 saved sessions (18.09–15.10): 245 words after hand merges and drops; 107 with 2+ slips go on the list, 138 one-slip words wait.
+- Rule (Murat, 16.10.26): a word joins the list on its second slip. After one slip it waits (`status: "waiting"`), and its uses count only in the overall figure. Replaces the earlier "new word joins on first slip".
+- preps.py: phrasal-verb keys (look back, look up), one `dates` row, count diff for the right preposition, no pronoun/filler keys; `score` returns `joined_list`, `new_waiting` and `watch_changes`.
+- Review page: https://claude.ai/artifact/Muww9cTWwVvhv1Cy41R5N7 — waiting for Murat's approval before the seed is saved to the Ledger.

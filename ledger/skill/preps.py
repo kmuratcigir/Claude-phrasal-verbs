@@ -15,6 +15,7 @@ flags.json: [{"turn": "T12", "quote": "...", "fix": "...", "turkish": "...", "mo
  check already writes them. A use is wrong when its preposition falls inside a flagged quote;
  a flag with no preposition inside (a dropped one, "hang out our friends") is added as a wrong use.
 Row key = the word Murat said (Murat, 16.10.26), not the word in the fix.
+A word joins the list on its second slip; after one slip it waits (status "waiting"), and its uses count only in the overall figure.
 """
 import json, re, sys, glob, os, collections
 import spacy
@@ -170,7 +171,7 @@ def cmd_seed(sess_dir, out_path):
     for r in rows.values():
         g = [x for x, _ in r["groups"].most_common() if x != "other"]
         out.append({"word": r["word"], "right": " / ".join([x for i, (x, c) in enumerate(r["right"].most_common(2)) if i == 0 or c >= 2]), "group": g[0] if g else "other",
-                    "slips": r["slips"], "examples": r["examples"]})
+                    "slips": r["slips"], "status": "on" if r["slips"] >= 2 else "waiting", "examples": r["examples"]})
     out.sort(key=lambda r: -r["slips"])
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
     print(len(out), "watch-list rows from past slips")
@@ -204,11 +205,15 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
         else:
             extra.append({"turn": tid, "mode": fl.get("mode") or "voice", "lemma": k, "prep": "∅", "obj": "", "ok": False,
                           "right": right, "flag": fl["quote"], "fix": fl["fix"], "group": grp, "dropped": True})
-        if k and k not in watch:   # a new slip adds its word to the watch list
-            watch[k] = {"word": k, "right": right, "group": grp, "slips": 0, "examples": [], "new": True}
-        if k: watch[k]["slips"] += 1
+        if k and k not in watch:   # a first slip puts the word in the waiting area; a second puts it on the list (Murat, 16.10.26)
+            watch[k] = {"word": k, "right": right, "group": grp, "slips": 0, "examples": [], "status": "waiting", "new": True}
+        if k:
+            r = watch[k]; r["slips"] += 1; r["changed"] = True
+            r["examples"] = ([{"date": fl.get("date", ""), "said": fl["quote"][:120], "fix": fl["fix"][:120]}] + r.get("examples", []))[:6]
+            if r.get("status", "on") == "waiting" and r["slips"] >= 2: r["status"] = "on"; r["promoted"] = True
     # right "no preposition" uses: every use of a ZERO verb on the watch list that has no preposition after it
-    zero_watch = {w for w, r in watch.items() if r.get("right") == "∅" and w in ZERO}
+    on = {w for w, r in watch.items() if r.get("status", "on") == "on"}   # only words on the list are tracked one by one
+    zero_watch = {w for w in on if watch[w].get("right") == "∅" and w in ZERO}
     seen_heads = {(c["turn"], c.get("hidx")) for c in cands}
     flagged_turn_words = {(u["turn"], u.get("lemma")) for u in extra}
     for tid, text in turns.items():
@@ -219,7 +224,7 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
                 extra.append({"turn": tid, "mode": "voice", "lemma": L, "prep": "∅", "obj": "", "ok": True, "right": "∅"})
     uses = [c for c in cands + extra if c.get("mode") == "voice"]
     def acc(xs): return (round(sum(x["ok"] for x in xs) / len(xs) * 100), len(xs)) if xs else (None, 0)
-    wl = [u for u in uses if u.get("lemma") in watch]
+    wl = [u for u in uses if u.get("lemma") in on]
     for u in wl: u.setdefault("group", watch[u["lemma"]]["group"])
     by_g = collections.defaultdict(list); by_w = collections.defaultdict(list); by_c = collections.defaultdict(list)
     for u in wl: by_g[u["group"]].append(u); by_w[u["lemma"]].append(u)
@@ -232,9 +237,11 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
            "words": {w: acc(v) for w, v in sorted(by_w.items(), key=lambda kv: -len(kv[1]))},
            "wrong": [{k: u.get(k) for k in ("turn", "lemma", "prep", "right", "flag", "fix", "group", "dropped")} for u in uses if not u["ok"]],
            "unmatched_flags": [f for f in flags if f.get("unmatched")],
-           "new_words": sorted(w for w, r in watch.items() if r.get("new"))}
+           "new_waiting": sorted(w for w, r in watch.items() if r.get("new") and r["status"] == "waiting"),
+           "joined_list": sorted(w for w, r in watch.items() if r.get("promoted")),
+           "watch_changes": [{k: v for k, v in r.items() if k not in ("changed", "new", "promoted")} for r in watch.values() if r.get("changed")]}
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
-    print("all", out["all"], "| watch list", out["watch"], "| wrong", len(out["wrong"]), "| new words", len(out["new_words"]))
+    print("all", out["all"], "| watch list", out["watch"], "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
 
 if __name__ == "__main__":
     cmd, *a = sys.argv[1:]
