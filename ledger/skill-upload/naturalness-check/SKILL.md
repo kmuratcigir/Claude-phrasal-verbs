@@ -54,6 +54,14 @@ are at 80% or better, spread over at least 4 sessions, whatever its dates. The c
 **never changes `meta/chunks`**: only Murat opens, settles or adds chunks. Plan:
 https://claude.ai/artifact/Kmeozvrx9sSpppVH9cE7Gf
 
+Since 16.10.26 the check also counts **preposition accuracy** for the Ledger's Prepositions tab.
+`preps.py` lists every word + preposition pair Murat said or wrote (voice and typed both count);
+a use is wrong when this check flagged it as a preposition slip (`preposition_case` or
+`err_preposition`) and right otherwise. It stores the counts in the session doc as a `preps`
+block and updates the watch list `meta/prep_watch` (one row per word Murat said; a word joins
+the list on its second slip, after one slip it waits). It is one command in Step 5 and goes into
+the same single save. It fails softly: if it can't run, the check carries on without it.
+
 Why it is built this way (rebuilt 25.09.26): the earlier version asked Claude to read the
 transcript and "notice" patterns. On a real 100+ minute thread that found 5 items. The same
 thread through this pipeline gave 186 verified observations and 24 real errors. The difference:
@@ -73,7 +81,7 @@ per checked chat in `sessions`.
 
 ## Step 1: Set up the tools
 
-The eleven scripts (`chunks.py` added 12.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
+The twelve scripts (`chunks.py` added 12.10.26, `preps.py` 16.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
 folder (since 06.10.26; until v23 they were embedded at the bottom of this file, which loaded about
 100,000 characters of code into every check without need). Copy them into a work folder, using the
 skill's base directory (shown when the skill loads), and fetch the CEFR wordlists. **Run them, don't
@@ -100,9 +108,9 @@ off-list level yourself.
 
 Then fetch everything the check may change, in one go: `ArtifactData` `list` collection `meta`
 with `out_dir: /tmp/nc` (it saves `meta/vocab_tracker`, `meta/pv_tracker`, `meta/interference`,
-`meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview` and `meta/chunks` under `/tmp/nc/meta/`).
+`meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview`, `meta/chunks` and `meta/prep_watch` under `/tmp/nc/meta/`).
 `meta/chunks` is read-only for this check: never write it. Note the `version` of each of those
-seven docs from the listing (`meta/lexicon` only exists after the first check from 29.09.26 on, `meta/overview` after
+docs, `meta/prep_watch` included, from the listing (`meta/lexicon` only exists after the first check from 29.09.26 on, `meta/overview` after
 the first one from 30.09.26 on): Step 7 writes them back with `if_version`. (`meta/vocab_items` is the
 old copy of the list from before 27.09.26; don't use it.)
 
@@ -117,7 +125,7 @@ earlier, never a follow-up write afterwards. Reads don't change anything; keep a
 Step 7.
 
 If the skill's `scripts/` folder isn't readable from the sandbox (the `cp` fails, or fewer than the
-eleven scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
+twelve scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
 until the skill files are reachable. Never rewrite a script from memory. If spaCy can't be installed (no network to PyPI/GitHub), stop and tell
 Murat plainly that the check can't run in this environment. Don't fall back to reading and
 judging by eye. If only the wordlist clone fails, run the grammar part, skip vocabulary, and
@@ -469,7 +477,18 @@ python3 vt_apply.py meta/vocab_tracker.json session_doc.json <DD.MM.YYYY today> 
 python3 lex_apply.py meta/lexicon.json vocab_candidates.json session_doc.json <doc_id> lexicon_out.json
 python3 chunks.py apply chunk_candidates.json chunk_verdicts.json session_doc.json
 DOC_ID=<doc_id> python3 chunks.py rolling sessions session_doc.json meta/chunks.json
+python3 preps.py run murat_turns.txt session_doc.json meta/prep_watch.json prep_watch_out.json <doc_id>
 ```
+
+`preps.py run` (added 16.10.26) must come after `intf.py apply` and `session.py`: it reads this
+check's own preposition slips from `session_doc.json`, so it decides nothing itself. It writes the
+`preps` block into `session_doc.json` and the updated watch list to `prep_watch_out.json`, and prints
+a few `PREPS:` lines for the report (overall, watch list, voice and typed, weakest group, words that
+joined the list). Running it twice in the same chat changes nothing twice. If it prints
+`PREPS SKIPPED: …`, it has changed nothing and written no `prep_watch_out.json`: carry on with the
+check, leave `meta/prep_watch` out of the save, and say in one line of the report that the
+preposition figures are missing today. Never fix or rerun it by hand beyond one retry, and never
+count prepositions by eye instead.
 
 `chunks.py apply` (added 12.10.26) writes the `chunks` block into `session_doc.json` (per open item:
 voice and typed uses, correct, wrong, accuracy, and every counted use). It stops if a `decide`
@@ -580,6 +599,10 @@ Mistakes by impact: <m> change the meaning, <f> sound foreign, <s> slips.
 ### Useful upgrades
 - "<quote>" → <suggestion>   (2–3)
 
+### Prepositions
+- **<x>%** of <n> uses (voice <v>%, typed <t>%); watch list **<w>%** of <m>. Weakest group: <group> <g>%.
+- Joined the watch list: <words, or "none">.   (from the `PREPS:` lines; "missing today" if PREPS SKIPPED)
+
 ## Chunks
 - **<focus item title>:** <n> uses in voice today, <c> correct. Last 12: <acc>% over <s> sessions<, SUGGEST SETTLED>.
    (one line per focus item; "no uses today" when none; quote one wrong use with its fix)
@@ -669,6 +692,7 @@ Murat approves once. Include an entry only when its file exists:
 | set | meta | registry | /tmp/nc/registry_out.json (only if it exists) | from Step 1 |
 | set | meta | lexicon | /tmp/nc/lexicon_out.json | from Step 1; leave out if the doc didn't exist yet |
 | set | meta | overview | /tmp/nc/overview_out.json | from Step 1; leave out if the doc didn't exist yet |
+| set | meta | prep_watch | /tmp/nc/prep_watch_out.json (only if it exists) | from Step 1 |
 
 For example:
 
@@ -681,7 +705,8 @@ For example:
 The batch is all or nothing. If it fails because a doc changed meanwhile (Murat may have added a
 word, or a vocab session recorded reviews), nothing was written: fetch that doc again, rerun the
 script that builds it (`pv_apply.py` then `vt_apply.py` for the trackers, `phave_link.py` for
-`meta/phave`, `lex_apply.py` for `meta/lexicon`, `overview.py finish` for `meta/overview`), and send the
+`meta/phave`, `lex_apply.py` for `meta/lexicon`, `overview.py finish` for `meta/overview`, `preps.py run`
+for `meta/prep_watch`), and send the
 whole batch again. Never split it into separate writes to get
 round a conflict.
 
@@ -718,6 +743,8 @@ part of the report holds:
    from the previous session's same mode; the top 3 patterns this session, each with one quote and
    its fix; any pattern that is new; two or three of the most useful upgrade suggestions. Lead with
    a pattern that is still recurring across sessions (the Naturalness tab's "All sessions" view).
+   Then prepositions (added 16.10.26), from the `PREPS:` lines: overall and watch-list accuracy with
+   voice and typed, the weakest group, and any word that joined the watch list. Two lines at most.
 7. Chunks (added 12.10.26): one line per **focus** item from `chunks.py rolling` (today's voice uses
    and how many were correct, the last-12 accuracy and how many sessions it spans), one line for the
    other tracked items that came up today, and every `SUGGEST SETTLED`, focus or not (Murat
@@ -729,7 +756,7 @@ part of the report holds:
 **Voice mode:** the report and the brief are still written and saved in full (Step 6); only what
 you say is short. Keep it short and spoken. Give the error rate, the top two error types with
 one example each, one good structure, the phrasal verb density, the interference rate with the
-top pattern, one vocab-list come-up if there was one, and the open chunks in one sentence. Say the
+top pattern, the watch-list preposition accuracy, one vocab-list come-up if there was one, and the open chunks in one sentence. Say the
 rest is on the dashboard. Section 0's voice rules apply: no recap of the conversation.
 
 Quote only Murat's own words, never Claude's. Numbers come from `session_doc.json`, never
@@ -798,8 +825,11 @@ from estimation.
   per session, which is why the settled rule pools the last 12 uses. Tested 12.10.26: 109/109 example
   sentences across all nine finders, 6/6 rolling-rule cases, and the 10.10 session (24 candidates,
   3 set by hand) matched a hand count. "As you just said" and similar phrases are left out of slice 2.
+- Preposition accuracy (added 16.10.26) can read a little high: a slip this check misses counts as
+  right. A watch-list row is one word, so other uses of the same word count too ("book" the noun under
+  "book the tickets"). Plain "to" before a verb is never counted.
 - Pronunciation, fluency and pauses aren't measured. Only the transcript text is available.
 
 ## Scripts
 
-In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `chunks.py`, `intf_instructions.md`.
+In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `chunks.py`, `preps.py`, `intf_instructions.md`.

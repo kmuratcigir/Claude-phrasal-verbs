@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preposition accuracy for the naturalness check (draft, 16.10.26 — not installed yet).
+"""Preposition accuracy for the naturalness check (16.10.26).
 
 Finds every word + preposition pair Murat says, marks each one right or wrong against the
 check's own preposition flags, and adds up accuracy for the watch list, the Turkish-source
@@ -9,6 +9,8 @@ slips (the flags), so nothing here decides what is wrong on its own.
   python3 preps.py find  murat_turns.txt cands.json
   python3 preps.py seed  sessions_dir watch.json               (watch list from past slips)
   python3 preps.py score cands.json flags.json watch.json out.json
+  python3 preps.py run   murat_turns.txt session_doc.json meta/prep_watch.json prep_watch_out.json <doc_id>
+                                                              (the naturalness check's step: all of the above, fails softly)
 
 flags.json: [{"turn": "T12", "quote": "...", "fix": "...", "turkish": "...", "mode": "voice"}]
  = the session's preposition slips (interference preposition_case + err_preposition), as the
@@ -126,7 +128,21 @@ def keyable(lemma):
 
 NONKEY = {"i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them", "this", "that", "these", "those", "there", "here",
           "actually", "really", "just", "also", "sorry", "so", "very", "even", "still"}
+# keys that said nothing about the preposition when the seed was cleaned by hand (16.10.26): never a row; the slip
+# still counts in "all". ALIAS merges the same word seen two ways.
+SKIP_KEYS = {"up", "something", "people", "deal", "work", "certain", "co", "one", "old", "last", "big", "mini", "personal", "baby",
+             "business", "lot", "make", "some", "skill", "thread", "analysis", "deep", "fake", "wife", "ceo", "sometime", "case", "high",
+             "family", "expensive", "smoke", "plate", "tunnel", "mid", "second", "usual", "annual", "side", "company", "connection",
+             "dinner", "game", "park", "window", "year", "scene", "source", "original", "shape", "construction", "clear", "meeting",
+             "conversation", "lucky", "trickiest", "attach"}
+ALIAS = {"well": "good", "better": "good", "rooted": "root", "swap over": "swap", "rid": "swap", "right": "path", "committed": "commit",
+         "return back": "return", "datum": "receive"}
 def key_of(quote, fix):
+    k, right = _key_of(quote, fix)
+    k = ALIAS.get(k, k)
+    return (None if k in SKIP_KEYS else k), right
+
+def _key_of(quote, fix):
     """The word Murat said that decides the preposition (option A, 16.10.26).
     1) the preposition he said that the fix changes -> the word it hangs on (a time word wins: "in the last minute" -> minute)
     2) a dropped preposition -> the word in the fix it hangs on, if he said that word
@@ -218,7 +234,7 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
             watch[k] = {"word": k, "right": right, "group": grp, "slips": 0, "examples": [], "status": "waiting", "new": True}
         if k:
             r = watch[k]; r["slips"] += 1; r["changed"] = True
-            r["examples"] = ([{"date": fl.get("date", ""), "said": fl["quote"][:120], "fix": fl["fix"][:120]}] + r.get("examples", []))[:6]
+            r["examples"] = ([{"date": fl.get("date", ""), "said": fl["quote"][:120], "fix": fl["fix"][:120], **({"doc": fl["doc"]} if fl.get("doc") else {})}] + r.get("examples", []))[:6]
             if r.get("status", "on") == "waiting" and r["slips"] >= 2: r["status"] = "on"; r["promoted"] = True
     # right "no preposition" uses: every use of a ZERO verb on the watch list that has no preposition after it
     on = {w for w, r in watch.items() if r.get("status", "on") == "on"}   # only words on the list are tracked one by one
@@ -256,6 +272,68 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
     print("all", pc(out["all"]), "voice", out["all"]["voice"], "typed", out["all"]["typed"], "| watch list", pc(out["watch"]), "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
 
+# ---- the naturalness check's step (16.10.26): one command, fails softly, writes nothing unless it finishes
+def flags_of(doc):
+    """The check's own preposition slips in the session doc: interference preposition_case + err_preposition (same slip once)."""
+    norm = lambda x: re.sub(r"[^a-z ]", "", (x or "").lower())
+    fl = [dict(quote=i["quote"], fix=i.get("fix", ""), turkish=i.get("turkish", ""), mode=i.get("mode"), turn=i.get("turn"))
+          for i in (doc.get("interference") or {}).get("items", []) if i.get("type") == "preposition_case" and i.get("counted", True) is not False]
+    seen = [norm(i["quote"]) for i in fl]
+    for e in doc.get("errors", []):
+        if e.get("concept") != "err_preposition": continue
+        q = norm(e.get("quote"))
+        if any(x and (x in q or q in x) for x in seen): continue
+        fl.append(dict(quote=e.get("quote", ""), fix=(e.get("fix") or "").split("->")[-1].strip(), turkish="", mode=e.get("mode")))
+    return fl
+
+def cmd_run(turns_path, doc_path, watch_path, watch_out, doc_id):
+    import tempfile, datetime
+    try:
+        doc = json.load(open(doc_path)); W = json.load(open(watch_path)); W = W.get("data", W) if "rows" not in W else W
+        log = W.setdefault("log", {})
+        rows = {r["word"]: r for r in W["rows"]}
+        # a second run in the same chat first takes back what the first run added
+        for w, n in log.pop(doc_id, {}).items():
+            r = rows.get(w)
+            if not r: continue
+            r["slips"] -= n; r["examples"] = [e for e in r.get("examples", []) if e.get("doc") != doc_id]
+            if r["slips"] <= 0 and r.get("added") == doc_id: del rows[w]
+        for r in rows.values(): r["status"] = "on" if r["slips"] >= 2 else "waiting"
+        before = {w: r["slips"] for w, r in rows.items()}
+        fl = flags_of(doc)
+        for f in fl: f["date"] = doc.get("date", ""); f["doc"] = doc_id
+        tmp = tempfile.mkdtemp(prefix="preps_")
+        P = lambda n: os.path.join(tmp, n)
+        json.dump(list(rows.values()), open(P("watch.json"), "w"), ensure_ascii=False)
+        json.dump(fl, open(P("flags.json"), "w"), ensure_ascii=False)
+        cmd_find(turns_path, P("cands.json"))
+        cmd_score(P("cands.json"), P("flags.json"), P("watch.json"), P("out.json"))
+        o = json.load(open(P("out.json")))
+        for r in o["watch_changes"]:
+            if r["word"] not in rows: r["added"] = doc_id
+            rows[r["word"]] = r
+        added = {w: r["slips"] - before.get(w, 0) for w, r in rows.items() if r["slips"] - before.get(w, 0) > 0}
+        if added: log[doc_id] = added
+        for r in rows.values(): r["status"] = "on" if r["slips"] >= 2 else "waiting"
+        W["rows"] = sorted(rows.values(), key=lambda r: -r["slips"]); W["as_of"] = datetime.date.today().isoformat()
+        doc["preps"] = {k: o[k] for k in ("v", "all", "watch", "groups", "chips", "words", "wrong", "unmatched_flags")}
+        doc["preps"]["joined_list"] = o["joined_list"]; doc["preps"]["new_waiting"] = o["new_waiting"]
+        t = doc_path + ".tmp"; json.dump(doc, open(t, "w"), ensure_ascii=False, indent=1); os.replace(t, doc_path)
+        json.dump(W, open(watch_out, "w"), ensure_ascii=False, indent=1)
+    except Exception as e:   # fail softly: the check goes on without preposition figures
+        if os.path.exists(watch_out): os.remove(watch_out)
+        print(f"PREPS SKIPPED: {type(e).__name__}: {e}. session_doc.json was not changed; leave meta/prep_watch out of the save and say so in the report.")
+        return
+    pc = lambda c: (f'{round(c[0] / c[1] * 100)}% of {c[1]}' if c[1] else "no uses")
+    tot = lambda c: [c["voice"][0] + c["typed"][0], c["voice"][1] + c["typed"][1]]
+    gs = sorted(((g, tot(c)) for g, c in o["groups"].items() if g != "other" and tot(c)[1] >= 10), key=lambda x: x[1][0] / x[1][1])
+    print(f'PREPS: all {pc(tot(o["all"]))} (voice {pc(o["all"]["voice"])}, typed {pc(o["all"]["typed"])})')
+    print(f'PREPS: watch list {pc(tot(o["watch"]))} (voice {pc(o["watch"]["voice"])}, typed {pc(o["watch"]["typed"])})')
+    if gs: print(f'PREPS: weakest group {gs[0][0]} {pc(gs[0][1])}')
+    print(f'PREPS: slips {len(o["wrong"])}; joined the list: {", ".join(o["joined_list"]) or "none"}; new, waiting: {", ".join(o["new_waiting"]) or "none"}')
+    if o["unmatched_flags"]: print(f'PREPS: {len(o["unmatched_flags"])} slip(s) not found in the turns, counted as wrong anyway')
+    print("PREPS: wrote the preps block into session_doc.json and", watch_out)
+
 if __name__ == "__main__":
     cmd, *a = sys.argv[1:]
-    {"find": cmd_find, "seed": cmd_seed, "score": cmd_score}[cmd](*a)
+    {"find": cmd_find, "seed": cmd_seed, "score": cmd_score, "run": cmd_run}[cmd](*a)

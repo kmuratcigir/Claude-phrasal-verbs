@@ -99,3 +99,9 @@ Nothing built yet; build starts on Murat's go.
 - Typed turns count too (Murat, 16.10.26), everywhere. preps.py: conjunctions and stray tags dropped from the pairs; unmatched slips still count as one wrong use.
 - Known limit: a row is one word, so unrelated uses of the same word count too (e.g. "book" the noun under "book" the verb).
 - Next: wire preps.py into the naturalness-check SKILL.md (fail softly, one save) and give Murat a zip.
+
+### 16.10.26 — Naturalness check counts prepositions (zip given to Murat, not yet installed)
+- `skill-upload/naturalness-check/`: `scripts/preps.py` added (twelve scripts); SKILL.md: intro paragraph, Step 1 reads `meta/prep_watch` and notes its version, Step 5 runs `preps.py run murat_turns.txt session_doc.json meta/prep_watch.json prep_watch_out.json <doc_id>` after `intf.py apply`, report gets `### Prepositions` under `## Turkish interference` (two lines), Step 7 adds `meta/prep_watch` to the single batch, Step 8 and voice mode mention it, Limits note.
+- `preps.py run` reads the check's own slips from `session_doc.json` (interference `preposition_case` + `err_preposition`, same slip once), writes the `preps` block and `prep_watch_out.json`. Fails softly: prints `PREPS SKIPPED`, changes nothing, the check goes on. A second run in the same chat changes nothing twice (`log` per doc id in `meta/prep_watch`). Tested on the 15.10 doc: rerun identical; a broken watch file skips cleanly.
+- `SKIP_KEYS` / `ALIAS` keep the hand-cleaning of the seed for new slips (no rows for "one", "year", "expensive"…; "rooted" → root).
+- Next: Murat uploads the zip; review after the first real wrap-up (figures and real token cost).
