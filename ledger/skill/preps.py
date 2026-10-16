@@ -43,6 +43,8 @@ MULTI = {("out", "of"), ("on", "to"), ("instead", "of"), ("because", "of"), ("du
          ("apart", "from"), ("as", "for"), ("in", "terms"), ("prior", "to"), ("regardless", "of")}
 TIME = re.compile(r"^(monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekends?|morning|afternoon|evening|night|day|days|week|month|year|time|times|minute|minutes|hour|hours|beginning|end|moment|today|tomorrow|christmas|weekend|\d.*|january|february|march|april|may|june|july|august|september|october|november|december)$", re.I)
 
+DATE = re.compile(r"^(\d.*|january|february|march|april|may|june|july|august|september|october|november|december)$", re.I)
+PRT = {"back", "up", "out", "off", "down", "away", "over"}
 TIMEP = {"at", "on", "in", "for", "since", "during", "over", "by", "until"}
 def pairs(doc):
     """Every preposition with the word that decides it. Infinitive 'to' and phrasal-verb particles are never ADP+prep."""
@@ -59,7 +61,13 @@ def pairs(doc):
         objs = nouns[:1] or [c for c in t.children if c.dep_ in ("pobj", "pcomp")]
         obj = objs[0].text if objs else ""
         # time phrases belong to the time word ("in the last minute" -> minute), only for the time prepositions
-        lemma = objs[0].lemma_.lower() if objs and TIME.match(obj) and word in TIMEP else head.lemma_.lower()
+        if objs and TIME.match(obj) and word in TIMEP:
+            lemma = "dates" if DATE.match(obj) else objs[0].lemma_.lower()    # "at 28", "in 29th October" -> one dates row
+        elif head.pos_ in ("ADV", "ADP") and head.text.lower() in PRT and head.head.pos_ == "VERB":
+            lemma = head.head.lemma_.lower() + " " + head.text.lower()       # "look back to" -> look back
+        else:
+            prt = [c.text.lower() for c in head.children if c.dep_ == "prt" and c.text.lower() in PRT and c.i < t.i]
+            lemma = head.lemma_.lower() + (" " + prt[0] if prt and head.pos_ == "VERB" else "")   # "looking them up from" -> look up
         out.append({"head": head.text, "hidx": head.i, "lemma": lemma, "pos": head.pos_, "prep": word,
                     "obj": obj, "start": t.idx, "end": t.idx + len(t.text)})
     return out
@@ -98,7 +106,10 @@ def pw(text):
             and not (t.text.lower() == "to" and t.i + 1 < len(t.doc) and t.doc[t.i + 1].pos_ in ("VERB", "AUX"))]
 def right_of(quote, fix):
     """The preposition the fix brings in (a plain word diff, so short fixes like 'at the beginning' work); none = ∅."""
-    said = set(pw(quote)); new = [w for w in pw(fix) if w not in said]
+    said = collections.Counter(pw(quote)); new = []
+    for w in pw(fix):                                  # a count diff: "knowledge for some of" -> "knowledge of some of" brings in one "of"
+        if said[w]: said[w] -= 1
+        else: new.append(w)
     return new[0] if new else "∅"
 
 # verbs that take their object directly: every use counts as a "no preposition" decision, so a right
@@ -106,6 +117,11 @@ def right_of(quote, fix):
 ZERO = {"discuss", "mention", "contact", "join", "approach", "message", "research", "seek", "chase", "enter", "marry",
         "attend", "answer", "lack", "resemble", "accompany", "promise", "fit", "email", "phone", "text", "visit", "reach", "ask"}
 
+def keyable(lemma):
+    return bool(lemma) and re.match(r"^[a-z][a-z ]*$", lemma) and lemma not in PREPS and lemma not in NONKEY
+
+NONKEY = {"i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them", "this", "that", "these", "those", "there", "here",
+          "actually", "really", "just", "also", "sorry", "so", "very", "even", "still"}
 def key_of(quote, fix):
     """The word Murat said that decides the preposition (option A, 16.10.26).
     1) the preposition he said that the fix changes -> the word it hangs on (a time word wins: "in the last minute" -> minute)
@@ -120,16 +136,16 @@ def key_of(quote, fix):
     changed = [p for p in qp if p["prep"].split()[-1] not in fixw]
     if changed and re.search(r"\bsame\b", (quote or "").lower()): return "same", right   # the same as / the same about
     for p in changed:
-        if p["lemma"] in PREPS: continue                      # a preposition is never the deciding word
+        if not keyable(p["lemma"]): continue                  # a preposition, pronoun or filler is never the deciding word
         if p["lemma"] not in GENERIC or TIME.match(p["obj"] or ""): return p["lemma"], right
     qlem = {t.lemma_.lower() for t in q}
     for p in fp:
-        if p["lemma"] in qlem and p["lemma"] not in GENERIC: return p["lemma"], right
+        if p["lemma"].split()[0] in qlem and p["lemma"] not in GENERIC and keyable(p["lemma"]): return p["lemma"], right
     zero = [t.lemma_.lower() for t in q if t.lemma_.lower() in ZERO]
     if zero: return zero[0], right
     for p in qp:
-        if p["lemma"] not in GENERIC and p["lemma"] not in PREPS: return p["lemma"], right
-    content = [t for t in q if t.pos_ in ("VERB", "ADJ", "NOUN") and t.lemma_.lower() not in GENERIC and t.lemma_.lower() not in PREPS]
+        if p["lemma"] not in GENERIC and keyable(p["lemma"]): return p["lemma"], right
+    content = [t for t in q if t.pos_ in ("VERB", "ADJ", "NOUN") and t.lemma_.lower() not in GENERIC and keyable(t.lemma_.lower())]
     return (content[0].lemma_.lower() if content else None), right
 
 def cmd_seed(sess_dir, out_path):
@@ -153,7 +169,7 @@ def cmd_seed(sess_dir, out_path):
     out = []
     for r in rows.values():
         g = [x for x, _ in r["groups"].most_common() if x != "other"]
-        out.append({"word": r["word"], "right": r["right"].most_common(1)[0][0], "group": g[0] if g else "other",
+        out.append({"word": r["word"], "right": " / ".join([x for i, (x, c) in enumerate(r["right"].most_common(2)) if i == 0 or c >= 2]), "group": g[0] if g else "other",
                     "slips": r["slips"], "examples": r["examples"]})
     out.sort(key=lambda r: -r["slips"])
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
