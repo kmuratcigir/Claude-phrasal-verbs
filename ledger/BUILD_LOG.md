@@ -89,4 +89,4 @@ Nothing built yet; build starts on Murat's go.
 - Seed rebuilt from all 23 saved sessions (18.09–15.10): 245 words after hand merges and drops; 107 with 2+ slips go on the list, 138 one-slip words wait.
 - Rule (Murat, 16.10.26): a word joins the list on its second slip. After one slip it waits (`status: "waiting"`), and its uses count only in the overall figure. Replaces the earlier "new word joins on first slip".
 - preps.py: phrasal-verb keys (look back, look up), one `dates` row, count diff for the right preposition, no pronoun/filler keys; `score` returns `joined_list`, `new_waiting` and `watch_changes`.
-- Review page: https://claude.ai/artifact/Muww9cTWwVvhv1Cy41R5N7 — waiting for Murat's approval before the seed is saved to the Ledger.
+- Review page: https://claude.ai/artifact/Muww9cTWwVvhv1Cy41R5N7 — approved by Murat 16.10.26 and saved as `meta/prep_watch` (version 1; 107 on the list, 138 waiting).
