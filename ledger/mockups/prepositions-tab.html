@@ -102,6 +102,19 @@ td.w b{font-weight:600} td.w em{font-style:normal;color:var(--err);font-size:12.
 .dot{width:12px;height:12px;border-radius:3px;display:inline-block}
 .dot.ok{background:var(--good-soft);border:1px solid var(--good)} .dot.bad{background:var(--err-soft);border:1px solid var(--err)}
 .note{font-size:12.5px;color:var(--muted);margin-top:10px;max-width:80ch}
+select{font:inherit;font-size:13px;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:6px 12px;max-width:100%}
+select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hm{display:flex;flex-wrap:wrap;gap:8px}
+.hc{display:inline-flex;align-items:baseline;gap:8px;padding:8px 13px;border-radius:10px;font-family:var(--display);font-weight:800;font-size:15px;color:var(--ink)}
+.hc small{font-weight:600;font-size:12.5px;font-variant-numeric:tabular-nums}
+.hc.h1{background:var(--err-soft)} .hc.h2{background:var(--warn-soft)} .hc.h3{background:var(--accent-soft)} .hc.h4{background:var(--good-soft)}
+.hc.few{background:var(--surface);border:1px dashed var(--faint);color:var(--muted)}
+.hmkey{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:12px}
+.hmkey i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+td details summary{cursor:pointer;color:var(--accent);font-size:12.5px;font-weight:600;list-style:none;margin-top:4px}
+td details summary::-webkit-details-marker{display:none}
+td details ul{margin:6px 0 0;padding-left:16px;font-size:12.5px;display:grid;gap:3px}
+td details ul i{font-style:normal;color:var(--err)} td details ul b{color:var(--good);font-weight:600}
 ul.how{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;max-width:80ch}
 </style>
 
@@ -118,44 +131,65 @@ ul.how{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;max-width:
     <div class="tile"><div class="label">All prepositions <span class="s">SAMPLE</span></div><div class="v">93<small>%</small></div><div class="d">412 uses in the last 5 sessions<br>includes the easy ones (go to, a lot of)</div></div>
     <div class="tile"><div class="label">Your watch list <span class="s">SAMPLE</span></div><div class="v">71<small>%</small></div><div class="d">96 uses of words you have slipped on<br>this is the number to move</div></div>
     <div class="tile"><div class="label">On the watch list <span class="r">REAL</span></div><div class="v">353</div><div class="d">word + preposition pairs<br>from 753 recorded slips</div></div>
-    <div class="tile"><div class="label">Weakest group <span class="s">SAMPLE</span></div><div class="v" style="font-size:20px;line-height:1.3">-e → to / into</div><div class="d">58% · most slips on record (166)</div></div>
+    <div class="tile"><div class="label">Weakest group <span class="s">SAMPLE</span></div><div class="v" style="font-size:20px;line-height:1.3">-e → to / into</div><div class="d">58% · most slips on record (135)</div></div>
   </section>
 
   <section class="panel">
-    <div class="phead"><h2>The story, by Turkish source</h2><span class="sub">Watch-list accuracy · last 5 sessions · line at 80%</span></div>
-    <p class="explain">Each group is one Turkish habit. The bar is how often you get those words right in speech; the slip count is everything on record since 18 Sept. Click a group to see its words.</p>
+    <div class="phead"><h2>The story, by Turkish source</h2><select id="stPick" aria-label="Choose sessions"><option>Last 5 sessions</option><option>All sessions</option><option>15 Oct · latest session</option><option>14 Oct</option><option>13 Oct</option></select></div>
+    <p class="explain">Nine groups: seven Turkish habits, time words, and the unsorted rest. Watch-list accuracy, line at 80%. Each group is one Turkish habit. The bar is how often you get those words right in speech; the slip count is everything on record since 18 Sept. Click a group to see its words.</p>
     <div class="story">
-      <details class="src" open><summary><div class="srcname"><b>-e → to / into</b><span>166 slips on record <span class="r">REAL</span></span></div>
+      <details class="src" open><summary><div class="srcname"><b>-e → to / into</b><span>135 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="lo" style="width:58%"></i><b></b></div><div class="barlab"><span>31 of 53 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">58%</div><span class="pill flat">Stuck</span></summary>
         <div class="srcbody"><p>Turkish "-e" turns into "into" where English says "to", and the other way round. "Add to" is the word that slips most.</p>
           <div class="pairs"><span class="pair"><em>add into</em><b>add to</b><small>26×</small></span><span class="pair"><em>move into</em><b>move on to</b><small>9×</small></span><span class="pair"><em>late to</em><b>late for</b><small>2×</small></span><span class="pair"><em>turn to</em><b>turn into</b><small>4×</small></span><span class="pair"><em>put on</em><b>put effort into</b><small>4×</small></span></div></div></details>
-      <details class="src"><summary><div class="srcname"><b>-de → in / at / on</b><span>106 slips on record <span class="r">REAL</span></span></div>
+      <details class="src"><summary><div class="srcname"><b>-de → in / at / on</b><span>57 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="mid" style="width:72%"></i><b></b></div><div class="barlab"><span>38 of 53 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">72%</div><span class="pill up">Improving</span></summary>
         <div class="srcbody"><p>Turkish "-de" is one ending for three English words. Lists, screens and days take "on"; clock times take "at".</p>
           <div class="pairs"><span class="pair"><em>in my list</em><b>on my list</b></span><span class="pair"><em>in my computer</em><b>on my computer</b></span><span class="pair"><em>in Saturday</em><b>on Saturday</b></span><span class="pair"><em>at my end</em><b>on my end</b></span></div></div></details>
-      <details class="src"><summary><div class="srcname"><b>için → for</b><span>81 slips on record <span class="r">REAL</span></span></div>
+      <details class="src"><summary><div class="srcname"><b>için → for</b><span>79 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="mid" style="width:76%"></i><b></b></div><div class="barlab"><span>29 of 38 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">76%</div><span class="pill up">Improving</span></summary>
         <div class="srcbody"><p>"Için" pulls in "for" where English wants "of", "about" or "to".</p>
           <div class="pairs"><span class="pair"><em>knowledge for</em><b>knowledge of</b><small>11×</small></span><span class="pair"><em>the same for</em><b>the same about</b><small>8×</small></span><span class="pair"><em>hard to me</em><b>hard for me</b></span><span class="pair"><em>unfamiliar for me</em><b>unfamiliar to me</b></span></div></div></details>
-      <details class="src"><summary><div class="srcname"><b>ile → with</b><span>42 slips on record <span class="r">REAL</span></span></div>
+      <details class="src"><summary><div class="srcname"><b>ile → with</b><span>35 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="hi" style="width:84%"></i><b></b></div><div class="barlab"><span>21 of 25 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">84%</div><span class="pill up">Improving</span></summary>
         <div class="srcbody"><p>"Ile" gives "with" where English uses "as", "to" or nothing.</p>
           <div class="pairs"><span class="pair"><em>the same with</em><b>the same as</b></span><span class="pair"><em>limit with</em><b>limit to</b></span><span class="pair"><em>angry to</em><b>angry with</b></span></div></div></details>
-      <details class="src"><summary><div class="srcname"><b>-den → from / of</b><span>36 slips on record <span class="r">REAL</span></span></div>
+      <details class="src"><summary><div class="srcname"><b>-den → from / of</b><span>24 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="mid" style="width:70%"></i><b></b></div><div class="barlab"><span>14 of 20 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">70%</div><span class="pill new">Too few yet</span></summary>
         <div class="srcbody"><p>"-den" gives "from" where English says "for", "in" or "than".</p>
           <div class="pairs"><span class="pair"><em>responsible from</em><b>responsible for</b></span><span class="pair"><em>look up from</em><b>look up in</b></span><span class="pair"><em>better from</em><b>better than</b></span></div></div></details>
-      <details class="src"><summary><div class="srcname"><b>hakkında → about</b><span>31 slips on record <span class="r">REAL</span></span></div>
+      <details class="src"><summary><div class="srcname"><b>hakkında → about</b><span>32 slips on record <span class="r">REAL</span></span></div>
         <div class="barwrap"><div class="bar"><i class="hi" style="width:88%"></i><b></b></div><div class="barlab"><span>22 of 25 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
         <div class="pct">88%</div><span class="pill up">Improving</span></summary>
         <div class="srcbody"><p>"Hakkında" adds an "about" that English doesn't need, or uses it where English says "of".</p>
           <div class="pairs"><span class="pair"><em>discuss about</em><b>discuss</b></span><span class="pair"><em>benefits about</em><b>benefits of</b></span><span class="pair"><em>thoughtful on</em><b>thoughtful about</b></span></div></div></details>
+      <details class="src"><summary><div class="srcname"><b>Time words: on / at / in / for</b><span>77 slips on record <span class="r">REAL</span></span></div>
+        <div class="barwrap"><div class="bar"><i class="lo" style="width:62%"></i><b></b></div><div class="barlab"><span>26 of 42 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
+        <div class="pct">62%</div><span class="pill flat">Stuck</span></summary>
+        <div class="srcbody"><p>Days, dates, clock times and lengths of time. Turkish "-de" and "-dir" don't tell you which one English wants.</p>
+          <div class="pairs"><span class="pair"><em>in Saturday</em><b>on Saturday</b></span><span class="pair"><em>in these days</em><b>these days</b><small>10×</small></span><span class="pair"><em>in time</em><b>over time</b><small>14×</small></span><span class="pair"><em>from sometime</em><b>for a while</b></span></div></div></details>
+      <details class="src"><summary><div class="srcname"><b>∅ No preposition needed</b><span>46 slips on record <span class="r">REAL</span></span></div>
+        <div class="barwrap"><div class="bar"><i class="mid" style="width:74%"></i><b></b></div><div class="barlab"><span>23 of 31 right <span class="s">SAMPLE</span></span><span>80%</span></div></div>
+        <div class="pct">74%</div><span class="pill up">Improving</span></summary>
+        <div class="srcbody"><p>Verbs that take their object directly, where Turkish needs an ending: you add a preposition English doesn't have.</p>
+          <div class="pairs"><span class="pair"><em>discuss about</em><b>discuss</b></span><span class="pair"><em>contact to</em><b>contact</b></span><span class="pair"><em>promise for</em><b>promise</b></span><span class="pair"><em>start in my sentences</em><b>start my sentences</b></span></div></div></details>
+      <details class="src"><summary><div class="srcname"><b>Unsorted</b><span>60 slips on record <span class="r">REAL</span></span></div>
+        <div class="barwrap"><div class="bar"><i class="mid" style="width:70%"></i><b></b></div><div class="barlab"><span>no clear Turkish source</span><span>80%</span></div></div>
+        <div class="pct">–</div><span class="pill new">Review</span></summary>
+        <div class="srcbody"><p>Slips the check couldn't link to one Turkish ending. Claude moves them into a group by hand when a pattern shows.</p></div></details>
     </div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Preposition heatmap</h2><span class="sub">Accuracy by the preposition you needed · last 5 sessions <span class="s">SAMPLE</span></span></div>
+    <p class="explain">One chip per preposition, coloured by how often you chose it right when it was the right word. "∅" is the places where no preposition was needed.</p>
+    <div class="hm" id="hm"></div>
+    <div class="hmkey"><span><i style="background:var(--err-soft)"></i>under 60%</span><span><i style="background:var(--warn-soft)"></i>60–79%</span><span><i style="background:var(--accent-soft)"></i>80–89%</span><span><i style="background:var(--good-soft)"></i>90%+</span><span><i style="border:1px dashed var(--faint)"></i>under 5 uses</span></div>
   </section>
 
   <section class="panel">
@@ -173,8 +207,8 @@ ul.how{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;max-width:
   </section>
 
   <section class="panel">
-    <div class="phead"><h2>Watch list</h2><span class="sub">Built from your slips, grows on its own</span></div>
-    <p class="explain">Every word you have slipped on, with its right preposition. Each check counts every use of these words, right or wrong. Slip counts are real; uses and accuracy are sample values.</p>
+    <div class="phead"><h2>Watch list</h2><select id="wlPick" aria-label="Choose sessions"><option>Last 5 sessions</option><option>All sessions</option><option>15 Oct · latest session</option><option>14 Oct</option></select></div>
+    <p class="explain">One row per word + preposition pair you have slipped on at least once (the word is the verb, adjective or noun that decides the preposition: <i>add</i> + to, <i>angry</i> + with). From then on, every use of that word counts, right or wrong. Slip counts are real; uses and accuracy are sample values.</p>
     <div class="tools" id="wlTools" role="group" aria-label="Filter by group"></div>
     <div class="scroll"><table>
       <thead><tr><th>Word + preposition</th><th>Group</th><th class="n">Slips on record</th><th class="n">Uses, last 5</th><th>Last 6 uses</th><th class="n">Accuracy</th><th>Status</th></tr></thead>
@@ -202,13 +236,21 @@ const ROWS=[
  ["knowledge of","icin",11,"knowledge for",7,[1,1,0,1,1,1],71],["the same about","icin",8,"the same for",5,[0,1,1,1,0,1],60],["rooted in","e",8,"rooted to",4,[1,0,1,1],75],
  ["on + day","de",6,"in Saturday",9,[1,1,0,1,1,1],78],["on my list","de",6,"in my list",10,[1,1,1,1,1,1],90],["responsible for","den",5,"responsible from",5,[1,1,1,0,0,1],80],
  ["invest in","e",4,"invest to",6,[1,1,1,1,0,0],83],["angry with","ile",2,"angry to",5,[1,1,1,1,1,0],100],["the same as","ile",3,"the same with",6,[1,1,1,1,1,1],100]];
+const EX={"add to":[["I just want to add this into my list","add this to my list","18 Sept"],["Let me add my own sentences into the practice","add them to the practice","13 Oct"],["we could put it into the upcoming chunks","add it to the upcoming chunks","12 Oct"]],
+ "late for":[["I'm a little bit late to my meeting","late for my meeting","12 Oct"]],
+ "knowledge of":[["my knowledge for the language learning","my knowledge of language learning","13 Oct"],["increase my knowledge for them","my knowledge of them","06 Oct"]],
+ "the same about":[["I can say the same things for Turkish too","the same about my Turkish","13 Oct"],["the same things for find out","the same about 'find out'","12 Oct"]],
+ "responsible for":[["who's responsible from the investment activities","responsible for","22 Sept"]],
+ "rooted in":[["this is rooted to to have their own countries","rooted in having","12 Oct"]]};
+const HM=[["to",62,48],["into",55,11],["onto",null,2],["on",74,39],["in",86,71],["at",81,26],["of",84,58],["for",72,44],["with",88,25],["about",90,21],["from",83,12],["as",92,13],["by",null,3],["∅ none",74,31]];
+document.getElementById("hm").innerHTML=HM.sort((a,b)=>(a[1]??999)-(b[1]??999)).map(([p,a,n])=>a==null?`<span class="hc few">${p}<small>${n} uses</small></span>`:`<span class="hc ${a<60?"h1":a<80?"h2":a<90?"h3":"h4"}" title="${p}: ${a}% of ${n} uses">${p}<small>${a}% · ${n}</small></span>`).join("");
 const GROUPS={all:"All",e:"-e → to / into",de:"-de → in / at / on",icin:"için → for",ile:"ile → with",den:"-den → from / of"};
 let cur="all";
 const status=r=>r[6]>=80?(r[5].slice(-2).every(Boolean)?["up","Fixed in speech"]:["flat","Slipping back"]):(r[5].slice(-3).filter(Boolean).length>=2?["new","Getting there"]:["down","Top priority"]);
 function paint(){
   document.getElementById("wlTools").innerHTML=Object.entries(GROUPS).map(([k,l])=>`<button type="button" data-g="${k}" aria-pressed="${cur===k}">${l}</button>`).join("");
   const rs=ROWS.filter(r=>cur==="all"||r[1]===cur).sort((a,b)=>a[6]-b[6]||b[4]-a[4]);
-  document.getElementById("wlRows").innerHTML=rs.map(r=>{const st=status(r);return `<tr><td class="w"><b>${r[0]}</b><em>you said: ${r[3]}</em></td><td>${GROUPS[r[1]]}</td><td class="n">${r[2]}</td><td class="n">${r[4]}</td><td><span class="dots">${r[5].map(x=>`<i class="dot ${x?"ok":"bad"}" title="${x?"right":"wrong"}"></i>`).join("")}</span></td><td class="n">${r[6]}%</td><td><span class="pill ${st[0]}" style="justify-self:start">${st[1]}</span></td></tr>`;}).join("");
+  document.getElementById("wlRows").innerHTML=rs.map(r=>{const st=status(r);return `<tr><td class="w"><b>${r[0]}</b><em>you said: ${r[3]}</em>${(EX[r[0]]||[]).length?`<details><summary>Show ${EX[r[0]].length} more</summary><ul>${EX[r[0]].map(e=>`<li>${e[2]}: <i>${e[0]}</i> → <b>${e[1]}</b></li>`).join("")}</ul></details>`:""}</td><td>${GROUPS[r[1]]}</td><td class="n">${r[2]}</td><td class="n">${r[4]}</td><td><span class="dots">${r[5].map(x=>`<i class="dot ${x?"ok":"bad"}" title="${x?"right":"wrong"}"></i>`).join("")}</span></td><td class="n">${r[6]}%</td><td><span class="pill ${st[0]}" style="justify-self:start">${st[1]}</span></td></tr>`;}).join("");
 }
 document.getElementById("wlTools").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.g;paint();});
 paint();
