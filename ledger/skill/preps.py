@@ -15,6 +15,7 @@ flags.json: [{"turn": "T12", "quote": "...", "fix": "...", "turkish": "...", "mo
  check already writes them. A use is wrong when its preposition falls inside a flagged quote;
  a flag with no preposition inside (a dropped one, "hang out our friends") is added as a wrong use.
 Row key = the word Murat said (Murat, 16.10.26), not the word in the fix.
+Voice and typed turns both count, and every figure is also given per mode.
 A word joins the list on its second slip; after one slip it waits (status "waiting"), and its uses count only in the overall figure.
 """
 import json, re, sys, glob, os, collections
@@ -191,10 +192,11 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
     for c in cands: c["ok"] = True
     extra = []
     for fl in flags:
-        tid = fl.get("turn") or next((t for t, x in turns.items() if fl["quote"].lower() in x.lower()), None)
+        q = clean(fl["quote"]).lower().strip(" .,")        # turns are cleaned of fillers, so the quote is too
+        order = ([fl["turn"]] if fl.get("turn") in turns else []) + list(turns)
+        tid = next((t for t in order if q and q in turns[t].lower()), None)
         if not tid: fl["unmatched"] = True; continue
-        fl["turn"] = tid; text = turns[tid].lower(); s = text.find(fl["quote"].lower())
-        e = s + len(fl["quote"])
+        fl["turn"] = tid; s = turns[tid].lower().find(q); e = s + len(q)
         inside = [c for c in cands if c["turn"] == tid and s <= c["start"] < e]
         k, right = key_of(fl["quote"], fl["fix"])
         grp = group_of(fl.get("turkish", ""), fl["fix"], fl["quote"])
@@ -203,7 +205,7 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
         if inside:
             for c in wrong: c.update(ok=False, right=right, flag=fl["quote"], fix=fl["fix"], group=grp)
         else:
-            extra.append({"turn": tid, "mode": fl.get("mode") or "voice", "lemma": k, "prep": "∅", "obj": "", "ok": False,
+            extra.append({"turn": tid, "mode": C.get("modes", {}).get(tid) or fl.get("mode") or "voice", "lemma": k, "prep": "∅", "obj": "", "ok": False,
                           "right": right, "flag": fl["quote"], "fix": fl["fix"], "group": grp, "dropped": True})
         if k and k not in watch:   # a first slip puts the word in the waiting area; a second puts it on the list (Murat, 16.10.26)
             watch[k] = {"word": k, "right": right, "group": grp, "slips": 0, "examples": [], "status": "waiting", "new": True}
@@ -217,13 +219,14 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
     seen_heads = {(c["turn"], c.get("hidx")) for c in cands}
     flagged_turn_words = {(u["turn"], u.get("lemma")) for u in extra}
     for tid, text in turns.items():
-        if C.get("modes", {}).get(tid, "voice") != "voice": continue
         for t in nlp(text):
             L = t.lemma_.lower()
             if L in zero_watch and t.pos_ == "VERB" and (tid, t.i) not in seen_heads and (tid, L) not in flagged_turn_words:
-                extra.append({"turn": tid, "mode": "voice", "lemma": L, "prep": "∅", "obj": "", "ok": True, "right": "∅"})
-    uses = [c for c in cands + extra if c.get("mode") == "voice"]
-    def acc(xs): return (round(sum(x["ok"] for x in xs) / len(xs) * 100), len(xs)) if xs else (None, 0)
+                extra.append({"turn": tid, "mode": C.get("modes", {}).get(tid, "voice"), "lemma": L, "prep": "∅", "obj": "", "ok": True, "right": "∅"})
+    uses = cands + extra   # voice and typed both count (Murat, 16.10.26); every figure also comes split by mode
+    def acc1(xs): return [round(sum(x["ok"] for x in xs) / len(xs) * 100), len(xs)] if xs else [None, 0]
+    def acc(xs): return {"all": acc1(xs), "voice": acc1([x for x in xs if x.get("mode") == "voice"]),
+                         "typed": acc1([x for x in xs if x.get("mode") == "typed"])}
     wl = [u for u in uses if u.get("lemma") in on]
     for u in wl: u.setdefault("group", watch[u["lemma"]]["group"])
     by_g = collections.defaultdict(list); by_w = collections.defaultdict(list); by_c = collections.defaultdict(list)
@@ -235,13 +238,13 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
            "groups": {g: acc(v) for g, v in sorted(by_g.items(), key=lambda kv: -len(kv[1]))},
            "chips": {c: acc(v) for c, v in sorted(by_c.items(), key=lambda kv: -len(kv[1]))},
            "words": {w: acc(v) for w, v in sorted(by_w.items(), key=lambda kv: -len(kv[1]))},
-           "wrong": [{k: u.get(k) for k in ("turn", "lemma", "prep", "right", "flag", "fix", "group", "dropped")} for u in uses if not u["ok"]],
+           "wrong": [{k: u.get(k) for k in ("turn", "mode", "lemma", "prep", "right", "flag", "fix", "group", "dropped")} for u in uses if not u["ok"]],
            "unmatched_flags": [f for f in flags if f.get("unmatched")],
            "new_waiting": sorted(w for w, r in watch.items() if r.get("new") and r["status"] == "waiting"),
            "joined_list": sorted(w for w, r in watch.items() if r.get("promoted")),
            "watch_changes": [{k: v for k, v in r.items() if k not in ("changed", "new", "promoted")} for r in watch.values() if r.get("changed")]}
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
-    print("all", out["all"], "| watch list", out["watch"], "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
+    print("all", out["all"]["all"], "voice", out["all"]["voice"], "typed", out["all"]["typed"], "| watch list", out["watch"]["all"], "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
 
 if __name__ == "__main__":
     cmd, *a = sys.argv[1:]
