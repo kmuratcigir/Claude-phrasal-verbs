@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1792140084-a3c6`, 16.10)
+Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1792140980-ca44`, 16.10)
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -11,11 +11,11 @@ Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version 
 | File | What it is |
 |---|---|
 | `data/meta_chunks.json` | The chunk list as written to `meta/chunks` (version 3, 12.10). Edit here, then write it back with `if_version`. |
-| `ledger.html` | The page source, identical to live version `1792140084-a3c6` (published 16.10; before that `1791808670-cc1f`, 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
+| `ledger.html` | The page source, identical to live version `1792140980-ca44` (published 16.10; earlier the same day `1792140084-a3c6`; before that `1791808670-cc1f`, 12.10; the original was `1790860799-3eb9`). The publish wrapper (doctype, head, `</body></html>`) is stripped; the service adds it back on publish. |
 
 ## How to republish
 1. Edit `ledger.html` in the repo, never a copy elsewhere.
-2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1792140084-a3c6`, someone published in between: diff it against `ledger.html` and merge before going on.
+2. Read the live artifact first (`Artifact action:"read"` with the URL). If its version is no longer `1792140980-ca44`, someone published in between: diff it against `ledger.html` and merge before going on.
 3. Test against a **frozen** copy of the real db (the lesson from the prep quiz: the db returns frozen objects, so a page that mutates loaded data breaks).
 4. Publish `ledger/ledger.html` with `url` = the Ledger URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
@@ -67,3 +67,9 @@ Finders for c2–c5, s2–s4 added to `skill/chunks.py`; `skill/tests/cases.json
 6. Answered only (no change): the faded rows at the bottom of the Overview grid are mistakes whose main impact is "slip" (`tr.slip`, opacity .6), sorted last on purpose.
 - **Tests (frozen copy of the real db, 23 sessions, 16.10):** no console errors on any tab at 1100px light and 390px dark; no sideways scroll; Overview, Grammar, Naturalness and Reading render the same text as before; the only text changes are the ones above. Density hover shows "1 Oct · 1 per 47".
 - **Seen in the data, not changed:** several chunk uses store the whole turn as `sentence` (c2, c3, s2, s3), so a slip can be a 60-word passage. The naturalness check could store a short excerpt around the chunk instead.
+
+## 16.10 (later, published as `1792140980-ca44`)
+- **Mastered label: gone for good** (Murat: "we've started from scratch and keep it that way"). Don't bring it back; stages come only from the matrix.
+- **Two accuracies on each chunk card:** the big number is the last 12 voice uses (the settle rule); under it "All uses since <first use>: x% · n uses in m sessions" (Murat asked for a year-to-date figure; counting only started 12.10, so for now it is "since the start"). `ckPool` returns `allAcc`, `allSess`, `since`.
+- **Chunks left, slices right** in Focus, Also tracked and Settled (`.cksplit` with two `.ckcol` columns; one column under 820px, chunks first).
+- Tests: frozen real db, no errors at 1100px and 390px, no sideways scroll.
