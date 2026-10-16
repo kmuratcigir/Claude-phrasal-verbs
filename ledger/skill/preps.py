@@ -54,6 +54,7 @@ def pairs(doc):
     for t in doc:
         if t.pos_ not in ("ADP", "SCONJ"): continue
         if t.dep_ not in ("prep", "dative", "agent") and not (t.dep_ == "ROOT" and t.pos_ == "ADP"): continue   # ROOT: a quote with no verb
+        if t.pos_ == "SCONJ" and not any(c.dep_ in ("pobj", "pcomp") for c in t.children): continue   # "because I", "as I said": a conjunction, not a preposition
         head = t.head
         prev = doc[t.i - 1] if t.i else None
         word = t.text.lower()
@@ -70,6 +71,7 @@ def pairs(doc):
         else:
             prt = [c.text.lower() for c in head.children if c.dep_ == "prt" and c.text.lower() in PRT and c.i < t.i]
             lemma = head.lemma_.lower() + (" " + prt[0] if prt and head.pos_ == "VERB" else "")   # "looking them up from" -> look up
+        if word not in PREPS and word not in {" ".join(m) for m in MULTI} or word in ("out", "up"): continue   # particles and stray tags ("@", "vs") are not counted
         out.append({"head": head.text, "hidx": head.i, "lemma": lemma, "pos": head.pos_, "prep": word,
                     "obj": obj, "start": t.idx, "end": t.idx + len(t.text)})
     return out
@@ -195,7 +197,12 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
         q = clean(fl["quote"]).lower().strip(" .,")        # turns are cleaned of fillers, so the quote is too
         order = ([fl["turn"]] if fl.get("turn") in turns else []) + list(turns)
         tid = next((t for t in order if q and q in turns[t].lower()), None)
-        if not tid: fl["unmatched"] = True; continue
+        if not tid:   # the check saw the slip but its quote isn't in the turns (paraphrased or cut): still one wrong use
+            fl["unmatched"] = True; k, right = key_of(fl["quote"], fl["fix"])
+            extra.append({"turn": None, "mode": fl.get("mode") or "voice", "lemma": k, "prep": "?", "obj": "", "ok": False, "right": right,
+                          "flag": fl["quote"], "fix": fl["fix"], "group": group_of(fl.get("turkish", ""), fl["fix"], fl["quote"])})
+            if k in watch: watch[k]["slips"] += 1; watch[k]["changed"] = True
+            continue
         fl["turn"] = tid; s = turns[tid].lower().find(q); e = s + len(q)
         inside = [c for c in cands if c["turn"] == tid and s <= c["start"] < e]
         k, right = key_of(fl["quote"], fl["fix"])
@@ -224,27 +231,30 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
             if L in zero_watch and t.pos_ == "VERB" and (tid, t.i) not in seen_heads and (tid, L) not in flagged_turn_words:
                 extra.append({"turn": tid, "mode": C.get("modes", {}).get(tid, "voice"), "lemma": L, "prep": "∅", "obj": "", "ok": True, "right": "∅"})
     uses = cands + extra   # voice and typed both count (Murat, 16.10.26); every figure also comes split by mode
-    def acc1(xs): return [round(sum(x["ok"] for x in xs) / len(xs) * 100), len(xs)] if xs else [None, 0]
-    def acc(xs): return {"all": acc1(xs), "voice": acc1([x for x in xs if x.get("mode") == "voice"]),
-                         "typed": acc1([x for x in xs if x.get("mode") == "typed"])}
-    wl = [u for u in uses if u.get("lemma") in on]
+    # raw counts [right, uses] per mode, so the Ledger can add sessions together; "all" = voice + typed
+    def acc(xs): return {m: [sum(1 for x in xs if x.get("mode") == m and x["ok"]), sum(1 for x in xs if x.get("mode") == m)] for m in ("voice", "typed")}
+    order = {t: i for i, t in enumerate(turns)}
+    wl = sorted([u for u in uses if u.get("lemma") in on], key=lambda u: (order.get(u["turn"], 0), u.get("start", 0)))
     for u in wl: u.setdefault("group", watch[u["lemma"]]["group"])
     by_g = collections.defaultdict(list); by_w = collections.defaultdict(list); by_c = collections.defaultdict(list)
     for u in wl: by_g[u["group"]].append(u); by_w[u["lemma"]].append(u)
     for u in uses:
-        need = (u["prep"] if u["prep"] != "∅" else "∅") if u["ok"] else u.get("right", "∅")
+        need = u["prep"] if u["ok"] else u.get("right", "∅")
         by_c["∅ no preposition" if need == "∅" else chip_of(need, u.get("obj"))].append(u)
-    out = {"all": acc(uses), "watch": acc(wl),
-           "groups": {g: acc(v) for g, v in sorted(by_g.items(), key=lambda kv: -len(kv[1]))},
-           "chips": {c: acc(v) for c, v in sorted(by_c.items(), key=lambda kv: -len(kv[1]))},
-           "words": {w: acc(v) for w, v in sorted(by_w.items(), key=lambda kv: -len(kv[1]))},
+    # seq: every use of the word in order; R/W = voice right/wrong, r/w = typed right/wrong
+    seq = lambda xs: "".join(("R" if x["ok"] else "W") if x.get("mode") == "voice" else ("r" if x["ok"] else "w") for x in xs)
+    out = {"v": 1, "all": acc(uses), "watch": acc(wl),
+           "groups": {g: acc(v) for g, v in by_g.items()},
+           "chips": {c: acc(v) for c, v in by_c.items()},
+           "words": {w: {**acc(v), "seq": seq(v)} for w, v in by_w.items()},
            "wrong": [{k: u.get(k) for k in ("turn", "mode", "lemma", "prep", "right", "flag", "fix", "group", "dropped")} for u in uses if not u["ok"]],
-           "unmatched_flags": [f for f in flags if f.get("unmatched")],
+           "unmatched_flags": [f["quote"] for f in flags if f.get("unmatched")],
            "new_waiting": sorted(w for w, r in watch.items() if r.get("new") and r["status"] == "waiting"),
            "joined_list": sorted(w for w, r in watch.items() if r.get("promoted")),
            "watch_changes": [{k: v for k, v in r.items() if k not in ("changed", "new", "promoted")} for r in watch.values() if r.get("changed")]}
+    pc = lambda c: f'{round((c["voice"][0] + c["typed"][0]) / max(1, c["voice"][1] + c["typed"][1]) * 100)}% of {c["voice"][1] + c["typed"][1]}'
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
-    print("all", out["all"]["all"], "voice", out["all"]["voice"], "typed", out["all"]["typed"], "| watch list", out["watch"]["all"], "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
+    print("all", pc(out["all"]), "voice", out["all"]["voice"], "typed", out["all"]["typed"], "| watch list", pc(out["watch"]), "| wrong", len(out["wrong"]), "| joined the list", out["joined_list"], "| waiting", len(out["new_waiting"]))
 
 if __name__ == "__main__":
     cmd, *a = sys.argv[1:]

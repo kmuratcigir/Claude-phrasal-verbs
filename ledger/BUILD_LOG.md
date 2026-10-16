@@ -90,3 +90,12 @@ Nothing built yet; build starts on Murat's go.
 - Rule (Murat, 16.10.26): a word joins the list on its second slip. After one slip it waits (`status: "waiting"`), and its uses count only in the overall figure. Replaces the earlier "new word joins on first slip".
 - preps.py: phrasal-verb keys (look back, look up), one `dates` row, count diff for the right preposition, no pronoun/filler keys; `score` returns `joined_list`, `new_waiting` and `watch_changes`.
 - Review page: https://claude.ai/artifact/Muww9cTWwVvhv1Cy41R5N7 — approved by Murat 16.10.26 and saved as `meta/prep_watch` (version 1; 107 on the list, 138 waiting).
+
+### 16.10.26 — Prepositions tab (version 54, id `1792154156-ea16`)
+- New tab between Chunks and Reading. One session picker (Last 5 / All / each session) and one mode switch (Voice + typed / Voice / Typed) for the whole tab.
+- Sections: four tiles (all prepositions, watch list, words on the list, weakest group with 10+ uses), two trend charts with voice and typed lines, the story by Turkish source (9 groups, watch-list accuracy, 80% line), the 41-chip heatmap (plus "also counted" chips outside the quiz list), the 2x2 grid (5+ uses, mockup rule), the watch list table with group filter and examples, the waiting words, how it is counted.
+- Data: reads `meta/prep_watch` and `sessions/*.preps` only. `preps` = raw [right, uses] per mode for all, watch, groups, chips and each watch word, plus `seq` (R/W voice, r/w typed) per word.
+- 15.10 backfilled from the full pasted chat with the check's own saved slips: 93% of 525 (voice 93% of 425, typed 94% of 100); watch list 82% of 131. Watch list not changed (those slips were already in the seed).
+- Typed turns count too (Murat, 16.10.26), everywhere. preps.py: conjunctions and stray tags dropped from the pairs; unmatched slips still count as one wrong use.
+- Known limit: a row is one word, so unrelated uses of the same word count too (e.g. "book" the noun under "book" the verb).
+- Next: wire preps.py into the naturalness-check SKILL.md (fail softly, one save) and give Murat a zip.

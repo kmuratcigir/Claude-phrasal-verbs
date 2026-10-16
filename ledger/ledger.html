@@ -444,6 +444,64 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
 .pill.sched-behind{background:var(--warn-soft);color:var(--warn)} .pill.ready{background:var(--good);color:var(--on-strong)}
 .pill.slip{background:var(--err-soft);color:var(--err)}
 
+/* ================= PREPOSITIONS (16.10) ================= */
+.prbar{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap}
+.prbar .label{margin:0}
+.prstory{display:grid;gap:10px}
+details.prsrc{border:1px solid var(--rule);border-radius:12px;background:var(--surface)}
+details.prsrc[open]{border-color:var(--tint-rule);background:var(--tint)}
+details.prsrc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) 64px 118px;gap:14px;align-items:center;padding:12px 14px}
+details.prsrc summary::-webkit-details-marker{display:none}
+details.prsrc summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:12px}
+.prname b{font-family:var(--display);font-size:15px;display:block}
+.prname span{font-size:12.5px;color:var(--muted)}
+.prgauge{position:relative;height:12px;border-radius:999px;background:var(--idle);border:1px solid var(--rule);overflow:hidden}
+.prgauge i{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--accent)}
+.prgauge i.lo{background:var(--err)} .prgauge i.mid{background:var(--warn)} .prgauge i.hi{background:var(--good)}
+.prgauge b{position:absolute;top:-3px;bottom:-3px;width:2px;left:80%;background:var(--ink);opacity:.5}
+.prglab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px;gap:8px}
+.prpct{font-family:var(--display);font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.prst{font-family:var(--display);font-weight:600;font-size:12px;padding:2px 10px;border-radius:999px;white-space:nowrap;justify-self:end}
+.prst.up{background:var(--good-soft);color:var(--good)} .prst.flat{background:var(--warn-soft);color:var(--warn)} .prst.down{background:var(--err-soft);color:var(--err)} .prst.new{background:var(--accent-soft);color:var(--accent-deep)} .prst.idle{background:var(--idle);color:var(--faint)}
+.prbody{padding:0 14px 14px;display:grid;gap:10px}
+.prbody p{margin:0;font-size:14px;max-width:70ch}
+.prpairs{display:flex;flex-wrap:wrap;gap:6px}
+.prpair{font-size:13px;padding:3px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--rule)}
+.prpair b{font-weight:600;color:var(--good)}
+.prpair small{font-family:var(--display);color:var(--muted);margin-left:5px}
+@media (max-width:720px){details.prsrc summary{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n p" "b b" "t t"} .prname{grid-area:n} .prpct{grid-area:p} .prgw{grid-area:b} .prst{grid-area:t;justify-self:start}}
+.prhm{display:flex;flex-wrap:wrap;gap:8px}
+.prhc{display:inline-flex;align-items:baseline;gap:8px;padding:8px 13px;border-radius:10px;font-family:var(--display);font-weight:800;font-size:15px;color:var(--ink)}
+.prhc small{font-weight:600;font-size:12.5px;font-variant-numeric:tabular-nums}
+.prhc.h1{background:var(--err-soft)} .prhc.h2{background:var(--warn-soft)} .prhc.h3{background:var(--accent-soft)} .prhc.h4{background:var(--good-soft)}
+.prhc.few{background:var(--surface);border:1px dashed var(--faint);color:var(--muted)}
+.prhm .prsep{flex-basis:100%;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:6px}
+.prhmkey{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:12px}
+.prhmkey i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.prquad{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:8px}
+.prquad .ax{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;justify-content:center;text-align:center}
+.prquad .ax.side{writing-mode:vertical-rl;transform:rotate(180deg)}
+.prcell{border-radius:12px;padding:12px 14px;border:1px solid transparent;display:grid;gap:6px;align-content:start;min-width:0}
+.prcell h3{font-size:13px}
+.prcell p{margin:0;font-size:12.5px;color:var(--muted)}
+.prcell .prchips{display:flex;flex-wrap:wrap;gap:4px}
+.prcell .prchips span{font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--rule)}
+.prcell .prchips small{font-family:var(--display);color:var(--muted);margin-left:4px;font-weight:600}
+.prcell.good{background:var(--good-soft)} .prcell.close{background:var(--accent-soft)} .prcell.back{background:var(--warn-soft)} .prcell.stuck{background:var(--err-soft)}
+@media (max-width:640px){.prquad{grid-template-columns:1fr}.prquad .ax{display:none}}
+.prtable{min-width:820px}
+.prtable td{vertical-align:top}
+.prtable td.w b{font-weight:600}
+.prtable td.w .lat{display:block;font-size:12.5px;color:var(--muted);max-width:44ch}
+.prtable td.w .lat i{font-style:normal;color:var(--err)} .prtable td.w .lat em{font-style:normal;color:var(--good);font-weight:600}
+.prtable td.w .exmore .ex{font-size:12.5px}
+.prdots{display:inline-flex;gap:3px;vertical-align:middle}
+.prdot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.prdot.ok{background:var(--good-soft);border:1px solid var(--good)} .prdot.bad{background:var(--err-soft);border:1px solid var(--err)}
+.prdot.t{border-style:dashed}
+.prtable .rt{font-weight:600;color:var(--good);white-space:nowrap}
+#prWait{margin-top:14px} #prWait p{margin:6px 0 0;font-size:13px;color:var(--muted);max-width:90ch}
+ul.prhow{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;max-width:80ch}
 </style>
 
 <div class="wrap">
@@ -465,6 +523,7 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
     <button role="tab" id="tb-pv" aria-selected="false" aria-controls="tab-pv">Phrasal verbs</button>
     <button role="tab" id="tb-nat" aria-selected="false" aria-controls="tab-nat">Naturalness</button>
     <button role="tab" id="tb-chunks" aria-selected="false" aria-controls="tab-chunks">Chunks</button>
+    <button role="tab" id="tb-preps" aria-selected="false" aria-controls="tab-preps">Prepositions</button>
     <button role="tab" id="tb-read" aria-selected="false" aria-controls="tab-read">Reading</button>
   </div>
 
@@ -825,6 +884,70 @@ ul.mrows li{break-inside:avoid;border-top:1px solid var(--rule);padding:11px 0;d
   <p class="explain" id="cNote" style="margin:0"></p>
   </div>
 
+  <!-- ============ PREPOSITIONS (16.10): accuracy of every preposition, voice and typed, counted at the naturalness check ============ -->
+  <div class="tabpane" id="tab-preps" role="tabpanel" aria-labelledby="tb-preps" hidden>
+  <div class="prbar">
+    <label class="label" for="prPick">Sessions</label><select id="prPick" aria-label="Choose sessions"></select>
+    <div class="chipset seg" id="prMode" role="group" aria-label="Voice or typed"><button type="button" data-m="all" aria-pressed="true">Voice + typed</button><button type="button" data-m="voice" aria-pressed="false">Voice</button><button type="button" data-m="typed" aria-pressed="false">Typed</button></div>
+  </div>
+  <section class="tiles" id="prTiles" aria-label="Prepositions, summary">
+    <div class="tile"><div class="label">All prepositions</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Your watch list</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">On the watch list</div><div class="v">–</div><div class="d">&nbsp;</div></div>
+    <div class="tile"><div class="label">Weakest group</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
+  </section>
+
+  <div class="two">
+    <section class="panel"><div class="phead"><h2>Watch list accuracy</h2><div class="slegend"><span style="--sw:var(--c-voice)">Voice</span><span class="dash" style="--sw:var(--c-typed)">Typed</span></div></div>
+      <p class="explain">Words you have slipped on before. This is the number to move. Higher is better.</p><div class="chartbox" id="pr-tw"></div></section>
+    <section class="panel"><div class="phead"><h2>All prepositions</h2><div class="slegend"><span style="--sw:var(--c-voice)">Voice</span><span class="dash" style="--sw:var(--c-typed)">Typed</span></div></div>
+      <p class="explain">Every preposition you used, easy ones included (go to, a lot of). Higher is better.</p><div class="chartbox" id="pr-ta"></div></section>
+  </div>
+
+  <section class="panel">
+    <div class="phead"><h2>The story, by Turkish source</h2><span class="sub" id="prStSub"></span></div>
+    <p class="explain">Seven Turkish habits, time words, and the unsorted rest. The bar is your accuracy on watch-list words in that group; the line marks 80%. Open a group to see its words.</p>
+    <div class="prstory" id="prStory"></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Preposition heatmap</h2><span class="sub">By the preposition you needed</span></div>
+    <p class="explain">The same 41 chips as the quiz heatmap. A chip is how often you chose that preposition when it was the right one. Dashed until it has 5 uses.</p>
+    <div class="prhm" id="prHm"></div>
+    <div class="prhmkey"><span><i style="background:var(--err-soft)"></i>under 60%</span><span><i style="background:var(--warn-soft)"></i>60–79%</span><span><i style="background:var(--accent-soft)"></i>80–89%</span><span><i style="background:var(--good-soft)"></i>90%+</span><span><i style="border:1px dashed var(--faint)"></i>under 5 uses</span></div>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>How each word is going</h2><span class="sub" id="prQSub"></span></div>
+    <div class="prquad" id="prQuad"></div>
+    <p class="explain" style="margin:10px 0 0">A word joins the grid after 5 uses; until then it waits in the list below.</p>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>Watch list</h2><span class="sub" id="prWSub"></span></div>
+    <p class="explain">One row per word you slipped on at least twice: the word that decides the preposition (<i>add</i> + to, <i>angry</i> + with). Every use of it counts, right or wrong.</p>
+    <div class="chipset" id="prGroups" role="group" aria-label="Filter by group" style="margin-bottom:12px"></div>
+    <div class="scroll"><table class="prtable">
+      <thead><tr><th>Word</th><th>Right</th><th>Group</th><th class="n">Slips on record</th><th class="n">Uses</th><th>Last 6 uses</th><th class="n">Accuracy</th><th>Status</th></tr></thead>
+      <tbody id="prRows"></tbody>
+    </table></div>
+    <div class="morebox" id="more-pw"></div>
+    <details class="exmore" id="prWait"></details>
+  </section>
+
+  <section class="panel">
+    <div class="phead"><h2>How it is counted</h2></div>
+    <ul class="prhow">
+      <li>At each naturalness check a script lists every word + preposition you say or write ("invest in", "angry with", "on Monday"). Plain "to" before a verb ("want to go") is never counted.</li>
+      <li>A use is <b>wrong</b> when the check flagged it as a preposition slip, and <b>right</b> otherwise. A dropped preposition ("wait them") comes from the flags.</li>
+      <li>Voice and typed both count. Typed samples are small, so their figures swing more.</li>
+      <li>Accuracy can read a little high: a slip the check misses counts as right.</li>
+      <li>A word joins the watch list on its second slip. Until then it waits, and its uses count only in "All prepositions".</li>
+      <li>Counting started on 15 Oct; earlier sessions have no full transcript, so their slips are on record but have no accuracy.</li>
+    </ul>
+  </section>
+  </div>
+
   <div class="tabpane" id="tab-read" role="tabpanel" aria-labelledby="tb-read" hidden>
   <section class="tiles" id="rtiles" aria-label="Reading">
     <div class="tile"><div class="label">Last reading</div><div class="v small">–</div><div class="d">&nbsp;</div></div>
@@ -872,7 +995,7 @@ function render(){
   const last = SESS[SESS.length-1], prev = SESS[SESS.length-2];
   $("lastline").textContent = `${SESS.length} session${SESS.length>1?"s":""} · last check ${fmtDate(last.date)}`;
   renderTiles(last, prev); renderVocabTiles(last, prev); renderTrends(); renderNat(); renderChart(); renderSession(); renderVocab(); renderLevels(); renderTable();
-  renderOverview(); renderChunks();
+  renderOverview(); renderChunks(); renderPreps();
 }
 
 function delta(cur, prev, key, lowerBetter, digits){
@@ -1043,7 +1166,7 @@ function renderTrends(){
   lineChart($("tr-comeups"), SESS, [{get:s=>s.vocab&&s.vocab.comeups?s.vocab.comeups.reduce((a,c)=>a+c.count,0):null}], {digits:0, label:"Vocab-list come-ups per session"});
 }
 
-const TABS = ["over","grammar","vocab","pv","nat","chunks","read"];
+const TABS = ["over","grammar","vocab","pv","nat","chunks","preps","read"];
 function showTab(name){
   if(!TABS.includes(name)) name = "over";
   TABS.forEach(n=>{ $("tab-"+n).hidden = n!==name; $("tb-"+n).setAttribute("aria-selected", n===name); });
@@ -1533,7 +1656,7 @@ $("sessPick").addEventListener("change", e=>{ if(e.target.value==="__all"){ errA
 // word was used, recency from days since the last use (measured against today).
 // ---- "Show all / Show fewer" for long lists
 const EXPAND = {};
-const LIMIT = {vt:40, pv:40, vtAttn:12, pvAttn:10, cu:12, err:10, nat:10, adv:15, rd:12, rp:8, sess:5, hl:10, pvs:20};
+const LIMIT = {pw:40, vt:40, pv:40, vtAttn:12, pvAttn:10, cu:12, err:10, nat:10, adv:15, rd:12, rp:8, sess:5, hl:10, pvs:20};
 function limitList(key, list, force){ return (EXPAND[key] || force) ? list : list.slice(0, LIMIT[key]); }
 function paintMore(key, shown, total){
   const box = $("more-"+key); if(!box) return;
@@ -1543,7 +1666,7 @@ function paintMore(key, shown, total){
 document.addEventListener("click", e=>{
   const b = e.target.closest("[data-more]"); if(!b) return;
   const k = b.dataset.more; EXPAND[k] = !EXPAND[k];
-  ({vt:()=>renderVTTable(vtRows()), vtAttn:renderVT, pv:renderPV, pvAttn:renderPV, cu:renderVocab, adv:renderVocab, err:renderSession, nat:()=>renderNatList(natSessions()), rd:renderRead, rp:renderRead, sess:renderTable, hl:renderHighlights, pvs:()=>renderPVSession()})[k]();
+  ({pw:renderPreps, vt:()=>renderVTTable(vtRows()), vtAttn:renderVT, pv:renderPV, pvAttn:renderPV, cu:renderVocab, adv:renderVocab, err:renderSession, nat:()=>renderNatList(natSessions()), rd:renderRead, rp:renderRead, sess:renderTable, hl:renderHighlights, pvs:()=>renderPVSession()})[k]();
 });
 
 let PHAVE = null, PV = null, pvStage = "all", pvQuery = "", pvScope = "all";
@@ -2275,6 +2398,122 @@ document.addEventListener("click", e => {
 });
 $("iA").addEventListener("click", ()=>{ ovImpVer = "latest"; ovRenderImpact(); });
 $("iB").addEventListener("click", ()=>{ ovImpVer = "all"; ovRenderImpact(); });
+// ================= PREPOSITIONS (16.10) =================
+// meta/prep_watch = the watch list (word Murat said -> right preposition, slips on record, status on / waiting).
+// sessions/*.preps = one naturalness check's counts: [right, uses] per mode for all, watch, groups, chips and each watch word.
+let PW = null, prSel = "last5", prMode = "all", prGroup = "all";
+const PR_GROUPS = [["e","-e → to / into"],["de","-de → in / at / on"],["icin","için → for"],["ile","ile → with"],["den","-den → from / of"],["hakkinda","hakkında → about"],["time","Time words: on / at / in / for"],["zero","∅ No preposition needed"],["other","Unsorted"]];
+const PR_TEXT = {e:"Turkish \"-e\" turns into \"into\" where English says \"to\", and the other way round.",
+  de:"Turkish \"-de\" is one ending for three English words. Lists, screens and days take \"on\"; clock times take \"at\".",
+  icin:"\"İçin\" pulls in \"for\" where English wants \"of\", \"about\" or \"to\".",
+  ile:"\"Ile\" gives \"with\" where English uses \"as\", \"to\" or nothing.",
+  den:"\"-den\" gives \"from\" where English says \"for\", \"in\" or \"than\".",
+  hakkinda:"\"Hakkında\" adds an \"about\" that English doesn't need, or uses it where English says \"of\".",
+  time:"Days, dates, clock times and lengths of time. Turkish \"-de\" and \"-dir\" don't tell you which one English wants.",
+  zero:"Verbs that take their object directly, where Turkish needs an ending: a preposition English doesn't have.",
+  other:"Slips the check couldn't link to one Turkish ending. Claude moves them into a group when a pattern shows."};
+// the quiz heatmap's 41 chips, so both pages use the same names
+const PR_CHIPS = ["∅ no preposition","about","above","according to","across","along / during","alongside","amid","among / between","apart from / except","as","as for","at","at / on / in (time)","below / under","beyond","by","despite","due to","for","from","in","in terms of","instead of","into","of","on","on behalf of","on to","out of","over","prior to","regardless of","through","throughout","to","towards","upon","with","within","worth + -ing"];
+const prGL = g => (PW && PW.groups && PW.groups[g]) || (PR_GROUPS.find(x=>x[0]===g)||[g,g])[1];
+const prSess = () => SESS.filter(s => s.preps && s.preps.v);
+function prPicked(){ const ps = prSess(); return prSel==="all" ? ps : prSel==="last5" ? ps.slice(-5) : ps.filter(s=>s.id===prSel); }
+const prC = c => !c ? [0,0] : prMode==="all" ? [(c.voice||[0,0])[0]+(c.typed||[0,0])[0], (c.voice||[0,0])[1]+(c.typed||[0,0])[1]] : (c[prMode]||[0,0]);
+const prAdd = (a,b) => [a[0]+b[0], a[1]+b[1]];
+const prPct = ([k,n]) => n ? Math.round(k/n*100) : null;
+const prSum = (ss, get) => ss.reduce((a,s)=>prAdd(a, prC(get(s.preps))), [0,0]);
+const prSeq = (ss, w) => ss.map(s => (s.preps.words && s.preps.words[w] && s.preps.words[w].seq) || "").join("").split("")
+  .filter(c => prMode==="all" || (prMode==="voice" ? "RW".includes(c) : "rw".includes(c)));
+const prModeTags = (ss, get) => ["voice","typed"].map(m=>{ const c = ss.reduce((a,s)=>prAdd(a, (get(s.preps)||{})[m]||[0,0]), [0,0]);
+  return c[1] ? `<span style="white-space:nowrap"><span class="mtag ${m}">${m}</span>${prPct(c)}% <span class="sub">(${c[1]})</span></span>` : ""; }).filter(Boolean).join(" ");
+// the 2x2 rule agreed on the mockup (16.10): 80% line, the last uses tell the direction
+function prStatus(seq){
+  const ok = seq.map(c=>c==="R"||c==="r"), n = ok.length;
+  if(!n) return ["idle","Not used yet"];
+  if(n < 5) return ["idle","Too few uses"];
+  const p = ok.filter(Boolean).length/n*100;
+  if(p >= 80) return ok.slice(-2).every(Boolean) ? ["up","Fixed in speech","good"] : ["flat","Slipping back","back"];
+  return ok.slice(-3).filter(Boolean).length >= 2 ? ["new","Getting there","close"] : ["down","Top priority","stuck"];
+}
+function renderPreps(){
+  if(!$("tab-preps")) return;
+  const ps = prSess(), rows = (PW && PW.rows) || [], on = rows.filter(r=>r.status!=="waiting"), wait = rows.filter(r=>r.status==="waiting");
+  // session picker
+  const opts = [["last5","Last 5 sessions"],["all","All sessions"], ...[...ps].reverse().map((s,i)=>[s.id, `${fmtDate(s.date)}${i===0?" · latest session":""}`])];
+  if(!opts.some(o=>o[0]===prSel)) prSel = "last5";
+  $("prPick").innerHTML = opts.map(([v,l])=>`<option value="${esc(v)}"${v===prSel?" selected":""}>${esc(l)}</option>`).join("");
+  $("prMode").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.m===prMode));
+  const ss = prPicked(), nS = ss.length;
+  const span = !nS ? "No counted session yet" : nS===1 ? fmtDate(ss[0].date) : `${nS} sessions, ${fmtDate(ss[0].date)} – ${fmtDate(ss[nS-1].date)}`;
+  // tiles
+  const t = $("prTiles").children;
+  const set = (i, v, d) => { t[i].querySelector(".v").innerHTML = v; t[i].querySelector(".d").innerHTML = d; };
+  const all = prSum(ss, p=>p.all), wl = prSum(ss, p=>p.watch);
+  set(0, all[1] ? `${prPct(all)}<span class="of">%</span>` : "–", all[1] ? `${all[1]} uses · ${esc(span)}<br>${prModeTags(ss,p=>p.all)}` : "Counted from the next naturalness check");
+  set(1, wl[1] ? `${prPct(wl)}<span class="of">%</span>` : "–", wl[1] ? `${wl[1]} uses of words you slipped on<br>${prModeTags(ss,p=>p.watch)}` : "No watch-list uses in these sessions");
+  set(2, rows.length ? String(on.length) : "–", rows.length ? `words · ${on.reduce((a,r)=>a+r.slips,0)} slips on record<br>${wait.length} more wait for a second slip` : "Watch list not loaded");
+  const gs = PR_GROUPS.map(([g])=>[g, prSum(ss, p=>(p.groups||{})[g])]).filter(([g,c])=>g!=="other" && c[1]>=10).sort((a,b)=>prPct(a[1])-prPct(b[1]));
+  set(3, gs.length ? esc(prGL(gs[0][0])) : "–", gs.length ? `${prPct(gs[0][1])}% of ${gs[0][1][1]} uses` : "Needs 10 uses in a group");
+  // trend charts, voice and typed lines
+  const tw = p => m => s => { const c = (s.preps[p]||{})[m]; return c && c[1] ? c[0]/c[1]*100 : null; };
+  lineChart($("pr-tw"), ps, [{get:tw("watch")("voice"), cls:"voice", name:"voice"},{get:tw("watch")("typed"), cls:"typed", name:"typed"}], {digits:0, fmt:v=>v.toFixed(0)+"%", label:"Watch list accuracy by session, voice and typed"});
+  lineChart($("pr-ta"), ps, [{get:tw("all")("voice"), cls:"voice", name:"voice"},{get:tw("all")("typed"), cls:"typed", name:"typed"}], {digits:0, fmt:v=>v.toFixed(0)+"%", label:"All prepositions accuracy by session, voice and typed"});
+  // story by Turkish source
+  $("prStSub").textContent = span;
+  const first = ps.length ? ps[0] : null;
+  $("prStory").innerHTML = PR_GROUPS.map(([g,lab])=>{
+    const gr = on.filter(r=>r.group===g), slips = gr.reduce((a,r)=>a+r.slips,0), c = prSum(ss, p=>(p.groups||{})[g]), pc = prPct(c);
+    // direction: the latest session in range against the ones before it
+    const per = ss.map(s=>prC((s.preps.groups||{})[g])).filter(x=>x[1]), last = per[per.length-1], before = per.slice(0,-1).reduce(prAdd,[0,0]);
+    const st = !c[1] ? ["idle","No uses yet"] : c[1] < 5 ? ["new","Too few yet"] : !before[1] ? ["new","First reading"]
+      : prPct(last) - prPct(before) >= 5 ? ["up","Improving"] : prPct(before) - prPct(last) >= 5 ? ["down","Slipping"] : ["flat","Steady"];
+    const cls = pc==null ? "" : pc < 60 ? "lo" : pc < 80 ? "mid" : "hi";
+    const pairs = gr.slice(0,8).map(r=>`<span class="prpair" title="${esc(cq((r.examples[0]||{}).said||""))} → ${esc((r.examples[0]||{}).fix||"")}">${esc(r.word)} <b>${esc(r.right)}</b><small>${r.slips}×</small></span>`).join("");
+    return `<details class="prsrc"><summary><div class="prname"><b>${esc(lab)}</b><span>${gr.length} word${gr.length===1?"":"s"} · ${slips} slips on record</span></div>
+      <div class="prgw"><div class="prgauge"><i class="${cls}" style="width:${pc??0}%"></i><b></b></div><div class="prglab"><span>${c[1] ? `${c[0]} of ${c[1]} right` : "no uses in these sessions"}</span><span>80%</span></div></div>
+      <div class="prpct">${pc==null ? "–" : pc+"%"}</div><span class="prst ${st[0]}">${st[1]}</span></summary>
+      <div class="prbody"><p>${esc(PR_TEXT[g]||"")}</p>${pairs ? `<div class="prpairs">${pairs}</div>` : ""}</div></details>`;
+  }).join("");
+  // heatmap
+  const chips = {}; ss.forEach(s=>Object.entries(s.preps.chips||{}).forEach(([k,v])=>{ chips[k] = prAdd(chips[k]||[0,0], prC(v)); }));
+  const hc = (p,c) => { const n = c ? c[1] : 0, a = prPct(c||[0,0]);
+    return n < 5 ? `<span class="prhc few" title="${esc(p)}: ${n} use${n===1?"":"s"}">${esc(p)}<small>${n ? (a+"% · "+n) : "—"}</small></span>`
+      : `<span class="prhc ${a<60?"h1":a<80?"h2":a<90?"h3":"h4"}" title="${esc(p)}: ${a}% of ${n} uses">${esc(p)}<small>${a}% · ${n}</small></span>`; };
+  const rank = p => { const c = chips[p]; return c && c[1] >= 5 ? prPct(c) : 999 + (c ? -c[1] : 0); };
+  const extra = Object.keys(chips).filter(k=>!PR_CHIPS.includes(k) && chips[k][1]).sort((a,b)=>chips[b][1]-chips[a][1]);
+  $("prHm").innerHTML = [...PR_CHIPS].sort((a,b)=>rank(a)-rank(b)).map(p=>hc(p, chips[p])).join("")
+    + (extra.length ? `<span class="prsep">Also counted, not in the quiz list</span>` + extra.map(p=>hc(p, chips[p])).join("") : "");
+  // words: uses, last 6, status
+  const W = on.map(r=>{ const seq = prSeq(ss, r.word), k = seq.filter(c=>c==="R"||c==="r").length; return {...r, seq, uses:seq.length, pct: seq.length ? Math.round(k/seq.length*100) : null, st: prStatus(seq)}; });
+  // 2x2
+  const cell = (key, title, text) => { const ws = W.filter(w=>w.st[2]===key).sort((a,b)=>b.uses-a.uses);
+    return `<div class="prcell ${key}"><h3>${title} (${ws.length})</h3><p>${text}</p><div class="prchips">${ws.map(w=>`<span title="${w.pct}% of ${w.uses} uses">${esc(w.word)} ${esc(w.right)}<small>${w.pct}%</small></span>`).join("") || `<span class="sub" style="border:0;background:none;padding:0">none yet</span>`}</div></div>`; };
+  const ready = W.filter(w=>w.uses>=5).length;
+  $("prQSub").textContent = `${ready} of ${W.length} words have 5+ uses · ${span}`;
+  $("prQuad").innerHTML = `<div class="ax"></div><div class="ax">Improving</div><div class="ax">Not improving</div>
+    <div class="ax side">80%+</div>${cell("good","Fixed in speech","Right most of the time, and the last uses were right too.")}${cell("back","Slipping back","Good overall, but a recent use slipped. Use them on purpose next time.")}
+    <div class="ax side">Under 80%</div>${cell("close","Getting there","Still under the line, but two of the last three uses were right.")}${cell("stuck","Top priority","Under the line and not moving. These are the ones to practise.")}`;
+  // watch list table
+  $("prGroups").innerHTML = [["all","All"], ...PR_GROUPS].map(([g,l])=>{ const n = g==="all" ? on.length : on.filter(r=>r.group===g).length;
+    return n || g==="all" ? `<button type="button" data-g="${g}" aria-pressed="${prGroup===g}">${esc(g==="all"?l:prGL(g))}<span class="c">${n}</span></button>` : ""; }).join("");
+  const list = W.filter(w=>prGroup==="all" || w.group===prGroup)
+    .sort((a,b)=> (a.uses>=5?0:a.uses?1:2) - (b.uses>=5?0:b.uses?1:2) || (a.pct??101)-(b.pct??101) || b.uses-a.uses || b.slips-a.slips);
+  $("prWSub").textContent = `${list.length} words · uses from ${span}`;
+  const ex = e => `<div class="ex"><span class="quote">${esc(cq(e.said))}</span><span class="fix">→ <b>${esc(e.fix)}</b>${e.date ? ` <span class="sub">${esc(fmtDate(e.date))}</span>` : ""}</span></div>`;
+  const shown = limitList("pw", list);
+  $("prRows").innerHTML = shown.map(w=>{ const e0 = w.examples[0], more = w.examples.slice(1), last6 = w.seq.slice(-6);
+    return `<tr><td class="w"><b>${esc(w.word)}</b>${e0 ? `<span class="lat"><i>${esc(cq(e0.said))}</i> → <em>${esc(e0.fix)}</em></span>` : ""}${more.length ? `<details class="exmore"><summary>Show ${more.length} more example${more.length>1?"s":""}</summary>${more.map(ex).join("")}</details>` : ""}</td>
+      <td class="rt">${esc(w.right)}</td><td>${esc(prGL(w.group))}</td><td class="n">${w.slips}</td><td class="n">${w.uses}</td>
+      <td>${last6.length ? `<span class="prdots">${last6.map(c=>{ const ok = c==="R"||c==="r", ty = c==="r"||c==="w"; return `<i class="prdot ${ok?"ok":"bad"}${ty?" t":""}" title="${ok?"right":"wrong"}, ${ty?"typed":"voice"}"></i>`; }).join("")}</span>` : `<span class="sub">–</span>`}</td>
+      <td class="n">${w.pct==null ? "–" : w.pct+"%"}</td><td><span class="prst ${w.st[0]}" style="justify-self:start">${w.st[1]}</span></td></tr>`; }).join("")
+    || `<tr><td colspan="8" class="sub">${rows.length ? "No words in this group." : "The watch list appears once it is saved to the Ledger."}</td></tr>`;
+  paintMore("pw", shown.length, list.length);
+  $("prWait").innerHTML = wait.length ? `<summary>${wait.length} words with one slip, waiting</summary><p>Each joins the list the next time you slip on it: ${wait.map(r=>esc(r.word)).join(", ")}.</p>` : "";
+  $("prWait").hidden = !wait.length;
+}
+$("prPick").addEventListener("change", e=>{ prSel = e.target.value; renderPreps(); });
+$("prMode").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; prMode = b.dataset.m; renderPreps(); });
+$("prGroups").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; prGroup = b.dataset.g; EXPAND.pw = false; renderPreps(); });
+
 $("iC").addEventListener("click", ()=>{ ovImpVer = "trend"; ovRenderImpact(); });
 $("vA").addEventListener("click", ()=>{ ovGridVer = "A"; ovRenderGrid(); });
 $("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
@@ -2289,6 +2528,7 @@ $("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
   db.doc("meta/phave").onSnapshot(snap => { PHAVE = snap.exists ? snap.data() : null; renderPV(); }, () => {});
   db.doc("meta/pv_tracker").onSnapshot(snap => { PV = snap.exists ? snap.data() : null; renderPV(); renderRead(); }, () => {});
   db.doc("meta/vocab_tracker").onSnapshot(snap => { VT = snap.exists ? snap.data() : null; renderVT(); renderRead(); }, () => {});
+  db.doc("meta/prep_watch").onSnapshot(snap => { PW = snap.exists ? snap.data() : null; renderPreps(); }, () => { PW = null; renderPreps(); });
   db.doc("meta/chunks").onSnapshot(snap => { CHUNKS = snap.exists ? JSON.parse(JSON.stringify(snap.data())) : null; renderChunks(); }, () => { CHUNKS = null; renderChunks(); });
   db.collection("reading").onSnapshot(snap => {
     READ = snap.docs.map(d => ({id:d.id, ...d.data()}));
