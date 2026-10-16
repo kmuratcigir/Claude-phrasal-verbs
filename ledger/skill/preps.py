@@ -43,20 +43,24 @@ MULTI = {("out", "of"), ("on", "to"), ("instead", "of"), ("because", "of"), ("du
          ("apart", "from"), ("as", "for"), ("in", "terms"), ("prior", "to"), ("regardless", "of")}
 TIME = re.compile(r"^(monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekends?|morning|afternoon|evening|night|day|days|week|month|year|time|times|minute|minutes|hour|hours|beginning|end|moment|today|tomorrow|christmas|weekend|\d.*|january|february|march|april|may|june|july|august|september|october|november|december)$", re.I)
 
+TIMEP = {"at", "on", "in", "for", "since", "during", "over", "by", "until"}
 def pairs(doc):
     """Every preposition with the word that decides it. Infinitive 'to' and phrasal-verb particles are never ADP+prep."""
     out = []
     for t in doc:
-        if t.dep_ not in ("prep", "dative", "agent") or t.pos_ not in ("ADP", "SCONJ"): continue
+        if t.pos_ not in ("ADP", "SCONJ"): continue
+        if t.dep_ not in ("prep", "dative", "agent") and not (t.dep_ == "ROOT" and t.pos_ == "ADP"): continue   # ROOT: a quote with no verb
         head = t.head
         prev = doc[t.i - 1] if t.i else None
         word = t.text.lower()
         if prev is not None and (prev.text.lower(), word) in MULTI:
             word = prev.text.lower() + " " + word
-        objs = [c for c in t.children if c.dep_ in ("pobj", "pcomp")]
+        nouns = [x for x in t.subtree if x.i > t.i and x.pos_ in ("NOUN", "PROPN", "NUM")]
+        objs = nouns[:1] or [c for c in t.children if c.dep_ in ("pobj", "pcomp")]
         obj = objs[0].text if objs else ""
-        lemma = objs[0].lemma_.lower() if objs and TIME.match(obj) else head.lemma_.lower()   # time phrases belong to the time word
-        out.append({"head": head.text, "lemma": lemma, "pos": head.pos_, "prep": word,
+        # time phrases belong to the time word ("in the last minute" -> minute), only for the time prepositions
+        lemma = objs[0].lemma_.lower() if objs and TIME.match(obj) and word in TIMEP else head.lemma_.lower()
+        out.append({"head": head.text, "hidx": head.i, "lemma": lemma, "pos": head.pos_, "prep": word,
                     "obj": obj, "start": t.idx, "end": t.idx + len(t.text)})
     return out
 
@@ -65,7 +69,8 @@ def cmd_find(turns_path, out_path):
     for tr in read_turns(turns_path):
         for p in pairs(nlp(tr["text"])):
             p.update(turn=tr["turn"], mode=tr["mode"]); cands.append(p)
-    json.dump({"turns": {t["turn"]: t["text"] for t in read_turns(turns_path)}, "cands": cands},
+    tt = read_turns(turns_path)
+    json.dump({"turns": {t["turn"]: t["text"] for t in tt}, "modes": {t["turn"]: t["mode"] for t in tt}, "cands": cands},
               open(out_path, "w"), ensure_ascii=False, indent=1)
     print(len(cands), "word + preposition pairs found")
 
@@ -87,25 +92,44 @@ def group_of(turkish, fix, quote):
 PREPS = {"about","above","across","after","against","along","among","around","as","at","before","behind","below","beneath","beside",
          "between","beyond","by","despite","during","for","from","in","inside","into","like","near","of","off","on","onto","out","over",
          "past","since","than","through","throughout","to","towards","toward","under","until","upon","with","within","without"}
-def pw(text): return [w for w in re.findall(r"[a-z']+", (text or "").lower()) if w in PREPS]
+def pw(text):
+    """Prepositions in a short text; infinitive 'to' (want to go) is not one."""
+    return [t.text.lower() for t in nlp(text or "") if t.text.lower() in PREPS and t.pos_ != "PART"
+            and not (t.text.lower() == "to" and t.i + 1 < len(t.doc) and t.doc[t.i + 1].pos_ in ("VERB", "AUX"))]
 def right_of(quote, fix):
     """The preposition the fix brings in (a plain word diff, so short fixes like 'at the beginning' work); none = ∅."""
     said = set(pw(quote)); new = [w for w in pw(fix) if w not in said]
     return new[0] if new else "∅"
 
+# verbs that take their object directly: every use counts as a "no preposition" decision, so a right
+# "discuss the plan" is counted too, not only the wrong "discuss about" (16.10.26)
+ZERO = {"discuss", "mention", "contact", "join", "approach", "message", "research", "seek", "chase", "enter", "marry",
+        "attend", "answer", "lack", "resemble", "accompany", "promise", "fit", "email", "phone", "text", "visit", "reach", "ask"}
+
 def key_of(quote, fix):
-    """The word Murat said that decides the preposition (option A, 16.10.26)."""
+    """The word Murat said that decides the preposition (option A, 16.10.26).
+    1) the preposition he said that the fix changes -> the word it hangs on (a time word wins: "in the last minute" -> minute)
+    2) a dropped preposition -> the word in the fix it hangs on, if he said that word
+    3) otherwise the first content word he said."""
     q = nlp(quote or ""); f = nlp(fix or "")
-    fp = pairs(f); qp = pairs(q)
+    if len(q) and q[0].text.islower() and q[0].pos_ in ("PROPN", "NOUN"):   # "bridge the holiday..." read as a name: give it a subject
+        q = nlp("I " + quote)
+    qp, fp = pairs(q), pairs(f)
     right = right_of(quote, fix)
-    tp = [p for p in qp if TIME.match(p["obj"] or "")]
-    if tp: return nlp(tp[0]["obj"])[0].lemma_.lower(), right      # time slips belong to the time word ("in the last minute" -> minute)
+    fixw = set(pw(fix))
+    changed = [p for p in qp if p["prep"].split()[-1] not in fixw]
+    if changed and re.search(r"\bsame\b", (quote or "").lower()): return "same", right   # the same as / the same about
+    for p in changed:
+        if p["lemma"] in PREPS: continue                      # a preposition is never the deciding word
+        if p["lemma"] not in GENERIC or TIME.match(p["obj"] or ""): return p["lemma"], right
     qlem = {t.lemma_.lower() for t in q}
     for p in fp:
-        if p["lemma"] in qlem and p["lemma"] not in GENERIC: return p["lemma"], p["prep"]
+        if p["lemma"] in qlem and p["lemma"] not in GENERIC: return p["lemma"], right
+    zero = [t.lemma_.lower() for t in q if t.lemma_.lower() in ZERO]
+    if zero: return zero[0], right
     for p in qp:
-        if p["lemma"] not in GENERIC: return p["lemma"], right
-    content = [t for t in q if t.pos_ in ("VERB", "ADJ", "NOUN") and t.lemma_.lower() not in GENERIC]
+        if p["lemma"] not in GENERIC and p["lemma"] not in PREPS: return p["lemma"], right
+    content = [t for t in q if t.pos_ in ("VERB", "ADJ", "NOUN") and t.lemma_.lower() not in GENERIC and t.lemma_.lower() not in PREPS]
     return (content[0].lemma_.lower() if content else None), right
 
 def cmd_seed(sess_dir, out_path):
@@ -113,7 +137,13 @@ def cmd_seed(sess_dir, out_path):
     for f in sorted(glob.glob(os.path.join(sess_dir, "*.json"))):
         d = json.load(open(f)); d = d.get("data", d)
         items = [dict(quote=i["quote"], fix=i.get("fix", ""), turkish=i.get("turkish", "")) for i in d["interference"]["items"] if i.get("type") == "preposition_case"]
-        items += [dict(quote=e["quote"], fix=e.get("fix", "").split("->")[-1], turkish="") for e in d["errors"] if e["concept"] == "err_preposition"]
+        norm = lambda x: re.sub(r"[^a-z ]", "", (x or "").lower())
+        seen = [norm(i["quote"]) for i in items]
+        for e in d["errors"]:
+            if e["concept"] != "err_preposition": continue
+            q = norm(e["quote"])
+            if any(x and (x in q or q in x) for x in seen): continue   # same slip, already logged as interference
+            items.append(dict(quote=e["quote"], fix=e.get("fix", "").split("->")[-1], turkish=""))
         for it in items:
             k, right = key_of(it["quote"], it["fix"])
             if not k: continue
@@ -161,6 +191,16 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
         if k and k not in watch:   # a new slip adds its word to the watch list
             watch[k] = {"word": k, "right": right, "group": grp, "slips": 0, "examples": [], "new": True}
         if k: watch[k]["slips"] += 1
+    # right "no preposition" uses: every use of a ZERO verb on the watch list that has no preposition after it
+    zero_watch = {w for w, r in watch.items() if r.get("right") == "∅" and w in ZERO}
+    seen_heads = {(c["turn"], c.get("hidx")) for c in cands}
+    flagged_turn_words = {(u["turn"], u.get("lemma")) for u in extra}
+    for tid, text in turns.items():
+        if C.get("modes", {}).get(tid, "voice") != "voice": continue
+        for t in nlp(text):
+            L = t.lemma_.lower()
+            if L in zero_watch and t.pos_ == "VERB" and (tid, t.i) not in seen_heads and (tid, L) not in flagged_turn_words:
+                extra.append({"turn": tid, "mode": "voice", "lemma": L, "prep": "∅", "obj": "", "ok": True, "right": "∅"})
     uses = [c for c in cands + extra if c.get("mode") == "voice"]
     def acc(xs): return (round(sum(x["ok"] for x in xs) / len(xs) * 100), len(xs)) if xs else (None, 0)
     wl = [u for u in uses if u.get("lemma") in watch]
@@ -168,7 +208,7 @@ def cmd_score(cands_path, flags_path, watch_path, out_path):
     by_g = collections.defaultdict(list); by_w = collections.defaultdict(list); by_c = collections.defaultdict(list)
     for u in wl: by_g[u["group"]].append(u); by_w[u["lemma"]].append(u)
     for u in uses:
-        need = u["prep"] if u["ok"] else u.get("right", "∅")
+        need = (u["prep"] if u["prep"] != "∅" else "∅") if u["ok"] else u.get("right", "∅")
         by_c["∅ no preposition" if need == "∅" else chip_of(need, u.get("obj"))].append(u)
     out = {"all": acc(uses), "watch": acc(wl),
            "groups": {g: acc(v) for g, v in sorted(by_g.items(), key=lambda kv: -len(kv[1]))},
