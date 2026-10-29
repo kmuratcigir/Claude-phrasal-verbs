@@ -169,7 +169,7 @@ Murat asked for a manual feed this time (the skill is still to be designed).
 - **Tests (frozen real db):** 0 existing items moved, 26 added; every new answer accepted and none of its distractors; manual sessions over the fed patterns served new items 28% of the time at 100% "yours"; a 30-item session answered and saved (60 writes) with no errors; Progress shows "speaking data as of 13.10 · 21 sessions"; no sideways scroll at 390px.
 - **Unsorted, possible new patterns (not added):** turn into / evolve into (1 + 3 earlier), stay over with us / at ours (2), "-e karşı" said as "against" for with / towards (2), late for a meeting (1), plus single slips: look back on, recommended to me, open to, read → look at my notes, from time to time, than (comparative -den), a question about.
 
-## 29.10 grammar slices 5–7 (built and tested, version 18 not yet published)
+## 29.10 grammar slices 5–7 (published as version 18, id `1793287038-6415`)
 `chunks/state` already listed s5, s6 and s7 as open (since 29.10), but they had no items, so Chunk mode skipped them.
 - **21 new items, all new contexts (N)**, 7 per slice, in `src/bank_chunks.js` as three new patterns appended after `CHUNK_BANK` (`CHUNK_BANK_2910`), so no existing item index moves. Samples approved by Murat 29.10, then the rest written.
   - `ch_s5_ever` (s5, "ever / never" for life experience): never been to Norway, ever tried Turkish coffee, daughter never flown alone, never seen a deal like this in twenty years in finance, ever been to Japan, never eaten sushi before, ever driven in İzmir traffic.
