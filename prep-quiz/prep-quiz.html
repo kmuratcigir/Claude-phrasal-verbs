@@ -881,6 +881,42 @@ const CHUNK_BANK=[
  N('I lived in Ankara ___ five years, then moved to Baku.','for',['since'],'A finished period: past simple with "for".')]}
 ];
 CHUNK_BANK.forEach(p=>BANK.push(p));
+// ---------- Slices 5-7 (29.10): open in chunks/state since 29.10, items approved by Murat 29.10 ----------
+// New patterns at the end, so no existing item index moves. Contexts from Murat's life; no "left out" case
+// (finished time, habits, future, set phrases, distance, plans) is ever a wrong answer here.
+const CHUNK_BANK_2910=[
+{k:'ch_s5_ever',sec:'chunk',chunk:'s5',label:'"ever / never" for life experience → present perfect',tr:'hiç gittin mi? / hiç gitmedim (Turkish uses the past ending)',wrong:['never went','Did you ever'],
+ trap:'Turkish says "hiç gitmedim" with a past ending. Is this about your whole life up to now?',
+ why:'For life experience up to now, English uses the present perfect with "ever" and "never": I\'ve never been to Norway, have you ever tried it? With a finished time ("as a child I never ate fish") or a habit ("I never drink coffee") the rule doesn\'t apply.',
+ items:[N('I ___ to Norway. (never / be)','\'ve never been|have never been',['never went','never was']),
+ N('___ Turkish coffee? (you / ever / try)','Have you ever tried',['Did you ever try']),
+ N('My daughter ___ on a plane on her own. (never / fly)','\'s never flown|has never flown',['never flew']),
+ N('In twenty years in finance, I ___ a deal like this. (never / see)','\'ve never seen|have never seen',['never saw']),
+ N('___ to Japan? (you / ever / be)','Have you ever been',['Did you ever go']),
+ N('She ___ sushi before, so she\'s a bit nervous. (never / eat)','\'s never eaten|has never eaten',['never ate']),
+ N('___ a car in İzmir traffic? (you / ever / drive)','Have you ever driven',['Did you ever drive'])]},
+{k:'ch_s6_sofar',sec:'chunk',chunk:'s6',label:'"so far / up to now / until now" → present perfect',tr:'şimdiye kadar üç toplantı yaptım (Turkish uses the past ending)',wrong:['had','went'],
+ trap:'Turkish says "şimdiye kadar … yaptım" with a past ending. Is the period still running now?',
+ why:'"So far", "up to now" and "until now" count from the past up to this moment, so they take the present perfect: I\'ve had three meetings so far, up to now nothing has gone wrong.',
+ items:[N('I ___ three meetings so far today. (have)','\'ve had|have had',['had']),
+ N('Up to now, nothing ___ wrong with the audit. (go)','has gone|\'s gone',['went']),
+ N('So far, my daughter ___ two of her five exams. (pass)','\'s passed|has passed',['passed']),
+ N('We ___ 40% of this year\'s budget so far. (spend)','\'ve spent|have spent',['spent']),
+ N('Up to now, the new system ___ us any trouble. (not give)','hasn\'t given|has not given',['didn\'t give']),
+ N('So far, we ___ only two days of rain on this trip. (have)','\'ve had|have had',['had']),
+ N('We\'re halfway through the review, and until now everything ___ to plan. (go)','has gone|\'s gone',['went'])]},
+{k:'ch_s7_thisweek',sec:'chunk',chunk:'s7',label:'"this week / month / year" and "lately" → present perfect',tr:'bu ay iki kitap okudum / son zamanlarda çok meşguldüm (Turkish uses the past ending)',wrong:['finished','was'],
+ trap:'Turkish says "bu ay … okudum" with a past ending. Is this week, month or year still running?',
+ why:'When the period is still running (this week, this month, this year) or you mean "recently" (lately), English uses the present perfect: I\'ve read two books this month, I\'ve been really busy lately.',
+ items:[N('I ___ two books this month, and it\'s only the 15th. (finish)','\'ve finished|have finished',['finished']),
+ N('I ___ really busy lately. (be)','\'ve been|have been',['was']),
+ N('We ___ two big clients this year, and there are still two months to go. (sign)','\'ve signed|have signed',['signed']),
+ N('My daughter ___ lots of new friends this term, and it\'s only half-term. (make)','\'s made|has made',['made']),
+ N('Prices in İzmir ___ a lot lately. (go up)','have gone up|\'ve gone up',['went up']),
+ N('I ___ well this week, and the audit doesn\'t finish until Friday. (not sleep)','haven\'t slept|have not slept|haven\'t been sleeping|have not been sleeping',['didn\'t sleep']),
+ N('___ from the bank lately? (you / hear)','Have you heard',['Did you hear'])]}
+];
+CHUNK_BANK_2910.forEach(p=>BANK.push(p));
 // Chunk list as agreed on 12.10 (meta/chunks in the Fluency Ledger). keys = the quiz patterns that train it.
 // CHUNK_DEFAULT is used until the Ledger's statuses are copied into this quiz's memory (chunks/state).
 const CHUNKS=[
@@ -892,7 +928,10 @@ const CHUNKS=[
  {id:'s1',layer:'slice',n:1,title:'"yet" → present perfect',keys:['ch_s1_yet']},
  {id:'s2',layer:'slice',n:2,title:'"already" and "just" → present perfect',keys:['ch_s2_already']},
  {id:'s3',layer:'slice',n:3,title:'finished time → past simple',keys:['ch_s3_finished']},
- {id:'s4',layer:'slice',n:4,title:'"for" and "since" for things still going on',keys:['ch_s4_forsince']}];
+ {id:'s4',layer:'slice',n:4,title:'"for" and "since" for things still going on',keys:['ch_s4_forsince']},
+ {id:'s5',layer:'slice',n:5,title:'"ever / never" for life experience → present perfect',keys:['ch_s5_ever']},
+ {id:'s6',layer:'slice',n:6,title:'"so far / up to now / until now" → present perfect',keys:['ch_s6_sofar']},
+ {id:'s7',layer:'slice',n:7,title:'"this week / month / year" and "lately" → present perfect',keys:['ch_s7_thisweek']}];
 const CHUNK_DEFAULT={open:['c1','c2','c3','c4','c5','s1','s2','s3','s4'],focus:['c1','s1'],settled:[],as_of:'2026-10-12',source:'built-in'};
 // ---------- Feed 13.10: your sentences from the Ledger sessions of 12.10 and 13.10 (approved by Murat 14.10) ----------
 // Loaded last, so every item is appended after the existing ones and saved history stays valid.
