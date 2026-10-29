@@ -18,7 +18,7 @@ Usage: python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json [dr
 """
 import json, os, re, sys
 import spacy
-from detect import clean, load_turns
+from detect import clean, load_turns, turn_tags
 from vocab import expand_alts, match
 
 nlp = spacy.load("en_core_web_sm")
@@ -59,6 +59,7 @@ def main(turns_path, tracker_path, out, drilled_path=None):
         drilled = {l.strip().lower() for l in open(drilled_path, encoding="utf-8") if l.strip()}
     words = {"voice": 0, "typed": 0}
     cands = []
+    in_drill = {t for t, tg in turn_tags(turns_path).items() if "vocab-drill" in tg}   # 29.10.26
     for turn, raw, mode in load_turns(turns_path):
         text = clean(raw)
         words[mode] += len(re.findall(r"[A-Za-z']+", text))
@@ -89,7 +90,7 @@ def main(turns_path, tracker_path, out, drilled_path=None):
             for word, f in keep.items():
                 cands.append({"i": len(cands), "turn": turn, "mode": mode, "word": word, "source": f["source"],
                               "split": f["split"], "on_tracker": f["on_tracker"],
-                              "drilled": word.lower() in drilled, "sentence": s.text.strip()})
+                              "drilled": word.lower() in drilled and turn in in_drill, "sentence": s.text.strip()})
     json.dump({"words": words, "candidates": cands}, open(out, "w"), indent=1, ensure_ascii=False)
     print(f"{sum(words.values())} words (voice {words['voice']}, typed {words['typed']}) · {len(cands)} phrasal verb candidates")
     print("PHRASAL VERB REVIEW LIST  (index | word | source | flags | sentence)")

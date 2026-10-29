@@ -21,7 +21,7 @@ Usage: python3 vocab.py murat_turns.txt vocab_items.json <cefr_dir> vocab_candid
 import csv, json, os, re, sys
 from collections import Counter
 import spacy
-from detect import clean, load_turns
+from detect import clean, load_turns, turn_tags
 try:
     from wordfreq import zipf_frequency
 except ImportError:
@@ -144,14 +144,16 @@ def mtld_block(div):
 
 def main(turns_path, items_path, cefr_dir, out, drilled_path=None):
     """drilled_path: optional file, one expression per line, of words drilled in this
-    chat's vocab session. Their hits are counted as practice, not spontaneous come-ups."""
+    chat's vocab session. Their hits INSIDE the vocab drill marks (turns tagged [vocab-drill])
+    are practice, not come-ups; outside the marks they are real come-ups (29.10.26)."""
     lvl = load_levels(cefr_dir)
     drilled = set()
     if drilled_path and os.path.exists(drilled_path):
         drilled = {l.strip().lower() for l in open(drilled_path, encoding="utf-8") if l.strip()}
     src = json.load(open(items_path)); src = src.get("data", src)
-    items = [{"id": it["id"], "expr": it["expr"]} for it in (src.get("items") or src["rows"])
-             if it["expr"].strip().lower() not in drilled]
+    items = [{"id": it["id"], "expr": it["expr"]} for it in (src.get("items") or src["rows"])]
+    in_drill = {t for t, tg in turn_tags(turns_path).items() if "vocab-drill" in tg}
+    kept_out = 0
     pats = compile_items(items)
     levels, tokens = Counter(), 0
     mlevels = {"voice": Counter(), "typed": Counter()}
@@ -170,6 +172,8 @@ def main(turns_path, items_path, cefr_dir, out, drilled_path=None):
                 if key in seen_hit: continue
                 if match(p["seq"], lemmas):
                     seen_hit.add(key)
+                    if p["expr"].strip().lower() in drilled and turn in in_drill:
+                        kept_out += 1; continue   # practice inside the drill marks
                     hits.append({"id": p["id"], "expr": p["expr"], "turn": turn, "mode": mode, "sentence": s.text.strip()})
             for t in s:
                 if not t.is_alpha or t.pos_ == "PROPN": continue
@@ -211,6 +215,7 @@ def main(turns_path, items_path, cefr_dir, out, drilled_path=None):
     print(f"{tokens} words on the CEFR lists · levels: " + " ".join(f"{k} {v}%" for k, v in result["levels"].items()))
     md = result["mtld"]
     print(f'lexical diversity (MTLD): voice {md["voice"]} ({md["words"]["voice"]} words) · typed {md["typed"]} ({md["words"]["typed"]} words) · all {md["all"]}')
+    if kept_out: print(f"{kept_out} practised-word hit(s) inside the vocab drill marks kept out (practice, not come-ups)")
     print("VOCAB REVIEW LIST  (index | type | item or word | sentence)")
     for c in cands:
         label = f'#{c["id"]} {c["expr"]}' if c["type"] == "comeup" else f'{c["word"]} ({c["level"]})'

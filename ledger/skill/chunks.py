@@ -273,10 +273,78 @@ def find_s4(sent):
         elif s: out.append({"item": "s4", "match": c[:80], "suggest": None})
     return out
 
-FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5,
-           "s1": find_s1, "s2": find_s2, "s3": find_s3, "s4": find_s4}
+# ---------- shared for s5-s7 (added 29.10.26) ----------
+def clauses_keep(sent):
+    """Like clauses(), but "so far" is never split at its "so"."""
+    s = re.sub(r"\bso\s+far\b", "so_far", sent, flags=re.I)
+    parts, out = [c.replace("so_far", "so far") for c in clauses(s)], []
+    for c in parts:   # a fronted phrase on its own ("Up to now, ...", "Lately, ...") joins the next clause
+        if out and len(out[-1].split()) <= 3: out[-1] = out[-1] + ", " + c
+        else: out.append(c)
+    return out
 
-def cmd_find(turns_path, chunks_path, out_path):
+PERF_PRES = re.compile(rf"\b{HAVE_PRES}\s+(?:(?:i|you|we|they|he|she|it|anyone|everyone|anybody)\s+)?(?:not\s+|ever\s+|never\s+|really\s+|just\s+|already\s+|also\s+|only\s+)*(?:been|{PP_W})\b", re.I)
+PAST_ANY = re.compile(rf"\b(?:had|was|were|did|didn['’]t|did\s+not|wasn['’]t|weren['’]t|{PAST_W})\b", re.I)
+FUTURE = re.compile(r"\b(?:will|won['’]t|['’]ll|going to|gonna|plan(?:ning)? to|next|tomorrow)\b", re.I)
+FINISHED = re.compile(r"\byesterday\b|\b\w+\s+ago\b|\blast\s+\w+|\bin\s+(?:19|20)\d\d\b|\bwhen\s+(?:i|we|he|she|they)\s+(?:was|were)\b|\bas\s+a\s+(?:child|kid|student)\b|\bafter\s+(?:that|\d{4}|school|university)\b|\buntil\s+then\b|\bat\s+(?:that|the)\s+time\b|\bback\s+then\b|\bon\s+(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b", re.I)
+
+# ---------- slice 5: "ever / never" for life experience -> present perfect ----------
+S5_SKIP = re.compile(r"\bever\s+since\b|\bforever\b|\bhardly\s+ever\b|\b(?:best|worst|biggest|first|only|most|least|greatest|hardest)\b[\w\s'’]{0,25}\bever\b|\bthan\s+ever\b|\bnever\s+mind\b|\bnever\s+again\b|\bnow\s+or\s+never\b|\b(?:would|could|can|should|might|must|had|'d|’d)\s+(?:\w+\s+)?never\b|\bnever\s+(?:ever\s+)?(?:be|have|do|let|give)\b(?!\s+(?:been|had|done))", re.I)
+S5_PAST_NEVER = re.compile(rf"\b(?:never|ever)\s+(?:{PAST_W})\b|\b(?:did|didn['’]t)\s+(?:\w+\s+){{0,2}}ever\b|\b(?:was|were)\s+never\b", re.I)
+
+def find_s5(sent):
+    out = []
+    for c in clauses_keep(sent):
+        if not re.search(r"\b(?:ever|never)\b", c, re.I): continue
+        if S5_SKIP.search(c) or FUTURE.search(c) or FINISHED.search(c): continue
+        if PERF_PRES.search(c): out.append({"item": "s5", "match": c[:80], "suggest": True})
+        elif S5_PAST_NEVER.search(c): out.append({"item": "s5", "match": c[:80], "suggest": None})   # life experience or a finished time? Claude decides
+    return out
+
+# ---------- slice 6: "so far / up to now / until now" -> present perfect ----------
+S6_PHRASE = re.compile(r"\bso\s+far\b|\b(?:up\s+)?(?:to|until|till)\s+now\b|\bto\s+date\b", re.I)
+S6_SKIP = re.compile(r"\bso\s+far\s+(?:from|away)\b|\bnot\s+so\s+far\b|\bso\s+far,?\s+so\s+good\b|\bas\s+far\s+as\b|\b(?:until|till)\s+now\b.*\b(?:know|knew|realis|realiz|think|thought|understood|notic)|\b(?:know|knew|realis|realiz|think|thought|understood|notic)\w*\b.*\b(?:until|till)\s+now\b", re.I)
+
+def find_s6(sent):
+    out = []
+    for c in clauses_keep(sent):
+        if not S6_PHRASE.search(c) or S6_SKIP.search(c) or FUTURE.search(c): continue
+        if PERF_PRES.search(c): out.append({"item": "s6", "match": c[:80], "suggest": True})
+        elif PAST_ANY.search(c): out.append({"item": "s6", "match": c[:80], "suggest": False})
+    return out
+
+# ---------- slice 7: "this week / month / year", "lately" -> present perfect ----------
+S7_PHRASE = re.compile(r"\bthis\s+(?:week|month|year)\b(?!['’]s)|\blately\b", re.I)
+S7_SPECIFIC = re.compile(r"\bon\s+(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b|\byesterday\b|\bthis\s+morning\b|\btoday\b|\bat\s+\d|\bin\s+(?:january|february|march|april|may|june|july|august|september|october|november|december)\b", re.I)
+S7_PRES = re.compile(r"\b(?:am|is|are|['’]m|['’]re)\b", re.I)
+
+def find_s7(sent):
+    out = []
+    for c in clauses_keep(sent):
+        m = S7_PHRASE.search(c)
+        if not m or FUTURE.search(c) or S7_SPECIFIC.search(c): continue
+        lately = m.group(0).lower() == "lately"
+        if PERF_PRES.search(c): out.append({"item": "s7", "match": c[:80], "suggest": True})
+        elif PAST_ANY.search(c): out.append({"item": "s7", "match": c[:80], "suggest": False if lately else None})
+        elif lately and S7_PRES.search(c): out.append({"item": "s7", "match": c[:80], "suggest": None})
+    return out
+
+FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5,
+           "s1": find_s1, "s2": find_s2, "s3": find_s3, "s4": find_s4,
+           "s5": find_s5, "s6": find_s6, "s7": find_s7}
+
+def slot_turns(path):
+    """Turns tagged [slot] in the header: inside the fixing slot marks (29.10.26)."""
+    out = set()
+    for line in open(path, encoding="utf-8"):
+        m = re.match(r"###\s*(T\d+)\b(.*)$", line)
+        if m and "[slot]" in m.group(2): out.add(m.group(1))
+    return out
+
+def cmd_find(turns_path, chunks_path, out_path, targets_path=None):
+    """targets_path (optional, 29.10.26): the fixing slot's drilled chunk ids, one per line
+    (from the slot's "Drilled targets:" line). Their uses inside the slot marks are practice:
+    kept out of the candidates and printed as a SLOT LIST for the slot result only."""
     import os
     if not os.path.exists(chunks_path):
         json.dump({"open": [], "candidates": []}, open(out_path, "w"))
@@ -288,20 +356,31 @@ def cmd_find(turns_path, chunks_path, out_path):
     if missing:
         print("NOT COUNTED (no finder yet, say so in the report):", ", ".join(missing))
         open_ids = [i for i in open_ids if i in FINDERS]
-    cands = []
+    targets = set()
+    if targets_path and os.path.exists(targets_path):
+        targets = {l.strip() for l in open(targets_path, encoding="utf-8") if l.strip()}
+    in_slot = slot_turns(turns_path)
+    cands, slot = [], []
     for t in read_turns(turns_path):
         for raw in sentences(t["text"]):
             s = clean(raw)
             for iid in open_ids:
                 for c in FINDERS[iid](s):
                     c.update(turn=t["turn"], mode=t["mode"], sentence=s)
-                    cands.append(c)
+                    (slot if (iid in targets and t["turn"] in in_slot) else cands).append(c)
     for i, c in enumerate(cands): c["idx"] = i
     json.dump({"open": open_ids, "candidates": cands}, open(out_path, "w"), ensure_ascii=False, indent=1)
     print(f"CHUNK REVIEW LIST · open: {', '.join(open_ids)} · {len(cands)} candidates")
     for c in cands:
         sug = {True: "correct", False: "WRONG", None: "decide"}[c["suggest"]]
         print(f'{c["idx"]:3} {c["item"]} {c["mode"]:5} {c["turn"]:5} {sug:7} | {c["match"]} | {c["sentence"][:110]}')
+    if slot:
+        print(f"SLOT LIST (kept out of the chunk counts: drilled targets inside the fixing slot) · {len(slot)}")
+        for c in slot:
+            sug = {True: "correct", False: "WRONG", None: "decide"}[c["suggest"]]
+            print(f'  - {c["item"]} {c["mode"]:5} {c["turn"]:5} {sug:7} | {c["match"]} | {c["sentence"][:110]}')
+    elif targets and not in_slot:
+        print("SLOT: targets given but no turn is tagged [slot]; check the marks before going on.")
 
 def cmd_apply(cand_path, verdict_path, out_path):
     d = json.load(open(cand_path, encoding="utf-8"))

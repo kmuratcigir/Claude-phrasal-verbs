@@ -45,6 +45,17 @@ def load_turns(path):
     if cur: turns.append((cur, " ".join(buf), mode))
     return turns
 
+def turn_tags(path):
+    """-> {turn: set of drill tags} from headers like "### T12 [voice] [slot]" (added 29.10.26).
+    [slot] = inside the fixing slot marks; [vocab-drill] = inside the vocab drill marks.
+    Only the drilled targets / practised words are kept out in those turns; everything else counts."""
+    tags = {}
+    for line in open(path, encoding="utf-8"):
+        m = re.match(r"^###\s*(T\d+)\b(.*)$", line)
+        if m:
+            tags[m.group(1)] = set(re.findall(r"\[(slot|vocab-drill)\]", m.group(2)))
+    return tags
+
 # ---------------------------------------------------------------- helpers
 def lem(t): return t.lemma_.lower()
 def low(t): return t.text.lower()

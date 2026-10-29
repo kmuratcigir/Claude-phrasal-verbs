@@ -62,6 +62,10 @@ block and updates the watch list `meta/prep_watch` (one row per word Murat said;
 the list on its second slip, after one slip it waits). It is one command in Step 5 and goes into
 the same single save. It fails softly: if it can't run, the check carries on without it.
 
+Since 28.10.26 the report also gives **sentences with a slip**: the share of voice sentences
+holding at least one counted error (Step 6, part 0). Report only, no dashboard chart (Murat's
+choice, 28.10.26).
+
 Why it is built this way (rebuilt 25.09.26): the earlier version asked Claude to read the
 transcript and "notice" patterns. On a real 100+ minute thread that found 5 items. The same
 thread through this pipeline gave 186 verified observations and 24 real errors. The difference:
@@ -149,7 +153,7 @@ first page already shows big turns, give this step to a general-purpose subagent
   paste the tagging rule and the keep / leave-out lists from this step into its prompt word
   for word (including: drop the reminder line, tag `[voice]` when there is no "Message sent
   at" reminder, keep only the quoted comment text from an artifact-comment relay, skip the
-  trigger message);
+  trigger message), and the **drill-mark tagging** rule below, word for word;
 - ask it to return only the turn numbers it wrote with their voice/typed tags, the pages
   read and the highest turn number, not the text itself.
 Then check the file yourself before Step 3: the turn count, the tags, and a few turns spot-
@@ -172,6 +176,20 @@ it, not the style of the text. Drop the reminder line itself; keep only his word
 typed are scored separately on the dashboard, because typed English has fewer slips and
 mixing them would blur the trend.
 
+**Drill marks (added 29.10.26).** Two drills can sit inside a practice chat, each wrapped in fixed
+marks that Claude says at the start of a message:
+- the **fixing slot**: "Fixing slot starts." … "Fixing slot ends." (fixing-slot skill);
+- the **vocab drill** (the story loop of a vocab session): "Vocab drill starts." … "Vocab drill ends."
+Every turn of Murat's that comes after a start mark and before its end mark gets an extra tag in
+its header: `### T<n> [voice] [slot]` or `### T<n> [voice] [vocab-drill]`. Turns outside the marks get
+no extra tag. A drill can happen more than once in a chat; tag each stretch. **If a start mark has
+no end mark, or an end mark has no start, stop and ask Murat where the drill began or ended. Never
+guess.** A chat with no marks needs no extra tags.
+What the tags do: only the drilled items, and only in tagged turns, are kept out (the slot's
+targets from the chunk counts; the vocab drill's practised words from the come-ups). Everything
+else in a tagged turn is checked and counted as normal: grammar, interference, prepositions,
+vocabulary, phrasal verbs, word counts. Uses of a drilled item outside the marks are real uses.
+
 Copy his words verbatim, voice-transcript fillers and all (the script strips "uh/um",
 repeats and "you know / I mean"). Keep:
 - everything he typed or spoke himself, including short task requests.
@@ -187,8 +205,13 @@ If the chat included a vocab session, write its final agreed target words (the v
 skill ends with a line **Practised words:** listing them) to
 `/tmp/nc/drilled_words.txt`, one expression per line, spelled exactly as the `expr` in
 `meta/vocab_tracker`, or, for a phrasal verb, exactly as its `word` in `meta/pv_tracker`.
-Uses of those words in this chat are practice, not spontaneous come-ups,
-so vocab.py and pv.py skip them, and `vt_apply.py` (Step 5) records them as one review each.
+Uses of those words **inside the vocab drill marks** (turns tagged `[vocab-drill]`) are practice, not
+spontaneous come-ups, so vocab.py and pv.py skip them there; a use outside the marks is a real
+come-up. `vt_apply.py` (Step 5) records every practised word as one review either way.
+
+If the chat included a fixing slot, write the chunk ids from its **Drilled targets:** line (e.g.
+`s2`, `c5`) to `/tmp/nc/slot_targets.txt`, one per line. chunks.py keeps those items out of the
+counts in turns tagged `[slot]` only.
 Include words from both phases (artifact quiz and story loop). If the session ran over two
 chats (quiz in one, stories in the next), list the words in each chat's check.
 
@@ -215,14 +238,18 @@ answered "claude_ai server does not offer this tool here". Then:
 cd /tmp/nc && python3 detect.py murat_turns.txt candidates.json
 python3 vocab.py murat_turns.txt meta/vocab_tracker.json olp vocab_candidates.json drilled_words.txt
 python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json drilled_words.txt
-python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json
+python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json slot_targets.txt
 ```
 
-`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (all nine since 12.10.26):
+`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (c1–c5 and s1–s4 since 12.10.26; s5–s7 since 29.10.26):
 index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
 tell), the matched words and the sentence. If it prints `NOT COUNTED (no finder yet ...)`, Murat opened
 a chunk the script can't count yet: the other open chunks are still counted; say in the report
-("chunk X isn't counted yet") and never estimate its numbers by eye.
+("chunk X isn't counted yet") and never estimate its numbers by eye. If there was a fixing slot, it
+also prints a SLOT LIST: the drilled targets inside the slot, kept out of the counts. Use it only to
+check the slot's **Slot result:** line and repeat that line in the report; never add these uses to
+the chunks block. If it prints `SLOT: targets given but no turn is tagged [slot]`, the tagging went
+wrong: fix murat_turns.txt (or ask Murat) before going on.
 
 `detect.py` prints the word count (voice and typed) and a REVIEW LIST of grammar candidates: index, kind
 (`use` = a structure was used, `error` = an error signature), concept id, match, sentence.
@@ -238,8 +265,8 @@ everyday-English frequency (Zipf, from wordfreq) and a suggested level from that
 `pv.py` prints a PHRASAL VERB REVIEW LIST: every candidate, one line per phrasal verb per
 sentence, with its source (`tracker` = matched a tracker expression, `particle` = spaCy marked
 a particle, split forms like "turn it off" included, `prep` = verb + adverb-like preposition)
-and flags (`tracker` / `NEW`, `split`, `drilled`). Drilled words are left out of every count
-automatically.
+and flags (`tracker` / `NEW`, `split`, `drilled`). `drilled` is set only inside the vocab drill
+marks; those uses are left out of every count automatically, and uses outside the marks count.
 
 ## Step 3b: Turkish-interference passes (added 27.09.26)
 
@@ -546,6 +573,64 @@ Whether the session doc already exists (and its `version`) is in the `sessions` 
 
 Both are written before the save, so they go into the same single approval.
 
+**0. Sentences with a slip (added 28.10.26).** Murat asked for an errors-per-sentence figure in
+the report only, not on the dashboard: it is closer to how speaking feels to him than errors per
+100 words. Write this script to `/tmp/nc/sentences.py` exactly as below (it reuses detect.py's
+cleaning and sentence split) and run it after Step 5's scripts, before writing the report:
+
+```bash
+cat > /tmp/nc/sentences.py <<'EOF'
+# sentences.py (added 28.10.26): share of voice sentences with at least one counted error.
+# usage: python3 sentences.py murat_turns.txt session_doc.json sessions
+import sys, re, json, glob, difflib
+from detect import clean, load_turns, nlp
+
+def norm(t): return re.sub(r"[^a-z' ]", "", clean(t).lower()).split()
+
+turns_p, doc_p, sess_dir = sys.argv[1], sys.argv[2], sys.argv[3]
+sents = []
+for turn, raw, mode in load_turns(turns_p):
+    if mode != "voice": continue
+    for s in nlp(clean(raw)).sents:
+        if len(s) >= 3: sents.append((turn, norm(s.text)))
+doc = json.load(open(doc_p, encoding="utf-8"))
+hit, unmatched, rank = {}, [], {"m": 0, "f": 1, "s": 2}
+for e in doc.get("errors", []):
+    if e.get("mode", "voice") != "voice": continue
+    q = norm(e.get("quote", ""))
+    if not q: continue
+    qs, best, score = " ".join(q), None, 0.0
+    for i, (_, w) in enumerate(sents):
+        ws = " ".join(w)
+        sc = 1.0 if (qs in ws or (ws and ws in qs)) else difflib.SequenceMatcher(None, q, w).ratio()
+        if sc > score: best, score = i, sc
+    if best is None or score < 0.6: unmatched.append(e.get("quote", "")[:80]); continue
+    imp = e.get("impact", "s")
+    if best not in hit or rank.get(imp, 2) < rank.get(hit[best], 2): hit[best] = imp
+n, k = len(sents), len(hit) + len(unmatched)
+res = {"voice": n, "with_error": k, "pct": round(100 * k / n, 1) if n else 0.0,
+       "with_m": sum(1 for v in hit.values() if v == "m"), "unmatched": len(unmatched)}
+doc["sentences"] = res
+json.dump(doc, open(doc_p, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+prev = None
+for f in sorted(glob.glob(f"{sess_dir}/*.json")):
+    d = json.load(open(f, encoding="utf-8")); d = d.get("data", d)
+    if d.get("sentences") and d.get("date") != doc.get("date"):
+        prev = f'{d["sentences"]["pct"]}% on {d["date"][:5]}'
+print(f"SENTENCES: {k} of {n} voice sentences had a slip ({res['pct']}%), {res['with_m']} with a meaning change; previous: {prev or 'none yet'}")
+for u in unmatched: print("  UNMATCHED (counted as its own sentence):", u)
+EOF
+cd /tmp/nc && python3 sentences.py murat_turns.txt session_doc.json sessions
+```
+
+It counts voice sentences of three or more tokens (the same split detect.py uses), matches each
+voice error's quote to its sentence, and counts each sentence once however many errors it holds.
+An error it can't place is counted as one more sentence with a slip and listed as UNMATCHED. It
+writes a `sentences` field into `session_doc.json`, so the figure is saved with the session in
+Step 7 and the next check can compare with it. Sessions before 28.10.26 have no figure, and it
+can't be backfilled (only error quotes are stored, not transcripts). Say "previous: none yet"
+plainly until there is one. No voice turns (a typed-only chat): leave the line out.
+
 **1. The report** (`/tmp/nc/report.md`). Write the text report now, in the fixed format below
 (Murat asked to keep it that way, 29.09.26). The same text is saved with the session (the
 Overview tab shows it as "Session report") and is what you give him in Step 8. Take every number
@@ -556,7 +641,9 @@ Naturalness check, <Ddd DD.MM>: <words> words (voice <n>, typed <n>), <observati
 
 - **Voice: <x.xx>** errors per 100 words (<prev> on <prev date>).
 - **Typed: <x.xx>** per 100 (<prev> on <prev date>). <if under ~500 words: say it is a small sample and why>
+- **Sentences with a slip: <k> of <n> (<pct>%)** in voice (<prev>), <with_m> of them with a meaning change. Read the trend, not the exact figure: the count depends on how the transcript is punctuated.
 - <one line on anything that changes how to read the numbers, e.g. a method change; leave out if none>
+- <only if there was a fixing slot: "**Fixing slot:** <the Slot result line, e.g. I've already 6/6 · I still have 3/5>. Kept out of the chunk counts; everything else in it is counted.">
 
 ## Errors
 **<the top recurring error>: <n> times.** <one or two sentences: what changed, with his own quotes>
@@ -573,7 +660,7 @@ Mistakes by impact: <m> change the meaning, <f> sound foreign, <s> slips.
 - "<quote>"   (3–5 lines)
 
 ## Phrasal verbs
-**1 per <N> words**, against the native rate of 1 per 192. <how it compares>. You used <uses> phrasal verbs, <distinct> different ones<, and the drilled words aren't counted>. <n> of them are on the tracker.
+**1 per <N> words**, against the native rate of 1 per 192. <how it compares>. You used <uses> phrasal verbs, <distinct> different ones<, and the drilled words used inside the vocab drill aren't counted>. <n> of them are on the tracker.
 - **New:** ...
 - **Moved up to Activated:** ...
 - **Moved up to In Progress:** ...
@@ -674,7 +761,7 @@ cd /tmp/nc && python3 overview.py finish sessions session_doc.json <doc_id> over
 
 If it prints `STOP`, it has written nothing: fix what it lists and rerun. On success it adds the
 report to `session_doc.json` (field `report`) and writes `overview_out.json` for `meta/overview`.
-Run it after every script that edits `session_doc.json` (`intf.py apply`, `lex_apply.py`), so the
+Run it after every script that edits `session_doc.json` (`intf.py apply`, `lex_apply.py`, `sentences.py`), so the
 report and the brief see the final numbers.
 
 ## Step 7: Write it to the dashboard, in one save
@@ -720,7 +807,7 @@ part of the report holds:
 1. The opening lines: words analyzed, observations, errors, and errors per 100 words **for voice and
    typed separately** (from `by_mode`), each with its change from the previous session (the doc
    before this one in `/tmp/nc/sessions/`). If one mode has under ~500 words, say its rate is based
-   on a small sample.
+   on a small sample. Then the share of voice sentences with a slip, from the `SENTENCES:` line.
 2. The errors, grouped by type, each with Murat's quote and the fix. Lead with anything
    recurring (the dashboard's errors panel, "All sessions" view, shows what repeats and
    what is still active).
@@ -754,7 +841,7 @@ part of the report holds:
    Naturalness tab the interference patterns, the Vocabulary tab the vocab tracker).
 
 **Voice mode:** the report and the brief are still written and saved in full (Step 6); only what
-you say is short. Keep it short and spoken. Give the error rate, the top two error types with
+you say is short. Keep it short and spoken. Give the error rate, the share of sentences with a slip, the top two error types with
 one example each, one good structure, the phrasal verb density, the interference rate with the
 top pattern, the watch-list preposition accuracy, one vocab-list come-up if there was one, and the open chunks in one sentence. Say the
 rest is on the dashboard. Section 0's voice rules apply: no recap of the conversation.
@@ -828,8 +915,12 @@ from estimation.
 - Preposition accuracy (added 16.10.26) can read a little high: a slip this check misses counts as
   right. A watch-list row is one word, so other uses of the same word count too ("book" the noun under
   "book the tickets"). Plain "to" before a verb is never counted.
+- Sentences with a slip (added 28.10.26) depend on how the speech-to-text punctuated the transcript:
+  one long run-on sentence or three short ones changes the count. Read it as a trend. An error the
+  script can't place counts as its own sentence, so the figure leans slightly high, never low.
+  Tested 28.10.26 on a hand-counted sample (4 of 7 sentences, two errors in one sentence counted once).
 - Pronunciation, fluency and pauses aren't measured. Only the transcript text is available.
 
 ## Scripts
 
-In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `chunks.py`, `preps.py`, `intf_instructions.md`.
+In `scripts/` (copied to `/tmp/nc` in Step 1): `detect.py`, `vocab.py`, `session.py`, `vt_apply.py`, `pv.py`, `pv_apply.py`, `phave_link.py`, `lex_apply.py`, `intf.py`, `overview.py`, `chunks.py`, `preps.py`, `intf_instructions.md`. `sentences.py` (28.10.26) is written from Step 6 instead, since it lives in this file.
