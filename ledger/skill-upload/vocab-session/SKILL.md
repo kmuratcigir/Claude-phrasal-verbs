@@ -66,15 +66,19 @@ content typed out.
    what was read, refuses the whole save if any list would lose a row, or a row would lose a date
    or a review, and adds new ids to `data/index.json`. On `REFUSED` nothing is staged: stop and
    tell Murat what it lists. Never work round it.
-2. Check the ledger's current version id (chat: `get_artifact` or `list_files`; Claude Code:
-   `Artifact` `list` with scope `files`). If it differs from the one you noted, something was saved
-   in between: read the files you change again, rerun the scripts that build them, stage again.
-3. Publish exactly the files the `PUBLISH:` line lists, from `<work>/publish`, each at its `data/…`
-   path, as a new version of the ledger: in a chat, `publish_files`; in Claude Code, `Artifact`
-   publish with `url` = the ledger, `file_path` = the ledger page saved by an `Artifact` `read` of
-   the url (no `path`), `root` = `<work>/publish` and `files` = those paths. In a chat never send
-   `index.html`. Files left out stay as they are.
-4. Confirm with a file listing that the new version holds each published file at its staged size
+2. Check the ledger's current version id with the short call (chat: `get_artifact`, not a full
+   file listing; Claude Code: `Artifact` `list` with scope `files`). If it differs from the one you
+   noted, something was saved in between: read the files you change again, rerun the scripts that
+   build them, stage again.
+3. Publish exactly the files the `PUBLISH:` line lists, each at its `data/…` path, as a new version
+   of the ledger. **In a chat**, `publish_files` only takes files from the chat's working folder
+   (`/home/claude`) or uploads, never from `/tmp`: first
+   `rm -rf /home/claude/publish && cp -r <work>/publish /home/claude/publish`, then `publish_files`
+   from `/home/claude/publish` (e.g. `/home/claude/publish/data/meta/pv_tracker.json` published as
+   `data/meta/pv_tracker.json`). Never send `index.html`. **In Claude Code**, `Artifact` publish with
+   `url` = the ledger, `file_path` = the ledger page saved by an `Artifact` `read` of the url (no
+   `path`), `root` = `<work>/publish` and `files` = those paths. Files left out stay as they are.
+4. Confirm with one file listing that the new version holds each published file at its staged size
    (`wc -c <work>/publish/data/...`). If the publish failed, nothing changed: say so plainly.
 
 ## Step 1: Ask the mode (always first, every session)
