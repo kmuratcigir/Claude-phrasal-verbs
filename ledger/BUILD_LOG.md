@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: data moving from the db to published files (30.10, see the last entry)
+Started 12.10.2026 · Status: data in published files since 30.10 (live version id `1793380526-31f6`, version 55)
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -119,5 +119,7 @@ Nothing built yet; build starts on Murat's go.
 - `reading-session` and `phrasal-verb-tracker` added to `skill-upload/` (copies of the installed skills, then edited).
 - **Tested** on the copy: `ledger.py` refuses a lost row, a lost date and an unread existing session; a pretend 30.10 session through `pv_apply.py` + `vt_apply.py` staged and published 4 files (sizes match), page shows "29 sessions · last check 30 Oct". The `read_file`/`publish_files` route itself was tested only on a small file in a chat; the first real wrap-up is the full test.
 - **Limit:** one version holds at most 511 files; with one session file a day that is about 15 months. Before then, fold old sessions into fewer files.
-- Next: Murat uploads the six skills; switch the live Ledger (publish `ledger.html` + all data files, re-checked against a fresh db read); first real run = the 30.10 session (`s_20261030_0aa5b852`).
+- Murat backed up the 8 installed skills (`skills_backup_29_10_2026.zip`, in the Project) and uploaded the six new ones (30.10).
+- **Live switch, 30.10:** fresh db read identical to the backup (byte for byte, all 43 docs); published `ledger.html` + 44 data files as version 55 (`1793380526-31f6`); every file at its db size; capability `db` kept for the fallback.
+- Next: first real run = the 30.10 session (`s_20261030_0aa5b852`) in a new Project chat; then measure the real token cost.
 
