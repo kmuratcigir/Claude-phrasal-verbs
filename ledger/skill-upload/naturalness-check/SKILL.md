@@ -13,7 +13,7 @@ the Fluency Ledger dashboard, updates the phrasal verb and vocabulary trackers s
 and reports back.
 
 Since 26.09.26 this check also does the phrasal verb tracker's job (density against the
-native benchmark, tracker come-ups, new words). The tracker lives in the ledger database
+native benchmark, tracker come-ups, new words). The tracker lives in the ledger
 (`meta/pv_tracker`), not in the .docx; the .docx is only an export, made on request with the
 `phrasal-verb-tracker` skill. Never edit the .docx separately.
 
@@ -74,7 +74,7 @@ check each flag, not to find them. Do not replace any step below with "just read
 judge". That is the approach that failed.
 
 Dashboard: https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK ("Fluency Ledger").
-Its database has `meta/registry` (grammar concept ids → [label, CEFR level]),
+Its data files (see "The ledger's files" below) hold `meta/registry` (grammar concept ids → [label, CEFR level]),
 `meta/vocab_tracker` (Murat's vocabulary list: `{as_of, max_id, rows: [{id, expr, added,
 importance, mastered, practice: {count, last}, dates[], notes}]}`; `dates` = days used unprompted),
 `meta/pv_tracker` (the phrasal verb tracker: `{as_of, rows: [{word, dates[], notes, list?, practice?}]}`;
@@ -83,9 +83,47 @@ importance, mastered, practice: {count, last}, dates[], notes}]}`; `dates` = day
 type, fix}]}`), `meta/overview` (the Overview tab's written brief, since 30.09.26) and one document
 per checked chat in `sessions`.
 
+## The ledger's files (since 30.10.26)
+
+The Fluency Ledger (https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK) keeps its data in **files
+published inside the artifact**, not in its database. Chats lost the `ArtifactData` tool on
+30.10.26, and the database tools left in chats (`db_get`, `db_write`, …) pass every document
+through the conversation, far too costly for these files. The ledger's database is a frozen copy as of
+29.10.26: never read or write it, even where `ArtifactData` or `db_*` tools are available. The files:
+
+- `data/index.json`: the ids that exist (`sessions`, `reading`, `meta`).
+- `data/meta/<name>.json`: `pv_tracker`, `vocab_tracker`, `prep_watch`, `lexicon`, `interference`,
+  `chunks`, `overview`, `phave`, `registry`.
+- `data/sessions/<doc_id>.json` (one per checked chat) and `data/reading/<doc_id>.json`.
+
+**Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
+`read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
+paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
+Each file lands in the workspace and the tool says where: move it into the work folder at its
+path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
+`data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
+content into the chat, and never use `publish_version` or `edit_version` for data: they need the
+content typed out.
+
+**Saving: one publish, one approval.**
+1. Stage with `ledger.py` (the command is in the step that saves). It compares every file with
+   what was read, refuses the whole save if any list would lose a row, or a row would lose a date
+   or a review, and adds new ids to `data/index.json`. On `REFUSED` nothing is staged: stop and
+   tell Murat what it lists. Never work round it.
+2. Check the ledger's current version id (chat: `get_artifact` or `list_files`; Claude Code:
+   `Artifact` `list` with scope `files`). If it differs from the one you noted, something was saved
+   in between: read the files you change again, rerun the scripts that build them, stage again.
+3. Publish exactly the files the `PUBLISH:` line lists, from `<work>/publish`, each at its `data/…`
+   path, as a new version of the ledger: in a chat, `publish_files`; in Claude Code, `Artifact`
+   publish with `url` = the ledger, `file_path` = the ledger page saved by an `Artifact` `read` of
+   the url (no `path`), `root` = `<work>/publish` and `files` = those paths. In a chat never send
+   `index.html`. Files left out stay as they are.
+4. Confirm with a file listing that the new version holds each published file at its staged size
+   (`wc -c <work>/publish/data/...`). If the publish failed, nothing changed: say so plainly.
+
 ## Step 1: Set up the tools
 
-The twelve scripts (`chunks.py` added 12.10.26, `preps.py` 16.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
+The thirteen scripts (`chunks.py` added 12.10.26, `preps.py` 16.10.26, `ledger.py` 30.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
 folder (since 06.10.26; until v23 they were embedded at the bottom of this file, which loaded about
 100,000 characters of code into every check without need). Copy them into a work folder, using the
 skill's base directory (shown when the skill loads), and fetch the CEFR wordlists. **Run them, don't
@@ -110,26 +148,28 @@ python3 -c "import wordfreq" 2>/dev/null || pip install --break-system-packages 
 won't install, vocab.py still runs; the suggestions are just blank and you assign every
 off-list level yourself.
 
-Then fetch everything the check may change, in one go: `ArtifactData` `list` collection `meta`
-with `out_dir: /tmp/nc` (it saves `meta/vocab_tracker`, `meta/pv_tracker`, `meta/interference`,
-`meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview`, `meta/chunks` and `meta/prep_watch` under `/tmp/nc/meta/`).
-`meta/chunks` is read-only for this check: never write it. Note the `version` of each of those
-docs, `meta/prep_watch` included, from the listing (`meta/lexicon` only exists after the first check from 29.09.26 on, `meta/overview` after
-the first one from 30.09.26 on): Step 7 writes them back with `if_version`. (`meta/vocab_items` is the
-old copy of the list from before 27.09.26; don't use it.)
+Then read the ledger's files into `/tmp/nc` (see "The ledger's files" above): `data/index.json`
+first, then the `meta` files `vocab_tracker`, `pv_tracker`, `interference`, `phave`, `registry`,
+`lexicon`, `overview`, `chunks` and `prep_watch` (they land in `/tmp/nc/meta/`), then every session
+the index lists (into `/tmp/nc/sessions/`). `meta/chunks` is read-only for this check: never save it.
+(`meta/vocab_items` is the old copy of the list from before 27.09.26; don't read it.) Step 6 builds
+the brief from all the sessions, Step 8 compares with the previous one, and the index tells you
+whether this chat's doc already exists (a second check in the same chat). Then take the baseline
+the save is checked against:
 
-Also fetch every session doc: `ArtifactData` `list` collection `sessions` with `out_dir: /tmp/nc` (they land in
-`/tmp/nc/sessions/`). Step 6 builds the brief from all of them, Step 8 compares with the previous one, and the
-listing tells you whether this chat's doc already exists (note its `version` if so).
+```bash
+cd /tmp/nc && python3 ledger.py snapshot /tmp/nc
+```
 
-**One save, one approval (28.09.26).** The app asks Murat to approve every write to the ledger,
-and it offers him no "always allow". So this check reads whatever it needs up front and writes
-**everything in a single `ArtifactData` `batch` call in Step 7**: never a separate `set`
-earlier, never a follow-up write afterwards. Reads don't change anything; keep all writes for
-Step 7.
+It prints the row counts of every list. If it prints `REFUSED`, `index.json` is missing: read it.
+
+**One save, one approval (28.09.26).** The app asks Murat to approve every save to the ledger,
+and it offers him no "always allow". So this check reads whatever it needs up front and saves
+**everything in a single publish in Step 7**: never an earlier save, never a follow-up save
+afterwards. Reads don't change anything; keep all saving for Step 7.
 
 If the skill's `scripts/` folder isn't readable from the sandbox (the `cp` fails, or fewer than the
-twelve scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
+thirteen scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
 until the skill files are reachable. Never rewrite a script from memory. If spaCy can't be installed (no network to PyPI/GitHub), stop and tell
 Murat plainly that the check can't run in this environment. Don't fall back to reading and
 judging by eye. If only the wordlist clone fails, run the grammar part, skip vocabulary, and
@@ -567,7 +607,7 @@ If you used a grammar concept id that isn't in `meta/registry`, add
 
 Use the date of the chat's practice day (normally today). The doc id is fixed per chat, so
 running the check twice in the same chat replaces that session instead of adding a duplicate.
-Whether the session doc already exists (and its `version`) is in the `sessions` listing from Step 1.
+Whether the session doc already exists is in `index.json` from Step 1.
 
 ## Step 6: Write the day's report and the Overview brief (added 30.09.26)
 
@@ -766,36 +806,29 @@ report and the brief see the final numbers.
 
 ## Step 7: Write it to the dashboard, in one save
 
-Make **one** `ArtifactData` `batch` call (`url` = the dashboard link) holding every write, so
-Murat approves once. Include an entry only when its file exists:
+Stage every file this check changed, in one command (a `?` file is skipped when a step didn't
+write it):
 
-| op | collection | doc_id | file_path | if_version |
-|---|---|---|---|---|
-| set | sessions | `<doc_id>` | /tmp/nc/session_doc.json | its version if the doc already existed, else leave out |
-| set | meta | pv_tracker | /tmp/nc/pv_tracker_out.json | from Step 1 |
-| set | meta | vocab_tracker | /tmp/nc/vocab_tracker_out.json | from Step 1 |
-| set | meta | interference | /tmp/nc/meta_interference_out.json (only if it exists) | from Step 1 |
-| set | meta | phave | /tmp/nc/phave_out.json (only if it exists) | from Step 1 |
-| set | meta | registry | /tmp/nc/registry_out.json (only if it exists) | from Step 1 |
-| set | meta | lexicon | /tmp/nc/lexicon_out.json | from Step 1; leave out if the doc didn't exist yet |
-| set | meta | overview | /tmp/nc/overview_out.json | from Step 1; leave out if the doc didn't exist yet |
-| set | meta | prep_watch | /tmp/nc/prep_watch_out.json (only if it exists) | from Step 1 |
-
-For example:
-
-```json
-[{"op": "set", "collection": "sessions", "doc_id": "s_20260929_1a2b3c4d", "file_path": "/tmp/nc/session_doc.json"},
- {"op": "set", "collection": "meta", "doc_id": "pv_tracker", "file_path": "/tmp/nc/pv_tracker_out.json", "if_version": 9},
- {"op": "set", "collection": "meta", "doc_id": "vocab_tracker", "file_path": "/tmp/nc/vocab_tracker_out.json", "if_version": 5}]
+```bash
+cd /tmp/nc && python3 ledger.py stage /tmp/nc --session <doc_id> \
+  sessions/<doc_id>=session_doc.json meta/pv_tracker=pv_tracker_out.json \
+  meta/vocab_tracker=vocab_tracker_out.json meta/lexicon=lexicon_out.json meta/overview=overview_out.json \
+  "meta/interference=meta_interference_out.json?" "meta/phave=phave_out.json?" \
+  "meta/registry=registry_out.json?" "meta/prep_watch=prep_watch_out.json?"
 ```
 
-The batch is all or nothing. If it fails because a doc changed meanwhile (Murat may have added a
-word, or a vocab session recorded reviews), nothing was written: fetch that doc again, rerun the
-script that builds it (`pv_apply.py` then `vt_apply.py` for the trackers, `phave_link.py` for
-`meta/phave`, `lex_apply.py` for `meta/lexicon`, `overview.py finish` for `meta/overview`, `preps.py run`
-for `meta/prep_watch`), and send the
-whole batch again. Never split it into separate writes to get
-round a conflict.
+It prints each list's rows before and after, then `PUBLISH:` with the files to send. Then follow
+"Saving" in "The ledger's files": check the version id, publish those files in **one** publish
+(Murat approves once), confirm the sizes.
+
+If it prints `REFUSED`, nothing is staged and nothing is saved: a list would lose a row, a row would
+lose a date or a review, or a file is broken. Tell Murat exactly what it lists and stop; never edit
+the output files by hand to get past it. If the version changed before publishing (Murat may have
+added a word, or a vocab session recorded reviews), nothing was saved: read the changed files again,
+take a new snapshot, rerun the script that builds each one (`pv_apply.py` then `vt_apply.py` for the
+trackers, `phave_link.py` for `meta/phave`, `lex_apply.py` for `meta/lexicon`, `overview.py finish`
+for `meta/overview`, `preps.py run` for `meta/prep_watch`), stage and publish again. Never split the
+save into several publishes to get round a conflict.
 
 Never write the tracker .docx or a vocab .docx into the Project; the ledger is the only home.
 

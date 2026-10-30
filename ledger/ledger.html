@@ -2519,7 +2519,22 @@ $("vA").addEventListener("click", ()=>{ ovGridVer = "A"; ovRenderGrid(); });
 $("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
 
 (async () => {
-  const db = window.claude ? await window.claude.use("db") : null;
+  // Data lives in published files under data/ (since 30.10.26, when chats lost ArtifactData);
+  // the database is only a fallback for a version published without them.
+  const filesDb = async () => {
+    const r = await fetch("data/index.json", {cache: "no-store"});
+    if(!r.ok) return null;
+    const idx = await r.json();
+    const get = p => fetch("data/" + p + ".json", {cache: "no-store"}).then(x => x.ok ? x.json() : null);
+    return {
+      doc: p => ({ onSnapshot(ok, bad){ get(p).then(d => ok({exists: !!d, data: () => d}), e => bad && bad(e)); } }),
+      collection: c => ({ onSnapshot(ok, bad){
+        Promise.all((idx[c] || []).map(id => get(c + "/" + id).then(d => ({id, d, data: () => d}))))
+          .then(docs => ok({docs: docs.filter(x => x.d)}), e => bad && bad(e)); } })
+    };
+  };
+  let db = await filesDb().catch(() => null);
+  if(!db && window.claude){ try { db = await window.claude.use("db"); } catch(e){ db = null; } }
   if(!db){ $("lastline").textContent = "Open this page in Claude to load your sessions."; return; }
   db.doc("meta/registry").onSnapshot(snap => { REG = (snap.exists && snap.data().concepts) || {}; render(); },
     () => { $("lastline").textContent = "Couldn't load the concept list. Reload the page."; });

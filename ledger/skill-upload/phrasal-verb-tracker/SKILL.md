@@ -12,13 +12,37 @@ native 1-per-192 benchmark, come-up dates, new words). This skill only produces 
 can produce on request (exported from the ledger, never edited separately)".
 
 - Dashboard: https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK ("Fluency Ledger"), Phrasal verbs tab.
-- Data: `meta/pv_tracker` in that artifact's database: `{as_of, rows: [{word, dates[], notes, list?, practice?}]}`.
+- Data: the file `data/meta/pv_tracker.json` in that artifact (see "The ledger's files"): `{as_of, rows: [{word, dates[], notes, list?, practice?}]}`.
   Since 27.09.26 the phrasal verbs from Murat's study list live here too: a row with a `list`
   block (`{ids, exprs, added, importance, mastered}`) is on his list ("list" on the dashboard),
   and `practice: {count, last}` holds its vocab-session reviews. `mastered` is his own label.
 - No notes (Murat, 27.09.26: "I don't need any notes from now on"). Old `notes` text stays in the
   data but is never shown, in the export or on the dashboard.
 - Never edit the .docx by hand, and never treat it as the source. The ledger is the only home.
+
+## The ledger's files (since 30.10.26)
+
+The Fluency Ledger (https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK) keeps its data in **files
+published inside the artifact**, not in its database. Chats lost the `ArtifactData` tool on
+30.10.26, and the database tools left in chats (`db_get`, `db_write`, …) pass every document
+through the conversation, far too costly for these files. The ledger's database is a frozen copy as of
+29.10.26: never read or write it, even where `ArtifactData` or `db_*` tools are available. The files:
+
+- `data/index.json`: the ids that exist (`sessions`, `reading`, `meta`).
+- `data/meta/<name>.json`: `pv_tracker`, `vocab_tracker`, `prep_watch`, `lexicon`, `interference`,
+  `chunks`, `overview`, `phave`, `registry`.
+- `data/sessions/<doc_id>.json` (one per checked chat) and `data/reading/<doc_id>.json`.
+
+**Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
+`read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
+paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
+Each file lands in the workspace and the tool says where: move it into the work folder at its
+path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
+`data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
+content into the chat, and never use `publish_version` or `edit_version` for data: they need the
+content typed out.
+
+This skill only reads the ledger: it never saves to it.
 
 ## If Murat asks to "update the tracker"
 
@@ -28,8 +52,8 @@ for the file.
 
 If this skill was invoked from `mini-prompt-update`'s Step 0 (its old "update the tracker
 first" step), check that this chat's session is already in the ledger with phrasal verb data:
-`ArtifactData` `get` `sessions/s_<YYYYMMDD>_<first 8 chars of chat id>` and look for a `pv`
-block. If it's missing, run `naturalness-check` first. Then hand back to the Mini Prompt
+read `data/sessions/s_<YYYYMMDD>_<first 8 chars of chat id>.json` (if `data/index.json` lists it)
+and look for a `pv` block. If it's missing, run `naturalness-check` first. Then hand back to the Mini Prompt
 update with the density and come-ups from the session's `pv` block. Don't export the file
 unless Murat asks for it.
 
@@ -49,7 +73,7 @@ PYEOF
 node -e "require('docx')" 2>/dev/null || npm install -s docx
 ```
 
-2. `ArtifactData` `get` `meta/pv_tracker` with `out_dir: /tmp/pvx`, then work out the columns
+2. Read `data/meta/pv_tracker.json` into `/tmp/pvx/meta/pv_tracker.json`, then work out the columns
    as of today (stage and recency drift with time alone, so always recalculate against
    today's date):
 

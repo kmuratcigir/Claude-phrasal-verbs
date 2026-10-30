@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version id `1792140980-ca44`, 16.10)
+Started 12.10.2026 · Status: data moving from the db to published files (30.10, see the last entry)
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -19,11 +19,15 @@ Started 12.10.2026 · Status: all 9 chunks tracked, focus c1 + s1 (live version 
 3. Test against a **frozen** copy of the real db (the lesson from the prep quiz: the db returns frozen objects, so a page that mutates loaded data breaks).
 4. Publish `ledger/ledger.html` with `url` = the Ledger URL. Don't pass `capabilities`; the stored `{db:{}}` carries over.
 
-## Who writes to this page's db
-The page only reads. Skills write, each in one approval:
-- **naturalness-check:** `sessions/<s_YYYYMMDD_chatid>` plus `meta/pv_tracker`, `meta/vocab_tracker`, `meta/interference`, `meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview`.
-- **reading-session:** the `reading` collection.
-- **vocab-session**, **mini-prompt-update** and **phrasal-verb-tracker** read or update the trackers above.
+## Who writes to this page's data
+Since 30.10.26 the data lives in **files published inside the artifact** (`data/index.json`,
+`data/meta/<name>.json`, `data/sessions/<id>.json`, `data/reading/<id>.json`), not in its db. The db is a
+frozen copy as of 29.10.26; the page falls back to it only if a version has no `data/index.json`.
+The page only reads. Skills save by publishing just the changed files, checked first by `ledger.py stage`
+(refuses any save that would drop a row, a date or a review), one approval each:
+- **naturalness-check:** `sessions/<s_YYYYMMDD_chatid>` plus `meta/pv_tracker`, `meta/vocab_tracker`, `meta/interference`, `meta/phave`, `meta/registry`, `meta/lexicon`, `meta/overview`, `meta/prep_watch`.
+- **reading-session:** `reading/<id>`. **vocab-session:** `meta/vocab_tracker`, `meta/pv_tracker`. **chunk-update:** `meta/chunks`.
+- **mini-prompt-update** and **phrasal-verb-tracker** only read.
 
 **Rule:** a page change must never require a schema change those skills don't know about. New data (for example `meta/chunks`) is added alongside, never by changing existing fields.
 
@@ -105,3 +109,15 @@ Nothing built yet; build starts on Murat's go.
 - `preps.py run` reads the check's own slips from `session_doc.json` (interference `preposition_case` + `err_preposition`, same slip once), writes the `preps` block and `prep_watch_out.json`. Fails softly: prints `PREPS SKIPPED`, changes nothing, the check goes on. A second run in the same chat changes nothing twice (`log` per doc id in `meta/prep_watch`). Tested on the 15.10 doc: rerun identical; a broken watch file skips cleanly.
 - `SKIP_KEYS` / `ALIAS` keep the hand-cleaning of the seed for new slips (no rows for "one", "year", "expensive"…; "rooted" → root).
 - Next: Murat uploads the zip; review after the first real wrap-up (figures and real token cost).
+
+### 30.10.26 — Data moved from the db into files (chats lost `ArtifactData`)
+- **Why:** from 30.10 new chats have no `ArtifactData`, only `db_get`/`db_list`/`db_query`/`db_write`, which pass every document through the conversation. A wrap-up reads ~0.5 MB of meta docs plus ~3.4 MB of session docs: about a million tokens that way, so it could not work. Murat's test in a new chat showed the artifacts toolset's `read_file` saves a file straight into the workspace and `publish_files` publishes from it, so neither direction passes through the chat (checksums matched both ways).
+- **Choice:** keep every doc exactly as it was, but as a published file inside the Ledger artifact. No reshaping, no trimming of history, no extra token cost beyond a few hundred tokens of tool summaries per file read. Rejected: splitting trackers into row docs with `db_*` merges (+80–110k tokens per wrap-up, needs a schema change and still retypes the session doc); running the check in Claude Code only (Murat wants it in the practice chat).
+- **Backup** before any change: full db dump (`meta` 10 docs, `sessions` 28, `reading` 5) as `ledger_backup.json` in the Project (30.10), page version `1792154156-ea16`. Counts: pv_tracker 451, vocab_tracker 335, prep_watch 294, lexicon 3,234, interference 142, chunks 12.
+- **Page:** the loader reads `data/index.json` and the files (same `doc().onSnapshot` / `collection().onSnapshot` shape, so nothing else changed); db fallback when no index. Test copy https://claude.ai/artifact/35xN1jsCinfhTYfCLwbdhz: all 8 tabs identical to the live page (Murat checked with Claude in Chrome: all 43 records, every number), no console errors.
+- **Skills** (`skill-upload/`, all six that touch the ledger): a shared "The ledger's files" section (read with `read_file` / `Artifact read`, save with `publish_files` / `Artifact publish`, never `publish_version`), and `ledger.py` (`snapshot` after reading, `stage` before saving; in `scripts/` for naturalness-check and chunk-update, embedded for reading-session and vocab-session). chunk-update still writes the quiz's own small `chunks/state` db doc (`db_write` in chats). vocab-session publishes its quiz page with `publish_files` in chats. reading-session can no longer delete a reading log from a chat (Claude Code only).
+- `reading-session` and `phrasal-verb-tracker` added to `skill-upload/` (copies of the installed skills, then edited).
+- **Tested** on the copy: `ledger.py` refuses a lost row, a lost date and an unread existing session; a pretend 30.10 session through `pv_apply.py` + `vt_apply.py` staged and published 4 files (sizes match), page shows "29 sessions · last check 30 Oct". The `read_file`/`publish_files` route itself was tested only on a small file in a chat; the first real wrap-up is the full test.
+- **Limit:** one version holds at most 511 files; with one session file a day that is about 15 months. Before then, fold old sessions into fewer files.
+- Next: Murat uploads the six skills; switch the live Ledger (publish `ledger.html` + all data files, re-checked against a fresh db read); first real run = the 30.10 session (`s_20261030_0aa5b852`).
+

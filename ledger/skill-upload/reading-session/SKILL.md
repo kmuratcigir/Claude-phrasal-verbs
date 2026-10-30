@@ -30,6 +30,44 @@ Why it works this way (Murat's decisions, 28.09.26):
 
 Ledger: https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (Fluency Ledger).
 
+## The ledger's files (since 30.10.26)
+
+The Fluency Ledger (https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK) keeps its data in **files
+published inside the artifact**, not in its database. Chats lost the `ArtifactData` tool on
+30.10.26, and the database tools left in chats (`db_get`, `db_write`, …) pass every document
+through the conversation, far too costly for these files. The ledger's database is a frozen copy as of
+29.10.26: never read or write it, even where `ArtifactData` or `db_*` tools are available. The files:
+
+- `data/index.json`: the ids that exist (`sessions`, `reading`, `meta`).
+- `data/meta/<name>.json`: `pv_tracker`, `vocab_tracker`, `prep_watch`, `lexicon`, `interference`,
+  `chunks`, `overview`, `phave`, `registry`.
+- `data/sessions/<doc_id>.json` (one per checked chat) and `data/reading/<doc_id>.json`.
+
+**Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
+`read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
+paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
+Each file lands in the workspace and the tool says where: move it into the work folder at its
+path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
+`data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
+content into the chat, and never use `publish_version` or `edit_version` for data: they need the
+content typed out.
+
+**Saving: one publish, one approval.**
+1. Stage with `ledger.py` (the command is in the step that saves). It compares every file with
+   what was read, refuses the whole save if any list would lose a row, or a row would lose a date
+   or a review, and adds new ids to `data/index.json`. On `REFUSED` nothing is staged: stop and
+   tell Murat what it lists. Never work round it.
+2. Check the ledger's current version id (chat: `get_artifact` or `list_files`; Claude Code:
+   `Artifact` `list` with scope `files`). If it differs from the one you noted, something was saved
+   in between: read the files you change again, rerun the scripts that build them, stage again.
+3. Publish exactly the files the `PUBLISH:` line lists, from `<work>/publish`, each at its `data/…`
+   path, as a new version of the ledger: in a chat, `publish_files`; in Claude Code, `Artifact`
+   publish with `url` = the ledger, `file_path` = the ledger page saved by an `Artifact` `read` of
+   the url (no `path`), `root` = `<work>/publish` and `files` = those paths. In a chat never send
+   `index.html`. Files left out stay as they are.
+4. Confirm with a file listing that the new version holds each published file at its staged size
+   (`wc -c <work>/publish/data/...`). If the publish failed, nothing changed: say so plainly.
+
 ## Step 1: Ask the words (one short question)
 
 "Which list words: a mix (for example 6 phrasal verbs, 6 idioms, 3 new), or the default?"
@@ -71,9 +109,10 @@ If SKILL.md isn't readable from the sandbox, write the scripts from the code blo
 the file tool. If spaCy or the word lists can't be installed, say so plainly: the level check
 can't run, so offer the passage only as "unchecked" and log nothing unless Murat agrees.
 
-Fetch the data with `ArtifactData` on the ledger url, each with `out_dir: /tmp/rs`:
-`get` `meta/vocab_tracker`, `get` `meta/pv_tracker`, and `list` `reading` (the collection may
-be empty or missing; that's fine).
+Read the ledger's files into `/tmp/rs` (see "The ledger's files"): `data/index.json`, then
+`data/meta/vocab_tracker.json`, `data/meta/pv_tracker.json` and every reading file the index lists
+(into `/tmp/rs/reading/`; there may be none, that's fine). Then take the baseline for the save:
+`python3 ledger.py snapshot /tmp/rs`.
 
 ```bash
 python3 readlog.py recent /tmp/rs/reading <DD.MM.YYYY today> 14      # items met in the last 14 days
@@ -130,9 +169,10 @@ The chat id is in the URL `read_conversation("current")` returns; use its first 
 READING_DIR=/tmp/rs/reading python3 readlog.py doc report.json picked.json "<title>" "<genre>" "<topic>" <DD.MM.YYYY today> <chat8> doc.json
 ```
 
-It prints the doc id. Write it: `ArtifactData` `set` collection `reading`, `doc_id` = that id,
-`file_path: /tmp/rs/doc.json` (a new document, so no `if_version`). If Murat says he didn't
-read it after all, `delete` that document.
+It prints the doc id. Stage and save it: `python3 ledger.py stage /tmp/rs reading/<doc id>=doc.json`,
+then publish as "Saving" in "The ledger's files" says (one approval). If Murat says he didn't read
+it after all, tell him it stays on the Reading tab for now: removing a file is done in a Claude
+Code session (publish with that path set to `null` and the id taken out of `data/index.json`).
 
 Then tell him in one line that it's on the Reading tab.
 
@@ -451,7 +491,7 @@ Reading log helpers for Murat's Fluency Ledger (`reading` collection).
 
 1) Items met in recent passages (to leave out of the next pick):
    python3 readlog.py recent <reading_dir> <DD.MM.YYYY today> [days=14]
-   reading_dir: the folder ArtifactData `list` saved the `reading` collection into
+   reading_dir: the folder the ledger's `data/reading/` files were moved into
    (for example /tmp/rs/reading). Prints a JSON list of list spellings; missing folder = [].
 
 2) Build the reading document after readcheck.py has PASSED:
@@ -506,4 +546,152 @@ if __name__ == "__main__":
     if sys.argv[1] == "recent": recent(*sys.argv[2:5])
     elif sys.argv[1] == "doc": build(*sys.argv[2:10])
     else: raise SystemExit(__doc__)
+```
+
+<!-- file: ledger.py -->
+```python
+"""Save guard for Murat's Fluency Ledger (since 30.10.26).
+
+The ledger's data lives in published files inside the ledger artifact (data/index.json,
+data/meta/<name>.json, data/sessions/<id>.json, data/reading/<id>.json). A skill reads the files
+it needs into a work folder at the same paths without "data/" (e.g. /tmp/nc/meta/pv_tracker.json),
+and saves by publishing only the files that changed. This script makes that save safe.
+
+  python3 ledger.py snapshot <workdir>
+      Run right after reading. Copies what was read (index.json, meta/, sessions/, reading/)
+      to <workdir>/_before/, the baseline every later check compares with, and prints the counts.
+
+  python3 ledger.py stage <workdir> [--session <doc_id>] <target>=<file>[:merge][?] ...
+      <target> is a ledger path without "data/" and ".json": meta/pv_tracker, sessions/<id>,
+      reading/<id>. ":merge" lays the file's top-level fields over the read copy (for files that
+      hold only the changed fields, like vocab-session's rows files). A trailing "?" marks a file
+      that a step writes only sometimes: it is skipped when it doesn't exist. --session names the session
+      being saved, so a rerun of the same chat may take back the prep_watch rows it added itself.
+      Checks every file, refuses the whole save if any list would lose a row (or a row would lose
+      a date or a review), adds new session/reading ids to index.json, and writes the files to
+      publish under <workdir>/publish/data/. Prints "PUBLISH: ..." with the paths to publish, or
+      "REFUSED: ..." (exit 1, nothing staged).
+"""
+import json, os, shutil, sys
+
+PARTS = ("index.json", "meta", "sessions", "reading")
+# list field, row key ("dict" = a keyed object): a save may never drop a row or a key
+RULES = {
+    "meta/pv_tracker": ("rows", "word"), "meta/vocab_tracker": ("rows", "id"),
+    "meta/prep_watch": ("rows", "word"), "meta/interference": ("patterns", "key"),
+    "meta/chunks": ("items", "id"), "meta/phave": ("items", "word"),
+    "meta/vocab_items": ("items", "id"), "meta/lexicon": ("words", "dict"),
+    "meta/registry": ("concepts", "dict"),
+}
+GROWING = {"meta/pv_tracker", "meta/vocab_tracker"}   # rows whose dates and reviews only ever grow
+
+
+def load(p):
+    d = json.load(open(p))
+    return d.get("data", d) if isinstance(d, dict) and set(d) <= {"data", "version", "id"} else d
+
+
+def snapshot(wd):
+    b = os.path.join(wd, "_before")
+    shutil.rmtree(b, ignore_errors=True); os.makedirs(b)
+    if not os.path.exists(os.path.join(wd, "index.json")):
+        sys.exit("REFUSED: index.json is missing. Read data/index.json first.")
+    for p in PARTS:
+        s = os.path.join(wd, p)
+        if os.path.isdir(s): shutil.copytree(s, os.path.join(b, p))
+        elif os.path.exists(s): shutil.copy(s, os.path.join(b, p))
+    print("SNAPSHOT:", ", ".join(f"{t} {len(load(os.path.join(b, t + '.json'))[f])}"
+                                 for t, (f, _) in RULES.items() if os.path.exists(os.path.join(b, t + ".json"))))
+
+
+def keys(doc, field, key):
+    v = doc.get(field)
+    if key == "dict":
+        if not isinstance(v, dict): raise ValueError(f"'{field}' is not an object")
+        return {k: None for k in v}
+    if not isinstance(v, list): raise ValueError(f"'{field}' is not a list")
+    out = {}
+    for r in v:
+        k = r.get(key) if isinstance(r, dict) else None
+        if k is None: raise ValueError(f"a row in '{field}' has no '{key}'")
+        out[k] = r
+    return out
+
+
+def check(target, old, new, session, problems, lines):
+    if not isinstance(new, dict): problems.append(f"{target}: not a JSON object"); return
+    if target.startswith("sessions/") and not new.get("date"): problems.append(f"{target}: no 'date'")
+    if target not in RULES or old is None: return
+    field, key = RULES[target]
+    try: o, n = keys(old, field, key), keys(new, field, key)
+    except ValueError as e: problems.append(f"{target}: {e}"); return
+    gone = [k for k in o if k not in n
+            and not (target == "meta/prep_watch" and session and o[k].get("added") == session)]
+    if gone: problems.append(f"{target}: {len(gone)} row(s) would be lost: {', '.join(map(str, gone[:8]))}")
+    if target in GROWING:
+        for k, r in o.items():
+            m = n.get(k)
+            if not m: continue
+            if len(m.get("dates") or []) < len(r.get("dates") or []):
+                problems.append(f"{target}: '{k}' would lose dates ({len(r['dates'])} -> {len(m.get('dates') or [])})")
+            if ((m.get("practice") or {}).get("count") or 0) < ((r.get("practice") or {}).get("count") or 0):
+                problems.append(f"{target}: '{k}' would lose reviews")
+    lines.append(f"  {target} {field}: {len(o)} -> {len(n)}")
+
+
+def stage(wd, args):
+    session = None
+    if "--session" in args:
+        i = args.index("--session"); session = args[i + 1]; del args[i:i + 2]
+    b = os.path.join(wd, "_before")
+    if not os.path.exists(os.path.join(b, "index.json")):
+        sys.exit("REFUSED: no snapshot. Run 'ledger.py snapshot' right after reading the files.")
+    idx = load(os.path.join(b, "index.json")); idx0 = json.loads(json.dumps(idx))
+    out_root = os.path.join(wd, "publish"); shutil.rmtree(out_root, ignore_errors=True)
+    problems, lines, staged = [], [], {}
+    for a in args:
+        target, _, src = a.partition("=")
+        optional = src.endswith("?"); src = src[:-1] if optional else src
+        if optional and not os.path.exists(os.path.join(wd, src)): continue
+        merge = src.endswith(":merge"); src = src[:-6] if merge else src
+        target = target.strip().removeprefix("data/").removesuffix(".json")
+        col = target.split("/")[0]
+        if col not in ("meta", "sessions", "reading") or target.count("/") != 1:
+            problems.append(f"{target}: not a ledger path (meta/<name>, sessions/<id>, reading/<id>)"); continue
+        bp = os.path.join(b, target + ".json")
+        old = load(bp) if os.path.exists(bp) else None
+        if old is None and col == "meta" and target.split("/")[1] in idx.get("meta", []):
+            problems.append(f"{target}: exists in the ledger but wasn't read; read it first"); continue
+        if old is None and col == "sessions" and target.split("/")[1] in idx.get("sessions", []):
+            problems.append(f"{target}: this session is already saved but wasn't read; read it first"); continue
+        try: new = load(os.path.join(wd, src) if not os.path.isabs(src) else src)
+        except Exception as e: problems.append(f"{target}: can't read {src} ({e})"); continue
+        if merge:
+            if old is None: problems.append(f"{target}: ':merge' needs the read copy"); continue
+            new = {**old, **new}
+        check(target, old, new, session, problems, lines)
+        staged[target] = new
+        ids = idx.setdefault(col, [])
+        if target.split("/")[1] not in ids: ids.append(target.split("/")[1]); ids.sort()
+    for col, ids in idx0.items():
+        if isinstance(ids, list) and not set(ids) <= set(idx.get(col, [])): problems.append(f"index.json: {col} would lose ids")
+    if not staged: problems.append("nothing to save")
+    if problems:
+        print("REFUSED: nothing was staged. Fix these, or tell Murat if a list really would shrink:")
+        for p in problems: print("  - " + p)
+        sys.exit(1)
+    for target, doc in staged.items():
+        p = os.path.join(out_root, "data", target + ".json"); os.makedirs(os.path.dirname(p), exist_ok=True)
+        json.dump(doc, open(p, "w"), ensure_ascii=False)
+    paths = [f"data/{t}.json" for t in staged]
+    if idx != idx0:
+        json.dump(idx, open(os.path.join(out_root, "data", "index.json"), "w"), ensure_ascii=False, indent=1)
+        paths.append("data/index.json")
+    print("CHECKS PASSED (no list loses a row):"); print("\n".join(lines) if lines else "  (no tracker lists in this save)")
+    print(f"PUBLISH: {len(paths)} file(s) from {out_root}: " + " ".join(paths))
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3 or sys.argv[1] not in ("snapshot", "stage"): sys.exit(__doc__)
+    snapshot(sys.argv[2]) if sys.argv[1] == "snapshot" else stage(sys.argv[2], sys.argv[3:])
 ```

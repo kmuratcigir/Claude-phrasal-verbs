@@ -30,13 +30,39 @@ Dashboard: https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK ("Fluency Ledger").
 - "Naturalness check" on its own still runs only the check, not the Mini Prompt.
 - Not mid-session: only when Murat is closing the session.
 
+## The ledger's files (since 30.10.26)
+
+The Fluency Ledger (https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK) keeps its data in **files
+published inside the artifact**, not in its database. Chats lost the `ArtifactData` tool on
+30.10.26, and the database tools left in chats (`db_get`, `db_write`, …) pass every document
+through the conversation, far too costly for these files. The ledger's database is a frozen copy as of
+29.10.26: never read or write it, even where `ArtifactData` or `db_*` tools are available. The files:
+
+- `data/index.json`: the ids that exist (`sessions`, `reading`, `meta`).
+- `data/meta/<name>.json`: `pv_tracker`, `vocab_tracker`, `prep_watch`, `lexicon`, `interference`,
+  `chunks`, `overview`, `phave`, `registry`.
+- `data/sessions/<doc_id>.json` (one per checked chat) and `data/reading/<doc_id>.json`.
+
+**Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
+`read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
+paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
+Each file lands in the workspace and the tool says where: move it into the work folder at its
+path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
+`data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
+content into the chat, and never use `publish_version` or `edit_version` for data: they need the
+content typed out.
+
+This skill only reads the ledger; the naturalness check it runs does the saving. If the check ran
+in this chat, its files are already in `/tmp/nc` (today's session as `/tmp/nc/session_doc.json`):
+reuse them instead of reading again.
+
 ## Step 0: Make sure this chat's session is in the ledger
 
 The session document id is `s_<YYYYMMDD>_<first 8 chars of this chat's id>` (the chat id is
 in the URL `read_conversation` returns; the date is the practice day).
 
 - If Murat already ran "naturalness check" in this chat **and there has been no real practice
-  since** (only housekeeping messages), reuse it: `ArtifactData` `get` `sessions/<doc_id>`.
+  since** (only housekeeping messages), reuse it: read `data/sessions/<doc_id>.json` (see "The ledger's files").
 - Otherwise (the usual case) **run the `naturalness-check` skill now, in full**, following
   all its steps, including verifying every flag and writing the session and tracker to the
   ledger. Running it again in the same chat replaces that chat's session document, so a
@@ -49,8 +75,8 @@ Step 1 without waiting.
 **One approval (28.09.26).** Murat has to approve every write to the ledger, with no
 "always allow". The naturalness check saves everything, native-core links, the day's report and
 the Overview brief included (`phave_link.py` replaced the separate PHaVE step here), in one
-`batch` call. This skill writes nothing to the ledger itself: from here on it only reads
-(`list` `sessions`, `list` `reading`, `get` `meta/chunks`) and delivers the Mini Prompt as a file.
+publish. This skill writes nothing to the ledger itself: from here on it only reads
+(the `sessions` and `reading` files, `meta/chunks` and `meta/registry`) and delivers the Mini Prompt as a file.
 
 ## Step 1: Get the base to update
 
@@ -100,8 +126,8 @@ that was forgotten; writing it out every time is the only way Murat can trust wh
      session document is "not measured", never guessed): words analysed; errors per 100
      words, voice and typed separately; Turkish interference per 100 (voice); phrasal verb
      density ("1 per N words", native 1 per 192); grammar range "x / N" (N from
-     `meta/registry`). Take every number from the ledger's session documents (`list` the
-     `sessions` collection), never from estimates or from the old Mini Prompt.
+     `meta/registry`). Take every number from the ledger's session documents (the session
+     files; only the last 14 days are needed, and the ids in `data/index.json` start with the date), never from estimates or from the old Mini Prompt.
    - One honest trend line (e.g. "voice errors up three sessions running; partly
      measurement") when the numbers show one.
    No per-day error lists, B2+ shares, MTLD or older-day summaries here: they are on the
@@ -119,12 +145,11 @@ that was forgotten; writing it out every time is the only way Murat can trust wh
      create natural chances to use them. No full lists.
    - **Vocab sessions**: the date of the last one and its practised words (the vocab-session
      skill's "Practised words:" line), in one line.
-   - **Reading**: one line from the ledger's `reading` collection (`ArtifactData` `list`
-     `reading`): date and title of the last passage, readings this week (Monday to Sunday)
+   - **Reading**: one line from the ledger's `reading` collection (the `reading` files
+     `data/index.json` lists): date and title of the last passage, readings this week (Monday to Sunday)
      against Murat's target of 4. Don't list the words it contained; the Reading tab shows
      them and whether he later used them.
-   - **Chunks: practice nudge** (added 12.10.26): read `meta/chunks` (`ArtifactData` `get`
-     `meta/chunks`) and list every item with status `open` (all are tracked since 12.10.26), **focus
+   - **Chunks: practice nudge** (added 12.10.26): read `meta/chunks` (`data/meta/chunks.json`) and list every item with status `open` (all are tracked since 12.10.26), **focus
      items first** (`focus: true`), one short line each: its title, one example of right and wrong
      from the item's `examples`, and the latest pooled figure from the naturalness check's
      `chunks.py rolling` output (last-12 accuracy and sessions spanned, or "few uses so far"). Then
