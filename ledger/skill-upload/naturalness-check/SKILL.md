@@ -62,6 +62,17 @@ block and updates the watch list `meta/prep_watch` (one row per word Murat said;
 the list on its second slip, after one slip it waits). It is one command in Step 5 and goes into
 the same single save. It fails softly: if it can't run, the check carries on without it.
 
+Since 02.11.26 the check also saves the raw counts behind the Ledger's **English Mastery** card
+(Grammar, Vocabulary and Speaking scores on the Overview tab; design note of 02.11.26). `mastery.py`
+does the counting in Step 5 and writes a `mastery` block into the session doc: speaking counts from
+the voice turns (replies, clean words, developed replies, connectors, fillers), grammar concept counts
+split by voice and typed with the share of grammar-clean sentences, and the vocabulary counts (B2+
+words, word-choice problems). Every error gets an ERRANT type (`errant`), which sorts grammar slips
+from word-choice slips automatically; only `R:OTHER` items need your eye. No score is stored: the page
+works the scores out from these counts and the settings in `meta/scoring`. The speaking scale sets
+itself on the first 5 sessions with speaking counts (`mastery.py calibrate`). All of it goes into the
+same single save.
+
 Since 28.10.26 the report also gives **sentences with a slip**: the share of voice sentences
 holding at least one counted error (Step 6, part 0). Report only, no dashboard chart (Murat's
 choice, 28.10.26).
@@ -127,7 +138,7 @@ content typed out.
 
 ## Step 1: Set up the tools
 
-The thirteen scripts (`chunks.py` added 12.10.26, `preps.py` 16.10.26, `ledger.py` 30.10.26) and the interference pass instructions are separate files in this skill's `scripts/`
+The fifteen scripts (`chunks.py` added 12.10.26, `preps.py` 16.10.26, `ledger.py` 30.10.26, `mastery.py` and `scores.py` 02.11.26) and the interference pass instructions are separate files in this skill's `scripts/`
 folder (since 06.10.26; until v23 they were embedded at the bottom of this file, which loaded about
 100,000 characters of code into every check without need). Copy them into a work folder, using the
 skill's base directory (shown when the skill loads), and fetch the CEFR wordlists. **Run them, don't
@@ -146,6 +157,7 @@ python3 -c "import spacy; spacy.load('en_core_web_sm')" 2>/dev/null || \
   { pip install --break-system-packages -q spacy && python3 -m spacy download en_core_web_sm; }
 [ -d /tmp/nc/olp ] || git clone -q --depth 1 https://github.com/openlanguageprofiles/olp-en-cefrj /tmp/nc/olp
 python3 -c "import wordfreq" 2>/dev/null || pip install --break-system-packages -q wordfreq
+python3 -c "import errant" 2>/dev/null || pip install --break-system-packages -q errant
 ```
 
 `wordfreq` only supplies a starting guess for the level of off-list words (Step 4). If it
@@ -154,7 +166,7 @@ off-list level yourself.
 
 Then read the ledger's files into `/tmp/nc` (see "The ledger's files" above): `data/index.json`
 first, then the `meta` files `vocab_tracker`, `pv_tracker`, `interference`, `phave`, `registry`,
-`lexicon`, `overview`, `chunks` and `prep_watch` (they land in `/tmp/nc/meta/`), then every session
+`lexicon`, `overview`, `chunks`, `prep_watch` and `scoring` (they land in `/tmp/nc/meta/`), then every session
 the index lists (into `/tmp/nc/sessions/`). `meta/chunks` is read-only for this check: never save it.
 (`meta/vocab_items` is the old copy of the list from before 27.09.26; don't read it.) Step 6 builds
 the brief from all the sessions, Step 8 compares with the previous one, and the index tells you
@@ -173,7 +185,7 @@ and it offers him no "always allow". So this check reads whatever it needs up fr
 afterwards. Reads don't change anything; keep all saving for Step 7.
 
 If the skill's `scripts/` folder isn't readable from the sandbox (the `cp` fails, or fewer than the
-thirteen scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
+fifteen scripts plus `intf_instructions.md` arrive), stop and tell Murat plainly: the check can't run
 until the skill files are reachable. Never rewrite a script from memory. If spaCy can't be installed (no network to PyPI/GitHub), stop and tell
 Murat plainly that the check can't run in this environment. Don't fall back to reading and
 judging by eye. If only the wordlist clone fails, run the grammar part, skip vocabulary, and
@@ -549,6 +561,36 @@ python3 lex_apply.py meta/lexicon.json vocab_candidates.json session_doc.json <d
 python3 chunks.py apply chunk_candidates.json chunk_verdicts.json session_doc.json
 DOC_ID=<doc_id> python3 chunks.py rolling sessions session_doc.json meta/chunks.json
 python3 preps.py run murat_turns.txt session_doc.json meta/prep_watch.json prep_watch_out.json <doc_id>
+python3 mastery.py type session_doc.json
+python3 mastery.py build murat_turns.txt session_doc.json drilled_words.txt slot_targets.txt
+python3 mastery.py calibrate sessions session_doc.json meta/scoring.json scoring_out.json
+```
+
+**English Mastery counts (added 02.11.26).** `mastery.py type` gives every error its ERRANT type and
+prints an `R:OTHER REVIEW` list (ERRANT's "other" bucket, e.g. "we've asked -> we asked"). For each
+listed index decide whether it is a word-choice slip (`vocab`), a grammar slip (`grammar`) or
+`neither`, and write only those to `/tmp/nc/mastery_verdicts.json` as
+`{"rother": {"<index>": "vocab"}}` before `build`; without a verdict an R:OTHER counts as vocabulary
+only when its concept is `err_collocation`. Don't retype the other errors: ERRANT's types stand.
+`mastery.py build` writes the `mastery` block (run it after every script above; it needs
+`candidates.json`, `verdicts.json` and `meta/scoring.json`) and prints a `MASTERY:` line. While
+`meta/scoring` still asks for Depth checks (its first 2 sessions with speaking counts) it also prints
+a **DEPTH REVIEW LIST**: each voice reply with the rule's call (`DEV` = 10+ clean words and 2+ finite
+clauses). Read each reply as a careful listener: does it develop an idea (a reason, an example, a
+consequence, a contrast) beyond a bare answer? Write `/tmp/nc/depth_verdicts.json` with only the
+replies where you disagree with the rule (`{"T12": true, "T15": false}`, `{}` if none) and run
+`build` again: it saves the agreement as `speaking.depth_check`. If `meta/scoring` says
+`depth_method: "judged"`, do the same every session (then your calls are the Depth count).
+`mastery.py calibrate` decides the speaking settings by rule: it waits for 5 sessions with speaking
+counts, then sets each measure so the median session scores 50 and the second-best 75, and closes
+the Depth check after 2 sessions (the rule stays at 85%+ agreement, otherwise Depth becomes judged).
+When it changes anything it writes `scoring_out.json` for the same save; say what it decided in one
+line of the report. If `mastery.py` fails (ERRANT or spaCy won't load), carry on without the block,
+leave `meta/scoring` out of the save and say in one line that the Mastery counts are missing today.
+Then print the scores for the report:
+
+```bash
+python3 scores.py sessions meta/scoring.json meta/registry.json --today session_doc.json --id <doc_id>
 ```
 
 `preps.py run` (added 16.10.26) must come after `intf.py apply` and `session.py`: it reads this
@@ -686,6 +728,7 @@ Naturalness check, <Ddd DD.MM>: <words> words (voice <n>, typed <n>), <observati
 - **Voice: <x.xx>** errors per 100 words (<prev> on <prev date>).
 - **Typed: <x.xx>** per 100 (<prev> on <prev date>). <if under ~500 words: say it is a small sample and why>
 - **Sentences with a slip: <k> of <n> (<pct>%)** in voice (<prev>), <with_m> of them with a meaning change. Read the trend, not the exact figure: the count depends on how the transcript is punctuated.
+- **English Mastery:** <the MASTERY line from scores.py: Grammar <n> (<change>), Vocabulary <n> (<change>), Speaking <n> or "calibrating, <k> of 5 sessions">; cumulative Grammar <n>, Vocabulary <n>. <one short clause on what moved most, from the parts>. <if calibrate printed CALIBRATED or DEPTH lines: one sentence saying what was set>
 - <one line on anything that changes how to read the numbers, e.g. a method change; leave out if none>
 - <only if there was a fixing slot: "**Fixing slot:** <the Slot result line, e.g. I've already 6/6 · I still have 3/5>. Kept out of the chunk counts; everything else in it is counted.">
 
@@ -818,7 +861,8 @@ cd /tmp/nc && python3 ledger.py stage /tmp/nc --session <doc_id> \
   sessions/<doc_id>=session_doc.json meta/pv_tracker=pv_tracker_out.json \
   meta/vocab_tracker=vocab_tracker_out.json meta/lexicon=lexicon_out.json meta/overview=overview_out.json \
   "meta/interference=meta_interference_out.json?" "meta/phave=phave_out.json?" \
-  "meta/registry=registry_out.json?" "meta/prep_watch=prep_watch_out.json?"
+  "meta/registry=registry_out.json?" "meta/prep_watch=prep_watch_out.json?" \
+  "meta/scoring=scoring_out.json?"
 ```
 
 It prints each list's rows before and after, then `PUBLISH:` with the files to send. Then follow
@@ -831,7 +875,7 @@ the output files by hand to get past it. If the version changed before publishin
 added a word, or a vocab session recorded reviews), nothing was saved: read the changed files again,
 take a new snapshot, rerun the script that builds each one (`pv_apply.py` then `vt_apply.py` for the
 trackers, `phave_link.py` for `meta/phave`, `lex_apply.py` for `meta/lexicon`, `overview.py finish`
-for `meta/overview`, `preps.py run` for `meta/prep_watch`), stage and publish again. Never split the
+for `meta/overview`, `preps.py run` for `meta/prep_watch`, `mastery.py calibrate` for `meta/scoring`), stage and publish again. Never split the
 save into several publishes to get round a conflict.
 
 Never write the tracker .docx or a vocab .docx into the Project; the ledger is the only home.

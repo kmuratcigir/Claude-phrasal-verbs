@@ -120,8 +120,17 @@ that was forgotten; writing it out every time is the only way Murat can trust wh
    native-speaker sessions. Same compression rule as Section 1.
 3. **Key Insights & Breakthrough Patterns**: detailed and current. **Never compress.**
 4. **Session Management & Statistics** (a SNAPSHOT since 28.09.26; the full figures live in
-   the Fluency Ledger, so don't copy them here): at most about 8 lines.
+   the Fluency Ledger, so don't copy them here): at most about 10 lines.
    - One line pointing to the dashboard for details.
+   - **English Mastery** (added 02.11.26), two lines, Grammar / Vocabulary / Speaking out of 100,
+     voice: "Daily (<date>): Grammar <n> (<±change>), Vocabulary <n> (<±change>), Speaking <n> (<±change>)"
+     and "Cumulative (<k> sessions): Grammar <n>, Vocabulary <n>, Speaking <n>". Take them from
+     this skill's `scripts/scores.py` (copy it to `/tmp/nc`, then
+     `cd /tmp/nc && python3 scores.py sessions meta/scoring.json meta/registry.json --today session_doc.json --id <doc_id>`;
+     if the check didn't run in this chat, read `data/meta/scoring.json`, `data/meta/registry.json`
+     and the session files instead). It prints the same numbers as the Ledger's card. Speaking says
+     "calibrating (k of 5 sessions)" until the scale is set; say so, never estimate a number. Preply
+     figures stay in the Mini Prompt only, never in the Ledger.
    - One line per day for the last 3 calendar days (combine a day's parts; a day with no
      session document is "not measured", never guessed): words analysed; errors per 100
      words, voice and typed separately; Turkish interference per 100 (voice); phrasal verb
@@ -185,7 +194,8 @@ Target **under 10,000 words**. Check the count before finalising.
 ## Step 6: Quality check before delivering
 
 - All 6 sections fully written out (highest-priority check).
-- Under 10,000 words; Section 4 about 8 lines and Section 6 about 24 lines at most.
+- Under 10,000 words; Section 4 about 10 lines and Section 6 about 24 lines at most.
+- Section 4 has the two English Mastery lines (daily and cumulative), taken from `scores.py`, never estimated.
 - Section 6 lists every open chunk from `meta/chunks` with the steering line (since 12.10.26).
 - Every number in Section 4 matches the ledger's session documents (spot-check at least
   today's figures against the check's `session_doc.json`).
