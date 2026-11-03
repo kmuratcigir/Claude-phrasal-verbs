@@ -3,7 +3,7 @@
 Session date: 07.10.2026, updated 14.10 · Published versions: 1 to 17 · Status: working, in use
 
 ## Links
-- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 17, id `1791970190-8813`)
+- **Quiz artifact (the page):** https://claude.ai/artifact/TZebyGZWe6Mu6Xtmq4UpLy (private, current version 19, id `1793698796-d635`)
 - **Fluency Ledger (source of truth, read-only for this project so far):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK
 - **Vocab quiz (style reference, never edited):** https://claude.ai/artifact/PkXEna9VTLyi2FDj4LDtD9
 
@@ -178,3 +178,13 @@ Murat asked for a manual feed this time (the skill is still to be designed).
 - **Rules kept:** one right answer per item (full and short forms both accepted); no "left out" case is ever a wrong answer (no finished time, habits, future, set phrases, distance, plans, "this morning / today", "until then", "know / realise until now"); "until now" only where the situation clearly goes on; every s7 period is clearly still running, so the British past simple can't be argued for.
 - `CHUNKS` gets s5–s7 with their keys, so the picker, auto plan and heatmap know them.
 - **Tests (frozen copy of the real quiz db, 29.10):** 0 existing items moved, 21 added, pattern order unchanged; every accepted answer passes and no distractor does; a 21-item manual session over s5–s7 (7 multiple choice, 14 typed) answered right = 21/21 and saved (42 writes); the same items answered with their wrong option = 0/21 accepted; auto Chunk sessions now include s5–s7 (5–6 picks each over 20 sessions of 15); no console errors; no sideways scroll at 390px and 900px on the Chunks start page and in a session; Progress opens without errors.
+
+## 03.11 manual feed: speaking data to 02.11 (published as version 19, id `1793698796-d635`)
+Murat's comment on Progress ("pull in the latest speaking data"). Read from the Ledger's published data files (live version `1793634565-28c7`).
+- **Snapshot to 02.11:** 10 sessions added to `SESSIONS` / `HITS` / adv hits (14.10 9,527 words · 15.10 6,944 · 16.10 6,582 · 20.10 4,325 · 24.10 4,043 · 28.10 8,044 · 29.10 6,351 · 30.10 6,321 · 31.10 2,488 · 02.11 7,211); 31 sessions in all. `adv_according_to` gets its first hits.
+- **Sorted by hand, same rules as 14.10:** 548 candidate slips (interference preposition_case / collocation_transfer, plus err_preposition / err_collocation not already in interference); 141 counted for a quiz pattern. Same slip listed twice for one utterance counted once; phrasal verbs, one-off word choices and slips no pattern covers left out. Full list with my reading: scratchpad `feed1103/pass1.txt` (not in the repo).
+  - Totals: over_time 14, ask_sb_q 8, of_not_for 8, these_days 8, mention_discuss 7, no_prep_verbs 7, on_my_list 6, key_to 6, on_device 6, add_to 5, confused_about 5, specific_to 5, dates_times 4, seek_chase 4, begin_lastmin 3, same_as 3, save_for 3, vn_decision 3 (⚑ two of them "make a mistake / a choice"), and 1–2 each for 24 more.
+  - Judgement calls: "book for the tickets", "meet with a family", "enter to the UK", "fit in the context" → no_prep_verbs; "exclusive for", "apply the same rule for" → specific_to; "approach for fixing" → key_to; "keep it out" and "be honest to / towards" not counted.
+- **No new items** this time (Murat asked for the data only).
+- **Tests (fresh frozen copy of the quiz db, 03.11, 74 pattern docs):** item bank identical to version 18; Challenge and Chunks text unchanged; Practice changes only in the "speaking data as of" pill; Progress shows "speaking data as of 02.11 · 31 sessions"; no console errors; no sideways scroll at 390 and 900 px.
+- **Repeated slips with no pattern yet:** "at mid-sentence" (6), "landed on Barcelona" (4), "with / by two cars" (3), "honest to / towards" (3), "on the terrace" (2), "take her to home" (2), "a courtesy visit in → to" (2).
