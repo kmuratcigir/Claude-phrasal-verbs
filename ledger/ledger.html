@@ -1001,7 +1001,7 @@ table.mx-table{min-width:0;font-size:13.5px}
     <p class="explain">One row per word you slipped on at least twice: the word that decides the preposition (<i>add</i> + to, <i>angry</i> + with). Every use of it counts, right or wrong.</p>
     <div class="chipset" id="prGroups" role="group" aria-label="Filter by group" style="margin-bottom:12px"></div>
     <div class="scroll"><table class="prtable">
-      <thead><tr><th>Word</th><th>Right</th><th>Group</th><th class="n">Slips on record</th><th class="n">Uses</th><th>Last 6 uses</th><th class="n">Accuracy</th><th>Status</th></tr></thead>
+      <thead id="prHead"><tr><th data-k="word"><button type="button" class="sortbtn">Word</button></th><th data-k="right"><button type="button" class="sortbtn">Right</button></th><th data-k="group"><button type="button" class="sortbtn">Group</button></th><th class="n" data-k="slips"><button type="button" class="sortbtn">Slips on record</button></th><th class="n" data-k="uses"><button type="button" class="sortbtn">Uses</button></th><th>Last 6 uses</th><th class="n" data-k="acc"><button type="button" class="sortbtn">Accuracy</button></th><th data-k="status"><button type="button" class="sortbtn">Status</button></th></tr></thead>
       <tbody id="prRows"></tbody>
     </table></div>
     <div class="morebox" id="more-pw"></div>
@@ -2389,9 +2389,9 @@ function ovRenderGrid(){
   };
   const span = cols.length + 3;
   H.innerHTML = `<colgroup><col class="nm"><col>${cols.map(()=>"<col>").join("")}<col class="st"></colgroup><thead><tr><th class="l"></th><th class="base">First 3</th>${cols.map(s=>`<th>${esc(s.date.slice(0,5))}</th>`).join("")}<th>Status · change</th></tr></thead><tbody>
-<tr class="grp good"><th colspan="${span}">What you do well<small>advanced structures you used correctly</small></th></tr>
+<tr class="grp good"><th colspan="${span}">What you do well<small>advanced structures you used correctly · correct uses per 1,000 words, so “Growing” is good</small></th></tr>
 ${G.map(r=>row(r,"g",true)).join("")}
-<tr class="grp bad"><th colspan="${span}">What keeps slipping<small class="mkkey"><span class="mk m"></span>changes the meaning <span class="mk f"></span>sounds foreign <span class="mk s"></span>slip</small></th></tr>
+<tr class="grp bad"><th colspan="${span}">What keeps slipping<small>mistakes per 1,000 words, so “Fading” is good</small><small class="mkkey"><span class="mk m"></span>changes the meaning <span class="mk f"></span>sounds foreign <span class="mk s"></span>slip</small></th></tr>
 ${B.map(r=>row(r,"c",false)).join("")}</tbody>`;
 }
 function ovRowImpact(r){ const e = Object.entries(r.imp||{}).sort((a,b)=>b[1]-a[1]); return e.length ? e[0][0] : ""; }
@@ -2468,7 +2468,12 @@ $("iB").addEventListener("click", ()=>{ ovImpVer = "all"; ovRenderImpact(); });
 // ================= PREPOSITIONS (16.10) =================
 // meta/prep_watch = the watch list (word Murat said -> right preposition, slips on record, status on / waiting).
 // sessions/*.preps = one naturalness check's counts: [right, uses] per mode for all, watch, groups, chips and each watch word.
-let PW = null, prSel = "last5", prMode = "all", prGroup = "all";
+let PW = null, prSel = "last5", prMode = "all", prGroup = "all", prSort = {key:null, dir:null};
+// watch-list sorting (Murat, 03.11): first click = the most useful direction, second reverses, third = default order
+const PR_ST_RANK = {"Top priority":0, "Getting there":1, "Slipping back":2, "Fixed in speech":3, "Too few uses":4, "Not used yet":5};
+const PR_SORT = {word: w => w.word.toLowerCase(), right: w => String(w.right||""), group: w => prGL(w.group), slips: w => w.slips,
+  uses: w => w.uses, acc: w => w.pct, status: w => PR_ST_RANK[w.st[1]] ?? 9};
+const PR_SORT_FIRST = {word:"asc", right:"asc", group:"asc", slips:"desc", uses:"desc", acc:"asc", status:"asc"};
 const PR_GROUPS = [["e","-e → to / into"],["de","-de → in / at / on"],["icin","için → for"],["ile","ile → with"],["den","-den → from / of"],["hakkinda","hakkında → about"],["time","Time words: on / at / in / for"],["zero","∅ No preposition needed"],["other","Unsorted"]];
 const PR_TEXT = {e:"Turkish \"-e\" turns into \"into\" where English says \"to\", and the other way round.",
   de:"Turkish \"-de\" is one ending for three English words. Lists, screens and days take \"on\"; clock times take \"at\".",
@@ -2564,6 +2569,12 @@ function renderPreps(){
     return n || g==="all" ? `<button type="button" data-g="${g}" aria-pressed="${prGroup===g}">${esc(g==="all"?l:prGL(g))}<span class="c">${n}</span></button>` : ""; }).join("");
   const list = W.filter(w=>prGroup==="all" || w.group===prGroup)
     .sort((a,b)=> (a.uses>=5?0:a.uses?1:2) - (b.uses>=5?0:b.uses?1:2) || (a.pct??101)-(b.pct??101) || b.uses-a.uses || b.slips-a.slips);
+  if(prSort.key){ const get = PR_SORT[prSort.key], dir = prSort.dir==="asc" ? 1 : -1;
+    list.sort((a,b)=>{ const x = get(a), y = get(b); if(x==null && y==null) return 0; if(x==null) return 1; if(y==null) return -1;   // empty values stay at the bottom
+      return (typeof x==="string" ? x.localeCompare(y) : x-y)*dir || b.uses-a.uses || a.word.localeCompare(b.word); }); }
+  $("prHead").querySelectorAll("th[data-k]").forEach(th=>{ const on = th.dataset.k===prSort.key;
+    if(on) th.setAttribute("aria-sort", prSort.dir==="asc"?"ascending":"descending"); else th.removeAttribute("aria-sort");
+    th.querySelector("button").title = on ? (prSort.dir===PR_SORT_FIRST[prSort.key] ? "Click to reverse" : "Click to go back to the default order") : "Sort by this column"; });
   $("prWSub").textContent = `${list.length} words · uses from ${span}`;
   const ex = e => `<div class="ex"><span class="quote">${esc(cq(e.said))}</span><span class="fix">→ <b>${esc(e.fix)}</b>${e.date ? ` <span class="sub">${esc(fmtDate(e.date))}</span>` : ""}</span></div>`;
   const shown = limitList("pw", list);
@@ -2579,6 +2590,9 @@ function renderPreps(){
 }
 $("prPick").addEventListener("change", e=>{ prSel = e.target.value; renderPreps(); });
 $("prMode").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; prMode = b.dataset.m; renderPreps(); });
+$("prHead").addEventListener("click", e=>{ const th = e.target.closest("th[data-k]"); if(!th) return; const k = th.dataset.k;
+  prSort = prSort.key!==k ? {key:k, dir:PR_SORT_FIRST[k]} : prSort.dir===PR_SORT_FIRST[k] ? {key:k, dir:prSort.dir==="asc"?"desc":"asc"} : {key:null, dir:null};
+  EXPAND.pw = false; renderPreps(); });
 $("prGroups").addEventListener("click", e=>{ const b = e.target.closest("button"); if(!b) return; prGroup = b.dataset.g; EXPAND.pw = false; renderPreps(); });
 
 $("iC").addEventListener("click", ()=>{ ovImpVer = "trend"; ovRenderImpact(); });
@@ -2589,7 +2603,7 @@ $("vB").addEventListener("click", ()=>{ ovGridVer = "B"; ovRenderGrid(); });
 // Grammar, Vocabulary and Speaking scores, worked out here from each session's raw `mastery` counts and
 // the settings in meta/scoring (no score is stored). Same arithmetic as the skills' scores.py.
 let MSC = null;
-const MX = {area:"grammar", p:"daily", m:"voice", more:false};
+const MX = {area:"grammar", p:"daily", m:"voice", more:false, gdet:false};   // gdet: Range by level + Concept mastery open (Murat, 03.11)
 const MXLV = ["A1","A2","B1","B2","C1","C2"];
 const mxClip = v => Math.max(0, Math.min(100, v));
 const mxLin = (v,a,b) => mxClip((v-a)/(b-a)*100);
@@ -2728,12 +2742,14 @@ function mxGrammarView(ss, i){
     <div class="mx-m"><div class="label">Range</div><div class="mx-v">${mxR(cur.range)}</div><div class="mx-u">level-weighted share of the ${cur.of} concepts</div>${mxBar(cur.range)}
       <div class="mx-parts"><div><span>Concepts used correctly ${daily?`(last ${MSC.grammar.range_sessions} sessions)`:"(ever)"}</span><b>${cur.used} of ${cur.of} (${Math.round(cur.used/cur.of*100)}%)</b></div><div><span>Weighted points</span><b>${cur.earned} / ${cur.possible}</b></div></div></div>
   </div>
-  <div class="mx-block"><span class="label">Range by level — where the points sit</span>
+  ${chart}
+  <button class="mx-more" id="mxGDet" aria-expanded="${MX.gdet}">${MX.gdet ? "Show less ▴" : "Show more ▾ · range by level and concept mastery"}</button>
+  ${MX.gdet ? `<div class="mx-block"><span class="label">Range by level — where the points sit</span>
     <div class="scroll"><table class="mx-table"><thead><tr><th>Level</th><th class="n">Used / list</th><th class="n">Weight</th><th class="n">Points</th><th>Share of the range score</th><th class="n"></th></tr></thead><tbody>${rows}</tbody>
     <tfoot><tr><td>Total</td><td class="n">${cur.used} / ${cur.of}</td><td></td><td class="n">${cur.earned} / ${cur.possible}</td><td colspan="2" class="n">= ${mxR(cur.range)}%</td></tr></tfoot></table></div>
     <div class="mx-note">Each new concept adds: B2 +${(W.B2/cur.possible*100).toFixed(1)}, C1 +${(W.C1/cur.possible*100).toFixed(1)}, C2 +${(W.C2/cur.possible*100).toFixed(1)} points of range.</div></div>
   <div class="mx-block"><span class="label">Concept mastery — lowest first (${cs.length} concepts with ${MSC.grammar.min_uses}+ uses)</span>
-    <div class="mx-clist">${clist}</div>${cs.length>8?`<button class="mx-more" id="mxMore">${MX.more?"Show fewer":"Show all "+cs.length}</button>`:""}</div>` + chart + how;
+    <div class="mx-clist">${clist}</div>${cs.length>8?`<button class="mx-more" id="mxMore">${MX.more?"Show fewer":"Show all "+cs.length}</button>`:""}</div>` : ""}` + how;
 }
 
 function mxVocabView(ss, i){
@@ -2818,7 +2834,7 @@ function renderMastery(){
   box.addEventListener("click", e => {
     const a = e.target.closest("[data-a]"), p = e.target.closest("[data-mxp]"), m = e.target.closest("[data-mxm]");
     if(a){ MX.area = a.dataset.a; MX.more = false; } else if(p){ MX.p = p.dataset.mxp; } else if(m){ MX.m = m.dataset.mxm; }
-    else if(e.target.id === "mxMore"){ MX.more = !MX.more; } else return;
+    else if(e.target.id === "mxMore"){ MX.more = !MX.more; } else if(e.target.id === "mxGDet"){ MX.gdet = !MX.gdet; if(!MX.gdet) MX.more = false; } else return;
     renderMastery();
   });
   let w = window.innerWidth; window.addEventListener("resize", () => { if((window.innerWidth<560) !== (w<560)){ w = window.innerWidth; renderMastery(); } });

@@ -1,6 +1,6 @@
 # Fluency Ledger: build log
 
-Started 12.10.2026 · Status: English Mastery card live since 02.11 (version 58, id `1793625355-f9d4`); data in published files since 30.10
+Started 12.10.2026 · Status: comments of 03.11 live (version 60, id `1793698449-254e`); English Mastery card since 02.11; data in published files since 30.10
 
 ## Links
 - **Ledger (the page):** https://claude.ai/artifact/5ELtvJLvcwMK8EpMW6StvK (private, capability `db`)
@@ -141,3 +141,11 @@ Nothing built yet; build starts on Murat's go.
 - **Cost:** counting scripts and ERRANT run in the sandbox (~20 s); extra tokens per wrap-up roughly 2–4k (R:OTHER review, MASTERY lines), plus ~3–5k in the first 2 speaking sessions for the Depth review.
 - Next: first wrap-up with speaking counts; check the MASTERY line and the card; after 5 such sessions the Speaking score appears.
 
+
+### 03.11.26 — Murat's comments on the page (version 60, id `1793698449-254e`)
+Built on live version `1793634565-28c7` (page identical to the repo; that version only added data files). Only `index.html` changed; all 48 data files kept as they were.
+- **Overview heatmap, "Growing" on might / could / should have:** the logic was right (the "What you do well" rows count correct uses: 1 in 2,488 words on 31.10, 5 in 7,211 on 02.11, no errors), but nothing said so. The group headings now say "correct uses per 1,000 words, so 'Growing' is good" and "mistakes per 1,000 words, so 'Fading' is good".
+- **Prepositions watch list:** every column but "Last 6 uses" sorts (first click = most useful direction, second reverses, third = default order). Status sorts Top priority → Getting there → Slipping back → Fixed in speech → Too few uses → Not used yet.
+- **English Mastery, Grammar:** the trend chart moved up under the Accuracy and Range boxes; "Range by level" and "Concept mastery" sit behind "Show more ▾ · range by level and concept mastery" (closed by default; MX.gdet).
+- **Tests (copy of the live data files, 31 sessions):** the 7 other tabs and the Prepositions tab render text identical to version `1793634565-28c7`; Overview differs only by the two heading lines and the hidden blocks; status sort keeps its order over all 138 rows; Show more opens and closes, and "Show all 47" still works inside it; no console errors; no sideways scroll at 390 (dark) and 1100 (light).
+- The three comment threads were not sent to Claude, so they could not be answered or resolved from here.
