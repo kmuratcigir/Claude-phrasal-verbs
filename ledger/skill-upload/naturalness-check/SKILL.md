@@ -110,8 +110,13 @@ through the conversation, far too costly for these files. The ledger's database 
 **Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
 `read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
 paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
-Each file lands in the workspace and the tool says where: move it into the work folder at its
-path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
+Each file lands in the workspace, sometimes under a random name. Don't sort them by hand or by
+the listing order (that order isn't reliable): run
+`python3 ledger.py place <work> <each folder or file the tool reported>` (added 04.11.26). It
+recognises every file by its content and puts it at its path without `data/`
+(`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Only if it prints `PLACE STOP` because
+two sessions share a date, rerun it adding `--sha "data/sessions/<id>.json <sha256>"` for those
+sessions, copied from the read tool's reply; for anything else it lists, read that file again. Read
 `data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
 content into the chat, and never use `publish_version` or `edit_version` for data: they need the
 content typed out.
@@ -167,7 +172,9 @@ off-list level yourself.
 Then read the ledger's files into `/tmp/nc` (see "The ledger's files" above): `data/index.json`
 first, then the `meta` files `vocab_tracker`, `pv_tracker`, `interference`, `phave`, `registry`,
 `lexicon`, `overview`, `chunks`, `prep_watch` and `scoring` (they land in `/tmp/nc/meta/`), then every session
-the index lists (into `/tmp/nc/sessions/`). `meta/chunks` is read-only for this check: never save it.
+the index lists (into `/tmp/nc/sessions/`), then place them all with
+`cd /tmp/nc && python3 ledger.py place /tmp/nc <the download folders or files>`. `meta/chunks` is
+read-only for this check: never save it.
 (`meta/vocab_items` is the old copy of the list from before 27.09.26; don't read it.) Step 6 builds
 the brief from all the sessions, Step 8 compares with the previous one, and the index tells you
 whether this chat's doc already exists (a second check in the same chat). Then take the baseline

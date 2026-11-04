@@ -5,6 +5,16 @@ data/meta/<name>.json, data/sessions/<id>.json, data/reading/<id>.json). A skill
 it needs into a work folder at the same paths without "data/" (e.g. /tmp/nc/meta/pv_tracker.json),
 and saves by publishing only the files that changed. This script makes that save safe.
 
+  python3 ledger.py place <workdir> <downloaded file or folder> ... [--sha "<path> <sha256>" ...]
+      Run right after the downloads (added 04.11.26). The chat's read tool may save files under
+      random names, so this recognises each one by its content (index, each meta list by its own
+      fields, a session by its date, a reading by its date and chat) and moves it to its place in
+      <workdir> (index.json, meta/<name>.json, sessions/<id>.json, reading/<id>.json). Files that
+      already carry their ledger name are placed by name. Only when two sessions share a date does
+      it need the read tool's fingerprint for those files: pass --sha "data/sessions/<id>.json <sha256>"
+      for each, as the tool reported them. Prints what it placed; "PLACE STOP: ..." (exit 1) lists
+      anything it couldn't place, and nothing is guessed.
+
   python3 ledger.py snapshot <workdir>
       Run right after reading. Copies what was read (index.json, meta/, sessions/, reading/)
       to <workdir>/_before/, the baseline every later check compares with, and prints the counts.
@@ -139,6 +149,77 @@ def stage(wd, args):
     print(f"PUBLISH: {len(paths)} file(s) from {out_root}: " + " ".join(paths))
 
 
+META_SIGNS = [   # (meta name, fields that only that document has)
+    ("scoring", {"grammar", "vocab", "speaking"}), ("pv_tracker", {"rows", "benchmark_words_per_pv"}),
+    ("vocab_tracker", {"rows", "moved_to_pv"}), ("prep_watch", {"rows", "groups", "log"}),
+    ("interference", {"patterns", "types"}), ("chunks", {"items", "rule", "shared_rules"}),
+    ("phave", {"items", "source", "note"}), ("vocab_items", {"items", "max_id", "synced"}),
+    ("lexicon", {"words", "since"}), ("registry", {"concepts", "expansion"}),
+    ("overview", {"headline", "periods"}),
+]
+
+def place(wd, args):
+    import glob, hashlib
+    shas = {}
+    while "--sha" in args:
+        i = args.index("--sha"); path, sha = args[i + 1].split(); shas[sha.lower()] = path; del args[i:i + 2]
+    files = []
+    for a in args:
+        files += [f for f in glob.glob(os.path.join(a, "**", "*"), recursive=True) if os.path.isfile(f)] if os.path.isdir(a) else [a]
+    found, stop = {}, []
+    def put(target, f):
+        if target in found and found[target] != f:
+            if open(found[target], "rb").read() == open(f, "rb").read(): return   # the same file downloaded twice
+            stop.append(f"two different files claim {target}: {found[target]} and {f}"); return
+        found[target] = f
+    docs = {}
+    for f in files:
+        name = os.path.basename(f)
+        try: d = load(f)
+        except Exception: continue                                   # not JSON (the page, a stray file)
+        sha = hashlib.sha256(open(f, "rb").read()).hexdigest()
+        if sha in shas: put(shas[sha].removeprefix("data/"), f); continue
+        if not isinstance(d, dict): continue
+        if name == "index.json" or (set(d) >= {"sessions", "meta"} and all(isinstance(v, list) for v in d.values())):
+            put("index.json", f); continue
+        m = next((n for n, sig in META_SIGNS if sig <= set(d)), None)
+        if m: put(f"meta/{m}.json", f); continue
+        if name.startswith(("s_", "r_")) and name.endswith(".json"):
+            put(("sessions/" if name.startswith("s_") else "reading/") + name, f); continue
+        docs[f] = d
+    idx_f = found.get("index.json")
+    idx = load(idx_f) if idx_f else {}
+    for f, d in docs.items():
+        date = str(d.get("date", ""))
+        if not d.get("date") or date.count(".") != 2: continue
+        dd, mm, yy = date.split("."); day = yy + mm + dd
+        if "chat" in d and "items" in d:                                   # a reading log
+            cands = [i for i in idx.get("reading", []) if i.startswith(f"r_{day}_{d['chat']}")]
+        elif "errors" in d or "by_mode" in d:                              # a session
+            cands = [i for i in idx.get("sessions", []) if i.startswith(f"s_{day}_")]
+        else: continue
+        col = "sessions" if cands and cands[0].startswith("s_") else "reading"
+        taken = {t for t in found if t.startswith(col + "/")}
+        free = [c for c in cands if f"{col}/{c}.json" not in taken]
+        if len(cands) == 1: put(f"{col}/{cands[0]}.json", f)
+        elif not cands: stop.append(f"{f}: dated {date}, but index.json lists no matching id")
+        else: stop.append(f"{f}: {len(cands)} ids share {date} ({', '.join(cands)}); rerun with --sha for those files")
+    if not idx_f: stop.append("index.json is not among the files: read data/index.json too")
+    if stop:
+        print("PLACE STOP: nothing was moved.")
+        for x in stop: print("  - " + x)
+        sys.exit(1)
+    for t, f in found.items():
+        dest = os.path.join(wd, t); os.makedirs(os.path.dirname(dest) or wd, exist_ok=True)
+        if os.path.abspath(f) != os.path.abspath(dest): shutil.copyfile(f, dest)
+    n = lambda c: sum(1 for t in found if t.startswith(c))
+    print(f"PLACED: index.json, {n('meta/')} meta, {n('sessions/')} sessions, {n('reading/')} readings in {wd}")
+    want = [f"sessions/{i}.json" for i in idx.get("sessions", [])] + [f"meta/{i}.json" for i in idx.get("meta", [])]
+    missing = [w for w in want if w not in found and not os.path.exists(os.path.join(wd, w))]
+    if missing: print("  not downloaded (fine if this skill doesn't need them): " + ", ".join(missing[:12]) + (" …" if len(missing) > 12 else ""))
+
+
 if __name__ == "__main__":
-    if len(sys.argv) < 3 or sys.argv[1] not in ("snapshot", "stage"): sys.exit(__doc__)
+    if len(sys.argv) < 3 or sys.argv[1] not in ("snapshot", "stage", "place"): sys.exit(__doc__)
+    if sys.argv[1] == "place": place(sys.argv[2], sys.argv[3:]); sys.exit(0)
     snapshot(sys.argv[2]) if sys.argv[1] == "snapshot" else stage(sys.argv[2], sys.argv[3:])
