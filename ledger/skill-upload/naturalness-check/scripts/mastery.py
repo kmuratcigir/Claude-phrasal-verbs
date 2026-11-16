@@ -42,6 +42,7 @@ CHUNK_CONCEPTS = {   # concepts a fixing-slot target drills; their uses in [slot
     "s4": ["b1_present_perfect", "b2_present_perfect_continuous"], "s5": ["b1_present_perfect"],
     "s6": ["b1_present_perfect"], "s7": ["b1_present_perfect"], "c5": ["b2_still_negative_perfect"],
     "c1": ["err_preposition"], "c2": ["err_preposition"], "c3": [], "c4": [],
+    "c6": ["err_preposition"],   # get + something + preposition (added 16.11.26)
 }
 HESIT = r"\b(?:u+h+m*|u+m+|e+r+m*|hm+|mm+|ah+)\b"
 FILLERS = [r"\byou know\b", r"\bi mean\b", r"(?<=,) ?like(?= ?,)", r"\bsort of\b(?= (?:a |the |\w+ing\b|[a-z]+ly\b|like\b|,))",

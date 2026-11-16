@@ -543,5 +543,240 @@ null
 "Sorry, I need to check.",
 "c2",
 null
+],
+[
+"Can you get the bottle into the bag?",
+"c6",
+true
+],
+[
+"We need to get the kids out of the car.",
+"c6",
+true
+],
+[
+"I can't get the lid off.",
+"c6",
+true
+],
+[
+"We need to get the kids out the car.",
+"c6",
+false
+],
+[
+"I can't get the lid out.",
+"c6",
+false
+],
+[
+"Can you get into the bag the bottle?",
+"c6",
+false
+],
+[
+"I got tired after the meeting.",
+"c6",
+null
+],
+[
+"I got an email from my boss.",
+"c6",
+null
+],
+[
+"Get into the car, please.",
+"c6",
+null
+],
+[
+"We got off the bus at the wrong stop.",
+"c6",
+null
+],
+[
+"I'll get them to send it tomorrow.",
+"c6",
+null
+],
+[
+"I couldn't get the message across.",
+"c6",
+null
+],
+[
+"I needed to get something off my chest.",
+"c6",
+null
+],
+[
+"Let's get into the details.",
+"c6",
+null
+],
+[
+"I've got the keys in my bag.",
+"c6",
+null
+],
+[
+"We got married in 2012.",
+"c6",
+null
+],
+[
+"I need to get the report done by Friday.",
+"c6",
+null
+],
+[
+"She got my daughter to tidy her room.",
+"c6",
+null
+],
+[
+"I got it on Monday.",
+"c6",
+null
+],
+[
+"I get a lot out of these sessions.",
+"c6",
+null
+],
+[
+"I need to get the boxes into my new office.",
+"c6",
+true
+],
+[
+"We got the kids out of the car.",
+"c6",
+true
+],
+[
+"I got my daughter to the gym on time.",
+"c6",
+true
+],
+[
+"He's getting the documents back to the bank today.",
+"c6",
+true
+],
+[
+"I couldn't get the sticker off the laptop.",
+"c6",
+true
+],
+[
+"Get it out of the box first.",
+"c6",
+true
+],
+[
+"She got the car in the garage.",
+"c6",
+true
+],
+[
+"I got it off of the shelf.",
+"c6",
+false
+],
+[
+"Can you get the bags out the boot?",
+"c6",
+false
+],
+[
+"I finally got the proposal through.",
+"c6",
+true
+],
+[
+"We have to get the team together.",
+"c6",
+null
+],
+[
+"I got it back.",
+"c6",
+"decide"
+],
+[
+"I got an email in my inbox.",
+"c6",
+"decide"
+],
+[
+"Can you get me up at seven?",
+"c6",
+"decide"
+],
+[
+"I can't get the data out of the old system.",
+"c6",
+true
+],
+[
+"I have to get this out of my system.",
+"c6",
+true
+],
+[
+"They've got the furniture into the van.",
+"c6",
+"decide"
+],
+[
+"I'll get it to you by Monday.",
+"c6",
+true
+],
+[
+"He got the ball over the fence.",
+"c6",
+true
+],
+[
+"I get the bus to work.",
+"c6",
+null
+],
+[
+"She got him out the house.",
+"c6",
+false
+],
+[
+"Get your shoes on.",
+"c6",
+"decide"
+],
+[
+"I'm not sure if I can get my messages across clearly.",
+"c6",
+null
+],
+[
+"I need to get everyone on the same page.",
+"c6",
+null
+],
+[
+"I was getting my bread into the oil.",
+"c6",
+true
+],
+[
+"We take our daughters from school to get them to the appointments.",
+"c6",
+true
+],
+[
+"We wanted to get it on our sofa.",
+"c6",
+true
 ]
 ]

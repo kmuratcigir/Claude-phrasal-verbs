@@ -329,7 +329,66 @@ def find_s7(sent):
         elif lately and S7_PRES.search(c): out.append({"item": "s7", "match": c[:80], "suggest": None})
     return out
 
-FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5,
+# ---------- chunk 6: get + something + preposition (moving or placing something; added 16.11.26) ----------
+C6_GET = r"(?:get|gets|got|gotten|getting)"
+C6_DET = r"(?:the|a|an|my|your|his|her|our|their|its|this|that|these|those|some|all|both|two|three|four|every|each)"
+C6_PRON = r"(?:it|them|him|her|me|us|you|this|that|these|those|everything|everyone|everybody|something|someone|somebody)"
+C6_STOP = r"(?:into|onto|out|off|on|in|through|back|across|over|round|around|up|down|away|to|from|of|and|but|or|so|at|for|with|by|about|under|inside|outside)"
+C6_NOUNW = rf"(?!{C6_STOP}\b)[a-z'’-]+"
+C6_OBJ = rf"(?P<obj>{C6_DET}(?:\s+{C6_NOUNW}){{1,3}}?|{C6_PRON})"
+C6_PREP = r"(?P<prep>out\s+of|back\s+(?:into|onto|to|in|on|out\s+of)|away\s+from|in\s+front\s+of|into|onto|off(?:\s+of)?|through|across|over|round|around|under|inside|outside|in|on|up|down|to|out|away|back)"
+C6_RX = re.compile(rf"\b{C6_GET}\s+{C6_OBJ}\s+{C6_PREP}\b(?P<rest>(?:\s+[\w'’]+){{0,3}})", re.I)
+# wrong: "of" dropped after "out" before a container, vehicle or room ("get the kids out the car")
+C6_OUT_THE = re.compile(rf"\b{C6_GET}\s+{C6_OBJ}\s+out\s+(?:the|my|your|his|her|our|their|this|that)\s+(?:\w+\s+)?(?:car|bag|bags|box|boxes|house|room|office|building|bed|water|pool|bus|taxi|train|plane|van|lorry|fridge|oven|drawer|cupboard|jar|bottle|case|suitcase|garage|school|shop|kitchen|bath|pocket|wallet|envelope|packet|package|basket|bin|trolley|boot|freezer|washing\s+machine|dishwasher)\b", re.I)
+# wrong: the preposition before the thing, the thing after the place ("get into the bag the bottle")
+C6_ORDER = re.compile(rf"\b{C6_GET}\s+(?:into|out\s+of|onto|off|out|through|in|on)\s+{C6_DET}\s+{C6_NOUNW}\s+{C6_DET}\s+{C6_NOUNW}\b", re.I)
+# wrong particle: things that come "off", said with "out" ("get the lid out")
+C6_OFF_THING = re.compile(rf"\b{C6_GET}\s+{C6_DET}\s+(?:\w+\s+)?(?:lid|lids|cap|caps|cover|covers|label|labels|sticker|stickers|shoes|boots|coat|jacket|hat|gloves|ring|wrapper)\s+out\b(?!\s+of\b)", re.I)
+# not this chunk: fixed idioms
+C6_IDIOM = re.compile(r"\b(?:message|messages|point|points|idea|ideas|meaning|views?|thoughts?)\s+across\b|\bon\s+the\s+same\s+page\b|\boff\s+(?:my|your|his|her|our|their)\s+(?:chest|back|mind|hands)\b|\bover\s+with\b|\b(?:my|your|his|her|our|their)\s+head\s+(?:round|around)\b|\b(?:my|your|his|her|our|their)\s+hopes\s+up\b|\b(?:a\s+lot|the\s+most|something|anything|nothing|much|more|so\s+much)\s+out\s+of\b|\b(?:my|your|his|her|our|their)\s+(?:act|life)\s+together\b|\bfoot\s+in\s+the\s+door\b|\bon\s+(?:my|your|his|her|our|their)\s+nerves\b|\bto\s+the\s+bottom\s+of\b|\bon\s+board\b|\bon\s+track\b|\bup\s+and\s+running\b|\bup\s+to\s+(?:speed|date)\b|\bin\s+(?:touch|trouble|shape|time|order|writing|place|advance|the\s+end|the\s+mood)\b|\binto\s+(?:trouble|shape|debt|the\s+habit)\b|\bout\s+of\s+(?:trouble|the\s+way|my\s+head|your\s+head|his\s+head|her\s+head)\b", re.I)
+C6_HAVE_GOT = re.compile(r"(?:\b(?:have|has|had|haven['’]t|hasn['’]t)|['’]ve|['’]s|['’]d)\s+(?:(?:not|just|already|still|only|never)\s+)?$", re.I)
+C6_STATE = re.compile(r"\b(?:ready|done|finished|sorted|fixed|started|involved|used|dressed|organised|organized|right|wrong|working|going|moving|married|tired|lost|stuck|approved|signed|printed|checked|cleaned|repaired|delivered)$", re.I)
+C6_RECEIVE = re.compile(r"\b(?:email|emails|e-mail|call|calls|message|messages|reply|replies|answer|answers|letter|letters|text|texts|notification|invitation|invite|offer|offers|job|promotion|raise|discount|refund|result|results|feedback|chance|idea|feeling|impression|sense|cold|headache|response|bonus|salary|payment|update|updates|news|question|questions|complaint|complaints|permission|approval)$", re.I)
+C6_TIME = re.compile(r"^\s+(?:(?:the|a|an|this|that|next|last|my|our)\s+)?(?:morning|afternoon|evening|night|end|beginning|meantime|time|week|weekend|month|year|day|days|monday|tuesday|wednesday|thursday|friday|saturday|sunday|january|february|march|april|may|june|july|august|september|october|november|december|summer|winter|spring|autumn|future|past|moment|minute|minutes|hour|hours|\d)", re.I)
+C6_VERB_AFTER_TO = {"do","send","check","come","go","make","see","say","tell","pay","write","sign","work","help","buy","bring","take","give","look","stop","start","finish","call","join","understand","agree","accept","talk","speak","read","learn","use","try","be","have","get","keep","leave","move","play","run","stay","think","wait","answer","approve","prepare","update","review","fix","build","test","share","explain","change","decide","follow","listen","open","close","reply","respond","confirm","act","behave","install","know","do","eat","sleep","behave","pick","put","clean","cook","study","practise","practice","believe","admit","realise","realize","commit","sit","stand","walk","drive","meet","show","cover","deliver","consider","support","submit","complete","attend","add","remove","stop","speak","hurry","calm","focus","relax","feel","become","turn","ask","let","want","need","like","love","care","notice","remember","forget"}
+C6_STRONG = {"into", "onto", "out of", "off", "through", "across", "away from", "in front of", "under", "inside", "outside",
+             "back into", "back onto", "back to", "back in", "back on", "back out of"}
+C6_PLACE_AFTER = re.compile(r"^\s+(?:the|a|an|my|your|his|her|our|their|this|that|these|those|here|there|home|school|work|bed|hospital|town|london|istanbul|baku)\b", re.I)
+
+def find_c6(sent):
+    """get + object + preposition of movement or place. True = right form; False = a clear wrong
+    pattern (dropped "of", wrong particle, word order); None = Claude decides."""
+    if not re.search(rf"\b{C6_GET}\b", sent, re.I): return []
+    out, spans = [], []
+    scan = C6_IDIOM.sub(lambda m: "~" * len(m.group(0)), sent)
+    for rx in (C6_OUT_THE, C6_ORDER, C6_OFF_THING):
+        for m in rx.finditer(scan):
+            if any(a < m.end() and m.start() < b for a, b in spans): continue
+            spans.append(m.span()); out.append({"item": "c6", "match": m.group(0).strip(), "suggest": False})
+    for m in C6_RX.finditer(scan):
+        if any(a < m.end() and m.start() < b for a, b in spans): continue
+        obj = m.group("obj"); prep = re.sub(r"\s+", " ", m.group("prep").lower()); rest = m.group("rest") or ""
+        have_got = scan[m.start():m.start()+4].lower() == "got " and C6_HAVE_GOT.search(scan[:m.start()])
+        if have_got and prep not in C6_STRONG: continue            # "I've got the keys in my bag" = have
+        if C6_STATE.search(obj): continue                          # get the kids ready, get it done
+        if C6_TIME.match(rest) and prep in ("in", "on", "over", "through", "to", "around", "round"): continue   # get it on Monday
+        first = (rest.split() or [""])[0].lower()
+        if prep == "to" and (first in C6_VERB_AFTER_TO or not (C6_PLACE_AFTER.match(rest) or rest.strip()[:1].isupper() or re.match(r"\s+(?:you|me|him|her|them|us)\b", rest, re.I))): continue   # get someone to do something
+        if have_got: suggest = None                                # "I've got the boxes into the van": have, or moved? Claude decides
+        elif prep == "off of": suggest = False                       # British: "off", not "off of"
+        elif C6_RECEIVE.search(obj) and prep not in C6_STRONG: suggest = None                # get an email in ...: receive, or move? Claude decides
+        elif re.match(r"(?:a|an|some)\b", obj, re.I) and prep not in C6_STRONG: suggest = None
+        elif prep in C6_STRONG: suggest = True
+        elif prep == "out": suggest = True if not rest.strip() or not C6_PLACE_AFTER.match(rest) else None
+        elif prep in ("in", "on", "to", "over", "round", "around") and C6_PLACE_AFTER.match(rest): suggest = True     # get the car in the garage
+        elif prep == "to" and re.match(r"\s+(?:you|me|him|her|them|us)\b", rest, re.I): suggest = True      # get it to you
+        elif prep in ("up", "down") and C6_PLACE_AFTER.match(rest): suggest = True       # get the boxes up the stairs
+        else: suggest = None
+        out.append({"item": "c6", "match": re.sub(r"~+", " ", m.group(0)).strip()[:80], "suggest": suggest})
+    return out
+
+
+FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5, "c6": find_c6,
            "s1": find_s1, "s2": find_s2, "s3": find_s3, "s4": find_s4,
            "s5": find_s5, "s6": find_s6, "s7": find_s7}
 

@@ -105,7 +105,8 @@ Never change `rule` unless he asks for it explicitly.
 
 **Two limits to tell him when they apply:**
 - **Counting.** The naturalness check can count only items it has a finder for (c1–c5 and s1–s4 since
-  12.10.26, s5–s7 since 29.10.26; `status.py` marks any other "can't count this one yet"). A new item is fine
+  12.10.26, s5–s7 since 29.10.26, c6 since 16.11.26; `status.py` marks any other "can't count this one
+  yet"). A new item is fine
   to add: the check counts the ones it can and says which it can't. A finder for a new item is code in
   `naturalness-check/scripts/chunks.py`, built and tested in a Claude Code session (repo
   `kmuratcigir/claude-phrasal-verbs`, folder `ledger/skill`), then uploaded with the skill.

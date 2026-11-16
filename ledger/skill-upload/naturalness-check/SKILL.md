@@ -110,13 +110,8 @@ through the conversation, far too costly for these files. The ledger's database 
 **Reading.** Use the artifact file tools, so the content never enters the chat: in a chat,
 `read_file` on the ledger (load the artifacts tools first if they aren't loaded; read several
 paths per call when the tool allows); in Claude Code, `Artifact` `read` with `url` and `paths`.
-Each file lands in the workspace, sometimes under a random name. Don't sort them by hand or by
-the listing order (that order isn't reliable): run
-`python3 ledger.py place <work> <each folder or file the tool reported>` (added 04.11.26). It
-recognises every file by its content and puts it at its path without `data/`
-(`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Only if it prints `PLACE STOP` because
-two sessions share a date, rerun it adding `--sha "data/sessions/<id>.json <sha256>"` for those
-sessions, copied from the read tool's reply; for anything else it lists, read that file again. Read
+Each file lands in the workspace and the tool says where: move it into the work folder at its
+path without `data/` (`data/meta/pv_tracker.json` → `<work>/meta/pv_tracker.json`). Read
 `data/index.json` first, and note the ledger's **version id** shown with it. Never print a file's
 content into the chat, and never use `publish_version` or `edit_version` for data: they need the
 content typed out.
@@ -172,9 +167,7 @@ off-list level yourself.
 Then read the ledger's files into `/tmp/nc` (see "The ledger's files" above): `data/index.json`
 first, then the `meta` files `vocab_tracker`, `pv_tracker`, `interference`, `phave`, `registry`,
 `lexicon`, `overview`, `chunks`, `prep_watch` and `scoring` (they land in `/tmp/nc/meta/`), then every session
-the index lists (into `/tmp/nc/sessions/`), then place them all with
-`cd /tmp/nc && python3 ledger.py place /tmp/nc <the download folders or files>`. `meta/chunks` is
-read-only for this check: never save it.
+the index lists (into `/tmp/nc/sessions/`). `meta/chunks` is read-only for this check: never save it.
 (`meta/vocab_items` is the old copy of the list from before 27.09.26; don't read it.) Step 6 builds
 the brief from all the sessions, Step 8 compares with the previous one, and the index tells you
 whether this chat's doc already exists (a second check in the same chat). Then take the baseline
@@ -297,6 +290,16 @@ answered "claude_ai server does not offer this tool here". Then:
 
 ## Step 3: Run the detectors
 
+Chunk c6 ("get + something + preposition", added 16.11.26) has its finder inside `chunks.py` since
+16.11.26 (the temporary `chunks_c6.py` add-on is gone: don't write or run it). For c6 candidates marked
+`decide`, judge by the c6 definition in `meta/chunks`: right = get + object + preposition used for
+moving or placing something; drop it if "get" means become / receive / have, if it has no object, or
+if it's get + someone + to + verb. The finder is cautious with "in / on / to / up / down / back" (it
+says `correct` only when a place follows) and leaves out fixed idioms (get the message across, get
+everyone on the same page, get something off your chest).
+
+Run the detectors:
+
 ```bash
 cd /tmp/nc && python3 detect.py murat_turns.txt candidates.json
 python3 vocab.py murat_turns.txt meta/vocab_tracker.json olp vocab_candidates.json drilled_words.txt
@@ -304,7 +307,7 @@ python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json drilled_wo
 python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json slot_targets.txt
 ```
 
-`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (c1–c5 and s1–s4 since 12.10.26; s5–s7 since 29.10.26):
+`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (c1–c5 and s1–s4 since 12.10.26; s5–s7 since 29.10.26; c6 since 16.11.26):
 index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
 tell), the matched words and the sentence. If it prints `NOT COUNTED (no finder yet ...)`, Murat opened
 a chunk the script can't count yet: the other open chunks are still counted; say in the report
