@@ -127,6 +127,30 @@ const CHUNK_BANK_2910=[
  N('___ from the bank lately? (you / hear)','Have you heard',['Did you hear'])]}
 ];
 CHUNK_BANK_2910.forEach(p=>BANK.push(p));
+// ---------- 17.11: chunk 6 (get + something + preposition), opened 16.11. 15 new contexts, approved by Murat 17.11 ----------
+// Appended after all existing patterns, so no item index moves. Covers the fixing-slot drill set
+// (into, out of, off, onto, through, back to, across, over, round) and the traps: "out the car", "off of", word order.
+const CHUNK_BANK_1711=[
+{k:'ch_c6_get',sec:'chunk',chunk:'c6',label:'get + something + preposition (moving or placing something)',tr:'çocukları arabadan çıkar / şişeyi çantaya koy (the place goes in a case ending)',wrong:['out','off of'],
+ trap:'Turkish puts the place in a case ending ("arabadan", "çantaya"), so in English the "of" can drop out, or the place can jump in front of the thing. What are you moving, and where to?',
+ why:'The order is get + the thing + the preposition + the place: get the bottle into the bag. "Out" needs "of" before a place (out of the car). Things that come off a surface take "off", not "out" or "off of" (get the lid off).',
+ items:[N('It took me ten minutes to get Yaz ___ the car this morning; she was half asleep.','out of',['out','off']),
+ N('Can you get the milk ___ the fridge for me?','out of',['out','off']),
+ N('I can\'t get the lid ___ this jar. Can you try?','off',['out','off of']),
+ N('Can you get your bag ___ my desk? I need the space for the files.','off',['off of','out of']),
+ N('We need to get all these folders ___ the boxes before the office move on Friday.','into|in',['to','onto']),
+ N('At the station we just managed to get both suitcases ___ the luggage rack.','onto|on',['into','to']),
+ N('The new desk was too wide; we couldn\'t get it ___ the door.','through',['from','across']),
+ N('It took us forty minutes to get our bags ___ security at Stansted.','through',['from','across']),
+ N('Yaz left her PE bag in my car, so I have to get it ___ school before lunch. (return it)','back to',['back','back at']),
+ N('After the trip we have to get the hire car ___ the airport by ten. (return it)','back to',['back','to back']),
+ N('We had to get the boxes ___ the car park in the rain.','across',['along','on']),
+ N('The ball went into next door\'s garden, and Yaz couldn\'t get it back ___ the fence.','over',['above','on']),
+ N('We couldn\'t get the van ___ the corner; our street is too narrow.','round|around',['over','through']),
+ N('Before security, please ___ . (get / the laptop / out of / your bag)','get the laptop out of your bag',['get out of your bag the laptop','get the laptop out your bag'],'The thing comes straight after "get", then "out of" + the place.'),
+ N('Can you ___ ? I\'ll make the salad. (get / the chicken / into / the oven)','get the chicken into the oven|get the chicken in the oven',['get into the oven the chicken'],'The thing comes straight after "get", then the preposition + the place.')]}
+];
+CHUNK_BANK_1711.forEach(p=>BANK.push(p));
 // Chunk list as agreed on 12.10 (meta/chunks in the Fluency Ledger). keys = the quiz patterns that train it.
 // CHUNK_DEFAULT is used until the Ledger's statuses are copied into this quiz's memory (chunks/state).
 const CHUNKS=[
@@ -135,6 +159,7 @@ const CHUNKS=[
  {id:'c3',layer:'chunk',n:3,title:'"to", not "for + -ing", for purpose',keys:['ch_c3_purpose']},
  {id:'c4',layer:'chunk',n:4,title:'no "a" before uncountable nouns',keys:['ch_c4_uncount']},
  {id:'c5',layer:'chunk',n:5,title:'"still" goes before "have"',keys:['ch_c5_still']},
+ {id:'c6',layer:'chunk',n:6,title:'get + something + preposition (moving or placing something)',keys:['ch_c6_get']},
  {id:'s1',layer:'slice',n:1,title:'"yet" → present perfect',keys:['ch_s1_yet']},
  {id:'s2',layer:'slice',n:2,title:'"already" and "just" → present perfect',keys:['ch_s2_already']},
  {id:'s3',layer:'slice',n:3,title:'finished time → past simple',keys:['ch_s3_finished']},
