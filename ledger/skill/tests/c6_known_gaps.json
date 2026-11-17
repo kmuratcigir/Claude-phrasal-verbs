@@ -1,0 +1,80 @@
+{
+ "note": "17.11.26: sentences written on 16.11 for an earlier c6 finder that was never installed. The installed finder (the chat's chunks_c6.py add-on, folded into chunks.py on 17.11) answers them as 'finder_gives'; 'should_be' is the ideal answer. True = correct use, false = wrong, \"decide\" = unclear, null = not c6. Not part of run_cases.py; kept as a to-do list if the c6 finder is ever improved.",
+ "cases": [
+  {
+   "sentence": "I can't get the lid out.",
+   "should_be": false,
+   "finder_gives": true
+  },
+  {
+   "sentence": "She got my daughter to tidy her room.",
+   "should_be": null,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "I got it on Monday.",
+   "should_be": null,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "I get a lot out of these sessions.",
+   "should_be": null,
+   "finder_gives": true
+  },
+  {
+   "sentence": "I got my daughter to the gym on time.",
+   "should_be": true,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "She got the car in the garage.",
+   "should_be": true,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "Can you get the bags out the boot?",
+   "should_be": false,
+   "finder_gives": true
+  },
+  {
+   "sentence": "We have to get the team together.",
+   "should_be": null,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "I have to get this out of my system.",
+   "should_be": true,
+   "finder_gives": null
+  },
+  {
+   "sentence": "They've got the furniture into the van.",
+   "should_be": "decide",
+   "finder_gives": null
+  },
+  {
+   "sentence": "I'll get it to you by Monday.",
+   "should_be": true,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "He got the ball over the fence.",
+   "should_be": true,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "I need to get everyone on the same page.",
+   "should_be": null,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "We take our daughters from school to get them to the appointments.",
+   "should_be": true,
+   "finder_gives": "decide"
+  },
+  {
+   "sentence": "We wanted to get it on our sofa.",
+   "should_be": true,
+   "finder_gives": "decide"
+  }
+ ]
+}

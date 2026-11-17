@@ -1,782 +1,155 @@
 [
-[
-"Can you add it to my list?",
-"c1",
-true
-],
-[
-"I added the quiz work to my pipeline.",
-"c1",
-true
-],
-[
-"Maybe we should add these points into that list too.",
-"c1",
-false
-],
-[
-"Let's add new categories in the naturalness check.",
-"c1",
-false
-],
-[
-"Just paste it into the chat.",
-"c1",
-true
-],
-[
-"Paste the link in the search box.",
-"c1",
-true
-],
-[
-"Can you paste it to the chat?",
-"c1",
-false
-],
-[
-"I devote myself to improving my English.",
-"c1",
-true
-],
-[
-"I am devoting myself for doing something.",
-"c1",
-false
-],
-[
-"She dedicated her life to teaching.",
-"c1",
-true
-],
-[
-"I put a lot of effort into it.",
-"c1",
-true
-],
-[
-"Put it on my list, please.",
-"c1",
-true
-],
-[
-"I put it into my list yesterday.",
-"c1",
-false
-],
-[
-"Put the box in the car.",
-"c1",
-null
-],
-[
-"It all adds up in the end.",
-"c1",
-null
-],
-[
-"Let's put off the meeting to next week.",
-"c1",
-null
-],
-[
-"I'll add it later.",
-"c1",
-null
-],
-[
-"It hasn't come up yet.",
-"s1",
-true
-],
-[
-"Have you finished it yet?",
-"s1",
-true
-],
-[
-"It didn't come up yet.",
-"s1",
-false
-],
-[
-"Did you finish yet?",
-"s1",
-false
-],
-[
-"I didn't let him know about it yet.",
-"s1",
-false
-],
-[
-"It's a simple idea, yet it works.",
-"s1",
-null
-],
-[
-"That was the best yet.",
-"s1",
-null
-],
-[
-"Yet another meeting today.",
-"s1",
-null
-],
-[
-"Not yet.",
-"s1",
-null
-],
-[
-"There was a car approaching to us.",
-"c2",
-false
-],
-[
-"She approached me after the meeting.",
-"c2",
-true
-],
-[
-"I like your approach to the problem.",
-"c2",
-null
-],
-[
-"I mentioned about the Spain trip yesterday.",
-"c2",
-false
-],
-[
-"I mentioned the trip yesterday.",
-"c2",
-true
-],
-[
-"As I mentioned before, it's fine.",
-"c2",
-null
-],
-[
-"We will discuss about it tomorrow.",
-"c2",
-false
-],
-[
-"Let's discuss the plan.",
-"c2",
-true
-],
-[
-"He still contacts with me every week.",
-"c2",
-false
-],
-[
-"You can contact me any time.",
-"c2",
-true
-],
-[
-"We're in contact with them.",
-"c2",
-null
-],
-[
-"Yaz wants to join to her friends.",
-"c2",
-false
-],
-[
-"Yaz wants to join her friends.",
-"c2",
-true
-],
-[
-"Can I join in?",
-"c2",
-null
-],
-[
-"He researched about the topic.",
-"c2",
-false
-],
-[
-"He researched the topic.",
-"c2",
-true
-],
-[
-"There is a lot of research on sleep.",
-"c2",
-null
-],
-[
-"Let me remind you the basics first.",
-"c2",
-false
-],
-[
-"Let me remind you of the basics first.",
-"c2",
-true
-],
-[
-"Remind me to call her.",
-"c2",
-null
-],
-[
-"Who is responsible from this process?",
-"c2",
-false
-],
-[
-"My department is responsible for this process.",
-"c2",
-true
-],
-[
-"I'm bored from this topic.",
-"c2",
-false
-],
-[
-"I'm bored with this topic.",
-"c2",
-true
-],
-[
-"I need to increase my knowledge for them.",
-"c2",
-false
-],
-[
-"Her knowledge of history is huge.",
-"c2",
-true
-],
-[
-"His knowledge about cars is good.",
-"c2",
-"decide"
-],
-[
-"For doing this, I'm building some tools.",
-"c3",
-false
-],
-[
-"I called him for asking about the price.",
-"c3",
-false
-],
-[
-"To do this, I'm building some tools.",
-"c3",
-true
-],
-[
-"We use this window to take care of other things.",
-"c3",
-true
-],
-[
-"Thank you for helping me.",
-"c3",
-null
-],
-[
-"This knife is used for cutting bread.",
-"c3",
-null
-],
-[
-"I need enough time for doing this.",
-"c3",
-null
-],
-[
-"I'm interested in learning Spanish.",
-"c3",
-null
-],
-[
-"I have a feedback for you.",
-"c4",
-false
-],
-[
-"It's a good news.",
-"c4",
-false
-],
-[
-"Can I get some feedbacks from you?",
-"c4",
-false
-],
-[
-"Thanks for all the informations.",
-"c4",
-false
-],
-[
-"I have some feedback for you.",
-"c4",
-true
-],
-[
-"That's good news.",
-"c4",
-true
-],
-[
-"Let's book a feedback session.",
-"c4",
-null
-],
-[
-"I gave her a piece of advice.",
-"c4",
-true
-],
-[
-"We need to research the market.",
-"c4",
-null
-],
-[
-"There's a lot of research on sleep.",
-"c4",
-true
-],
-[
-"We have still 45 minutes to go.",
-"c5",
-false
-],
-[
-"I still have around five minutes.",
-"c5",
-true
-],
-[
-"I still haven't finished.",
-"c5",
-true
-],
-[
-"I haven't still finished.",
-"c5",
-false
-],
-[
-"I've still got time.",
-"c5",
-true
-],
-[
-"Still, it was a good day.",
-"c5",
-null
-],
-[
-"I have still not decided.",
-"c5",
-null
-],
-[
-"I already done it.",
-"s2",
-false
-],
-[
-"We already saw many countries.",
-"s2",
-false
-],
-[
-"I've already done it.",
-"s2",
-true
-],
-[
-"She has just left.",
-"s2",
-true
-],
-[
-"She just left the office.",
-"s2",
-false
-],
-[
-"I just want to say thanks.",
-"s2",
-null
-],
-[
-"It's already late.",
-"s2",
-null
-],
-[
-"I handled two of the items already.",
-"s2",
-false
-],
-[
-"I've done it already.",
-"s2",
-true
-],
-[
-"I had already left.",
-"s2",
-null
-],
-[
-"We've been to Singapore a few months ago.",
-"s3",
-false
-],
-[
-"We went to Singapore a few months ago.",
-"s3",
-true
-],
-[
-"I saw him yesterday.",
-"s3",
-true
-],
-[
-"I've seen him yesterday.",
-"s3",
-false
-],
-[
-"She moved to Baku in 2016.",
-"s3",
-true
-],
-[
-"I've lived here since last year.",
-"s3",
-null
-],
-[
-"I've been busy in the last few days.",
-"s3",
-null
-],
-[
-"I'm working at SOCAR for 15 years.",
-"s4",
-false
-],
-[
-"I've been working at SOCAR for 15 years.",
-"s4",
-true
-],
-[
-"I know him since 2010.",
-"s4",
-false
-],
-[
-"I've known him since 2010.",
-"s4",
-true
-],
-[
-"I lived in Ankara for five years.",
-"s4",
-null
-],
-[
-"I'm staying for two weeks next month.",
-"s4",
-null
-],
-[
-"Since you asked, here it is.",
-"s4",
-null
-],
-[
-"She's been ill for two days.",
-"s4",
-true
-],
-[
-"As you just said, this is Saturday.",
-"s2",
-null
-],
-[
-"Sorry for fumbling around.",
-"c3",
-null
-],
-[
-"I'm sure I mentioned actually.",
-"c2",
-null
-],
-[
-"When it comes to vocabulary, it's fine.",
-"c3",
-null
-],
-[
-"I will use one of Luke's episodes for shadowing.",
-"c3",
-"decide"
-],
-[
-"Sorry, I need to check.",
-"c2",
-null
-],
-[
-"Can you get the bottle into the bag?",
-"c6",
-true
-],
-[
-"We need to get the kids out of the car.",
-"c6",
-true
-],
-[
-"I can't get the lid off.",
-"c6",
-true
-],
-[
-"We need to get the kids out the car.",
-"c6",
-false
-],
-[
-"I can't get the lid out.",
-"c6",
-false
-],
-[
-"Can you get into the bag the bottle?",
-"c6",
-false
-],
-[
-"I got tired after the meeting.",
-"c6",
-null
-],
-[
-"I got an email from my boss.",
-"c6",
-null
-],
-[
-"Get into the car, please.",
-"c6",
-null
-],
-[
-"We got off the bus at the wrong stop.",
-"c6",
-null
-],
-[
-"I'll get them to send it tomorrow.",
-"c6",
-null
-],
-[
-"I couldn't get the message across.",
-"c6",
-null
-],
-[
-"I needed to get something off my chest.",
-"c6",
-null
-],
-[
-"Let's get into the details.",
-"c6",
-null
-],
-[
-"I've got the keys in my bag.",
-"c6",
-null
-],
-[
-"We got married in 2012.",
-"c6",
-null
-],
-[
-"I need to get the report done by Friday.",
-"c6",
-null
-],
-[
-"She got my daughter to tidy her room.",
-"c6",
-null
-],
-[
-"I got it on Monday.",
-"c6",
-null
-],
-[
-"I get a lot out of these sessions.",
-"c6",
-null
-],
-[
-"I need to get the boxes into my new office.",
-"c6",
-true
-],
-[
-"We got the kids out of the car.",
-"c6",
-true
-],
-[
-"I got my daughter to the gym on time.",
-"c6",
-true
-],
-[
-"He's getting the documents back to the bank today.",
-"c6",
-true
-],
-[
-"I couldn't get the sticker off the laptop.",
-"c6",
-true
-],
-[
-"Get it out of the box first.",
-"c6",
-true
-],
-[
-"She got the car in the garage.",
-"c6",
-true
-],
-[
-"I got it off of the shelf.",
-"c6",
-false
-],
-[
-"Can you get the bags out the boot?",
-"c6",
-false
-],
-[
-"I finally got the proposal through.",
-"c6",
-true
-],
-[
-"We have to get the team together.",
-"c6",
-null
-],
-[
-"I got it back.",
-"c6",
-"decide"
-],
-[
-"I got an email in my inbox.",
-"c6",
-"decide"
-],
-[
-"Can you get me up at seven?",
-"c6",
-"decide"
-],
-[
-"I can't get the data out of the old system.",
-"c6",
-true
-],
-[
-"I have to get this out of my system.",
-"c6",
-true
-],
-[
-"They've got the furniture into the van.",
-"c6",
-"decide"
-],
-[
-"I'll get it to you by Monday.",
-"c6",
-true
-],
-[
-"He got the ball over the fence.",
-"c6",
-true
-],
-[
-"I get the bus to work.",
-"c6",
-null
-],
-[
-"She got him out the house.",
-"c6",
-false
-],
-[
-"Get your shoes on.",
-"c6",
-"decide"
-],
-[
-"I'm not sure if I can get my messages across clearly.",
-"c6",
-null
-],
-[
-"I need to get everyone on the same page.",
-"c6",
-null
-],
-[
-"I was getting my bread into the oil.",
-"c6",
-true
-],
-[
-"We take our daughters from school to get them to the appointments.",
-"c6",
-true
-],
-[
-"We wanted to get it on our sofa.",
-"c6",
-true
-]
+["Can you add it to my list?", "c1", true],
+["I added the quiz work to my pipeline.", "c1", true],
+["Maybe we should add these points into that list too.", "c1", false],
+["Let's add new categories in the naturalness check.", "c1", false],
+["Just paste it into the chat.", "c1", true],
+["Paste the link in the search box.", "c1", true],
+["Can you paste it to the chat?", "c1", false],
+["I devote myself to improving my English.", "c1", true],
+["I am devoting myself for doing something.", "c1", false],
+["She dedicated her life to teaching.", "c1", true],
+["I put a lot of effort into it.", "c1", true],
+["Put it on my list, please.", "c1", true],
+["I put it into my list yesterday.", "c1", false],
+["Put the box in the car.", "c1", null],
+["It all adds up in the end.", "c1", null],
+["Let's put off the meeting to next week.", "c1", null],
+["I'll add it later.", "c1", null],
+["It hasn't come up yet.", "s1", true],
+["Have you finished it yet?", "s1", true],
+["It didn't come up yet.", "s1", false],
+["Did you finish yet?", "s1", false],
+["I didn't let him know about it yet.", "s1", false],
+["It's a simple idea, yet it works.", "s1", null],
+["That was the best yet.", "s1", null],
+["Yet another meeting today.", "s1", null],
+["Not yet.", "s1", null],
+["There was a car approaching to us.", "c2", false],
+["She approached me after the meeting.", "c2", true],
+["I like your approach to the problem.", "c2", null],
+["I mentioned about the Spain trip yesterday.", "c2", false],
+["I mentioned the trip yesterday.", "c2", true],
+["As I mentioned before, it's fine.", "c2", null],
+["We will discuss about it tomorrow.", "c2", false],
+["Let's discuss the plan.", "c2", true],
+["He still contacts with me every week.", "c2", false],
+["You can contact me any time.", "c2", true],
+["We're in contact with them.", "c2", null],
+["Yaz wants to join to her friends.", "c2", false],
+["Yaz wants to join her friends.", "c2", true],
+["Can I join in?", "c2", null],
+["He researched about the topic.", "c2", false],
+["He researched the topic.", "c2", true],
+["There is a lot of research on sleep.", "c2", null],
+["Let me remind you the basics first.", "c2", false],
+["Let me remind you of the basics first.", "c2", true],
+["Remind me to call her.", "c2", null],
+["Who is responsible from this process?", "c2", false],
+["My department is responsible for this process.", "c2", true],
+["I'm bored from this topic.", "c2", false],
+["I'm bored with this topic.", "c2", true],
+["I need to increase my knowledge for them.", "c2", false],
+["Her knowledge of history is huge.", "c2", true],
+["His knowledge about cars is good.", "c2", "decide"],
+["For doing this, I'm building some tools.", "c3", false],
+["I called him for asking about the price.", "c3", false],
+["To do this, I'm building some tools.", "c3", true],
+["We use this window to take care of other things.", "c3", true],
+["Thank you for helping me.", "c3", null],
+["This knife is used for cutting bread.", "c3", null],
+["I need enough time for doing this.", "c3", null],
+["I'm interested in learning Spanish.", "c3", null],
+["I have a feedback for you.", "c4", false],
+["It's a good news.", "c4", false],
+["Can I get some feedbacks from you?", "c4", false],
+["Thanks for all the informations.", "c4", false],
+["I have some feedback for you.", "c4", true],
+["That's good news.", "c4", true],
+["Let's book a feedback session.", "c4", null],
+["I gave her a piece of advice.", "c4", true],
+["We need to research the market.", "c4", null],
+["There's a lot of research on sleep.", "c4", true],
+["We have still 45 minutes to go.", "c5", false],
+["I still have around five minutes.", "c5", true],
+["I still haven't finished.", "c5", true],
+["I haven't still finished.", "c5", false],
+["I've still got time.", "c5", true],
+["Still, it was a good day.", "c5", null],
+["I have still not decided.", "c5", null],
+["I already done it.", "s2", false],
+["We already saw many countries.", "s2", false],
+["I've already done it.", "s2", true],
+["She has just left.", "s2", true],
+["She just left the office.", "s2", false],
+["I just want to say thanks.", "s2", null],
+["It's already late.", "s2", null],
+["I handled two of the items already.", "s2", false],
+["I've done it already.", "s2", true],
+["I had already left.", "s2", null],
+["We've been to Singapore a few months ago.", "s3", false],
+["We went to Singapore a few months ago.", "s3", true],
+["I saw him yesterday.", "s3", true],
+["I've seen him yesterday.", "s3", false],
+["She moved to Baku in 2016.", "s3", true],
+["I've lived here since last year.", "s3", null],
+["I've been busy in the last few days.", "s3", null],
+["I'm working at SOCAR for 15 years.", "s4", false],
+["I've been working at SOCAR for 15 years.", "s4", true],
+["I know him since 2010.", "s4", false],
+["I've known him since 2010.", "s4", true],
+["I lived in Ankara for five years.", "s4", null],
+["I'm staying for two weeks next month.", "s4", null],
+["Since you asked, here it is.", "s4", null],
+["She's been ill for two days.", "s4", true],
+["As you just said, this is Saturday.", "s2", null],
+["Sorry for fumbling around.", "c3", null],
+["I'm sure I mentioned actually.", "c2", null],
+["When it comes to vocabulary, it's fine.", "c3", null],
+["I will use one of Luke's episodes for shadowing.", "c3", "decide"],
+["Sorry, I need to check.", "c2", null],
+["Can you get the bottle into the bag?", "c6", true],
+["We need to get the kids out of the car.", "c6", true],
+["I can't get the lid off.", "c6", true],
+["We need to get the kids out the car.", "c6", false],
+["Can you get into the bag the bottle?", "c6", false],
+["I got tired after the meeting.", "c6", null],
+["I got an email from my boss.", "c6", null],
+["Get into the car, please.", "c6", null],
+["We got off the bus at the wrong stop.", "c6", null],
+["I'll get them to send it tomorrow.", "c6", null],
+["I couldn't get the message across.", "c6", null],
+["I needed to get something off my chest.", "c6", null],
+["Let's get into the details.", "c6", null],
+["I've got the keys in my bag.", "c6", null],
+["We got married in 2012.", "c6", null],
+["I need to get the report done by Friday.", "c6", null],
+["I need to get the boxes into my new office.", "c6", true],
+["We got the kids out of the car.", "c6", true],
+["He's getting the documents back to the bank today.", "c6", true],
+["I couldn't get the sticker off the laptop.", "c6", true],
+["Get it out of the box first.", "c6", true],
+["I got it off of the shelf.", "c6", false],
+["I finally got the proposal through.", "c6", true],
+["I got it back.", "c6", "decide"],
+["I got an email in my inbox.", "c6", "decide"],
+["Can you get me up at seven?", "c6", "decide"],
+["I can't get the data out of the old system.", "c6", true],
+["I get the bus to work.", "c6", null],
+["She got him out the house.", "c6", false],
+["Get your shoes on.", "c6", "decide"],
+["I'm not sure if I can get my messages across clearly.", "c6", null],
+["I was getting my bread into the oil.", "c6", true],
+["get the bottle into the bag", "c6", true],
+["we got the kids out of the car", "c6", true],
+["get the lid off", "c6", true],
+["I couldn't get it through the door", "c6", true],
+["get the kids out the car", "c6", false],
+["get into the bag the bottle", "c6", false],
+["try to get the kids in the car", "c6", "decide"],
+["I got tired", "c6", null],
+["I'll get them to send it", "c6", null],
+["we got into the car", "c6", null],
+["I tried to get the message across", "c6", null],
+["I've got the kids in the car", "c6", null]
 ]

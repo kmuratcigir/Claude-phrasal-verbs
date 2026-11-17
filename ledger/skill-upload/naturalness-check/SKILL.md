@@ -290,86 +290,22 @@ answered "claude_ai server does not offer this tool here". Then:
 
 ## Step 3: Run the detectors
 
-First write the c6 add-on (added 16.11.26: chunk c6, "get + something + preposition"). It adds the
-c6 finder to chunks.py without changing chunks.py, and is run in place of `chunks.py find`. Write it to
-`/tmp/nc/chunks_c6.py` exactly as below (it lives in this file, like `sentences.py`):
-
-```bash
-cat > /tmp/nc/chunks_c6.py <<'EOF'
-# chunks_c6.py (added 16.11.26): adds the c6 finder to chunks.py without changing it.
-# c6 = get + something + preposition (moving or placing something): "get the bottle into the bag".
-# usage: same as chunks.py, e.g. python3 chunks_c6.py find murat_turns.txt meta/chunks.json chunk_candidates.json slot_targets.txt
-import re, sys
-import chunks
-
-GET = r"(?:get|gets|got|gotten|getting)"
-# object: a pronoun, or a short noun phrase starting with a determiner/possessive/number (1-4 words)
-DET = r"(?:the|a|an|my|your|his|her|our|their|its|this|that|these|those|some|all|both|two|three|four|every|each)"
-PRON = r"(?:it|them|him|her|me|us|you|everything|everyone|everybody|something|someone|somebody)"
-NOUNW = r"(?!(?:into|onto|out|off|on|in|through|back|across|over|round|around|up|down|away|to|from|of|and|but|or|so)\b)[a-z'’-]+"
-OBJ = rf"(?P<obj>{PRON}|{DET}(?:\s+{NOUNW}){{1,3}})"
-GOOD_PREP = r"(?P<prep>out\s+of|back\s+(?:into|to|in|on|onto|out\s+of)|away\s+from|in\s+front\s+of|into|onto|off(?:\s+of)?|through|across|over|round|around|under|inside|outside|in|on|up|down|to|out|away|back|together|apart)"
-C6_RX = re.compile(rf"\b{GET}\s+{OBJ}\s+{GOOD_PREP}\b(?P<rest>(?:\s+[\w'’]+){{0,3}})", re.I)
-# wrong: dropped "of" after out before a place/container ("get the kids out the car")
-OUT_THE = re.compile(rf"\b{GET}\s+{OBJ}\s+out\s+(?P<after>the|my|your|his|her|our|their)\s+(?P<noun>car|bag|box|boxes|house|room|office|building|way|door|window|bed|water|pool|bus|taxi|fridge|oven|drawer|cupboard|jar|bottle|case|suitcase|garage|school|shop)\b", re.I)
-# wrong: preposition before the object with a second object after ("get into the bag the bottle")
-WORD_ORDER = re.compile(rf"\b{GET}\s+(?:into|out\s+of|onto)\s+{DET}\s+{NOUNW}\s+{DET}\s+{NOUNW}\b", re.I)
-# not this chunk: idioms, get + someone + to + verb, have got
-IDIOM = re.compile(r"\bget(?:s|ting|ten)?\s+\w+(?:\s+\w+)?\s+across\b(?=.*\b(?:message|point|idea)\b)|\b(?:message|point|idea|meaning)s?\s+across\b|\boff\s+(?:my|your|his|her|our|their)\s+chest\b|\bget\s+(?:it|this)\s+over\s+with\b|\bget\s+\w+\s+over\s+(?:it|that|him|her)\b|\bget\s+(?:my|your|his|her|our|their)\s+head\s+(?:round|around)\b|\bget\s+(?:it|that)\s+(?:right|wrong|done)\b", re.I)
-HAVE_GOT = re.compile(rf"\b(?:have|has|had|['’]ve|['’]s|['’]d)\s+got\s+", re.I)
-TO_VERB = re.compile(r"^\s+[a-z]+\b", re.I)  # "to send": prep "to" + a verb
-
-COMMON_VERBS = {"do","send","check","come","go","make","see","say","tell","pay","write","sign","work","help","buy","bring","take","give","look","stop","start","finish","call","join","understand","agree","accept","talk","speak","read","learn","use","try","be","have","get","keep","leave","move","play","run","stay","think","wait","answer","approve","prepare","update","review","fix","build","test","share","explain","change","decide","follow","listen","open","close","reply","respond","confirm","act","behave","install"}
-UNCLEAR_PREP = {"in", "on", "up", "down", "to", "out", "away", "back", "together", "apart", "over", "round", "around"}
-
-def find_c6(sent):
-    if not re.search(rf"\b{GET}\b", sent, re.I): return []
-    out, spans = [], []
-    scan = IDIOM.sub(lambda m: " " * len(m.group(0)), sent)
-    for rx, ok in ((OUT_THE, False), (WORD_ORDER, False)):
-        for m in rx.finditer(scan):
-            if HAVE_GOT.search(scan[max(0, m.start()-8):m.start()+4]): continue
-            spans.append(m.span()); out.append({"item": "c6", "match": m.group(0).strip(), "suggest": ok})
-    for m in C6_RX.finditer(scan):
-        if any(a <= m.start() < b for a, b in spans): continue
-        if HAVE_GOT.search(scan[max(0, m.start()-8):m.start()+4]): continue
-        prep = re.sub(r"\s+", " ", m.group("prep").lower())
-        rest = m.group("rest") or ""
-        if prep == "to":
-            w = TO_VERB.match(rest)
-            if w and w.group(0).strip().lower() in COMMON_VERBS: continue   # get someone to do something
-        # "out" alone is fine with no place after it ("get it out"); "out the car" is caught above
-        suggest = None if (prep in UNCLEAR_PREP and prep not in ("out",)) else True
-        if prep == "off of": suggest = False   # US "off of": British prefers "off"
-        out.append({"item": "c6", "match": m.group(0).strip(), "suggest": suggest})
-    return out
-
-chunks.FINDERS["c6"] = find_c6
-
-if __name__ == "__main__":
-    {"find": chunks.cmd_find, "apply": chunks.cmd_apply, "rolling": chunks.cmd_rolling}[sys.argv[1]](*sys.argv[2:])
-EOF
-```
-
-Tested in chat on 16.11.26 (23 of 24 test sentences as expected; "got my daughter to the gym" comes out
-as `decide`, by design, since "to" is ambiguous). For c6 candidates marked `decide`, judge by the c6
-definition in `meta/chunks`: right = get + object + preposition used for moving or placing something;
-drop it if "get" means become/receive, if it has no object, or if it's get + someone + to + verb.
-
-Then run the detectors:
-
 ```bash
 cd /tmp/nc && python3 detect.py murat_turns.txt candidates.json
 python3 vocab.py murat_turns.txt meta/vocab_tracker.json olp vocab_candidates.json drilled_words.txt
 python3 pv.py murat_turns.txt meta/pv_tracker.json pv_candidates.json drilled_words.txt
-python3 chunks_c6.py find murat_turns.txt meta/chunks.json chunk_candidates.json slot_targets.txt
+python3 chunks.py find murat_turns.txt meta/chunks.json chunk_candidates.json slot_targets.txt
 ```
 
-`chunks.py find` (added 12.10.26; run through `chunks_c6.py` since 16.11.26) prints a CHUNK REVIEW LIST for every open chunk and slice (c1–c5 and s1–s4 since 12.10.26; s5–s7 since 29.10.26; c6 since 16.11.26):
+`chunks.py find` (added 12.10.26) prints a CHUNK REVIEW LIST for every open chunk and slice (c1–c5 and s1–s4 since 12.10.26; s5–s7 since 29.10.26; c6 since 16.11.26):
 index, item id, mode, turn, the script's suggestion (`correct`, `WRONG`, or `decide` when it can't
 tell), the matched words and the sentence. If it prints `NOT COUNTED (no finder yet ...)`, Murat opened
 a chunk the script can't count yet: the other open chunks are still counted; say in the report
-("chunk X isn't counted yet") and never estimate its numbers by eye. If there was a fixing slot, it
+("chunk X isn't counted yet") and never estimate its numbers by eye. For c6 candidates marked
+`decide`, judge by the c6 definition in `meta/chunks`: right = get + object + preposition used for
+moving or placing something; drop it if "get" means become/receive, if it has no object, or if it's
+get + someone + to + verb ("got my daughter to the gym" comes out as `decide` by design, since "to"
+is ambiguous). If there was a fixing slot, it
 also prints a SLOT LIST: the drilled targets inside the slot, kept out of the counts. Use it only to
 check the slot's **Slot result:** line and repeat that line in the report; never add these uses to
 the chunks block. If it prints `SLOT: targets given but no turn is tagged [slot]`, the tagging went

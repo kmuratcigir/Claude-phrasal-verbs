@@ -329,9 +329,55 @@ def find_s7(sent):
         elif lately and S7_PRES.search(c): out.append({"item": "s7", "match": c[:80], "suggest": None})
     return out
 
+# c6 = get + something + preposition (moving or placing something): "get the bottle into the bag".
+# Added 16.11.26 as the chunks_c6.py add-on in SKILL.md; folded in here 17.11.26 (same patterns, names
+# prefixed C6_ so they don't clash with the ones above).
+C6_GET = r"(?:get|gets|got|gotten|getting)"
+# object: a pronoun, or a short noun phrase starting with a determiner/possessive/number (1-4 words)
+C6_DET = r"(?:the|a|an|my|your|his|her|our|their|its|this|that|these|those|some|all|both|two|three|four|every|each)"
+C6_PRON = r"(?:it|them|him|her|me|us|you|everything|everyone|everybody|something|someone|somebody)"
+C6_NOUNW = r"(?!(?:into|onto|out|off|on|in|through|back|across|over|round|around|up|down|away|to|from|of|and|but|or|so)\b)[a-z'’-]+"
+C6_OBJ = rf"(?P<obj>{C6_PRON}|{C6_DET}(?:\s+{C6_NOUNW}){{1,3}})"
+C6_GOOD_PREP = r"(?P<prep>out\s+of|back\s+(?:into|to|in|on|onto|out\s+of)|away\s+from|in\s+front\s+of|into|onto|off(?:\s+of)?|through|across|over|round|around|under|inside|outside|in|on|up|down|to|out|away|back|together|apart)"
+C6_RX = re.compile(rf"\b{C6_GET}\s+{C6_OBJ}\s+{C6_GOOD_PREP}\b(?P<rest>(?:\s+[\w'’]+){{0,3}})", re.I)
+# wrong: dropped "of" after out before a place/container ("get the kids out the car")
+C6_OUT_THE = re.compile(rf"\b{C6_GET}\s+{C6_OBJ}\s+out\s+(?P<after>the|my|your|his|her|our|their)\s+(?P<noun>car|bag|box|boxes|house|room|office|building|way|door|window|bed|water|pool|bus|taxi|fridge|oven|drawer|cupboard|jar|bottle|case|suitcase|garage|school|shop)\b", re.I)
+# wrong: preposition before the object with a second object after ("get into the bag the bottle")
+C6_WORD_ORDER = re.compile(rf"\b{C6_GET}\s+(?:into|out\s+of|onto)\s+{C6_DET}\s+{C6_NOUNW}\s+{C6_DET}\s+{C6_NOUNW}\b", re.I)
+# not this chunk: idioms, get + someone + to + verb, have got
+C6_IDIOM = re.compile(r"\bget(?:s|ting|ten)?\s+\w+(?:\s+\w+)?\s+across\b(?=.*\b(?:message|point|idea)\b)|\b(?:message|point|idea|meaning)s?\s+across\b|\boff\s+(?:my|your|his|her|our|their)\s+chest\b|\bget\s+(?:it|this)\s+over\s+with\b|\bget\s+\w+\s+over\s+(?:it|that|him|her)\b|\bget\s+(?:my|your|his|her|our|their)\s+head\s+(?:round|around)\b|\bget\s+(?:it|that)\s+(?:right|wrong|done)\b", re.I)
+C6_HAVE_GOT = re.compile(rf"\b(?:have|has|had|['’]ve|['’]s|['’]d)\s+got\s+", re.I)
+C6_TO_VERB = re.compile(r"^\s+[a-z]+\b", re.I)  # "to send": prep "to" + a verb
+
+C6_COMMON_VERBS = {"do","send","check","come","go","make","see","say","tell","pay","write","sign","work","help","buy","bring","take","give","look","stop","start","finish","call","join","understand","agree","accept","talk","speak","read","learn","use","try","be","have","get","keep","leave","move","play","run","stay","think","wait","answer","approve","prepare","update","review","fix","build","test","share","explain","change","decide","follow","listen","open","close","reply","respond","confirm","act","behave","install"}
+C6_UNCLEAR_PREP = {"in", "on", "up", "down", "to", "out", "away", "back", "together", "apart", "over", "round", "around"}
+
+def find_c6(sent):
+    if not re.search(rf"\b{C6_GET}\b", sent, re.I): return []
+    out, spans = [], []
+    scan = C6_IDIOM.sub(lambda m: " " * len(m.group(0)), sent)
+    for rx, ok in ((C6_OUT_THE, False), (C6_WORD_ORDER, False)):
+        for m in rx.finditer(scan):
+            if C6_HAVE_GOT.search(scan[max(0, m.start()-8):m.start()+4]): continue
+            spans.append(m.span()); out.append({"item": "c6", "match": m.group(0).strip(), "suggest": ok})
+    for m in C6_RX.finditer(scan):
+        if any(a <= m.start() < b for a, b in spans): continue
+        if C6_HAVE_GOT.search(scan[max(0, m.start()-8):m.start()+4]): continue
+        prep = re.sub(r"\s+", " ", m.group("prep").lower())
+        rest = m.group("rest") or ""
+        if prep == "to":
+            w = C6_TO_VERB.match(rest)
+            if w and w.group(0).strip().lower() in C6_COMMON_VERBS: continue   # get someone to do something
+        # "out" alone is fine with no place after it ("get it out"); "out the car" is caught above
+        suggest = None if (prep in C6_UNCLEAR_PREP and prep not in ("out",)) else True
+        if prep == "off of": suggest = False   # US "off of": British prefers "off"
+        out.append({"item": "c6", "match": m.group(0).strip(), "suggest": suggest})
+    return out
+
+
 FINDERS = {"c1": find_c1, "c2": find_c2, "c3": find_c3, "c4": find_c4, "c5": find_c5,
            "s1": find_s1, "s2": find_s2, "s3": find_s3, "s4": find_s4,
-           "s5": find_s5, "s6": find_s6, "s7": find_s7}
+           "s5": find_s5, "s6": find_s6, "s7": find_s7, "c6": find_c6}
 
 def slot_turns(path):
     """Turns tagged [slot] in the header: inside the fixing slot marks (29.10.26)."""
